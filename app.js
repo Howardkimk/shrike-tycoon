@@ -167,7 +167,26 @@ function syncBurners() { const wanted = baseBurnerCount() + (selectedShrike === 
     burners.push({ index, state: "empty", orderId: null, recipe: [], startedAt: 0, cookSeconds: 0, readyAt: 0 });
 } while (burners.length > wanted && burners[burners.length - 1].state === "empty")
     burners.pop(); burners.forEach((b, i) => b.index = i); }
+async function preferMobileLandscape() {
+    var _a;
+    const coarse = (_a = window.matchMedia) === null || _a === void 0 ? void 0 : _a.call(window, "(pointer: coarse)").matches;
+    if (!coarse || window.innerWidth > 1100)
+        return;
+    try {
+        const root = document.documentElement;
+        if (!document.fullscreenElement && root.requestFullscreen)
+            await root.requestFullscreen();
+    }
+    catch { }
+    try {
+        const orientation = screen.orientation;
+        if (orientation === null || orientation === void 0 ? void 0 : orientation.lock)
+            await orientation.lock("landscape");
+    }
+    catch { }
+}
 function startGame() {
+    void preferMobileLandscape();
     document.body.classList.add("in-game");
     stage = stages[selectedStage];
     orders = [];

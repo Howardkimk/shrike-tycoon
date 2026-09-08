@@ -3,7 +3,7 @@
 .cover-screen{position:fixed;inset:0;z-index:1000;background:#07100d;display:grid;place-items:center;overflow:hidden}.cover-screen.hidden{display:none}.cover-screen img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.cover-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,8,6,.12),rgba(3,8,6,.15) 50%,rgba(3,8,6,.78));display:flex;align-items:flex-end;justify-content:center;padding:5vh 24px}.cover-copy{width:min(720px,94vw);text-align:center;padding:26px 28px;border-radius:24px;background:rgba(8,19,15,.78);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px);box-shadow:var(--shadow)}.cover-copy h1{font-size:clamp(2.2rem,6vw,4.8rem);margin:4px 0 8px}.cover-copy p{color:#e9e2cb}.cover-enter{min-width:220px;font-size:1.05rem}.xp-window{min-width:160px;padding:10px 14px;background:#10251d;border:1px solid var(--line);border-radius:16px;text-align:right}.xp-window span,.xp-window small{display:block;color:var(--muted);font-size:.72rem}.xp-window strong{display:block;color:var(--accent);font-size:1.15rem}.hud-item.xp strong{color:var(--cyan)}.record-notice{margin-top:14px;padding:10px 12px;border-radius:12px;background:#102a22;color:var(--accent);font-weight:900}.record-notice:empty{display:none}.stage-record{color:var(--cyan)!important}.career-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.career-grid div{background:#0f211a;border:1px solid #2f5041;border-radius:12px;padding:9px}.career-grid span{display:block;color:var(--muted);font-size:.68rem}.career-grid strong{font-size:1rem}@media(max-width:900px){.titlebar{align-items:flex-start;flex-direction:column}.xp-window{text-align:left}.hud{grid-template-columns:repeat(4,1fr)!important}.career-grid{grid-template-columns:repeat(2,1fr)}}
 .world-tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 8px}.world-tab{padding:13px 16px;border-radius:15px;border:1px solid var(--line);background:#10251d;color:var(--text);font-weight:900;cursor:pointer}.world-tab.selected{outline:2px solid var(--accent);background:#1a3329}.world-tab:disabled{opacity:.35;cursor:not-allowed}.stage-ecology{grid-template-columns:.8fr 1.2fr 1.2fr 1fr}.hud{grid-template-columns:repeat(8,1fr)}.hud-item.weather strong{color:var(--cyan);font-size:.86rem}.game-screen.weather-rain{--weather-glow:rgba(89,156,196,.13)}.game-screen.weather-wind{--weather-glow:rgba(184,220,202,.10)}.game-screen.weather-sun{--weather-glow:rgba(255,199,89,.13)}.game-screen[class*="weather-"] .orders-panel,.game-screen[class*="weather-"] .burners-panel{box-shadow:0 0 38px var(--weather-glow),var(--shadow)}.game-screen.weather-wind .order-card{animation:windSway 1.6s ease-in-out infinite alternate}.game-screen.weather-rain .burner .flame{filter:saturate(.7)}.game-screen.weather-sun .burner .flame{filter:brightness(1.25)}@keyframes windSway{from{transform:translateX(-1px) rotate(-.2deg)}to{transform:translateX(1px) rotate(.2deg)}}@media(max-width:900px){.world-tabs{grid-template-columns:1fr}.stage-ecology{grid-template-columns:1fr}.selection-grid.three{grid-template-columns:1fr}.hud{grid-template-columns:repeat(2,1fr)!important}}
 
-/* Prototype 0.5.1 · Mobile / PWA */
+/* Prototype 0.5.2 · Mobile / PWA */
 html{background:var(--bg);overscroll-behavior:none;-webkit-text-size-adjust:100%}
 body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);overscroll-behavior-y:none}
 button,.stage-card,.select-card,.order-card,.burner,.food-button{touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
@@ -86,4 +86,78 @@ button:focus-visible,.stage-card:focus-visible,.select-card:focus-visible,.order
   .burners{grid-auto-columns:minmax(102px,15vw);gap:5px}.burner{min-height:112px;padding:7px}.burner .flame{font-size:1.25rem}.burner .burner-title{font-size:.74rem}.burner .burner-recipe{font-size:.84rem;margin:4px 0;min-height:20px}.burner .burner-state{font-size:.62rem}.cook-bar{margin-top:5px}
   .status-panel{padding:7px 10px;min-height:42px}.status-panel strong{font-size:.78rem}.floating-judge{font-size:.92rem}
   .game-actions{display:flex;justify-content:flex-end}.game-actions button{width:auto;min-height:40px;padding:7px 10px;font-size:.72rem}
+}
+
+/* Prototype 0.5.2 · Mobile Landscape One-Screen Layout */
+.rotate-overlay{display:none}
+@media (pointer:coarse) and (orientation:portrait){
+  body.in-game::before{content:"↻ 가로 화면으로 돌려주세요";position:fixed;inset:0;z-index:9998;display:grid;place-items:center;padding:24px;background:rgba(4,12,9,.96);color:var(--text);font-size:clamp(1.25rem,6vw,2rem);font-weight:1000;text-align:center;letter-spacing:-.03em}
+  body.in-game::after{content:"Shrike Tycoon은 모바일에서 가로모드에 최적화되어 있습니다.";position:fixed;left:10vw;right:10vw;top:58%;z-index:9999;color:var(--muted);text-align:center;font-size:.86rem;line-height:1.45}
+}
+
+/* Small/medium touch devices in landscape: never vertically scroll during play. */
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  html,body{height:100%;overflow:hidden}
+  body.in-game{height:100dvh;min-height:0;overflow:hidden;padding:0;background:#07100d}
+  body.in-game .app-shell{width:100%;height:100dvh;min-height:0;margin:0;padding:max(3px,env(safe-area-inset-top)) max(5px,env(safe-area-inset-right)) max(3px,env(safe-area-inset-bottom)) max(5px,env(safe-area-inset-left));overflow:hidden}
+  body.in-game .titlebar{display:none}
+  body.in-game .game-screen{position:relative;display:grid;grid-template-columns:minmax(245px,35%) minmax(0,65%);grid-template-rows:auto auto minmax(0,1fr) auto;gap:4px;width:100%;height:100%;min-height:0;overflow:hidden;padding:0}
+  .orientation-hint{display:none!important}
+  .event-banner{position:absolute;left:50%;top:2px;transform:translate(-50%,-130%);z-index:50;width:min(62vw,520px);padding:5px 10px;font-size:.72rem;pointer-events:none}
+  .event-banner.show{transform:translate(-50%,0)}
+
+  /* 8-stat header, one compact row */
+  .hud{grid-column:1/-1;grid-row:1;display:grid!important;grid-template-columns:repeat(8,minmax(0,1fr))!important;gap:3px;padding:3px;border-radius:10px;min-height:0}
+  .hud-item{min-width:0;padding:3px 4px;border-radius:8px;line-height:1.02}
+  .hud-item span{font-size:clamp(.42rem,1.25vw,.55rem);line-height:1;white-space:nowrap}
+  .hud-item strong{display:block;margin-top:2px;font-size:clamp(.58rem,1.65vw,.76rem);line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  /* Burning bar becomes a very thin second row. */
+  .burn-strip{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px;align-items:center;min-height:0;padding:3px 6px;border-radius:10px}
+  .burn-strip>strong{font-size:clamp(.52rem,1.5vw,.68rem);white-space:nowrap}
+  .burn-meter{gap:5px;min-width:0}.burn-meter-track{height:7px}.burn-meter span{font-size:.58rem;min-width:34px}
+  .burn-button{min-height:28px!important;padding:3px 8px!important;border-radius:8px;font-size:.58rem;white-space:nowrap}
+
+  /* Orders always remain visible on the left. */
+  .orders-panel{grid-column:1;grid-row:3;display:grid;grid-template-rows:auto minmax(0,1fr);min-height:0;overflow:hidden;padding:5px;border-radius:11px}
+  .orders-panel .section-heading{margin:0 0 3px;min-height:18px}.orders-panel .section-heading h2{font-size:.76rem}.orders-panel .section-heading .hint{display:none}
+  .orders-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);align-content:stretch;gap:4px;min-height:0;height:100%;overflow:hidden}
+  .orders-grid>.hint{grid-column:1/-1;align-self:center;text-align:center;font-size:.68rem}
+  .order-card{min-height:0!important;height:100%;padding:4px 5px;border-radius:9px;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto auto;column-gap:4px;align-content:center}
+  .order-card .bird{grid-row:1/3;font-size:1.08rem;align-self:center}.order-card .name{font-size:.64rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bird-en{display:none!important}
+  .order-card .recipe{grid-column:1/-1;margin:2px 0 1px;font-size:clamp(.72rem,2.1vw,.94rem);letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .order-card .timer{grid-column:1/-1;font-size:.52rem;line-height:1}.special-badge{right:3px;top:2px;padding:1px 3px;font-size:.42rem}.order-progress{height:3px}
+
+  /* Work area fills the right side. */
+  .work-area{grid-column:2;grid-row:3;display:grid;grid-template-columns:minmax(0,43%) minmax(0,57%);gap:4px;min-height:0;overflow:hidden}
+  .skewer-panel,.burners-panel{min-height:0;overflow:hidden;padding:5px;border-radius:11px}
+  .skewer-panel{display:grid;grid-template-rows:auto auto minmax(34px,.55fr) minmax(0,1fr) auto;gap:3px}
+  .burners-panel{display:grid;grid-template-rows:auto minmax(0,1fr);gap:3px}
+  .skewer-panel .section-heading,.burners-panel .section-heading{margin:0;min-height:18px}.section-heading h2{font-size:.76rem!important}.section-heading .hint{display:none!important}
+  .selected-order-summary{min-height:0;padding:3px 5px;border-radius:7px;font-size:.56rem;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .skewer{height:auto;min-height:34px;margin:0;border-radius:9px}.skewer-item{font-size:clamp(1rem,2.8vw,1.25rem)}.empty-skewer{font-size:.57rem}
+  .food-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-rows:minmax(31px,1fr);gap:3px;min-height:0;overflow:hidden}
+  .food-button{min-height:0!important;height:100%;padding:2px;border-radius:7px;font-size:.5rem;line-height:1}.food-button span{font-size:.92rem;line-height:1}.food-button small{display:none}
+  .button-row{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin:0}.button-row button{min-height:28px!important;padding:3px 4px;border-radius:8px;font-size:.56rem}
+
+  /* All burners fit as a wrapping grid; no horizontal scrolling. */
+  .burners{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-flow:row!important;grid-auto-columns:auto!important;grid-auto-rows:minmax(0,1fr);gap:3px;height:100%;min-height:0;overflow:hidden!important;padding:0;scroll-snap-type:none}
+  .burner{min-width:0;min-height:0!important;height:100%;padding:3px;border-radius:8px;display:grid;grid-template-rows:auto auto auto 1fr auto;align-items:center;overflow:hidden}
+  .burner .flame{font-size:.86rem;line-height:1}.burner .burner-title{font-size:.5rem;line-height:1}.burner .burner-recipe{font-size:.68rem;line-height:1;margin:1px 0;min-height:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.burner .burner-state{font-size:.46rem;line-height:1.05;overflow:hidden}.cook-bar{height:4px;margin-top:2px}
+
+  /* Bottom bar: status left, controls right. */
+  .status-panel{grid-column:1;grid-row:4;min-height:0;padding:3px 6px;border-radius:9px;gap:5px;overflow:hidden}.status-panel strong{font-size:.54rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.floating-judge{font-size:.62rem;white-space:nowrap}
+  .game-actions{grid-column:2;grid-row:4;display:grid;grid-template-columns:1fr 1fr;gap:4px;min-height:0}
+  .game-actions button{width:100%!important;min-height:27px!important;padding:2px 6px;border-radius:8px;font-size:.54rem}
+}
+
+/* Very short landscape phones (e.g. browser chrome leaves ~320–390 px high). */
+@media (pointer:coarse) and (orientation:landscape) and (max-height:430px) and (max-width:1024px){
+  body.in-game .game-screen{grid-template-columns:minmax(220px,34%) minmax(0,66%);gap:3px}
+  .hud{gap:2px;padding:2px}.hud-item{padding:2px 3px}.hud-item span{font-size:.39rem}.hud-item strong{font-size:.54rem}
+  .burn-strip{padding:2px 5px}.burn-meter-track{height:5px}.burn-button{min-height:24px!important;padding:2px 6px!important}
+  .orders-panel,.skewer-panel,.burners-panel{padding:4px}.order-card{padding:3px 4px}.order-card .bird{font-size:.9rem}.order-card .name{font-size:.56rem}.order-card .recipe{font-size:.68rem}.order-card .timer{font-size:.46rem}
+  .skewer-panel{grid-template-rows:auto auto minmax(28px,.48fr) minmax(0,1fr) auto}.skewer{min-height:28px}.food-button span{font-size:.78rem}.food-button{font-size:.45rem}.button-row button{min-height:24px!important}
+  .burner .flame{font-size:.74rem}.burner .burner-title{font-size:.44rem}.burner .burner-recipe{font-size:.58rem}.burner .burner-state{font-size:.4rem}
+  .status-panel,.game-actions button{min-height:23px!important}
 }

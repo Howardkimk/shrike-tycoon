@@ -1,3 +1,4 @@
-# Shrike Tycoon 0.5.2.2 Web Deploy
-
-정적 호스팅 루트에 이 폴더의 내용물을 업로드하세요. 모바일 플레이는 가로모드를 기본으로 합니다.
+# Shrike Tycoon 0.5.2.4 web deploy
+Upload the contents of this folder to the root of a static HTTPS host.
+GitHub Pages: main branch / (root).
+This hotfix targets iPhone 15 Pro landscape result-screen fit and desktop title wrapping.

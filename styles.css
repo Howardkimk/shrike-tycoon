@@ -263,3 +263,117 @@ body.in-game button{pointer-events:auto}
   .burner .burner-title{font-size:.54rem!important}.burner .burner-recipe{font-size:.68rem!important}.burner .burner-state{font-size:.48rem!important}
   .status-panel strong,.game-actions button{font-size:.56rem!important}
 }
+
+/* Prototype 0.5.2.3 · Keyboard Accessibility Update */
+.keyboard-mini-guide{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:8px 12px;border:1px solid var(--line);border-radius:14px;background:#0d2019;color:var(--muted);font-size:.74rem}
+.keyboard-mini-guide span{display:inline-flex;align-items:center;gap:4px}.keyboard-mini-guide b{color:var(--accent)}
+kbd,.key-badge{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:900;border:1px solid #607c6f;border-bottom-width:2px;background:#0a1813;color:#f7d982;border-radius:6px;padding:2px 6px;box-shadow:0 1px 0 rgba(255,255,255,.08) inset}
+.key-guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}.key-guide-grid>div{display:grid;grid-template-columns:minmax(90px,auto) 1fr;grid-template-rows:auto auto;gap:2px 12px;align-items:center;padding:11px;border-radius:12px;background:#0e211a;border:1px solid #315144}.key-guide-grid kbd{grid-row:1/3;text-align:center;white-space:nowrap}.key-guide-grid strong{font-size:.92rem}.key-guide-grid small{color:var(--muted)}
+.order-card,.food-button,.burner{position:relative}.key-badge{position:absolute;left:6px;top:6px;z-index:3;font-size:.62rem;line-height:1;padding:3px 5px;pointer-events:none}
+.food-button .food-emoji{font-size:1.35rem;display:block}
+.keyboard-hit{outline:3px solid var(--cyan)!important;outline-offset:2px!important;filter:brightness(1.18);transform:translateY(-1px)}
+body.keyboard-mode button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+@media (pointer:coarse){.keyboard-mini-guide,.key-badge{display:none!important}}
+@media(max-width:700px){.key-guide-grid{grid-template-columns:1fr}.key-guide-grid>div{grid-template-columns:minmax(86px,auto) 1fr}}
+
+
+/* Prototype 0.5.2.4 · Result Screen + Desktop Title Hotfix */
+.game-title{
+  display:block!important;
+  width:max-content!important;
+  max-width:none!important;
+  white-space:nowrap!important;
+  word-break:keep-all!important;
+  overflow-wrap:normal!important;
+  line-break:auto!important;
+}
+@media (min-width:901px){
+  .titlebar>div:first-child{min-width:max-content!important;width:max-content!important}
+  .titlebar .game-title{white-space:nowrap!important;width:max-content!important;max-width:none!important}
+}
+
+/* Result view gets its own compact one-screen layout on touch landscape devices. */
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  body.in-game #resultScreen:not(.hidden){
+    display:grid!important;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto auto minmax(0,1fr) auto auto auto;
+    align-content:stretch;
+    gap:4px;
+    width:100%;
+    height:100%;
+    min-height:0;
+    overflow:hidden;
+    padding:7px 10px max(7px,env(safe-area-inset-bottom));
+    border-radius:12px;
+    text-align:center;
+  }
+  body.in-game #resultScreen>.eyebrow{margin:0;font-size:.56rem;line-height:1.05}
+  body.in-game #resultScreen h2{margin:0;font-size:clamp(.86rem,2.4vw,1.08rem);line-height:1.08;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  body.in-game #resultScreen .stars{font-size:clamp(1.25rem,3.7vw,1.7rem);line-height:1;margin:0}
+  body.in-game #resultScreen .result-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-auto-rows:minmax(0,1fr);
+    gap:4px;
+    width:100%;
+    max-width:none;
+    min-height:0;
+    margin:0;
+    overflow:hidden;
+  }
+  body.in-game #resultScreen .result-grid div{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-width:0;
+    min-height:0;
+    padding:4px 3px;
+    border-radius:9px;
+  }
+  body.in-game #resultScreen .result-grid span{font-size:clamp(.48rem,1.25vw,.58rem);line-height:1;white-space:nowrap}
+  body.in-game #resultScreen .result-grid strong{margin-top:2px;font-size:clamp(.72rem,2vw,.92rem);line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  body.in-game #resultScreen .record-notice,
+  body.in-game #resultScreen .unlock-notice{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:0;
+    max-width:none;
+    width:100%;
+    margin:0;
+    padding:4px 7px;
+    border-radius:8px;
+    font-size:clamp(.5rem,1.3vw,.62rem);
+    line-height:1.1;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  body.in-game #resultScreen .record-notice:empty{display:none}
+  body.in-game #resultScreen .result-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+    margin:0;
+    width:100%;
+    align-self:end;
+  }
+  body.in-game #resultScreen .result-actions button{
+    width:100%;
+    min-height:36px;
+    padding:6px 10px;
+    border-radius:9px;
+    font-size:clamp(.64rem,1.55vw,.76rem);
+    font-weight:1000;
+  }
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-height:400px) and (max-width:1024px){
+  body.in-game #resultScreen:not(.hidden){gap:3px;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom))}
+  body.in-game #resultScreen .result-grid{gap:3px}
+  body.in-game #resultScreen .result-grid div{padding:3px 2px}
+  body.in-game #resultScreen .result-actions button{min-height:31px;padding:3px 8px}
+  body.in-game #resultScreen .record-notice,
+  body.in-game #resultScreen .unlock-notice{padding:3px 6px}
+}

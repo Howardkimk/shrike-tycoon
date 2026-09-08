@@ -462,3 +462,16 @@ body.keyboard-mode button:focus-visible{outline:3px solid var(--cyan);outline-of
 }
 .help-dialog[open]{z-index:2147483000}
 .help-dialog.dialog-fallback-open{position:fixed;inset:50% auto auto 50%;transform:translate(-50%,-50%);display:block;z-index:2147483000}
+
+/* Prototype 0.6.0 · Mountain & Night Update */
+.world-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stage-goal{display:block;margin-top:4px;color:var(--accent);font-weight:800}
+.game-screen.phase-day{--phase-wash:rgba(224,190,92,.04)}
+.game-screen.phase-dusk{--phase-wash:rgba(203,112,78,.10)}
+.game-screen.phase-night{--phase-wash:rgba(68,83,136,.16)}
+.game-screen.phase-day,.game-screen.phase-dusk,.game-screen.phase-night{background-image:linear-gradient(var(--phase-wash),var(--phase-wash))}
+.game-screen.phase-dusk .hud,.game-screen.phase-night .hud{box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+@media (pointer:coarse){
+  /* 0.6.0 leaves the mobile gameplay layout unchanged; only the new World tab must fit. */
+  #startScreen .world-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+}

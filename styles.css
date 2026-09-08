@@ -170,3 +170,96 @@ button:focus-visible,.stage-card:focus-visible,.select-card:focus-visible,.order
 body.in-game .skewer-panel,body.in-game .burners-panel,body.in-game .game-actions,body.in-game .burn-strip{position:relative;z-index:2;pointer-events:auto}
 body.in-game .food-buttons,body.in-game .button-row,body.in-game .burners{pointer-events:auto}
 body.in-game button{pointer-events:auto}
+
+
+/* Prototype 0.5.2.2 · UI Readability Hotfix */
+.game-title{
+  display:inline-flex!important;
+  flex-wrap:nowrap!important;
+  align-items:baseline;
+  justify-content:flex-start;
+  gap:.22em;
+  width:max-content;
+  max-width:none;
+  white-space:nowrap!important;
+  word-break:keep-all!important;
+  overflow-wrap:normal!important;
+  line-break:strict;
+}
+.game-title>span{display:block;white-space:nowrap;flex:none}
+.titlebar>div:first-child{min-width:0!important;flex:0 0 auto}
+@media (min-width:901px){
+  .titlebar{display:grid;grid-template-columns:max-content minmax(160px,auto) 1fr;align-items:end;gap:18px}
+  .titlebar .game-title{font-size:clamp(2rem,3.6vw,3.55rem)!important;letter-spacing:-.045em}
+  .header-actions{justify-content:flex-end;align-content:flex-end}
+}
+
+/* Mobile landscape: center all actionable information and raise the readable type floor. */
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  body.in-game{font-size:14px}
+  body.in-game .game-screen{text-align:center}
+  body.in-game .section-heading{justify-content:center;text-align:center}
+  body.in-game .section-heading h2,
+  body.in-game .orders-panel .section-heading h2,
+  body.in-game .skewer-panel .section-heading h2,
+  body.in-game .burners-panel .section-heading h2{font-size:clamp(.88rem,2vw,1rem)!important;text-align:center;width:100%}
+
+  .hud-item{text-align:center!important;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .hud-item span{font-size:clamp(.52rem,1.3vw,.64rem)!important;letter-spacing:.02em}
+  .hud-item strong{font-size:clamp(.72rem,1.8vw,.9rem)!important;text-align:center!important;max-width:100%}
+
+  .burn-strip{text-align:center}
+  .burn-strip>strong{font-size:clamp(.66rem,1.55vw,.8rem)!important;text-align:center}
+  .burn-meter{justify-content:center}.burn-meter span{font-size:.68rem!important}
+  .burn-button{font-size:.68rem!important;font-weight:1000}
+
+  .orders-grid{align-items:stretch}
+  .order-card{
+    text-align:center!important;
+    justify-items:center!important;
+    align-items:center!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:auto auto auto auto!important;
+    row-gap:1px;
+  }
+  .order-card .bird{grid-row:auto!important;font-size:clamp(1.1rem,2.6vw,1.4rem)!important;margin:0 auto}
+  .order-card .name{font-size:clamp(.7rem,1.65vw,.84rem)!important;text-align:center;width:100%}
+  .order-card .recipe{grid-column:1!important;font-size:clamp(.86rem,2.2vw,1.08rem)!important;text-align:center!important;width:100%;margin:2px 0!important}
+  .order-card .timer{grid-column:1!important;justify-content:center!important;gap:8px;width:100%;font-size:clamp(.6rem,1.4vw,.72rem)!important;text-align:center}
+  .special-badge{font-size:.52rem!important}
+
+  .selected-order-summary{text-align:center!important;font-size:clamp(.64rem,1.5vw,.76rem)!important;display:flex;align-items:center;justify-content:center}
+  .skewer{justify-content:center;text-align:center}
+  .empty-skewer{font-size:.66rem!important;text-align:center}
+  .skewer-item{font-size:clamp(1.08rem,2.8vw,1.36rem)!important}
+
+  .food-buttons{align-items:stretch}
+  .food-button{
+    display:flex!important;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center!important;font-size:clamp(.6rem,1.4vw,.72rem)!important;
+    font-weight:900;line-height:1.05!important;padding:3px!important
+  }
+  .food-button span{font-size:clamp(1rem,2.3vw,1.24rem)!important;margin-bottom:1px}
+  .food-button small{display:block!important;font-size:clamp(.48rem,1.05vw,.58rem)!important;line-height:1!important;color:#c6d4cc!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .button-row button{font-size:clamp(.64rem,1.4vw,.74rem)!important;font-weight:900;text-align:center}
+
+  .burner{text-align:center!important;justify-items:center!important;align-content:center!important}
+  .burner .flame{font-size:clamp(.95rem,2.2vw,1.18rem)!important}
+  .burner .burner-title{font-size:clamp(.58rem,1.35vw,.7rem)!important;text-align:center!important}
+  .burner .burner-recipe{font-size:clamp(.72rem,1.75vw,.88rem)!important;text-align:center!important;width:100%}
+  .burner .burner-state{font-size:clamp(.52rem,1.18vw,.63rem)!important;text-align:center!important;width:100%;line-height:1.1!important}
+
+  .status-panel{justify-content:center!important;text-align:center!important}
+  .status-panel strong{font-size:clamp(.62rem,1.4vw,.74rem)!important;text-align:center!important}
+  .floating-judge{font-size:clamp(.72rem,1.55vw,.86rem)!important;text-align:center}
+  .game-actions button{font-size:clamp(.62rem,1.35vw,.72rem)!important;text-align:center;font-weight:900}
+}
+
+/* On short phones retain the one-screen layout, but never drop core text below a legibility floor. */
+@media (pointer:coarse) and (orientation:landscape) and (max-height:430px) and (max-width:1024px){
+  .hud-item span{font-size:.5rem!important}.hud-item strong{font-size:.68rem!important}
+  .order-card .name{font-size:.65rem!important}.order-card .recipe{font-size:.82rem!important}.order-card .timer{font-size:.56rem!important}
+  .food-button{font-size:.56rem!important}.food-button span{font-size:.92rem!important}.food-button small{font-size:.44rem!important}
+  .burner .burner-title{font-size:.54rem!important}.burner .burner-recipe{font-size:.68rem!important}.burner .burner-state{font-size:.48rem!important}
+  .status-panel strong,.game-actions button{font-size:.56rem!important}
+}

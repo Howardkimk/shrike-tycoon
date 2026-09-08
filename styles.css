@@ -161,3 +161,12 @@ button:focus-visible,.stage-card:focus-visible,.select-card:focus-visible,.order
   .burner .flame{font-size:.74rem}.burner .burner-title{font-size:.44rem}.burner .burner-recipe{font-size:.58rem}.burner .burner-state{font-size:.4rem}
   .status-panel,.game-actions button{min-height:23px!important}
 }
+
+
+/* Prototype 0.5.2.1 Hotfix · desktop title + unified mobile pointer input */
+.titlebar h1{white-space:nowrap;word-break:keep-all;overflow-wrap:normal;flex-shrink:0}
+.titlebar>div:first-child{min-width:max-content;flex-shrink:0}
+@media (min-width:901px){.titlebar{align-items:flex-end}.titlebar h1{font-size:clamp(1.9rem,4.2vw,4rem)}}
+body.in-game .skewer-panel,body.in-game .burners-panel,body.in-game .game-actions,body.in-game .burn-strip{position:relative;z-index:2;pointer-events:auto}
+body.in-game .food-buttons,body.in-game .button-row,body.in-game .burners{pointer-events:auto}
+body.in-game button{pointer-events:auto}

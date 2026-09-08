@@ -1,4 +1,193 @@
-"use strict";
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08130f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="때까치 타이쿤">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icon-192.png"><title>Shrike Tycoon Prototype 0.5.2.1 · River & Weather Update</title><style>:root{--bg:#08130f;--panel:#162a22;--panel2:#10251d;--line:#355446;--text:#f3f0df;--muted:#9fb2a8;--accent:#f2bb58;--accent2:#e9783f;--good:#90d9a7;--danger:#ff8b7c;--cyan:#8fd9d1;--shadow:0 18px 50px rgba(0,0,0,.28)}*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 50% 0,#1d392d 0,#0b1712 45%,#07100d 100%)}button{font:inherit}.app-shell{width:min(1180px,calc(100% - 28px));margin:0 auto;padding:28px 0 50px}.titlebar{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}.titlebar h1{margin:0;font-size:clamp(2rem,4.8vw,4rem);letter-spacing:-.05em}.subtitle,.hint{color:var(--muted)}.eyebrow{margin:0 0 5px;color:var(--accent);font-size:.74rem;font-weight:900;letter-spacing:.18em}.header-actions,.button-row,.result-actions,.game-actions{display:flex;gap:10px;flex-wrap:wrap}.panel{background:linear-gradient(180deg,rgba(32,56,47,.97),rgba(21,39,32,.97));border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.start-screen,.result-screen{padding:34px 24px}.start-screen{text-align:center}.hero-bird{font-size:5rem}.start-screen h2,.result-screen h2{margin:10px 0}.start-screen>p{max-width:760px;margin:0 auto 20px;line-height:1.7;color:var(--muted)}.primary-button,.ghost-button,.burn-button{border-radius:14px;padding:12px 18px;border:0;cursor:pointer;font-weight:900;transition:.12s}.primary-button{color:#251a08;background:linear-gradient(180deg,#ffd67b,var(--accent))}.ghost-button{color:var(--text);background:#142a22;border:1px solid var(--line)}.burn-button{background:linear-gradient(180deg,#ffb35c,#e45d2d);color:#2a1307}.primary-button:hover,.ghost-button:hover,.burn-button:hover{transform:translateY(-1px)}button:disabled{opacity:.4;cursor:not-allowed;transform:none!important}.wide{width:100%;margin-top:14px}.hidden{display:none!important}.save-summary{margin:0 auto 20px;color:var(--muted)}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:18px 0 12px}.section-heading h2,.section-heading h3{margin:0}.stage-map{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.stage-card,.select-card{color:var(--text);text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:13px;cursor:pointer}.stage-card.selected,.select-card.selected{outline:2px solid var(--accent);border-color:transparent}.stage-card:disabled,.select-card:disabled{opacity:.35;cursor:not-allowed}.stage-card b,.select-card b{display:block}.stage-card small,.select-card span,.select-card small{display:block;color:var(--muted);margin-top:4px}.stage-stars{color:var(--accent);letter-spacing:.05em}.stage-icon{font-size:1.7rem;float:right}.stage-ecology{display:grid;grid-template-columns:.8fr 1.2fr 1.2fr;gap:10px;margin:12px 0 22px;text-align:left}.stage-ecology>div{background:#0f211a;border:1px solid #2f5041;border-radius:14px;padding:12px}.stage-ecology b,.stage-ecology p{margin:4px 0}.eco-label{display:block;font-size:.66rem;font-weight:900;letter-spacing:.09em;color:var(--cyan)}.selection-grid{display:grid;gap:10px}.selection-grid.three{grid-template-columns:repeat(3,1fr)}.game-screen{display:grid;gap:16px}.event-banner{position:sticky;top:5px;z-index:9;margin:auto;width:min(680px,90%);padding:10px 18px;text-align:center;border-radius:999px;background:var(--accent2);color:#1e0f05;font-weight:1000;transform:translateY(-140%);opacity:0;transition:.2s}.event-banner.show{transform:none;opacity:1}.hud{display:grid;grid-template-columns:repeat(6,1fr);padding:12px;gap:9px}.hud-item{padding:10px 12px;background:var(--panel2);border-radius:14px;border:1px solid #29463a}.hud-item span{display:block;font-size:.7rem;color:var(--muted)}.hud-item strong{font-size:1.05rem}.hud-item.combo strong{color:var(--accent)}.burn-strip{display:grid;grid-template-columns:190px 1fr auto;align-items:center;gap:14px;padding:14px 18px}.burn-meter{display:flex;align-items:center;gap:10px}.burn-meter-track{height:14px;background:#0d2019;border:1px solid #385347;border-radius:999px;overflow:hidden;flex:1}.burn-meter-fill{height:100%;width:0;background:linear-gradient(90deg,#e8783e,#f3b94f)}.orders-panel,.skewer-panel,.burners-panel,.status-panel{padding:18px}.orders-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;min-height:135px}.order-card{position:relative;text-align:left;color:var(--text);background:var(--panel2);border:1px solid #315144;border-radius:17px;padding:13px;cursor:pointer;overflow:hidden}.order-card.selected{outline:2px solid var(--accent)}.order-card.urgent{animation:pulse 1s infinite}.order-card.special{border-color:var(--accent);background:linear-gradient(180deg,#28351f,#10251d)}.special-badge{position:absolute;right:8px;top:8px;background:var(--accent);color:#281903;border-radius:999px;padding:3px 6px;font-size:.65rem;font-weight:1000}.order-card .bird{font-size:1.8rem}.order-card .name{font-weight:900}.bird-en{font-size:.72rem;color:var(--muted);margin-top:2px}.order-card .recipe{font-size:1.35rem;margin:8px 0;letter-spacing:.12em}.order-card .timer{display:flex;justify-content:space-between;color:var(--muted);font-size:.8rem}.order-progress{position:absolute;left:0;bottom:0;height:4px;background:var(--accent)}.work-area{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}.selected-order-summary{background:var(--panel2);border:1px dashed #466859;color:var(--muted);border-radius:14px;padding:10px 12px;min-height:44px}.skewer{height:92px;display:flex;align-items:center;justify-content:center;gap:5px;margin:13px 0;border-radius:18px;background:linear-gradient(180deg,#13271f,#0d2019);border:1px solid #29483b;position:relative;overflow:hidden}.skewer:before{content:"";position:absolute;width:84%;height:6px;background:#9a714c;border-radius:999px}.skewer-item{position:relative;z-index:1;font-size:2rem}.empty-skewer{z-index:1;color:#698075}.food-buttons{display:grid;gap:8px}.food-button{color:var(--text);background:var(--panel2);border:1px solid #365748;padding:10px 8px;border-radius:14px;cursor:pointer;font-weight:800;min-width:0}.food-button span{font-size:1.35rem;display:block}.food-button small{display:block;color:var(--muted)}.button-row{margin-top:10px}.button-row>*{flex:1}.burners{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.burner{min-height:166px;border:1px solid #4d5940;border-radius:18px;background:radial-gradient(circle at 50% 85%,rgba(238,104,53,.2),transparent 32%),var(--panel2);padding:12px;cursor:pointer;color:var(--text)}.burner .flame{font-size:2rem}.burner .burner-title{font-weight:900}.burner .burner-recipe{font-size:1.2rem;margin:7px 0;min-height:28px}.burner .burner-state{font-size:.78rem;color:var(--muted)}.burner.ready{border-color:var(--good)}.burner.overcooked{border-color:var(--danger)}.cook-bar{height:7px;background:#243c32;border-radius:999px;overflow:hidden;margin-top:10px}.cook-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}.status-panel{display:flex;justify-content:space-between;align-items:center}.floating-judge{font-size:1.55rem;font-weight:1000;color:var(--accent)}.floating-judge.pop{animation:judgePop .55s}.result-screen{text-align:center}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:720px;margin:20px auto}.result-grid div{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:13px}.result-grid span{display:block;color:var(--muted);font-size:.8rem}.result-grid strong{font-size:1.45rem}.stars{font-size:2.4rem;color:var(--accent)}.unlock-notice{max-width:680px;margin:8px auto 20px;padding:12px;border-radius:14px;background:var(--panel2);color:var(--accent);font-weight:800}.help-dialog{width:min(680px,calc(100% - 28px));max-height:86vh;overflow:auto;color:var(--text);background:#162a22;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}.help-dialog::backdrop{background:rgba(2,9,7,.72)}.collection-dialog{width:min(850px,calc(100% - 28px))}.upgrade-list,.collection-list{display:grid;gap:10px}.upgrade-card{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px}.upgrade-card b,.upgrade-card small{display:block}.upgrade-card small{color:var(--muted);margin-top:3px}.upgrade-card button{min-width:120px}.bird-card,.dex-card{display:grid;grid-template-columns:74px 1fr;gap:14px;text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:14px}.bird-card.locked,.dex-card.locked{opacity:.48}.bird-card-emoji,.dex-emoji{font-size:2.5rem;display:grid;place-items:center;background:#0b1c16;border-radius:14px;min-height:70px}.bird-card b,.dex-card b{font-size:1rem}.bird-card b span,.dex-card b span{color:var(--muted);font-weight:600;margin-left:6px}.bird-card i{display:block;color:var(--cyan);font-size:.8rem;margin-top:2px}.bird-card p,.dex-card p{margin:7px 0;color:#d4ddd7;line-height:1.45}.bird-card small,.dex-card small{display:block;color:var(--muted);margin-top:4px}.danger-outline{border-color:#8b5149;color:#ffc1b8}@keyframes pulse{50%{box-shadow:0 0 0 4px rgba(255,139,124,.18)}}@keyframes judgePop{0%{transform:scale(.75);opacity:0}45%{transform:scale(1.15);opacity:1}100%{transform:scale(1);opacity:1}}@media(max-width:900px){.stage-map{grid-template-columns:repeat(2,1fr)}.stage-ecology{grid-template-columns:1fr}.selection-grid.three{grid-template-columns:1fr}.hud{grid-template-columns:repeat(2,1fr)}.burn-strip{grid-template-columns:1fr}.orders-grid{grid-template-columns:1fr}.work-area{grid-template-columns:1fr}.burners{grid-template-columns:1fr}.titlebar{align-items:flex-start;flex-direction:column}.header-actions{width:100%}.header-actions button{flex:1}.result-grid{grid-template-columns:repeat(2,1fr)}.game-actions{flex-direction:column}.game-actions button{width:100%}.food-buttons{grid-template-columns:repeat(3,1fr)!important}}
+
+.cover-screen{position:fixed;inset:0;z-index:1000;background:#07100d;display:grid;place-items:center;overflow:hidden}.cover-screen.hidden{display:none}.cover-screen img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.cover-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,8,6,.12),rgba(3,8,6,.15) 50%,rgba(3,8,6,.78));display:flex;align-items:flex-end;justify-content:center;padding:5vh 24px}.cover-copy{width:min(720px,94vw);text-align:center;padding:26px 28px;border-radius:24px;background:rgba(8,19,15,.78);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px);box-shadow:var(--shadow)}.cover-copy h1{font-size:clamp(2.2rem,6vw,4.8rem);margin:4px 0 8px}.cover-copy p{color:#e9e2cb}.cover-enter{min-width:220px;font-size:1.05rem}.xp-window{min-width:160px;padding:10px 14px;background:#10251d;border:1px solid var(--line);border-radius:16px;text-align:right}.xp-window span,.xp-window small{display:block;color:var(--muted);font-size:.72rem}.xp-window strong{display:block;color:var(--accent);font-size:1.15rem}.hud-item.xp strong{color:var(--cyan)}.record-notice{margin-top:14px;padding:10px 12px;border-radius:12px;background:#102a22;color:var(--accent);font-weight:900}.record-notice:empty{display:none}.stage-record{color:var(--cyan)!important}.career-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.career-grid div{background:#0f211a;border:1px solid #2f5041;border-radius:12px;padding:9px}.career-grid span{display:block;color:var(--muted);font-size:.68rem}.career-grid strong{font-size:1rem}@media(max-width:900px){.titlebar{align-items:flex-start;flex-direction:column}.xp-window{text-align:left}.hud{grid-template-columns:repeat(4,1fr)!important}.career-grid{grid-template-columns:repeat(2,1fr)}}
+.world-tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 8px}.world-tab{padding:13px 16px;border-radius:15px;border:1px solid var(--line);background:#10251d;color:var(--text);font-weight:900;cursor:pointer}.world-tab.selected{outline:2px solid var(--accent);background:#1a3329}.world-tab:disabled{opacity:.35;cursor:not-allowed}.stage-ecology{grid-template-columns:.8fr 1.2fr 1.2fr 1fr}.hud{grid-template-columns:repeat(8,1fr)}.hud-item.weather strong{color:var(--cyan);font-size:.86rem}.game-screen.weather-rain{--weather-glow:rgba(89,156,196,.13)}.game-screen.weather-wind{--weather-glow:rgba(184,220,202,.10)}.game-screen.weather-sun{--weather-glow:rgba(255,199,89,.13)}.game-screen[class*="weather-"] .orders-panel,.game-screen[class*="weather-"] .burners-panel{box-shadow:0 0 38px var(--weather-glow),var(--shadow)}.game-screen.weather-wind .order-card{animation:windSway 1.6s ease-in-out infinite alternate}.game-screen.weather-rain .burner .flame{filter:saturate(.7)}.game-screen.weather-sun .burner .flame{filter:brightness(1.25)}@keyframes windSway{from{transform:translateX(-1px) rotate(-.2deg)}to{transform:translateX(1px) rotate(.2deg)}}@media(max-width:900px){.world-tabs{grid-template-columns:1fr}.stage-ecology{grid-template-columns:1fr}.selection-grid.three{grid-template-columns:1fr}.hud{grid-template-columns:repeat(2,1fr)!important}}
+
+/* Prototype 0.5.2 · Mobile / PWA */
+html{background:var(--bg);overscroll-behavior:none;-webkit-text-size-adjust:100%}
+body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);overscroll-behavior-y:none}
+button,.stage-card,.select-card,.order-card,.burner,.food-button{touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+button:focus-visible,.stage-card:focus-visible,.select-card:focus-visible,.order-card:focus-visible,.burner:focus-visible,.food-button:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.orientation-hint{display:none;padding:9px 12px;border:1px solid #45685a;background:#10251d;color:var(--muted);border-radius:13px;text-align:center;font-size:.82rem}
+.install-button{border-color:#558b76;color:#c9f4df}
+
+@media (pointer:coarse){
+  .primary-button,.ghost-button,.burn-button,.world-tab{min-height:48px}
+  .stage-card,.select-card,.order-card,.burner,.food-button{min-height:48px}
+  .order-card{padding:15px}
+  .food-button{padding:12px 8px}
+  .burner{padding:13px}
+}
+
+@media(max-width:900px){
+  .app-shell{width:100%;padding:10px max(10px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left))}
+  .cover-overlay{padding:max(18px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left))}
+  .cover-copy{padding:18px 16px;border-radius:18px}
+  .cover-copy h1{font-size:clamp(2rem,10vw,3.4rem)}
+  .cover-copy p{margin:.55rem 0 1rem}
+  .titlebar h1{font-size:2.25rem}
+  .xp-window{width:100%}
+  .header-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .header-actions button{width:100%;padding:10px 8px}
+  .start-screen,.result-screen{padding:22px 14px}
+  .hero-bird{font-size:3.8rem}
+  .stage-map{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .stage-card{padding:12px}
+  .stage-ecology{gap:8px}
+  .selection-grid.three{grid-template-columns:1fr}
+  .hud{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px;padding:8px}
+  .hud-item{padding:8px 7px;min-width:0}
+  .hud-item span{font-size:.58rem;white-space:nowrap}
+  .hud-item strong{font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .burn-strip{padding:11px 12px;gap:9px}
+  .orders-panel,.skewer-panel,.burners-panel,.status-panel{padding:12px}
+  .section-heading{margin:8px 0 9px;align-items:center}
+  .section-heading h2{font-size:1.1rem}
+  .section-heading .hint{font-size:.72rem;margin:0;text-align:right}
+  .orders-grid{grid-template-columns:repeat(2,minmax(0,1fr));min-height:0;gap:8px}
+  .order-card .bird{font-size:1.55rem}.order-card .recipe{font-size:1.15rem}.bird-en{display:none}
+  .work-area{grid-template-columns:1fr;gap:10px}
+  .skewer{height:72px;margin:8px 0}.skewer-item{font-size:1.65rem}
+  .food-buttons{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px}
+  .food-button{font-size:.78rem}.food-button span{font-size:1.25rem}.food-button small{font-size:.68rem}
+  .burners{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(128px,38vw);grid-template-columns:none;overflow-x:auto;gap:8px;padding-bottom:4px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+  .burner{min-height:134px;scroll-snap-align:start}
+  .burner .flame{font-size:1.65rem}.burner .burner-recipe{font-size:1rem}
+  .status-panel{min-height:54px;gap:10px}.floating-judge{font-size:1.1rem;text-align:right}
+  .game-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.game-actions button{width:100%}
+  .result-grid{grid-template-columns:repeat(2,1fr)}
+  .help-dialog,.collection-dialog{width:calc(100% - 16px);max-height:calc(100dvh - 16px);padding:18px 14px}
+  body.in-game{overflow:hidden;touch-action:none;background:#07100d}
+  body.in-game .app-shell{height:100dvh;overflow:hidden;padding-top:max(6px,env(safe-area-inset-top));padding-bottom:max(6px,env(safe-area-inset-bottom))}
+  body.in-game .titlebar{display:none}
+  body.in-game .game-screen{height:100%;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+}
+
+@media(max-width:600px) and (orientation:portrait){
+  .orientation-hint{display:block}
+  .hud{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .orders-grid{grid-template-columns:1fr 1fr}
+  .burners{grid-auto-columns:minmax(140px,48vw)}
+  .button-row{display:grid;grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:900px) and (orientation:landscape){
+  body.in-game .game-screen{gap:7px}
+  .orientation-hint{display:none}
+  .hud{grid-template-columns:repeat(8,minmax(0,1fr))!important}
+  .hud-item{padding:6px 5px}.hud-item span{font-size:.52rem}.hud-item strong{font-size:.78rem}
+  .burn-strip{grid-template-columns:135px 1fr auto;padding:8px 10px}
+  .burn-strip>strong{font-size:.78rem}.burn-button{padding:8px 12px;min-height:42px}
+  .orders-panel{padding:9px 10px}.orders-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.order-card{padding:9px;min-height:116px}.order-card .bird{font-size:1.3rem}.order-card .recipe{margin:4px 0;font-size:1rem}.order-card .timer{font-size:.68rem}
+  .work-area{grid-template-columns:1fr 1fr;gap:7px}
+  .skewer-panel,.burners-panel{padding:9px 10px}.skewer{height:58px;margin:5px 0}.skewer-item{font-size:1.35rem}
+  .food-buttons{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:4px}.food-button{min-height:52px;padding:5px 3px;font-size:.66rem}.food-button span{font-size:1rem}.food-button small{display:none}
+  .button-row{margin-top:5px}.button-row button{min-height:42px;padding:7px 8px}
+  .burners{grid-auto-columns:minmax(102px,15vw);gap:5px}.burner{min-height:112px;padding:7px}.burner .flame{font-size:1.25rem}.burner .burner-title{font-size:.74rem}.burner .burner-recipe{font-size:.84rem;margin:4px 0;min-height:20px}.burner .burner-state{font-size:.62rem}.cook-bar{margin-top:5px}
+  .status-panel{padding:7px 10px;min-height:42px}.status-panel strong{font-size:.78rem}.floating-judge{font-size:.92rem}
+  .game-actions{display:flex;justify-content:flex-end}.game-actions button{width:auto;min-height:40px;padding:7px 10px;font-size:.72rem}
+}
+
+/* Prototype 0.5.2 · Mobile Landscape One-Screen Layout */
+.rotate-overlay{display:none}
+@media (pointer:coarse) and (orientation:portrait){
+  body.in-game::before{content:"↻ 가로 화면으로 돌려주세요";position:fixed;inset:0;z-index:9998;display:grid;place-items:center;padding:24px;background:rgba(4,12,9,.96);color:var(--text);font-size:clamp(1.25rem,6vw,2rem);font-weight:1000;text-align:center;letter-spacing:-.03em}
+  body.in-game::after{content:"Shrike Tycoon은 모바일에서 가로모드에 최적화되어 있습니다.";position:fixed;left:10vw;right:10vw;top:58%;z-index:9999;color:var(--muted);text-align:center;font-size:.86rem;line-height:1.45}
+}
+
+/* Small/medium touch devices in landscape: never vertically scroll during play. */
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  html,body{height:100%;overflow:hidden}
+  body.in-game{height:100dvh;min-height:0;overflow:hidden;padding:0;background:#07100d}
+  body.in-game .app-shell{width:100%;height:100dvh;min-height:0;margin:0;padding:max(3px,env(safe-area-inset-top)) max(5px,env(safe-area-inset-right)) max(3px,env(safe-area-inset-bottom)) max(5px,env(safe-area-inset-left));overflow:hidden}
+  body.in-game .titlebar{display:none}
+  body.in-game .game-screen{position:relative;display:grid;grid-template-columns:minmax(245px,35%) minmax(0,65%);grid-template-rows:auto auto minmax(0,1fr) auto;gap:4px;width:100%;height:100%;min-height:0;overflow:hidden;padding:0}
+  .orientation-hint{display:none!important}
+  .event-banner{position:absolute;left:50%;top:2px;transform:translate(-50%,-130%);z-index:50;width:min(62vw,520px);padding:5px 10px;font-size:.72rem;pointer-events:none}
+  .event-banner.show{transform:translate(-50%,0)}
+
+  /* 8-stat header, one compact row */
+  .hud{grid-column:1/-1;grid-row:1;display:grid!important;grid-template-columns:repeat(8,minmax(0,1fr))!important;gap:3px;padding:3px;border-radius:10px;min-height:0}
+  .hud-item{min-width:0;padding:3px 4px;border-radius:8px;line-height:1.02}
+  .hud-item span{font-size:clamp(.42rem,1.25vw,.55rem);line-height:1;white-space:nowrap}
+  .hud-item strong{display:block;margin-top:2px;font-size:clamp(.58rem,1.65vw,.76rem);line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  /* Burning bar becomes a very thin second row. */
+  .burn-strip{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px;align-items:center;min-height:0;padding:3px 6px;border-radius:10px}
+  .burn-strip>strong{font-size:clamp(.52rem,1.5vw,.68rem);white-space:nowrap}
+  .burn-meter{gap:5px;min-width:0}.burn-meter-track{height:7px}.burn-meter span{font-size:.58rem;min-width:34px}
+  .burn-button{min-height:28px!important;padding:3px 8px!important;border-radius:8px;font-size:.58rem;white-space:nowrap}
+
+  /* Orders always remain visible on the left. */
+  .orders-panel{grid-column:1;grid-row:3;display:grid;grid-template-rows:auto minmax(0,1fr);min-height:0;overflow:hidden;padding:5px;border-radius:11px}
+  .orders-panel .section-heading{margin:0 0 3px;min-height:18px}.orders-panel .section-heading h2{font-size:.76rem}.orders-panel .section-heading .hint{display:none}
+  .orders-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);align-content:stretch;gap:4px;min-height:0;height:100%;overflow:hidden}
+  .orders-grid>.hint{grid-column:1/-1;align-self:center;text-align:center;font-size:.68rem}
+  .order-card{min-height:0!important;height:100%;padding:4px 5px;border-radius:9px;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto auto;column-gap:4px;align-content:center}
+  .order-card .bird{grid-row:1/3;font-size:1.08rem;align-self:center}.order-card .name{font-size:.64rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bird-en{display:none!important}
+  .order-card .recipe{grid-column:1/-1;margin:2px 0 1px;font-size:clamp(.72rem,2.1vw,.94rem);letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .order-card .timer{grid-column:1/-1;font-size:.52rem;line-height:1}.special-badge{right:3px;top:2px;padding:1px 3px;font-size:.42rem}.order-progress{height:3px}
+
+  /* Work area fills the right side. */
+  .work-area{grid-column:2;grid-row:3;display:grid;grid-template-columns:minmax(0,43%) minmax(0,57%);gap:4px;min-height:0;overflow:hidden}
+  .skewer-panel,.burners-panel{min-height:0;overflow:hidden;padding:5px;border-radius:11px}
+  .skewer-panel{display:grid;grid-template-rows:auto auto minmax(34px,.55fr) minmax(0,1fr) auto;gap:3px}
+  .burners-panel{display:grid;grid-template-rows:auto minmax(0,1fr);gap:3px}
+  .skewer-panel .section-heading,.burners-panel .section-heading{margin:0;min-height:18px}.section-heading h2{font-size:.76rem!important}.section-heading .hint{display:none!important}
+  .selected-order-summary{min-height:0;padding:3px 5px;border-radius:7px;font-size:.56rem;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .skewer{height:auto;min-height:34px;margin:0;border-radius:9px}.skewer-item{font-size:clamp(1rem,2.8vw,1.25rem)}.empty-skewer{font-size:.57rem}
+  .food-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-rows:minmax(31px,1fr);gap:3px;min-height:0;overflow:hidden}
+  .food-button{min-height:0!important;height:100%;padding:2px;border-radius:7px;font-size:.5rem;line-height:1}.food-button span{font-size:.92rem;line-height:1}.food-button small{display:none}
+  .button-row{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin:0}.button-row button{min-height:28px!important;padding:3px 4px;border-radius:8px;font-size:.56rem}
+
+  /* All burners fit as a wrapping grid; no horizontal scrolling. */
+  .burners{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-flow:row!important;grid-auto-columns:auto!important;grid-auto-rows:minmax(0,1fr);gap:3px;height:100%;min-height:0;overflow:hidden!important;padding:0;scroll-snap-type:none}
+  .burner{min-width:0;min-height:0!important;height:100%;padding:3px;border-radius:8px;display:grid;grid-template-rows:auto auto auto 1fr auto;align-items:center;overflow:hidden}
+  .burner .flame{font-size:.86rem;line-height:1}.burner .burner-title{font-size:.5rem;line-height:1}.burner .burner-recipe{font-size:.68rem;line-height:1;margin:1px 0;min-height:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.burner .burner-state{font-size:.46rem;line-height:1.05;overflow:hidden}.cook-bar{height:4px;margin-top:2px}
+
+  /* Bottom bar: status left, controls right. */
+  .status-panel{grid-column:1;grid-row:4;min-height:0;padding:3px 6px;border-radius:9px;gap:5px;overflow:hidden}.status-panel strong{font-size:.54rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.floating-judge{font-size:.62rem;white-space:nowrap}
+  .game-actions{grid-column:2;grid-row:4;display:grid;grid-template-columns:1fr 1fr;gap:4px;min-height:0}
+  .game-actions button{width:100%!important;min-height:27px!important;padding:2px 6px;border-radius:8px;font-size:.54rem}
+}
+
+/* Very short landscape phones (e.g. browser chrome leaves ~320–390 px high). */
+@media (pointer:coarse) and (orientation:landscape) and (max-height:430px) and (max-width:1024px){
+  body.in-game .game-screen{grid-template-columns:minmax(220px,34%) minmax(0,66%);gap:3px}
+  .hud{gap:2px;padding:2px}.hud-item{padding:2px 3px}.hud-item span{font-size:.39rem}.hud-item strong{font-size:.54rem}
+  .burn-strip{padding:2px 5px}.burn-meter-track{height:5px}.burn-button{min-height:24px!important;padding:2px 6px!important}
+  .orders-panel,.skewer-panel,.burners-panel{padding:4px}.order-card{padding:3px 4px}.order-card .bird{font-size:.9rem}.order-card .name{font-size:.56rem}.order-card .recipe{font-size:.68rem}.order-card .timer{font-size:.46rem}
+  .skewer-panel{grid-template-rows:auto auto minmax(28px,.48fr) minmax(0,1fr) auto}.skewer{min-height:28px}.food-button span{font-size:.78rem}.food-button{font-size:.45rem}.button-row button{min-height:24px!important}
+  .burner .flame{font-size:.74rem}.burner .burner-title{font-size:.44rem}.burner .burner-recipe{font-size:.58rem}.burner .burner-state{font-size:.4rem}
+  .status-panel,.game-actions button{min-height:23px!important}
+}
+
+
+/* Prototype 0.5.2.1 Hotfix · desktop title + unified mobile pointer input */
+.titlebar h1{white-space:nowrap;word-break:keep-all;overflow-wrap:normal;flex-shrink:0}
+.titlebar>div:first-child{min-width:max-content;flex-shrink:0}
+@media (min-width:901px){.titlebar{align-items:flex-end}.titlebar h1{font-size:clamp(1.9rem,4.2vw,4rem)}}
+body.in-game .skewer-panel,body.in-game .burners-panel,body.in-game .game-actions,body.in-game .burn-strip{position:relative;z-index:2;pointer-events:auto}
+body.in-game .food-buttons,body.in-game .button-row,body.in-game .burners{pointer-events:auto}
+body.in-game button{pointer-events:auto}
+</style></head><body>
+<section id="coverScreen" class="cover-screen"><img src="assets/cover.png" alt="때까치 타이쿤 게임 표지"><div class="cover-overlay"><div class="cover-copy"><p class="eyebrow">SHRIKE TYCOON · PROTOTYPE 0.5.2</p><h1>때까치 타이쿤</h1><p>생태를 읽고, 주문을 조립하고, 세계 최고의 때까치 식당을 키워보세요.</p><button id="enterGameButton" class="primary-button cover-enter">게임 시작</button></div></div></section>
+<main class="app-shell"><header class="titlebar"><div><p class="eyebrow">SHRIKE TYCOON · PROTOTYPE 0.5.2</p><h1>때까치 타이쿤</h1><p class="subtitle">Mobile Landscape One-Screen · World 1–2</p></div><div class="xp-window"><span>누적 XP</span><strong id="totalXpHeader">0 XP</strong><small id="careerStatsHeader">0회 플레이 · 0명 서빙</small></div><div class="header-actions"><button id="installAppButton" class="ghost-button install-button hidden">📲 앱 설치</button><button id="birdBookButton" class="ghost-button">📖 Bird Book</button><button id="shrikeDexButton" class="ghost-button">🐦 ShrikeDex</button><button id="restaurantButton" class="ghost-button">🌳 식당 업그레이드</button><button id="helpButton" class="ghost-button">게임 방법</button><button id="resetSaveButton" class="ghost-button danger-outline">진행도 초기화</button></div></header>
+<section id="startScreen" class="panel start-screen"><div class="hero-bird">🐦</div><h2>WORLD JOURNEY · 동아시아 농경지 → 하천·습지</h2><p>World 1의 생태 기반 주문에 이어 World 2에서는 하천·습지 손님과 실시간 날씨 변화가 추가됩니다.</p><div id="saveSummary" class="save-summary"></div><div class="world-tabs"><button id="world1Button" class="world-tab selected">🌾 WORLD 1 · 농경지</button><button id="world2Button" class="world-tab">🌿 WORLD 2 · 강을 따라서</button></div><div class="section-heading"><h3>🗺 Stage Map</h3><span>1–20</span></div><div id="stageButtons" class="stage-map"></div><div id="stageEcology" class="stage-ecology"></div><div class="section-heading"><h3>🐦 Chef</h3><span>Passive + Burning</span></div><div id="shrikeButtons" class="selection-grid three"></div><button id="startButton" class="primary-button wide">선택한 스테이지 시작</button></section>
+<section id="gameScreen" class="game-screen hidden"><div id="orientationHint" class="orientation-hint">↻ 모바일 플레이는 가로모드가 기본입니다.</div><div id="eventBanner" class="event-banner"></div><div class="panel hud"><div class="hud-item"><span>STAGE</span><strong id="currentStageLabel">-</strong></div><div class="hud-item"><span>CHEF</span><strong id="currentShrikeLabel">-</strong></div><div class="hud-item"><span>TIME</span><strong id="timeLabel">00:00</strong></div><div class="hud-item"><span>SCORE</span><strong id="scoreLabel">0</strong></div><div class="hud-item xp"><span>TOTAL XP</span><strong id="xpHudLabel">0</strong></div><div class="hud-item combo"><span>COMBO</span><strong id="comboLabel">×0</strong></div><div class="hud-item"><span>BEST</span><strong id="bestComboLabel">×0</strong></div><div class="hud-item weather"><span>WEATHER</span><strong id="weatherLabel">☀️ 맑음</strong></div></div><div class="panel burn-strip"><strong>🔥 SHRIKE BURNING</strong><div class="burn-meter"><div class="burn-meter-track"><div id="burnGaugeFill" class="burn-meter-fill"></div></div><span id="burnGaugeText">0%</span></div><button id="burnButton" class="burn-button" disabled>🔥 BURNING</button></div><div class="panel orders-panel"><div class="section-heading"><h2>📋 주문</h2><p class="hint">손님의 식성과 현재 서식지의 먹이 가용성이 주문을 결정합니다.</p></div><div id="orders" class="orders-grid"></div></div><div class="work-area"><div class="panel skewer-panel"><div class="section-heading compact"><h2>🍢 조립대</h2><span id="selectedOrderSummary"></span></div><div id="skewer" class="skewer"></div><div id="foodButtons" class="food-buttons"></div><div class="button-row"><button id="clearSkewerButton" class="ghost-button">비우기</button><button id="finishSkewerButton" class="primary-button">꼬치 완성</button></div></div><div class="panel burners-panel"><div class="section-heading compact"><h2>🔥 화구</h2><p class="hint">READY에서 클릭하면 PERFECT. 너무 오래 두면 OVERCOOKED.</p></div><div id="burners" class="burners"></div></div></div><div class="panel status-panel"><strong id="statusMessage">준비!</strong><div id="floatingJudge" class="floating-judge"></div></div><div class="game-actions"><button id="pauseButton" class="ghost-button">⏸ 일시정지</button><button id="quitButton" class="ghost-button">← 월드맵으로 나가기</button></div></section>
+<section id="resultScreen" class="panel result-screen hidden"><p class="eyebrow">STAGE RESULT</p><h2 id="resultStage">결과</h2><div id="resultStars" class="stars">☆☆☆</div><div class="result-grid"><div><span>SCORE</span><strong id="resultScore">0</strong></div><div><span>SERVED</span><strong id="resultServed">0</strong></div><div><span>PERFECT</span><strong id="resultPerfect">0</strong></div><div><span>BEST COMBO</span><strong id="resultCombo">×0</strong></div><div><span>FAILED</span><strong id="resultFailed">0</strong></div><div><span>XP EARNED</span><strong id="resultXp">+0</strong></div><div><span>TOTAL XP</span><strong id="resultTotalXp">0</strong></div></div><div id="recordNotice" class="record-notice"></div><div id="unlockNotice" class="unlock-notice"></div><div class="result-actions"><button id="restartButton" class="primary-button">다시 플레이</button><button id="backButton" class="ghost-button">월드맵</button></div></section></main>
+<dialog id="restaurantDialog" class="help-dialog"><h2>🌳 Restaurant Growth</h2><p class="hint">누적 XP를 사용해 World 1 식당 환경을 강화합니다.</p><div id="upgradeList" class="upgrade-list"></div><button id="closeRestaurantButton" class="primary-button wide">닫기</button></dialog>
+<dialog id="birdBookDialog" class="help-dialog collection-dialog"><h2>📖 Bird Book</h2><p class="hint">World 1에서 실제로 만난 조류만 공개됩니다. 식성은 게임 플레이를 위해 단순화했습니다.</p><div id="birdBookList" class="collection-list"></div><button id="closeBirdBookButton" class="primary-button wide">닫기</button></dialog>
+<dialog id="shrikeDexDialog" class="help-dialog collection-dialog"><h2>🐦 ShrikeDex</h2><p class="hint">Prototype 0.5.2.1에서 플레이 가능한 때까치 5종.</p><div id="shrikeDexList" class="collection-list"></div><button id="closeShrikeDexButton" class="primary-button wide">닫기</button></dialog>
+<dialog id="helpDialog" class="help-dialog"><h2>Prototype 0.5.2.1 · 게임 방법</h2><ol><li>Stage를 고르면 아래에 해당 서식지의 주요 먹이와 예상 손님이 표시됩니다.</li><li>손님의 주문을 선택하고 같은 순서로 먹이를 꽂습니다.</li><li>완성한 꼬치를 빈 화구에 넣고 READY에서 다시 클릭합니다.</li><li>모든 손님의 기본 제한시간은 60초입니다.</li><li>Perfect와 Combo로 Burning을 충전합니다.</li><li>새 손님이 처음 방문하면 Bird Book에 등록됩니다.</li><li>World 2의 비는 조리를 늦추고, 바람은 손님 유입을 빠르게 하며, 햇빛은 조리를 가속합니다.</li><li>물때까치는 주문 시간을 제어하고, 긴꼬리때까치는 추가 화구를 운용합니다.</li></ol><p class="hint">주문 확률 = 손님 식성 × Stage 먹이 가용성. 기존 0.3.3 localStorage 진행도는 자동으로 이어집니다.</p><button id="closeHelpButton" class="primary-button wide">확인</button></dialog>
+<script>"use strict";
 const SAVE_VERSION = 6;
 // Keep the 0.3 key so existing Prototype 0.3.3 saves migrate automatically.
 const SAVE_KEY = "shrikeTycoonPrototype03Stable";
@@ -499,3 +688,4 @@ renderFoodButtons();
 renderSkewer();
 resetBurners();
 renderBurners();
+</script></body></html>

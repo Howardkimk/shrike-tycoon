@@ -95,7 +95,7 @@ const restaurantButton = $("restaurantButton"), restaurantDialog = $("restaurant
 const birdBookButton = $("birdBookButton"), birdBookDialog = $("birdBookDialog"), closeBirdBookButton = $("closeBirdBookButton"), birdBookList = $("birdBookList");
 const shrikeDexButton = $("shrikeDexButton"), shrikeDexDialog = $("shrikeDexDialog"), closeShrikeDexButton = $("closeShrikeDexButton"), shrikeDexList = $("shrikeDexList");
 const ordersEl = $("orders"), burnersEl = $("burners"), skewerEl = $("skewer"), foodButtonsEl = $("foodButtons"), stageButtonsEl = $("stageButtons"), shrikeButtonsEl = $("shrikeButtons"), upgradeList = $("upgradeList");
-const selectedOrderSummary = $("selectedOrderSummary"), statusMessage = $("statusMessage"), floatingJudge = $("floatingJudge"), eventBanner = $("eventBanner"), timeLabel = $("timeLabel"), scoreLabel = $("scoreLabel"), comboLabel = $("comboLabel"), bestComboLabel = $("bestComboLabel"), burnGaugeFill = $("burnGaugeFill"), burnGaugeText = $("burnGaugeText"), saveSummary = $("saveSummary"), currentStageLabel = $("currentStageLabel"), currentShrikeLabel = $("currentShrikeLabel"), stageEcology = $("stageEcology"), totalXpHeader = $("totalXpHeader"), careerStatsHeader = $("careerStatsHeader"), xpHudLabel = $("xpHudLabel"), resultTotalXp = $("resultTotalXp"), recordNotice = $("recordNotice"), weatherLabel = $("weatherLabel"), world1Button = $("world1Button"), world2Button = $("world2Button"), world3Button = $("world3Button");
+const selectedOrderSummary = $("selectedOrderSummary"), statusMessage = $("statusMessage"), floatingJudge = $("floatingJudge"), eventBanner = $("eventBanner"), timeLabel = $("timeLabel"), scoreLabel = $("scoreLabel"), comboLabel = $("comboLabel"), bestComboLabel = $("bestComboLabel"), burnGaugeFill = $("burnGaugeFill"), burnGaugeText = $("burnGaugeText"), saveSummary = $("saveSummary"), currentStageLabel = $("currentStageLabel"), currentShrikeLabel = $("currentShrikeLabel"), stageEcology = $("stageEcology"), totalXpHeader = $("totalXpHeader"), careerStatsHeader = $("careerStatsHeader"), xpHudLabel = $("xpHudLabel"), resultTotalXp = $("resultTotalXp"), recordNotice = $("recordNotice"), weatherLabel = $("weatherLabel"), world1Button = $("world1Button"), world2Button = $("world2Button"), world3Button = $("world3Button"), devModeButton = $("devModeButton"), devModeBanner = $("devModeBanner");
 function defaultSave() { return { version: SAVE_VERSION, unlockedStage: 1, unlockedShrikes: ["bull-headed"], xp: 0, bestStars: {}, bestCombos: {}, bestScores: {}, bestSubGoals: {}, upgrades: { branch: 0, fire: 0, perch: 0 }, discoveredBirds: [], stats: { plays: 0, served: 0, perfect: 0, failed: 0 } }; }
 function loadSave() {
     try {
@@ -118,6 +118,19 @@ function loadSave() {
 }
 function persist() { localStorage.setItem(SAVE_KEY, JSON.stringify(save)); renderMeta(); }
 let save = loadSave();
+let devMode = sessionStorage.getItem("shrikeTycoonDevMode") === "1";
+function setDevMode(enabled) { devMode = enabled; sessionStorage.setItem("shrikeTycoonDevMode", enabled ? "1" : "0"); if (!enabled) {
+    if (selectedStage > save.unlockedStage)
+        selectedStage = save.unlockedStage;
+    if (selectedStage <= 10)
+        selectedWorld = 1;
+    else if (selectedStage <= 20)
+        selectedWorld = 2;
+    else
+        selectedWorld = 3;
+    if (!save.unlockedShrikes.includes(selectedShrike))
+        selectedShrike = save.unlockedShrikes.includes("northern") ? "northern" : save.unlockedShrikes.includes("long-tailed") ? "long-tailed" : save.unlockedShrikes.includes("chinese-grey") ? "chinese-grey" : save.unlockedShrikes.includes("brown") ? "brown" : save.unlockedShrikes.includes("tiger") ? "tiger" : "bull-headed";
+} document.body.classList.toggle("dev-mode", enabled); devModeButton.classList.toggle("active", enabled); devModeButton.textContent = enabled ? "🛠 DEV ON" : "🛠 DEV MODE"; devModeBanner.classList.toggle("hidden", !enabled); renderMeta(); }
 let selectedStage = Math.min(save.unlockedStage, 30);
 let selectedWorld = selectedStage > 20 ? 3 : selectedStage > 10 ? 2 : 1;
 let selectedShrike = save.unlockedShrikes.includes("northern") ? "northern" : save.unlockedShrikes.includes("long-tailed") ? "long-tailed" : save.unlockedShrikes.includes("chinese-grey") ? "chinese-grey" : save.unlockedShrikes.includes("brown") ? "brown" : save.unlockedShrikes.includes("tiger") ? "tiger" : "bull-headed";
@@ -191,7 +204,10 @@ function weightedFood(g) {
 function makeRecipe(g, special = false) { const len = special ? Math.min(4, Math.max(3, stage.maxRecipeLength)) : recipeLength(); const recipe = []; for (let i = 0; i < len; i++)
     recipe.push(weightedFood(g)); return recipe; }
 function scheduleNext() { const wind = currentWeather === "wind" ? .72 : 1; nextOrderAt = Date.now() + rand(stage.spawnMin, stage.spawnMax) * (isFeeding() ? .46 : 1) * wind; }
-function discoverBird(id) { if (save.discoveredBirds.includes(id))
+function discoverBird(id) { if (devMode) {
+    showEvent(`🛠 DEV GUEST · ${guests[id].name}`);
+    return;
+} if (save.discoveredBirds.includes(id))
     return; save.discoveredBirds.push(id); localStorage.setItem(SAVE_KEY, JSON.stringify(save)); showEvent(`✨ NEW BIRD · ${guests[id].name}`); renderMeta(); }
 function spawnOrder(force = false) {
     const max = stage.maxOrders + save.upgrades.branch + (isFeeding() ? 1 : 0);
@@ -353,27 +369,75 @@ function loop() {
     }
     animationFrame = requestAnimationFrame(loop);
 }
-function finishStage() { running = false; cancelAnimationFrame(animationFrame); const stars = score >= stage.starScores[1] ? 3 : score >= stage.starScores[0] ? 2 : score > 0 ? 1 : 0; const subDone = subGoalComplete(); const growthMult = selectedShrike === "northern" ? 1.10 : 1; const xpGain = Math.round((score * .10 + perfectCount * 8 + specialServed * 20 + stars * 50 + (subDone ? 75 : 0)) * growthMult); const prevBest = save.bestScores[String(stage.id)] || 0, prevCombo = save.bestCombos[String(stage.id)] || 0, prevStars = save.bestStars[String(stage.id)] || 0; save.xp += xpGain; save.stats.plays++; save.stats.served += served; save.stats.perfect += perfectCount; save.stats.failed += failed; save.bestScores[String(stage.id)] = Math.max(prevBest, score); save.bestStars[String(stage.id)] = Math.max(prevStars, stars); save.bestCombos[String(stage.id)] = Math.max(prevCombo, bestCombo); if (stage.id < 30 && stars > 0)
-    save.unlockedStage = Math.max(save.unlockedStage, (stage.id + 1)); if (stage.subGoal && subDone)
-    save.bestSubGoals[String(stage.id)] = true; const unlocked = []; if (stage.id >= 3 && stars >= 2 && !save.unlockedShrikes.includes("tiger")) {
-    save.unlockedShrikes.push("tiger");
-    unlocked.push("🐅 칡때까치 해금!");
-} if ((save.bestCombos["6"] || 0) >= 12 && !save.unlockedShrikes.includes("brown")) {
-    save.unlockedShrikes.push("brown");
-    unlocked.push("🟤 노랑때까치 해금!");
-} if (stage.id >= 15 && stars >= 2 && !save.unlockedShrikes.includes("chinese-grey")) {
-    save.unlockedShrikes.push("chinese-grey");
-    unlocked.push("🩶 물때까치 해금! · 주문 제한시간 +10%");
-} if (stage.id >= 18 && tripleBurnerPerfect >= 3 && !save.unlockedShrikes.includes("long-tailed")) {
-    save.unlockedShrikes.push("long-tailed");
-    unlocked.push("🐦 긴꼬리때까치 해금! · 화구 +2");
-} if (stage.id === 30 && stars >= 2 && !save.unlockedShrikes.includes("northern")) {
-    save.unlockedShrikes.push("northern");
-    unlocked.push("🩶 재때까치 해금! · XP +10%");
-} persist(); gameScreen.classList.add("hidden"); resultScreen.classList.remove("hidden"); const canAdvance = stage.id < 30 && stars > 0 && save.unlockedStage >= stage.id + 1; nextStageButton.classList.toggle("hidden", !canAdvance); $("resultStage").textContent = `Stage ${stage.id} · ${stage.name}`; $("resultStars").textContent = `${"★".repeat(stars)}${"☆".repeat(3 - stars)}`; $("resultScore").textContent = score.toLocaleString(); $("resultServed").textContent = String(served); $("resultPerfect").textContent = String(perfectCount); $("resultCombo").textContent = `×${bestCombo}`; $("resultFailed").textContent = String(failed); $("resultXp").textContent = `+${xpGain}`; resultTotalXp.textContent = save.xp.toLocaleString(); const records = []; if (score > prevBest)
-    records.push(`🏆 최고점수 ${score.toLocaleString()}`); if (bestCombo > prevCombo)
-    records.push(`🔥 최고 Combo ×${bestCombo}`); if (stars > prevStars)
-    records.push(`⭐ 최고 별점 ${stars}`); recordNotice.textContent = records.length ? `NEW RECORD · ${records.join(" · ")}` : ""; $("unlockNotice").textContent = [...(unlocked), ...(stage.subGoal ? [subDone ? `🎯 서브 목표 달성 · ${stage.subGoal.label} (+75 XP)` : `🎯 서브 목표 미달성 · ${stage.subGoal.label}`] : [])].join(" · ") || `Bird Book ${save.discoveredBirds.length}/${Object.keys(guests).length} · 진행도 저장 완료`; }
+function finishStage() {
+    running = false;
+    cancelAnimationFrame(animationFrame);
+    const stars = score >= stage.starScores[1] ? 3 : score >= stage.starScores[0] ? 2 : score > 0 ? 1 : 0;
+    const subDone = subGoalComplete();
+    const growthMult = selectedShrike === "northern" ? 1.10 : 1;
+    const xpGain = Math.round((score * .10 + perfectCount * 8 + specialServed * 20 + stars * 50 + (subDone ? 75 : 0)) * growthMult);
+    const prevBest = save.bestScores[String(stage.id)] || 0, prevCombo = save.bestCombos[String(stage.id)] || 0, prevStars = save.bestStars[String(stage.id)] || 0;
+    const unlocked = [];
+    if (!devMode) {
+        save.xp += xpGain;
+        save.stats.plays++;
+        save.stats.served += served;
+        save.stats.perfect += perfectCount;
+        save.stats.failed += failed;
+        save.bestScores[String(stage.id)] = Math.max(prevBest, score);
+        save.bestStars[String(stage.id)] = Math.max(prevStars, stars);
+        save.bestCombos[String(stage.id)] = Math.max(prevCombo, bestCombo);
+        if (stage.id < 30 && stars > 0)
+            save.unlockedStage = Math.max(save.unlockedStage, (stage.id + 1));
+        if (stage.subGoal && subDone)
+            save.bestSubGoals[String(stage.id)] = true;
+        if (stage.id >= 3 && stars >= 2 && !save.unlockedShrikes.includes("tiger")) {
+            save.unlockedShrikes.push("tiger");
+            unlocked.push("🐅 칡때까치 해금!");
+        }
+        if ((save.bestCombos["6"] || 0) >= 12 && !save.unlockedShrikes.includes("brown")) {
+            save.unlockedShrikes.push("brown");
+            unlocked.push("🟤 노랑때까치 해금!");
+        }
+        if (stage.id >= 15 && stars >= 2 && !save.unlockedShrikes.includes("chinese-grey")) {
+            save.unlockedShrikes.push("chinese-grey");
+            unlocked.push("🩶 물때까치 해금! · 주문 제한시간 +10%");
+        }
+        if (stage.id >= 18 && tripleBurnerPerfect >= 3 && !save.unlockedShrikes.includes("long-tailed")) {
+            save.unlockedShrikes.push("long-tailed");
+            unlocked.push("🐦 긴꼬리때까치 해금! · 화구 +2");
+        }
+        if (stage.id === 30 && stars >= 2 && !save.unlockedShrikes.includes("northern")) {
+            save.unlockedShrikes.push("northern");
+            unlocked.push("🩶 재때까치 해금! · XP +10%");
+        }
+        persist();
+    }
+    gameScreen.classList.add("hidden");
+    resultScreen.classList.remove("hidden");
+    const canAdvance = stage.id < 30 && (devMode || (stars > 0 && save.unlockedStage >= stage.id + 1));
+    nextStageButton.classList.toggle("hidden", !canAdvance);
+    $("resultStage").textContent = `Stage ${stage.id} · ${stage.name}`;
+    $("resultStars").textContent = `${"★".repeat(stars)}${"☆".repeat(3 - stars)}`;
+    $("resultScore").textContent = score.toLocaleString();
+    $("resultServed").textContent = String(served);
+    $("resultPerfect").textContent = String(perfectCount);
+    $("resultCombo").textContent = `×${bestCombo}`;
+    $("resultFailed").textContent = String(failed);
+    $("resultXp").textContent = devMode ? `TEST +${xpGain}` : `+${xpGain}`;
+    resultTotalXp.textContent = save.xp.toLocaleString();
+    const records = [];
+    if (!devMode) {
+        if (score > prevBest)
+            records.push(`🏆 최고점수 ${score.toLocaleString()}`);
+        if (bestCombo > prevCombo)
+            records.push(`🔥 최고 Combo ×${bestCombo}`);
+        if (stars > prevStars)
+            records.push(`⭐ 최고 별점 ${stars}`);
+    }
+    recordNotice.textContent = devMode ? "🛠 DEV MODE · 이 결과는 일반 진행도에 저장되지 않습니다." : records.length ? `NEW RECORD · ${records.join(" · ")}` : "";
+    $("unlockNotice").textContent = devMode ? `전체 콘텐츠 테스트 활성 · Stage ${stage.id}/30 · ${shrikeName(selectedShrike)}` : [...(unlocked), ...(stage.subGoal ? [subDone ? `🎯 서브 목표 달성 · ${stage.subGoal.label} (+75 XP)` : `🎯 서브 목표 미달성 · ${stage.subGoal.label}`] : [])].join(" · ") || `Bird Book ${save.discoveredBirds.length}/${Object.keys(guests).length} · 진행도 저장 완료`;
+}
 function expireOrder(id) { var _a, _b; const o = orders.find(x => x.id === id); if (!o)
     return; orders = orders.filter(x => x.id !== id); failed++; combo = 0; perfectStreak = 0; if (selectedOrderId === id)
     selectedOrderId = (_b = (_a = orders[0]) === null || _a === void 0 ? void 0 : _a.id) !== null && _b !== void 0 ? _b : null; if ((pendingSkewer === null || pendingSkewer === void 0 ? void 0 : pendingSkewer.orderId) === id)
@@ -454,24 +518,26 @@ function resetBurner(b) { b.state = "empty"; b.orderId = null; b.recipe = []; b.
 function activateBurning() { if (paused || burningGauge < 100 || isBurning())
     return; const now = Date.now(); burningGauge = 0; burningStartedAt = now; burningActiveUntil = now + 15000; syncBurners(); showEvent(`🔥 ${shrikeName(selectedShrike)} BURNING!`); setStatus(selectedShrike === "tiger" ? "조리속도 +40%!" : selectedShrike === "brown" ? "콤보 점수 가속!" : selectedShrike === "chinese-grey" ? "8초 주문 타이머 정지 → 7초 절반 속도!" : selectedShrike === "long-tailed" ? "임시 화구 +2 · 조리 +20%!" : "균형 강화!"); }
 function renderAll() { renderMeta(); renderFoodButtons(); renderSkewer(); renderOrders(); renderBurners(); renderSelected(); updateHud(); }
-function renderMeta() { const totalStars = Object.values(save.bestStars).reduce((a, b) => a + b, 0); saveSummary.innerHTML = `<div class="career-grid"><div><span>누적 XP</span><strong>${save.xp.toLocaleString()}</strong></div><div><span>총 플레이</span><strong>${save.stats.plays}</strong></div><div><span>누적 서빙</span><strong>${save.stats.served}</strong></div><div><span>PERFECT</span><strong>${save.stats.perfect}</strong></div></div><p>Stage ${save.unlockedStage}/30 · Shrikes ${save.unlockedShrikes.length}/6 · Bird Book ${save.discoveredBirds.length}/${Object.keys(guests).length} · Stars ${totalStars}/90</p>`; totalXpHeader.textContent = `${save.xp.toLocaleString()} XP`; careerStatsHeader.textContent = `${save.stats.plays}회 플레이 · ${save.stats.served}명 서빙`; xpHudLabel.textContent = save.xp.toLocaleString(); renderStages(); renderShrikes(); renderUpgrades(); renderStageEcology(); }
-function renderStages() { var _a, _b; stageButtonsEl.innerHTML = ""; world1Button.classList.toggle("selected", selectedWorld === 1); world2Button.classList.toggle("selected", selectedWorld === 2); world3Button.classList.toggle("selected", selectedWorld === 3); world2Button.disabled = save.unlockedStage < 11; world3Button.disabled = save.unlockedStage < 21; const start = selectedWorld === 1 ? 1 : selectedWorld === 2 ? 11 : 21, end = selectedWorld === 1 ? 10 : selectedWorld === 2 ? 20 : 30; for (let i = start; i <= end; i++) {
+function renderMeta() { const totalStars = Object.values(save.bestStars).reduce((a, b) => a + b, 0); saveSummary.innerHTML = `<div class="career-grid"><div><span>누적 XP</span><strong>${save.xp.toLocaleString()}</strong></div><div><span>총 플레이</span><strong>${save.stats.plays}</strong></div><div><span>누적 서빙</span><strong>${save.stats.served}</strong></div><div><span>PERFECT</span><strong>${save.stats.perfect}</strong></div></div><p>${devMode ? "🛠 DEV MODE · World 1–3 / Stage 1–30 / Shrike 7종 전체 테스트 가능 · 진행도 미저장" : "Stage " + save.unlockedStage + "/30 · Shrikes " + save.unlockedShrikes.length + "/7 · Bird Book " + save.discoveredBirds.length + "/" + Object.keys(guests).length + " · Stars " + totalStars + "/90"}</p>`; totalXpHeader.textContent = `${save.xp.toLocaleString()} XP`; careerStatsHeader.textContent = devMode ? "DEV SESSION · 일반 세이브 보호" : `${save.stats.plays}회 플레이 · ${save.stats.served}명 서빙`; xpHudLabel.textContent = save.xp.toLocaleString(); renderStages(); renderShrikes(); renderUpgrades(); renderStageEcology(); }
+function renderStages() { var _a, _b; stageButtonsEl.innerHTML = ""; world1Button.classList.toggle("selected", selectedWorld === 1); world2Button.classList.toggle("selected", selectedWorld === 2); world3Button.classList.toggle("selected", selectedWorld === 3); world2Button.disabled = !devMode && save.unlockedStage < 11; world3Button.disabled = !devMode && save.unlockedStage < 21; const start = selectedWorld === 1 ? 1 : selectedWorld === 2 ? 11 : 21, end = selectedWorld === 1 ? 10 : selectedWorld === 2 ? 20 : 30; for (let i = start; i <= end; i++) {
     const id = i, c = stages[id], btn = document.createElement("button");
     btn.type = "button";
     btn.className = "stage-card" + (selectedStage === id ? " selected" : "");
-    btn.disabled = id > save.unlockedStage;
+    btn.disabled = !devMode && id > save.unlockedStage;
     btn.dataset.stageId = String(id);
     const stars = save.bestStars[String(id)] || 0, bc = save.bestCombos[String(id)] || 0;
     const bs = save.bestScores[String(id)] || 0;
-    btn.innerHTML = `<span class="stage-icon">${c.icon}</span><b>${id}. ${c.name}</b><small>${c.habitat}</small><span class="stage-stars">${"★".repeat(stars)}${"☆".repeat(3 - stars)}</span><small class="stage-record">Best ${bs.toLocaleString()} · Combo ×${bc}</small><small>손님 ${c.guestPool.length}종${((_a = c.weather) === null || _a === void 0 ? void 0 : _a.length) ? " · 🌦 날씨" : ""}${((_b = c.timePhases) === null || _b === void 0 ? void 0 : _b.length) ? " · 🌓 시간대" : ""}</small>${c.subGoal ? `<small class="stage-goal">🎯 ${c.subGoal.label}${save.bestSubGoals[String(id)] ? " · ✓" : ""}</small>` : ""}`;
+    btn.innerHTML = `<span class="stage-icon">${c.icon}</span><b>${id}. ${c.name}</b><small>${c.habitat}</small><span class="stage-stars">${"★".repeat(stars)}${"☆".repeat(3 - stars)}</span><small class="stage-record">Best ${bs.toLocaleString()} · Combo ×${bc}</small><small>손님 ${c.guestPool.length}종${((_a = c.weather) === null || _a === void 0 ? void 0 : _a.length) ? " · 🌦 날씨" : ""}${((_b = c.timePhases) === null || _b === void 0 ? void 0 : _b.length) ? " · 🌓 시간대" : ""}</small>${c.subGoal ? `<small class="stage-goal">🎯 ${c.subGoal.label}${save.bestSubGoals[String(id)] ? " · ✓" : ""}</small>` : ""}${devMode ? `<small class="dev-badge">DEV · UNLOCKED</small>` : ""}`;
     btn.addEventListener("click", () => { selectedStage = id; renderStages(); renderStageEcology(); });
     stageButtonsEl.appendChild(btn);
 } }
 function renderStageEcology() { const c = stages[selectedStage]; const foodsSorted = stageFoodEntries(c).slice(0, 5).map(([id, v]) => `${foods[id].emoji}${foods[id].name} ${Math.round(v * 100)}%`).join(" · "); const guestNames = c.guestPool.slice(0, 5).map(id => guests[id].name).join(" · "); const wx = (c.weather || []).map(w => `${w.type === "rain" ? "🌧 비" : w.type === "wind" ? "💨 바람" : "☀️ 햇빛"} ${w.duration}s`).join(" · ") || "고정 날씨"; const phases = (c.timePhases || []).map(p => `${phaseName(p.type)} ${p.at}s`).join(" → ") || "☀️ 낮"; stageEcology.innerHTML = `<div><span class="eco-label">${c.icon} HABITAT</span><b>${c.habitat}</b><p>World ${c.world}</p></div><div><span class="eco-label">🍽 FOOD AVAILABILITY</span><p>${foodsSorted}</p></div><div><span class="eco-label">🐦 EXPECTED GUESTS</span><p>${guestNames}${c.guestPool.length > 5 ? " 외" : ""}</p></div><div><span class="eco-label">🌓 TIME / WEATHER</span><p>${phases}</p><p>${wx}</p>${c.subGoal ? `<p><b>🎯 ${c.subGoal.label}</b></p>` : ""}</div>`; }
 function stageFoodEntries(c) { return Object.entries(c.foodAvailability).sort((a, b) => b[1] - a[1]); }
-function renderShrikes() { const defs = [{ id: "bull-headed", emoji: "🐦", name: "때까치", desc: "균형형 · Burning 시 전반 강화", unlock: "기본" }, { id: "tiger", emoji: "🐅", name: "칡때까치", desc: "조리속도 +10%", unlock: "Stage 3 이상에서 ★★ 달성" }, { id: "brown", emoji: "🟤", name: "노랑때까치", desc: "Combo가 높을수록 점수 증가", unlock: "Stage 6에서 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", name: "물때까치", desc: "주문 제한시간 +10% · 시간 제어 Burning", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", name: "긴꼬리때까치", desc: "화구 +2 · 조리속도 -10%", unlock: "Stage 18+에서 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", name: "재때까치", desc: "성장형 · 획득 XP +10%", unlock: "Stage 30 ★★" }, { id: "great-grey", emoji: "🩶", name: "초원때까치", desc: "환경형 · World 6에서 등장 예정", unlock: "World 6 예정" }]; shrikeButtonsEl.innerHTML = ""; defs.forEach(d => { const btn = document.createElement("button"); btn.type = "button"; btn.className = "select-card" + (selectedShrike === d.id ? " selected" : ""); btn.dataset.shrikeId = d.id; btn.disabled = !save.unlockedShrikes.includes(d.id); btn.innerHTML = `<b>${d.emoji} ${d.name}</b><span>${d.desc}</span><small>${btn.disabled ? `LOCKED · ${d.unlock}` : "사용 가능"}</small>`; btn.addEventListener("click", () => { selectedShrike = d.id; renderShrikes(); }); shrikeButtonsEl.appendChild(btn); }); }
+function renderShrikes() { const defs = [{ id: "bull-headed", emoji: "🐦", name: "때까치", desc: "균형형 · Burning 시 전반 강화", unlock: "기본" }, { id: "tiger", emoji: "🐅", name: "칡때까치", desc: "조리속도 +10%", unlock: "Stage 3 이상에서 ★★ 달성" }, { id: "brown", emoji: "🟤", name: "노랑때까치", desc: "Combo가 높을수록 점수 증가", unlock: "Stage 6에서 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", name: "물때까치", desc: "주문 제한시간 +10% · 시간 제어 Burning", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", name: "긴꼬리때까치", desc: "화구 +2 · 조리속도 -10%", unlock: "Stage 18+에서 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", name: "재때까치", desc: "성장형 · 획득 XP +10%", unlock: "Stage 30 ★★" }, { id: "great-grey", emoji: "🩶", name: "초원때까치", desc: "환경형 · World 6에서 등장 예정", unlock: "World 6 예정" }]; shrikeButtonsEl.innerHTML = ""; defs.forEach(d => { const btn = document.createElement("button"); btn.type = "button"; btn.className = "select-card" + (selectedShrike === d.id ? " selected" : ""); btn.dataset.shrikeId = d.id; btn.disabled = !devMode && !save.unlockedShrikes.includes(d.id); btn.innerHTML = `<b>${d.emoji} ${d.name}</b><span>${d.desc}</span><small>${devMode ? `DEV · ${d.unlock}` : btn.disabled ? `LOCKED · ${d.unlock}` : "사용 가능"}</small>`; btn.addEventListener("click", () => { selectedShrike = d.id; renderShrikes(); }); shrikeButtonsEl.appendChild(btn); }); }
 function upgradeCost(id) { return 250 + save.upgrades[id] * 250; }
-function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가지", desc: "동시 주문 +1 / Lv", max: 2 }, { id: "fire", name: "🔥 좋은 장작", desc: "조리속도 +3% / Lv", max: 5 }, { id: "perch", name: "🪺 편안한 횃대", desc: "주문 대기시간 +4% / Lv", max: 5 }]; upgradeList.innerHTML = ""; defs.forEach(d => { const lv = save.upgrades[d.id], cost = upgradeCost(d.id), card = document.createElement("div"); card.className = "upgrade-card"; card.innerHTML = `<div><b>${d.name} · Lv.${lv}/${d.max}</b><small>${d.desc}</small></div>`; const btn = document.createElement("button"); btn.className = "primary-button"; btn.textContent = lv >= d.max ? "MAX" : `${cost} XP`; btn.disabled = lv >= d.max || save.xp < cost; btn.onclick = () => { if (save.xp >= cost && lv < d.max) {
+function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가지", desc: "동시 주문 +1 / Lv", max: 2 }, { id: "fire", name: "🔥 좋은 장작", desc: "조리속도 +3% / Lv", max: 5 }, { id: "perch", name: "🪺 편안한 횃대", desc: "주문 대기시간 +4% / Lv", max: 5 }]; upgradeList.innerHTML = ""; defs.forEach(d => { const lv = save.upgrades[d.id], cost = upgradeCost(d.id), card = document.createElement("div"); card.className = "upgrade-card"; card.innerHTML = `<div><b>${d.name} · Lv.${lv}/${d.max}</b><small>${d.desc}</small></div>`; const btn = document.createElement("button"); btn.className = "primary-button"; btn.textContent = lv >= d.max ? "MAX" : `${cost} XP`; btn.disabled = devMode || lv >= d.max || save.xp < cost; if (devMode)
+    btn.textContent = "DEV · SAVE LOCK"; btn.onclick = () => { if (devMode)
+    return; if (save.xp >= cost && lv < d.max) {
     save.xp -= cost;
     save.upgrades[d.id]++;
     persist();
@@ -496,14 +562,14 @@ function renderBurners() { const now = Date.now(); burnersEl.innerHTML = ""; bur
     state = "OVERCOOKED · 지금 서빙";
 } btn.innerHTML = `${key ? `<span class="key-badge">${key}</span>` : ""}<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}</div><div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe) : "EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`; btn.dataset.burnerIndex = String(b.index); if (key)
     btn.setAttribute("aria-keyshortcuts", key); burnersEl.appendChild(btn); }); }
-function renderBirdBook() { birdBookList.innerHTML = ""; Object.keys(guests).forEach(id => { const g = guests[id], seen = save.discoveredBirds.includes(id), card = document.createElement("article"); card.className = "bird-card" + (seen ? "" : " locked"); if (!seen) {
+function renderBirdBook() { birdBookList.innerHTML = ""; Object.keys(guests).forEach(id => { const g = guests[id], seen = devMode || save.discoveredBirds.includes(id), card = document.createElement("article"); card.className = "bird-card" + (seen ? "" : " locked"); if (!seen) {
     card.innerHTML = `<div class="bird-card-emoji">❔</div><div><b>미발견 조류</b><small>World 1에서 만나보세요.</small></div>`;
 }
 else {
     const primary = g.diet.primary.map(x => foods[x].emoji + foods[x].name).join(" · "), secondary = g.diet.secondary.slice(0, 3).map(x => foods[x].emoji + foods[x].name).join(" · ");
     card.innerHTML = `<div class="bird-card-emoji">${g.emoji}</div><div><b>${g.name} <span>${g.englishName}</span></b><i>${g.scientificName}</i><p>${g.note}</p><small>주요 먹이 · ${primary}</small>${secondary ? `<small>보조 먹이 · ${secondary}</small>` : ""}</div>`;
 } birdBookList.appendChild(card); }); }
-function renderShrikeDex() { const defs = [{ id: "bull-headed", emoji: "🐦", ko: "때까치", en: "Bull-headed Shrike", role: "⚖️ Balance", passive: "기본 능력 없음", burn: "15초간 조립·조리·대기시간을 균형 강화", unlock: "기본 캐릭터" }, { id: "tiger", emoji: "🐅", ko: "칡때까치", en: "Tiger Shrike", role: "🔥 Cooking", passive: "조리속도 +10%", burn: "15초간 조리속도 +40%", unlock: "Stage 3 이상 ★★" }, { id: "brown", emoji: "🟤", ko: "노랑때까치", en: "Brown Shrike", role: "⚡ Combo", passive: "Combo가 높을수록 점수 증가", burn: "Burning 중 콤보 기반 보너스 강화", unlock: "Stage 6 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", ko: "물때까치", en: "Chinese Grey Shrike", role: "⏱ Control", passive: "주문 제한시간 +10%", burn: "8초 주문 타이머 정지 + 7초 50% 감속", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", ko: "긴꼬리때까치", en: "Long-tailed Shrike", role: "🍢 Capacity", passive: "화구 +2, 조리속도 -10%", burn: "15초간 임시 화구 +2 + 조리속도 +20%", unlock: "Stage 18+ 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", ko: "재때까치", en: "Northern Shrike", role: "📈 Growth", passive: "스테이지 획득 XP +10%", burn: "15초간 기본 균형 강화", unlock: "Stage 30 ★★" }, { id: "great-grey", emoji: "🩶", ko: "초원때까치", en: "Great Grey Shrike", role: "🌍 Environment", passive: "유럽·북아프리카·서아시아 환경에 특화 예정", burn: "World 6에서 공개 예정", unlock: "World 6 예정" }]; shrikeDexList.innerHTML = ""; defs.forEach(d => { const open = save.unlockedShrikes.includes(d.id), card = document.createElement("article"); card.className = "dex-card" + (open ? "" : " locked"); card.innerHTML = open ? `<div class="dex-emoji">${d.emoji}</div><div><b>${d.ko} <span>${d.en}</span></b><small>${d.role}</small><p><strong>Passive</strong> · ${d.passive}</p><p><strong>Burning</strong> · ${d.burn}</p><small>Unlock · ${d.unlock}</small></div>` : `<div class="dex-emoji">❔</div><div><b>LOCKED SHRIKE</b><small>${d.unlock}</small></div>`; shrikeDexList.appendChild(card); }); }
+function renderShrikeDex() { const defs = [{ id: "bull-headed", emoji: "🐦", ko: "때까치", en: "Bull-headed Shrike", role: "⚖️ Balance", passive: "기본 능력 없음", burn: "15초간 조립·조리·대기시간을 균형 강화", unlock: "기본 캐릭터" }, { id: "tiger", emoji: "🐅", ko: "칡때까치", en: "Tiger Shrike", role: "🔥 Cooking", passive: "조리속도 +10%", burn: "15초간 조리속도 +40%", unlock: "Stage 3 이상 ★★" }, { id: "brown", emoji: "🟤", ko: "노랑때까치", en: "Brown Shrike", role: "⚡ Combo", passive: "Combo가 높을수록 점수 증가", burn: "Burning 중 콤보 기반 보너스 강화", unlock: "Stage 6 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", ko: "물때까치", en: "Chinese Grey Shrike", role: "⏱ Control", passive: "주문 제한시간 +10%", burn: "8초 주문 타이머 정지 + 7초 50% 감속", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", ko: "긴꼬리때까치", en: "Long-tailed Shrike", role: "🍢 Capacity", passive: "화구 +2, 조리속도 -10%", burn: "15초간 임시 화구 +2 + 조리속도 +20%", unlock: "Stage 18+ 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", ko: "재때까치", en: "Northern Shrike", role: "📈 Growth", passive: "스테이지 획득 XP +10%", burn: "15초간 기본 균형 강화", unlock: "Stage 30 ★★" }, { id: "great-grey", emoji: "🩶", ko: "초원때까치", en: "Great Grey Shrike", role: "🌍 Environment", passive: "유럽·북아프리카·서아시아 환경에 특화 예정", burn: "World 6에서 공개 예정", unlock: "World 6 예정" }]; shrikeDexList.innerHTML = ""; defs.forEach(d => { const open = devMode || save.unlockedShrikes.includes(d.id), card = document.createElement("article"); card.className = "dex-card" + (open ? "" : " locked"); card.innerHTML = open ? `<div class="dex-emoji">${d.emoji}</div><div><b>${d.ko} <span>${d.en}</span></b><small>${d.role}</small><p><strong>Passive</strong> · ${d.passive}</p><p><strong>Burning</strong> · ${d.burn}</p><small>Unlock · ${d.unlock}</small></div>` : `<div class="dex-emoji">❔</div><div><b>LOCKED SHRIKE</b><small>${d.unlock}</small></div>`; shrikeDexList.appendChild(card); }); }
 function updateHud() { scoreLabel.textContent = score.toLocaleString(); xpHudLabel.textContent = save.xp.toLocaleString(); comboLabel.textContent = `×${combo}`; bestComboLabel.textContent = `×${bestCombo}`; burnGaugeFill.style.width = `${burningGauge}%`; burnGaugeText.textContent = isBurning() ? "ACTIVE" : `${Math.round(burningGauge)}%`; burnButton.disabled = burningGauge < 100 || isBurning() || paused; }
 function setStatus(t) { statusMessage.textContent = t; }
 function judge(t, good) { floatingJudge.textContent = t; floatingJudge.style.color = good ? "var(--accent)" : "var(--danger)"; floatingJudge.classList.remove("pop"); void floatingJudge.offsetWidth; floatingJudge.classList.add("pop"); }
@@ -665,18 +731,19 @@ bindDelegatedAdaptive(foodButtonsEl, ".food-button[data-food-id]", target => add
 enterGameButton.onclick = () => coverScreen.classList.add("hidden");
 world1Button.onclick = () => { selectedWorld = 1; if (selectedStage > 10)
     selectedStage = Math.min(10, save.unlockedStage); renderStages(); renderStageEcology(); };
-world2Button.onclick = () => { if (save.unlockedStage < 11)
+world2Button.onclick = () => { if (!devMode && save.unlockedStage < 11)
     return; selectedWorld = 2; if (selectedStage < 11 || selectedStage > 20)
-    selectedStage = Math.max(11, Math.min(20, save.unlockedStage)); renderStages(); renderStageEcology(); };
-world3Button.onclick = () => { if (save.unlockedStage < 21)
+    selectedStage = (devMode ? 11 : Math.max(11, Math.min(20, save.unlockedStage))); renderStages(); renderStageEcology(); };
+world3Button.onclick = () => { if (!devMode && save.unlockedStage < 21)
     return; selectedWorld = 3; if (selectedStage < 21)
-    selectedStage = Math.max(21, Math.min(30, save.unlockedStage)); renderStages(); renderStageEcology(); };
+    selectedStage = (devMode ? 21 : Math.max(21, Math.min(30, save.unlockedStage))); renderStages(); renderStageEcology(); };
 startButton.onclick = startGame;
 nextStageButton.onclick = () => { if (stage.id >= 30)
-    return; const next = (stage.id + 1); if (save.unlockedStage < next)
+    return; const next = (stage.id + 1); if (!devMode && save.unlockedStage < next)
     return; selectedStage = next; selectedWorld = next > 20 ? 3 : next > 10 ? 2 : 1; startGame(); };
 restartButton.onclick = startGame;
 backButton.onclick = () => { closeAllDialogs(); document.body.classList.remove("in-game"); resultScreen.classList.add("hidden"); gameScreen.classList.add("hidden"); startScreen.classList.remove("hidden"); renderMeta(); };
+devModeButton.onclick = () => { setDevMode(!devMode); showEvent(devMode ? "🛠 DEV MODE ON · 모든 구현 콘텐츠 해금" : "🛠 DEV MODE OFF · 일반 진행도로 복귀"); };
 resetSaveButton.onclick = () => { if (confirm("모든 Prototype 0.5 진행도, Bird Book과 업그레이드를 초기화할까요?")) {
     localStorage.removeItem(SAVE_KEY);
     save = defaultSave();
@@ -722,8 +789,12 @@ document.addEventListener("touchmove", event => { if (document.body.classList.co
     event.stopPropagation(); }, { passive: true });
 document.addEventListener("visibilitychange", () => { if (document.hidden && running && !paused)
     togglePause(); });
-window.addEventListener("beforeunload", () => { if (running)
+window.addEventListener("beforeunload", () => { if (running && !devMode)
     persist(); });
+document.body.classList.toggle("dev-mode", devMode);
+devModeButton.classList.toggle("active", devMode);
+devModeButton.textContent = devMode ? "🛠 DEV ON" : "🛠 DEV MODE";
+devModeBanner.classList.toggle("hidden", !devMode);
 renderMeta();
 stage = stages[selectedStage];
 weatherLabel.textContent = "☀️ 맑음";

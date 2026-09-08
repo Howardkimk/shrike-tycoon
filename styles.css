@@ -475,3 +475,11 @@ body.keyboard-mode button:focus-visible{outline:3px solid var(--cyan);outline-of
   /* 0.6.0 leaves the mobile gameplay layout unchanged; only the new World tab must fit. */
   #startScreen .world-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
+
+/* 0.6.0.3 Developer Mode */
+.dev-mode-button.active,
+body.dev-mode .dev-mode-button{font-weight:900;box-shadow:0 0 0 2px currentColor inset}
+.dev-mode-banner{position:sticky;top:0;z-index:1200;margin:0 0 10px;padding:8px 12px;border:2px dashed currentColor;border-radius:10px;text-align:center;font-weight:900;letter-spacing:.02em;background:var(--panel)}
+body.dev-mode .stage-card:not(:disabled),body.dev-mode .select-card:not(:disabled){outline:1px dashed currentColor;outline-offset:-4px}
+.dev-badge{display:inline-block;margin-top:4px;font-weight:900;letter-spacing:.05em}
+@media (max-width: 900px){.dev-mode-banner{font-size:.72rem;padding:5px 8px}}

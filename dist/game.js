@@ -131,8 +131,7 @@ const chefSprite = $("chefSprite"), chefActionLabel = $("chefActionLabel"), gues
 let chefActionTimer = 0;
 function chefAction(action) { if (!chefSprite)
     return; window.clearTimeout(chefActionTimer); chefSprite.className = `chef-sprite ${action}`; chefActionLabel.textContent = action.toUpperCase(); chefActionTimer = window.setTimeout(() => { chefSprite.className = `chef-sprite ${isBurning() ? "burning" : "idle"}`; chefActionLabel.textContent = isBurning() ? "BURNING" : "IDLE"; }, action === "burning" ? 15000 : 620); }
-function animateGuest(guest, kind) { if (!guestAnimationLane)
-    return; const el = document.createElement("div"); el.className = `animated-guest ${kind}`; el.innerHTML = `<img src="assets/birds/${guest.id}.svg" alt=""><span>${kind === "happy" ? "♥" : kind === "sad" ? "…" : "!"}</span>`; guestAnimationLane.appendChild(el); window.setTimeout(() => el.remove(), kind === "arrive" ? 900 : 1200); }
+function animateGuest(_guest, _kind) { }
 const helpButton = $("helpButton"), helpDialog = $("helpDialog"), closeHelpButton = $("closeHelpButton");
 const restaurantButton = $("restaurantButton"), restaurantDialog = $("restaurantDialog"), closeRestaurantButton = $("closeRestaurantButton");
 const birdBookButton = $("birdBookButton"), birdBookDialog = $("birdBookDialog"), closeBirdBookButton = $("closeBirdBookButton"), birdBookList = $("birdBookList");
@@ -339,8 +338,6 @@ function startGame() {
     nextOrderAt = startedAt + 600;
     currentStageLabel.textContent = `${stage.id}. ${stage.name}`;
     currentShrikeLabel.textContent = shrikeName(selectedShrike);
-    chefSprite.src = `assets/shrikes/${selectedShrike}.svg`;
-    chefSprite.alt = shrikeName(selectedShrike);
     chefAction("idle");
     setStatus(`${stage.habitat} 영업 시작!`);
     syncTimePhase(true);
@@ -625,7 +622,31 @@ function renderStages() { var _a, _b, _c; stageButtonsEl.innerHTML = ""; startSc
 } }
 function renderStageEcology() { var _a; const c = stages[selectedStage]; const foodsSorted = stageFoodEntries(c).slice(0, 5).map(([id, v]) => `${foods[id].emoji}${foods[id].name} ${Math.round(v * 100)}%`).join(" · "); const guestNames = c.guestPool.slice(0, 5).map(id => guests[id].name).join(" · "); const wx = (c.weather || []).map(w => `${w.type === "rain" ? "🌧 비" : w.type === "wind" ? "💨 바람" : w.type === "cold" ? "❄️ 한기" : "☀️ 햇빛"} ${w.duration}s`).join(" · ") || "고정 날씨"; const phases = (c.timePhases || []).map(p => `${phaseName(p.type)} ${p.at}s`).join(" → ") || "☀️ 낮"; const migration = ((_a = c.migrationWaves) === null || _a === void 0 ? void 0 : _a.length) ? `🪽 Migration Wave · ${c.migrationWaves.map(x => x + "s").join(" · ")}` : ""; stageEcology.innerHTML = `<div><span class="eco-label">${c.icon} HABITAT</span><b>${c.habitat}</b><p>World ${c.world}</p></div><div><span class="eco-label">🍽 FOOD AVAILABILITY</span><p>${foodsSorted}</p></div><div><span class="eco-label">🐦 EXPECTED GUESTS</span><p>${guestNames}${c.guestPool.length > 5 ? " 외" : ""}</p></div><div><span class="eco-label">🌓 TIME / WEATHER</span><p>${phases}</p><p>${c.altitude ? `🏔️ 고도 단계 ${c.altitude} · 기본 조리속도 -${c.altitude * 5}%` : wx}</p><p>${c.altitude ? wx : migration}</p>${c.subGoal ? `<p><b>🎯 ${c.subGoal.label}</b></p>` : ""}</div>`; }
 function stageFoodEntries(c) { return Object.entries(c.foodAvailability).sort((a, b) => b[1] - a[1]); }
-function renderShrikes() { const defs = [{ id: "bull-headed", emoji: "🐦", name: "때까치", desc: "균형형 · Burning 시 전반 강화", unlock: "기본" }, { id: "tiger", emoji: "🐅", name: "칡때까치", desc: "조리속도 +10%", unlock: "Stage 3 이상에서 ★★ 달성" }, { id: "brown", emoji: "🟤", name: "노랑때까치", desc: "Combo가 높을수록 점수 증가", unlock: "Stage 6에서 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", name: "물때까치", desc: "주문 제한시간 +10% · 시간 제어 Burning", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", name: "긴꼬리때까치", desc: "화구 +2 · 조리속도 -10%", unlock: "Stage 18+에서 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", name: "재때까치", desc: "성장형 · 획득 XP +10%", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", name: "회색등때까치", desc: "고산형 · 고도 페널티 50% 완화", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", name: "사막때까치", desc: "Migration Wave 중 점수 +20%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", name: "붉은꼬리때까치", desc: "Rush 특화 · Burning 조리 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", name: "초원때까치", desc: "환경형 · World 6에서 등장 예정", unlock: "World 6 예정" }]; shrikeButtonsEl.innerHTML = ""; defs.forEach(d => { const btn = document.createElement("button"); btn.type = "button"; btn.className = "select-card" + (selectedShrike === d.id ? " selected" : ""); btn.dataset.shrikeId = d.id; btn.disabled = !devMode && !save.unlockedShrikes.includes(d.id); btn.innerHTML = `<span class="shrike-select-pixel"><img src="assets/shrikes/${d.id}.svg" alt="${d.name}"></span><b>${d.name}</b><span>${d.desc}</span><small>${devMode ? `DEV · ${d.unlock}` : btn.disabled ? `LOCKED · ${d.unlock}` : "사용 가능"}</small>`; btn.addEventListener("click", () => { selectedShrike = d.id; renderShrikes(); }); shrikeButtonsEl.appendChild(btn); }); }
+function renderShrikes() {
+    const defs = [
+        { id: "bull-headed", emoji: "🐦", name: "때까치", desc: "균형형 · Burning 시 전반 강화", unlock: "기본" },
+        { id: "tiger", emoji: "🐅", name: "칡때까치", desc: "조리속도 +10%", unlock: "Stage 3 이상에서 ★★ 달성" },
+        { id: "brown", emoji: "🟤", name: "노랑때까치", desc: "Combo가 높을수록 점수 증가", unlock: "Stage 6에서 Best Combo ×12" },
+        { id: "chinese-grey", emoji: "🩶", name: "물때까치", desc: "주문 제한시간 +10% · 시간 제어 Burning", unlock: "Stage 15 ★★" },
+        { id: "long-tailed", emoji: "🐦", name: "긴꼬리때까치", desc: "화구 +2 · 조리속도 -10%", unlock: "Stage 18+에서 3화구 동시 PERFECT 3회" },
+        { id: "northern", emoji: "🩶", name: "재때까치", desc: "성장형 · 획득 XP +10%", unlock: "Stage 30 ★★" },
+        { id: "grey-backed", emoji: "🏔️", name: "회색등때까치", desc: "고산형 · 고도 페널티 50% 완화", unlock: "Stage 40 ★★" },
+        { id: "isabelline", emoji: "🏜️", name: "사막때까치", desc: "Migration Wave 중 점수 +20%", unlock: "Stage 44 ★★" },
+        { id: "red-tailed", emoji: "🪽", name: "붉은꼬리때까치", desc: "Rush 특화 · Burning 조리 +25%", unlock: "Stage 50 ★★" },
+        { id: "great-grey", emoji: "🩶", name: "초원때까치", desc: "환경형 · World 6에서 등장 예정", unlock: "World 6 예정" }
+    ];
+    shrikeButtonsEl.innerHTML = "";
+    defs.forEach(d => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "select-card" + (selectedShrike === d.id ? " selected" : "");
+        btn.dataset.shrikeId = d.id;
+        btn.disabled = !devMode && !save.unlockedShrikes.includes(d.id);
+        btn.innerHTML = `<span class="classic-shrike-icon">${d.emoji}</span><b>${d.name}</b><span>${d.desc}</span><small>${devMode ? `DEV · ${d.unlock}` : btn.disabled ? `LOCKED · ${d.unlock}` : "사용 가능"}</small>`;
+        btn.addEventListener("click", () => { selectedShrike = d.id; renderShrikes(); });
+        shrikeButtonsEl.appendChild(btn);
+    });
+}
 function upgradeCost(id) { return 250 + save.upgrades[id] * 250; }
 function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가지", desc: "동시 주문 +1 / Lv", max: 2 }, { id: "fire", name: "🔥 좋은 장작", desc: "조리속도 +3% / Lv", max: 5 }, { id: "perch", name: "🪺 편안한 횃대", desc: "주문 대기시간 +4% / Lv", max: 5 }]; upgradeList.innerHTML = ""; defs.forEach(d => { const lv = save.upgrades[d.id], cost = upgradeCost(d.id), card = document.createElement("div"); card.className = "upgrade-card"; card.innerHTML = `<div><b>${d.name} · Lv.${lv}/${d.max}</b><small>${d.desc}</small></div>`; const btn = document.createElement("button"); btn.className = "primary-button"; btn.textContent = lv >= d.max ? "MAX" : `${cost} XP`; btn.disabled = devMode || lv >= d.max || save.xp < cost; if (devMode)
     btn.textContent = "DEV · SAVE LOCK"; btn.onclick = () => { if (devMode)
@@ -635,33 +656,82 @@ function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가�
     persist();
     renderUpgrades();
 } }; card.appendChild(btn); upgradeList.appendChild(card); }); }
-function renderFoodButtons() { foodButtonsEl.innerHTML = ""; stageFoodPool().forEach((id, index) => { var _a; const f = foods[id], btn = document.createElement("button"), key = ((_a = FOOD_KEYS[index]) === null || _a === void 0 ? void 0 : _a.toUpperCase()) || ""; btn.className = "food-button"; btn.innerHTML = `${key ? `<span class="key-badge">${key}</span>` : ""}<span class="food-emoji"><img class="food-pixel" src="assets/foods/${id}.svg" alt="${f.name}"></span>${f.name}<small>${f.cookSeconds}s</small>`; btn.dataset.foodId = id; if (key)
-    btn.setAttribute("aria-keyshortcuts", key); foodButtonsEl.appendChild(btn); }); foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, stageFoodPool().length))},1fr)`; }
-function renderSkewer() { skewerEl.innerHTML = currentSkewer.length ? currentSkewer.map(id => `<span class="skewer-item"><img class="food-pixel-skewer" src="assets/foods/${id}.svg" alt="${foods[id].name}"></span>`).join("") : `<span class="empty-skewer">재료를 순서대로 꽂으세요</span>`; }
-function renderSelected() { const o = orders.find(x => x.id === selectedOrderId); selectedOrderSummary.innerHTML = o ? `<span class="priority-label">우선 매칭</span> <img class="selected-guest-pixel" src="assets/birds/${o.guest.id}.svg" alt=""> <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe)}</span>${o.special ? " · ⭐ SPECIAL" : ""}` : `<span class="auto-match-label">✨ AUTO MATCH</span> 주문 선택 없이 꼬치를 만들어도 됩니다.`; }
-function renderOrders() { const now = Date.now(); ordersEl.innerHTML = ""; orders.forEach((o, index) => { const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button"), key = ORDER_KEYS[index] || ""; btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}`; btn.innerHTML = `${key ? `<span class="key-badge">${key}</span>` : ""}${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}<span class="bird bird-order-pixel"><img src="assets/birds/${o.guest.id}.svg" alt=""></span><div class="name">${o.guest.name}</div><div class="bird-en">${o.guest.englishName}</div><div class="recipe">${recipeEmoji(o.recipe)}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`; btn.dataset.orderId = String(o.id); if (key)
-    btn.setAttribute("aria-keyshortcuts", key); ordersEl.appendChild(btn); }); if (!orders.length)
-    ordersEl.innerHTML = '<div class="hint">다음 손님을 기다리는 중...</div>'; }
-function renderBurners() { const now = Date.now(); burnersEl.innerHTML = ""; burners.forEach(b => { var _a; const btn = document.createElement("button"), key = ((_a = BURNER_KEYS[b.index]) === null || _a === void 0 ? void 0 : _a.toUpperCase()) || ""; btn.className = `burner ${b.state}`; let state = "빈 화구", pct = 0; if (b.state === "cooking") {
-    const e = (now - b.startedAt) / 1000;
-    pct = Math.min(100, e / b.cookSeconds * 100);
-    state = `조리 중 ${Math.max(0, b.cookSeconds - e).toFixed(1)}s`;
-} if (b.state === "ready") {
-    pct = 100;
-    state = "READY · 클릭/키로 서빙";
-} if (b.state === "overcooked") {
-    pct = 100;
-    state = "OVERCOOKED · 지금 서빙";
-} btn.innerHTML = `${key ? `<span class="key-badge">${key}</span>` : ""}<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}</div><div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe) : "EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`; btn.dataset.burnerIndex = String(b.index); if (key)
-    btn.setAttribute("aria-keyshortcuts", key); burnersEl.appendChild(btn); }); }
-function renderBirdBook() { birdBookList.innerHTML = ""; Object.keys(guests).forEach(id => { const g = guests[id], seen = devMode || save.discoveredBirds.includes(id), card = document.createElement("article"); card.className = "bird-card" + (seen ? "" : " locked"); if (!seen) {
-    card.innerHTML = `<div class="bird-card-emoji">❔</div><div><b>미발견 조류</b><small>World 1에서 만나보세요.</small></div>`;
+function renderFoodButtons() {
+    foodButtonsEl.innerHTML = "";
+    stageFoodPool().forEach(id => {
+        const f = foods[id], btn = document.createElement("button");
+        btn.className = "food-button";
+        btn.innerHTML = `<span class="food-emoji">${f.emoji}</span><b>${f.name}</b><small>${f.cookSeconds}s</small>`;
+        btn.dataset.foodId = id;
+        foodButtonsEl.appendChild(btn);
+    });
+    foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, stageFoodPool().length))},1fr)`;
 }
-else {
-    const primary = g.diet.primary.map(x => foods[x].emoji + foods[x].name).join(" · "), secondary = g.diet.secondary.slice(0, 3).map(x => foods[x].emoji + foods[x].name).join(" · ");
-    card.innerHTML = `<div class="bird-card-emoji bird-pixel-frame"><img class="bird-pixel" src="assets/birds/${g.id}.svg" alt="${g.name} 도트 일러스트"></div><div><b>${g.name} <span>${g.englishName}</span></b><i>${g.scientificName}</i><p>${g.note}</p><small>주요 먹이 · ${primary}</small>${secondary ? `<small>보조 먹이 · ${secondary}</small>` : ""}</div>`;
-} birdBookList.appendChild(card); }); }
-function renderShrikeDex() { const defs = [{ id: "bull-headed", emoji: "🐦", ko: "때까치", en: "Bull-headed Shrike", role: "⚖️ Balance", passive: "기본 능력 없음", burn: "15초간 조립·조리·대기시간을 균형 강화", unlock: "기본 캐릭터" }, { id: "tiger", emoji: "🐅", ko: "칡때까치", en: "Tiger Shrike", role: "🔥 Cooking", passive: "조리속도 +10%", burn: "15초간 조리속도 +40%", unlock: "Stage 3 이상 ★★" }, { id: "brown", emoji: "🟤", ko: "노랑때까치", en: "Brown Shrike", role: "⚡ Combo", passive: "Combo가 높을수록 점수 증가", burn: "Burning 중 콤보 기반 보너스 강화", unlock: "Stage 6 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", ko: "물때까치", en: "Chinese Grey Shrike", role: "⏱ Control", passive: "주문 제한시간 +10%", burn: "8초 주문 타이머 정지 + 7초 50% 감속", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", ko: "긴꼬리때까치", en: "Long-tailed Shrike", role: "🍢 Capacity", passive: "화구 +2, 조리속도 -10%", burn: "15초간 임시 화구 +2 + 조리속도 +20%", unlock: "Stage 18+ 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", ko: "재때까치", en: "Northern Shrike", role: "📈 Growth", passive: "스테이지 획득 XP +10%", burn: "15초간 기본 균형 강화", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", ko: "회색등때까치", en: "Grey-backed Shrike", role: "🏔️ Altitude", passive: "고도 조리 페널티 50% 완화", burn: "Burning 동안 고도 페널티 제거 · 한기 페널티 제거", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", ko: "사막때까치", en: "Isabelline Shrike", role: "🪽 Migration", passive: "Migration Wave 중 점수 +20%", burn: "15초간 Migration/Rush 점수 +40%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", ko: "붉은꼬리때까치", en: "Red-tailed Shrike", role: "⚡ Rush", passive: "Migration Wave 중 점수 +15%", burn: "15초간 조리속도 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", ko: "초원때까치", en: "Great Grey Shrike", role: "🌍 Environment", passive: "유럽·북아프리카·서아시아 환경에 특화 예정", burn: "World 6에서 공개 예정", unlock: "World 6 예정" }]; shrikeDexList.innerHTML = ""; defs.forEach(d => { const open = devMode || save.unlockedShrikes.includes(d.id), card = document.createElement("article"); card.className = "dex-card" + (open ? "" : " locked"); card.innerHTML = open ? `<div class="dex-emoji dex-pixel-frame"><img class="shrike-pixel" src="assets/shrikes/${d.id}.svg" alt="${d.ko}"></div><div><b>${d.ko} <span>${d.en}</span></b><small>${d.role}</small><p><strong>Passive</strong> · ${d.passive}</p><p><strong>Burning</strong> · ${d.burn}</p><small>Unlock · ${d.unlock}</small></div>` : `<div class="dex-emoji">❔</div><div><b>LOCKED SHRIKE</b><small>${d.unlock}</small></div>`; shrikeDexList.appendChild(card); }); }
+function renderSkewer() {
+    skewerEl.innerHTML = currentSkewer.length
+        ? currentSkewer.map(id => `<span class="skewer-item classic-skewer-item"><span>${foods[id].emoji}</span><small>${foods[id].name}</small></span>`).join("")
+        : `<span class="empty-skewer">재료를 순서대로 꽂으세요</span>`;
+}
+function renderSelected() {
+    const o = orders.find(x => x.id === selectedOrderId);
+    selectedOrderSummary.innerHTML = o
+        ? `<span class="priority-label">우선 매칭</span> <span class="classic-guest-icon">${o.guest.emoji}</span> <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe)}</span>${o.special ? " · ⭐ SPECIAL" : ""}`
+        : `<span class="auto-match-label">✨ AUTO MATCH</span> 주문 선택 없이 꼬치를 만들어도 됩니다.`;
+}
+function renderOrders() {
+    const now = Date.now();
+    ordersEl.innerHTML = "";
+    orders.forEach(o => {
+        const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button");
+        btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}`;
+        btn.innerHTML = `${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}<span class="bird classic-order-bird">${o.guest.emoji}</span><div class="name">${o.guest.name}</div><div class="bird-en">${o.guest.englishName}</div><div class="recipe classic-recipe">${recipeEmoji(o.recipe)}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`;
+        btn.dataset.orderId = String(o.id);
+        ordersEl.appendChild(btn);
+    });
+    if (!orders.length)
+        ordersEl.innerHTML = '<div class="hint">다음 손님을 기다리는 중...</div>';
+}
+function renderBurners() {
+    const now = Date.now();
+    burnersEl.innerHTML = "";
+    burners.forEach(b => {
+        const btn = document.createElement("button");
+        btn.className = `burner ${b.state}`;
+        let state = "빈 화구", pct = 0;
+        if (b.state === "cooking") {
+            const e = (now - b.startedAt) / 1000;
+            pct = Math.min(100, e / b.cookSeconds * 100);
+            state = `조리 중 ${Math.max(0, b.cookSeconds - e).toFixed(1)}s`;
+        }
+        if (b.state === "ready") {
+            pct = 100;
+            state = "READY · 클릭해서 서빙";
+        }
+        if (b.state === "overcooked") {
+            pct = 100;
+            state = "OVERCOOKED · 지금 서빙";
+        }
+        btn.innerHTML = `<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}</div><div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe) : "EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`;
+        btn.dataset.burnerIndex = String(b.index);
+        burnersEl.appendChild(btn);
+    });
+}
+function renderBirdBook() {
+    birdBookList.innerHTML = "";
+    Object.keys(guests).forEach(id => {
+        const g = guests[id], seen = devMode || save.discoveredBirds.includes(id), card = document.createElement("article");
+        card.className = "bird-card" + (seen ? "" : " locked");
+        if (!seen) {
+            card.innerHTML = `<div class="bird-card-emoji">❔</div><div><b>미발견 조류</b><small>새로운 스테이지에서 만나보세요.</small></div>`;
+        }
+        else {
+            const primary = g.diet.primary.map(x => foods[x].emoji + foods[x].name).join(" · "), secondary = g.diet.secondary.slice(0, 3).map(x => foods[x].emoji + foods[x].name).join(" · ");
+            card.innerHTML = `<div class="bird-card-emoji">${g.emoji}</div><div><b>${g.name} <span>${g.englishName}</span></b><i>${g.scientificName}</i><p>${g.note}</p><small>주요 먹이 · ${primary}</small>${secondary ? `<small>보조 먹이 · ${secondary}</small>` : ""}</div>`;
+        }
+        birdBookList.appendChild(card);
+    });
+}
+function renderShrikeDex() { const defs = [{ id: "bull-headed", emoji: "🐦", ko: "때까치", en: "Bull-headed Shrike", role: "⚖️ Balance", passive: "기본 능력 없음", burn: "15초간 조립·조리·대기시간을 균형 강화", unlock: "기본 캐릭터" }, { id: "tiger", emoji: "🐅", ko: "칡때까치", en: "Tiger Shrike", role: "🔥 Cooking", passive: "조리속도 +10%", burn: "15초간 조리속도 +40%", unlock: "Stage 3 이상 ★★" }, { id: "brown", emoji: "🟤", ko: "노랑때까치", en: "Brown Shrike", role: "⚡ Combo", passive: "Combo가 높을수록 점수 증가", burn: "Burning 중 콤보 기반 보너스 강화", unlock: "Stage 6 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", ko: "물때까치", en: "Chinese Grey Shrike", role: "⏱ Control", passive: "주문 제한시간 +10%", burn: "8초 주문 타이머 정지 + 7초 50% 감속", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", ko: "긴꼬리때까치", en: "Long-tailed Shrike", role: "🍢 Capacity", passive: "화구 +2, 조리속도 -10%", burn: "15초간 임시 화구 +2 + 조리속도 +20%", unlock: "Stage 18+ 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", ko: "재때까치", en: "Northern Shrike", role: "📈 Growth", passive: "스테이지 획득 XP +10%", burn: "15초간 기본 균형 강화", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", ko: "회색등때까치", en: "Grey-backed Shrike", role: "🏔️ Altitude", passive: "고도 조리 페널티 50% 완화", burn: "Burning 동안 고도 페널티 제거 · 한기 페널티 제거", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", ko: "사막때까치", en: "Isabelline Shrike", role: "🪽 Migration", passive: "Migration Wave 중 점수 +20%", burn: "15초간 Migration/Rush 점수 +40%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", ko: "붉은꼬리때까치", en: "Red-tailed Shrike", role: "⚡ Rush", passive: "Migration Wave 중 점수 +15%", burn: "15초간 조리속도 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", ko: "초원때까치", en: "Great Grey Shrike", role: "🌍 Environment", passive: "유럽·북아프리카·서아시아 환경에 특화 예정", burn: "World 6에서 공개 예정", unlock: "World 6 예정" }]; shrikeDexList.innerHTML = ""; defs.forEach(d => { const open = devMode || save.unlockedShrikes.includes(d.id), card = document.createElement("article"); card.className = "dex-card" + (open ? "" : " locked"); card.innerHTML = open ? `<div class="dex-emoji">${d.emoji}</div><div><b>${d.ko} <span>${d.en}</span></b><small>${d.role}</small><p><strong>Passive</strong> · ${d.passive}</p><p><strong>Burning</strong> · ${d.burn}</p><small>Unlock · ${d.unlock}</small></div>` : `<div class="dex-emoji">❔</div><div><b>LOCKED SHRIKE</b><small>${d.unlock}</small></div>`; shrikeDexList.appendChild(card); }); }
 function updateHud() { scoreLabel.textContent = score.toLocaleString(); xpHudLabel.textContent = save.xp.toLocaleString(); comboLabel.textContent = `×${combo}`; bestComboLabel.textContent = `×${bestCombo}`; burnGaugeFill.style.width = `${burningGauge}%`; burnGaugeText.textContent = isBurning() ? "ACTIVE" : `${Math.round(burningGauge)}%`; burnButton.disabled = burningGauge < 100 || isBurning() || paused; }
 function setStatus(t) { statusMessage.textContent = t; }
 function judge(t, good) { floatingJudge.textContent = t; floatingJudge.style.color = good ? "var(--accent)" : "var(--danger)"; floatingJudge.classList.remove("pop"); void floatingJudge.offsetWidth; floatingJudge.classList.add("pop"); }
@@ -862,10 +932,6 @@ bindAdaptiveAction(finishSkewerButton, finishSkewer);
 bindAdaptiveAction(burnButton, activateBurning);
 bindAdaptiveAction(pauseButton, togglePause);
 bindAdaptiveAction(quitButton, () => { closeAllDialogs(); document.body.classList.remove("in-game"); running = false; paused = false; cancelAnimationFrame(animationFrame); gameScreen.classList.add("hidden"); resultScreen.classList.add("hidden"); startScreen.classList.remove("hidden"); renderMeta(); });
-keyboardGuideButton.onclick = () => toggleKeyboardGuide(true);
-keyboardGuideGameButton.onclick = () => toggleKeyboardGuide(true);
-closeKeyboardGuideButton.onclick = () => toggleKeyboardGuide(false);
-document.addEventListener("keydown", handleGameKeyboard);
 helpButton.onclick = () => openDialog(helpDialog);
 closeHelpButton.onclick = () => closeDialog(helpDialog);
 restaurantButton.onclick = () => { renderUpgrades(); openDialog(restaurantDialog); };

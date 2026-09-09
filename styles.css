@@ -483,21 +483,75 @@ body.dev-mode .dev-mode-button{font-weight:900;box-shadow:0 0 0 2px currentColor
 body.dev-mode .stage-card:not(:disabled),body.dev-mode .select-card:not(:disabled){outline:1px dashed currentColor;outline-offset:-4px}
 .dev-badge{display:inline-block;margin-top:4px;font-weight:900;letter-spacing:.05em}
 @media (max-width: 900px){.dev-mode-banner{font-size:.72rem;padding:5px 8px}}
+/* 0.6.3 Gameplay Depth */
+.signature-badge{position:absolute;left:8px;bottom:7px;padding:2px 6px;border-radius:999px;background:#183d2b;border:1px solid #4f8d68;color:#dff7e6;font-size:.62rem;font-weight:900;letter-spacing:.03em}
+.order-card.selected{outline:2px solid var(--accent);outline-offset:1px}
+
+/* 0.6.3.1 Input Stability & Cover Alignment Hotfix */
+.cover-copy .game-title{
+  display:flex!important;
+  width:100%!important;
+  max-width:100%!important;
+  justify-content:center!important;
+  text-align:center!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.order-card[data-order-id],
+.burner[data-burner-index],
+.food-button[data-food-id]{cursor:pointer;touch-action:manipulation}
+.order-card[data-order-id] *,
+.burner[data-burner-index] *,
+.food-button[data-food-id] *{pointer-events:none}
+.order-card.selected{outline:2px solid var(--accent);outline-offset:-2px}
+
+/* 0.6.4 World Identity Update: content-only readability */
+.stage-ecology p b{line-height:1.45}
 
 
-
-/* 0.6.7.1 Visual rollback: stable emoji/text presentation */
-.auto-match-label,.priority-label{display:inline-flex;align-items:center;justify-content:center;padding:3px 8px;border-radius:999px;font-size:.68rem;font-weight:1000;letter-spacing:.05em;vertical-align:middle;margin-right:6px}
-.auto-match-label{background:#173d30;border:1px solid #5a9a77;color:#dfffe8}.priority-label{background:#493a17;border:1px solid #b99b4c;color:#fff0a8}
-#selectedOrderSummary{min-height:38px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.order-card.selected:after{content:"우선";position:absolute;right:7px;bottom:7px;background:#f0b94b;color:#171006;font-weight:1000;font-size:.62rem;padding:2px 6px;border-radius:999px}
-.classic-shrike-icon,.classic-guest-icon,.classic-order-bird{display:grid;place-items:center;font-size:2.25rem;line-height:1}
-.select-card .classic-shrike-icon{grid-row:1/4;min-width:64px;min-height:64px;background:#0b1c16;border-radius:14px;border:1px solid var(--line)}
-.classic-order-bird{font-size:2.5rem!important}
-.food-button .food-emoji{font-size:2rem;line-height:1.1}
-.food-button b{display:block;margin-top:4px}
-.classic-skewer-item{display:grid;place-items:center;gap:2px;min-width:54px;font-size:2rem}
-.classic-skewer-item small{font-size:.66rem;color:var(--muted)}
-.classic-recipe,.recipe-inline,.burner-recipe{font-size:1.4rem;letter-spacing:.08em}
-.keyboard-mini-guide,.key-badge,.keyboard-guide-dialog{display:none!important}
-.service-stage{display:none!important}
+/* 0.6.4.2 Guided Start Flow */
+.start-screen.guided-start{padding:18px 20px;overflow:hidden;display:flex;flex-direction:column;min-height:520px}
+.guided-progress{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0 0 12px;flex:0 0 auto}
+.guided-progress span{padding:7px 8px;border-radius:999px;background:#0e2019;border:1px solid var(--line);color:var(--muted);font-size:.68rem;font-weight:900;letter-spacing:.04em}
+.guided-progress span.active{background:#1a3329;color:var(--accent);outline:2px solid rgba(255,199,89,.35)}
+.guided-progress span.done{color:#b8d7c8;background:#102a22}
+.start-step{flex:1 1 auto;min-height:0;overflow:hidden}
+.start-step:not(.hidden){display:flex;flex-direction:column}
+.step-scroll{flex:1 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain;padding:3px 4px 8px;scrollbar-width:thin}
+.world-step-scroll{display:flex;flex-direction:column;justify-content:center}
+.step-lead{max-width:780px;margin:0 auto 12px;color:var(--muted);line-height:1.55}
+.guided-heading{margin:12px 0 8px}
+.guided-world-tabs{grid-template-columns:repeat(5,minmax(0,1fr));margin:8px 0 0}
+.guided-world-tabs .world-tab{min-height:72px;padding:10px 8px}
+.step-head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;flex:0 0 auto;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.step-head>div{grid-column:2;text-align:center}.step-head .eyebrow{margin:0}.step-head h2{margin:2px 0!important}
+.flow-back{grid-column:1;grid-row:1;white-space:nowrap}
+.guided-stage-map{margin:0;align-content:start}
+.guided-ecology{margin:0 0 10px}
+.guided-chef-grid{margin:0;align-content:start}
+.ready-wrap{flex:1;display:grid;place-items:center;align-content:center;gap:18px;padding:16px}
+.ready-card{width:min(620px,100%);display:grid;gap:10px;padding:24px;border-radius:18px;background:#0f211a;border:1px solid #355446;text-align:center;box-shadow:var(--shadow)}
+.ready-card strong{font-size:1.35rem;color:var(--accent)}.ready-card span{color:var(--muted)}.ready-card .ready-kicker{font-size:.72rem;font-weight:900;color:var(--cyan);letter-spacing:.05em}
+.guided-start-button{width:min(620px,100%);font-size:1.05rem}
+@media (min-width:901px){
+  .start-screen.guided-start{height:calc(100dvh - 210px);max-height:720px}
+  .guided-stage-map{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .guided-chef-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .start-screen.guided-start{padding:12px;min-height:0;max-height:calc(100dvh - 150px)}
+  .guided-progress span{font-size:.56rem;padding:6px 3px}
+  .guided-world-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .guided-world-tabs .world-tab{min-height:58px}
+  .step-head{grid-template-columns:auto 1fr;gap:6px}.step-head>div{text-align:right}.flow-back{font-size:.68rem;padding:8px}
+  .guided-stage-map{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .guided-chef-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .guided-ecology{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ready-card{padding:18px 12px}
+}
+@media (max-width:560px){
+  .guided-progress span{font-size:0}.guided-progress span::first-letter{font-size:.7rem}
+  .guided-world-tabs,.guided-stage-map,.guided-chef-grid{grid-template-columns:1fr 1fr}
+  .guided-ecology{grid-template-columns:1fr}
+  .hero-bird{font-size:2rem}.world-step-scroll h2{font-size:1.15rem}
+}

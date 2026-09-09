@@ -1,6 +1,6 @@
 "use strict";
 var _a;
-const SAVE_VERSION = 11;
+const SAVE_VERSION = 10;
 // Keep the 0.3 key so existing Prototype 0.3.3 saves migrate automatically.
 const SAVE_KEY = "shrikeTycoonPrototype03Stable";
 const OVERCOOK_GRACE = 2.8;
@@ -20,7 +20,7 @@ const foods = {
     smallBird: { id: "smallBird", name: "작은 새", emoji: "🐦", cookSeconds: 4.4, score: 32 }
 };
 const guests = {
-    "great-tit": { id: "great-tit", name: "박새", englishName: "Asian Tit", scientificName: "Parus cinereus", emoji: "🐦", diet: { primary: ["caterpillar", "beetle"], secondary: ["grasshopper"], rare: ["aquaticInsect"], never: ["frog", "lizard", "mouse", "fish", "smallBird"] }, note: "곤충의 성충·유충을 폭넓게 이용하는 수목성 손님." },
+    "great-tit": { id: "great-tit", name: "박새", englishName: "Great Tit", scientificName: "Parus major", emoji: "🐦", diet: { primary: ["caterpillar", "beetle"], secondary: ["grasshopper"], rare: ["aquaticInsect"], never: ["frog", "lizard", "mouse", "fish", "smallBird"] }, note: "곤충의 성충·유충을 폭넓게 이용하는 수목성 손님." },
     "marsh-tit": { id: "marsh-tit", name: "쇠박새", englishName: "Marsh Tit", scientificName: "Poecile palustris", emoji: "🐦", diet: { primary: ["caterpillar", "beetle"], secondary: ["grasshopper"], rare: [], never: ["frog", "lizard", "mouse", "fish", "smallBird"] }, note: "작은 곤충류를 중심으로 주문하는 짧은 주문형 손님." },
     "white-wagtail": { id: "white-wagtail", name: "알락할미새", englishName: "White Wagtail", scientificName: "Motacilla alba", emoji: "🐦", diet: { primary: ["grasshopper", "beetle"], secondary: ["aquaticInsect", "caterpillar"], rare: [], never: ["mouse", "smallBird"] }, note: "농경지와 물가에서 작은 무척추동물을 찾는 손님." },
     "grey-wagtail": { id: "grey-wagtail", name: "노랑할미새", englishName: "Grey Wagtail", scientificName: "Motacilla cinerea", emoji: "🐦", diet: { primary: ["aquaticInsect"], secondary: ["beetle", "grasshopper"], rare: ["caterpillar"], never: ["mouse", "smallBird"] }, note: "흐르는 물 주변의 수서곤충 주문 비중이 높은 손님." },
@@ -62,10 +62,9 @@ const guests = {
     "grey-backed-shrike": { id: "grey-backed-shrike", name: "회색등때까치", englishName: "Grey-backed Shrike", scientificName: "Lanius tephronotus", emoji: "🩶", diet: { primary: ["grasshopper", "beetle", "lizard"], secondary: ["mouse", "caterpillar"], rare: ["smallBird", "frog"], never: ["fish"] }, note: "히말라야와 티베트 고원의 개방지에서 곤충과 소형 척추동물을 사냥하는 손님." },
     "isabelline-wheatear": { id: "isabelline-wheatear", name: "사막딱새", englishName: "Isabelline Wheatear", scientificName: "Oenanthe isabellina", emoji: "🐦", diet: { primary: ["grasshopper", "beetle"], secondary: ["caterpillar", "lizard"], rare: ["mouse"], never: ["fish", "smallBird"] }, note: "건조 초원과 반사막에서 땅 위 곤충을 쫓는 이동성 손님." },
     "eurasian-hoopoe": { id: "eurasian-hoopoe", name: "후투티", englishName: "Eurasian Hoopoe", scientificName: "Upupa epops", emoji: "🐦", diet: { primary: ["beetle", "grasshopper"], secondary: ["caterpillar", "lizard"], rare: ["frog"], never: ["fish", "smallBird"] }, note: "땅을 탐색해 큰 곤충과 유충을 먹는 초원·농경지 손님." },
-    "european-roller": { id: "european-roller", name: "파랑새", englishName: "Dollarbird", scientificName: "Eurystomus orientalis", emoji: "🐦", diet: { primary: ["grasshopper", "beetle", "lizard"], secondary: ["frog", "mouse"], rare: ["smallBird"], never: ["fish"] }, note: "개방지에서 큰 곤충과 소형 척추동물을 노리는 사냥형 손님." },
+    "european-roller": { id: "european-roller", name: "파랑새", englishName: "European Roller", scientificName: "Coracias garrulus", emoji: "🐦", diet: { primary: ["grasshopper", "beetle", "lizard"], secondary: ["frog", "mouse"], rare: ["smallBird"], never: ["fish"] }, note: "개방지에서 큰 곤충과 소형 척추동물을 노리는 사냥형 손님." },
     "little-owl": { id: "little-owl", name: "금눈쇠올빼미", englishName: "Little Owl", scientificName: "Athene noctua", emoji: "🦉", diet: { primary: ["mouse", "beetle", "grasshopper"], secondary: ["lizard", "smallBird"], rare: ["frog"], never: ["fish"] }, note: "건조 농경지와 초원의 야간 포식자. 설치류와 대형 곤충을 주문한다." },
     "steppe-eagle": { id: "steppe-eagle", name: "초원수리", englishName: "Steppe Eagle", scientificName: "Aquila nipalensis", emoji: "🦅", diet: { primary: ["mouse"], secondary: ["smallBird", "lizard"], rare: ["frog"], never: ["caterpillar", "aquaticInsect", "fish"] }, note: "초원에서 소형 포유류를 중심으로 먹는 대형 포식자 손님." },
-    "common-greenshank": { id: "common-greenshank", name: "청다리도요", englishName: "Common Greenshank", scientificName: "Tringa nebularia", emoji: "🐦", diet: { primary: ["aquaticInsect"], secondary: ["frog", "fish", "beetle"], rare: ["grasshopper"], never: ["mouse", "smallBird"] }, note: "길고 약간 위로 휜 부리와 녹색빛 긴 다리가 특징인 습지 도요류 손님." },
     "red-tailed-shrike": { id: "red-tailed-shrike", name: "붉은꼬리때까치", englishName: "Red-tailed Shrike", scientificName: "Lanius phoenicuroides", emoji: "🐦", diet: { primary: ["grasshopper", "beetle", "lizard"], secondary: ["mouse", "caterpillar"], rare: ["smallBird"], never: ["fish"] }, note: "중앙아시아 건조지의 이동성 때까치 손님." },
     "isabelline-shrike": { id: "isabelline-shrike", name: "사막때까치", englishName: "Isabelline Shrike", scientificName: "Lanius isabellinus", emoji: "🐦", diet: { primary: ["grasshopper", "beetle", "lizard"], secondary: ["mouse", "caterpillar"], rare: ["smallBird"], never: ["fish"] }, note: "사막과 반사막 가장자리에서 큰 곤충과 작은 척추동물을 사냥하는 때까치 손님." }
 };
@@ -82,14 +81,14 @@ const stages = {
     10: { id: 10, world: 1, icon: "🌅", name: "오래된 느티나무", habitat: "World 1 Finale", duration: 180, maxOrders: 5, spawnMin: 2150, spawnMax: 3600, maxRecipeLength: 4, specialChance: .25, feedingTimeAt: 92, feedingDuration: 32, starScores: [3300, 5000], event: "FINAL FEEDING TIME", guestPool: ["great-tit", "common-kingfisher", "eastern-cattle-egret", "oriental-magpie", "grey-heron", "eurasian-sparrowhawk", "oriental-scops-owl"], foodAvailability: { grasshopper: .8, caterpillar: .7, beetle: .8, aquaticInsect: .45, frog: .7, lizard: .55, mouse: .7, fish: .75, smallBird: .65 } },
     11: { id: 11, world: 2, icon: "💦", name: "농수로의 끝", habitat: "농수로 합류부", duration: 125, maxOrders: 4, spawnMin: 3000, spawnMax: 4650, maxRecipeLength: 4, specialChance: .10, feedingTimeAt: 68, feedingDuration: 16, starScores: [1400, 2250], guestPool: ["white-wagtail", "common-kingfisher", "little-egret"], foodAvailability: { fish: .8, aquaticInsect: 1, frog: .65, grasshopper: .45, beetle: .45 } },
     12: { id: 12, world: 2, icon: "🏞️", name: "작은 하천", habitat: "완만한 소하천", duration: 130, maxOrders: 4, spawnMin: 2850, spawnMax: 4450, maxRecipeLength: 4, specialChance: .11, feedingTimeAt: 70, feedingDuration: 17, starScores: [1600, 2550], weather: [{ at: 45, duration: 20, type: "sun" }], guestPool: ["grey-wagtail", "common-sandpiper", "common-kingfisher"], foodAvailability: { aquaticInsect: 1, fish: .75, beetle: .55, frog: .5, grasshopper: .35 } },
-    13: { id: 13, world: 2, icon: "🪨", name: "자갈 하천", habitat: "자갈톱과 얕은 여울", duration: 135, maxOrders: 4, spawnMin: 2750, spawnMax: 4300, maxRecipeLength: 4, specialChance: .13, feedingTimeAt: 72, feedingDuration: 18, starScores: [1800, 2850], weather: [{ at: 52, duration: 22, type: "wind" }], guestPool: ["common-sandpiper", "grey-wagtail", "white-wagtail", "grey-headed-lapwing", "common-greenshank"], foodAvailability: { aquaticInsect: 1, beetle: .8, grasshopper: .65, caterpillar: .55, frog: .3 } },
+    13: { id: 13, world: 2, icon: "🪨", name: "자갈 하천", habitat: "자갈톱과 얕은 여울", duration: 135, maxOrders: 4, spawnMin: 2750, spawnMax: 4300, maxRecipeLength: 4, specialChance: .13, feedingTimeAt: 72, feedingDuration: 18, starScores: [1800, 2850], weather: [{ at: 52, duration: 22, type: "wind" }], guestPool: ["common-sandpiper", "grey-wagtail", "white-wagtail", "grey-headed-lapwing"], foodAvailability: { aquaticInsect: 1, beetle: .8, grasshopper: .65, caterpillar: .55, frog: .3 } },
     14: { id: 14, world: 2, icon: "🌾", name: "갈대밭 식당", habitat: "하천 갈대밭", duration: 140, maxOrders: 4, spawnMin: 2600, spawnMax: 4150, maxRecipeLength: 4, specialChance: .14, feedingTimeAt: 75, feedingDuration: 19, starScores: [2000, 3150], weather: [{ at: 55, duration: 24, type: "rain" }], guestPool: ["oriental-reed-warbler", "barn-swallow", "black-crowned-night-heron"], foodAvailability: { aquaticInsect: 1, caterpillar: .9, beetle: .8, grasshopper: .75, frog: .55, fish: .45 } },
     15: { id: 15, world: 2, icon: "🌿", name: "범람원 초지", habitat: "범람원과 습윤 초지", duration: 145, maxOrders: 5, spawnMin: 2500, spawnMax: 3950, maxRecipeLength: 4, specialChance: .16, feedingTimeAt: 78, feedingDuration: 20, starScores: [2250, 3500], event: "RIVER FEEDING TIME", weather: [{ at: 38, duration: 18, type: "sun" }, { at: 96, duration: 18, type: "wind" }], guestPool: ["barn-swallow", "grey-headed-lapwing", "eastern-cattle-egret", "common-kestrel"], foodAvailability: { grasshopper: 1, beetle: .85, aquaticInsect: .8, frog: .55, mouse: .45, lizard: .35 } },
-    16: { id: 16, world: 2, icon: "🪷", name: "갈대 습지", habitat: "얕은 습지와 갈대섬", duration: 150, maxOrders: 5, spawnMin: 2400, spawnMax: 3850, maxRecipeLength: 4, specialChance: .18, feedingTimeAt: 82, feedingDuration: 21, starScores: [2500, 3850], weather: [{ at: 58, duration: 26, type: "rain" }], guestPool: ["little-egret", "black-crowned-night-heron", "oriental-reed-warbler", "ruddy-kingfisher", "common-greenshank"], foodAvailability: { frog: 1, fish: .85, aquaticInsect: .9, beetle: .55, lizard: .5, mouse: .25 } },
+    16: { id: 16, world: 2, icon: "🪷", name: "갈대 습지", habitat: "얕은 습지와 갈대섬", duration: 150, maxOrders: 5, spawnMin: 2400, spawnMax: 3850, maxRecipeLength: 4, specialChance: .18, feedingTimeAt: 82, feedingDuration: 21, starScores: [2500, 3850], weather: [{ at: 58, duration: 26, type: "rain" }], guestPool: ["little-egret", "black-crowned-night-heron", "oriental-reed-warbler", "ruddy-kingfisher"], foodAvailability: { frog: 1, fish: .85, aquaticInsect: .9, beetle: .55, lizard: .5, mouse: .25 } },
     17: { id: 17, world: 2, icon: "🌊", name: "큰 저수지", habitat: "저수지 개방수면 가장자리", duration: 155, maxOrders: 5, spawnMin: 2300, spawnMax: 3700, maxRecipeLength: 4, specialChance: .20, feedingTimeAt: 84, feedingDuration: 22, starScores: [2800, 4300], weather: [{ at: 42, duration: 18, type: "sun" }, { at: 110, duration: 20, type: "rain" }], guestPool: ["common-kingfisher", "little-egret", "grey-heron", "black-crowned-night-heron"], foodAvailability: { fish: 1, frog: .85, aquaticInsect: .75, mouse: .3, lizard: .25, smallBird: .15 } },
-    18: { id: 18, world: 2, icon: "🌉", name: "큰 강의 바람", habitat: "넓은 하천과 모래톱", duration: 160, maxOrders: 5, spawnMin: 2200, spawnMax: 3550, maxRecipeLength: 4, specialChance: .22, feedingTimeAt: 86, feedingDuration: 23, starScores: [3100, 4700], event: "RIVER RUSH", weather: [{ at: 48, duration: 26, type: "wind" }, { at: 118, duration: 20, type: "sun" }], guestPool: ["common-sandpiper", "grey-headed-lapwing", "little-egret", "common-kestrel", "grey-heron", "common-greenshank"], foodAvailability: { aquaticInsect: .85, fish: .8, grasshopper: .7, beetle: .75, frog: .55, mouse: .5, lizard: .35 } },
+    18: { id: 18, world: 2, icon: "🌉", name: "큰 강의 바람", habitat: "넓은 하천과 모래톱", duration: 160, maxOrders: 5, spawnMin: 2200, spawnMax: 3550, maxRecipeLength: 4, specialChance: .22, feedingTimeAt: 86, feedingDuration: 23, starScores: [3100, 4700], event: "RIVER RUSH", weather: [{ at: 48, duration: 26, type: "wind" }, { at: 118, duration: 20, type: "sun" }], guestPool: ["common-sandpiper", "grey-headed-lapwing", "little-egret", "common-kestrel", "grey-heron"], foodAvailability: { aquaticInsect: .85, fish: .8, grasshopper: .7, beetle: .75, frog: .55, mouse: .5, lizard: .35 } },
     19: { id: 19, world: 2, icon: "🌇", name: "강변의 석양", habitat: "석양의 강변과 갈대숲", duration: 170, maxOrders: 5, spawnMin: 2100, spawnMax: 3450, maxRecipeLength: 4, specialChance: .24, feedingTimeAt: 90, feedingDuration: 25, starScores: [3500, 5200], event: "SUNSET SERVICE", weather: [{ at: 35, duration: 22, type: "sun" }, { at: 105, duration: 22, type: "wind" }], guestPool: ["black-crowned-night-heron", "ruddy-kingfisher", "common-kingfisher", "oriental-reed-warbler", "grey-heron"], foodAvailability: { fish: 1, frog: .9, aquaticInsect: .85, lizard: .6, mouse: .45, beetle: .55 } },
-    20: { id: 20, world: 2, icon: "⛈️", name: "폭풍우 치는 강", habitat: "World 2 Finale", duration: 190, maxOrders: 6, spawnMin: 1950, spawnMax: 3250, maxRecipeLength: 4, specialChance: .28, feedingTimeAt: 98, feedingDuration: 34, starScores: [4300, 6300], event: "STORM SERVICE", weather: [{ at: 28, duration: 25, type: "rain" }, { at: 70, duration: 24, type: "wind" }, { at: 116, duration: 20, type: "sun" }, { at: 148, duration: 28, type: "rain" }], guestPool: ["common-kingfisher", "little-egret", "black-crowned-night-heron", "common-sandpiper", "barn-swallow", "grey-headed-lapwing", "grey-heron", "ruddy-kingfisher", "common-greenshank"], foodAvailability: { fish: 1, frog: .95, aquaticInsect: 1, grasshopper: .65, beetle: .7, lizard: .55, mouse: .45, smallBird: .2 } },
+    20: { id: 20, world: 2, icon: "⛈️", name: "폭풍우 치는 강", habitat: "World 2 Finale", duration: 190, maxOrders: 6, spawnMin: 1950, spawnMax: 3250, maxRecipeLength: 4, specialChance: .28, feedingTimeAt: 98, feedingDuration: 34, starScores: [4300, 6300], event: "STORM SERVICE", weather: [{ at: 28, duration: 25, type: "rain" }, { at: 70, duration: 24, type: "wind" }, { at: 116, duration: 20, type: "sun" }, { at: 148, duration: 28, type: "rain" }], guestPool: ["common-kingfisher", "little-egret", "black-crowned-night-heron", "common-sandpiper", "barn-swallow", "grey-headed-lapwing", "grey-heron", "ruddy-kingfisher"], foodAvailability: { fish: 1, frog: .95, aquaticInsect: 1, grasshopper: .65, beetle: .7, lizard: .55, mouse: .45, smallBird: .2 } },
     21: { id: 21, world: 3, icon: "⛰️", name: "산기슭의 오후", habitat: "산기슭 농경지", duration: 145, maxOrders: 4, spawnMin: 2700, spawnMax: 4200, maxRecipeLength: 4, specialChance: .15, feedingTimeAt: 78, feedingDuration: 18, starScores: [2200, 3400], guestPool: ["daurian-redstart", "varied-tit", "eurasian-jay"], foodAvailability: { grasshopper: .9, caterpillar: .9, beetle: 1, lizard: .45, mouse: .35 }, timePhases: [{ at: 0, type: "day" }, { at: 105, type: "dusk", guestPool: ["daurian-redstart", "varied-tit", "pale-thrush", "grey-nightjar"], foodModifier: { beetle: 1.15, grasshopper: 1.1 } }], subGoal: { kind: "perfect", target: 5, label: "PERFECT 5회" } },
     22: { id: 22, world: 3, icon: "🌲", name: "숲 가장자리", habitat: "활엽수림 가장자리", duration: 150, maxOrders: 4, spawnMin: 2600, spawnMax: 4100, maxRecipeLength: 4, specialChance: .16, feedingTimeAt: 80, feedingDuration: 19, starScores: [2400, 3700], guestPool: ["great-tit", "varied-tit", "japanese-pygmy-woodpecker", "eurasian-jay"], foodAvailability: { caterpillar: 1, beetle: 1, grasshopper: .65, lizard: .35 }, timePhases: [{ at: 0, type: "day" }, { at: 100, type: "dusk", guestPool: ["varied-tit", "pale-thrush", "whites-thrush", "grey-nightjar"], foodModifier: { beetle: 1.2, caterpillar: .9 } }], subGoal: { kind: "combo", target: 8, label: "Combo ×8" } },
     23: { id: 23, world: 3, icon: "🌤️", name: "숲속 공터", habitat: "햇빛 드는 산림 공터", duration: 155, maxOrders: 5, spawnMin: 2500, spawnMax: 3950, maxRecipeLength: 4, specialChance: .18, feedingTimeAt: 82, feedingDuration: 20, starScores: [2650, 4050], guestPool: ["coal-tit", "varied-tit", "eurasian-jay", "daurian-redstart"], foodAvailability: { grasshopper: 1, caterpillar: .9, beetle: .95, lizard: .5, mouse: .25 }, timePhases: [{ at: 0, type: "day" }, { at: 82, type: "dusk", guestPool: ["pale-thrush", "whites-thrush", "grey-nightjar", "varied-tit"] }, { at: 128, type: "night", guestPool: ["grey-nightjar", "brown-hawk-owl", "whites-thrush"], foodModifier: { beetle: 1.25, grasshopper: 1.2, caterpillar: .8, mouse: 1.15 } }], subGoal: { kind: "served", target: 10, label: "손님 10마리 서빙" } },
@@ -121,22 +120,72 @@ const stages = {
     49: { id: 49, world: 5, icon: "🦅", name: "초원의 포식자", habitat: "광활한 이동 경로", duration: 195, maxOrders: 6, spawnMin: 1850, spawnMax: 3000, maxRecipeLength: 4, specialChance: .30, feedingTimeAt: null, feedingDuration: 0, starScores: [5750, 8250], guestPool: ["steppe-eagle", "common-kestrel", "red-tailed-shrike", "isabelline-shrike", "european-roller"], foodAvailability: { grasshopper: .8, beetle: .75, lizard: .9, mouse: 1, smallBird: .75 }, migrationWaves: [46, 104, 162], subGoal: { kind: "special", target: 4, label: "SPECIAL 4회 서빙" } },
     50: { id: 50, world: 5, icon: "🪽", name: "대이동 식당", habitat: "World 5 Finale · 초원 중간기착지", duration: 210, maxOrders: 7, spawnMin: 1750, spawnMax: 2850, maxRecipeLength: 4, specialChance: .32, feedingTimeAt: null, feedingDuration: 0, starScores: [6500, 9200], event: "GREAT MIGRATION", guestPool: ["isabelline-wheatear", "eurasian-hoopoe", "european-roller", "common-kestrel", "steppe-eagle", "red-tailed-shrike", "isabelline-shrike", "oriental-magpie"], foodAvailability: { grasshopper: 1, caterpillar: .5, beetle: 1, lizard: .95, mouse: .95, smallBird: .7 }, migrationWaves: [60, 125, 185], subGoal: { kind: "perfect", target: 12, label: "PERFECT 12회" } }
 };
+// 0.6.4.2 World Identity pass: every stage gets a readable secondary objective.
+// Existing hand-authored goals remain authoritative; only missing goals are filled here.
+for (let i = 1; i <= 50; i++) {
+    const c = stages[i];
+    if (c.subGoal)
+        continue;
+    const tier = Math.floor((i - 1) % 10 / 3);
+    if (c.world === 1) {
+        c.subGoal = i % 3 === 1
+            ? { kind: "perfect", target: 3 + tier, label: `PERFECT ${3 + tier}회` }
+            : i % 3 === 2
+                ? { kind: "served", target: 7 + tier * 2, label: `손님 ${7 + tier * 2}명 서빙` }
+                : { kind: "noFailed", target: 1, label: "주문 실패 없이 영업" };
+    }
+    else if (c.world === 2) {
+        c.subGoal = i % 3 === 0
+            ? { kind: "special", target: 2 + tier, label: `SPECIAL ${2 + tier}회 서빙` }
+            : i % 3 === 1
+                ? { kind: "perfect", target: 5 + tier, label: `PERFECT ${5 + tier}회` }
+                : { kind: "noFailed", target: 1, label: "날씨 속 주문 실패 0회" };
+    }
+    else if (c.world === 3) {
+        const hasNight = (c.timePhases || []).some(p => p.type === "night");
+        c.subGoal = hasNight
+            ? { kind: "nightServed", target: 3 + tier, label: `야간 손님 ${3 + tier}명 서빙` }
+            : { kind: "combo", target: 6 + tier * 2, label: `Best Combo ×${6 + tier * 2}` };
+    }
+    else if (c.world === 4) {
+        c.subGoal = i % 2 === 0
+            ? { kind: "combo", target: 7 + tier * 2, label: `고산 Combo ×${7 + tier * 2}` }
+            : { kind: "perfect", target: 6 + tier, label: `PERFECT ${6 + tier}회` };
+    }
+    else {
+        c.subGoal = i % 3 === 0
+            ? { kind: "special", target: 3 + tier, label: `SPECIAL ${3 + tier}회 서빙` }
+            : i % 3 === 1
+                ? { kind: "served", target: 10 + tier * 2, label: `이동기 손님 ${10 + tier * 2}명 서빙` }
+                : { kind: "perfect", target: 7 + tier, label: `PERFECT ${7 + tier}회` };
+    }
+}
+function worldRuleDescription(world) {
+    if (world === 1)
+        return "🌿 Feeding Time · 지역의 주 먹이가 주문에 더 강하게 반영됩니다.";
+    if (world === 2)
+        return "🌦 Weather Ecology · 비·바람·햇빛에 따라 주문 먹이 구성이 실시간으로 달라집니다.";
+    if (world === 3)
+        return "🌙 Night Service · 해질녘 +10%, 야간 +20% 점수 보너스.";
+    if (world === 4)
+        return "🏔 Acclimatisation · PERFECT 3연속마다 고도 페널티가 단계적으로 완화됩니다.";
+    return "🪽 Migration Momentum · Migration Wave 중 모든 서빙 +15%, PERFECT 시 Burning +4%.";
+}
 const $ = (id) => document.getElementById(id);
 const coverScreen = $("coverScreen"), enterGameButton = $("enterGameButton"), installAppButton = $("installAppButton");
 const startScreen = $("startScreen"), gameScreen = $("gameScreen"), resultScreen = $("resultScreen");
 const startButton = $("startButton"), nextStageButton = $("nextStageButton"), restartButton = $("restartButton"), backButton = $("backButton"), quitButton = $("quitButton"), pauseButton = $("pauseButton");
 const resetSaveButton = $("resetSaveButton"), finishSkewerButton = $("finishSkewerButton"), clearSkewerButton = $("clearSkewerButton"), burnButton = $("burnButton");
 const keyboardGuideButton = $("keyboardGuideButton"), keyboardGuideGameButton = $("keyboardGuideGameButton"), keyboardGuideDialog = $("keyboardGuideDialog"), closeKeyboardGuideButton = $("closeKeyboardGuideButton");
-const chefSprite = $("chefSprite"), chefActionLabel = $("chefActionLabel"), guestAnimationLane = $("guestAnimationLane");
-let chefActionTimer = 0;
-function chefAction(action) { if (!chefSprite)
-    return; window.clearTimeout(chefActionTimer); chefSprite.className = `chef-sprite ${action}`; chefActionLabel.textContent = action.toUpperCase(); chefActionTimer = window.setTimeout(() => { chefSprite.className = `chef-sprite ${isBurning() ? "burning" : "idle"}`; chefActionLabel.textContent = isBurning() ? "BURNING" : "IDLE"; }, action === "burning" ? 15000 : 620); }
-function animateGuest(_guest, _kind) { }
 const helpButton = $("helpButton"), helpDialog = $("helpDialog"), closeHelpButton = $("closeHelpButton");
 const restaurantButton = $("restaurantButton"), restaurantDialog = $("restaurantDialog"), closeRestaurantButton = $("closeRestaurantButton");
 const birdBookButton = $("birdBookButton"), birdBookDialog = $("birdBookDialog"), closeBirdBookButton = $("closeBirdBookButton"), birdBookList = $("birdBookList");
 const shrikeDexButton = $("shrikeDexButton"), shrikeDexDialog = $("shrikeDexDialog"), closeShrikeDexButton = $("closeShrikeDexButton"), shrikeDexList = $("shrikeDexList");
 const ordersEl = $("orders"), burnersEl = $("burners"), skewerEl = $("skewer"), foodButtonsEl = $("foodButtons"), stageButtonsEl = $("stageButtons"), shrikeButtonsEl = $("shrikeButtons"), upgradeList = $("upgradeList");
+const worldStep = $("worldStep"), stageStep = $("stageStep"), chefStep = $("chefStep"), readyStep = $("readyStep");
+const backToWorldButton = $("backToWorldButton"), backToStageButton = $("backToStageButton"), backToChefButton = $("backToChefButton");
+const selectedWorldFlowTitle = $("selectedWorldFlowTitle"), selectedStageFlowTitle = $("selectedStageFlowTitle"), startChoiceSummary = $("startChoiceSummary");
+const flowDotWorld = $("flowDotWorld"), flowDotStage = $("flowDotStage"), flowDotChef = $("flowDotChef"), flowDotReady = $("flowDotReady");
 const selectedOrderSummary = $("selectedOrderSummary"), statusMessage = $("statusMessage"), floatingJudge = $("floatingJudge"), eventBanner = $("eventBanner"), timeLabel = $("timeLabel"), scoreLabel = $("scoreLabel"), comboLabel = $("comboLabel"), bestComboLabel = $("bestComboLabel"), burnGaugeFill = $("burnGaugeFill"), burnGaugeText = $("burnGaugeText"), saveSummary = $("saveSummary"), currentStageLabel = $("currentStageLabel"), currentShrikeLabel = $("currentShrikeLabel"), stageEcology = $("stageEcology"), totalXpHeader = $("totalXpHeader"), careerStatsHeader = $("careerStatsHeader"), xpHudLabel = $("xpHudLabel"), resultTotalXp = $("resultTotalXp"), recordNotice = $("recordNotice"), weatherLabel = $("weatherLabel"), world1Button = $("world1Button"), world2Button = $("world2Button"), world3Button = $("world3Button"), world4Button = $("world4Button"), world5Button = $("world5Button"), devModeButton = $("devModeButton"), devModeBanner = $("devModeBanner");
 function defaultSave() { return { version: SAVE_VERSION, unlockedStage: 1, unlockedShrikes: ["bull-headed"], xp: 0, bestStars: {}, bestCombos: {}, bestScores: {}, bestSubGoals: {}, upgrades: { branch: 0, fire: 0, perch: 0 }, discoveredBirds: [], stats: { plays: 0, served: 0, perfect: 0, failed: 0 } }; }
 function loadSave() {
@@ -188,7 +237,7 @@ let currentWeather = "clear", weatherEndAt = 0, weatherTriggered = new Set(), mi
 const rand = (a, b) => Math.random() * (b - a) + a;
 const choice = (a) => a[Math.floor(Math.random() * a.length)];
 const fmt = (s) => { const x = Math.max(0, Math.ceil(s)); return `${String(Math.floor(x / 60)).padStart(2, "0")}:${String(x % 60).padStart(2, "0")}`; };
-const recipeEmoji = (r) => r.map(x => `<img class="food-pixel-mini" src="assets/foods/${x}.svg" alt="${foods[x].name}">`).join("");
+const recipeEmoji = (r) => r.map(x => foods[x].emoji).join("");
 const eq = (a, b) => a.length === b.length && a.every((v, i) => v === b[i]);
 const isBurning = () => Date.now() < burningActiveUntil, isFeeding = () => Date.now() < feedingActiveUntil, elapsed = () => running ? (Date.now() - startedAt) / 1000 : 0;
 function weatherCookMult() { if (currentWeather === "rain")
@@ -197,7 +246,7 @@ function weatherCookMult() { if (currentWeather === "rain")
     return selectedShrike === "grey-backed" ? (isBurning() ? 1 : .92) : .82; return 1; }
 function altitudeCookMult() { const level = stage.altitude || 0; if (!level)
     return 1; if (selectedShrike === "grey-backed" && isBurning())
-    return 1; const penalty = .05 * level * (selectedShrike === "grey-backed" ? .5 : 1); return 1 - penalty; }
+    return 1; const acclimatisation = stage.world === 4 ? Math.min(.60, Math.floor(perfectStreak / 3) * .20) : 0; const penalty = .05 * level * (selectedShrike === "grey-backed" ? .5 : 1) * (1 - acclimatisation); return 1 - penalty; }
 function cookMult() { let up = (1 + save.upgrades.fire * .03) * weatherCookMult() * altitudeCookMult(); if (selectedShrike === "tiger")
     return up * (isBurning() ? 1.40 : 1.10); if (selectedShrike === "long-tailed")
     return up * .90 * (isBurning() ? 1.20 : 1); if (selectedShrike === "bull-headed")
@@ -213,7 +262,39 @@ function phaseInfo() { const phases = stage.timePhases || []; let index = -1; fo
     if (elapsed() >= phases[i].at)
         index = i;
 } return { index, phase: index >= 0 ? phases[index] : null }; }
-function phaseFoodAvailability(id) { var _a, _b; const base = stage.foodAvailability[id] || 0; const phase = phaseInfo().phase; return base * ((_b = (_a = phase === null || phase === void 0 ? void 0 : phase.foodModifier) === null || _a === void 0 ? void 0 : _a[id]) !== null && _b !== void 0 ? _b : 1); }
+function weatherFoodMult(id) {
+    if (stage.world !== 2)
+        return 1;
+    if (currentWeather === "rain") {
+        if (id === "aquaticInsect")
+            return 1.50;
+        if (id === "frog")
+            return 1.30;
+        if (id === "fish")
+            return 1.18;
+        if (id === "grasshopper")
+            return .72;
+    }
+    if (currentWeather === "wind") {
+        if (id === "grasshopper")
+            return 1.38;
+        if (id === "beetle")
+            return 1.20;
+        if (id === "aquaticInsect")
+            return 1.12;
+    }
+    if (currentWeather === "sun") {
+        if (id === "grasshopper" || id === "lizard")
+            return 1.28;
+        if (id === "caterpillar")
+            return 1.12;
+        if (id === "aquaticInsect")
+            return .82;
+    }
+    return 1;
+}
+function phaseFoodAvailability(id) { var _a, _b; const base = stage.foodAvailability[id] || 0; const phase = phaseInfo().phase; let mult = ((_b = (_a = phase === null || phase === void 0 ? void 0 : phase.foodModifier) === null || _a === void 0 ? void 0 : _a[id]) !== null && _b !== void 0 ? _b : 1) * weatherFoodMult(id); if (stage.world === 1 && isFeeding())
+    mult *= 1.12; return base * mult; }
 function currentGuestPool() { var _a; return ((_a = phaseInfo().phase) === null || _a === void 0 ? void 0 : _a.guestPool) || stage.guestPool; }
 function phaseName(p) { return p === "night" ? "🌙 밤" : p === "dusk" ? "🌇 해질녘" : "☀️ 낮"; }
 function syncTimePhase(force = false) { var _a; const info = phaseInfo(); const next = ((_a = info.phase) === null || _a === void 0 ? void 0 : _a.type) || "day"; if (force || info.index !== currentPhaseIndex) {
@@ -233,10 +314,12 @@ function subGoalComplete() { const g = stage.subGoal; if (!g)
     return specialServed >= g.target; if (g.kind === "noFailed")
     return failed === 0; if (g.kind === "nightServed")
     return nightServed >= g.target; return false; }
-function recipeLength() { const p = Math.min(1, elapsed() / stage.duration), r = Math.random(); if (stage.maxRecipeLength <= 3)
-    return p < .45 ? (r < .55 ? 1 : 2) : (r < .15 ? 1 : r < .70 ? 2 : 3); return p < .3 ? (r < .35 ? 2 : 3) : (r < .15 ? 2 : r < .6 ? 3 : 4); }
+function recipeLength() { const p = Math.min(1, elapsed() / stage.duration), r = Math.random(), worldStage = (stage.id - 1) % 10 + 1; if (stage.maxRecipeLength <= 3)
+    return p < .45 ? (r < .55 ? 1 : 2) : (r < .15 ? 1 : r < .70 ? 2 : 3); if (worldStage <= 3)
+    return p < .45 ? (r < .28 ? 2 : 3) : (r < .18 ? 2 : r < .78 ? 3 : 4); if (worldStage <= 7)
+    return p < .32 ? (r < .22 ? 2 : 3) : (r < .10 ? 2 : r < .58 ? 3 : 4); return p < .24 ? (r < .12 ? 2 : 3) : (r < .04 ? 2 : r < .42 ? 3 : 4); }
 function dietWeight(g, id) { if (g.diet.primary.includes(id))
-    return 1; if (g.diet.secondary.includes(id))
+    return stage.world === 1 && isFeeding() ? 1.55 : 1; if (g.diet.secondary.includes(id))
     return .55; if (g.diet.rare.includes(id))
     return .18; if (g.diet.never.includes(id))
     return 0; return .08; }
@@ -245,7 +328,7 @@ function weightedFood(g) {
     const weighted = pool.map(id => ({ id, w: dietWeight(g, id) * phaseFoodAvailability(id) })).filter(x => x.w > 0);
     if (!weighted.length)
         return choice(pool);
-    const total = weighted.reduce((s, x) => s + x.w, 0);
+    const total = weighted.reduce((sum, item) => sum + item.w, 0);
     let r = Math.random() * total;
     for (const item of weighted) {
         r -= item.w;
@@ -254,11 +337,46 @@ function weightedFood(g) {
     }
     return weighted[weighted.length - 1].id;
 }
-function makeRecipe(g, special = false) { const len = special ? Math.min(4, Math.max(3, stage.maxRecipeLength)) : recipeLength(); const recipe = []; for (let i = 0; i < len; i++)
-    recipe.push(weightedFood(g)); return recipe; }
-function baseEnvironmentLabel() { var _a; if (stage.world === 4 && stage.altitude)
-    return `🏔️ 고도 ${stage.altitude} · 조리 -${stage.altitude * 5}%`; if (stage.world === 5 && ((_a = stage.migrationWaves) === null || _a === void 0 ? void 0 : _a.length))
-    return `🪽 이동 파동 ${stage.migrationWaves.length}회`; return "☀️ 맑음"; }
+function guestEcologyFit(g) {
+    const primary = g.diet.primary.reduce((sum, id) => sum + phaseFoodAvailability(id), 0);
+    const secondary = g.diet.secondary.reduce((sum, id) => sum + phaseFoodAvailability(id), 0);
+    const rare = g.diet.rare.reduce((sum, id) => sum + phaseFoodAvailability(id), 0);
+    return .35 + primary * 1.35 + secondary * .48 + rare * .12;
+}
+function weightedGuest(pool) {
+    const weighted = pool.map(id => ({ id, w: guestEcologyFit(guests[id]) }));
+    const total = weighted.reduce((sum, item) => sum + item.w, 0);
+    let r = Math.random() * total;
+    for (const item of weighted) {
+        r -= item.w;
+        if (r <= 0)
+            return item.id;
+    }
+    return weighted[weighted.length - 1].id;
+}
+function makeRecipe(g, special = false) {
+    const len = special ? Math.min(4, Math.max(3, stage.maxRecipeLength)) : recipeLength();
+    const recipe = [];
+    const primaryAvailable = g.diet.primary.filter(id => phaseFoodAvailability(id) > 0);
+    const specialist = g.diet.primary.length <= 1, focused = g.diet.primary.length === 2;
+    for (let i = 0; i < len; i++) {
+        let pick = weightedFood(g), tries = 0;
+        const allowRepeat = specialist || (focused && Math.random() < .32) || (primaryAvailable.includes(pick) && Math.random() < .20);
+        while (!allowRepeat && recipe.includes(pick) && tries++ < 5)
+            pick = weightedFood(g);
+        recipe.push(pick);
+    }
+    return recipe;
+}
+function isSignatureRecipe(g, recipe) { return recipe.length >= 2 && recipe.filter(id => g.diet.primary.includes(id)).length >= Math.ceil(recipe.length * .67); }
+function baseEnvironmentLabel() { var _a; if (stage.world === 1)
+    return isFeeding() ? "🌿 Feeding Time · 주 먹이 집중" : "🌾 농경지 생태"; if (stage.world === 2)
+    return "🌦 날씨 생태"; if (stage.world === 3)
+    return `${phaseName(currentPhase)} · ${currentPhase === "night" ? "+20%" : currentPhase === "dusk" ? "+10%" : "기본 점수"}`; if (stage.world === 4 && stage.altitude) {
+    const step = Math.min(3, Math.floor(perfectStreak / 3));
+    return `🏔️ 고도 ${stage.altitude} · 적응 ${step}/3`;
+} if (stage.world === 5 && ((_a = stage.migrationWaves) === null || _a === void 0 ? void 0 : _a.length))
+    return isFeeding() ? "🪽 MIGRATION WAVE · +15%" : "🪽 이동 파동 대기"; return "☀️ 맑음"; }
 function scheduleNext() { const wind = currentWeather === "wind" ? .72 : 1; nextOrderAt = Date.now() + rand(stage.spawnMin, stage.spawnMax) * (isFeeding() ? .46 : 1) * wind; }
 function discoverBird(id) { if (devMode) {
     showEvent(`🛠 DEV GUEST · ${guests[id].name}`);
@@ -270,10 +388,9 @@ function spawnOrder(force = false) {
     if (!running || paused || (!force && orders.length >= max))
         return;
     const special = Math.random() < stage.specialChance;
-    const guest = guests[choice(currentGuestPool())];
+    const guest = guests[weightedGuest(currentGuestPool())];
     const recipe = makeRecipe(guest, special);
-    orders.push({ id: orderSequence++, guest, recipe, createdAt: Date.now(), deadlineSeconds: BASE_ORDER_DEADLINE * deadlineMult(), special });
-    animateGuest(guest, "arrive");
+    orders.push({ id: orderSequence++, guest, recipe, createdAt: Date.now(), deadlineSeconds: BASE_ORDER_DEADLINE * deadlineMult(), special, signature: isSignatureRecipe(guest, recipe) });
     discoverBird(guest.id);
     scheduleNext();
     renderOrders();
@@ -309,7 +426,6 @@ function startGame() {
     void preferMobileLandscape();
     document.body.classList.add("in-game");
     stage = stages[selectedStage];
-    gameScreen.dataset.world = String(stage.world);
     orders = [];
     selectedOrderId = null;
     currentSkewer = [];
@@ -338,7 +454,6 @@ function startGame() {
     nextOrderAt = startedAt + 600;
     currentStageLabel.textContent = `${stage.id}. ${stage.name}`;
     currentShrikeLabel.textContent = shrikeName(selectedShrike);
-    chefAction("idle");
     setStatus(`${stage.habitat} 영업 시작!`);
     syncTimePhase(true);
     renderAll();
@@ -406,8 +521,6 @@ function loop() {
             migrationTriggered.add(i);
             feedingActiveUntil = now + 26000;
             showEvent(`🪽 MIGRATION WAVE ${i + 1}/${((_a = stage.migrationWaves) === null || _a === void 0 ? void 0 : _a.length) || 1}`);
-            gameScreen.classList.add("migration-wave");
-            setTimeout(() => gameScreen.classList.remove("migration-wave"), 2600);
             scheduleNext();
         } });
         if (stage.feedingTimeAt !== null && !feedingTriggered && elapsed() >= stage.feedingTimeAt) {
@@ -425,6 +538,8 @@ function loop() {
         burners.forEach(b => { if (b.state === "cooking" && now >= b.readyAt)
             b.state = "ready"; if (b.state === "ready" && now >= b.readyAt + OVERCOOK_GRACE * 1000)
             b.state = "overcooked"; });
+        if (currentWeather === "clear")
+            weatherLabel.textContent = baseEnvironmentLabel();
         renderOrders();
         renderBurners();
         updateHud();
@@ -519,27 +634,24 @@ function finishStage() {
 function expireOrder(id) { const o = orders.find(x => x.id === id); if (!o)
     return; orders = orders.filter(x => x.id !== id); failed++; combo = 0; perfectStreak = 0; if (selectedOrderId === id)
     selectedOrderId = null; if ((pendingSkewer === null || pendingSkewer === void 0 ? void 0 : pendingSkewer.orderId) === id)
-    pendingSkewer = null; animateGuest(o.guest, "sad"); judge("TOO LATE", false); renderSelected(); }
+    pendingSkewer = null; judge("TOO LATE", false); renderSelected(); }
 function selectOrder(id) { if (paused)
-    return; selectedOrderId = selectedOrderId === id ? null : id; renderSelected(); renderOrders(); setStatus(selectedOrderId === id ? "우선 주문을 지정했습니다. 꼬치는 자유롭게 만든 뒤 자동 매칭됩니다." : "우선 주문 지정을 해제했습니다. 자동으로 가장 오래된 일치 주문에 매칭됩니다."); }
+    return; selectedOrderId = selectedOrderId === id ? null : id; renderSelected(); renderOrders(); setStatus(selectedOrderId === id ? "우선 주문으로 지정했습니다. 꼬치 완성 시 먼저 매칭합니다." : "우선 주문 지정을 해제했습니다."); }
 function addFood(id) { if (paused)
-    return; if (currentSkewer.length >= 4) {
-    setStatus("꼬치는 최대 4개 재료까지 꽂을 수 있습니다.");
-    return;
-} currentSkewer.push(id); chefAction("impale"); renderSkewer(); setStatus("꼬치를 자유롭게 조립 중입니다. 완성하면 주문과 자동 매칭됩니다."); }
+    return; if (currentSkewer.length >= 4)
+    return; currentSkewer.push(id); renderSkewer(); }
 function finishSkewer() {
     if (paused)
         return;
     if (!currentSkewer.length) {
-        setStatus("먼저 재료를 꼬치에 꽂으세요.");
+        setStatus("재료를 먼저 꽂으세요.");
         return;
     }
-    const matches = orders.filter(o => eq(currentSkewer, o.recipe)).sort((a, b) => a.createdAt - b.createdAt);
-    const priority = selectedOrderId !== null ? matches.find(o => o.id === selectedOrderId) : undefined;
-    const order = priority || matches[0];
+    const preferred = selectedOrderId ? orders.find(o => o.id === selectedOrderId && eq(currentSkewer, o.recipe)) : undefined;
+    const order = preferred || orders.filter(o => eq(currentSkewer, o.recipe)).sort((a, b) => a.createdAt - b.createdAt)[0];
     if (!order) {
+        setStatus("일치하는 주문이 없습니다. 꼬치를 확인하거나 비우고 다시 조립하세요.");
         judge("NO MATCH", false);
-        setStatus("이 꼬치와 일치하는 주문이 없습니다. 꼬치는 유지됩니다 — 재료를 비우고 다시 조립해보세요.");
         return;
     }
     pendingSkewer = { orderId: order.id, recipe: [...currentSkewer] };
@@ -564,89 +676,128 @@ function clickBurner(index) { if (paused)
     b.readyAt = b.startedAt + b.cookSeconds * 1000;
     pendingSkewer = null;
     setStatus("🔥 굽기 시작!");
-    chefAction("grill");
     renderBurners();
     return;
 } if (b.state === "cooking") {
     setStatus("아직 덜 익었습니다.");
     return;
 } serveBurner(b); }
-function serveBurner(b) { const order = orders.find(o => o.id === b.orderId); if (!order) {
-    resetBurner(b);
-    return;
-} const perfect = b.state === "ready", specialMult = order.special ? 2 : 1, comboMult = 1 + Math.min(combo, 20) * .03; let pts = Math.round(baseScore(order.recipe) * 10 * specialMult * comboMult); if (!perfect)
-    pts = Math.round(pts * .55); if (selectedShrike === "brown")
-    pts = Math.round(pts * (1 + Math.min(.15, combo * .015))); if (selectedShrike === "isabelline" && isFeeding())
-    pts = Math.round(pts * (isBurning() ? 1.40 : 1.20)); if (selectedShrike === "red-tailed" && isFeeding())
-    pts = Math.round(pts * 1.15); score += pts; served++; if (currentPhase === "night")
-    nightServed++; if (order.special)
-    specialServed++; if (perfect) {
-    if (burners.filter(x => x.state !== "empty").length >= 3)
-        tripleBurnerPerfect++;
-    combo++;
-    perfectCount++;
-    perfectStreak++;
-    burningGauge = Math.min(100, burningGauge + 14 + (order.special ? 8 : 0));
-    if (perfectStreak % 3 === 0) {
-        score += 30;
-        burningGauge = Math.min(100, burningGauge + 8);
-        judge(`PERFECT STREAK ×${perfectStreak} · +30`, true);
+function serveBurner(b) {
+    const order = orders.find(o => o.id === b.orderId);
+    if (!order) {
+        resetBurner(b);
+        return;
     }
-    else
-        judge(order.special ? `SPECIAL PERFECT +${pts}` : `PERFECT +${pts}`, true);
+    const perfect = b.state === "ready", specialMult = order.special ? 2 : 1, comboMult = 1 + Math.min(combo, 20) * .03;
+    let pts = Math.round(baseScore(order.recipe) * 10 * specialMult * comboMult);
+    if (order.signature)
+        pts = Math.round(pts * 1.10);
+    if (stage.world === 3 && currentPhase === "dusk")
+        pts = Math.round(pts * 1.10);
+    if (stage.world === 3 && currentPhase === "night")
+        pts = Math.round(pts * 1.20);
+    if (stage.world === 5 && isFeeding())
+        pts = Math.round(pts * 1.15);
+    if (!perfect)
+        pts = Math.round(pts * .55);
+    if (selectedShrike === "brown")
+        pts = Math.round(pts * (1 + Math.min(.15, combo * .015)));
+    if (selectedShrike === "isabelline" && isFeeding())
+        pts = Math.round(pts * (isBurning() ? 1.40 : 1.20));
+    if (selectedShrike === "red-tailed" && isFeeding())
+        pts = Math.round(pts * 1.15);
+    score += pts;
+    served++;
+    if (currentPhase === "night")
+        nightServed++;
+    if (order.special)
+        specialServed++;
+    if (perfect) {
+        if (burners.filter(x => x.state !== "empty").length >= 3)
+            tripleBurnerPerfect++;
+        combo++;
+        perfectCount++;
+        perfectStreak++;
+        burningGauge = Math.min(100, burningGauge + 14 + (order.special ? 8 : 0) + (stage.world === 5 && isFeeding() ? 4 : 0));
+        if (perfectStreak % 3 === 0) {
+            score += 30;
+            burningGauge = Math.min(100, burningGauge + 8);
+            judge(`PERFECT STREAK ×${perfectStreak} · +30`, true);
+        }
+        else
+            judge(order.special ? `SPECIAL PERFECT +${pts}` : `PERFECT +${pts}`, true);
+    }
+    else {
+        combo = 0;
+        perfectStreak = 0;
+        failed++;
+        judge(`OVERCOOKED +${pts}`, false);
+    }
+    bestCombo = Math.max(bestCombo, combo);
+    orders = orders.filter(o => o.id !== order.id);
+    if (selectedOrderId === order.id)
+        selectedOrderId = null;
+    resetBurner(b);
+    renderSelected();
+    setStatus(perfect ? "깔끔한 서빙!" : "조금 탔지만 서빙했습니다.");
 }
-else {
-    combo = 0;
-    perfectStreak = 0;
-    failed++;
-    judge(`OVERCOOKED +${pts}`, false);
-} bestCombo = Math.max(bestCombo, combo); animateGuest(order.guest, perfect ? "happy" : "sad"); chefAction("serve"); orders = orders.filter(o => o.id !== order.id); if (selectedOrderId === order.id)
-    selectedOrderId = null; resetBurner(b); renderSelected(); setStatus(perfect ? "깔끔한 서빙!" : "조금 탔지만 서빙했습니다."); }
 function resetBurner(b) { b.state = "empty"; b.orderId = null; b.recipe = []; b.startedAt = b.cookSeconds = b.readyAt = 0; }
 function activateBurning() { if (paused || burningGauge < 100 || isBurning())
-    return; const now = Date.now(); burningGauge = 0; burningStartedAt = now; burningActiveUntil = now + 15000; syncBurners(); chefAction("burning"); showEvent(`🔥 ${shrikeName(selectedShrike)} BURNING!`); setStatus(selectedShrike === "tiger" ? "조리속도 +40%!" : selectedShrike === "brown" ? "콤보 점수 가속!" : selectedShrike === "chinese-grey" ? "8초 주문 타이머 정지 → 7초 절반 속도!" : selectedShrike === "long-tailed" ? "임시 화구 +2 · 조리 +20%!" : selectedShrike === "grey-backed" ? "고도·한기 페널티 무효화!" : selectedShrike === "isabelline" ? "Migration Wave 점수 +40%!" : selectedShrike === "red-tailed" ? "Rush 조리속도 +25%!" : "균형 강화!"); }
+    return; const now = Date.now(); burningGauge = 0; burningStartedAt = now; burningActiveUntil = now + 15000; syncBurners(); showEvent(`🔥 ${shrikeName(selectedShrike)} BURNING!`); setStatus(selectedShrike === "tiger" ? "조리속도 +40%!" : selectedShrike === "brown" ? "콤보 점수 가속!" : selectedShrike === "chinese-grey" ? "8초 주문 타이머 정지 → 7초 절반 속도!" : selectedShrike === "long-tailed" ? "임시 화구 +2 · 조리 +20%!" : selectedShrike === "grey-backed" ? "고도·한기 페널티 무효화!" : selectedShrike === "isabelline" ? "Migration Wave 점수 +40%!" : selectedShrike === "red-tailed" ? "Rush 조리속도 +25%!" : "균형 강화!"); }
 function renderAll() { renderMeta(); renderFoodButtons(); renderSkewer(); renderOrders(); renderBurners(); renderSelected(); updateHud(); }
+let startFlowStep = "world", startWorldChosen = false, startStageChosen = false, startChefChosen = false;
+function worldFlowName(world) { return world === 1 ? "🌾 WORLD 1 · 농경지" : world === 2 ? "🌿 WORLD 2 · 강을 따라서" : world === 3 ? "⛰️ WORLD 3 · 산과 밤" : world === 4 ? "🏔️ WORLD 4 · 히말라야" : "🪽 WORLD 5 · 대초원"; }
+function setStartFlow(step) {
+    startFlowStep = step;
+    worldStep.classList.toggle("hidden", step !== "world");
+    stageStep.classList.toggle("hidden", step !== "stage");
+    chefStep.classList.toggle("hidden", step !== "chef");
+    readyStep.classList.toggle("hidden", step !== "ready");
+    const order = [["world", flowDotWorld], ["stage", flowDotStage], ["chef", flowDotChef], ["ready", flowDotReady]];
+    const ix = order.findIndex(([s]) => s === step);
+    order.forEach(([s, el], i) => { el.classList.toggle("active", i === ix); el.classList.toggle("done", i < ix); });
+    startScreen.scrollTop = 0;
+}
+function resetStartFlow() { startWorldChosen = startStageChosen = startChefChosen = false; renderStages(); renderShrikes(); setStartFlow("world"); }
+function chooseWorldForFlow(world) {
+    if (world === 2 && !devMode && save.unlockedStage < 11)
+        return;
+    if (world === 3 && !devMode && save.unlockedStage < 21)
+        return;
+    if (world === 4 && !devMode && save.unlockedStage < 31)
+        return;
+    if (world === 5 && !devMode && save.unlockedStage < 41)
+        return;
+    selectedWorld = world;
+    startWorldChosen = true;
+    startStageChosen = false;
+    startChefChosen = false;
+    const first = world === 1 ? 1 : world === 2 ? 11 : world === 3 ? 21 : world === 4 ? 31 : 41;
+    const last = first + 9;
+    selectedStage = (devMode ? first : Math.max(first, Math.min(last, save.unlockedStage)));
+    selectedWorldFlowTitle.textContent = worldFlowName(world);
+    renderStages();
+    setStartFlow("stage");
+}
+function updateReadySummary() { const c = stages[selectedStage]; startChoiceSummary.innerHTML = `<span class="ready-kicker">${worldFlowName(selectedWorld)}</span><strong>${c.icon} Stage ${c.id} · ${c.name}</strong><span>${c.habitat}</span><span>🐦 Chef · ${shrikeName(selectedShrike)}</span>${c.subGoal ? `<span>🎯 ${c.subGoal.label}</span>` : ""}`; startButton.textContent = `${c.icon} Stage ${c.id} 시작하기`; }
 function renderMeta() { const totalStars = Object.values(save.bestStars).reduce((a, b) => a + b, 0); saveSummary.innerHTML = `<div class="career-grid"><div><span>누적 XP</span><strong>${save.xp.toLocaleString()}</strong></div><div><span>총 플레이</span><strong>${save.stats.plays}</strong></div><div><span>누적 서빙</span><strong>${save.stats.served}</strong></div><div><span>PERFECT</span><strong>${save.stats.perfect}</strong></div></div><p>${devMode ? "🛠 DEV MODE · World 1–5 / Stage 1–50 / Shrike 10종 전체 테스트 가능 · 진행도 미저장" : "Stage " + save.unlockedStage + "/50 · Shrikes " + save.unlockedShrikes.length + "/10 · Bird Book " + save.discoveredBirds.length + "/" + Object.keys(guests).length + " · Stars " + totalStars + "/150"}</p>`; totalXpHeader.textContent = `${save.xp.toLocaleString()} XP`; careerStatsHeader.textContent = devMode ? "DEV SESSION · 일반 세이브 보호" : `${save.stats.plays}회 플레이 · ${save.stats.served}명 서빙`; xpHudLabel.textContent = save.xp.toLocaleString(); renderStages(); renderShrikes(); renderUpgrades(); renderStageEcology(); }
-function renderStages() { var _a, _b, _c; stageButtonsEl.innerHTML = ""; startScreen.dataset.world = String(selectedWorld); world1Button.classList.toggle("selected", selectedWorld === 1); world2Button.classList.toggle("selected", selectedWorld === 2); world3Button.classList.toggle("selected", selectedWorld === 3); world4Button.classList.toggle("selected", selectedWorld === 4); world5Button.classList.toggle("selected", selectedWorld === 5); world2Button.disabled = !devMode && save.unlockedStage < 11; world3Button.disabled = !devMode && save.unlockedStage < 21; world4Button.disabled = !devMode && save.unlockedStage < 31; world5Button.disabled = !devMode && save.unlockedStage < 41; const start = selectedWorld === 1 ? 1 : selectedWorld === 2 ? 11 : selectedWorld === 3 ? 21 : selectedWorld === 4 ? 31 : 41, end = selectedWorld === 1 ? 10 : selectedWorld === 2 ? 20 : selectedWorld === 3 ? 30 : selectedWorld === 4 ? 40 : 50; for (let i = start; i <= end; i++) {
+function renderStages() { var _a, _b, _c; stageButtonsEl.innerHTML = ""; world1Button.classList.toggle("selected", startWorldChosen && selectedWorld === 1); world2Button.classList.toggle("selected", startWorldChosen && selectedWorld === 2); world3Button.classList.toggle("selected", startWorldChosen && selectedWorld === 3); world4Button.classList.toggle("selected", startWorldChosen && selectedWorld === 4); world5Button.classList.toggle("selected", startWorldChosen && selectedWorld === 5); world2Button.disabled = !devMode && save.unlockedStage < 11; world3Button.disabled = !devMode && save.unlockedStage < 21; world4Button.disabled = !devMode && save.unlockedStage < 31; world5Button.disabled = !devMode && save.unlockedStage < 41; const start = selectedWorld === 1 ? 1 : selectedWorld === 2 ? 11 : selectedWorld === 3 ? 21 : selectedWorld === 4 ? 31 : 41, end = selectedWorld === 1 ? 10 : selectedWorld === 2 ? 20 : selectedWorld === 3 ? 30 : selectedWorld === 4 ? 40 : 50; for (let i = start; i <= end; i++) {
     const id = i, c = stages[id], btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "stage-card" + (selectedStage === id ? " selected" : "");
-    btn.dataset.world = String(c.world);
+    btn.className = "stage-card" + (startStageChosen && selectedStage === id ? " selected" : "");
     btn.disabled = !devMode && id > save.unlockedStage;
     btn.dataset.stageId = String(id);
     const stars = save.bestStars[String(id)] || 0, bc = save.bestCombos[String(id)] || 0;
     const bs = save.bestScores[String(id)] || 0;
     btn.innerHTML = `<span class="stage-icon">${c.icon}</span><b>${id}. ${c.name}</b><small>${c.habitat}</small><span class="stage-stars">${"★".repeat(stars)}${"☆".repeat(3 - stars)}</span><small class="stage-record">Best ${bs.toLocaleString()} · Combo ×${bc}</small><small>손님 ${c.guestPool.length}종${((_a = c.weather) === null || _a === void 0 ? void 0 : _a.length) ? " · 🌦 날씨" : ""}${((_b = c.timePhases) === null || _b === void 0 ? void 0 : _b.length) ? " · 🌓 시간대" : ""}${c.altitude ? ` · 🏔️ 고도 ${c.altitude}` : ""}${((_c = c.migrationWaves) === null || _c === void 0 ? void 0 : _c.length) ? ` · 🪽 이동 ${c.migrationWaves.length}파` : ""}</small>${c.subGoal ? `<small class="stage-goal">🎯 ${c.subGoal.label}${save.bestSubGoals[String(id)] ? " · ✓" : ""}</small>` : ""}${devMode ? `<small class="dev-badge">DEV · UNLOCKED</small>` : ""}`;
-    btn.addEventListener("click", () => { selectedStage = id; renderStages(); renderStageEcology(); });
+    btn.addEventListener("click", () => { selectedStage = id; startStageChosen = true; startChefChosen = false; renderStageEcology(); selectedStageFlowTitle.textContent = `${c.icon} Stage ${c.id} · ${c.name}`; renderShrikes(); setStartFlow("chef"); });
     stageButtonsEl.appendChild(btn);
 } }
-function renderStageEcology() { var _a; const c = stages[selectedStage]; const foodsSorted = stageFoodEntries(c).slice(0, 5).map(([id, v]) => `${foods[id].emoji}${foods[id].name} ${Math.round(v * 100)}%`).join(" · "); const guestNames = c.guestPool.slice(0, 5).map(id => guests[id].name).join(" · "); const wx = (c.weather || []).map(w => `${w.type === "rain" ? "🌧 비" : w.type === "wind" ? "💨 바람" : w.type === "cold" ? "❄️ 한기" : "☀️ 햇빛"} ${w.duration}s`).join(" · ") || "고정 날씨"; const phases = (c.timePhases || []).map(p => `${phaseName(p.type)} ${p.at}s`).join(" → ") || "☀️ 낮"; const migration = ((_a = c.migrationWaves) === null || _a === void 0 ? void 0 : _a.length) ? `🪽 Migration Wave · ${c.migrationWaves.map(x => x + "s").join(" · ")}` : ""; stageEcology.innerHTML = `<div><span class="eco-label">${c.icon} HABITAT</span><b>${c.habitat}</b><p>World ${c.world}</p></div><div><span class="eco-label">🍽 FOOD AVAILABILITY</span><p>${foodsSorted}</p></div><div><span class="eco-label">🐦 EXPECTED GUESTS</span><p>${guestNames}${c.guestPool.length > 5 ? " 외" : ""}</p></div><div><span class="eco-label">🌓 TIME / WEATHER</span><p>${phases}</p><p>${c.altitude ? `🏔️ 고도 단계 ${c.altitude} · 기본 조리속도 -${c.altitude * 5}%` : wx}</p><p>${c.altitude ? wx : migration}</p>${c.subGoal ? `<p><b>🎯 ${c.subGoal.label}</b></p>` : ""}</div>`; }
+function renderStageEcology() { var _a; const c = stages[selectedStage]; const focusFoods = stageFoodEntries(c).slice(0, 3).map(([id, v]) => `${foods[id].emoji}${foods[id].name} ${Math.round(v * 100)}%`).join(" · "); const otherFoods = stageFoodEntries(c).slice(3, 6).map(([id, v]) => `${foods[id].emoji}${foods[id].name} ${Math.round(v * 100)}%`).join(" · "); const coreIds = coreGuests(c), core = coreIds.map(id => guests[id].name).join(" · "); const others = c.guestPool.filter(id => !coreIds.includes(id)).slice(0, 4).map(id => guests[id].name).join(" · "); const wx = (c.weather || []).map(w => `${w.type === "rain" ? "🌧 비" : w.type === "wind" ? "💨 바람" : w.type === "cold" ? "❄️ 한기" : "☀️ 햇빛"} ${w.duration}s`).join(" · ") || "고정 날씨"; const phases = (c.timePhases || []).map(p => `${phaseName(p.type)} ${p.at}s`).join(" → ") || "☀️ 낮"; const migration = ((_a = c.migrationWaves) === null || _a === void 0 ? void 0 : _a.length) ? `🪽 Migration Wave · ${c.migrationWaves.map(x => x + "s").join(" · ")}` : ""; stageEcology.innerHTML = `<div><span class="eco-label">${c.icon} HABITAT</span><b>${c.habitat}</b><p>World ${c.world}</p><p><b>${worldRuleDescription(c.world)}</b></p></div><div><span class="eco-label">🎯 ORDER FOCUS</span><p><b>${focusFoods}</b></p>${otherFoods ? `<p>${otherFoods}</p>` : ""}</div><div><span class="eco-label">🐦 CORE GUESTS</span><p><b>${core}</b></p>${others ? `<p>${others}${c.guestPool.length > 7 ? " 외" : ""}</p>` : ""}</div><div><span class="eco-label">🌓 TIME / WEATHER</span><p>${phases}</p><p>${c.altitude ? `🏔️ 고도 단계 ${c.altitude} · 기본 조리속도 -${c.altitude * 5}%` : wx}</p><p>${c.altitude ? wx : migration}</p>${c.subGoal ? `<p><b>🎯 ${c.subGoal.label}</b></p>` : ""}</div>`; }
 function stageFoodEntries(c) { return Object.entries(c.foodAvailability).sort((a, b) => b[1] - a[1]); }
-function renderShrikes() {
-    const defs = [
-        { id: "bull-headed", emoji: "🐦", name: "때까치", desc: "균형형 · Burning 시 전반 강화", unlock: "기본" },
-        { id: "tiger", emoji: "🐅", name: "칡때까치", desc: "조리속도 +10%", unlock: "Stage 3 이상에서 ★★ 달성" },
-        { id: "brown", emoji: "🟤", name: "노랑때까치", desc: "Combo가 높을수록 점수 증가", unlock: "Stage 6에서 Best Combo ×12" },
-        { id: "chinese-grey", emoji: "🩶", name: "물때까치", desc: "주문 제한시간 +10% · 시간 제어 Burning", unlock: "Stage 15 ★★" },
-        { id: "long-tailed", emoji: "🐦", name: "긴꼬리때까치", desc: "화구 +2 · 조리속도 -10%", unlock: "Stage 18+에서 3화구 동시 PERFECT 3회" },
-        { id: "northern", emoji: "🩶", name: "재때까치", desc: "성장형 · 획득 XP +10%", unlock: "Stage 30 ★★" },
-        { id: "grey-backed", emoji: "🏔️", name: "회색등때까치", desc: "고산형 · 고도 페널티 50% 완화", unlock: "Stage 40 ★★" },
-        { id: "isabelline", emoji: "🏜️", name: "사막때까치", desc: "Migration Wave 중 점수 +20%", unlock: "Stage 44 ★★" },
-        { id: "red-tailed", emoji: "🪽", name: "붉은꼬리때까치", desc: "Rush 특화 · Burning 조리 +25%", unlock: "Stage 50 ★★" },
-        { id: "great-grey", emoji: "🩶", name: "초원때까치", desc: "환경형 · World 6에서 등장 예정", unlock: "World 6 예정" }
-    ];
-    shrikeButtonsEl.innerHTML = "";
-    defs.forEach(d => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "select-card" + (selectedShrike === d.id ? " selected" : "");
-        btn.dataset.shrikeId = d.id;
-        btn.disabled = !devMode && !save.unlockedShrikes.includes(d.id);
-        btn.innerHTML = `<span class="classic-shrike-icon">${d.emoji}</span><b>${d.name}</b><span>${d.desc}</span><small>${devMode ? `DEV · ${d.unlock}` : btn.disabled ? `LOCKED · ${d.unlock}` : "사용 가능"}</small>`;
-        btn.addEventListener("click", () => { selectedShrike = d.id; renderShrikes(); });
-        shrikeButtonsEl.appendChild(btn);
-    });
-}
+function stageGuestFit(c, id) { const g = guests[id], availability = (food) => c.foodAvailability[food] || 0; return .35 + g.diet.primary.reduce((sum, food) => sum + availability(food), 0) * 1.35 + g.diet.secondary.reduce((sum, food) => sum + availability(food), 0) * .48 + g.diet.rare.reduce((sum, food) => sum + availability(food), 0) * .12; }
+function coreGuests(c) { return [...c.guestPool].sort((a, b) => stageGuestFit(c, b) - stageGuestFit(c, a)).slice(0, 3); }
+function renderShrikes() { const defs = [{ id: "bull-headed", emoji: "🐦", name: "때까치", desc: "균형형 · Burning 시 전반 강화", unlock: "기본" }, { id: "tiger", emoji: "🐅", name: "칡때까치", desc: "조리속도 +10%", unlock: "Stage 3 이상에서 ★★ 달성" }, { id: "brown", emoji: "🟤", name: "노랑때까치", desc: "Combo가 높을수록 점수 증가", unlock: "Stage 6에서 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", name: "물때까치", desc: "주문 제한시간 +10% · 시간 제어 Burning", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", name: "긴꼬리때까치", desc: "화구 +2 · 조리속도 -10%", unlock: "Stage 18+에서 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", name: "재때까치", desc: "성장형 · 획득 XP +10%", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", name: "회색등때까치", desc: "고산형 · 고도 페널티 50% 완화", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", name: "사막때까치", desc: "Migration Wave 중 점수 +20%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", name: "붉은꼬리때까치", desc: "Rush 특화 · Burning 조리 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", name: "초원때까치", desc: "환경형 · World 6에서 등장 예정", unlock: "World 6 예정" }]; shrikeButtonsEl.innerHTML = ""; defs.forEach(d => { const btn = document.createElement("button"); btn.type = "button"; btn.className = "select-card" + (startChefChosen && selectedShrike === d.id ? " selected" : ""); btn.dataset.shrikeId = d.id; btn.disabled = !devMode && !save.unlockedShrikes.includes(d.id); btn.innerHTML = `<b>${d.emoji} ${d.name}</b><span>${d.desc}</span><small>${devMode ? `DEV · ${d.unlock}` : btn.disabled ? `LOCKED · ${d.unlock}` : "사용 가능"}</small>`; btn.addEventListener("click", () => { selectedShrike = d.id; startChefChosen = true; renderShrikes(); updateReadySummary(); setStartFlow("ready"); }); shrikeButtonsEl.appendChild(btn); }); }
 function upgradeCost(id) { return 250 + save.upgrades[id] * 250; }
 function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가지", desc: "동시 주문 +1 / Lv", max: 2 }, { id: "fire", name: "🔥 좋은 장작", desc: "조리속도 +3% / Lv", max: 5 }, { id: "perch", name: "🪺 편안한 횃대", desc: "주문 대기시간 +4% / Lv", max: 5 }]; upgradeList.innerHTML = ""; defs.forEach(d => { const lv = save.upgrades[d.id], cost = upgradeCost(d.id), card = document.createElement("div"); card.className = "upgrade-card"; card.innerHTML = `<div><b>${d.name} · Lv.${lv}/${d.max}</b><small>${d.desc}</small></div>`; const btn = document.createElement("button"); btn.className = "primary-button"; btn.textContent = lv >= d.max ? "MAX" : `${cost} XP`; btn.disabled = devMode || lv >= d.max || save.xp < cost; if (devMode)
     btn.textContent = "DEV · SAVE LOCK"; btn.onclick = () => { if (devMode)
@@ -656,81 +807,32 @@ function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가�
     persist();
     renderUpgrades();
 } }; card.appendChild(btn); upgradeList.appendChild(card); }); }
-function renderFoodButtons() {
-    foodButtonsEl.innerHTML = "";
-    stageFoodPool().forEach(id => {
-        const f = foods[id], btn = document.createElement("button");
-        btn.className = "food-button";
-        btn.innerHTML = `<span class="food-emoji">${f.emoji}</span><b>${f.name}</b><small>${f.cookSeconds}s</small>`;
-        btn.dataset.foodId = id;
-        foodButtonsEl.appendChild(btn);
-    });
-    foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, stageFoodPool().length))},1fr)`;
+function renderFoodButtons() { foodButtonsEl.innerHTML = ""; stageFoodPool().forEach((id, index) => { var _a; const f = foods[id], btn = document.createElement("button"), key = ((_a = FOOD_KEYS[index]) === null || _a === void 0 ? void 0 : _a.toUpperCase()) || ""; btn.className = "food-button"; btn.innerHTML = `${key ? `<span class="key-badge">${key}</span>` : ""}<span class="food-emoji">${f.emoji}</span>${f.name}<small>${f.cookSeconds}s</small>`; btn.dataset.foodId = id; if (key)
+    btn.setAttribute("aria-keyshortcuts", key); foodButtonsEl.appendChild(btn); }); foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, stageFoodPool().length))},1fr)`; }
+function renderSkewer() { skewerEl.innerHTML = currentSkewer.length ? currentSkewer.map(id => `<span class="skewer-item">${foods[id].emoji}</span>`).join("") : `<span class="empty-skewer">재료를 순서대로 꽂으세요</span>`; }
+function renderSelected() { const o = orders.find(x => x.id === selectedOrderId); selectedOrderSummary.innerHTML = o ? `🎯 우선 매칭 · ${o.guest.emoji} <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe)}</span>${o.special ? " · ⭐ SPECIAL" : ""}${o.signature ? " · 🌿 SIGNATURE" : ""}` : "✨ AUTO MATCH · 주문을 선택하지 않고 바로 꼬치를 만들 수 있습니다"; }
+function renderOrders() { const now = Date.now(); ordersEl.innerHTML = ""; orders.forEach((o, index) => { const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button"), key = ORDER_KEYS[index] || ""; btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}`; btn.innerHTML = `${key ? `<span class="key-badge">${key}</span>` : ""}${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}${o.signature ? '<span class="signature-badge">🌿 SIGNATURE +10%</span>' : ""}<span class="bird">${o.guest.emoji}</span><div class="name">${o.guest.name}</div><div class="bird-en">${o.guest.englishName}</div><div class="recipe">${recipeEmoji(o.recipe)}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`; btn.dataset.orderId = String(o.id); if (key)
+    btn.setAttribute("aria-keyshortcuts", key); ordersEl.appendChild(btn); }); if (!orders.length)
+    ordersEl.innerHTML = '<div class="hint">다음 손님을 기다리는 중...</div>'; }
+function renderBurners() { const now = Date.now(); burnersEl.innerHTML = ""; burners.forEach(b => { var _a; const btn = document.createElement("button"), key = ((_a = BURNER_KEYS[b.index]) === null || _a === void 0 ? void 0 : _a.toUpperCase()) || ""; btn.className = `burner ${b.state}`; let state = "빈 화구", pct = 0; if (b.state === "cooking") {
+    const e = (now - b.startedAt) / 1000;
+    pct = Math.min(100, e / b.cookSeconds * 100);
+    state = `조리 중 ${Math.max(0, b.cookSeconds - e).toFixed(1)}s`;
+} if (b.state === "ready") {
+    pct = 100;
+    state = "READY · 클릭/키로 서빙";
+} if (b.state === "overcooked") {
+    pct = 100;
+    state = "OVERCOOKED · 지금 서빙";
+} btn.innerHTML = `${key ? `<span class="key-badge">${key}</span>` : ""}<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}</div><div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe) : "EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`; btn.dataset.burnerIndex = String(b.index); if (key)
+    btn.setAttribute("aria-keyshortcuts", key); burnersEl.appendChild(btn); }); }
+function renderBirdBook() { birdBookList.innerHTML = ""; Object.keys(guests).forEach(id => { const g = guests[id], seen = devMode || save.discoveredBirds.includes(id), card = document.createElement("article"); card.className = "bird-card" + (seen ? "" : " locked"); if (!seen) {
+    card.innerHTML = `<div class="bird-card-emoji">❔</div><div><b>미발견 조류</b><small>World 1에서 만나보세요.</small></div>`;
 }
-function renderSkewer() {
-    skewerEl.innerHTML = currentSkewer.length
-        ? currentSkewer.map(id => `<span class="skewer-item classic-skewer-item"><span>${foods[id].emoji}</span><small>${foods[id].name}</small></span>`).join("")
-        : `<span class="empty-skewer">재료를 순서대로 꽂으세요</span>`;
-}
-function renderSelected() {
-    const o = orders.find(x => x.id === selectedOrderId);
-    selectedOrderSummary.innerHTML = o
-        ? `<span class="priority-label">우선 매칭</span> <span class="classic-guest-icon">${o.guest.emoji}</span> <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe)}</span>${o.special ? " · ⭐ SPECIAL" : ""}`
-        : `<span class="auto-match-label">✨ AUTO MATCH</span> 주문 선택 없이 꼬치를 만들어도 됩니다.`;
-}
-function renderOrders() {
-    const now = Date.now();
-    ordersEl.innerHTML = "";
-    orders.forEach(o => {
-        const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button");
-        btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}`;
-        btn.innerHTML = `${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}<span class="bird classic-order-bird">${o.guest.emoji}</span><div class="name">${o.guest.name}</div><div class="bird-en">${o.guest.englishName}</div><div class="recipe classic-recipe">${recipeEmoji(o.recipe)}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`;
-        btn.dataset.orderId = String(o.id);
-        ordersEl.appendChild(btn);
-    });
-    if (!orders.length)
-        ordersEl.innerHTML = '<div class="hint">다음 손님을 기다리는 중...</div>';
-}
-function renderBurners() {
-    const now = Date.now();
-    burnersEl.innerHTML = "";
-    burners.forEach(b => {
-        const btn = document.createElement("button");
-        btn.className = `burner ${b.state}`;
-        let state = "빈 화구", pct = 0;
-        if (b.state === "cooking") {
-            const e = (now - b.startedAt) / 1000;
-            pct = Math.min(100, e / b.cookSeconds * 100);
-            state = `조리 중 ${Math.max(0, b.cookSeconds - e).toFixed(1)}s`;
-        }
-        if (b.state === "ready") {
-            pct = 100;
-            state = "READY · 클릭해서 서빙";
-        }
-        if (b.state === "overcooked") {
-            pct = 100;
-            state = "OVERCOOKED · 지금 서빙";
-        }
-        btn.innerHTML = `<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}</div><div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe) : "EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`;
-        btn.dataset.burnerIndex = String(b.index);
-        burnersEl.appendChild(btn);
-    });
-}
-function renderBirdBook() {
-    birdBookList.innerHTML = "";
-    Object.keys(guests).forEach(id => {
-        const g = guests[id], seen = devMode || save.discoveredBirds.includes(id), card = document.createElement("article");
-        card.className = "bird-card" + (seen ? "" : " locked");
-        if (!seen) {
-            card.innerHTML = `<div class="bird-card-emoji">❔</div><div><b>미발견 조류</b><small>새로운 스테이지에서 만나보세요.</small></div>`;
-        }
-        else {
-            const primary = g.diet.primary.map(x => foods[x].emoji + foods[x].name).join(" · "), secondary = g.diet.secondary.slice(0, 3).map(x => foods[x].emoji + foods[x].name).join(" · ");
-            card.innerHTML = `<div class="bird-card-emoji">${g.emoji}</div><div><b>${g.name} <span>${g.englishName}</span></b><i>${g.scientificName}</i><p>${g.note}</p><small>주요 먹이 · ${primary}</small>${secondary ? `<small>보조 먹이 · ${secondary}</small>` : ""}</div>`;
-        }
-        birdBookList.appendChild(card);
-    });
-}
+else {
+    const primary = g.diet.primary.map(x => foods[x].emoji + foods[x].name).join(" · "), secondary = g.diet.secondary.slice(0, 3).map(x => foods[x].emoji + foods[x].name).join(" · ");
+    card.innerHTML = `<div class="bird-card-emoji">${g.emoji}</div><div><b>${g.name} <span>${g.englishName}</span></b><i>${g.scientificName}</i><p>${g.note}</p><small>주요 먹이 · ${primary}</small>${secondary ? `<small>보조 먹이 · ${secondary}</small>` : ""}</div>`;
+} birdBookList.appendChild(card); }); }
 function renderShrikeDex() { const defs = [{ id: "bull-headed", emoji: "🐦", ko: "때까치", en: "Bull-headed Shrike", role: "⚖️ Balance", passive: "기본 능력 없음", burn: "15초간 조립·조리·대기시간을 균형 강화", unlock: "기본 캐릭터" }, { id: "tiger", emoji: "🐅", ko: "칡때까치", en: "Tiger Shrike", role: "🔥 Cooking", passive: "조리속도 +10%", burn: "15초간 조리속도 +40%", unlock: "Stage 3 이상 ★★" }, { id: "brown", emoji: "🟤", ko: "노랑때까치", en: "Brown Shrike", role: "⚡ Combo", passive: "Combo가 높을수록 점수 증가", burn: "Burning 중 콤보 기반 보너스 강화", unlock: "Stage 6 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", ko: "물때까치", en: "Chinese Grey Shrike", role: "⏱ Control", passive: "주문 제한시간 +10%", burn: "8초 주문 타이머 정지 + 7초 50% 감속", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", ko: "긴꼬리때까치", en: "Long-tailed Shrike", role: "🍢 Capacity", passive: "화구 +2, 조리속도 -10%", burn: "15초간 임시 화구 +2 + 조리속도 +20%", unlock: "Stage 18+ 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", ko: "재때까치", en: "Northern Shrike", role: "📈 Growth", passive: "스테이지 획득 XP +10%", burn: "15초간 기본 균형 강화", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", ko: "회색등때까치", en: "Grey-backed Shrike", role: "🏔️ Altitude", passive: "고도 조리 페널티 50% 완화", burn: "Burning 동안 고도 페널티 제거 · 한기 페널티 제거", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", ko: "사막때까치", en: "Isabelline Shrike", role: "🪽 Migration", passive: "Migration Wave 중 점수 +20%", burn: "15초간 Migration/Rush 점수 +40%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", ko: "붉은꼬리때까치", en: "Red-tailed Shrike", role: "⚡ Rush", passive: "Migration Wave 중 점수 +15%", burn: "15초간 조리속도 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", ko: "초원때까치", en: "Great Grey Shrike", role: "🌍 Environment", passive: "유럽·북아프리카·서아시아 환경에 특화 예정", burn: "World 6에서 공개 예정", unlock: "World 6 예정" }]; shrikeDexList.innerHTML = ""; defs.forEach(d => { const open = devMode || save.unlockedShrikes.includes(d.id), card = document.createElement("article"); card.className = "dex-card" + (open ? "" : " locked"); card.innerHTML = open ? `<div class="dex-emoji">${d.emoji}</div><div><b>${d.ko} <span>${d.en}</span></b><small>${d.role}</small><p><strong>Passive</strong> · ${d.passive}</p><p><strong>Burning</strong> · ${d.burn}</p><small>Unlock · ${d.unlock}</small></div>` : `<div class="dex-emoji">❔</div><div><b>LOCKED SHRIKE</b><small>${d.unlock}</small></div>`; shrikeDexList.appendChild(card); }); }
 function updateHud() { scoreLabel.textContent = score.toLocaleString(); xpHudLabel.textContent = save.xp.toLocaleString(); comboLabel.textContent = `×${combo}`; bestComboLabel.textContent = `×${bestCombo}`; burnGaugeFill.style.width = `${burningGauge}%`; burnGaugeText.textContent = isBurning() ? "ACTIVE" : `${Math.round(burningGauge)}%`; burnButton.disabled = burningGauge < 100 || isBurning() || paused; }
 function setStatus(t) { statusMessage.textContent = t; }
@@ -864,9 +966,10 @@ function bindAdaptiveAction(el, action) {
         return; event.stopPropagation(); action(); });
 }
 function bindDelegatedAdaptive(container, selector, action) {
+    // Orders and burners are rebuilt every frame. Handle pointerdown for both
+    // desktop and touch so the action fires before the pressed DOM node can be
+    // replaced between pointerdown and click.
     container.addEventListener("pointerdown", event => {
-        if (!isCoarsePointer())
-            return;
         const target = event.target.closest(selector);
         if (!target)
             return;
@@ -877,40 +980,26 @@ function bindDelegatedAdaptive(container, selector, action) {
         event.stopPropagation();
         action(target);
     });
-    container.addEventListener("click", event => {
-        if (isCoarsePointer())
-            return;
-        const target = event.target.closest(selector);
-        if (!target)
-            return;
-        event.stopPropagation();
-        action(target);
-    });
 }
 bindDelegatedAdaptive(ordersEl, ".order-card[data-order-id]", target => selectOrder(Number(target.dataset.orderId)));
 bindDelegatedAdaptive(burnersEl, ".burner[data-burner-index]", target => clickBurner(Number(target.dataset.burnerIndex)));
 bindDelegatedAdaptive(foodButtonsEl, ".food-button[data-food-id]", target => addFood(target.dataset.foodId));
-enterGameButton.onclick = () => coverScreen.classList.add("hidden");
-world1Button.onclick = () => { selectedWorld = 1; if (selectedStage > 10)
-    selectedStage = Math.min(10, save.unlockedStage); renderStages(); renderStageEcology(); };
-world2Button.onclick = () => { if (!devMode && save.unlockedStage < 11)
-    return; selectedWorld = 2; if (selectedStage < 11 || selectedStage > 20)
-    selectedStage = (devMode ? 11 : Math.max(11, Math.min(20, save.unlockedStage))); renderStages(); renderStageEcology(); };
-world3Button.onclick = () => { if (!devMode && save.unlockedStage < 21)
-    return; selectedWorld = 3; if (selectedStage < 21 || selectedStage > 30)
-    selectedStage = (devMode ? 21 : Math.max(21, Math.min(30, save.unlockedStage))); renderStages(); renderStageEcology(); };
-world4Button.onclick = () => { if (!devMode && save.unlockedStage < 31)
-    return; selectedWorld = 4; if (selectedStage < 31 || selectedStage > 40)
-    selectedStage = (devMode ? 31 : Math.max(31, Math.min(40, save.unlockedStage))); renderStages(); renderStageEcology(); };
-world5Button.onclick = () => { if (!devMode && save.unlockedStage < 41)
-    return; selectedWorld = 5; if (selectedStage < 41 || selectedStage > 50)
-    selectedStage = (devMode ? 41 : Math.max(41, Math.min(50, save.unlockedStage))); renderStages(); renderStageEcology(); };
-startButton.onclick = startGame;
+enterGameButton.onclick = () => { coverScreen.classList.add("hidden"); resetStartFlow(); };
+world1Button.onclick = () => chooseWorldForFlow(1);
+world2Button.onclick = () => chooseWorldForFlow(2);
+world3Button.onclick = () => chooseWorldForFlow(3);
+world4Button.onclick = () => chooseWorldForFlow(4);
+world5Button.onclick = () => chooseWorldForFlow(5);
+backToWorldButton.onclick = () => { startWorldChosen = startStageChosen = startChefChosen = false; renderStages(); setStartFlow("world"); };
+backToStageButton.onclick = () => { startStageChosen = false; startChefChosen = false; renderStages(); setStartFlow("stage"); };
+backToChefButton.onclick = () => { startChefChosen = false; renderShrikes(); setStartFlow("chef"); };
+startButton.onclick = () => { if (!startWorldChosen || !startStageChosen || !startChefChosen)
+    return; startGame(); };
 nextStageButton.onclick = () => { if (stage.id >= 40)
     return; const next = (stage.id + 1); if (!devMode && save.unlockedStage < next)
     return; selectedStage = next; selectedWorld = next > 30 ? 4 : next > 20 ? 3 : next > 10 ? 2 : 1; startGame(); };
 restartButton.onclick = startGame;
-backButton.onclick = () => { closeAllDialogs(); document.body.classList.remove("in-game"); resultScreen.classList.add("hidden"); gameScreen.classList.add("hidden"); startScreen.classList.remove("hidden"); renderMeta(); };
+backButton.onclick = () => { closeAllDialogs(); document.body.classList.remove("in-game"); resultScreen.classList.add("hidden"); gameScreen.classList.add("hidden"); startScreen.classList.remove("hidden"); renderMeta(); resetStartFlow(); };
 devModeButton.onclick = () => { setDevMode(!devMode); showEvent(devMode ? "🛠 DEV MODE ON · 모든 구현 콘텐츠 해금" : "🛠 DEV MODE OFF · 일반 진행도로 복귀"); };
 resetSaveButton.onclick = () => { if (confirm("모든 Prototype 0.5 진행도, Bird Book과 업그레이드를 초기화할까요?")) {
     localStorage.removeItem(SAVE_KEY);
@@ -919,6 +1008,7 @@ resetSaveButton.onclick = () => { if (confirm("모든 Prototype 0.5 진행도, B
     selectedWorld = 1;
     selectedShrike = "bull-headed";
     persist();
+    resetStartFlow();
     setStatus("저장 데이터가 초기화되었습니다.");
 } };
 clearSkewerButton.setAttribute("aria-keyshortcuts", "Backspace Delete");
@@ -931,7 +1021,11 @@ bindAdaptiveAction(clearSkewerButton, () => { if (paused)
 bindAdaptiveAction(finishSkewerButton, finishSkewer);
 bindAdaptiveAction(burnButton, activateBurning);
 bindAdaptiveAction(pauseButton, togglePause);
-bindAdaptiveAction(quitButton, () => { closeAllDialogs(); document.body.classList.remove("in-game"); running = false; paused = false; cancelAnimationFrame(animationFrame); gameScreen.classList.add("hidden"); resultScreen.classList.add("hidden"); startScreen.classList.remove("hidden"); renderMeta(); });
+bindAdaptiveAction(quitButton, () => { closeAllDialogs(); document.body.classList.remove("in-game"); running = false; paused = false; cancelAnimationFrame(animationFrame); gameScreen.classList.add("hidden"); resultScreen.classList.add("hidden"); startScreen.classList.remove("hidden"); renderMeta(); resetStartFlow(); });
+keyboardGuideButton.onclick = () => toggleKeyboardGuide(true);
+keyboardGuideGameButton.onclick = () => toggleKeyboardGuide(true);
+closeKeyboardGuideButton.onclick = () => toggleKeyboardGuide(false);
+document.addEventListener("keydown", handleGameKeyboard);
 helpButton.onclick = () => openDialog(helpDialog);
 closeHelpButton.onclick = () => closeDialog(helpDialog);
 restaurantButton.onclick = () => { renderUpgrades(); openDialog(restaurantDialog); };
@@ -960,6 +1054,7 @@ devModeButton.classList.toggle("active", devMode);
 devModeButton.textContent = devMode ? "🛠 DEV ON" : "🛠 DEV MODE";
 devModeBanner.classList.toggle("hidden", !devMode);
 renderMeta();
+resetStartFlow();
 stage = stages[selectedStage];
 weatherLabel.textContent = baseEnvironmentLabel();
 renderFoodButtons();

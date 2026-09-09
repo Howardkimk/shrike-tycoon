@@ -265,15 +265,6 @@ body.in-game button{pointer-events:auto}
 }
 
 /* Prototype 0.5.2.3 · Keyboard Accessibility Update */
-.keyboard-mini-guide{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:8px 12px;border:1px solid var(--line);border-radius:14px;background:#0d2019;color:var(--muted);font-size:.74rem}
-.keyboard-mini-guide span{display:inline-flex;align-items:center;gap:4px}.keyboard-mini-guide b{color:var(--accent)}
-kbd,.key-badge{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:900;border:1px solid #607c6f;border-bottom-width:2px;background:#0a1813;color:#f7d982;border-radius:6px;padding:2px 6px;box-shadow:0 1px 0 rgba(255,255,255,.08) inset}
-.key-guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}.key-guide-grid>div{display:grid;grid-template-columns:minmax(90px,auto) 1fr;grid-template-rows:auto auto;gap:2px 12px;align-items:center;padding:11px;border-radius:12px;background:#0e211a;border:1px solid #315144}.key-guide-grid kbd{grid-row:1/3;text-align:center;white-space:nowrap}.key-guide-grid strong{font-size:.92rem}.key-guide-grid small{color:var(--muted)}
-.order-card,.food-button,.burner{position:relative}.key-badge{position:absolute;left:6px;top:6px;z-index:3;font-size:.62rem;line-height:1;padding:3px 5px;pointer-events:none}
-.food-button .food-emoji{font-size:1.35rem;display:block}
-.keyboard-hit{outline:3px solid var(--cyan)!important;outline-offset:2px!important;filter:brightness(1.18);transform:translateY(-1px)}
-body.keyboard-mode button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
-@media (pointer:coarse){.keyboard-mini-guide,.key-badge{display:none!important}}
 @media(max-width:700px){.key-guide-grid{grid-template-columns:1fr}.key-guide-grid>div{grid-template-columns:minmax(86px,auto) 1fr}}
 
 
@@ -560,3 +551,54 @@ body.dev-mode .stage-card:not(:disabled),body.dev-mode .select-card:not(:disable
 .guided-world-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
 @media(max-width:900px){.guided-world-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.guided-world-tabs{grid-template-columns:1fr 1fr}.guided-world-tabs .world-tab{min-height:54px;padding:8px 5px;font-size:.72rem}}
+
+/* 0.6.5.1 Input & Order UI Cleanup */
+#selectedOrderSummary{
+  font-size:.68rem;
+  line-height:1.2;
+  color:var(--muted);
+  font-weight:600;
+  text-align:right;
+}
+.order-card .name{padding-right:82px}
+.order-card .bird{display:none!important}
+
+@media (max-width:900px), (pointer:coarse){
+  #selectedOrderSummary{
+    font-size:.5rem!important;
+    line-height:1.05!important;
+    letter-spacing:-.01em;
+    max-width:62%;
+    white-space:normal;
+  }
+  .order-card .signature-badge{
+    left:auto!important;
+    right:5px!important;
+    top:5px!important;
+    bottom:auto!important;
+    padding:1px 4px!important;
+    border-radius:999px!important;
+    font-size:.42rem!important;
+    line-height:1.15!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+  }
+  .order-card .special-badge{
+    left:5px!important;
+    right:auto!important;
+    top:5px!important;
+    padding:1px 4px!important;
+    font-size:.42rem!important;
+  }
+  .order-card .name{padding-right:72px!important}
+}
+
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  #selectedOrderSummary{
+    font-size:.44rem!important;
+    max-width:60%!important;
+    line-height:1!important;
+  }
+  .order-card .signature-badge{font-size:.38rem!important;padding:1px 3px!important;right:3px!important;top:3px!important}
+  .order-card .special-badge{font-size:.38rem!important;padding:1px 3px!important;left:3px!important;top:3px!important}
+}

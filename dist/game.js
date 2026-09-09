@@ -5,9 +5,6 @@ const SAVE_VERSION = 10;
 const SAVE_KEY = "shrikeTycoonPrototype03Stable";
 const OVERCOOK_GRACE = 2.8;
 const BASE_ORDER_DEADLINE = 60;
-const ORDER_KEYS = ["1", "2", "3", "4", "5", "6"];
-const FOOD_KEYS = ["q", "w", "e", "r", "t", "y", "u", "i", "o"];
-const BURNER_KEYS = ["a", "s", "d", "f", "g", "h", "j"];
 const foods = {
     grasshopper: { id: "grasshopper", name: "메뚜기", emoji: "🦗", cookSeconds: 2, score: 10 },
     caterpillar: { id: "caterpillar", name: "애벌레", emoji: "🐛", cookSeconds: 2.2, score: 12 },
@@ -218,7 +215,7 @@ for (let id = 51; id <= 100; id++) {
     config.subGoal = finale ? { kind: "perfect", target: 14, label: "PERFECT 14회" } : index % 3 === 0 ? { kind: "served", target: 12 + Math.floor(index / 2), label: `손님 ${12 + Math.floor(index / 2)}명 서빙` } : index % 3 === 1 ? { kind: "combo", target: 9 + index, label: `Best Combo ×${9 + index}` } : { kind: "special", target: 3 + Math.floor(index / 3), label: `SPECIAL ${3 + Math.floor(index / 3)}회 서빙` };
     stages[id] = config;
 }
-// 0.6.5 World Identity pass: every stage gets a readable secondary objective.
+// 0.6.5.1 World Identity pass: every stage gets a readable secondary objective.
 // Existing hand-authored goals remain authoritative; only missing goals are filled here.
 for (let i = 1; i <= 50; i++) {
     const c = stages[i];
@@ -284,7 +281,6 @@ const coverScreen = $("coverScreen"), enterGameButton = $("enterGameButton"), in
 const startScreen = $("startScreen"), gameScreen = $("gameScreen"), resultScreen = $("resultScreen");
 const startButton = $("startButton"), nextStageButton = $("nextStageButton"), restartButton = $("restartButton"), backButton = $("backButton"), quitButton = $("quitButton"), pauseButton = $("pauseButton");
 const resetSaveButton = $("resetSaveButton"), finishSkewerButton = $("finishSkewerButton"), clearSkewerButton = $("clearSkewerButton"), burnButton = $("burnButton");
-const keyboardGuideButton = $("keyboardGuideButton"), keyboardGuideGameButton = $("keyboardGuideGameButton"), keyboardGuideDialog = $("keyboardGuideDialog"), closeKeyboardGuideButton = $("closeKeyboardGuideButton");
 const helpButton = $("helpButton"), helpDialog = $("helpDialog"), closeHelpButton = $("closeHelpButton");
 const restaurantButton = $("restaurantButton"), restaurantDialog = $("restaurantDialog"), closeRestaurantButton = $("closeRestaurantButton");
 const birdBookButton = $("birdBookButton"), birdBookDialog = $("birdBookDialog"), closeBirdBookButton = $("closeBirdBookButton"), birdBookList = $("birdBookList");
@@ -938,25 +934,22 @@ function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가�
     persist();
     renderUpgrades();
 } }; card.appendChild(btn); upgradeList.appendChild(card); }); }
-function renderFoodButtons() { foodButtonsEl.innerHTML = ""; stageFoodPool().forEach((id, index) => { var _a; const f = foods[id], btn = document.createElement("button"), key = ((_a = FOOD_KEYS[index]) === null || _a === void 0 ? void 0 : _a.toUpperCase()) || ""; btn.className = "food-button"; btn.innerHTML = `${key ? `<span class="key-badge">${key}</span>` : ""}<span class="food-emoji">${f.emoji}</span>${f.name}<small>${f.cookSeconds}s</small>`; btn.dataset.foodId = id; if (key)
-    btn.setAttribute("aria-keyshortcuts", key); foodButtonsEl.appendChild(btn); }); foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, stageFoodPool().length))},1fr)`; }
+function renderFoodButtons() { foodButtonsEl.innerHTML = ""; stageFoodPool().forEach(id => { const f = foods[id], btn = document.createElement("button"); btn.className = "food-button"; btn.innerHTML = `<span class="food-emoji">${f.emoji}</span>${f.name}<small>${f.cookSeconds}s</small>`; btn.dataset.foodId = id; foodButtonsEl.appendChild(btn); }); foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, stageFoodPool().length))},1fr)`; }
 function renderSkewer() { skewerEl.innerHTML = currentSkewer.length ? currentSkewer.map(id => `<span class="skewer-item">${foods[id].emoji}</span>`).join("") : `<span class="empty-skewer">재료를 순서대로 꽂으세요</span>`; }
-function renderSelected() { const o = orders.find(x => x.id === selectedOrderId); selectedOrderSummary.innerHTML = o ? `🎯 우선 매칭 · ${o.guest.emoji} <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe)}</span>${o.special ? " · ⭐ SPECIAL" : ""}${o.signature ? " · 🌿 SIGNATURE" : ""}` : "✨ AUTO MATCH · 주문을 선택하지 않고 바로 꼬치를 만들 수 있습니다"; }
-function renderOrders() { const now = Date.now(); ordersEl.innerHTML = ""; orders.forEach((o, index) => { const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button"), key = ORDER_KEYS[index] || ""; btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}`; btn.innerHTML = `${key ? `<span class="key-badge">${key}</span>` : ""}${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}${o.signature ? '<span class="signature-badge">🌿 SIGNATURE +10%</span>' : ""}<span class="bird">${o.guest.emoji}</span><div class="name">${o.guest.name}</div><div class="bird-en">${o.guest.englishName}</div><div class="recipe">${recipeEmoji(o.recipe)}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`; btn.dataset.orderId = String(o.id); if (key)
-    btn.setAttribute("aria-keyshortcuts", key); ordersEl.appendChild(btn); }); if (!orders.length)
+function renderSelected() { const o = orders.find(x => x.id === selectedOrderId); selectedOrderSummary.innerHTML = o ? `🎯 우선 매칭 · <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe)}</span>${o.special ? " · ⭐ SPECIAL" : ""}${o.signature ? " · 🌿 SIGNATURE" : ""}` : "✨ AUTO MATCH · 주문 선택 없이 조립 가능"; }
+function renderOrders() { const now = Date.now(); ordersEl.innerHTML = ""; orders.forEach(o => { const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button"); btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}`; btn.innerHTML = `${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}${o.signature ? '<span class="signature-badge">SIGNATURE +10%</span>' : ""}<div class="name">${o.guest.name}</div><div class="bird-en">${o.guest.englishName}</div><div class="recipe">${recipeEmoji(o.recipe)}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`; btn.dataset.orderId = String(o.id); ordersEl.appendChild(btn); }); if (!orders.length)
     ordersEl.innerHTML = '<div class="hint">다음 손님을 기다리는 중...</div>'; }
-function renderBurners() { const now = Date.now(); burnersEl.innerHTML = ""; burners.forEach(b => { var _a; const btn = document.createElement("button"), key = ((_a = BURNER_KEYS[b.index]) === null || _a === void 0 ? void 0 : _a.toUpperCase()) || ""; btn.className = `burner ${b.state}`; let state = "빈 화구", pct = 0; if (b.state === "cooking") {
+function renderBurners() { const now = Date.now(); burnersEl.innerHTML = ""; burners.forEach(b => { const btn = document.createElement("button"); btn.className = `burner ${b.state}`; let state = "빈 화구", pct = 0; if (b.state === "cooking") {
     const e = (now - b.startedAt) / 1000;
     pct = Math.min(100, e / b.cookSeconds * 100);
     state = `조리 중 ${Math.max(0, b.cookSeconds - e).toFixed(1)}s`;
 } if (b.state === "ready") {
     pct = 100;
-    state = "READY · 클릭/키로 서빙";
+    state = "READY · 클릭해서 서빙";
 } if (b.state === "overcooked") {
     pct = 100;
     state = "OVERCOOKED · 지금 서빙";
-} btn.innerHTML = `${key ? `<span class="key-badge">${key}</span>` : ""}<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}</div><div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe) : "EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`; btn.dataset.burnerIndex = String(b.index); if (key)
-    btn.setAttribute("aria-keyshortcuts", key); burnersEl.appendChild(btn); }); }
+} btn.innerHTML = `<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}</div><div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe) : "EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`; btn.dataset.burnerIndex = String(b.index); burnersEl.appendChild(btn); }); }
 function renderBirdBook() { birdBookList.innerHTML = ""; Object.keys(guests).forEach(id => { const g = guests[id], seen = devMode || save.discoveredBirds.includes(id), card = document.createElement("article"); card.className = "bird-card" + (seen ? "" : " locked"); if (!seen) {
     card.innerHTML = `<div class="bird-card-emoji">❔</div><div><b>미발견 조류</b><small>새로운 월드와 스테이지에서 만나보세요.</small></div>`;
 }
@@ -970,15 +963,6 @@ function setStatus(t) { statusMessage.textContent = t; }
 function judge(t, good) { floatingJudge.textContent = t; floatingJudge.style.color = good ? "var(--accent)" : "var(--danger)"; floatingJudge.classList.remove("pop"); void floatingJudge.offsetWidth; floatingJudge.classList.add("pop"); }
 function showEvent(t) { eventBanner.textContent = t; eventBanner.classList.add("show"); setTimeout(() => eventBanner.classList.remove("show"), 2200); }
 function shrikeName(id) { return id === "tiger" ? "🐅 칡때까치" : id === "brown" ? "🟤 노랑때까치" : id === "chinese-grey" ? "🩶 물때까치" : id === "long-tailed" ? "🐦 긴꼬리때까치" : id === "northern" ? "🩶 재때까치" : id === "grey-backed" ? "🏔️ 회색등때까치" : id === "isabelline" ? "🏜️ 사막때까치" : id === "red-tailed" ? "🪽 붉은꼬리때까치" : id === "great-grey" ? "🩶 초원때까치" : "🐦 때까치"; }
-function flashKeyboardTarget(el) { if (!el)
-    return; el.classList.remove("keyboard-hit"); void el.offsetWidth; el.classList.add("keyboard-hit"); setTimeout(() => el.classList.remove("keyboard-hit"), 180); }
-function keyboardGuideOpen() { return keyboardGuideDialog.open; }
-function toggleKeyboardGuide(force) { const shouldOpen = force !== null && force !== void 0 ? force : !keyboardGuideDialog.open; if (shouldOpen) {
-    if (!keyboardGuideDialog.open)
-        openDialog(keyboardGuideDialog);
-}
-else if (keyboardGuideDialog.open)
-    closeDialog(keyboardGuideDialog); }
 function activeDialog() { return document.querySelector("dialog[open]"); }
 function openDialog(dialog) { closeAllDialogs(); try {
     dialog.showModal();
@@ -993,84 +977,6 @@ function closeDialog(dialog) { try {
 catch {
     dialog.removeAttribute("open");
 } dialog.classList.remove("dialog-fallback-open"); }
-function clearSkewerKeyboard() { if (paused)
-    return; currentSkewer = []; renderSkewer(); setStatus("꼬치를 비웠습니다."); }
-function handleGameKeyboard(event) {
-    if (event.ctrlKey || event.metaKey || event.altKey)
-        return;
-    const key = event.key.toLowerCase();
-    // K and Escape remain available while the keyboard guide is open.
-    if (key === "k") {
-        event.preventDefault();
-        toggleKeyboardGuide();
-        return;
-    }
-    if (event.key === "Escape" && keyboardGuideOpen()) {
-        event.preventDefault();
-        toggleKeyboardGuide(false);
-        return;
-    }
-    if (activeDialog())
-        return;
-    if (!running || gameScreen.classList.contains("hidden"))
-        return;
-    document.body.classList.add("keyboard-mode");
-    if (key === "p") {
-        event.preventDefault();
-        togglePause();
-        flashKeyboardTarget(pauseButton);
-        return;
-    }
-    if (paused)
-        return;
-    const orderIndex = ORDER_KEYS.indexOf(event.key);
-    if (orderIndex >= 0) {
-        const order = orders[orderIndex];
-        if (order) {
-            event.preventDefault();
-            selectOrder(order.id);
-            flashKeyboardTarget(ordersEl.querySelector(`[data-order-id="${order.id}"]`));
-        }
-        return;
-    }
-    const foodIndex = FOOD_KEYS.indexOf(key);
-    if (foodIndex >= 0) {
-        const foodId = stageFoodPool()[foodIndex];
-        if (foodId) {
-            event.preventDefault();
-            addFood(foodId);
-            flashKeyboardTarget(foodButtonsEl.querySelector(`[data-food-id="${foodId}"]`));
-        }
-        return;
-    }
-    const burnerIndex = BURNER_KEYS.indexOf(key);
-    if (burnerIndex >= 0) {
-        if (burners[burnerIndex]) {
-            event.preventDefault();
-            clickBurner(burnerIndex);
-            flashKeyboardTarget(burnersEl.querySelector(`[data-burner-index="${burnerIndex}"]`));
-        }
-        return;
-    }
-    if (event.code === "Space") {
-        event.preventDefault();
-        finishSkewer();
-        flashKeyboardTarget(finishSkewerButton);
-        return;
-    }
-    if (event.key === "Backspace" || event.key === "Delete") {
-        event.preventDefault();
-        clearSkewerKeyboard();
-        flashKeyboardTarget(clearSkewerButton);
-        return;
-    }
-    if (key === "b") {
-        event.preventDefault();
-        activateBurning();
-        flashKeyboardTarget(burnButton);
-        return;
-    }
-}
 const coarsePointerQuery = (_a = window.matchMedia) === null || _a === void 0 ? void 0 : _a.call(window, "(pointer: coarse)");
 const isCoarsePointer = () => Boolean(coarsePointerQuery === null || coarsePointerQuery === void 0 ? void 0 : coarsePointerQuery.matches);
 function closeAllDialogs() { document.querySelectorAll("dialog[open]").forEach(dialog => { try {
@@ -1080,9 +986,8 @@ catch {
     dialog.removeAttribute("open");
 } }); }
 function bindAdaptiveAction(el, action) {
-    // Desktop uses the browser's native click activation. This keeps mouse, trackpad,
-    // keyboard Enter/Space, focus and <dialog> behavior predictable. Touch keeps the
-    // pointerdown path that fixed the iOS missed-tap issue in 0.5.2.1.
+    // Desktop uses native click activation for stable mouse/trackpad input. Touch keeps
+    // the pointerdown path that fixed the iOS missed-tap issue in 0.5.2.1.
     el.addEventListener("pointerdown", event => {
         if (!isCoarsePointer())
             return;
@@ -1147,21 +1052,12 @@ resetSaveButton.onclick = () => { if (confirm("모든 Prototype 0.5 진행도, B
     resetStartFlow();
     setStatus("저장 데이터가 초기화되었습니다.");
 } };
-clearSkewerButton.setAttribute("aria-keyshortcuts", "Backspace Delete");
-finishSkewerButton.setAttribute("aria-keyshortcuts", "Space");
-burnButton.setAttribute("aria-keyshortcuts", "B");
-pauseButton.setAttribute("aria-keyshortcuts", "P");
-keyboardGuideGameButton.setAttribute("aria-keyshortcuts", "K");
 bindAdaptiveAction(clearSkewerButton, () => { if (paused)
     return; currentSkewer = []; renderSkewer(); });
 bindAdaptiveAction(finishSkewerButton, finishSkewer);
 bindAdaptiveAction(burnButton, activateBurning);
 bindAdaptiveAction(pauseButton, togglePause);
 bindAdaptiveAction(quitButton, () => { closeAllDialogs(); document.body.classList.remove("in-game"); running = false; paused = false; cancelAnimationFrame(animationFrame); gameScreen.classList.add("hidden"); resultScreen.classList.add("hidden"); startScreen.classList.remove("hidden"); renderMeta(); resetStartFlow(); });
-keyboardGuideButton.onclick = () => toggleKeyboardGuide(true);
-keyboardGuideGameButton.onclick = () => toggleKeyboardGuide(true);
-closeKeyboardGuideButton.onclick = () => toggleKeyboardGuide(false);
-document.addEventListener("keydown", handleGameKeyboard);
 helpButton.onclick = () => openDialog(helpDialog);
 closeHelpButton.onclick = () => closeDialog(helpDialog);
 restaurantButton.onclick = () => { renderUpgrades(); openDialog(restaurantDialog); };

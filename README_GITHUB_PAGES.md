@@ -1,2 +1,2 @@
-Shrike Tycoon 0.6.4.2 — Guided Start Flow Experiment
-Upload all contents to the repository root and deploy main /(root).
+Shrike Tycoon 0.6.5 — World 6–10 Expansion
+Upload all contents to repository root and deploy main /(root).

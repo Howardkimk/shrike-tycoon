@@ -555,3 +555,8 @@ body.dev-mode .stage-card:not(:disabled),body.dev-mode .select-card:not(:disable
   .guided-ecology{grid-template-columns:1fr}
   .hero-bird{font-size:2rem}.world-step-scroll h2{font-size:1.15rem}
 }
+
+/* 0.6.5 World 6–10 Expansion */
+.guided-world-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:900px){.guided-world-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.guided-world-tabs{grid-template-columns:1fr 1fr}.guided-world-tabs .world-tab{min-height:54px;padding:8px 5px;font-size:.72rem}}

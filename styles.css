@@ -626,3 +626,57 @@ body.dev-mode .stage-card:not(:disabled),body.dev-mode .select-card:not(:disable
   }
   .order-card .name{padding-right:70px!important}
 }
+
+/* 0.6.5.3 Mobile Order Name Readability Hotfix */
+@media (max-width:900px), (pointer:coarse){
+  .order-card .bird-en{
+    display:block!important;
+    font-size:.54rem!important;
+    line-height:1.15!important;
+    color:var(--muted)!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    overflow-wrap:anywhere!important;
+    word-break:normal!important;
+    margin-top:1px!important;
+    padding-right:2px!important;
+    max-height:2.35em;
+  }
+  .order-card{
+    height:auto;
+    min-height:0;
+    align-content:center;
+  }
+}
+@media (max-width:600px){
+  .order-card .bird-en{
+    font-size:.5rem!important;
+    line-height:1.12!important;
+  }
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  .order-card{
+    grid-template-rows:auto auto auto auto!important;
+    align-content:center!important;
+  }
+  .order-card .name{
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    line-height:1.08!important;
+  }
+  .order-card .bird-en{
+    display:block!important;
+    font-size:clamp(.40rem,1.05vw,.48rem)!important;
+    line-height:1.08!important;
+    max-height:2.2em!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    overflow-wrap:anywhere!important;
+  }
+  .order-card .recipe{
+    margin-top:1px!important;
+  }
+}

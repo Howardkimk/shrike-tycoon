@@ -215,7 +215,7 @@ for (let id = 51; id <= 100; id++) {
     config.subGoal = finale ? { kind: "perfect", target: 14, label: "PERFECT 14회" } : index % 3 === 0 ? { kind: "served", target: 12 + Math.floor(index / 2), label: `손님 ${12 + Math.floor(index / 2)}명 서빙` } : index % 3 === 1 ? { kind: "combo", target: 9 + index, label: `Best Combo ×${9 + index}` } : { kind: "special", target: 3 + Math.floor(index / 3), label: `SPECIAL ${3 + Math.floor(index / 3)}회 서빙` };
     stages[id] = config;
 }
-// 0.6.5.2 World Identity pass: every stage gets a readable secondary objective.
+// 0.6.5.3 World Identity pass: every stage gets a readable secondary objective.
 // Existing hand-authored goals remain authoritative; only missing goals are filled here.
 for (let i = 1; i <= 50; i++) {
     const c = stages[i];

@@ -1851,3 +1851,66 @@ body::after{
     white-space:nowrap;
   }
 }
+
+
+/* =========================================================
+   0.7.2.1 Mobile Landscape Bottom Controls Visibility Hotfix
+   Keep Pause / World Map controls inside the visual viewport even when
+   browser chrome or the 0.7.2 Chef strip reduces available height.
+   ========================================================= */
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  body.in-game #gameScreen:not(.hidden){
+    padding-bottom:calc(34px + env(safe-area-inset-bottom))!important;
+  }
+  body.in-game #gameScreen:not(.hidden) .game-actions{
+    position:fixed!important;
+    left:34vw!important;
+    right:max(5px,env(safe-area-inset-right))!important;
+    bottom:max(3px,env(safe-area-inset-bottom))!important;
+    width:auto!important;
+    height:29px!important;
+    min-height:29px!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:4px!important;
+    margin:0!important;
+    padding:2px!important;
+    border:1px solid rgba(151,112,67,.72)!important;
+    border-radius:9px!important;
+    background:rgba(7,16,13,.94)!important;
+    box-shadow:0 -2px 10px rgba(0,0,0,.28)!important;
+    z-index:500!important;
+    pointer-events:auto!important;
+  }
+  body.in-game #gameScreen:not(.hidden) .game-actions button{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:23px!important;
+    min-height:23px!important;
+    padding:1px 5px!important;
+    margin:0!important;
+    border-radius:6px!important;
+    font-size:clamp(.50rem,1.35vw,.64rem)!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px) and (max-height:430px){
+  body.in-game #gameScreen:not(.hidden){
+    padding-bottom:calc(31px + env(safe-area-inset-bottom))!important;
+  }
+  body.in-game #gameScreen:not(.hidden) .game-actions{
+    height:26px!important;
+    min-height:26px!important;
+    bottom:max(2px,env(safe-area-inset-bottom))!important;
+  }
+  body.in-game #gameScreen:not(.hidden) .game-actions button{
+    height:20px!important;
+    min-height:20px!important;
+    font-size:clamp(.47rem,1.25vw,.58rem)!important;
+  }
+}

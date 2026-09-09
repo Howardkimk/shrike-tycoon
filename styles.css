@@ -602,3 +602,27 @@ body.dev-mode .stage-card:not(:disabled),body.dev-mode .select-card:not(:disable
   .order-card .signature-badge{font-size:.38rem!important;padding:1px 3px!important;right:3px!important;top:3px!important}
   .order-card .special-badge{font-size:.38rem!important;padding:1px 3px!important;left:3px!important;top:3px!important}
 }
+
+/* 0.6.5.2 Desktop Signature Badge Refinement */
+@media (min-width:901px) and (pointer:fine){
+  .order-card .signature-badge{
+    left:auto!important;
+    right:6px!important;
+    top:6px!important;
+    bottom:auto!important;
+    padding:1px 4px!important;
+    border-radius:999px!important;
+    font-size:.46rem!important;
+    line-height:1.1!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+  }
+  .order-card.signature .special-badge{
+    left:6px!important;
+    right:auto!important;
+    top:6px!important;
+    padding:1px 4px!important;
+    font-size:.48rem!important;
+  }
+  .order-card .name{padding-right:70px!important}
+}

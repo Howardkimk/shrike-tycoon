@@ -276,6 +276,323 @@ function worldRuleDescription(world) {
         return "🔥 Heat Management · 화구가 많을수록 과열됩니다. 빠르지만 PERFECT 창이 짧아집니다.";
     return "🌍 Grand Tour · Favourite·시간대·날씨·Rush가 한 스테이지 안에서 결합됩니다.";
 }
+function guestDisplayName(g) { return /[가-힣]/.test(g.name) ? g.name : g.englishName; }
+function guestVisual(g) {
+    const id = g.id;
+    const base = { body: "#9a8d78", belly: "#d8ccb4", wing: "#655d52", head: "#6b6257", cheek: "#efe5d0", mask: "#2d2b29", accent: "#d8793c", beak: "#b36b32", tail: "#4f4a44", outline: "#2a251f", beakLength: 15, tailLength: 19, eyeSize: 3.2, crest: false, longNeck: false, owlEyes: false, forkTail: false, spotted: false };
+    const apply = (p) => Object.assign(base, p);
+    if (id.includes("tit")) {
+        apply({ body: "#e0c74e", belly: "#f0d75c", wing: "#455849", head: "#151817", cheek: "#f2eddd", mask: "#151817", tail: "#2f3a34", beak: "#342f28" });
+        if (id === "marsh-tit")
+            apply({ body: "#b9afa0", belly: "#d9d0bf", wing: "#77766e", head: "#181918", cheek: "#eee9da" });
+        if (id === "coal-tit")
+            apply({ body: "#9f9b8f", belly: "#d9d4c7", wing: "#3f4440", head: "#111413", cheek: "#f4efe0" });
+        if (id === "varied-tit")
+            apply({ body: "#d98d47", belly: "#e7a65e", wing: "#43505b", head: "#17191b", cheek: "#efe6d2", accent: "#d8843f" });
+        if (id === "green-backed-tit")
+            apply({ body: "#d7ca53", belly: "#e7dc6c", wing: "#4d6d4b", head: "#1c211e", cheek: "#f0ead9" });
+    }
+    else if (id.includes("wagtail")) {
+        apply({ body: id === "grey-wagtail" ? "#d9c95a" : "#e8e6df", belly: id === "grey-wagtail" ? "#eddc62" : "#f4f2eb", wing: "#3e4344", head: id === "grey-wagtail" ? "#777d7e" : "#242728", cheek: "#f1eee5", mask: "#202324", tail: "#222628", tailLength: 31, beak: "#353535" });
+        if (id === "cape-wagtail")
+            apply({ body: "#8d8c83", belly: "#dedbd2", head: "#6e706b" });
+    }
+    else if (id.includes("egret")) {
+        apply({ body: "#f1eee3", belly: "#fffaf0", wing: "#e9e6dc", head: "#f7f3e9", cheek: "#fffaf0", mask: "#f7f3e9", tail: "#ded9cf", beak: id === "little-egret" ? "#232322" : "#d99b38", beakLength: 23, longNeck: true });
+    }
+    else if (id.includes("heron")) {
+        apply({ body: "#949ba0", belly: "#c5c9c8", wing: "#747d84", head: "#ece9df", cheek: "#f5f1e6", mask: "#2d3437", tail: "#697176", beak: "#c99a47", beakLength: 24, longNeck: true });
+        if (id.includes("night-heron"))
+            apply({ body: "#a9adb0", wing: "#646d75", head: "#292f34", cheek: "#e9e8df", mask: "#292f34" });
+    }
+    else if (id.includes("kingfisher")) {
+        apply({ body: "#d8793e", belly: "#ed9954", wing: "#177ea2", head: "#247ea0", cheek: "#e9ddd0", mask: "#245e76", tail: "#17617b", beak: "#222524", beakLength: 27 });
+        if (id === "ruddy-kingfisher")
+            apply({ body: "#b95a45", belly: "#d36d55", wing: "#563e55", head: "#9f493e", cheek: "#d79782", beak: "#b94639" });
+        if (id === "african-pygmy-kingfisher")
+            apply({ body: "#d46c3e", wing: "#3f6ca1", head: "#5976b0", cheek: "#f2d8b0" });
+        if (id === "madagascar-kingfisher")
+            apply({ body: "#d66a3f", wing: "#4f63a0", head: "#6e6bb1" });
+        if (id === "belted-kingfisher")
+            apply({ body: "#d8d7ce", belly: "#f0eee6", wing: "#486b78", head: "#4f6f7b", cheek: "#f2eee4", crest: true });
+    }
+    else if (id.includes("woodpecker")) {
+        apply({ body: "#e8e4d8", belly: "#f3efe4", wing: "#1f2424", head: "#202424", cheek: "#f4efe3", mask: "#181d1d", accent: "#c94534", tail: "#1e2222", beak: "#383733", beakLength: 20, crest: true });
+        if (id === "japanese-pygmy-woodpecker")
+            apply({ body: "#b0a995", wing: "#5e5c53", head: "#767267", accent: "#a54e36", crest: false });
+    }
+    else if (id.includes("owl")) {
+        apply({ body: "#8b765f", belly: "#c8b596", wing: "#665747", head: "#786650", cheek: "#d8c3a2", mask: "#8a7258", tail: "#5a4c40", beak: "#c59a45", eyeSize: 4.2, owlEyes: true, spotted: true });
+        if (id === "oriental-scops-owl")
+            apply({ body: "#8a6b50", head: "#775c48", crest: true });
+    }
+    else if (id.includes("kestrel") || id.includes("sparrowhawk") || id.includes("eagle")) {
+        apply({ body: "#9e7450", belly: "#d4b48c", wing: "#6f543f", head: "#796150", cheek: "#d9c7ac", mask: "#5c493c", tail: "#5c4b40", beak: "#d3a84b", beakLength: 13, spotted: true });
+        if (id === "eurasian-sparrowhawk")
+            apply({ body: "#9ca0a0", belly: "#d6c2a7", wing: "#656d73", head: "#68747a" });
+        if (id === "steppe-eagle")
+            apply({ body: "#5a4637", belly: "#6b5140", wing: "#42372f", head: "#4b3d33", cheek: "#806c59" });
+    }
+    else if (id.includes("shrike") || id.includes("fiscal")) {
+        apply({ body: "#d7d6cf", belly: "#ece9df", wing: "#31373a", head: "#a8aaab", cheek: "#ecebe3", mask: "#171b1d", tail: "#242a2d", beak: "#272b2c", beakLength: 15 });
+        if (id.includes("red-tailed") || id.includes("isabelline"))
+            apply({ body: "#c9a47d", belly: "#e1c3a0", head: "#b79875", wing: "#78685b", tail: "#a86844" });
+        if (id === "mackinnons-shrike")
+            apply({ body: "#b7aaa1", head: "#9d8f87", wing: "#4a4b49" });
+    }
+    else if (id.includes("roller")) {
+        apply({ body: "#4189a5", belly: "#64aeb9", wing: "#326f96", head: "#4ca2b7", cheek: "#78c2c9", mask: "#355d73", tail: "#2c6384", beak: "#333335", beakLength: 20 });
+        if (id === "lilac-breasted-roller")
+            apply({ body: "#9a72aa", belly: "#b77caa", wing: "#3a8a9a", head: "#4b9da5", cheek: "#b8d8cf" });
+    }
+    else if (id.includes("magpie") || id.includes("crow") || id.includes("chough")) {
+        apply({ body: "#202426", belly: id.includes("magpie") ? "#e8e7df" : "#343536", wing: "#1b2228", head: "#1a1e20", cheek: id.includes("magpie") ? "#f0eee7" : "#333536", mask: "#181b1d", tail: "#172027", tailLength: 30, beak: id.includes("chough") ? "#c33d2f" : "#2b2d2e", beakLength: 18 });
+        if (id === "madagascar-magpie-robin")
+            apply({ body: "#242729", belly: "#e9e7df", cheek: "#f2eee5" });
+    }
+    else if (id.includes("hoopoe")) {
+        apply({ body: "#d9995c", belly: "#e8b172", wing: "#292b2b", head: "#d59a61", cheek: "#e6b37a", mask: "#6f5746", accent: "#242526", tail: "#282a2a", beak: "#3e3b34", beakLength: 28, crest: true });
+    }
+    else if (id.includes("bee-eater")) {
+        apply({ body: "#6e9e54", belly: "#7fc16e", wing: "#3c8f91", head: "#a07154", cheek: "#d3a970", mask: "#2b3a3a", tail: "#306f71", beak: "#2b2926", beakLength: 21 });
+    }
+    else if (id.includes("starling")) {
+        apply({ body: "#3a6f72", belly: "#486e78", wing: "#3c4c5a", head: "#365e68", cheek: "#547b80", mask: "#2b3d48", tail: "#313b46", beak: "#d29b42", spotted: true });
+    }
+    else if (id.includes("hornbill")) {
+        apply({ body: "#8d8a7f", belly: "#bdb9ad", wing: "#5d5f59", head: "#76766e", cheek: "#d4d0c5", mask: "#343638", tail: "#51534f", beak: "#d9a749", beakLength: 31 });
+    }
+    else if (id.includes("robin") || id.includes("redstart") || id.includes("bluebird")) {
+        apply({ body: "#d77d49", belly: "#ea955f", wing: "#4c5660", head: "#59626b", cheek: "#c9d0ca", mask: "#394047", tail: "#8f4d39", beak: "#343332" });
+        if (id === "european-robin")
+            apply({ head: "#877464", body: "#d97545", wing: "#756654", cheek: "#d6c6b4" });
+        if (id === "eastern-bluebird")
+            apply({ head: "#3a72a7", wing: "#315f8c", body: "#c7774d", belly: "#e1a174", cheek: "#8bb2c9" });
+        if (id === "cape-robin-chat")
+            apply({ head: "#5e6b73", wing: "#4c555c", body: "#d77c49" });
+    }
+    else if (id.includes("thrush") || id.includes("blackbird")) {
+        apply({ body: "#8e7056", belly: "#c4a783", wing: "#6d5949", head: "#776252", cheek: "#d2bea3", mask: "#5d4e42", tail: "#57483f", beak: "#c28b3f", spotted: id !== "common-blackbird" });
+        if (id === "blue-whistling-thrush")
+            apply({ body: "#394e77", belly: "#435b86", wing: "#303f67", head: "#35496e", cheek: "#5a6d91", beak: "#d69a49" });
+        if (id === "common-blackbird")
+            apply({ body: "#2b2c2d", belly: "#333435", wing: "#242628", head: "#27292a", cheek: "#3a3b3c", beak: "#e0a23b" });
+    }
+    else if (id.includes("swallow")) {
+        apply({ body: "#d8e0df", belly: "#eef1ed", wing: "#253a4d", head: "#24394c", cheek: "#d9e0df", mask: "#253744", tail: "#1f3244", tailLength: 31, forkTail: true, beak: "#343434" });
+    }
+    else if (id.includes("sandpiper") || id.includes("lapwing") || id.includes("wheatear") || id.includes("scrub-robin")) {
+        apply({ body: "#aa9275", belly: "#d7c4a6", wing: "#7e6a57", head: "#927c67", cheek: "#e1d1b7", mask: "#665647", tail: "#635345", beak: "#4a433a", beakLength: 19 });
+        if (id.includes("lapwing"))
+            apply({ body: "#a9a89d", head: "#8e918c", wing: "#6e736d" });
+    }
+    else if (id.includes("warbler") || id.includes("treecreeper")) {
+        apply({ body: "#958767", belly: "#c9b994", wing: "#6f6753", head: "#85795f", cheek: "#d8c9a7", mask: "#655d4c", tail: "#655d50", beak: "#4c453b", beakLength: id.includes("treecreeper") ? 22 : 16 });
+    }
+    else if (id.includes("bulbul")) {
+        apply({ body: "#8b8176", belly: "#b7a998", wing: "#66645f", head: "#5e5f5d", cheek: "#ad987d", mask: "#4d4d4a", tail: "#555651", beak: "#3c3c3a", crest: true });
+        if (id === "himalayan-bulbul")
+            apply({ head: "#34393b", cheek: "#e1d6c1", body: "#a99b85" });
+    }
+    else if (id.includes("jay")) {
+        apply({ body: "#bd9a78", belly: "#d6b99a", wing: "#597e9b", head: "#a58a70", cheek: "#d9c2aa", mask: "#4f443b", tail: "#403d39", beak: "#383633" });
+    }
+    else if (id.includes("nightjar")) {
+        apply({ body: "#776553", belly: "#a28c70", wing: "#5d5043", head: "#6b5a4d", cheek: "#a99579", mask: "#51453c", tail: "#53483f", beak: "#3c3631", spotted: true });
+    }
+    else if (id.includes("oriole")) {
+        apply({ body: "#e3c54c", belly: "#efd761", wing: "#24292a", head: "#d8b940", cheek: "#f1db72", mask: "#232729", tail: "#292d2e", beak: "#9d4d37" });
+    }
+    else if (id.includes("flycatcher") || id.includes("mockingbird")) {
+        apply({ body: "#9b9b94", belly: "#d5d4ca", wing: "#666a6b", head: "#858783", cheek: "#deddd4", mask: "#565b5c", tail: "#515657", beak: "#353839" });
+    }
+    if (id === "eurasian-nuthatch")
+        apply({ body: "#c88d62", belly: "#dca87e", wing: "#617d8e", head: "#6f8794", cheek: "#d7d2c1", mask: "#2d3336" });
+    if (id === "brown-eared-bulbul")
+        apply({ body: "#8d8277", belly: "#b5aa9e", wing: "#65645f", head: "#666864", cheek: "#9a765d", mask: "#545452" });
+    if (id === "daurian-redstart")
+        apply({ body: "#d77a47", belly: "#e69762", wing: "#2c3338", head: "#7e888b", cheek: "#c3c7c2", mask: "#33383b", tail: "#a74e34" });
+    if (id === "oriental-magpie")
+        apply({ body: "#24292d", belly: "#f0eee6", wing: "#1f3a4a", head: "#1b2023", cheek: "#f4f0e8", tail: "#18313f", tailLength: 34 });
+    if (id === "common-sandpiper")
+        apply({ body: "#9b8064", belly: "#e1d4bd", wing: "#74614f", head: "#87715b", cheek: "#e6d9c4", mask: "#6b5949" });
+    if (id === "grey-headed-lapwing")
+        apply({ body: "#b7a783", belly: "#e2d5b7", wing: "#745f4e", head: "#8e9290", cheek: "#d8d3c7" });
+    if (id === "eurasian-jay")
+        apply({ body: "#bb9978", wing: "#4f75a3", head: "#a5836e", cheek: "#d8bda5" });
+    if (id === "white-capped-redstart")
+        apply({ body: "#a73f34", belly: "#ca4e3d", wing: "#23272a", head: "#f0ede4", cheek: "#f5f0e4", mask: "#1f2224", tail: "#8d312b" });
+    if (id === "plumbeous-water-redstart")
+        apply({ body: "#6d7783", belly: "#7f8993", wing: "#58626d", head: "#67727e", cheek: "#9ba2a8", tail: "#b64e3c" });
+    if (id === "red-billed-chough")
+        apply({ body: "#1f2224", belly: "#292b2c", wing: "#16191a", head: "#1c1e20", cheek: "#343537", tail: "#111416", beak: "#cf3d2d", beakLength: 22 });
+    if (id === "superb-starling")
+        apply({ body: "#2f7e87", belly: "#c56e48", wing: "#314f76", head: "#2d6777", cheek: "#4fa6a7", mask: "#1c3348" });
+    return base;
+}
+function guestPortraitSvg(g, compact = false) {
+    const v = guestVisual(g), tailX = 24 - v.tailLength * .35, tailY = 62, headY = v.longNeck ? 25 : 31, bodyY = v.longNeck ? 58 : 56, headR = v.owlEyes ? 20 : 18;
+    const tail = v.forkTail
+        ? `<path d="M39 58 L${tailX} 69 L34 70 L${tailX - 7} 80 L47 65 Z" fill="${v.tail}" stroke="${v.outline}" stroke-width="2"/>`
+        : `<path d="M40 57 L${tailX} ${tailY + 5} L${tailX + 4} ${tailY + 14} L48 64 Z" fill="${v.tail}" stroke="${v.outline}" stroke-width="2"/>`;
+    const spots = v.spotted ? `<g fill="${v.accent}" opacity=".72"><circle cx="53" cy="54" r="2.2"/><circle cx="61" cy="61" r="1.8"/><circle cx="47" cy="64" r="1.6"/></g>` : "";
+    const crest = v.crest ? `<path d="M70 ${headY - 13} L75 ${headY - 27} L80 ${headY - 13} L85 ${headY - 24} L88 ${headY - 10}" fill="${v.accent}" stroke="${v.outline}" stroke-width="2" stroke-linejoin="round"/>` : "";
+    const beakTip = 96 + v.beakLength * .55;
+    const beak = `<path d="M91 ${headY + 1} L${beakTip} ${headY - 2} L91 ${headY + 7} Z" fill="${v.beak}" stroke="${v.outline}" stroke-width="2" stroke-linejoin="round"/>`;
+    const face = v.owlEyes
+        ? `<ellipse cx="74" cy="${headY}" rx="12" ry="13" fill="${v.cheek}" opacity=".92"/><ellipse cx="88" cy="${headY}" rx="12" ry="13" fill="${v.cheek}" opacity=".92"/><circle cx="75" cy="${headY}" r="${v.eyeSize}" fill="#151515"/><circle cx="87" cy="${headY}" r="${v.eyeSize}" fill="#151515"/><circle cx="76" cy="${headY - 1}" r="1.1" fill="#fff"/><circle cx="88" cy="${headY - 1}" r="1.1" fill="#fff"/>`
+        : `<ellipse cx="82" cy="${headY + 5}" rx="11" ry="9" fill="${v.cheek}"/><path d="M66 ${headY - 2} Q76 ${headY - 8} 91 ${headY - 2} Q80 ${headY + 2} 69 ${headY + 4} Z" fill="${v.mask}" opacity=".88"/><circle cx="84" cy="${headY - 2}" r="${v.eyeSize}" fill="#111"/><circle cx="85" cy="${headY - 3}" r="1.1" fill="#fff"/>`;
+    return `<svg class="guest-bird-svg${compact ? " compact" : ""}" viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+    <ellipse cx="59" cy="79" rx="35" ry="4.5" fill="rgba(22,17,11,.18)"/>
+    ${tail}
+    <ellipse cx="58" cy="${bodyY}" rx="31" ry="24" fill="${v.body}" stroke="${v.outline}" stroke-width="2.2"/>
+    <ellipse cx="65" cy="${bodyY + 7}" rx="21" ry="16" fill="${v.belly}" opacity=".95"/>
+    <ellipse cx="42" cy="${bodyY + 1}" rx="18" ry="12" transform="rotate(-18 42 ${bodyY + 1})" fill="${v.wing}" stroke="${v.outline}" stroke-width="2"/>
+    ${spots}
+    ${crest}
+    <circle cx="80" cy="${headY}" r="${headR}" fill="${v.head}" stroke="${v.outline}" stroke-width="2.2"/>
+    ${face}${beak}
+    <path d="M51 76 q2 5 6 0 M68 76 q2 5 6 0" fill="none" stroke="${v.outline}" stroke-width="2" stroke-linecap="round"/>
+  </svg>`;
+}
+function shrikeVisual(id) {
+    const base = {
+        body: "#b5b0a5", belly: "#eee8d9", wing: "#33383a", head: "#a7a39a", cheek: "#efe9dc",
+        mask: "#191d1f", accent: "#b46f42", beak: "#25292a", tail: "#252a2c", outline: "#29241f",
+        tailLength: 26, barred: false, paleWingPatch: true
+    };
+    const apply = (p) => Object.assign(base, p);
+    if (id === "bull-headed")
+        apply({ body: "#8c8e88", belly: "#ead7b8", wing: "#272c2d", head: "#a85f3d", cheek: "#e8d4ba", tail: "#2c3031", accent: "#b56642", tailLength: 25 });
+    if (id === "tiger")
+        apply({ body: "#a86745", belly: "#e5c6a4", wing: "#654536", head: "#a66040", cheek: "#e7c6a8", tail: "#624537", accent: "#3c3028", tailLength: 24, barred: true, paleWingPatch: false });
+    if (id === "brown")
+        apply({ body: "#a17658", belly: "#e6c9a6", wing: "#725544", head: "#9d7458", cheek: "#e8cdb0", tail: "#a35c3c", accent: "#c2764e", tailLength: 27, paleWingPatch: false });
+    if (id === "chinese-grey")
+        apply({ body: "#c8cbca", belly: "#f3f0e6", wing: "#272c2f", head: "#bfc3c2", cheek: "#f4f1e8", tail: "#23292c", accent: "#ffffff", tailLength: 31 });
+    if (id === "long-tailed")
+        apply({ body: "#9ea4a5", belly: "#e9e3d7", wing: "#252a2c", head: "#272c2d", cheek: "#f1ece2", tail: "#202629", accent: "#c6784e", tailLength: 39 });
+    if (id === "northern")
+        apply({ body: "#b8bcbd", belly: "#f0eee6", wing: "#343a3c", head: "#b6babb", cheek: "#f3efe6", tail: "#313638", accent: "#ffffff", tailLength: 31 });
+    if (id === "grey-backed")
+        apply({ body: "#727d81", belly: "#e9dfd0", wing: "#30383b", head: "#7f898b", cheek: "#eee8db", tail: "#293034", accent: "#c88760", tailLength: 29 });
+    if (id === "isabelline")
+        apply({ body: "#bea17e", belly: "#e4c9a5", wing: "#806c58", head: "#b69a78", cheek: "#e6cfad", mask: "#4d4036", tail: "#b5643e", accent: "#d18150", tailLength: 28, paleWingPatch: false });
+    if (id === "red-tailed")
+        apply({ body: "#b18e6d", belly: "#e6c7a0", wing: "#755c4b", head: "#a98768", cheek: "#e7caaa", mask: "#3f3731", tail: "#b34f35", accent: "#d76643", tailLength: 30, paleWingPatch: false });
+    if (id === "great-grey")
+        apply({ body: "#c0c4c3", belly: "#f4f1e8", wing: "#252b2e", head: "#bfc3c2", cheek: "#f6f2e9", tail: "#242a2d", accent: "#ffffff", tailLength: 33 });
+    return base;
+}
+function shrikeVisualMeta(id) {
+    if (id === "tiger")
+        return { ko: "칡때까치", en: "Tiger Shrike", role: "🔥 Cooking" };
+    if (id === "brown")
+        return { ko: "노랑때까치", en: "Brown Shrike", role: "⚡ Combo" };
+    if (id === "chinese-grey")
+        return { ko: "물때까치", en: "Chinese Grey Shrike", role: "⏱ Control" };
+    if (id === "long-tailed")
+        return { ko: "긴꼬리때까치", en: "Long-tailed Shrike", role: "🍢 Capacity" };
+    if (id === "northern")
+        return { ko: "재때까치", en: "Northern Shrike", role: "📈 Growth" };
+    if (id === "grey-backed")
+        return { ko: "회색등때까치", en: "Grey-backed Shrike", role: "🏔️ Altitude" };
+    if (id === "isabelline")
+        return { ko: "사막때까치", en: "Isabelline Shrike", role: "🪽 Migration" };
+    if (id === "red-tailed")
+        return { ko: "붉은꼬리때까치", en: "Red-tailed Shrike", role: "⚡ Rush" };
+    if (id === "great-grey")
+        return { ko: "초원때까치", en: "Great Grey Shrike", role: "🌍 Environment" };
+    return { ko: "때까치", en: "Bull-headed Shrike", role: "⚖️ Balance" };
+}
+function shrikePortraitSvg(id, state = "idle", chef = false) {
+    const v = shrikeVisual(id), tailX = Math.max(8, 34 - v.tailLength * .55), barred = v.barred
+        ? `<g stroke="${v.accent}" stroke-width="2" opacity=".82"><path d="M38 47 l19 7"/><path d="M36 53 l19 7"/><path d="M38 59 l16 6"/></g>`
+        : "";
+    const patch = v.paleWingPatch ? `<path d="M37 50 q10 -6 20 1 q-8 1 -16 8 z" fill="#eee9dc" opacity=".94"/>` : "";
+    const chefHat = chef ? `<g class="chef-hat" fill="#fff9e9" stroke="#66543f" stroke-width="1.6"><rect x="65" y="13" width="27" height="8" rx="3"/><circle cx="70" cy="12" r="7"/><circle cx="79" cy="9" r="8"/><circle cx="88" cy="12" r="7"/></g>` : "";
+    const scarf = chef ? `<path d="M69 51 q12 7 23 0 l-3 11 q-9 4 -17 0 z" fill="#d84e38" stroke="${v.outline}" stroke-width="1.5"/>` : "";
+    const stateFx = state === "assemble"
+        ? `<g class="chef-tool"><path d="M83 67 L111 53" stroke="#a77745" stroke-width="3" stroke-linecap="round"/><circle cx="96" cy="60" r="4" fill="#75a44c"/><circle cx="104" cy="56" r="4" fill="#d77b42"/></g>`
+        : state === "cook"
+            ? `<g class="chef-flame"><path d="M103 70 q-7 -8 1 -17 q-1 7 5 9 q4 -8 7 -2 q5 11 -7 17 q-5 2 -6 -7z" fill="#ef7e32"/><path d="M106 70 q-2 -5 3 -9 q0 5 4 6 q1 5 -4 7z" fill="#ffd45d"/></g>`
+            : state === "perfect"
+                ? `<g class="chef-stars" fill="#ffd95a" stroke="#8a5d20" stroke-width="1"><path d="M22 18 l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/><path d="M102 24 l2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1z"/></g>`
+                : state === "burning"
+                    ? `<g class="chef-burning-aura" fill="#f28a34" opacity=".86"><path d="M16 69 q-8-13 4-24 q-2 10 6 13 q4-14 11-20 q0 17 9 23 q-3 13-15 18z"/><path d="M96 71 q-7-11 3-21 q-1 9 5 11 q3-10 7-14 q2 14 8 18 q-3 12-12 15z"/></g>`
+                    : "";
+    return `<svg class="chef-shrike-svg state-${state}" viewBox="0 0 126 92" aria-hidden="true" focusable="false">
+    <ellipse cx="61" cy="82" rx="38" ry="4" fill="rgba(22,17,11,.18)"/>
+    ${stateFx}
+    <path d="M42 58 L${tailX} 67 L${tailX + 2} 77 L50 66 Z" fill="${v.tail}" stroke="${v.outline}" stroke-width="2.1"/>
+    <ellipse cx="57" cy="57" rx="31" ry="23" fill="${v.body}" stroke="${v.outline}" stroke-width="2.2"/>
+    <ellipse cx="66" cy="64" rx="20" ry="14" fill="${v.belly}" opacity=".96"/>
+    <ellipse cx="42" cy="54" rx="19" ry="12" transform="rotate(-18 42 54)" fill="${v.wing}" stroke="${v.outline}" stroke-width="2"/>
+    ${barred}${patch}
+    ${scarf}
+    <circle cx="80" cy="34" r="18" fill="${v.head}" stroke="${v.outline}" stroke-width="2.2"/>
+    <ellipse cx="84" cy="40" rx="10" ry="8" fill="${v.cheek}"/>
+    <path d="M64 31 Q77 24 96 30 Q84 36 67 37 Z" fill="${v.mask}" opacity=".94"/>
+    <circle cx="86" cy="30" r="3.2" fill="#111"/><circle cx="87" cy="29" r="1.1" fill="#fff"/>
+    <path d="M95 35 q10 -2 18 2 l-11 4 q-4 5 -8 1 l4 -4 z" fill="${v.beak}" stroke="${v.outline}" stroke-width="1.8" stroke-linejoin="round"/>
+    ${chefHat}
+    <path d="M52 77 q2 5 6 0 M70 77 q2 5 6 0" fill="none" stroke="${v.outline}" stroke-width="2" stroke-linecap="round"/>
+  </svg>`;
+}
+function chefState() {
+    if (isBurning())
+        return "burning";
+    if (Date.now() < chefReactionUntil)
+        return "perfect";
+    if (burners.some(b => b.state !== "empty"))
+        return "cook";
+    if (currentSkewer.length || pendingSkewer)
+        return "assemble";
+    return "idle";
+}
+function chefStateLabel(state) {
+    return state === "burning" ? "🔥 BURNING" : state === "perfect" ? "✨ PERFECT!" : state === "cook" ? "🔥 굽는 중" : state === "assemble" ? "🍢 꼬치 조립" : "🌿 주문 대기";
+}
+function renderChefVisual(force = false) {
+    if (!chefVisualEl)
+        return;
+    const state = chefState(), key = `${selectedShrike}|${state}`;
+    if (!force && key === chefVisualKey)
+        return;
+    chefVisualKey = key;
+    const meta = shrikeVisualMeta(selectedShrike);
+    chefVisualEl.className = `chef-visual state-${state}`;
+    chefVisualEl.innerHTML = `<div class="chef-visual-art">${shrikePortraitSvg(selectedShrike, state, true)}</div><div class="chef-visual-copy"><span class="chef-kicker">SHRIKE CHEF · ${meta.role}</span><strong>${meta.ko}</strong><small>${meta.en}</small><em>${chefStateLabel(state)}</em></div>`;
+}
+function renderGuestPerch() {
+    const now = Date.now(), active = new Set(orders.map(o => String(o.id)));
+    Array.from(guestPerchEl.querySelectorAll(".guest-visitor")).forEach(node => {
+        if (!active.has(node.dataset.orderId || "") && !node.classList.contains("leaving")) {
+            node.classList.add("leaving");
+            setTimeout(() => node.remove(), 260);
+        }
+    });
+    orders.forEach(o => {
+        const key = String(o.id), left = o.deadlineSeconds - (now - o.createdAt) / 1000;
+        let node = guestPerchEl.querySelector(`.guest-visitor[data-order-id="${key}"]`);
+        if (!node) {
+            node = document.createElement("div");
+            node.dataset.orderId = key;
+            node.className = "guest-visitor entering";
+            node.innerHTML = `<div class="guest-visitor-art">${guestPortraitSvg(o.guest)}</div><div class="guest-visitor-copy"><strong>${guestDisplayName(o.guest)}</strong>${/[가-힣]/.test(o.guest.name) ? `<span>${o.guest.englishName}</span>` : ""}</div><div class="guest-mood" aria-hidden="true"></div>`;
+            guestPerchEl.appendChild(node);
+            requestAnimationFrame(() => node === null || node === void 0 ? void 0 : node.classList.remove("entering"));
+        }
+        node.classList.toggle("urgent", left < 10);
+        node.classList.toggle("selected", selectedOrderId === o.id);
+        node.classList.toggle("special", o.special);
+        node.classList.toggle("signature", o.signature);
+        const mood = node.querySelector(".guest-mood");
+        if (mood)
+            mood.textContent = left < 10 ? "!" : selectedOrderId === o.id ? "★" : o.signature ? "✦" : "";
+    });
+    guestPerchEl.classList.toggle("empty", orders.length === 0);
+}
 const $ = (id) => document.getElementById(id);
 const coverScreen = $("coverScreen"), enterGameButton = $("enterGameButton"), installAppButton = $("installAppButton");
 const startScreen = $("startScreen"), gameScreen = $("gameScreen"), resultScreen = $("resultScreen");
@@ -285,7 +602,7 @@ const helpButton = $("helpButton"), helpDialog = $("helpDialog"), closeHelpButto
 const restaurantButton = $("restaurantButton"), restaurantDialog = $("restaurantDialog"), closeRestaurantButton = $("closeRestaurantButton");
 const birdBookButton = $("birdBookButton"), birdBookDialog = $("birdBookDialog"), closeBirdBookButton = $("closeBirdBookButton"), birdBookList = $("birdBookList");
 const shrikeDexButton = $("shrikeDexButton"), shrikeDexDialog = $("shrikeDexDialog"), closeShrikeDexButton = $("closeShrikeDexButton"), shrikeDexList = $("shrikeDexList");
-const ordersEl = $("orders"), burnersEl = $("burners"), skewerEl = $("skewer"), foodButtonsEl = $("foodButtons"), stageButtonsEl = $("stageButtons"), shrikeButtonsEl = $("shrikeButtons"), upgradeList = $("upgradeList");
+const ordersEl = $("orders"), guestPerchEl = $("guestPerch"), chefVisualEl = $("chefVisual"), burnersEl = $("burners"), skewerEl = $("skewer"), foodButtonsEl = $("foodButtons"), stageButtonsEl = $("stageButtons"), shrikeButtonsEl = $("shrikeButtons"), upgradeList = $("upgradeList");
 const worldStep = $("worldStep"), stageStep = $("stageStep"), chefStep = $("chefStep"), readyStep = $("readyStep");
 const backToWorldButton = $("backToWorldButton"), backToStageButton = $("backToStageButton"), backToChefButton = $("backToChefButton");
 const selectedWorldFlowTitle = $("selectedWorldFlowTitle"), selectedStageFlowTitle = $("selectedStageFlowTitle"), startChoiceSummary = $("startChoiceSummary");
@@ -325,6 +642,7 @@ let selectedStage = Math.min(save.unlockedStage, 100);
 let selectedWorld = Math.min(10, Math.ceil(selectedStage / 10));
 let selectedShrike = save.unlockedShrikes.includes("red-tailed") ? "red-tailed" : save.unlockedShrikes.includes("isabelline") ? "isabelline" : save.unlockedShrikes.includes("grey-backed") ? "grey-backed" : save.unlockedShrikes.includes("northern") ? "northern" : save.unlockedShrikes.includes("long-tailed") ? "long-tailed" : save.unlockedShrikes.includes("chinese-grey") ? "chinese-grey" : save.unlockedShrikes.includes("brown") ? "brown" : save.unlockedShrikes.includes("tiger") ? "tiger" : "bull-headed";
 let stage = stages[selectedStage], orders = [], selectedOrderId = null, currentSkewer = [], pendingSkewer = null, burners = [];
+let chefReactionUntil = 0, chefVisualKey = "";
 let score = 0, combo = 0, bestCombo = 0, served = 0, perfectCount = 0, failed = 0, specialServed = 0, perfectStreak = 0, nightServed = 0, fireWarmth = 100, heatLevel = 0;
 let startedAt = 0, gameEndAt = 0, nextOrderAt = 0, orderSequence = 1, animationFrame = 0;
 let running = false, paused = false, pausedAt = 0, burningGauge = 0, burningActiveUntil = 0, burningStartedAt = 0, feedingActiveUntil = 0, feedingTriggered = false, eventShown = false;
@@ -547,6 +865,8 @@ function startGame() {
     orderSequence = 1;
     currentPhase = "day";
     currentPhaseIndex = -1;
+    chefReactionUntil = 0;
+    chefVisualKey = "";
     paused = false;
     pauseButton.textContent = "⏸ 일시정지";
     resetBurners();
@@ -659,6 +979,7 @@ function loop() {
         renderOrders();
         renderBurners();
         updateHud();
+        renderChefVisual();
         timeLabel.textContent = fmt((gameEndAt - now) / 1000);
     }
     else {
@@ -843,6 +1164,7 @@ function serveBurner(b) {
     if (order.special)
         specialServed++;
     if (perfect) {
+        chefReactionUntil = Date.now() + 1100;
         if (burners.filter(x => x.state !== "empty").length >= 3)
             tripleBurnerPerfect++;
         combo++;
@@ -878,7 +1200,7 @@ function activateBurning() { if (paused || burningGauge < 100 || isBurning())
     return; const now = Date.now(); burningGauge = 0; if (stage.world === 7)
     fireWarmth = 100; if (stage.world === 9)
     heatLevel = Math.max(0, heatLevel - 45); burningStartedAt = now; burningActiveUntil = now + 15000; syncBurners(); showEvent(`🔥 ${shrikeName(selectedShrike)} BURNING!`); setStatus(selectedShrike === "tiger" ? "조리속도 +40%!" : selectedShrike === "brown" ? "콤보 점수 가속!" : selectedShrike === "chinese-grey" ? "8초 주문 타이머 정지 → 7초 절반 속도!" : selectedShrike === "long-tailed" ? "임시 화구 +2 · 조리 +20%!" : selectedShrike === "grey-backed" ? "고도·한기 페널티 무효화!" : selectedShrike === "isabelline" ? "Migration Wave 점수 +40%!" : selectedShrike === "red-tailed" ? "Rush 조리속도 +25%!" : selectedShrike === "great-grey" ? "환경 페널티 완화 강화!" : "균형 강화!"); }
-function renderAll() { renderMeta(); renderFoodButtons(); renderSkewer(); renderOrders(); renderBurners(); renderSelected(); updateHud(); }
+function renderAll() { renderMeta(); renderFoodButtons(); renderSkewer(); renderOrders(); renderBurners(); renderSelected(); updateHud(); renderChefVisual(true); }
 let startFlowStep = "world", startWorldChosen = false, startStageChosen = false, startChefChosen = false;
 function worldFlowName(world) { const names = ["", "🌾 WORLD 1 · 농경지", "🌿 WORLD 2 · 강을 따라서", "⛰️ WORLD 3 · 산과 밤", "🏔️ WORLD 4 · 히말라야", "🪽 WORLD 5 · 대초원", "🌻 WORLD 6 · 유럽·지중해", "❄️ WORLD 7 · 북미", "🦒 WORLD 8 · 동아프리카", "☀️ WORLD 9 · 남아프리카", "🌴 WORLD 10 · 아프리카 섬"]; return names[world]; }
 function setStartFlow(step) {
@@ -924,7 +1246,7 @@ function renderStageEcology() { var _a; const c = stages[selectedStage]; const f
 function stageFoodEntries(c) { return Object.entries(c.foodAvailability).sort((a, b) => b[1] - a[1]); }
 function stageGuestFit(c, id) { const g = guests[id], availability = (food) => c.foodAvailability[food] || 0; return .35 + g.diet.primary.reduce((sum, food) => sum + availability(food), 0) * 1.35 + g.diet.secondary.reduce((sum, food) => sum + availability(food), 0) * .48 + g.diet.rare.reduce((sum, food) => sum + availability(food), 0) * .12; }
 function coreGuests(c) { return [...c.guestPool].sort((a, b) => stageGuestFit(c, b) - stageGuestFit(c, a)).slice(0, 3); }
-function renderShrikes() { const defs = [{ id: "bull-headed", emoji: "🐦", name: "때까치", desc: "균형형 · Burning 시 전반 강화", unlock: "기본" }, { id: "tiger", emoji: "🐅", name: "칡때까치", desc: "조리속도 +10%", unlock: "Stage 3 이상에서 ★★ 달성" }, { id: "brown", emoji: "🟤", name: "노랑때까치", desc: "Combo가 높을수록 점수 증가", unlock: "Stage 6에서 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", name: "물때까치", desc: "주문 제한시간 +10% · 시간 제어 Burning", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", name: "긴꼬리때까치", desc: "화구 +2 · 조리속도 -10%", unlock: "Stage 18+에서 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", name: "재때까치", desc: "성장형 · 획득 XP +10%", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", name: "회색등때까치", desc: "고산형 · 고도 페널티 50% 완화", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", name: "사막때까치", desc: "Migration Wave 중 점수 +20%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", name: "붉은꼬리때까치", desc: "Rush 특화 · Burning 조리 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", name: "초원때까치", desc: "환경형 · 비·한기 조리 페널티 50% 완화", unlock: "Stage 60 ★★" }]; shrikeButtonsEl.innerHTML = ""; defs.forEach(d => { const btn = document.createElement("button"); btn.type = "button"; btn.className = "select-card" + (startChefChosen && selectedShrike === d.id ? " selected" : ""); btn.dataset.shrikeId = d.id; btn.disabled = !devMode && !save.unlockedShrikes.includes(d.id); btn.innerHTML = `<b>${d.emoji} ${d.name}</b><span>${d.desc}</span><small>${devMode ? `DEV · ${d.unlock}` : btn.disabled ? `LOCKED · ${d.unlock}` : "사용 가능"}</small>`; btn.addEventListener("click", () => { selectedShrike = d.id; startChefChosen = true; renderShrikes(); updateReadySummary(); setStartFlow("ready"); }); shrikeButtonsEl.appendChild(btn); }); }
+function renderShrikes() { const defs = [{ id: "bull-headed", emoji: "🐦", name: "때까치", desc: "균형형 · Burning 시 전반 강화", unlock: "기본" }, { id: "tiger", emoji: "🐅", name: "칡때까치", desc: "조리속도 +10%", unlock: "Stage 3 이상에서 ★★ 달성" }, { id: "brown", emoji: "🟤", name: "노랑때까치", desc: "Combo가 높을수록 점수 증가", unlock: "Stage 6에서 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", name: "물때까치", desc: "주문 제한시간 +10% · 시간 제어 Burning", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", name: "긴꼬리때까치", desc: "화구 +2 · 조리속도 -10%", unlock: "Stage 18+에서 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", name: "재때까치", desc: "성장형 · 획득 XP +10%", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", name: "회색등때까치", desc: "고산형 · 고도 페널티 50% 완화", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", name: "사막때까치", desc: "Migration Wave 중 점수 +20%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", name: "붉은꼬리때까치", desc: "Rush 특화 · Burning 조리 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", name: "초원때까치", desc: "환경형 · 비·한기 조리 페널티 50% 완화", unlock: "Stage 60 ★★" }]; shrikeButtonsEl.innerHTML = ""; defs.forEach(d => { const btn = document.createElement("button"); btn.type = "button"; btn.className = "select-card shrike-select-card" + (startChefChosen && selectedShrike === d.id ? " selected" : ""); btn.dataset.shrikeId = d.id; btn.disabled = !devMode && !save.unlockedShrikes.includes(d.id); const meta = shrikeVisualMeta(d.id); btn.innerHTML = `<div class="shrike-select-portrait">${shrikePortraitSvg(d.id, "idle", false)}</div><div class="shrike-select-copy"><b>${d.name}</b><small class="shrike-select-en">${meta.en} · ${meta.role}</small><span>${d.desc}</span><small>${devMode ? `DEV · ${d.unlock}` : btn.disabled ? `LOCKED · ${d.unlock}` : "사용 가능"}</small></div>`; btn.addEventListener("click", () => { selectedShrike = d.id; startChefChosen = true; renderShrikes(); updateReadySummary(); setStartFlow("ready"); }); shrikeButtonsEl.appendChild(btn); }); }
 function upgradeCost(id) { return 250 + save.upgrades[id] * 250; }
 function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가지", desc: "동시 주문 +1 / Lv", max: 2 }, { id: "fire", name: "🔥 좋은 장작", desc: "조리속도 +3% / Lv", max: 5 }, { id: "perch", name: "🪺 편안한 횃대", desc: "주문 대기시간 +4% / Lv", max: 5 }]; upgradeList.innerHTML = ""; defs.forEach(d => { const lv = save.upgrades[d.id], cost = upgradeCost(d.id), card = document.createElement("div"); card.className = "upgrade-card"; card.innerHTML = `<div><b>${d.name} · Lv.${lv}/${d.max}</b><small>${d.desc}</small></div>`; const btn = document.createElement("button"); btn.className = "primary-button"; btn.textContent = lv >= d.max ? "MAX" : `${cost} XP`; btn.disabled = devMode || lv >= d.max || save.xp < cost; if (devMode)
     btn.textContent = "DEV · SAVE LOCK"; btn.onclick = () => { if (devMode)
@@ -937,8 +1259,8 @@ function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가�
 function renderFoodButtons() { foodButtonsEl.innerHTML = ""; stageFoodPool().forEach(id => { const f = foods[id], btn = document.createElement("button"); btn.className = "food-button"; btn.innerHTML = `<span class="food-emoji">${f.emoji}</span>${f.name}<small>${f.cookSeconds}s</small>`; btn.dataset.foodId = id; foodButtonsEl.appendChild(btn); }); foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, stageFoodPool().length))},1fr)`; }
 function renderSkewer() { skewerEl.innerHTML = currentSkewer.length ? currentSkewer.map(id => `<span class="skewer-item">${foods[id].emoji}</span>`).join("") : `<span class="empty-skewer">재료를 순서대로 꽂으세요</span>`; }
 function renderSelected() { const o = orders.find(x => x.id === selectedOrderId); selectedOrderSummary.innerHTML = o ? `🎯 우선 매칭 · <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe)}</span>${o.special ? " · ⭐ SPECIAL" : ""}${o.signature ? " · 🌿 SIGNATURE" : ""}` : "✨ AUTO MATCH · 주문 선택 없이 조립 가능"; }
-function renderOrders() { const now = Date.now(); ordersEl.innerHTML = ""; orders.forEach(o => { const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button"), hasKorean = /[가-힣]/.test(o.guest.name), koreanName = hasKorean ? `<strong class="name primary-name">${o.guest.name}</strong>` : ""; btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}${o.signature ? " signature" : ""}`; btn.innerHTML = `${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}${o.signature ? '<span class="signature-badge">SIGNATURE +10%</span>' : ""}${koreanName}${hasKorean ? `<div class="bird-en">${o.guest.englishName}</div>` : `<strong class="bird-en primary-name">${o.guest.englishName}</strong>`}<i class="bird-scientific">${o.guest.scientificName}</i><div class="recipe">${recipeEmoji(o.recipe)}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`; btn.dataset.orderId = String(o.id); ordersEl.appendChild(btn); }); if (!orders.length)
-    ordersEl.innerHTML = '<div class="hint">다음 손님을 기다리는 중...</div>'; }
+function renderOrders() { const now = Date.now(); ordersEl.innerHTML = ""; orders.forEach(o => { const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button"), hasKorean = /[가-힣]/.test(o.guest.name), koreanName = hasKorean ? `<strong class="name primary-name">${o.guest.name}</strong>` : ""; btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}${o.signature ? " signature" : ""}`; btn.innerHTML = `${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}${o.signature ? '<span class="signature-badge">SIGNATURE +10%</span>' : ""}<div class="guest-order-portrait">${guestPortraitSvg(o.guest, true)}</div>${koreanName}${hasKorean ? `<div class="bird-en">${o.guest.englishName}</div>` : `<strong class="bird-en primary-name">${o.guest.englishName}</strong>`}<i class="bird-scientific">${o.guest.scientificName}</i><div class="recipe">${recipeEmoji(o.recipe)}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`; btn.dataset.orderId = String(o.id); ordersEl.appendChild(btn); }); if (!orders.length)
+    ordersEl.innerHTML = '<div class="hint">다음 손님을 기다리는 중...</div>'; renderGuestPerch(); }
 function renderBurners() { const now = Date.now(); burnersEl.innerHTML = ""; burners.forEach(b => { const btn = document.createElement("button"); btn.className = `burner ${b.state}`; let state = "빈 화구", pct = 0; if (b.state === "cooking") {
     const e = (now - b.startedAt) / 1000;
     pct = Math.min(100, e / b.cookSeconds * 100);
@@ -955,9 +1277,9 @@ function renderBirdBook() { birdBookList.innerHTML = ""; Object.keys(guests).for
 }
 else {
     const primary = g.diet.primary.map(x => foods[x].emoji + foods[x].name).join(" · "), secondary = g.diet.secondary.slice(0, 3).map(x => foods[x].emoji + foods[x].name).join(" · ");
-    card.innerHTML = `<div class="bird-card-emoji">${g.emoji}</div><div><b>${g.name} <span>${g.englishName}</span></b><i>${g.scientificName}</i><p>${g.note}</p><small>주요 먹이 · ${primary}</small>${secondary ? `<small>보조 먹이 · ${secondary}</small>` : ""}</div>`;
+    card.innerHTML = `<div class="bird-card-emoji bird-card-portrait">${guestPortraitSvg(g)}</div><div><b>${g.name} <span>${g.englishName}</span></b><i>${g.scientificName}</i><p>${g.note}</p><small>주요 먹이 · ${primary}</small>${secondary ? `<small>보조 먹이 · ${secondary}</small>` : ""}</div>`;
 } birdBookList.appendChild(card); }); }
-function renderShrikeDex() { const defs = [{ id: "bull-headed", emoji: "🐦", ko: "때까치", en: "Bull-headed Shrike", role: "⚖️ Balance", passive: "기본 능력 없음", burn: "15초간 조립·조리·대기시간을 균형 강화", unlock: "기본 캐릭터" }, { id: "tiger", emoji: "🐅", ko: "칡때까치", en: "Tiger Shrike", role: "🔥 Cooking", passive: "조리속도 +10%", burn: "15초간 조리속도 +40%", unlock: "Stage 3 이상 ★★" }, { id: "brown", emoji: "🟤", ko: "노랑때까치", en: "Brown Shrike", role: "⚡ Combo", passive: "Combo가 높을수록 점수 증가", burn: "Burning 중 콤보 기반 보너스 강화", unlock: "Stage 6 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", ko: "물때까치", en: "Chinese Grey Shrike", role: "⏱ Control", passive: "주문 제한시간 +10%", burn: "8초 주문 타이머 정지 + 7초 50% 감속", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", ko: "긴꼬리때까치", en: "Long-tailed Shrike", role: "🍢 Capacity", passive: "화구 +2, 조리속도 -10%", burn: "15초간 임시 화구 +2 + 조리속도 +20%", unlock: "Stage 18+ 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", ko: "재때까치", en: "Northern Shrike", role: "📈 Growth", passive: "스테이지 획득 XP +10%", burn: "15초간 기본 균형 강화", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", ko: "회색등때까치", en: "Grey-backed Shrike", role: "🏔️ Altitude", passive: "고도 조리 페널티 50% 완화", burn: "Burning 동안 고도 페널티 제거 · 한기 페널티 제거", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", ko: "사막때까치", en: "Isabelline Shrike", role: "🪽 Migration", passive: "Migration Wave 중 점수 +20%", burn: "15초간 Migration/Rush 점수 +40%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", ko: "붉은꼬리때까치", en: "Red-tailed Shrike", role: "⚡ Rush", passive: "Migration Wave 중 점수 +15%", burn: "15초간 조리속도 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", ko: "초원때까치", en: "Great Grey Shrike", role: "🌍 Environment", passive: "비·한기 조리 페널티 50% 완화", burn: "Burning 동안 비·한기 페널티 제거", unlock: "Stage 60 ★★" }]; shrikeDexList.innerHTML = ""; defs.forEach(d => { const open = devMode || save.unlockedShrikes.includes(d.id), card = document.createElement("article"); card.className = "dex-card" + (open ? "" : " locked"); card.innerHTML = open ? `<div class="dex-emoji">${d.emoji}</div><div><b>${d.ko} <span>${d.en}</span></b><small>${d.role}</small><p><strong>Passive</strong> · ${d.passive}</p><p><strong>Burning</strong> · ${d.burn}</p><small>Unlock · ${d.unlock}</small></div>` : `<div class="dex-emoji">❔</div><div><b>LOCKED SHRIKE</b><small>${d.unlock}</small></div>`; shrikeDexList.appendChild(card); }); }
+function renderShrikeDex() { const defs = [{ id: "bull-headed", emoji: "🐦", ko: "때까치", en: "Bull-headed Shrike", role: "⚖️ Balance", passive: "기본 능력 없음", burn: "15초간 조립·조리·대기시간을 균형 강화", unlock: "기본 캐릭터" }, { id: "tiger", emoji: "🐅", ko: "칡때까치", en: "Tiger Shrike", role: "🔥 Cooking", passive: "조리속도 +10%", burn: "15초간 조리속도 +40%", unlock: "Stage 3 이상 ★★" }, { id: "brown", emoji: "🟤", ko: "노랑때까치", en: "Brown Shrike", role: "⚡ Combo", passive: "Combo가 높을수록 점수 증가", burn: "Burning 중 콤보 기반 보너스 강화", unlock: "Stage 6 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", ko: "물때까치", en: "Chinese Grey Shrike", role: "⏱ Control", passive: "주문 제한시간 +10%", burn: "8초 주문 타이머 정지 + 7초 50% 감속", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", ko: "긴꼬리때까치", en: "Long-tailed Shrike", role: "🍢 Capacity", passive: "화구 +2, 조리속도 -10%", burn: "15초간 임시 화구 +2 + 조리속도 +20%", unlock: "Stage 18+ 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", ko: "재때까치", en: "Northern Shrike", role: "📈 Growth", passive: "스테이지 획득 XP +10%", burn: "15초간 기본 균형 강화", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", ko: "회색등때까치", en: "Grey-backed Shrike", role: "🏔️ Altitude", passive: "고도 조리 페널티 50% 완화", burn: "Burning 동안 고도 페널티 제거 · 한기 페널티 제거", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", ko: "사막때까치", en: "Isabelline Shrike", role: "🪽 Migration", passive: "Migration Wave 중 점수 +20%", burn: "15초간 Migration/Rush 점수 +40%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", ko: "붉은꼬리때까치", en: "Red-tailed Shrike", role: "⚡ Rush", passive: "Migration Wave 중 점수 +15%", burn: "15초간 조리속도 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", ko: "초원때까치", en: "Great Grey Shrike", role: "🌍 Environment", passive: "비·한기 조리 페널티 50% 완화", burn: "Burning 동안 비·한기 페널티 제거", unlock: "Stage 60 ★★" }]; shrikeDexList.innerHTML = ""; defs.forEach(d => { const open = devMode || save.unlockedShrikes.includes(d.id), card = document.createElement("article"); card.className = "dex-card" + (open ? "" : " locked"); card.innerHTML = open ? `<div class="dex-emoji shrike-dex-portrait">${shrikePortraitSvg(d.id, "idle", false)}</div><div><b>${d.ko} <span>${d.en}</span></b><small>${d.role}</small><p><strong>Passive</strong> · ${d.passive}</p><p><strong>Burning</strong> · ${d.burn}</p><small>Unlock · ${d.unlock}</small></div>` : `<div class="dex-emoji">❔</div><div><b>LOCKED SHRIKE</b><small>${d.unlock}</small></div>`; shrikeDexList.appendChild(card); }); }
 function updateHud() { scoreLabel.textContent = score.toLocaleString(); xpHudLabel.textContent = save.xp.toLocaleString(); comboLabel.textContent = `×${combo}`; bestComboLabel.textContent = `×${bestCombo}`; burnGaugeFill.style.width = `${burningGauge}%`; burnGaugeText.textContent = isBurning() ? "ACTIVE" : `${Math.round(burningGauge)}%`; burnButton.disabled = burningGauge < 100 || isBurning() || paused; }
 function setStatus(t) { statusMessage.textContent = t; }
 function judge(t, good) { floatingJudge.textContent = t; floatingJudge.style.color = good ? "var(--accent)" : "var(--danger)"; floatingJudge.classList.remove("pop"); void floatingJudge.offsetWidth; floatingJudge.classList.add("pop"); }

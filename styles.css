@@ -1122,3 +1122,732 @@ body.dev-mode .stage-card:not(:disabled),body.dev-mode .select-card:not(:disable
   padding:0!important;
   text-align:center!important;
 }
+
+/* =========================================================
+   0.7.0 · VISUAL FOUNDATION
+   Gameplay/content baseline: 0.6.5.11 (logic intentionally unchanged)
+   Woodland restaurant UI skin inspired by the approved concept still.
+   ========================================================= */
+:root{
+  --bg:#08100d;
+  --panel:#203125;
+  --panel2:#142119;
+  --line:#785837;
+  --text:#fff7df;
+  --muted:#c6bfae;
+  --accent:#f5c451;
+  --accent2:#e97a38;
+  --good:#8ed39c;
+  --danger:#ff846d;
+  --cyan:#8fd6c6;
+  --wood-dark:#24150d;
+  --wood:#4a2d19;
+  --wood-mid:#6f4928;
+  --wood-light:#9b7040;
+  --leaf:#345b35;
+  --leaf-light:#66804b;
+  --metal:#8b8d84;
+  --parchment:#efe1bd;
+  --parchment-ink:#3b2b1c;
+  --shadow:0 18px 44px rgba(0,0,0,.42),0 3px 0 rgba(0,0,0,.22);
+}
+
+html{background:#07100c}
+body{
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(111,146,78,.18),transparent 28%),
+    radial-gradient(circle at 82% 18%,rgba(232,174,72,.08),transparent 24%),
+    linear-gradient(180deg,#17281e 0,#0b1510 45%,#080e0b 100%);
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background-image:linear-gradient(rgba(5,13,9,.78),rgba(5,13,9,.9)),url("assets/cover.png");
+  background-size:cover;
+  background-position:center 42%;
+  opacity:.48;
+  filter:saturate(.78) contrast(1.03);
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.26),transparent 14%,transparent 86%,rgba(0,0,0,.26)),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 4px);
+}
+
+.app-shell{width:min(1240px,calc(100% - 28px));padding-top:22px}
+
+/* carved timber title/header */
+.titlebar{
+  position:relative;
+  padding:15px 17px;
+  border:2px solid #946d3d;
+  border-radius:18px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.055),transparent 24%),
+    repeating-linear-gradient(7deg,rgba(255,255,255,.018) 0 2px,rgba(0,0,0,.025) 2px 6px),
+    linear-gradient(180deg,#583820,#352114);
+  box-shadow:inset 0 0 0 2px rgba(31,16,8,.55),0 16px 35px rgba(0,0,0,.35);
+}
+.titlebar::before,.titlebar::after{
+  content:"";position:absolute;top:-9px;width:92px;height:24px;pointer-events:none;opacity:.75;
+  background:radial-gradient(ellipse at center,#527346 0 18%,transparent 20%) 0 0/23px 16px repeat-x;
+}
+.titlebar::before{left:18px}.titlebar::after{right:18px;transform:scaleX(-1)}
+.titlebar .game-title{color:#fff2d5;text-shadow:0 3px 0 #211209,0 0 18px rgba(255,198,85,.12)}
+.subtitle{color:#dbc9a5}.eyebrow{color:#ffd777}
+.xp-window{
+  background:linear-gradient(180deg,#17261d,#0f1914);
+  border:1px solid #a17b45;
+  border-radius:12px;
+  padding:10px 14px;
+  box-shadow:inset 0 0 0 2px rgba(0,0,0,.25);
+}
+.xp-window span,.xp-window small{color:#c6bda8}
+.xp-window strong{color:#ffe19a}
+
+/* shared wood-and-iron panel language */
+.panel{
+  position:relative;
+  border:2px solid #705034;
+  border-radius:18px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.025),rgba(0,0,0,.035)),
+    linear-gradient(180deg,rgba(32,50,38,.985),rgba(17,31,24,.985));
+  box-shadow:inset 0 0 0 1px rgba(193,153,88,.12),var(--shadow);
+}
+.panel::before{
+  content:"";position:absolute;inset:5px;border:1px solid rgba(216,178,113,.09);border-radius:12px;pointer-events:none;
+}
+.orders-panel,.skewer-panel,.burners-panel{
+  border-color:#7f5a36;
+  background:
+    linear-gradient(180deg,rgba(61,78,54,.92),rgba(18,31,24,.97)),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.015) 0 2px,transparent 2px 10px);
+}
+.section-heading h2,.section-heading h3{color:#fff0c8;text-shadow:0 2px 0 rgba(0,0,0,.3)}
+.section-heading .hint,.section-heading span{color:#c7c0ab}
+
+/* tactile buttons */
+.primary-button,.ghost-button,.burn-button{
+  border-radius:10px;
+  border:1px solid #2c190e;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 3px 0 #1d1009,0 7px 16px rgba(0,0,0,.22);
+  transition:transform .1s ease,filter .1s ease,box-shadow .1s ease;
+}
+.primary-button{
+  color:#32200d;
+  background:linear-gradient(180deg,#ffe08a 0,#eab54f 68%,#bd7c2d 100%);
+  border-color:#7a4d20;
+}
+.ghost-button{
+  color:#f5ead1;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.04),transparent),
+    linear-gradient(180deg,#4d3420,#322115);
+  border-color:#755437;
+}
+.burn-button{background:linear-gradient(180deg,#ffca64,#ed7d38 60%,#b64420);border-color:#7b2d19;color:#321208}
+.primary-button:hover,.ghost-button:hover,.burn-button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.primary-button:active,.ghost-button:active,.burn-button:active{transform:translateY(2px);box-shadow:inset 0 1px 4px rgba(0,0,0,.25),0 1px 0 #1d1009}
+
+/* guided journey: postcard/map look */
+.start-screen.guided-start{
+  border-color:#815f3c;
+  background:linear-gradient(180deg,rgba(41,56,39,.97),rgba(18,31,24,.98));
+}
+.guided-progress span{
+  border-color:#795a38!important;
+  background:linear-gradient(180deg,#392719,#271a12)!important;
+  color:#c9baa1!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.05);
+}
+.guided-progress span.active{color:#ffe08a!important;outline-color:rgba(255,199,89,.46)!important;background:linear-gradient(180deg,#5a3c22,#342114)!important}
+.guided-progress span.done{color:#c9d9b2!important;background:linear-gradient(180deg,#31432c,#213020)!important}
+.world-tab,.stage-card,.select-card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid #84613e;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.025),transparent 35%),
+    linear-gradient(180deg,#263a2c,#17271e);
+  box-shadow:inset 0 0 0 1px rgba(255,226,170,.04),0 5px 13px rgba(0,0,0,.18);
+}
+.world-tab::after,.stage-card::after,.select-card::after{
+  content:"";position:absolute;inset:auto 0 0;height:3px;background:linear-gradient(90deg,transparent,#bd8a45,transparent);opacity:.35
+}
+.world-tab:hover,.stage-card:hover:not(:disabled),.select-card:hover:not(:disabled){border-color:#d0a660;filter:brightness(1.07)}
+.stage-card.selected,.select-card.selected,.world-tab.selected{outline:2px solid #f4c85a!important;box-shadow:0 0 0 3px rgba(244,200,90,.1),0 7px 18px rgba(0,0,0,.24)}
+.stage-ecology>div{
+  background:linear-gradient(180deg,#17291f,#102018);
+  border-color:#705337;
+  box-shadow:inset 0 1px rgba(255,255,255,.03);
+}
+.eco-label{color:#9bd9b1}
+.ready-card{background:linear-gradient(180deg,#49331f,#2c1e14)!important;border:1px solid #9b7445!important;box-shadow:inset 0 0 0 2px rgba(0,0,0,.16),0 12px 30px rgba(0,0,0,.28)!important}
+
+/* top gameplay instrumentation: dark iron / enamel */
+.hud{
+  border-color:#7e5a36;
+  background:linear-gradient(180deg,#34261a,#201811);
+}
+.hud-item{
+  text-align:center;
+  border:1px solid #60482f;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.035),transparent),
+    linear-gradient(180deg,#17221c,#101712);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+.hud-item span{color:#b8ad98;letter-spacing:.06em;font-weight:800}
+.hud-item strong{color:#fff5d9;text-shadow:0 1px 0 #000}
+.hud-item.combo strong{color:#ffd45d}
+.burn-strip{background:linear-gradient(180deg,#3a2617,#24170f);border-color:#86572e}
+.burn-meter-track{background:#120e09;border-color:#755536;box-shadow:inset 0 2px 4px #000}
+.burn-meter-fill{background:linear-gradient(90deg,#d94b29 0,#f18732 48%,#ffd661 100%);box-shadow:0 0 14px rgba(245,153,61,.5)}
+
+/* order tickets: warm parchment hanging over a wooden counter */
+.orders-grid{align-items:stretch}
+.order-card{
+  color:var(--parchment-ink)!important;
+  border:1px solid #b28d55!important;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(255,255,255,.38),transparent 26%),
+    linear-gradient(180deg,#f7edcf,#e5d2a8)!important;
+  box-shadow:0 5px 0 #6a4827,0 10px 18px rgba(0,0,0,.24),inset 0 0 0 1px rgba(255,255,255,.35);
+}
+.order-card::before{
+  content:"";position:absolute;left:10%;right:10%;top:-4px;height:8px;border-radius:999px;background:#775332;box-shadow:0 2px 3px rgba(0,0,0,.25);opacity:.95;pointer-events:none
+}
+.order-card.selected{outline:3px solid #f2c34f!important;outline-offset:2px;transform:translateY(-2px)}
+.order-card.urgent{animation:ticketPulse .8s infinite}
+.order-card.special{background:linear-gradient(180deg,#fff1bd,#e2c778)!important;border-color:#c99939!important}
+.order-card .name,.order-card .bird-en.primary-name{color:#2f2419!important;text-shadow:none}
+.order-card .bird-en{color:#6f604c!important}
+.order-card .bird-scientific{color:#7f6d55!important}
+.order-card .timer{color:#695a47!important;font-weight:700}
+.order-card .recipe{filter:drop-shadow(0 1px 0 rgba(255,255,255,.5))}
+.order-progress{height:5px!important;background:linear-gradient(90deg,#d44832,#f0be47)!important}
+.signature-badge,.special-badge{box-shadow:0 2px 3px rgba(0,0,0,.2)}
+.signature-badge{background:#395c3a!important;border-color:#25462b!important;color:#f5edcf!important}
+.special-badge{background:#e8b943!important;color:#32200d!important;border-color:#9c6b22!important}
+
+/* workbench */
+.skewer-panel{
+  background:
+    linear-gradient(180deg,rgba(58,74,51,.96),rgba(22,35,26,.98)),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 7px);
+}
+.selected-order-summary{
+  background:#20170f;
+  border:1px dashed #a27b45;
+  color:#d8c9aa;
+}
+.skewer{
+  border:2px solid #695139;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.08),transparent 20%),
+    linear-gradient(180deg,#777a72,#474b46 45%,#272b29 46%,#171b19);
+  box-shadow:inset 0 4px 8px rgba(0,0,0,.36),0 4px 0 #261a11;
+}
+.skewer:before{height:7px;background:linear-gradient(180deg,#d0aa70,#81562f);box-shadow:0 2px 2px rgba(0,0,0,.35)}
+.food-button{
+  border:1px solid #775638;
+  background:linear-gradient(180deg,#3d2b1c,#251a12);
+  box-shadow:inset 0 1px rgba(255,255,255,.06),0 2px 0 #120b07;
+}
+.food-button:hover{border-color:#c29a57;filter:brightness(1.1)}
+.food-button small{color:#c7b99e}
+
+/* glowing grill */
+.burners-panel{background:linear-gradient(180deg,#31372f,#171e19)}
+.burner{
+  position:relative;
+  border:2px solid #5d5b4d;
+  background:
+    linear-gradient(90deg,transparent 0 10%,rgba(0,0,0,.2) 10% 12%,transparent 12% 22%,rgba(0,0,0,.2) 22% 24%,transparent 24%),
+    radial-gradient(circle at 50% 88%,rgba(255,116,36,.28),transparent 40%),
+    linear-gradient(180deg,#252a27,#111512);
+  box-shadow:inset 0 0 14px rgba(0,0,0,.55),0 4px 0 #15100b;
+}
+.burner::before{
+  content:"";position:absolute;left:12%;right:12%;bottom:10px;height:7px;border-radius:50%;background:#5b1c0e;box-shadow:0 0 10px #d55524,0 0 22px rgba(255,113,43,.28);opacity:.7;pointer-events:none
+}
+.burner.ready{border-color:#94d597;box-shadow:inset 0 0 12px rgba(75,155,89,.18),0 0 0 2px rgba(142,211,156,.1),0 4px 0 #15100b}
+.burner.overcooked{border-color:#e26b55;box-shadow:inset 0 0 16px rgba(187,54,35,.2),0 4px 0 #15100b}
+.cook-bar{background:#0d110e;border:1px solid #493b2d;height:8px}
+.cook-fill{background:linear-gradient(90deg,#f4c755,#ed8b37,#cf472c)}
+
+.status-panel{background:linear-gradient(180deg,#40301f,#291d14);border-color:#795536}
+.status-panel strong{color:#f6e5bc}.floating-judge{color:#ffd25e;text-shadow:0 2px 0 #5d3215,0 0 12px rgba(255,207,84,.25)}
+
+/* parchment collections / modal panels */
+.help-dialog,.collection-dialog{
+  color:#392a1d;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.18),transparent),
+    linear-gradient(180deg,#f3e6c4,#deca9f);
+  border:3px solid #74502f;
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.24),0 25px 60px rgba(0,0,0,.55);
+}
+.help-dialog h2,.collection-dialog h2{color:#352315}.help-dialog .hint,.collection-dialog .hint{color:#705f4a}
+.help-dialog::backdrop{background:rgba(3,8,5,.78);backdrop-filter:blur(4px)}
+.bird-card,.dex-card,.upgrade-card{
+  color:#3b2c1f;
+  background:rgba(255,248,225,.58);
+  border:1px solid #aa8657;
+  box-shadow:0 2px 0 rgba(94,63,35,.18);
+}
+.bird-card b,.dex-card b,.upgrade-card b{color:#362719}
+.bird-card b span,.dex-card b span,.bird-card small,.dex-card small,.upgrade-card small{color:#796852}
+.bird-card p,.dex-card p{color:#4f4030}.bird-card i{color:#456f5b}
+.bird-card-emoji,.dex-emoji{background:linear-gradient(180deg,#d9d0aa,#b7b38e);border:1px solid #a08859}
+
+/* result board */
+.result-screen{background:linear-gradient(180deg,#50351f,#2d1e14);border-color:#8d663d}
+.result-grid div{background:#1a211b;border-color:#6f5338;box-shadow:inset 0 0 0 1px rgba(255,255,255,.025)}
+.result-grid span{color:#bcb09a}.result-grid strong{color:#fff2cd}.record-notice,.unlock-notice{border:1px solid #7f603f;background:#221a12!important}
+
+@keyframes ticketPulse{50%{box-shadow:0 5px 0 #6a4827,0 0 0 4px rgba(220,72,50,.24),0 10px 18px rgba(0,0,0,.24)}}
+
+/* mobile: retain frozen gameplay geometry, only simplify expensive decoration */
+@media (max-width:900px), (pointer:coarse){
+  body::before{filter:none;opacity:.32;background-position:center top}
+  .titlebar{border-radius:13px;padding:11px}
+  .panel{border-width:1px}.panel::before{display:none}
+  .order-card{box-shadow:0 3px 0 #604124,0 5px 10px rgba(0,0,0,.18)!important}
+  .order-card::before{height:5px;top:-3px}
+  .primary-button,.ghost-button,.burn-button{box-shadow:inset 0 1px rgba(255,255,255,.12),0 2px 0 #1d1009}
+}
+
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  body::before{display:none}
+  body.in-game{background:linear-gradient(180deg,#111b15,#070d0a)}
+  .hud,.burn-strip,.orders-panel,.skewer-panel,.burners-panel,.status-panel{box-shadow:none}
+  .order-card::before{display:none}
+  .burner::before{height:3px;bottom:3px}
+}
+
+
+/* =========================================================
+   0.7.1 Bird Guest Visuals
+   Visual-only layer over the 0.6.5.11 gameplay/content baseline.
+   ========================================================= */
+.guest-perch{
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+  min-height:86px;
+  padding:8px 12px 13px;
+  margin:0 0 10px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scrollbar-width:thin;
+  border:1px solid #735033;
+  border-radius:14px;
+  background:
+    linear-gradient(180deg,rgba(80,110,76,.16),transparent 55%),
+    linear-gradient(180deg,#21382b 0,#182a21 64%,#4d321f 65%,#302015 72%,#17241c 73%);
+  box-shadow:inset 0 -4px 0 rgba(24,14,8,.28),inset 0 1px rgba(255,255,255,.035);
+}
+.guest-perch::after{
+  content:"";
+  position:absolute;
+  left:10px;right:10px;bottom:12px;height:8px;
+  border-radius:999px;
+  background:linear-gradient(180deg,#9a7146,#5f3d25);
+  border:1px solid #3d2818;
+  box-shadow:0 3px 4px rgba(0,0,0,.28);
+  pointer-events:none;
+}
+.guest-perch.empty::before{
+  content:"작은 손님들이 곧 퍼치에 찾아옵니다…";
+  position:absolute;inset:0;display:grid;place-items:center;
+  color:#bcae91;font-size:.78rem;font-weight:700;letter-spacing:.02em;
+}
+.guest-visitor{
+  position:relative;
+  z-index:1;
+  flex:0 0 88px;
+  min-width:88px;
+  display:grid;
+  justify-items:center;
+  align-content:end;
+  transform-origin:50% 100%;
+  transition:transform .2s ease,opacity .2s ease,filter .2s ease;
+}
+.guest-visitor.entering{opacity:0;transform:translateY(18px) scale(.82)}
+.guest-visitor.leaving{opacity:0;transform:translateY(-10px) scale(.8)}
+.guest-visitor.selected{transform:translateY(-4px)}
+.guest-visitor.urgent{animation:guestWorry .55s ease-in-out infinite alternate}
+.guest-visitor-art{
+  width:78px;height:62px;
+  display:grid;place-items:end center;
+  filter:drop-shadow(0 4px 2px rgba(0,0,0,.23));
+}
+.guest-visitor-copy{
+  position:absolute;
+  left:50%;bottom:-5px;
+  width:max-content;max-width:98px;
+  transform:translate(-50%,100%);
+  display:none;
+  padding:4px 6px;
+  border-radius:8px;
+  background:#24180f;
+  border:1px solid #735034;
+  color:#f7e8c8;
+  text-align:center;
+  box-shadow:0 5px 12px rgba(0,0,0,.3);
+}
+.guest-visitor:hover .guest-visitor-copy,.guest-visitor.selected .guest-visitor-copy{display:block}
+.guest-visitor-copy strong,.guest-visitor-copy span{display:block;white-space:nowrap}
+.guest-visitor-copy strong{font-size:.63rem}.guest-visitor-copy span{font-size:.48rem;color:#c8b99f}
+.guest-mood{
+  position:absolute;right:1px;top:2px;
+  min-width:18px;height:18px;padding:0 4px;
+  display:grid;place-items:center;
+  border-radius:999px;
+  background:#f4e3b8;border:1px solid #6e4c2c;color:#4b2d17;
+  font-size:.62rem;font-weight:1000;
+  box-shadow:0 2px 4px rgba(0,0,0,.2);
+}
+.guest-mood:empty{display:none}
+.guest-visitor.signature .guest-visitor-art{filter:drop-shadow(0 0 8px rgba(244,208,92,.4)) drop-shadow(0 4px 2px rgba(0,0,0,.23))}
+.guest-visitor.special .guest-mood{background:#f2c957;color:#3a210b}
+.guest-bird-svg{display:block;width:100%;height:100%;overflow:visible}
+.guest-bird-svg.compact{width:100%;height:100%}
+
+.guest-order-portrait{
+  width:42px;height:34px;
+  margin:1px auto 2px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:radial-gradient(circle,#fff7dd 0 48%,#d2b77a 50% 54%,transparent 56%);
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.5));
+}
+.order-card.selected .guest-order-portrait{transform:scale(1.06)}
+.order-card.urgent .guest-order-portrait{filter:drop-shadow(0 0 5px rgba(205,63,44,.32))}
+.bird-card-portrait{padding:4px;overflow:hidden}
+.bird-card-portrait .guest-bird-svg{width:72px;height:64px}
+
+@keyframes guestWorry{
+  from{transform:translateY(0) rotate(-1.2deg)}
+  to{transform:translateY(-2px) rotate(1.2deg)}
+}
+
+/* Desktop: let the guest rail feel like an actual restaurant perch. */
+@media (min-width:901px) and (pointer:fine){
+  .orders-panel{padding-top:14px}
+  .guest-perch{min-height:92px}
+  .orders-grid{min-height:148px}
+}
+
+/* Mobile keeps guests visible but protects the stable gameplay geometry. */
+@media (max-width:900px), (pointer:coarse){
+  .guest-perch{
+    min-height:58px;
+    padding:4px 6px 8px;
+    margin-bottom:5px;
+    gap:3px;
+  }
+  .guest-perch::after{left:5px;right:5px;bottom:6px;height:5px}
+  .guest-visitor{flex-basis:54px;min-width:54px}
+  .guest-visitor-art{width:50px;height:43px}
+  .guest-visitor-copy{display:none!important}
+  .guest-mood{right:0;top:0;min-width:13px;height:13px;padding:0 2px;font-size:.42rem}
+  .guest-order-portrait{width:29px;height:23px;margin:0 auto 1px}
+  .bird-card-portrait .guest-bird-svg{width:58px;height:52px}
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  .orders-panel{grid-template-rows:auto 34px minmax(0,1fr)!important}
+  .guest-perch{
+    min-height:34px;height:34px;
+    padding:1px 4px 4px;
+    margin:0 0 3px;
+    overflow:hidden;
+  }
+  .guest-perch::after{bottom:3px;height:3px}
+  .guest-visitor{flex:1 1 0;min-width:0;max-width:44px}
+  .guest-visitor-art{width:40px;height:31px}
+  .guest-mood{width:10px;min-width:10px;height:10px;font-size:.32rem}
+  .guest-order-portrait{display:none!important}
+}
+\n\n/* =========================================================
+   0.7.1.1 Perch Name Visibility Hotfix
+   Keep guest names inside the perch instead of clipping them as tooltips.
+   ========================================================= */
+.guest-perch{
+  min-height:112px!important;
+  padding-bottom:6px!important;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+}
+.guest-perch::after{
+  bottom:27px!important;
+}
+.guest-visitor{
+  height:98px!important;
+  grid-template-rows:minmax(0,72px) 24px!important;
+  align-content:end!important;
+  justify-items:center!important;
+}
+.guest-visitor-art{
+  grid-row:1!important;
+  align-self:end!important;
+}
+.guest-visitor-copy{
+  position:static!important;
+  grid-row:2!important;
+  transform:none!important;
+  display:block!important;
+  width:100%!important;
+  max-width:88px!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:2px 2px 0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#f7e8c8!important;
+  line-height:1.02!important;
+  text-align:center!important;
+  pointer-events:none!important;
+  overflow:hidden!important;
+}
+.guest-visitor-copy strong,
+.guest-visitor-copy span{
+  display:block!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+}
+.guest-visitor-copy strong{font-size:.58rem!important}
+.guest-visitor-copy span{font-size:.43rem!important;color:#c8b99f!important;margin-top:1px!important}
+.guest-visitor:hover .guest-visitor-copy,
+.guest-visitor.selected .guest-visitor-copy{display:block!important}
+
+@media (min-width:901px) and (pointer:fine){
+  .guest-perch{min-height:112px!important}
+}
+
+@media (max-width:900px), (pointer:coarse){
+  .guest-perch{
+    min-height:74px!important;
+    padding:3px 6px 4px!important;
+  }
+  .guest-perch::after{bottom:19px!important;height:5px!important}
+  .guest-visitor{
+    height:66px!important;
+    grid-template-rows:minmax(0,47px) 17px!important;
+  }
+  .guest-visitor-art{width:50px!important;height:43px!important}
+  .guest-visitor-copy{max-width:54px!important;padding-top:1px!important}
+  .guest-visitor-copy strong{font-size:.45rem!important}
+  .guest-visitor-copy span{display:none!important}
+}
+
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  .orders-panel{grid-template-rows:auto 42px minmax(0,1fr)!important}
+  .guest-perch{
+    min-height:42px!important;
+    height:42px!important;
+    padding:1px 3px 2px!important;
+    overflow-x:hidden!important;
+    overflow-y:hidden!important;
+  }
+  .guest-perch::after{bottom:10px!important;height:3px!important}
+  .guest-visitor{
+    height:38px!important;
+    grid-template-rows:minmax(0,29px) 9px!important;
+    flex:1 1 0!important;
+    min-width:0!important;
+    max-width:48px!important;
+  }
+  .guest-visitor-art{width:38px!important;height:29px!important}
+  .guest-visitor-copy{max-width:48px!important;padding:0!important;line-height:1!important}
+  .guest-visitor-copy strong{font-size:.34rem!important;line-height:1!important}
+  .guest-visitor-copy span{display:none!important}
+  .guest-mood{top:0!important}
+}
+
+
+/* =========================================================
+   0.7.2 Shrike Chef Visuals
+   Visual-only character layer over the locked 0.6.5.11 gameplay/content baseline.
+   ========================================================= */
+.chef-visual{
+  position:relative;
+  z-index:2;
+  min-height:68px;
+  display:grid;
+  grid-template-columns:78px minmax(0,1fr);
+  align-items:center;
+  gap:9px;
+  margin:0 0 7px;
+  padding:4px 10px 4px 5px;
+  overflow:hidden;
+  border:1px solid #765437;
+  border-radius:12px;
+  background:
+    radial-gradient(circle at 14% 25%,rgba(121,164,91,.18),transparent 36%),
+    linear-gradient(180deg,#2d3827,#1d291f);
+  box-shadow:inset 0 1px rgba(255,255,255,.04),0 3px 0 #21160e;
+}
+.chef-visual::after{
+  content:"";
+  position:absolute;
+  left:5px;right:5px;bottom:3px;height:3px;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,#a87943 12%,#d0a365 50%,#a87943 88%,transparent);
+  opacity:.7;
+}
+.chef-visual-art{
+  width:74px;height:61px;
+  display:grid;
+  place-items:end center;
+  align-self:end;
+  filter:drop-shadow(0 4px 2px rgba(0,0,0,.24));
+}
+.chef-shrike-svg{display:block;width:100%;height:100%;overflow:visible;transform-origin:54% 78%}
+.chef-visual-copy{min-width:0;text-align:left;line-height:1.05}
+.chef-visual-copy .chef-kicker{
+  display:block;
+  margin-bottom:2px;
+  color:#d4c19e;
+  font-size:.48rem;
+  font-weight:900;
+  letter-spacing:.06em;
+}
+.chef-visual-copy strong{display:block;color:#fff0ca;font-size:.86rem}
+.chef-visual-copy small{display:block;margin-top:2px;color:#bdb29e;font-size:.56rem}
+.chef-visual-copy em{
+  display:inline-block;
+  margin-top:4px;
+  padding:2px 6px;
+  border:1px solid #6f5638;
+  border-radius:999px;
+  background:#171d17;
+  color:#d9c9a9;
+  font-size:.48rem;
+  font-style:normal;
+  font-weight:900;
+}
+.chef-visual.state-assemble .chef-visual-copy em{color:#d8e9a5;border-color:#667446}
+.chef-visual.state-cook .chef-visual-copy em{color:#ffc36b;border-color:#9b5a2f}
+.chef-visual.state-perfect{border-color:#c7a347;box-shadow:0 0 0 2px rgba(245,207,83,.08),0 3px 0 #21160e}
+.chef-visual.state-perfect .chef-visual-copy em{color:#ffe474;border-color:#c79e3e;background:#3b2b13}
+.chef-visual.state-burning{
+  border-color:#cf6b32;
+  background:radial-gradient(circle at 20% 50%,rgba(240,126,48,.24),transparent 42%),linear-gradient(180deg,#403022,#241a14);
+  box-shadow:0 0 18px rgba(233,101,39,.16),0 3px 0 #21160e;
+}
+.chef-visual.state-burning .chef-visual-copy em{color:#ffd15d;border-color:#cf6b32;background:#421d11}
+
+.chef-visual.state-idle .chef-shrike-svg{animation:chefIdle 2.4s ease-in-out infinite}
+.chef-visual.state-assemble .chef-shrike-svg{animation:chefAssemble .48s ease-in-out infinite alternate}
+.chef-visual.state-cook .chef-shrike-svg{animation:chefCook .72s ease-in-out infinite alternate}
+.chef-visual.state-perfect .chef-shrike-svg{animation:chefPerfect .7s ease-out}
+.chef-visual.state-burning .chef-shrike-svg{animation:chefBurning .42s ease-in-out infinite alternate}
+.chef-visual.state-burning .chef-burning-aura{animation:chefFlame .5s ease-in-out infinite alternate;transform-origin:center bottom}
+
+.shrike-select-card{
+  display:grid!important;
+  grid-template-columns:82px minmax(0,1fr)!important;
+  gap:10px!important;
+  align-items:center!important;
+  min-height:104px;
+  padding:9px!important;
+}
+.shrike-select-portrait{
+  width:78px;height:76px;
+  display:grid;place-items:center;
+  overflow:hidden;
+  border:1px solid #745538;
+  border-radius:12px;
+  background:radial-gradient(circle at 50% 42%,#d9c89e 0 38%,#94805c 65%,#57422f 100%);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.05);
+}
+.shrike-select-copy{min-width:0;text-align:left}
+.shrike-select-copy b{color:#fff0c9!important}
+.shrike-select-en{color:#9bd2bf!important;font-size:.62rem!important}
+.select-card:disabled .shrike-select-portrait{filter:grayscale(1) brightness(.58)}
+.select-card.selected .shrike-select-portrait{box-shadow:0 0 0 2px #f3c85c,inset 0 0 0 2px rgba(255,255,255,.08)}
+
+.shrike-dex-portrait{
+  padding:2px!important;
+  overflow:hidden!important;
+}
+.shrike-dex-portrait .chef-shrike-svg{
+  width:72px;height:68px;
+}
+.dex-card.locked .shrike-dex-portrait{filter:grayscale(1)}
+
+@keyframes chefIdle{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-1.5px) rotate(.4deg)}}
+@keyframes chefAssemble{from{transform:rotate(-1.8deg) translateY(0)}to{transform:rotate(1.8deg) translateY(-1px)}}
+@keyframes chefCook{from{transform:translateY(0) rotate(-.5deg)}to{transform:translateY(-2px) rotate(.8deg)}}
+@keyframes chefPerfect{0%{transform:scale(.86) rotate(-3deg)}45%{transform:scale(1.08) rotate(2deg)}100%{transform:scale(1)}}
+@keyframes chefBurning{from{transform:translateY(0) scale(1)}to{transform:translateY(-2px) scale(1.025)}}
+@keyframes chefFlame{from{transform:scaleY(.88);opacity:.72}to{transform:scaleY(1.08);opacity:1}}
+
+@media (max-width:900px), (pointer:coarse){
+  .chef-visual{
+    min-height:48px;
+    grid-template-columns:52px minmax(0,1fr);
+    gap:5px;
+    margin-bottom:4px;
+    padding:2px 6px 2px 3px;
+  }
+  .chef-visual-art{width:49px;height:44px}
+  .chef-visual-copy .chef-kicker{font-size:.38rem;margin-bottom:1px}
+  .chef-visual-copy strong{font-size:.62rem}
+  .chef-visual-copy small{font-size:.43rem}
+  .chef-visual-copy em{font-size:.39rem;margin-top:2px;padding:1px 4px}
+  .shrike-select-card{grid-template-columns:60px minmax(0,1fr)!important;min-height:82px}
+  .shrike-select-portrait{width:57px;height:57px}
+  .shrike-select-en{font-size:.53rem!important}
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  .chef-visual{
+    height:24px!important;
+    min-height:24px!important;
+    grid-template-columns:28px minmax(0,1fr)!important;
+    gap:3px!important;
+    margin:0!important;
+    padding:0 3px!important;
+    border-radius:7px!important;
+    box-shadow:none!important;
+  }
+  .chef-visual::after{display:none}
+  .chef-visual-art{width:27px!important;height:23px!important}
+  .chef-visual-copy{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    align-items:center;
+    gap:3px;
+  }
+  .chef-visual-copy .chef-kicker,.chef-visual-copy small{display:none!important}
+  .chef-visual-copy strong{
+    font-size:.42rem!important;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .chef-visual-copy em{
+    margin:0!important;
+    padding:1px 3px!important;
+    font-size:.32rem!important;
+    white-space:nowrap;
+  }
+}

@@ -680,3 +680,445 @@ body.dev-mode .stage-card:not(:disabled),body.dev-mode .select-card:not(:disable
     margin-top:1px!important;
   }
 }
+
+/* 0.6.5.4 Order Card Alignment & Density Hotfix */
+.order-card{
+  text-align:center!important;
+  justify-items:center!important;
+  align-items:center!important;
+}
+.order-card .name,
+.order-card .bird-en,
+.order-card .recipe,
+.order-card .timer{
+  width:100%;
+  text-align:center!important;
+  justify-self:center!important;
+}
+.order-card .name{
+  font-size:.82rem!important;
+  line-height:1.08!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+.order-card .bird-en{
+  font-size:.68rem!important;
+  line-height:1.08!important;
+}
+.order-card .recipe{
+  justify-self:center!important;
+}
+.order-card .timer{
+  display:flex!important;
+  justify-content:center!important;
+  gap:6px!important;
+  align-items:center!important;
+}
+@media (max-width:900px), (pointer:coarse){
+  .order-card .name{
+    font-size:.60rem!important;
+    line-height:1.05!important;
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+  .order-card .bird-en{
+    font-size:.48rem!important;
+    line-height:1.06!important;
+    max-height:2.15em!important;
+  }
+  .order-card .recipe{
+    font-size:1.02rem!important;
+  }
+  .order-card .timer{
+    font-size:.50rem!important;
+    gap:4px!important;
+  }
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  .order-card{
+    padding:3px 4px!important;
+    row-gap:1px!important;
+    align-content:center!important;
+  }
+  .order-card .name{
+    font-size:clamp(.50rem,1.3vw,.58rem)!important;
+    line-height:1.02!important;
+  }
+  .order-card .bird-en{
+    font-size:clamp(.37rem,.95vw,.44rem)!important;
+    line-height:1.03!important;
+    max-height:2.08em!important;
+  }
+  .order-card .recipe{
+    font-size:clamp(.68rem,1.9vw,.86rem)!important;
+    margin:1px 0!important;
+  }
+  .order-card .timer{
+    font-size:.46rem!important;
+    line-height:1!important;
+  }
+}
+
+/* 0.6.5.5 Badge Collision & Name Clearance Hotfix */
+
+/* Base badge compaction */
+.order-card .special-badge,
+.order-card .signature-badge{
+  white-space:nowrap!important;
+  line-height:1!important;
+  border-radius:999px!important;
+}
+
+/* Desktop: smaller badges so names retain clear space */
+@media (min-width:901px) and (pointer:fine){
+  .order-card .special-badge,
+  .order-card .signature-badge{
+    font-size:.40rem!important;
+    padding:1px 3px!important;
+    top:5px!important;
+  }
+  .order-card .special-badge{
+    left:5px!important;
+    right:auto!important;
+  }
+  .order-card .signature-badge{
+    right:5px!important;
+    left:auto!important;
+  }
+  .order-card .name{
+    font-size:.78rem!important;
+    padding-left:42px!important;
+    padding-right:62px!important;
+  }
+  .order-card.special:not(.signature) .name{
+    padding-left:52px!important;
+    padding-right:0!important;
+  }
+  .order-card.signature:not(.special) .name{
+    padding-left:0!important;
+    padding-right:64px!important;
+  }
+}
+
+/* Mobile portrait/general: reduce badge footprint further */
+@media (max-width:900px), (pointer:coarse){
+  .order-card .special-badge,
+  .order-card .signature-badge{
+    font-size:.34rem!important;
+    padding:1px 2px!important;
+    top:3px!important;
+    max-width:44%!important;
+    overflow:hidden!important;
+    text-overflow:clip!important;
+  }
+  .order-card .special-badge{
+    left:3px!important;
+    right:auto!important;
+  }
+  .order-card .signature-badge{
+    right:3px!important;
+    left:auto!important;
+  }
+
+  /* Single badge: reserve only the side it occupies */
+  .order-card.special:not(.signature) .name{
+    font-size:.56rem!important;
+    padding-left:44px!important;
+    padding-right:0!important;
+  }
+  .order-card.signature:not(.special) .name{
+    font-size:.56rem!important;
+    padding-left:0!important;
+    padding-right:56px!important;
+  }
+
+  /* Both badges: shrink title slightly and reserve both corners */
+  .order-card.special.signature .name{
+    font-size:.52rem!important;
+    padding-left:42px!important;
+    padding-right:54px!important;
+  }
+}
+
+/* Mobile landscape: maximum density, no badge overlap */
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  .order-card .special-badge,
+  .order-card .signature-badge{
+    font-size:.29rem!important;
+    padding:0 2px!important;
+    top:2px!important;
+    max-width:42%!important;
+    line-height:1!important;
+  }
+  .order-card .special-badge{left:2px!important}
+  .order-card .signature-badge{right:2px!important}
+
+  .order-card.special:not(.signature) .name{
+    font-size:clamp(.46rem,1.15vw,.52rem)!important;
+    padding-left:36px!important;
+    padding-right:0!important;
+  }
+  .order-card.signature:not(.special) .name{
+    font-size:clamp(.46rem,1.15vw,.52rem)!important;
+    padding-left:0!important;
+    padding-right:46px!important;
+  }
+  .order-card.special.signature .name{
+    font-size:clamp(.43rem,1.05vw,.49rem)!important;
+    padding-left:34px!important;
+    padding-right:44px!important;
+  }
+}
+
+/* 0.6.5.6 Order Card True-Centre Alignment Hotfix */
+
+/* Badges stay as overlays; they must never shift the text centreline. */
+.order-card{
+  position:relative!important;
+  text-align:center!important;
+  justify-items:center!important;
+  align-items:center!important;
+}
+.order-card .name,
+.order-card .bird-en,
+.order-card .recipe,
+.order-card .timer{
+  width:100%!important;
+  box-sizing:border-box!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  text-align:center!important;
+  justify-self:center!important;
+}
+
+/* Reserve vertical space for badges instead of asymmetric left/right padding. */
+.order-card.special,
+.order-card.signature{
+  padding-top:16px!important;
+}
+.order-card.special.signature{
+  padding-top:17px!important;
+}
+
+.order-card .special-badge,
+.order-card .signature-badge{
+  position:absolute!important;
+  z-index:2!important;
+}
+
+/* Desktop */
+@media (min-width:901px) and (pointer:fine){
+  .order-card.special,
+  .order-card.signature{
+    padding-top:15px!important;
+  }
+  .order-card.special.signature{
+    padding-top:16px!important;
+  }
+  .order-card .name{
+    padding-left:0!important;
+    padding-right:0!important;
+    font-size:.78rem!important;
+  }
+}
+
+/* Mobile */
+@media (max-width:900px), (pointer:coarse){
+  .order-card.special,
+  .order-card.signature{
+    padding-top:12px!important;
+  }
+  .order-card.special.signature{
+    padding-top:13px!important;
+  }
+  .order-card.special:not(.signature) .name,
+  .order-card.signature:not(.special) .name,
+  .order-card.special.signature .name{
+    padding-left:0!important;
+    padding-right:0!important;
+    text-align:center!important;
+    font-size:.54rem!important;
+  }
+}
+
+/* Mobile landscape: preserve centreline while keeping the card dense. */
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  .order-card.special,
+  .order-card.signature{
+    padding-top:9px!important;
+  }
+  .order-card.special.signature{
+    padding-top:10px!important;
+  }
+  .order-card.special:not(.signature) .name,
+  .order-card.signature:not(.special) .name,
+  .order-card.special.signature .name{
+    padding-left:0!important;
+    padding-right:0!important;
+    text-align:center!important;
+    font-size:clamp(.44rem,1.08vw,.50rem)!important;
+  }
+}
+
+/* 0.6.5.7 Order Card Grid Centreline Fix */
+
+/*
+  Previous mobile rules used a two-column order-card grid from the era when
+  guest emojis occupied the first column. The emoji is now hidden, so all
+  textual order content must explicitly span the full card width.
+*/
+.order-card .name,
+.order-card .bird-en,
+.order-card .recipe,
+.order-card .timer{
+  grid-column:1 / -1!important;
+  justify-self:stretch!important;
+  width:100%!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  text-align:center!important;
+}
+
+/* Badge presence must never alter the content grid. */
+.order-card.special .name,
+.order-card.signature .name,
+.order-card.special.signature .name,
+.order-card.special .bird-en,
+.order-card.signature .bird-en,
+.order-card.special.signature .bird-en{
+  grid-column:1 / -1!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  text-align:center!important;
+}
+
+/* Mobile cards no longer need the obsolete emoji/name two-column layout. */
+@media (max-width:900px), (pointer:coarse){
+  .order-card{
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  .order-card{
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+}
+
+/* 0.6.5.8 First Guest Name Anchor Fix */
+.order-card > .name{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  grid-column:1 / -1!important;
+  justify-self:stretch!important;
+  align-self:center!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  text-align:center!important;
+  text-indent:0!important;
+  left:auto!important;
+  right:auto!important;
+  transform:none!important;
+}
+.order-card.special > .name,
+.order-card.signature > .name,
+.order-card.special.signature > .name,
+.order-card.special:not(.signature) > .name,
+.order-card.signature:not(.special) > .name{
+  grid-column:1 / -1!important;
+  width:100%!important;
+  margin:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  justify-content:center!important;
+  text-align:center!important;
+  transform:none!important;
+}
+@media (min-width:901px) and (pointer:fine){
+  .order-card,
+  .order-card.special,
+  .order-card.signature,
+  .order-card.special.signature{padding-top:15px!important}
+}
+@media (max-width:900px), (pointer:coarse){
+  .order-card,
+  .order-card.special,
+  .order-card.signature,
+  .order-card.special.signature{padding-top:12px!important}
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  .order-card,
+  .order-card.special,
+  .order-card.signature,
+  .order-card.special.signature{padding-top:9px!important}
+}
+
+/* 0.6.5.9 Scientific Name Order Card Detail */
+.order-card .bird-scientific{
+  grid-column:1 / -1!important;
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+  margin:1px 0 0!important;
+  padding:0!important;
+  text-align:center!important;
+  justify-self:stretch!important;
+  color:var(--muted)!important;
+  font-size:.60rem!important;
+  line-height:1.05!important;
+  font-style:italic!important;
+  font-weight:500!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  overflow-wrap:anywhere!important;
+}
+@media (max-width:900px), (pointer:coarse){
+  .order-card .bird-scientific{
+    font-size:.42rem!important;
+    line-height:1.02!important;
+    margin-top:0!important;
+    max-height:2.05em!important;
+  }
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){
+  .order-card .bird-scientific{
+    font-size:clamp(.32rem,.82vw,.38rem)!important;
+    line-height:1!important;
+    margin-top:0!important;
+    max-height:2em!important;
+  }
+}
+\n/* 0.6.5.10 Conditional Korean Common Name Display */\n.order-card .bird-en.primary-name{\n  font-size:.78rem!important;\n  font-weight:800!important;\n  line-height:1.08!important;\n}\n@media (max-width:900px), (pointer:coarse){\n  .order-card .bird-en.primary-name{\n    font-size:.54rem!important;\n    line-height:1.05!important;\n  }\n}\n@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px){\n  .order-card .bird-en.primary-name{\n    font-size:clamp(.44rem,1.08vw,.50rem)!important;\n    line-height:1.02!important;\n  }\n}\n
+/* 0.6.5.11 Primary Common Name Emphasis */
+.order-card .primary-name{
+  font-weight:900!important;
+}
+.order-card > strong.name.primary-name,
+.order-card > strong.bird-en.primary-name{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  grid-column:1 / -1!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+  text-align:center!important;
+}

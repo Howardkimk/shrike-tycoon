@@ -593,9 +593,82 @@ function renderGuestPerch() {
     });
     guestPerchEl.classList.toggle("empty", orders.length === 0);
 }
+const worldVisualMeta = (world) => {
+    const meta = {
+        1: { name: "동아시아 농경지", subtitle: "논둑 · 초지 · 전봇대", rule: "🌿 Feeding Time" },
+        2: { name: "강을 따라서", subtitle: "하천 · 갈대밭 · 자갈톱", rule: "🌦 Weather Ecology" },
+        3: { name: "산과 밤", subtitle: "산림 가장자리 · 계곡", rule: "🌓 Day → Dusk → Night" },
+        4: { name: "히말라야", subtitle: "고산 관목 · 암릉 · 설산", rule: "🏔 Altitude & Cold" },
+        5: { name: "중앙아시아 대초원", subtitle: "스텝 · 반사막 · 먼 산", rule: "🪽 Migration Wave" },
+        6: { name: "유럽·지중해", subtitle: "농촌 · 올리브 · 석조 담장", rule: "⭐ Favourite Dish" },
+        7: { name: "북미", subtitle: "냉대 초지 · 침엽수 · 눈", rule: "❄️ Fire Warmth" },
+        8: { name: "동아프리카", subtitle: "사바나 · 아카시아 · 초지", rule: "🐜 Insect Emergence" },
+        9: { name: "남아프리카", subtitle: "건조 관목지 · 붉은 토양", rule: "🔥 Heat Management" },
+        10: { name: "아프리카 섬", subtitle: "해안림 · 화산섬 · 열대 해안", rule: "🌍 Grand Tour" }
+    };
+    return meta[world] || meta[1];
+};
+function worldSceneSvg(world) {
+    const common = `<svg viewBox="0 0 1200 720" preserveAspectRatio="xMidYMid slice" role="presentation"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--world-sky-top)"/><stop offset="1" stop-color="var(--world-sky-bottom)"/></linearGradient><linearGradient id="ground" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="var(--world-ground-a)"/><stop offset="1" stop-color="var(--world-ground-b)"/></linearGradient></defs><rect width="1200" height="720" fill="url(#sky)"/>`;
+    const end = `<g class="scene-foreground"><path d="M0 590 Q250 545 470 596 T850 582 T1200 595 V720 H0Z" fill="url(#ground)"/></g></svg><div class="scene-weather-layer"></div><div class="scene-accent-layer"></div>`;
+    if (world === 1)
+        return common + `<circle cx="1010" cy="115" r="64" fill="#f1c969" opacity=".78"/><g fill="#355d36" opacity=".75"><path d="M0 476 Q180 420 340 478 T650 472 T980 470 T1200 468 V590 H0Z"/><path d="M0 525 Q210 495 390 528 T760 518 T1200 520 V610 H0Z" fill="#6b8a45"/></g><g stroke="#5b4630" stroke-width="10"><path d="M250 328 V602"/><path d="M845 360 V610"/></g><g stroke="#3f3326" stroke-width="5"><path d="M185 350 H315 M780 382 H910"/><path d="M315 350 L780 382"/></g><g stroke="#b9d7cf" stroke-width="6" opacity=".55"><path d="M0 555 H1200 M0 615 H1200"/></g><g fill="#d9b85e" opacity=".86"><path d="M90 555 q18-70 32 0 q18-65 34 0 q14-52 28 0z"/><path d="M940 555 q18-65 32 0 q18-74 34 0 q14-52 28 0z"/></g>` + end;
+    if (world === 2)
+        return common + `<circle cx="960" cy="125" r="58" fill="#e7c96f" opacity=".66"/><path d="M0 430 Q230 355 410 432 T800 420 T1200 410 V550 H0Z" fill="#3f684e"/><path d="M0 530 Q280 480 520 535 T980 520 T1200 525 V720 H0Z" fill="#5d7950"/><path d="M70 575 Q330 500 605 582 T1130 565" fill="none" stroke="#6db1c0" stroke-width="92" opacity=".72"/><g fill="#72796f"><ellipse cx="190" cy="610" rx="36" ry="18"/><ellipse cx="710" cy="595" rx="48" ry="20"/><ellipse cx="1010" cy="615" rx="34" ry="16"/></g><g stroke="#8a9b55" stroke-width="9" stroke-linecap="round"><path d="M90 575 l-8 -96 M108 578 l7 -110 M1110 580 l-10 -120 M1130 580 l9 -92"/></g>` + end;
+    if (world === 3)
+        return common + `<circle class="scene-moon" cx="965" cy="120" r="50" fill="#f0e6bf" opacity=".72"/><path d="M0 470 L180 280 L340 455 L520 250 L720 466 L900 315 L1200 462 V590 H0Z" fill="#294b3d"/><path d="M0 520 Q210 430 420 520 T780 500 T1200 510 V620 H0Z" fill="#173a30"/><g fill="#102b25"><path d="M110 590 l48-155 48 155z M245 590 l42-130 42 130z M860 600 l52-168 52 168z M1020 600 l44-140 44 140z"/></g>` + end;
+    if (world === 4)
+        return common + `<circle cx="1020" cy="115" r="56" fill="#f7e6b2" opacity=".66"/><path d="M0 475 L165 310 L300 412 L500 175 L690 400 L825 255 L1000 395 L1200 245 V570 H0Z" fill="#647579"/><path d="M320 400 L500 175 L617 340 L548 315 L500 265 L450 333Z" fill="#edf3ee"/><path d="M730 365 L825 255 L916 355 L860 330 L824 300 L790 338Z" fill="#f1f4ef"/><path d="M0 530 Q290 475 520 535 T980 515 T1200 525 V650 H0Z" fill="#465a4d"/><g fill="#273d34"><path d="M100 600 l35-110 35 110z M1040 600 l42-130 42 130z"/></g>` + end;
+    if (world === 5)
+        return common + `<circle cx="1020" cy="120" r="70" fill="#e6bf62" opacity=".72"/><path d="M0 485 Q190 420 360 470 T690 465 T980 455 T1200 470 V610 H0Z" fill="#8d8152"/><path d="M0 550 Q280 510 520 545 T980 535 T1200 545 V680 H0Z" fill="#a49358"/><g stroke="#665c35" stroke-width="6" stroke-linecap="round"><path d="M145 575 l14 -60 M168 580 l-3 -72 M685 570 l16 -58 M710 575 l-1 -64 M1040 580 l16 -70"/></g><g class="scene-migration" fill="#2c3026"><path d="M180 215 q16-16 32 0 q16-16 32 0 q-18-7-32 6 q-14-13-32-6z"/><path d="M310 170 q13-13 26 0 q13-13 26 0 q-15-6-26 5 q-11-11-26-5z"/><path d="M430 230 q14-14 28 0 q14-14 28 0 q-16-6-28 5 q-12-11-28-5z"/></g>` + end;
+    if (world === 6)
+        return common + `<circle cx="985" cy="112" r="68" fill="#f0c55d" opacity=".8"/><path d="M0 465 Q200 390 390 470 T760 445 T1200 460 V610 H0Z" fill="#65834e"/><path d="M0 525 Q260 490 520 532 T950 515 T1200 525 V675 H0Z" fill="#9d9a59"/><g fill="#415c35"><path d="M170 560 q-35-85 0-150 q35 65 0 150z M880 570 q-30-80 0-145 q30 65 0 145z"/></g><g fill="#d8c39b"><rect x="520" y="455" width="155" height="95" rx="4"/><path d="M500 460 L595 398 L690 460Z" fill="#a75f3f"/><rect x="575" y="495" width="34" height="55" fill="#715039"/></g><path d="M710 575 Q860 520 1010 580" fill="none" stroke="#c2b28c" stroke-width="16"/>` + end;
+    if (world === 7)
+        return common + `<circle cx="990" cy="112" r="52" fill="#e5ebdc" opacity=".55"/><path d="M0 470 Q220 395 420 470 T820 458 T1200 470 V610 H0Z" fill="#556d63"/><path d="M0 540 Q250 505 480 545 T900 532 T1200 540 V690 H0Z" fill="#d5dfd6" opacity=".82"/><g fill="#284a3c"><path d="M120 600 l44-150 44 150z M235 605 l36-124 36 124z M850 605 l46-162 46 162z M1030 605 l38-132 38 132z"/></g><g class="scene-snow" fill="#eef7f3" opacity=".75"><circle cx="190" cy="235" r="5"/><circle cx="330" cy="180" r="4"/><circle cx="540" cy="230" r="5"/><circle cx="755" cy="160" r="4"/><circle cx="905" cy="250" r="5"/></g>` + end;
+    if (world === 8)
+        return common + `<circle cx="1010" cy="120" r="76" fill="#f0b84a" opacity=".86"/><path d="M0 485 Q240 445 450 480 T850 470 T1200 475 V625 H0Z" fill="#a28545"/><path d="M0 555 Q260 535 520 558 T940 548 T1200 552 V690 H0Z" fill="#b9954b"/><g fill="#3c5631"><path d="M245 525 q-78-25-116 14 q36-8 61 8 q-19 8-31 22 q42-18 89-5 q44 12 88-12 q-38-4-60-21 q27-3 58-12 q-46-22-89 6z"/><rect x="235" y="520" width="18" height="92" rx="8"/><path d="M865 540 q-58-20-92 10 q33-5 52 9 q-19 7-30 18 q39-14 77-4 q35 10 73-11 q-31-3-52-16 q26-2 49-10 q-39-18-77 4z"/><rect x="858" y="538" width="16" height="74" rx="7"/></g><path d="M580 610 q24-92 62 0z" fill="#8a5d35"/>` + end;
+    if (world === 9)
+        return common + `<circle cx="1015" cy="118" r="82" fill="#ef9e43" opacity=".9"/><path d="M0 485 Q220 425 430 485 T820 465 T1200 480 V620 H0Z" fill="#9a6745"/><path d="M0 555 Q260 520 510 555 T940 545 T1200 552 V690 H0Z" fill="#b16e42"/><g fill="#4c5734"><path d="M150 595 q12-76 28-90 q16 14 28 90z M920 595 q12-70 28-85 q16 15 28 85z"/></g><g fill="#5e4b32"><path d="M690 594 q-20-90 2-140 q35 40 25 140z"/><path d="M692 490 q-55-48-93-12 q40-7 67 24z M707 485 q45-55 92-22 q-42 1-72 35z"/></g>` + end;
+    return common + `<circle cx="1015" cy="115" r="68" fill="#f2c55a" opacity=".82"/><path d="M0 440 Q220 375 410 450 T810 435 T1200 445 V570 H0Z" fill="#356958"/><path d="M0 525 Q245 465 480 535 T930 515 T1200 525 V690 H0Z" fill="#5a8e64"/><path d="M0 610 Q260 560 500 620 T930 600 T1200 615 V720 H0Z" fill="#3e96a8" opacity=".82"/><path d="M455 475 L595 255 L735 480Z" fill="#475b51"/><g fill="#315438"><path d="M165 600 q-6-82 20-120 q20 37 15 120z M975 600 q-4-74 20-112 q18 35 14 112z"/></g><g stroke="#5d4a30" stroke-width="13" stroke-linecap="round"><path d="M185 535 q-7-80 28-125 M994 540 q10-82-23-128"/></g>` + end;
+}
+let worldVisualKey = "", worldSceneWorld = 0, worldIntroTimer = 0;
+function renderWorldVisuals(force = false) {
+    if (!worldScenery)
+        return;
+    const warmBin = stage.world === 7 ? (fireWarmth < 35 ? "low" : fireWarmth < 70 ? "mid" : "high") : "na";
+    const heatBin = stage.world === 9 ? (heatLevel > 72 ? "high" : heatLevel > 38 ? "mid" : "low") : "na";
+    const rush = isFeeding() ? "rush" : "calm";
+    const key = `${stage.world}|${currentPhase}|${currentWeather}|${rush}|${warmBin}|${heatBin}`;
+    if (!force && key === worldVisualKey)
+        return;
+    worldVisualKey = key;
+    for (let i = 1; i <= 10; i++)
+        gameScreen.classList.toggle(`world-${i}`, i === stage.world);
+    gameScreen.classList.toggle("visual-rush", isFeeding());
+    gameScreen.classList.toggle("visual-warm-low", stage.world === 7 && fireWarmth < 35);
+    gameScreen.classList.toggle("visual-heat-high", stage.world === 9 && heatLevel > 72);
+    if (worldSceneWorld !== stage.world) {
+        worldSceneWorld = stage.world;
+        worldScenery.innerHTML = worldSceneSvg(stage.world);
+    }
+    const meta = worldVisualMeta(stage.world);
+    worldScenery.dataset.worldName = meta.name;
+    worldScenery.dataset.rule = meta.rule;
+}
+function showWorldIntro() {
+    const meta = worldVisualMeta(stage.world);
+    worldIntroKicker.textContent = `WORLD ${stage.world} · STAGE ${stage.id}`;
+    worldIntroTitle.textContent = meta.name;
+    worldIntroSubtitle.textContent = `${meta.subtitle} · ${meta.rule}`;
+    worldIntro.classList.remove("show");
+    void worldIntro.offsetWidth;
+    worldIntro.classList.add("show");
+    clearTimeout(worldIntroTimer);
+    worldIntroTimer = window.setTimeout(() => worldIntro.classList.remove("show"), 2100);
+}
 const $ = (id) => document.getElementById(id);
 const coverScreen = $("coverScreen"), enterGameButton = $("enterGameButton"), installAppButton = $("installAppButton");
-const startScreen = $("startScreen"), gameScreen = $("gameScreen"), resultScreen = $("resultScreen");
+const startScreen = $("startScreen"), gameScreen = $("gameScreen"), resultScreen = $("resultScreen"), worldScenery = $("worldScenery"), worldIntro = $("worldIntro"), worldIntroKicker = $("worldIntroKicker"), worldIntroTitle = $("worldIntroTitle"), worldIntroSubtitle = $("worldIntroSubtitle");
 const startButton = $("startButton"), nextStageButton = $("nextStageButton"), restartButton = $("restartButton"), backButton = $("backButton"), quitButton = $("quitButton"), pauseButton = $("pauseButton");
 const resetSaveButton = $("resetSaveButton"), finishSkewerButton = $("finishSkewerButton"), clearSkewerButton = $("clearSkewerButton"), burnButton = $("burnButton");
 const helpButton = $("helpButton"), helpDialog = $("helpDialog"), closeHelpButton = $("closeHelpButton");
@@ -650,7 +723,23 @@ let currentWeather = "clear", weatherEndAt = 0, weatherTriggered = new Set(), mi
 const rand = (a, b) => Math.random() * (b - a) + a;
 const choice = (a) => a[Math.floor(Math.random() * a.length)];
 const fmt = (s) => { const x = Math.max(0, Math.ceil(s)); return `${String(Math.floor(x / 60)).padStart(2, "0")}:${String(x % 60).padStart(2, "0")}`; };
-const recipeEmoji = (r) => r.map(x => foods[x].emoji).join("");
+const foodSvg = (id) => {
+    switch (id) {
+        case "grasshopper": return `<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 35 L10 27 M21 40 L9 44 M42 35 L54 24 M43 40 L56 47" stroke="#567a39" stroke-width="3"/><path d="M28 34 L18 20 M31 36 L19 14" stroke="#6d8d4a" stroke-width="3"/><ellipse cx="28" cy="37" rx="11" ry="8" fill="#8fbe55" stroke="#4b6f33" stroke-width="2.5"/><ellipse cx="41" cy="34" rx="8" ry="6" fill="#aed46e" stroke="#4b6f33" stroke-width="2.5"/><circle cx="47" cy="31" r="4" fill="#7fa94d" stroke="#4b6f33" stroke-width="2.2"/><path d="M49 27 L55 20 M50 29 L58 25" stroke="#4b6f33" stroke-width="2.2"/></g></svg>`;
+        case "caterpillar": return `<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="38" r="7" fill="#9ad368" stroke="#557a3c" stroke-width="2.2"/><circle cx="25" cy="36" r="8" fill="#8fc85c" stroke="#557a3c" stroke-width="2.2"/><circle cx="35" cy="36" r="8" fill="#98d164" stroke="#557a3c" stroke-width="2.2"/><circle cx="45" cy="38" r="7" fill="#8bc058" stroke="#557a3c" stroke-width="2.2"/><circle cx="52" cy="34" r="6" fill="#b4df7f" stroke="#557a3c" stroke-width="2.2"/><circle cx="54" cy="31" r="1.2" fill="#182010"/><circle cx="50" cy="31" r="1.2" fill="#182010"/><path d="M54 27 L57 23 M50 27 L47 23" stroke="#557a3c" stroke-width="2"/></g></svg>`;
+        case "beetle": return `<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="32" cy="38" rx="14" ry="17" fill="#7b4d28" stroke="#40230f" stroke-width="2.6"/><path d="M32 22 V55" stroke="#d29b53" stroke-width="2.2"/><ellipse cx="32" cy="22" rx="9" ry="7" fill="#563117" stroke="#40230f" stroke-width="2.4"/><path d="M22 35 L11 29 M22 41 L11 43 M42 35 L53 29 M42 41 L53 43 M27 25 L20 16 M37 25 L44 16" stroke="#40230f" stroke-width="2.4"/></g></svg>`;
+        case "aquaticInsect": return `<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="32" cy="37" rx="10" ry="14" fill="#6a9ec8" stroke="#2d5775" stroke-width="2.4"/><ellipse cx="32" cy="22" rx="7" ry="6" fill="#8fc0df" stroke="#2d5775" stroke-width="2.2"/><path d="M32 14 V8 M24 36 L13 29 M24 41 L12 44 M40 36 L51 29 M40 41 L52 44 M27 47 L19 55 M37 47 L45 55" stroke="#2d5775" stroke-width="2.3"/></g></svg>`;
+        case "frog": return `<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 42 q14 16 28 0 q-1 -15 -14 -15 q-13 0 -14 15 z" fill="#7fbf55" stroke="#486f33" stroke-width="2.5"/><circle cx="24" cy="24" r="6" fill="#91d168" stroke="#486f33" stroke-width="2.3"/><circle cx="40" cy="24" r="6" fill="#91d168" stroke="#486f33" stroke-width="2.3"/><circle cx="24" cy="24" r="1.8" fill="#15210e"/><circle cx="40" cy="24" r="1.8" fill="#15210e"/><path d="M27 35 q5 4 10 0" stroke="#315021" stroke-width="2.2"/><path d="M18 44 L11 52 M46 44 L53 52 M25 48 L21 56 M39 48 L43 56" stroke="#486f33" stroke-width="2.2"/></g></svg>`;
+        case "lizard": return `<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 40 q10 -11 22 -10 q8 0 14 4 q4 3 1 7 q-4 6 -13 6 q-13 1 -24 -7 z" fill="#9bbc56" stroke="#5a7330" stroke-width="2.4"/><path d="M50 38 q8 -1 10 4 q2 5 -7 8" stroke="#d0873c" stroke-width="3.2"/><circle cx="43" cy="35" r="2" fill="#1d2410"/><path d="M22 36 L17 29 M27 45 L22 53 M34 36 L37 29 M38 46 L42 53" stroke="#5a7330" stroke-width="2.3"/></g></svg>`;
+        case "mouse": return `<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="31" cy="39" rx="14" ry="11" fill="#a9b0b5" stroke="#59646c" stroke-width="2.4"/><circle cx="23" cy="28" r="6" fill="#c4cbd0" stroke="#59646c" stroke-width="2.3"/><circle cx="34" cy="27" r="6" fill="#c4cbd0" stroke="#59646c" stroke-width="2.3"/><circle cx="40" cy="36" r="7" fill="#b7bec4" stroke="#59646c" stroke-width="2.3"/><circle cx="42" cy="35" r="1.7" fill="#1f2326"/><circle cx="46" cy="38" r="1.4" fill="#cf8f9e"/><path d="M48 42 q8 4 10 11" stroke="#c58a97" stroke-width="2.3"/></g></svg>`;
+        case "fish": return `<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 35 q10 -12 24 -10 q10 1 17 10 q-8 10 -17 10 q-14 2 -24 -10 z" fill="#78c1db" stroke="#2d6980" stroke-width="2.4"/><path d="M53 35 l8 -8 v16 z" fill="#4e98b4" stroke="#2d6980" stroke-width="2.2"/><path d="M27 27 l5 -6 l6 7" fill="#4e98b4" stroke="#2d6980" stroke-width="2.2"/><circle cx="20" cy="34" r="2" fill="#162028"/><path d="M21 39 q9 4 18 0" stroke="#4e98b4" stroke-width="2"/></g></svg>`;
+        case "smallBird": return `<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="30" cy="38" rx="14" ry="10" fill="#ccb089" stroke="#7a5938" stroke-width="2.4"/><circle cx="41" cy="32" r="7" fill="#d8c09a" stroke="#7a5938" stroke-width="2.2"/><path d="M46 33 l9 2 l-8 4 z" fill="#d89f47" stroke="#7a5938" stroke-width="1.8"/><path d="M22 36 l-7 -6 l2 10 z" fill="#af8d62" stroke="#7a5938" stroke-width="2"/><circle cx="43" cy="31" r="1.7" fill="#1f1b13"/><path d="M27 46 L25 53 M33 46 L31 53" stroke="#7a5938" stroke-width="2.1"/></g></svg>`;
+    }
+};
+const foodArt = (id, size = "normal") => `<span class="food-art size-${size} food-${id}" aria-label="${foods[id].name}" title="${foods[id].name}">${foodSvg(id)}</span>`;
+const foodInlineLabel = (id) => `<span class="food-inline-label">${foodArt(id, "mini")}<span>${foods[id].name}</span></span>`;
+const recipeEmoji = (r, state = "fresh", context = "order") => `<span class="recipe-art recipe-${context} state-${state}"><span class="recipe-stick" aria-hidden="true"></span>${r.map(x => foodArt(x, context === "summary" || context === "inline" ? "mini" : "normal")).join("")}</span>`;
+const skewerMarkup = (r, state = "fresh") => r.length ? `<div class="skewer-stack state-${state}">${r.map(id => `<span class="skewer-item">${foodArt(id, "normal")}</span>`).join("")}</div>` : `<span class="empty-skewer">재료를 순서대로 꽂으세요</span>`;
 const eq = (a, b) => a.length === b.length && a.every((v, i) => v === b[i]);
 const isBurning = () => Date.now() < burningActiveUntil, isFeeding = () => Date.now() < feedingActiveUntil, elapsed = () => running ? (Date.now() - startedAt) / 1000 : 0;
 function weatherCookMult() { if (currentWeather === "rain")
@@ -722,6 +811,7 @@ function syncTimePhase(force = false) { var _a; const info = phaseInfo(); const 
     if (!force)
         showEvent(`${phaseName(currentPhase)} · GUEST POOL SHIFT`);
     renderFoodButtons();
+    renderWorldVisuals(true);
 } }
 function subGoalComplete() { const g = stage.subGoal; if (!g)
     return false; if (g.kind === "perfect")
@@ -794,7 +884,7 @@ function baseEnvironmentLabel() { var _a; if (stage.world === 1)
     return `🏔️ 고도 ${stage.altitude} · 적응 ${step}/3`;
 } if (stage.world === 5 && ((_a = stage.migrationWaves) === null || _a === void 0 ? void 0 : _a.length))
     return isFeeding() ? "🪽 MIGRATION WAVE · +15%" : "🪽 이동 파동 대기"; if (stage.world === 6)
-    return `⭐ Favourite · ${stage.favoriteFood ? foods[stage.favoriteFood].emoji + foods[stage.favoriteFood].name : "-"}`; if (stage.world === 7)
+    return `⭐ Favourite · ${stage.favoriteFood ? foods[stage.favoriteFood].name : "-"}`; if (stage.world === 7)
     return `❄️ FIRE WARMTH · ${Math.round(fireWarmth)}%`; if (stage.world === 8)
     return isFeeding() ? "🐜 INSECT EMERGENCE · +20%" : "🦒 사바나 영업"; if (stage.world === 9)
     return `🔥 HEAT · ${Math.round(heatLevel)}%`; if (stage.world === 10)
@@ -883,6 +973,8 @@ function startGame() {
     setStatus(`${stage.habitat} 영업 시작!`);
     syncTimePhase(true);
     renderAll();
+    renderWorldVisuals(true);
+    showWorldIntro();
     cancelAnimationFrame(animationFrame);
     animationFrame = requestAnimationFrame(loop);
 }
@@ -980,6 +1072,7 @@ function loop() {
         renderBurners();
         updateHud();
         renderChefVisual();
+        renderWorldVisuals();
         timeLabel.textContent = fmt((gameEndAt - now) / 1000);
     }
     else {
@@ -1200,7 +1293,7 @@ function activateBurning() { if (paused || burningGauge < 100 || isBurning())
     return; const now = Date.now(); burningGauge = 0; if (stage.world === 7)
     fireWarmth = 100; if (stage.world === 9)
     heatLevel = Math.max(0, heatLevel - 45); burningStartedAt = now; burningActiveUntil = now + 15000; syncBurners(); showEvent(`🔥 ${shrikeName(selectedShrike)} BURNING!`); setStatus(selectedShrike === "tiger" ? "조리속도 +40%!" : selectedShrike === "brown" ? "콤보 점수 가속!" : selectedShrike === "chinese-grey" ? "8초 주문 타이머 정지 → 7초 절반 속도!" : selectedShrike === "long-tailed" ? "임시 화구 +2 · 조리 +20%!" : selectedShrike === "grey-backed" ? "고도·한기 페널티 무효화!" : selectedShrike === "isabelline" ? "Migration Wave 점수 +40%!" : selectedShrike === "red-tailed" ? "Rush 조리속도 +25%!" : selectedShrike === "great-grey" ? "환경 페널티 완화 강화!" : "균형 강화!"); }
-function renderAll() { renderMeta(); renderFoodButtons(); renderSkewer(); renderOrders(); renderBurners(); renderSelected(); updateHud(); renderChefVisual(true); }
+function renderAll() { renderMeta(); renderFoodButtons(); renderSkewer(); renderOrders(); renderBurners(); renderSelected(); updateHud(); renderChefVisual(true); renderWorldVisuals(true); }
 let startFlowStep = "world", startWorldChosen = false, startStageChosen = false, startChefChosen = false;
 function worldFlowName(world) { const names = ["", "🌾 WORLD 1 · 농경지", "🌿 WORLD 2 · 강을 따라서", "⛰️ WORLD 3 · 산과 밤", "🏔️ WORLD 4 · 히말라야", "🪽 WORLD 5 · 대초원", "🌻 WORLD 6 · 유럽·지중해", "❄️ WORLD 7 · 북미", "🦒 WORLD 8 · 동아프리카", "☀️ WORLD 9 · 남아프리카", "🌴 WORLD 10 · 아프리카 섬"]; return names[world]; }
 function setStartFlow(step) {
@@ -1242,7 +1335,7 @@ function renderStages() { var _a, _b, _c; stageButtonsEl.innerHTML = ""; const w
     btn.addEventListener("click", () => { selectedStage = id; startStageChosen = true; startChefChosen = false; renderStageEcology(); selectedStageFlowTitle.textContent = `${c.icon} Stage ${c.id} · ${c.name}`; renderShrikes(); setStartFlow("chef"); });
     stageButtonsEl.appendChild(btn);
 } }
-function renderStageEcology() { var _a; const c = stages[selectedStage]; const focusFoods = stageFoodEntries(c).slice(0, 3).map(([id, v]) => `${foods[id].emoji}${foods[id].name} ${Math.round(v * 100)}%`).join(" · "); const otherFoods = stageFoodEntries(c).slice(3, 6).map(([id, v]) => `${foods[id].emoji}${foods[id].name} ${Math.round(v * 100)}%`).join(" · "); const coreIds = coreGuests(c), core = coreIds.map(id => guests[id].name).join(" · "); const others = c.guestPool.filter(id => !coreIds.includes(id)).slice(0, 4).map(id => guests[id].name).join(" · "); const wx = (c.weather || []).map(w => `${w.type === "rain" ? "🌧 비" : w.type === "wind" ? "💨 바람" : w.type === "cold" ? "❄️ 한기" : "☀️ 햇빛"} ${w.duration}s`).join(" · ") || "고정 날씨"; const phases = (c.timePhases || []).map(p => `${phaseName(p.type)} ${p.at}s`).join(" → ") || "☀️ 낮"; const migration = ((_a = c.migrationWaves) === null || _a === void 0 ? void 0 : _a.length) ? `🪽 Migration Wave · ${c.migrationWaves.map(x => x + "s").join(" · ")}` : ""; stageEcology.innerHTML = `<div><span class="eco-label">${c.icon} HABITAT</span><b>${c.habitat}</b><p>World ${c.world}</p><p><b>${worldRuleDescription(c.world)}</b></p></div><div><span class="eco-label">🎯 ORDER FOCUS</span><p><b>${focusFoods}</b></p>${otherFoods ? `<p>${otherFoods}</p>` : ""}</div><div><span class="eco-label">🐦 CORE GUESTS</span><p><b>${core}</b></p>${others ? `<p>${others}${c.guestPool.length > 7 ? " 외" : ""}</p>` : ""}</div><div><span class="eco-label">🌓 TIME / WEATHER</span><p>${phases}</p><p>${c.altitude ? `🏔️ 고도 단계 ${c.altitude} · 기본 조리속도 -${c.altitude * 5}%` : wx}</p><p>${c.altitude ? wx : migration}</p>${c.favoriteFood ? `<p>⭐ Favourite · ${foods[c.favoriteFood].emoji}${foods[c.favoriteFood].name}</p>` : ""}${c.frost ? `<p>❄️ Frost 단계 ${c.frost}</p>` : ""}${c.heat ? `<p>🔥 Heat 단계 ${c.heat}</p>` : ""}${c.subGoal ? `<p><b>🎯 ${c.subGoal.label}</b></p>` : ""}</div>`; }
+function renderStageEcology() { var _a; const c = stages[selectedStage]; const focusFoods = stageFoodEntries(c).slice(0, 3).map(([id, v]) => `${foodInlineLabel(id)} ${Math.round(v * 100)}%`).join(" · "); const otherFoods = stageFoodEntries(c).slice(3, 6).map(([id, v]) => `${foodInlineLabel(id)} ${Math.round(v * 100)}%`).join(" · "); const coreIds = coreGuests(c), core = coreIds.map(id => guests[id].name).join(" · "); const others = c.guestPool.filter(id => !coreIds.includes(id)).slice(0, 4).map(id => guests[id].name).join(" · "); const wx = (c.weather || []).map(w => `${w.type === "rain" ? "🌧 비" : w.type === "wind" ? "💨 바람" : w.type === "cold" ? "❄️ 한기" : "☀️ 햇빛"} ${w.duration}s`).join(" · ") || "고정 날씨"; const phases = (c.timePhases || []).map(p => `${phaseName(p.type)} ${p.at}s`).join(" → ") || "☀️ 낮"; const migration = ((_a = c.migrationWaves) === null || _a === void 0 ? void 0 : _a.length) ? `🪽 Migration Wave · ${c.migrationWaves.map(x => x + "s").join(" · ")}` : ""; stageEcology.innerHTML = `<div><span class="eco-label">${c.icon} HABITAT</span><b>${c.habitat}</b><p>World ${c.world}</p><p><b>${worldRuleDescription(c.world)}</b></p></div><div><span class="eco-label">🎯 ORDER FOCUS</span><p><b>${focusFoods}</b></p>${otherFoods ? `<p>${otherFoods}</p>` : ""}</div><div><span class="eco-label">🐦 CORE GUESTS</span><p><b>${core}</b></p>${others ? `<p>${others}${c.guestPool.length > 7 ? " 외" : ""}</p>` : ""}</div><div><span class="eco-label">🌓 TIME / WEATHER</span><p>${phases}</p><p>${c.altitude ? `🏔️ 고도 단계 ${c.altitude} · 기본 조리속도 -${c.altitude * 5}%` : wx}</p><p>${c.altitude ? wx : migration}</p>${c.favoriteFood ? `<p>⭐ Favourite · ${foodInlineLabel(c.favoriteFood)}</p>` : ""}${c.frost ? `<p>❄️ Frost 단계 ${c.frost}</p>` : ""}${c.heat ? `<p>🔥 Heat 단계 ${c.heat}</p>` : ""}${c.subGoal ? `<p><b>🎯 ${c.subGoal.label}</b></p>` : ""}</div>`; }
 function stageFoodEntries(c) { return Object.entries(c.foodAvailability).sort((a, b) => b[1] - a[1]); }
 function stageGuestFit(c, id) { const g = guests[id], availability = (food) => c.foodAvailability[food] || 0; return .35 + g.diet.primary.reduce((sum, food) => sum + availability(food), 0) * 1.35 + g.diet.secondary.reduce((sum, food) => sum + availability(food), 0) * .48 + g.diet.rare.reduce((sum, food) => sum + availability(food), 0) * .12; }
 function coreGuests(c) { return [...c.guestPool].sort((a, b) => stageGuestFit(c, b) - stageGuestFit(c, a)).slice(0, 3); }
@@ -1256,27 +1349,30 @@ function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가�
     persist();
     renderUpgrades();
 } }; card.appendChild(btn); upgradeList.appendChild(card); }); }
-function renderFoodButtons() { foodButtonsEl.innerHTML = ""; stageFoodPool().forEach(id => { const f = foods[id], btn = document.createElement("button"); btn.className = "food-button"; btn.innerHTML = `<span class="food-emoji">${f.emoji}</span>${f.name}<small>${f.cookSeconds}s</small>`; btn.dataset.foodId = id; foodButtonsEl.appendChild(btn); }); foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, stageFoodPool().length))},1fr)`; }
-function renderSkewer() { skewerEl.innerHTML = currentSkewer.length ? currentSkewer.map(id => `<span class="skewer-item">${foods[id].emoji}</span>`).join("") : `<span class="empty-skewer">재료를 순서대로 꽂으세요</span>`; }
-function renderSelected() { const o = orders.find(x => x.id === selectedOrderId); selectedOrderSummary.innerHTML = o ? `🎯 우선 매칭 · <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe)}</span>${o.special ? " · ⭐ SPECIAL" : ""}${o.signature ? " · 🌿 SIGNATURE" : ""}` : "✨ AUTO MATCH · 주문 선택 없이 조립 가능"; }
-function renderOrders() { const now = Date.now(); ordersEl.innerHTML = ""; orders.forEach(o => { const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button"), hasKorean = /[가-힣]/.test(o.guest.name), koreanName = hasKorean ? `<strong class="name primary-name">${o.guest.name}</strong>` : ""; btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}${o.signature ? " signature" : ""}`; btn.innerHTML = `${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}${o.signature ? '<span class="signature-badge">SIGNATURE +10%</span>' : ""}<div class="guest-order-portrait">${guestPortraitSvg(o.guest, true)}</div>${koreanName}${hasKorean ? `<div class="bird-en">${o.guest.englishName}</div>` : `<strong class="bird-en primary-name">${o.guest.englishName}</strong>`}<i class="bird-scientific">${o.guest.scientificName}</i><div class="recipe">${recipeEmoji(o.recipe)}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`; btn.dataset.orderId = String(o.id); ordersEl.appendChild(btn); }); if (!orders.length)
+function renderFoodButtons() { foodButtonsEl.innerHTML = ""; stageFoodPool().forEach(id => { const f = foods[id], btn = document.createElement("button"); btn.className = "food-button"; btn.innerHTML = `<span class="food-button-art">${foodArt(id, "button")}</span><span class="food-button-name">${f.name}</span><small>${f.cookSeconds.toFixed(1)}s</small>`; btn.dataset.foodId = id; foodButtonsEl.appendChild(btn); }); foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, stageFoodPool().length))},1fr)`; }
+function renderSkewer() { skewerEl.innerHTML = skewerMarkup(currentSkewer); }
+function renderSelected() { const o = orders.find(x => x.id === selectedOrderId); selectedOrderSummary.innerHTML = o ? `🎯 우선 매칭 · <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe, "fresh", "summary")}</span>${o.special ? " · ⭐ SPECIAL" : ""}${o.signature ? " · 🌿 SIGNATURE" : ""}` : "✨ AUTO MATCH · 주문 선택 없이 조립 가능"; }
+function renderOrders() { const now = Date.now(); ordersEl.innerHTML = ""; orders.forEach(o => { const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button"), hasKorean = /[가-힣]/.test(o.guest.name), koreanName = hasKorean ? `<strong class="name primary-name">${o.guest.name}</strong>` : ""; btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}${o.signature ? " signature" : ""}`; btn.innerHTML = `${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}${o.signature ? '<span class="signature-badge">SIGNATURE +10%</span>' : ""}<div class="guest-order-portrait">${guestPortraitSvg(o.guest, true)}</div>${koreanName}${hasKorean ? `<div class="bird-en">${o.guest.englishName}</div>` : `<strong class="bird-en primary-name">${o.guest.englishName}</strong>`}<i class="bird-scientific">${o.guest.scientificName}</i><div class="recipe">${recipeEmoji(o.recipe, "fresh", "order")}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`; btn.dataset.orderId = String(o.id); ordersEl.appendChild(btn); }); if (!orders.length)
     ordersEl.innerHTML = '<div class="hint">다음 손님을 기다리는 중...</div>'; renderGuestPerch(); }
-function renderBurners() { const now = Date.now(); burnersEl.innerHTML = ""; burners.forEach(b => { const btn = document.createElement("button"); btn.className = `burner ${b.state}`; let state = "빈 화구", pct = 0; if (b.state === "cooking") {
+function renderBurners() { const now = Date.now(); burnersEl.innerHTML = ""; burners.forEach(b => { const btn = document.createElement("button"); btn.className = `burner ${b.state}`; let state = "빈 화구", pct = 0, visualState = "fresh"; if (b.state === "cooking") {
     const e = (now - b.startedAt) / 1000;
     pct = Math.min(100, e / b.cookSeconds * 100);
     state = `조리 중 ${Math.max(0, b.cookSeconds - e).toFixed(1)}s`;
+    visualState = "cooking";
 } if (b.state === "ready") {
     pct = 100;
     state = "READY · 클릭해서 서빙";
+    visualState = "ready";
 } if (b.state === "overcooked") {
     pct = 100;
     state = "OVERCOOKED · 지금 서빙";
-} btn.innerHTML = `<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}</div><div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe) : "EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`; btn.dataset.burnerIndex = String(b.index); burnersEl.appendChild(btn); }); }
+    visualState = "overcooked";
+} btn.innerHTML = `<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}</div><div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe, visualState, "burner") : "EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`; btn.dataset.burnerIndex = String(b.index); burnersEl.appendChild(btn); }); }
 function renderBirdBook() { birdBookList.innerHTML = ""; Object.keys(guests).forEach(id => { const g = guests[id], seen = devMode || save.discoveredBirds.includes(id), card = document.createElement("article"); card.className = "bird-card" + (seen ? "" : " locked"); if (!seen) {
     card.innerHTML = `<div class="bird-card-emoji">❔</div><div><b>미발견 조류</b><small>새로운 월드와 스테이지에서 만나보세요.</small></div>`;
 }
 else {
-    const primary = g.diet.primary.map(x => foods[x].emoji + foods[x].name).join(" · "), secondary = g.diet.secondary.slice(0, 3).map(x => foods[x].emoji + foods[x].name).join(" · ");
+    const primary = g.diet.primary.map(x => foodInlineLabel(x)).join(" · "), secondary = g.diet.secondary.slice(0, 3).map(x => foodInlineLabel(x)).join(" · ");
     card.innerHTML = `<div class="bird-card-emoji bird-card-portrait">${guestPortraitSvg(g)}</div><div><b>${g.name} <span>${g.englishName}</span></b><i>${g.scientificName}</i><p>${g.note}</p><small>주요 먹이 · ${primary}</small>${secondary ? `<small>보조 먹이 · ${secondary}</small>` : ""}</div>`;
 } birdBookList.appendChild(card); }); }
 function renderShrikeDex() { const defs = [{ id: "bull-headed", emoji: "🐦", ko: "때까치", en: "Bull-headed Shrike", role: "⚖️ Balance", passive: "기본 능력 없음", burn: "15초간 조립·조리·대기시간을 균형 강화", unlock: "기본 캐릭터" }, { id: "tiger", emoji: "🐅", ko: "칡때까치", en: "Tiger Shrike", role: "🔥 Cooking", passive: "조리속도 +10%", burn: "15초간 조리속도 +40%", unlock: "Stage 3 이상 ★★" }, { id: "brown", emoji: "🟤", ko: "노랑때까치", en: "Brown Shrike", role: "⚡ Combo", passive: "Combo가 높을수록 점수 증가", burn: "Burning 중 콤보 기반 보너스 강화", unlock: "Stage 6 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", ko: "물때까치", en: "Chinese Grey Shrike", role: "⏱ Control", passive: "주문 제한시간 +10%", burn: "8초 주문 타이머 정지 + 7초 50% 감속", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", ko: "긴꼬리때까치", en: "Long-tailed Shrike", role: "🍢 Capacity", passive: "화구 +2, 조리속도 -10%", burn: "15초간 임시 화구 +2 + 조리속도 +20%", unlock: "Stage 18+ 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", ko: "재때까치", en: "Northern Shrike", role: "📈 Growth", passive: "스테이지 획득 XP +10%", burn: "15초간 기본 균형 강화", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", ko: "회색등때까치", en: "Grey-backed Shrike", role: "🏔️ Altitude", passive: "고도 조리 페널티 50% 완화", burn: "Burning 동안 고도 페널티 제거 · 한기 페널티 제거", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", ko: "사막때까치", en: "Isabelline Shrike", role: "🪽 Migration", passive: "Migration Wave 중 점수 +20%", burn: "15초간 Migration/Rush 점수 +40%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", ko: "붉은꼬리때까치", en: "Red-tailed Shrike", role: "⚡ Rush", passive: "Migration Wave 중 점수 +15%", burn: "15초간 조리속도 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", ko: "초원때까치", en: "Great Grey Shrike", role: "🌍 Environment", passive: "비·한기 조리 페널티 50% 완화", burn: "Burning 동안 비·한기 페널티 제거", unlock: "Stage 60 ★★" }]; shrikeDexList.innerHTML = ""; defs.forEach(d => { const open = devMode || save.unlockedShrikes.includes(d.id), card = document.createElement("article"); card.className = "dex-card" + (open ? "" : " locked"); card.innerHTML = open ? `<div class="dex-emoji shrike-dex-portrait">${shrikePortraitSvg(d.id, "idle", false)}</div><div><b>${d.ko} <span>${d.en}</span></b><small>${d.role}</small><p><strong>Passive</strong> · ${d.passive}</p><p><strong>Burning</strong> · ${d.burn}</p><small>Unlock · ${d.unlock}</small></div>` : `<div class="dex-emoji">❔</div><div><b>LOCKED SHRIKE</b><small>${d.unlock}</small></div>`; shrikeDexList.appendChild(card); }); }

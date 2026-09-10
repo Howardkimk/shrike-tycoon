@@ -2285,3 +2285,119 @@ body.in-game::after{opacity:.16}
   .game-screen.stage-enter>.panel,.game-screen.stage-enter>.work-area,.game-screen.stage-enter>.game-actions,.result-screen.result-enter{animation:none!important;transition:none!important}
   .game-screen.screen-perfect::after,.game-screen.screen-oops::after,.game-screen.burning-burst::after{display:none!important}
 }
+
+
+/* =========================================================
+   0.7.6.1 · Mobile Order Density Hotfix
+   Five or more live orders switch to a compact, non-overlapping ticket layout.
+   Gameplay/order capacity is unchanged; this is display-only.
+   ========================================================= */
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1100px){
+  .orders-grid.compact-orders{
+    align-content:start!important;
+    grid-auto-rows:minmax(48px,1fr)!important;
+    overflow-x:hidden!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    padding-right:1px;
+  }
+  .orders-grid.compact-orders .order-card,
+  .orders-grid.compact-orders .order-card.special,
+  .orders-grid.compact-orders .order-card.signature,
+  .orders-grid.compact-orders .order-card.special.signature{
+    min-height:48px!important;
+    height:100%!important;
+    padding:4px 3px 3px!important;
+    row-gap:0!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-template-rows:auto minmax(15px,auto) auto!important;
+    align-content:center!important;
+    overflow:hidden!important;
+  }
+  /* In high-density play, taxonomy detail yields to identity + recipe + timer. */
+  .orders-grid.compact-orders .bird-scientific,
+  .orders-grid.compact-orders .bird-en:not(.primary-name),
+  .orders-grid.compact-orders .guest-order-portrait{
+    display:none!important;
+  }
+  .orders-grid.compact-orders .name,
+  .orders-grid.compact-orders .bird-en.primary-name{
+    display:block!important;
+    grid-column:1/-1!important;
+    width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:0 2px!important;
+    font-size:clamp(.44rem,1.12vw,.51rem)!important;
+    font-weight:900!important;
+    line-height:1.02!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+  .orders-grid.compact-orders .recipe{
+    grid-column:1/-1!important;
+    width:100%!important;
+    min-height:15px!important;
+    margin:0!important;
+    padding:0!important;
+    line-height:1!important;
+  }
+  .orders-grid.compact-orders .recipe .recipe-art{
+    min-height:15px!important;
+    padding:1px 5px!important;
+    gap:1px!important;
+  }
+  .orders-grid.compact-orders .recipe .food-art.size-normal{
+    width:14px!important;
+    height:14px!important;
+  }
+  .orders-grid.compact-orders .recipe .recipe-stick{
+    left:4px!important;
+    right:4px!important;
+    height:3px!important;
+  }
+  .orders-grid.compact-orders .timer{
+    grid-column:1/-1!important;
+    width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:3px!important;
+    font-size:.40rem!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+  .orders-grid.compact-orders .special-badge,
+  .orders-grid.compact-orders .signature-badge{
+    top:1px!important;
+    font-size:.25rem!important;
+    line-height:1!important;
+    padding:0 1px!important;
+    max-width:42%!important;
+  }
+  .orders-grid.compact-orders .special-badge{left:1px!important}
+  .orders-grid.compact-orders .signature-badge{right:1px!important}
+}
+
+/* Very short landscape phones get a slightly smaller guaranteed ticket height. */
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1024px) and (max-height:430px){
+  .orders-grid.compact-orders{grid-auto-rows:minmax(43px,1fr)!important}
+  .orders-grid.compact-orders .order-card,
+  .orders-grid.compact-orders .order-card.special,
+  .orders-grid.compact-orders .order-card.signature,
+  .orders-grid.compact-orders .order-card.special.signature{
+    min-height:43px!important;
+    padding:3px 2px 2px!important;
+    grid-template-rows:auto minmax(13px,auto) auto!important;
+  }
+  .orders-grid.compact-orders .name,
+  .orders-grid.compact-orders .bird-en.primary-name{font-size:clamp(.40rem,1.03vw,.47rem)!important}
+  .orders-grid.compact-orders .recipe .food-art.size-normal{width:12px!important;height:12px!important}
+  .orders-grid.compact-orders .recipe .recipe-art{min-height:13px!important}
+  .orders-grid.compact-orders .timer{font-size:.36rem!important}
+}

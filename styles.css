@@ -2401,3 +2401,192 @@ body.in-game::after{opacity:.16}
   .orders-grid.compact-orders .recipe .recipe-art{min-height:13px!important}
   .orders-grid.compact-orders .timer{font-size:.36rem!important}
 }
+
+
+/* =========================================================
+   0.7.6.2 · Mobile Ingredient & Burner Scale Hotfix
+   Dense mobile ingredient pools (4+) use smaller Food Art and labels.
+   Burner flame art is reduced on touch/mobile layouts.
+   ========================================================= */
+@media (max-width:900px), (pointer:coarse){
+  .food-buttons.dense-foods .food-button{
+    min-width:0!important;
+    overflow:hidden!important;
+    gap:2px!important;
+    padding:5px 3px!important;
+  }
+  .food-buttons.dense-foods .food-button-art{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    margin:0!important;
+    line-height:1!important;
+  }
+  .food-buttons.dense-foods .food-art.size-button{
+    width:25px!important;
+    height:25px!important;
+  }
+  .food-buttons.dense-foods .food-button-name{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    font-size:.72rem!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+  .food-buttons.dense-foods .food-button small{
+    margin:0!important;
+    font-size:.50rem!important;
+    line-height:1!important;
+  }
+  .burner .flame{
+    font-size:1.08rem!important;
+    line-height:1!important;
+  }
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1100px){
+  .food-buttons.dense-foods .food-button{
+    min-height:0!important;
+    height:100%!important;
+    padding:1px 2px!important;
+    gap:0!important;
+  }
+  .food-buttons.dense-foods .food-art.size-button{
+    width:18px!important;
+    height:18px!important;
+  }
+  .food-buttons.dense-foods .food-button-name{
+    font-size:clamp(.47rem,1.15vw,.56rem)!important;
+    line-height:.98!important;
+  }
+  .food-buttons.dense-foods .food-button small{
+    font-size:clamp(.34rem,.82vw,.40rem)!important;
+    line-height:.96!important;
+  }
+  .burner .flame{
+    font-size:clamp(.62rem,1.45vw,.76rem)!important;
+    line-height:1!important;
+  }
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-height:430px) and (max-width:1024px){
+  .food-buttons.dense-foods .food-art.size-button{
+    width:16px!important;
+    height:16px!important;
+  }
+  .food-buttons.dense-foods .food-button-name{
+    font-size:.45rem!important;
+  }
+  .food-buttons.dense-foods .food-button small{
+    font-size:.32rem!important;
+  }
+  .burner .flame{
+    font-size:.58rem!important;
+  }
+}
+
+
+/* =========================================================
+   0.7.6.3 · Orientation Guidance Hotfix
+   Clear, opaque mobile orientation guidance before/after play.
+   ========================================================= */
+.mobile-orientation-guide{display:none}
+@media (pointer:coarse) and (max-width:1100px){
+  .mobile-orientation-guide{
+    width:min(680px,100%);
+    margin:4px auto 10px;
+    padding:11px 13px;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr);
+    align-items:center;
+    gap:10px;
+    border-radius:13px;
+    border:2px solid currentColor;
+    box-shadow:0 4px 0 rgba(0,0,0,.28),0 8px 18px rgba(0,0,0,.24);
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    text-align:left;
+    line-height:1.22;
+  }
+  .mobile-orientation-guide .orientation-guide-icon{
+    display:grid;
+    place-items:center;
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    font-size:1.5rem;
+    font-weight:1000;
+    background:rgba(0,0,0,.12);
+  }
+  .mobile-orientation-guide strong{
+    display:block;
+    margin:0 0 3px;
+    font-size:.86rem;
+    line-height:1.18;
+    font-weight:1000;
+    letter-spacing:-.015em;
+  }
+  .mobile-orientation-guide small{
+    display:block;
+    font-size:.68rem;
+    line-height:1.3;
+    font-weight:750;
+    opacity:.96;
+  }
+  .portrait-guide{
+    color:#2b1a08;
+    background:#ffe7a0;
+    border-color:#7a4d20;
+  }
+  .landscape-guide{
+    color:#eafff5;
+    background:#14563f;
+    border-color:#7ee5ba;
+    box-shadow:0 4px 0 #083d2b,0 0 0 2px rgba(126,229,186,.16),0 9px 20px rgba(0,0,0,.30);
+  }
+  .ready-wrap .landscape-guide{margin:0;width:min(620px,100%)}
+  .orientation-hint{
+    color:#102218!important;
+    background:#ffe7a0!important;
+    border:2px solid #7a4d20!important;
+    font-weight:950!important;
+    box-shadow:0 3px 0 rgba(0,0,0,.26)!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+  }
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1100px){
+  .world-step-scroll .portrait-guide{
+    background:#fff1bc;
+    border-color:#9b6427;
+  }
+  .ready-wrap .landscape-guide{
+    background:#0f6b49;
+    border-color:#9bf3cd;
+  }
+}
+@media (pointer:coarse) and (max-width:560px){
+  .mobile-orientation-guide{padding:9px 10px;gap:8px;margin-bottom:8px}
+  .mobile-orientation-guide .orientation-guide-icon{width:32px;height:32px;font-size:1.25rem}
+  .mobile-orientation-guide strong{font-size:.76rem}
+  .mobile-orientation-guide small{font-size:.61rem}
+}
+
+@media (pointer:coarse) and (max-width:1100px){
+  /* Keep the launch/return portrait recommendation at the top of the mobile World screen. */
+  .world-step-scroll{justify-content:flex-start!important}
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1100px) and (max-height:430px){
+  /* READY must remain readable even before the app enters its in-game landscape layout. */
+  #readyStep{overflow:auto!important}
+  .ready-wrap{place-items:center;align-content:start;gap:7px;padding:3px 6px 8px;overflow:auto}
+  .ready-wrap .landscape-guide{padding:6px 8px;margin:0}
+  .ready-wrap .landscape-guide .orientation-guide-icon{width:28px;height:28px;font-size:1.05rem}
+  .ready-wrap .landscape-guide strong{font-size:.66rem}
+  .ready-wrap .landscape-guide small{font-size:.53rem;line-height:1.16}
+  .ready-card{padding:8px 10px!important;gap:4px!important}
+  .ready-card strong{font-size:.86rem!important}
+  .ready-card span{font-size:.58rem!important}
+  .guided-start-button{min-height:36px!important;padding:5px 9px!important;font-size:.72rem!important}
+}

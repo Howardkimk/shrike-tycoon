@@ -2037,3 +2037,251 @@ body::after{
   .world-intro span{font-size:.34rem}.world-intro strong{font-size:.7rem;margin:1px 0}.world-intro small{font-size:.38rem}
 }
 @media (prefers-reduced-motion:reduce){.scene-weather-layer,.scene-accent-layer,.scene-migration{animation:none!important}.world-intro{transition:none}}
+
+
+/* =========================================================
+   0.7.4.1 · World Identity Contrast & Readability Hotfix
+   Crisp world scenery + opaque gameplay surfaces. No gameplay changes.
+   ========================================================= */
+body.in-game::before{opacity:0!important;filter:none!important;background-image:none!important}
+body.in-game::after{opacity:.16}
+.game-screen{
+  --world-accent:#e8c46a;
+  --world-panel-a:29,42,34;
+  --world-panel-b:15,27,22;
+}
+.world-scenery{
+  opacity:1!important;
+  filter:none!important;
+  background:linear-gradient(180deg,var(--world-sky-top),var(--world-sky-bottom))!important;
+  box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--world-accent) 24%,transparent),inset 0 -70px 60px rgba(3,11,8,.18)!important;
+}
+.world-scenery svg{filter:none!important;opacity:1!important}
+.world-scenery::after{background:linear-gradient(180deg,transparent 70%,rgba(3,10,8,.10) 88%,rgba(3,10,8,.22))!important}
+.world-scenery::before{
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  background:rgba(8,15,12,.90)!important;border-color:color-mix(in srgb,var(--world-accent) 50%,#59472e)!important;
+  color:#fff1cf!important;box-shadow:0 2px 8px rgba(0,0,0,.28)
+}
+.world-intro{
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  background:linear-gradient(180deg,rgba(25,31,25,.98),rgba(10,17,13,.99))!important;
+  border-color:color-mix(in srgb,var(--world-accent) 55%,#5e4b31)!important;
+}
+.game-screen .panel{
+  background:linear-gradient(180deg,rgba(var(--world-panel-a),.992),rgba(var(--world-panel-b),.995))!important;
+  border-color:color-mix(in srgb,var(--world-line) 82%,#d9c38e)!important;
+}
+.game-screen .orders-panel,.game-screen .skewer-panel,.game-screen .burners-panel{
+  border-top:2px solid color-mix(in srgb,var(--world-accent) 70%,var(--world-line))!important;
+  box-shadow:0 9px 22px rgba(0,0,0,.20),inset 0 1px rgba(255,255,255,.035)!important;
+}
+.game-screen .section-heading h2{color:color-mix(in srgb,var(--world-accent) 82%,#fff3d6)}
+
+/* Deliberately wider world separation than 0.7.4. */
+.game-screen.world-1{--world-sky-top:#7db5a1;--world-sky-bottom:#f0cc77;--world-ground-a:#768f3f;--world-ground-b:#405f30;--world-panel-a:47,61,37;--world-panel-b:24,36,23;--world-line:#7f7b42;--world-accent:#f1c74f;--world-glow:rgba(247,207,74,.25)}
+.game-screen.world-2{--world-sky-top:#55a0b8;--world-sky-bottom:#b8ded5;--world-ground-a:#397c69;--world-ground-b:#235747;--world-panel-a:30,57,54;--world-panel-b:14,36,34;--world-line:#4c8c84;--world-accent:#69d0db;--world-glow:rgba(82,201,220,.25)}
+.game-screen.world-3{--world-sky-top:#314f5c;--world-sky-bottom:#102b31;--world-ground-a:#234739;--world-ground-b:#102e26;--world-panel-a:27,45,43;--world-panel-b:12,29,28;--world-line:#4a6870;--world-accent:#9baee5;--world-glow:rgba(123,148,211,.20)}
+.game-screen.world-4{--world-sky-top:#7fb2ca;--world-sky-bottom:#e8f1ee;--world-ground-a:#71877c;--world-ground-b:#3c5549;--world-panel-a:43,57,56;--world-panel-b:20,34,33;--world-line:#8fa9a7;--world-accent:#e8f7f3;--world-glow:rgba(231,250,248,.26)}
+.game-screen.world-5{--world-sky-top:#ba8a4f;--world-sky-bottom:#efc770;--world-ground-a:#9c8247;--world-ground-b:#675328;--world-panel-a:59,49,29;--world-panel-b:34,27,17;--world-line:#9b7b3f;--world-accent:#e0a63e;--world-glow:rgba(238,171,55,.26)}
+.game-screen.world-6{--world-sky-top:#77b3ad;--world-sky-bottom:#f2c07b;--world-ground-a:#7c8a47;--world-ground-b:#4d6335;--world-panel-a:55,50,34;--world-panel-b:32,29,20;--world-line:#9a754d;--world-accent:#e28f58;--world-glow:rgba(228,132,74,.24)}
+.game-screen.world-7{--world-sky-top:#718fa4;--world-sky-bottom:#e3eff0;--world-ground-a:#60766f;--world-ground-b:#314c43;--world-panel-a:36,50,51;--world-panel-b:17,31,32;--world-line:#86a1a3;--world-accent:#bfe8ef;--world-glow:rgba(191,232,239,.25)}
+.game-screen.world-8{--world-sky-top:#c57a3f;--world-sky-bottom:#f2c35b;--world-ground-a:#a78439;--world-ground-b:#685226;--world-panel-a:57,44,25;--world-panel-b:34,25,15;--world-line:#9c7040;--world-accent:#f1a238;--world-glow:rgba(244,151,47,.28)}
+.game-screen.world-9{--world-sky-top:#b94e3e;--world-sky-bottom:#f09a45;--world-ground-a:#a45036;--world-ground-b:#6b3028;--world-panel-a:58,35,29;--world-panel-b:34,20,18;--world-line:#9d5843;--world-accent:#f07848;--world-glow:rgba(238,92,47,.28)}
+.game-screen.world-10{--world-sky-top:#28969f;--world-sky-bottom:#f0c46b;--world-ground-a:#397f58;--world-ground-b:#20573f;--world-panel-a:29,54,47;--world-panel-b:13,34,30;--world-line:#4c8975;--world-accent:#54d2bd;--world-glow:rgba(66,207,187,.27)}
+
+/* Different ambient shapes reinforce place identity without obscuring controls. */
+.game-screen.world-1 .scene-accent-layer{background:linear-gradient(0deg,rgba(241,199,79,.10),transparent 35%),repeating-linear-gradient(0deg,transparent 0 42px,rgba(227,211,128,.06) 43px 45px);opacity:.58}
+.game-screen.world-2 .scene-accent-layer{background:repeating-linear-gradient(0deg,transparent 0 38px,rgba(108,211,223,.11) 40px 42px,transparent 44px 76px);opacity:.50}
+.game-screen.world-3 .scene-accent-layer{background:radial-gradient(circle at 78% 18%,rgba(165,180,229,.14),transparent 24%),linear-gradient(180deg,rgba(36,54,76,.06),transparent 45%);opacity:.70}
+.game-screen.world-4 .scene-accent-layer{background:linear-gradient(180deg,rgba(237,250,249,.16),transparent 36%),radial-gradient(circle at 50% 25%,rgba(255,255,255,.11),transparent 34%);opacity:.58}
+.game-screen.world-5 .scene-accent-layer{background:radial-gradient(circle at 84% 18%,rgba(255,206,92,.17),transparent 23%),linear-gradient(0deg,rgba(203,145,53,.08),transparent 38%);opacity:.60}
+.game-screen.world-6 .scene-accent-layer{background:radial-gradient(circle at 80% 18%,rgba(248,180,101,.18),transparent 26%),linear-gradient(0deg,rgba(171,106,68,.06),transparent 42%);opacity:.60}
+.game-screen.world-7 .scene-accent-layer{background:linear-gradient(180deg,rgba(218,244,248,.18),transparent 35%),radial-gradient(circle at 20% 24%,rgba(187,222,230,.12),transparent 28%);opacity:.64}
+.game-screen.world-8 .scene-accent-layer{background:radial-gradient(circle at 84% 18%,rgba(255,188,65,.22),transparent 26%),linear-gradient(0deg,rgba(164,95,33,.08),transparent 42%);opacity:.64}
+.game-screen.world-9 .scene-accent-layer{background:radial-gradient(circle at 84% 16%,rgba(255,150,58,.20),transparent 25%),linear-gradient(0deg,rgba(166,57,36,.10),transparent 46%);opacity:.65}
+.game-screen.world-10 .scene-accent-layer{background:linear-gradient(0deg,rgba(68,211,202,.13),transparent 38%),radial-gradient(circle at 18% 20%,rgba(127,230,206,.13),transparent 26%);opacity:.64}
+
+@media(max-width:900px){
+  .world-scenery{opacity:.96!important;box-shadow:inset 0 -48px 46px rgba(3,11,8,.14)!important}
+  .game-screen .panel{background:linear-gradient(180deg,rgba(var(--world-panel-a),.996),rgba(var(--world-panel-b),.998))!important}
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1100px){
+  .world-scenery{opacity:.88!important;filter:none!important}
+  .world-scenery svg{filter:none!important;opacity:1!important}
+  .scene-accent-layer{display:block!important;opacity:.24!important;animation:none!important}
+  .scene-weather-layer{opacity:.16!important}
+  .game-screen .panel{background:linear-gradient(180deg,rgba(var(--world-panel-a),.998),rgba(var(--world-panel-b),.999))!important}
+}
+
+/* Preserve 0.7.4 dynamic world-state feedback after the contrast overrides. */
+.game-screen.phase-dusk .world-scenery::after{background:linear-gradient(180deg,rgba(202,104,77,.14),rgba(107,54,61,.12) 58%,rgba(5,12,10,.25))!important}
+.game-screen.phase-night .world-scenery::after{background:linear-gradient(180deg,rgba(19,31,56,.38),rgba(10,24,39,.40) 58%,rgba(3,8,13,.48))!important}
+.game-screen.visual-warm-low .world-scenery::after{background:linear-gradient(180deg,rgba(184,217,226,.12),transparent 42%,rgba(43,63,66,.24))!important}
+.game-screen.visual-heat-high .world-scenery::after{background:linear-gradient(180deg,rgba(255,164,65,.08),transparent 38%,rgba(134,55,28,.20))!important}
+.game-screen.visual-rush .scene-accent-layer{opacity:.82!important;animation:worldRushPulse .8s ease-in-out infinite alternate}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1100px){
+  .game-screen.visual-rush .scene-accent-layer{opacity:.34!important;animation:none!important}
+}
+
+
+/* =========================================================
+   0.7.4.2 · Ingredient Label Type Scale Hotfix
+   Slightly smaller ingredient names only; icons and hit areas stay unchanged.
+   ========================================================= */
+.food-button-name{
+  font-size:1.22rem!important;
+}
+@media(max-width:900px){
+  .food-button-name{font-size:1.08rem!important}
+}
+@media(max-width:640px){
+  .food-button-name{font-size:.59rem!important}
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1100px){
+  .food-button-name{
+    font-size:clamp(.90rem,2.05vw,1.10rem)!important;
+    line-height:1!important;
+  }
+}
+
+
+/* =========================================================
+   0.7.5 · Bird Book & ShrikeDex Collection Upgrade
+   Collection UI only; gameplay/content systems remain locked.
+   ========================================================= */
+.collection-workspace{width:min(1120px,calc(100% - 24px))!important;max-height:min(92dvh,900px)!important;padding:18px!important;overflow:hidden!important;background:linear-gradient(180deg,#efe1bd,#d7bd8f)!important;color:#382619!important;border:2px solid #6e4c30!important}
+.collection-head{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:18px;align-items:center;padding:3px 4px 12px;border-bottom:1px solid rgba(91,58,31,.24)}
+.collection-head h2{margin:2px 0 3px!important;color:#352315!important}.collection-kicker{margin:0;color:#76532f;font-size:.62rem;font-weight:1000;letter-spacing:.13em}.collection-head .hint{margin:0;color:#6f5b45!important;font-size:.76rem}
+.collection-progress{display:grid;grid-template-columns:1fr auto;gap:3px 8px;align-items:center;padding:9px 11px;border:1px solid #9b7b51;border-radius:12px;background:rgba(255,248,224,.62);box-shadow:inset 0 1px rgba(255,255,255,.52)}
+.collection-progress span,.collection-progress small{font-size:.56rem;color:#745f45}.collection-progress strong{font-size:.82rem;color:#3e2c1b}.collection-progress small{text-align:right}.collection-progress-track{grid-column:1/-1;height:6px;border-radius:999px;background:#b79c73;overflow:hidden}.collection-progress-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#507552,#8fa750)}
+.collection-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0;padding:7px 8px;border-radius:12px;background:rgba(91,64,36,.10)}.collection-filter-group{display:flex;gap:5px;flex-wrap:wrap}.collection-filter{border:1px solid #8e714e;border-radius:999px;padding:6px 11px;background:#f2e4bf;color:#604629;font-weight:900;font-size:.67rem;cursor:pointer}.collection-filter.active{background:#405f43;color:#fff1cf;border-color:#29462f;box-shadow:0 2px 0 rgba(52,39,23,.20)}
+.world-filter-label{display:flex;align-items:center;gap:6px;color:#674a2b;font-size:.61rem;font-weight:1000;letter-spacing:.07em}.world-filter-label select{max-width:170px;border:1px solid #8e714e;border-radius:9px;padding:5px 7px;background:#fff3d2;color:#4e3923;font-weight:800}.collection-toolbar-note{color:#765f43;font-size:.62rem}
+.collection-layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);gap:12px;min-height:0;height:min(62dvh,590px)}.collection-card-list{align-content:start;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px!important;overflow:auto;padding:2px 5px 10px 1px;scrollbar-width:thin;scrollbar-color:#9d8059 transparent}.collection-entry{min-height:104px!important;grid-template-columns:78px minmax(0,1fr)!important;gap:10px!important;padding:9px!important;background:rgba(255,247,221,.72)!important;border:1px solid #a88c64!important;color:#3c2a1a!important;cursor:pointer;transition:transform .12s,border-color .12s,box-shadow .12s}.collection-entry:hover{transform:translateY(-1px);border-color:#6d7c46!important}.collection-entry.selected-entry{outline:2px solid #60784d!important;outline-offset:-1px;box-shadow:0 4px 12px rgba(70,49,28,.16)}.collection-entry.locked{opacity:.66!important;filter:none!important}.collection-entry-copy{min-width:0;align-self:center}.collection-entry-copy b{display:block;color:#3b2818;font-size:.82rem;line-height:1.12}.collection-entry-copy b span{display:block!important;margin:2px 0 0!important;color:#7a664d!important;font-size:.58rem!important;font-weight:700!important}.collection-entry-copy i{display:block;margin-top:2px;color:#46736b;font-size:.57rem}.collection-entry-copy small{display:block;margin-top:5px;color:#745f45;font-size:.56rem;line-height:1.25}.entry-status{display:inline-block;margin-bottom:4px;padding:2px 5px;border-radius:999px;background:#7e6c56;color:#fff6dd;font-size:.43rem;font-weight:1000;letter-spacing:.07em}.entry-status.seen{background:#4e7655}.silhouette svg{filter:brightness(0) saturate(0)!important;opacity:.54!important}.collection-entry .bird-card-emoji,.collection-entry .dex-emoji{min-height:76px!important;border-radius:11px!important;background:radial-gradient(circle,#e1cda5,#b99b70)!important}.collection-entry .bird-card-portrait svg,.collection-entry .shrike-dex-portrait svg{width:72px!important;height:68px!important}
+.collection-detail{position:relative;overflow:auto;padding:13px;border:1px solid #967650;border-radius:16px;background:linear-gradient(180deg,rgba(255,248,224,.94),rgba(231,211,171,.94));box-shadow:inset 0 1px rgba(255,255,255,.65),0 5px 16px rgba(70,48,25,.13);color:#3e2b1a}.collection-detail::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,#536f48,#b6a45f,#6e7b50)}.detail-portrait{height:190px;display:grid;place-items:center;margin:4px 0 10px;border:1px solid #a7895e;border-radius:14px;background:radial-gradient(circle at 52% 42%,#e7d5ad 0 40%,#b69c72 74%,#806342 100%);overflow:hidden}.detail-portrait svg{width:min(240px,88%);height:175px}.shrike-detail-portrait svg{width:min(270px,94%);height:180px}.detail-copy{text-align:left}.detail-copy h3{margin:4px 0 0;color:#352315!important;font-size:1.25rem}.detail-copy h4{margin:2px 0;color:#6d5337;font-size:.82rem}.detail-copy>i{display:block;color:#397068;font-size:.72rem;margin:2px 0 7px}.detail-copy>p{color:#5d4b37;line-height:1.48;font-size:.73rem}.detail-copy>small{color:#755e43}.detail-status{display:inline-block;padding:3px 7px;border-radius:999px;background:#705e49;color:#fff4d6;font-size:.5rem;font-weight:1000;letter-spacing:.08em}.detail-status.discovered{background:#446d4b}.detail-section{margin-top:8px;padding:8px 9px;border:1px solid rgba(113,82,45,.20);border-radius:10px;background:rgba(255,250,232,.48);font-size:.68rem;line-height:1.45}.detail-section>b{display:block;margin-bottom:4px;color:#5c4024;font-size:.58rem;letter-spacing:.05em;text-transform:uppercase}.world-chip-row{display:flex;gap:4px;flex-wrap:wrap;margin:7px 0}.world-chip-row.compact{margin:5px 0 0}.collection-world-chip{display:inline-flex;align-items:center;max-width:100%;padding:3px 6px;border-radius:999px;border:1px solid rgba(62,48,30,.18);color:#fff9df;font-size:.49rem;font-weight:900;white-space:nowrap;box-shadow:inset 0 1px rgba(255,255,255,.16)}.world-chip-1{background:#77863e}.world-chip-2{background:#377b7e}.world-chip-3{background:#3c5268}.world-chip-4{background:#667d87}.world-chip-5{background:#9a7d3f}.world-chip-6{background:#a56443}.world-chip-7{background:#617c88}.world-chip-8{background:#a7752e}.world-chip-9{background:#a44f31}.world-chip-10{background:#278677}.role-pill{display:inline-flex;margin-top:5px;padding:3px 7px;border-radius:999px;color:#fff7dc;font-size:.55rem;font-weight:1000;border:1px solid rgba(60,40,20,.20)}.role-balance{--role:#68775c}.role-cooking{--role:#b25f38}.role-combo{--role:#a4772d}.role-control{--role:#4e7780}.role-capacity{--role:#745b8e}.role-growth{--role:#558153}.role-altitude{--role:#607582}.role-migration{--role:#a06d45}.role-rush{--role:#a44940}.role-environment{--role:#4f7968}.role-pill{background:var(--role,#68775c)}.shrike-entry{border-left:5px solid var(--role,#68775c)!important}.shrike-detail::before{background:linear-gradient(90deg,var(--role,#68775c),#d1b669,var(--role,#68775c))}.locked-detail .detail-portrait{background:linear-gradient(180deg,#b9aa91,#917c61)}.collection-empty{grid-column:1/-1;padding:30px;text-align:center;color:#745f45;border:1px dashed #9c805a;border-radius:12px}.collection-close{position:sticky;bottom:0;margin-top:10px!important;z-index:4}
+@media(max-width:900px){.collection-workspace{width:calc(100% - 12px)!important;max-height:calc(100dvh - 12px)!important;padding:10px!important}.collection-head{grid-template-columns:1fr 145px;gap:8px}.collection-layout{grid-template-columns:1fr;height:66dvh;overflow:auto}.collection-card-list{grid-template-columns:1fr;overflow:visible;order:2}.collection-detail{order:1;min-height:300px;overflow:visible}.detail-portrait{height:145px}.detail-portrait svg{height:136px}.shrike-detail-portrait svg{height:140px}.collection-toolbar{align-items:flex-start;flex-direction:column}.collection-toolbar-note{display:none}.collection-entry{min-height:88px!important;grid-template-columns:68px minmax(0,1fr)!important}.collection-entry .bird-card-emoji,.collection-entry .dex-emoji{min-height:65px!important}.collection-entry .bird-card-portrait svg,.collection-entry .shrike-dex-portrait svg{width:62px!important;height:58px!important}}
+@media(max-width:560px){.collection-head{grid-template-columns:1fr}.collection-progress{width:100%}.collection-filter{padding:5px 9px;font-size:.59rem}.world-filter-label{width:100%;justify-content:space-between}.world-filter-label select{flex:1;max-width:none}.collection-layout{height:64dvh}.detail-copy h3{font-size:1.05rem}.collection-entry-copy b{font-size:.74rem}}
+
+
+/* =========================================================
+   0.7.6 · Animation & Juice
+   Visual-only feedback over the locked 0.6.5.11 gameplay baseline.
+   ========================================================= */
+.juice-layer{position:fixed;inset:0;z-index:60;overflow:hidden;pointer-events:none;contain:layout paint}
+.juice-text{position:fixed;display:inline-block;transform:translate(-50%,-50%);padding:5px 9px;border-radius:999px;border:1px solid rgba(255,255,255,.26);background:rgba(20,27,22,.92);box-shadow:0 7px 18px rgba(0,0,0,.24);font-size:.72rem;font-weight:1000;letter-spacing:.04em;white-space:nowrap;animation:juiceTextUp .82s cubic-bezier(.2,.8,.25,1) forwards}
+.juice-text.tone-good{color:#fff0a0;border-color:rgba(247,207,82,.65);background:rgba(55,74,34,.94)}
+.juice-text.tone-bad{color:#ffd0c8;border-color:rgba(255,139,124,.62);background:rgba(76,35,30,.94)}
+.juice-text.tone-info{color:#d9f4eb;border-color:rgba(143,217,209,.48)}
+.juice-text.tone-fire{color:#ffe098;border-color:rgba(255,148,68,.7);background:rgba(80,36,15,.95)}
+.juice-particle{position:fixed;width:7px;height:7px;margin:-3px;border-radius:50%;background:#f6d467;box-shadow:0 0 8px rgba(246,212,103,.46);animation:juiceParticle .62s ease-out forwards}
+.juice-particle.tone-bad{background:#ff9b86}.juice-particle.tone-info{background:#96ded4}.juice-particle.tone-fire{background:#ff9348}
+.juice-fly{position:fixed;z-index:61;transform:translate(-50%,-50%);animation:juiceFly .55s cubic-bezier(.2,.75,.22,1) forwards;filter:drop-shadow(0 5px 6px rgba(0,0,0,.32))}
+.juice-fly.food-flight .food-art{width:38px!important;height:38px!important}
+.juice-fly.skewer-flight .recipe-art{transform:scale(.9);background:rgba(30,35,25,.72);box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.food-button.food-picked{animation:foodButtonPick .3s ease-out}
+.skewer.juice-receive{animation:skewerReceive .34s ease-out}
+.skewer.juice-error{animation:skewerError .38s ease-out}
+.orders-grid.orders-match{filter:brightness(1.08)}
+.burners.burners-ignite{animation:burnersIgnite .38s ease-out}
+.burners.burner-ready-cue{filter:brightness(1.06)}
+.burners.burner-alert{filter:saturate(.82)}
+.hud-item strong.hud-juice,#scoreLabel.hud-juice{animation:hudScorePop .46s ease-out}
+#comboLabel.combo-juice{animation:comboPop .52s cubic-bezier(.2,.8,.22,1)}
+#comboLabel.hud-oops{animation:hudOops .42s ease-out}
+.burn-button.burn-ready-pulse{animation:burnReady .82s ease-out}
+.game-screen.screen-perfect::after,.game-screen.screen-oops::after,.game-screen.burning-burst::after{content:"";position:fixed;inset:0;z-index:55;pointer-events:none;animation:screenFlash .46s ease-out forwards}
+.game-screen.screen-perfect::after{background:radial-gradient(circle at 50% 58%,rgba(255,222,112,.15),transparent 48%)}
+.game-screen.screen-oops::after{background:radial-gradient(circle at 50% 58%,rgba(255,112,86,.11),transparent 48%)}
+.game-screen.burning-burst::after{background:radial-gradient(circle at 50% 62%,rgba(255,137,51,.18),transparent 54%)}
+
+/* Persistent guest nodes can animate without fighting the per-frame order-card renderer. */
+.guest-visitor:not(.entering):not(.leaving) .guest-visitor-art{animation:guestIdleBob 3.2s ease-in-out infinite;transform-origin:50% 88%}
+.guest-visitor:nth-child(2n):not(.entering):not(.leaving) .guest-visitor-art{animation-delay:-1.4s}
+.guest-visitor.urgent:not(.leaving) .guest-visitor-art{animation:guestUrgent .62s ease-in-out infinite alternate}
+.guest-visitor.leaving-happy{animation:guestHappyExit .54s cubic-bezier(.22,.8,.3,1) forwards}
+.guest-visitor.leaving-happy .guest-visitor-art{animation:guestHappyBounce .38s ease-out!important}
+.guest-visitor.leaving-sad,.guest-visitor.leaving-late{animation:guestSadExit .54s ease-in forwards}
+.guest-visitor.leaving-sad .guest-visitor-art,.guest-visitor.leaving-late .guest-visitor-art{animation:guestSadDip .5s ease-in!important;filter:saturate(.65)}
+.guest-visitor.leaving-happy .guest-mood{color:#ffd76e!important;opacity:1!important;transform:scale(1.2)}
+.guest-visitor.leaving-late .guest-mood,.guest-visitor.leaving-sad .guest-mood{color:#ffb0a2!important;opacity:1!important}
+
+.chef-visual.state-oops{border-color:#9f6d52;background:radial-gradient(circle at 22% 36%,rgba(124,191,202,.16),transparent 38%),linear-gradient(180deg,#3b3028,#241d19)}
+.chef-visual.state-oops .chef-visual-copy em{color:#bfeaf1;border-color:#668994;background:#18272a}
+.chef-visual.state-oops .chef-shrike-svg{animation:chefOops .52s ease-out}
+.chef-visual.state-oops .chef-oops{animation:chefSweat .54s ease-out;transform-origin:center}
+
+/* Burner flames: transform-only motion. Rebuilt cards do not depend on animation completion. */
+.burner.cooking .flame{display:inline-block;transform-origin:50% 90%;animation:flameFlicker .48s ease-in-out infinite alternate}
+.burner.ready .flame{display:inline-block;filter:brightness(1.25);text-shadow:0 0 10px rgba(255,190,75,.34)}
+.burner.overcooked .flame{display:inline-block;filter:saturate(.55) brightness(.75)}
+
+/* Low-opacity world ambience. This never uses blur and stays behind gameplay panels. */
+.world-scenery .scene-accent-layer::before,.world-scenery .scene-accent-layer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;will-change:transform,opacity}
+.world-1 .scene-accent-layer::before{background:repeating-linear-gradient(78deg,transparent 0 58px,rgba(232,203,106,.18) 59px 61px,transparent 62px 112px);animation:ambientGrass 7s ease-in-out infinite alternate}
+.world-2 .scene-accent-layer::before{top:62%;bottom:auto;height:23%;background:repeating-radial-gradient(ellipse at 50% 50%,transparent 0 17px,rgba(180,232,235,.18) 18px 19px,transparent 20px 38px);animation:ambientWater 7.5s linear infinite}
+.world-3.phase-night .scene-accent-layer::before{opacity:.32;background:radial-gradient(circle at 18% 22%,#efe9b0 0 1px,transparent 2px),radial-gradient(circle at 43% 16%,#efe9b0 0 1px,transparent 2px),radial-gradient(circle at 72% 29%,#efe9b0 0 1px,transparent 2px),radial-gradient(circle at 84% 14%,#efe9b0 0 1px,transparent 2px);animation:ambientStars 3.8s ease-in-out infinite alternate}
+.world-4 .scene-accent-layer::before,.world-7 .scene-accent-layer::before{opacity:.16;background:radial-gradient(circle,rgba(241,248,245,.9) 0 2px,transparent 2.4px) 0 0/74px 88px;animation:ambientSnow 9s linear infinite}
+.world-5 .scene-accent-layer::before{opacity:.15;background:linear-gradient(100deg,transparent 15%,rgba(231,205,132,.38) 45%,transparent 72%);animation:ambientSteppe 8s ease-in-out infinite alternate}
+.world-6 .scene-accent-layer::before{opacity:.19;background:radial-gradient(circle at 22% 35%,rgba(255,230,144,.8) 0 2px,transparent 3px),radial-gradient(circle at 76% 42%,rgba(255,230,144,.7) 0 2px,transparent 3px),radial-gradient(circle at 58% 20%,rgba(255,230,144,.6) 0 1.5px,transparent 2.5px);animation:ambientMotes 6.5s ease-in-out infinite alternate}
+.world-8 .scene-accent-layer::before{opacity:.18;background:radial-gradient(circle,rgba(82,57,24,.75) 0 1.5px,transparent 2px) 0 0/58px 47px;animation:ambientInsects 8s linear infinite}
+.world-9 .scene-accent-layer::before{opacity:.13;background:repeating-linear-gradient(90deg,transparent 0 72px,rgba(255,198,119,.24) 73px 75px,transparent 76px 140px);animation:ambientHeat 3.6s ease-in-out infinite alternate}
+.world-10 .scene-accent-layer::before{top:65%;height:23%;bottom:auto;opacity:.18;background:repeating-linear-gradient(0deg,transparent 0 17px,rgba(150,230,231,.22) 18px 19px,transparent 20px 36px);animation:ambientIslandWater 7s ease-in-out infinite alternate}
+
+.game-screen.stage-enter>.panel,.game-screen.stage-enter>.work-area,.game-screen.stage-enter>.game-actions{animation:stagePanelEnter .62s cubic-bezier(.2,.8,.25,1) both}
+.game-screen.stage-enter>.work-area{animation-delay:.06s}
+.game-screen.stage-enter>.status-panel{animation-delay:.11s}
+.result-screen.result-enter{animation:resultEnter .58s cubic-bezier(.2,.8,.25,1)}
+
+@keyframes juiceTextUp{0%{opacity:0;transform:translate(-50%,-38%) scale(.78)}28%{opacity:1;transform:translate(-50%,-58%) scale(1.04)}100%{opacity:0;transform:translate(-50%,-115%) scale(.96)}}
+@keyframes juiceParticle{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--jx),var(--jy)) scale(.2)}}
+@keyframes juiceFly{0%{opacity:0;transform:translate(-50%,-50%) scale(.72) rotate(-7deg)}12%{opacity:1}100%{opacity:.2;transform:translate(calc(-50% + var(--jx)),calc(-50% + var(--jy))) scale(.58) rotate(10deg)}}
+@keyframes foodButtonPick{0%{transform:scale(1)}45%{transform:scale(.92)}75%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes skewerReceive{0%{transform:scale(1)}50%{transform:scale(1.025);box-shadow:0 0 0 2px rgba(242,187,88,.16)}100%{transform:scale(1)}}
+@keyframes skewerError{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}60%{transform:translateX(3px)}}
+@keyframes burnersIgnite{0%{transform:translateY(0)}45%{transform:translateY(-2px)}100%{transform:translateY(0)}}
+@keyframes hudScorePop{0%{transform:scale(1)}42%{transform:scale(1.18)}100%{transform:scale(1)}}
+@keyframes comboPop{0%{transform:scale(1)}38%{transform:scale(1.24) rotate(-2deg)}75%{transform:scale(1.05) rotate(1deg)}100%{transform:scale(1)}}
+@keyframes hudOops{0%,100%{transform:translateX(0)}35%{transform:translateX(-3px)}70%{transform:translateX(3px)}}
+@keyframes burnReady{0%{transform:scale(1)}35%{transform:scale(1.07);box-shadow:0 0 0 7px rgba(255,135,55,.14)}100%{transform:scale(1)}}
+@keyframes screenFlash{0%{opacity:0}35%{opacity:1}100%{opacity:0}}
+@keyframes guestIdleBob{0%,100%{transform:translateY(0) rotate(0)}48%{transform:translateY(-1.5px) rotate(.5deg)}55%{transform:translateY(-1px) rotate(-.5deg)}}
+@keyframes guestUrgent{from{transform:translateY(0) rotate(-1.2deg)}to{transform:translateY(-2px) rotate(1.2deg)}}
+@keyframes guestHappyBounce{0%{transform:translateY(0) scale(1)}45%{transform:translateY(-8px) scale(1.06)}100%{transform:translateY(-2px) scale(1)}}
+@keyframes guestHappyExit{0%{opacity:1;transform:translate(0,0) scale(1)}45%{opacity:1;transform:translate(5px,-7px) scale(1.04)}100%{opacity:0;transform:translate(30px,-20px) scale(.72)}}
+@keyframes guestSadDip{0%{transform:translateY(0) rotate(0)}55%{transform:translateY(4px) rotate(-2deg)}100%{transform:translateY(5px) rotate(0)}}
+@keyframes guestSadExit{0%{opacity:1;transform:translate(0,0)}55%{opacity:.75;transform:translate(-3px,5px)}100%{opacity:0;transform:translate(-22px,14px) scale(.78)}}
+@keyframes chefOops{0%{transform:rotate(0)}25%{transform:rotate(-4deg) translateY(1px)}55%{transform:rotate(3deg)}100%{transform:rotate(0)}}
+@keyframes chefSweat{0%{opacity:0;transform:translateY(-5px)}35%{opacity:1}100%{opacity:.65;transform:translateY(4px)}}
+@keyframes flameFlicker{from{transform:scale(.92,1) rotate(-1deg)}to{transform:scale(1.06,.94) rotate(1deg)}}
+@keyframes ambientGrass{from{transform:translateX(-8px) skewX(-1deg)}to{transform:translateX(8px) skewX(1deg)}}
+@keyframes ambientWater{from{transform:translateX(-18px);opacity:.10}50%{opacity:.20}to{transform:translateX(18px);opacity:.10}}
+@keyframes ambientStars{from{opacity:.16}to{opacity:.38}}
+@keyframes ambientSnow{from{transform:translateY(-88px)}to{transform:translateY(88px)}}
+@keyframes ambientSteppe{from{transform:translateX(-28px)}to{transform:translateX(28px)}}
+@keyframes ambientMotes{from{transform:translate(0,4px);opacity:.11}to{transform:translate(8px,-8px);opacity:.24}}
+@keyframes ambientInsects{from{transform:translate(0,0)}to{transform:translate(29px,-24px)}}
+@keyframes ambientHeat{from{transform:translateX(-5px) skewX(-.5deg)}to{transform:translateX(5px) skewX(.5deg)}}
+@keyframes ambientIslandWater{from{transform:translateX(-12px);opacity:.12}to{transform:translateX(12px);opacity:.22}}
+@keyframes stagePanelEnter{0%{opacity:.35;transform:translateY(8px) scale(.994)}100%{opacity:1;transform:none}}
+@keyframes resultEnter{0%{opacity:0;transform:translateY(12px) scale(.985)}100%{opacity:1;transform:none}}
+
+@media(max-width:900px),(pointer:coarse){
+  .juice-text{font-size:.52rem;padding:3px 6px}
+  .juice-particle{width:5px;height:5px}
+  .juice-fly.food-flight .food-art{width:28px!important;height:28px!important}
+  .guest-visitor:not(.entering):not(.leaving) .guest-visitor-art{animation-duration:4.2s}
+  .world-scenery .scene-accent-layer::before,.world-scenery .scene-accent-layer::after{opacity:.11}
+}
+@media(pointer:coarse) and (orientation:landscape) and (max-width:1100px){
+  .juice-text{font-size:.38rem;padding:2px 5px}
+  .juice-particle{display:none}
+  .world-scenery .scene-accent-layer::before,.world-scenery .scene-accent-layer::after{opacity:.07!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .juice-text,.juice-particle,.juice-fly,.food-button.food-picked,.skewer.juice-receive,.skewer.juice-error,.burners.burners-ignite,
+  #scoreLabel.hud-juice,#comboLabel.combo-juice,#comboLabel.hud-oops,.burn-button.burn-ready-pulse,
+  .guest-visitor .guest-visitor-art,.guest-visitor.leaving,.chef-visual .chef-shrike-svg,.chef-oops,
+  .world-scenery .scene-accent-layer::before,.world-scenery .scene-accent-layer::after,
+  .game-screen.stage-enter>.panel,.game-screen.stage-enter>.work-area,.game-screen.stage-enter>.game-actions,.result-screen.result-enter{animation:none!important;transition:none!important}
+  .game-screen.screen-perfect::after,.game-screen.screen-oops::after,.game-screen.burning-burst::after{display:none!important}
+}

@@ -678,6 +678,7 @@ function showWorldIntro() {
 }
 const $ = (id) => document.getElementById(id);
 const coverScreen = $("coverScreen"), enterGameButton = $("enterGameButton"), installAppButton = $("installAppButton");
+const orientationGate = $("orientationGate"), orientationGateIcon = $("orientationGateIcon"), orientationGateKicker = $("orientationGateKicker"), orientationGateTitle = $("orientationGateTitle"), orientationGateMessage = $("orientationGateMessage"), orientationGateDevice = $("orientationGateDevice"), orientationGateButton = $("orientationGateButton");
 const startScreen = $("startScreen"), gameScreen = $("gameScreen"), resultScreen = $("resultScreen"), worldScenery = $("worldScenery"), worldIntro = $("worldIntro"), worldIntroKicker = $("worldIntroKicker"), worldIntroTitle = $("worldIntroTitle"), worldIntroSubtitle = $("worldIntroSubtitle"), juiceLayer = $("juiceLayer");
 const startButton = $("startButton"), nextStageButton = $("nextStageButton"), restartButton = $("restartButton"), backButton = $("backButton"), quitButton = $("quitButton"), pauseButton = $("pauseButton");
 const resetSaveButton = $("resetSaveButton"), finishSkewerButton = $("finishSkewerButton"), clearSkewerButton = $("clearSkewerButton"), burnButton = $("burnButton");
@@ -1008,6 +1009,44 @@ async function preferMobileLandscape() {
             await orientation.lock("landscape");
     }
     catch { }
+}
+let orientationGateContinue = null;
+function mobileOrientationUi() { var _a, _b, _c; const touch = !!((_a = window.matchMedia) === null || _a === void 0 ? void 0 : _a.call(window, "(pointer: coarse)").matches) || navigator.maxTouchPoints > 0; return touch && Math.min(((_b = window.screen) === null || _b === void 0 ? void 0 : _b.width) || innerWidth, ((_c = window.screen) === null || _c === void 0 ? void 0 : _c.height) || innerHeight) <= 1100; }
+function hideOrientationGate() { orientationGate.classList.remove("show", "portrait-mode", "landscape-mode"); orientationGate.setAttribute("aria-hidden", "true"); orientationGateContinue = null; }
+function showOrientationGate(mode, next = null) {
+    if (!mobileOrientationUi()) {
+        next === null || next === void 0 ? void 0 : next();
+        return;
+    }
+    orientationGateContinue = next;
+    orientationGate.setAttribute("aria-hidden", "false");
+    orientationGate.classList.remove("portrait-mode", "landscape-mode");
+    orientationGate.classList.add("show", `${mode}-mode`);
+    const portrait = mode === "portrait";
+    orientationGateIcon.textContent = portrait ? "▯" : "▭";
+    orientationGateKicker.textContent = portrait ? "MENU / WORLD" : "STAGE PLAY";
+    orientationGateTitle.textContent = portrait ? "세로모드로 전환해 주세요" : "가로모드로 전환해 주세요";
+    orientationGateMessage.textContent = portrait ? "월드 선택·Bird Book·ShrikeDex·메뉴는 세로 화면에서 가장 편하고 선명합니다." : "실제 영업 화면은 주문·재료·화구를 동시에 확인할 수 있도록 가로 화면에 최적화되어 있습니다.";
+    orientationGateDevice.className = `orientation-gate-device ${mode}`;
+    orientationGateButton.textContent = portrait ? "세로모드로 확인하고 계속" : "가로모드로 플레이 시작";
+}
+async function continueOrientationGate() {
+    const landscape = orientationGate.classList.contains("landscape-mode"), next = orientationGateContinue;
+    if (landscape)
+        await preferMobileLandscape();
+    hideOrientationGate();
+    next === null || next === void 0 ? void 0 : next();
+}
+function requestStageStart() { showOrientationGate("landscape", startGame); }
+function returnToWorldWithOrientationGate() {
+    closeAllDialogs();
+    document.body.classList.remove("in-game");
+    resultScreen.classList.add("hidden");
+    gameScreen.classList.add("hidden");
+    startScreen.classList.remove("hidden");
+    renderMeta();
+    resetStartFlow();
+    showOrientationGate("portrait");
 }
 function startGame() {
     closeAllDialogs();
@@ -1448,7 +1487,7 @@ function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가�
     persist();
     renderUpgrades();
 } }; card.appendChild(btn); upgradeList.appendChild(card); }); }
-function renderFoodButtons() { const pool = stageFoodPool(); foodButtonsEl.classList.toggle("dense-foods", pool.length >= 4); foodButtonsEl.innerHTML = ""; pool.forEach(id => { const f = foods[id], btn = document.createElement("button"); btn.className = "food-button"; btn.innerHTML = `<span class="food-button-art">${foodArt(id, "button")}</span><span class="food-button-name">${f.name}</span><small>${f.cookSeconds.toFixed(1)}s</small>`; btn.dataset.foodId = id; foodButtonsEl.appendChild(btn); }); foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, pool.length))},1fr)`; }
+function renderFoodButtons() { const pool = stageFoodPool(); foodButtonsEl.classList.toggle("dense-foods", pool.length >= 4); foodButtonsEl.classList.toggle("ultra-dense-foods", pool.length >= 7); foodButtonsEl.innerHTML = ""; pool.forEach(id => { const f = foods[id], btn = document.createElement("button"); btn.className = "food-button"; btn.innerHTML = `<span class="food-button-art">${foodArt(id, "button")}</span><span class="food-button-name">${f.name}</span><small>${f.cookSeconds.toFixed(1)}s</small>`; btn.dataset.foodId = id; foodButtonsEl.appendChild(btn); }); foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, pool.length))},1fr)`; }
 function renderSkewer() { skewerEl.innerHTML = skewerMarkup(currentSkewer); }
 function renderSelected() { const o = orders.find(x => x.id === selectedOrderId); selectedOrderSummary.innerHTML = o ? `🎯 우선 매칭 · <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe, "fresh", "summary")}</span>${o.special ? " · ⭐ SPECIAL" : ""}${o.signature ? " · 🌿 SIGNATURE" : ""}` : "✨ AUTO MATCH · 주문 선택 없이 조립 가능"; }
 function renderOrders() { const now = Date.now(); ordersEl.classList.toggle("compact-orders", orders.length >= 5); ordersEl.innerHTML = ""; orders.forEach(o => { const left = o.deadlineSeconds - (now - o.createdAt) / 1000, p = Math.max(0, Math.min(100, left / o.deadlineSeconds * 100)), btn = document.createElement("button"), hasKorean = /[가-힣]/.test(o.guest.name), koreanName = hasKorean ? `<strong class="name primary-name">${o.guest.name}</strong>` : ""; btn.className = `order-card${selectedOrderId === o.id ? " selected" : ""}${left < 10 ? " urgent" : ""}${o.special ? " special" : ""}${o.signature ? " signature" : ""}`; btn.innerHTML = `${o.special ? '<span class="special-badge">SPECIAL ×2</span>' : ""}${o.signature ? '<span class="signature-badge">SIGNATURE +10%</span>' : ""}<div class="guest-order-portrait">${guestPortraitSvg(o.guest, true)}</div>${koreanName}${hasKorean ? `<div class="bird-en">${o.guest.englishName}</div>` : `<strong class="bird-en primary-name">${o.guest.englishName}</strong>`}<i class="bird-scientific">${o.guest.scientificName}</i><div class="recipe">${recipeEmoji(o.recipe, "fresh", "order")}</div><div class="timer"><span>남은 시간</span><strong>${Math.max(0, left).toFixed(1)}s</strong></div><div class="order-progress" style="width:${p}%"></div>`; btn.dataset.orderId = String(o.id); ordersEl.appendChild(btn); }); if (!orders.length)
@@ -1652,12 +1691,12 @@ backToWorldButton.onclick = () => { startWorldChosen = startStageChosen = startC
 backToStageButton.onclick = () => { startStageChosen = false; startChefChosen = false; renderStages(); setStartFlow("stage"); };
 backToChefButton.onclick = () => { startChefChosen = false; renderShrikes(); setStartFlow("chef"); };
 startButton.onclick = () => { if (!startWorldChosen || !startStageChosen || !startChefChosen)
-    return; startGame(); };
+    return; requestStageStart(); };
 nextStageButton.onclick = () => { if (stage.id >= 100)
     return; const next = (stage.id + 1); if (!devMode && save.unlockedStage < next)
-    return; selectedStage = next; selectedWorld = Math.min(10, Math.ceil(next / 10)); startGame(); };
-restartButton.onclick = startGame;
-backButton.onclick = () => { closeAllDialogs(); document.body.classList.remove("in-game"); resultScreen.classList.add("hidden"); gameScreen.classList.add("hidden"); startScreen.classList.remove("hidden"); renderMeta(); resetStartFlow(); };
+    return; selectedStage = next; selectedWorld = Math.min(10, Math.ceil(next / 10)); requestStageStart(); };
+restartButton.onclick = requestStageStart;
+backButton.onclick = returnToWorldWithOrientationGate;
 devModeButton.onclick = () => { setDevMode(!devMode); showEvent(devMode ? "🛠 DEV MODE ON · 모든 구현 콘텐츠 해금" : "🛠 DEV MODE OFF · 일반 진행도로 복귀"); };
 resetSaveButton.onclick = () => { if (confirm("모든 Prototype 0.5 진행도, Bird Book과 업그레이드를 초기화할까요?")) {
     localStorage.removeItem(SAVE_KEY);
@@ -1674,7 +1713,7 @@ bindAdaptiveAction(clearSkewerButton, () => { if (paused)
 bindAdaptiveAction(finishSkewerButton, finishSkewer);
 bindAdaptiveAction(burnButton, activateBurning);
 bindAdaptiveAction(pauseButton, togglePause);
-bindAdaptiveAction(quitButton, () => { closeAllDialogs(); document.body.classList.remove("in-game"); running = false; paused = false; cancelAnimationFrame(animationFrame); gameScreen.classList.add("hidden"); resultScreen.classList.add("hidden"); startScreen.classList.remove("hidden"); renderMeta(); resetStartFlow(); });
+bindAdaptiveAction(quitButton, () => { running = false; paused = false; cancelAnimationFrame(animationFrame); returnToWorldWithOrientationGate(); });
 document.querySelectorAll(".bird-filter-button").forEach(btn => btn.onclick = () => { birdBookFilter = (btn.dataset.birdFilter || "all"); renderBirdBook(); });
 birdBookWorldFilter.onchange = () => { birdBookWorld = birdBookWorldFilter.value; renderBirdBook(); };
 document.querySelectorAll(".shrike-filter-button").forEach(btn => btn.onclick = () => { shrikeDexFilter = (btn.dataset.shrikeFilter || "all"); renderShrikeDex(); });
@@ -1686,6 +1725,7 @@ birdBookButton.onclick = () => { renderBirdBook(); openDialog(birdBookDialog); }
 closeBirdBookButton.onclick = () => closeDialog(birdBookDialog);
 shrikeDexButton.onclick = () => { renderShrikeDex(); openDialog(shrikeDexDialog); };
 closeShrikeDexButton.onclick = () => closeDialog(shrikeDexDialog);
+orientationGateButton.onclick = () => { void continueOrientationGate(); };
 let deferredInstallPrompt = null;
 window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); deferredInstallPrompt = event; installAppButton.classList.remove("hidden"); });
 installAppButton.onclick = async () => { if (!deferredInstallPrompt)
@@ -1713,3 +1753,4 @@ renderFoodButtons();
 renderSkewer();
 resetBurners();
 renderBurners();
+showOrientationGate("portrait");

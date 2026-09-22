@@ -677,7 +677,7 @@ function showWorldIntro() {
     worldIntroTimer = window.setTimeout(() => worldIntro.classList.remove("show"), 2100);
 }
 const $ = (id) => document.getElementById(id);
-const coverScreen = $("coverScreen"), enterGameButton = $("enterGameButton"), installAppButton = $("installAppButton");
+const coverScreen = $("coverScreen"), enterGameButton = $("enterGameButton"), installAppButton = $("installAppButton"), bgmAudio = $("bgmAudio"), bgmToggleButton = $("bgmToggleButton"), gameBgmToggleButton = $("gameBgmToggleButton");
 const orientationGate = $("orientationGate"), orientationGateIcon = $("orientationGateIcon"), orientationGateKicker = $("orientationGateKicker"), orientationGateTitle = $("orientationGateTitle"), orientationGateMessage = $("orientationGateMessage"), orientationGateDevice = $("orientationGateDevice"), orientationGateButton = $("orientationGateButton");
 const startScreen = $("startScreen"), gameScreen = $("gameScreen"), resultScreen = $("resultScreen"), worldScenery = $("worldScenery"), worldIntro = $("worldIntro"), worldIntroKicker = $("worldIntroKicker"), worldIntroTitle = $("worldIntroTitle"), worldIntroSubtitle = $("worldIntroSubtitle"), juiceLayer = $("juiceLayer");
 const startButton = $("startButton"), nextStageButton = $("nextStageButton"), restartButton = $("restartButton"), backButton = $("backButton"), quitButton = $("quitButton"), pauseButton = $("pauseButton");
@@ -712,6 +712,34 @@ function loadSave() {
         return defaultSave();
     }
 }
+const BGM_ENABLED_KEY = "shrikeTycoonBgmEnabled";
+let bgmEnabled = localStorage.getItem(BGM_ENABLED_KEY) !== "0";
+bgmAudio.volume = .32;
+function syncBgmButtons() {
+    const label = bgmEnabled ? "🎵 BGM ON" : "🔇 BGM OFF";
+    [bgmToggleButton, gameBgmToggleButton].forEach(button => { button.textContent = label; button.classList.toggle("active", bgmEnabled); button.setAttribute("aria-pressed", bgmEnabled ? "true" : "false"); });
+}
+async function playBgm() {
+    if (!bgmEnabled)
+        return;
+    try {
+        await bgmAudio.play();
+    }
+    catch { }
+    syncBgmButtons();
+}
+function setBgmEnabled(enabled) {
+    bgmEnabled = enabled;
+    localStorage.setItem(BGM_ENABLED_KEY, enabled ? "1" : "0");
+    if (enabled) {
+        void playBgm();
+    }
+    else {
+        bgmAudio.pause();
+        syncBgmButtons();
+    }
+}
+function toggleBgm() { setBgmEnabled(!bgmEnabled); }
 function persist() { localStorage.setItem(SAVE_KEY, JSON.stringify(save)); renderMeta(); }
 let save = loadSave();
 let devMode = sessionStorage.getItem("shrikeTycoonDevMode") === "1";
@@ -1676,7 +1704,7 @@ function bindDelegatedAdaptive(container, selector, action) {
 bindDelegatedAdaptive(ordersEl, ".order-card[data-order-id]", target => selectOrder(Number(target.dataset.orderId)));
 bindDelegatedAdaptive(burnersEl, ".burner[data-burner-index]", target => clickBurner(Number(target.dataset.burnerIndex)));
 bindDelegatedAdaptive(foodButtonsEl, ".food-button[data-food-id]", target => addFood(target.dataset.foodId));
-enterGameButton.onclick = () => { coverScreen.classList.add("hidden"); resetStartFlow(); };
+enterGameButton.onclick = () => { coverScreen.classList.add("hidden"); resetStartFlow(); void playBgm(); };
 world1Button.onclick = () => chooseWorldForFlow(1);
 world2Button.onclick = () => chooseWorldForFlow(2);
 world3Button.onclick = () => chooseWorldForFlow(3);
@@ -1697,6 +1725,9 @@ nextStageButton.onclick = () => { if (stage.id >= 100)
     return; selectedStage = next; selectedWorld = Math.min(10, Math.ceil(next / 10)); requestStageStart(); };
 restartButton.onclick = requestStageStart;
 backButton.onclick = returnToWorldWithOrientationGate;
+bgmToggleButton.onclick = toggleBgm;
+gameBgmToggleButton.onclick = toggleBgm;
+syncBgmButtons();
 devModeButton.onclick = () => { setDevMode(!devMode); showEvent(devMode ? "🛠 DEV MODE ON · 모든 구현 콘텐츠 해금" : "🛠 DEV MODE OFF · 일반 진행도로 복귀"); };
 resetSaveButton.onclick = () => { if (confirm("모든 Prototype 0.5 진행도, Bird Book과 업그레이드를 초기화할까요?")) {
     localStorage.removeItem(SAVE_KEY);

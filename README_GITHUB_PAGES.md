@@ -1,4 +1,4 @@
-# Shrike Tycoon 0.7.6.4 — Mobile Layout & Orientation Gate Hotfix
+# Shrike Tycoon 0.7.6.5 — BGM Integration Hotfix
 
 Upload all contents to repository root and deploy main /(root).
-Presentation baseline: 0.7.6. Gameplay/content baseline: 0.6.5.11.
+The bundled MP3 is included in the service-worker asset cache.

@@ -2763,3 +2763,28 @@ body.in-game::after{opacity:.16}
   .orientation-gate-button{margin-top:6px;min-height:34px;padding:6px 10px;font-size:.68rem}
   .orientation-gate small{margin-top:5px;font-size:.48rem;line-height:1.2}
 }
+
+
+/* =========================================================
+   0.7.6.5 · BGM Integration Hotfix
+   User-created background track with synced menu/game mute controls.
+   ========================================================= */
+.bgm-toggle-button.active{
+  border-color:#b68b3f!important;
+  color:#ffe3a0!important;
+  background:linear-gradient(180deg,#2a3425,#18251c)!important;
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:1100px){
+  body.in-game #gameScreen:not(.hidden) .game-actions{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+  body.in-game #gameScreen:not(.hidden) .game-actions .bgm-toggle-button{
+    white-space:nowrap!important;
+  }
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-width:760px){
+  body.in-game #gameScreen:not(.hidden) .game-actions button{
+    padding-left:2px!important;padding-right:2px!important;
+    font-size:.48rem!important;
+  }
+}

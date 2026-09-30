@@ -5797,3 +5797,21 @@ body:not(.in-game) #readyStep .ready-actions{flex:0 0 auto;display:flex;justify-
 body:not(.in-game) #readyStep #startButton{margin:0!important;min-height:52px!important;max-width:620px!important;width:100%!important}
 @media(max-width:720px){body:not(.in-game) #startScreen.ready-active:not(.hidden){inset:8px!important;padding:12px!important}body:not(.in-game) #readyStep .ready-actions{padding-top:8px}body:not(.in-game) #readyStep .ready-wrap{padding:8px!important}}
 body.in-game #gameScreen.soft-stage .skewer-panel .button-row{grid-template-columns:1fr!important}
+
+/* Mobile selection has one bounded scroll area, including the final card. */
+@media(max-width:1100px),(pointer:coarse){
+ body:not(.in-game) #startScreen.selection-active:not(.hidden){position:fixed!important;inset:8px!important;margin:0 auto!important;width:auto!important;max-width:1120px!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:hidden!important;z-index:40;background:#fff3d8!important;display:flex!important;flex-direction:column!important;padding:12px!important;box-sizing:border-box!important}
+ body:not(.in-game) #startScreen.selection-active .guided-progress{flex-shrink:0!important}
+ body:not(.in-game) #startScreen.selection-active .start-step:not(.hidden){display:flex!important;flex-direction:column!important;flex:1 1 0!important;min-height:0!important;overflow:hidden!important}
+ body:not(.in-game) #startScreen.selection-active .step-head{flex:0 0 auto!important}
+ body:not(.in-game) #startScreen.selection-active .step-scroll{flex:1 1 0!important;min-height:0!important;height:auto!important;max-height:none!important;overflow-y:auto!important;overflow-x:hidden!important;-webkit-overflow-scrolling:touch;touch-action:pan-y;overscroll-behavior-y:contain;scroll-padding-block:12px!important;padding-bottom:max(24px,env(safe-area-inset-bottom))!important}
+ body:not(.in-game) #startScreen.selection-active :is(.guided-stage-map,.guided-chef-grid){height:auto!important;max-height:none!important;overflow:visible!important;padding-bottom:8px!important}
+}
+/* Auto margins on the chef previously absorbed extra height after rotation. */
+body:not(.in-game) #readyStep .ready-wrap{gap:12px!important;justify-content:flex-start!important;align-content:flex-start!important;overflow-anchor:none}
+body:not(.in-game) #readyStep .ready-wrap>*{margin-block:0!important}
+body:not(.in-game) #readyStep .ready-chef-art{margin:0!important}
+body:not(.in-game) #readyStep .ready-card{margin:0!important;gap:8px!important;padding:16px!important}
+
+body:not(.in-game) #readyStep .ready-chef-art{display:flex!important;align-items:center!important;justify-content:center!important}
+body:not(.in-game) #readyStep .ready-chef-art .pixel-sprite{height:100%!important;width:100%!important;max-height:100%!important;max-width:100%!important;object-fit:contain!important;flex-shrink:1!important}

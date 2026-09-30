@@ -1450,6 +1450,7 @@ function worldFlowName(world) { const names = ["", "🌾 WORLD 1 · 농경지", 
 function setStartFlow(step) {
     startFlowStep = step;
     startScreen.classList.toggle("ready-active", step === "ready");
+    startScreen.classList.toggle("selection-active", step === "stage" || step === "chef");
     worldStep.classList.toggle("hidden", step !== "world");
     stageStep.classList.toggle("hidden", step !== "stage");
     chefStep.classList.toggle("hidden", step !== "chef");
@@ -1458,6 +1459,8 @@ function setStartFlow(step) {
     const ix = order.findIndex(([s]) => s === step);
     order.forEach(([s, el], i) => { el.classList.toggle("active", i === ix); el.classList.toggle("done", i < ix); });
     startScreen.scrollTop = 0;
+    const activeStep = step === "stage" ? stageStep : step === "chef" ? chefStep : step === "ready" ? readyStep : worldStep;
+    activeStep.querySelectorAll(".step-scroll,.ready-wrap").forEach(el => el.scrollTop = 0);
 }
 function resetStartFlow() { startWorldChosen = startStageChosen = startChefChosen = false; renderStages(); renderShrikes(); setStartFlow("world"); }
 function chooseWorldForFlow(world) {

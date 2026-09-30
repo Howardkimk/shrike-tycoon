@@ -1,13 +1,13 @@
 {
   "name": "때까치 타이쿤 · Shrike Tycoon",
   "short_name": "Shrike Tycoon",
-  "description": "생태 기반 아케이드 요리 타이쿤 0.7.6.5 · BGM Integration Hotfix",
+  "description": "때까치 타이쿤 0.8.4.7 · 둥근 숲속 식당과 도트 새 손님",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "landscape",
   "background_color": "#08130f",
-  "theme_color": "#08130f",
+  "theme_color": "#6f8e55",
   "icons": [
     {
       "src": "assets/icon-192.png",

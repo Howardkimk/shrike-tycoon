@@ -1,27 +1,25 @@
 {
   "name": "때까치 타이쿤 · Shrike Tycoon",
-  "short_name": "때까치 타이쿤",
-  "description": "때까치 타이쿤 0.8.4.12 · 둥근 숲속 식당과 도트 새 손님",
+  "short_name": "Shrike Tycoon",
+  "description": "때까치 타이쿤 0.8.4.13 · 둥근 숲속 식당과 도트 새 손님",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#f7f0da",
+  "background_color": "#08130f",
   "theme_color": "#6f8e55",
   "icons": [
     {
       "src": "assets/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "assets/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
-  ],
-  "id": "./",
-  "lang": "ko"
+  ]
 }

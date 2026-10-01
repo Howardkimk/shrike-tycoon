@@ -5831,3 +5831,45 @@ body:not(.in-game) #readyStep .ready-chef-art .pixel-sprite{height:100%!importan
  body.world-menu-active:not(.in-game) #worldStep:not(.hidden){flex:1 1 0!important;min-height:0!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
  body.world-menu-active:not(.in-game) #worldStep .world-step-scroll{flex:1 1 0!important;min-height:0!important;height:auto!important;max-height:none!important;overflow-y:auto!important;overflow-x:hidden!important;touch-action:pan-y;-webkit-overflow-scrolling:touch;padding-bottom:max(24px,env(safe-area-inset-bottom))!important}
 }
+
+/* 0.8.4.13: bound Bird Book scrolling between its header and close button. */
+#birdBookDialog[open]{
+ display:grid!important;
+ grid-template-rows:auto auto minmax(0,1fr) auto;
+ box-sizing:border-box;
+ height:min(900px,calc(100dvh - 24px));
+ max-height:calc(100dvh - 24px)!important;
+}
+#birdBookDialog .collection-layout{
+ height:auto!important;min-height:0!important;min-width:0;
+ overflow:hidden!important;
+}
+#birdBookDialog :is(.collection-card-list,.collection-detail){
+ min-height:0!important;min-width:0;
+ overscroll-behavior:contain;
+ scroll-padding-block:12px;
+}
+#birdBookDialog .collection-card-list{padding-bottom:16px}
+#birdBookDialog .collection-close{
+ position:static!important;flex-shrink:0;
+ margin-bottom:0!important;
+}
+@media(max-width:900px){
+ #birdBookDialog .collection-layout{
+  overflow:auto!important;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  scroll-padding-block:12px;
+  padding-bottom:16px;
+ }
+}
+@media(max-height:500px) and (max-width:900px){
+ #birdBookDialog[open]{padding:10px!important}
+ #birdBookDialog .collection-head{grid-template-columns:minmax(0,1fr) 145px}
+ #birdBookDialog .collection-toolbar{
+  flex-direction:row;align-items:center;margin:6px 0;
+  padding:6px 10px!important;
+ }
+ #birdBookDialog .world-filter-label{width:auto}
+ #birdBookDialog .world-filter-label select{max-width:170px}
+}

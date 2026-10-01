@@ -1451,6 +1451,7 @@ function setStartFlow(step) {
     startFlowStep = step;
     startScreen.classList.toggle("ready-active", step === "ready");
     startScreen.classList.toggle("selection-active", step === "stage" || step === "chef");
+    document.body.classList.toggle("world-menu-active", step === "world");
     worldStep.classList.toggle("hidden", step !== "world");
     stageStep.classList.toggle("hidden", step !== "stage");
     chefStep.classList.toggle("hidden", step !== "chef");

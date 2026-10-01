@@ -1,5 +1,5 @@
 "use strict";
-var _a;
+var _a, _b, _c, _d;
 const SAVE_VERSION = 10;
 // Keep the 0.3 key so existing Prototype 0.3.3 saves migrate automatically.
 const SAVE_KEY = "shrikeTycoonPrototype03Stable";
@@ -892,7 +892,11 @@ function totalCook(r) { return r.reduce((s, id) => s + foods[id].cookSeconds, 0)
 const insectFoods = ["grasshopper", "caterpillar", "beetle", "aquaticInsect"];
 function redBackedScoreMult(recipe, perfect) { return selectedShrike === "red-backed" && perfect && recipe.length > 0 && recipe.every(id => insectFoods.includes(id)) ? (isBurning() ? 1.25 : 1.10) : 1; }
 function baseScore(r) { return r.reduce((s, id) => s + foods[id].score, 0); }
-function stageFoodPool() { return Object.keys(stage.foodAvailability).filter(id => phaseFoodAvailability(id) > 0); }
+// Keep the pantry and its keyboard order stable for the entire service.
+// Time/weather modifiers change order probabilities, never remove an ingredient
+// needed by an order that is already waiting or on the grill.
+function stageFoodPool() { return Object.keys(stage.foodAvailability).filter(id => !!foods[id] && (stage.foodAvailability[id] || 0) > 0); }
+function orderFoodPool() { return stageFoodPool().filter(id => phaseFoodAvailability(id) > 0); }
 function phaseInfo() { const phases = stage.timePhases || []; let index = -1; for (let i = 0; i < phases.length; i++) {
     if (elapsed() >= phases[i].at)
         index = i;
@@ -931,7 +935,7 @@ function weatherFoodMult(id) {
 function phaseFoodAvailability(id) { var _a, _b; const base = stage.foodAvailability[id] || 0; const phase = phaseInfo().phase; let mult = ((_b = (_a = phase === null || phase === void 0 ? void 0 : phase.foodModifier) === null || _a === void 0 ? void 0 : _a[id]) !== null && _b !== void 0 ? _b : 1) * weatherFoodMult(id); if (stage.world === 1 && isFeeding())
     mult *= 1.12; if (stage.world === 8 && isFeeding() && (id === "grasshopper" || id === "beetle" || id === "caterpillar"))
     mult *= 1.65; return base * mult; }
-function currentGuestPool() { var _a; return ((_a = phaseInfo().phase) === null || _a === void 0 ? void 0 : _a.guestPool) || stage.guestPool; }
+function currentGuestPool() { var _a; return (((_a = phaseInfo().phase) === null || _a === void 0 ? void 0 : _a.guestPool) || stage.guestPool).filter(id => orderFoodPool().some(food => dietWeight(guests[id], food) > 0)); }
 function phaseName(p) { return p === "night" ? "🌙 밤" : p === "dusk" ? "🌇 해질녘" : "☀️ 낮"; }
 function syncTimePhase(force = false) { var _a; const info = phaseInfo(); const next = ((_a = info.phase) === null || _a === void 0 ? void 0 : _a.type) || "day"; if (force || info.index !== currentPhaseIndex) {
     currentPhaseIndex = info.index;
@@ -960,11 +964,10 @@ function dietWeight(g, id) { if (g.diet.primary.includes(id))
     return .55; if (g.diet.rare.includes(id))
     return .18; if (g.diet.never.includes(id) || id === "seed")
     return 0; return .08; }
-function weightedFood(g) {
-    const pool = stageFoodPool();
+function weightedFood(g, pool = orderFoodPool()) {
     const weighted = pool.map(id => ({ id, w: dietWeight(g, id) * phaseFoodAvailability(id) })).filter(x => x.w > 0);
     if (!weighted.length)
-        return choice(pool);
+        return null;
     const total = weighted.reduce((sum, item) => sum + item.w, 0);
     let r = Math.random() * total;
     for (const item of weighted) {
@@ -992,15 +995,22 @@ function weightedGuest(pool) {
     return weighted[weighted.length - 1].id;
 }
 function makeRecipe(g, special = false) {
+    const pool = orderFoodPool();
     const len = special ? Math.min(4, Math.max(3, stage.maxRecipeLength)) : recipeLength();
     const recipe = [];
     const primaryAvailable = g.diet.primary.filter(id => phaseFoodAvailability(id) > 0);
     const specialist = g.diet.primary.length <= 1, focused = g.diet.primary.length === 2;
     for (let i = 0; i < len; i++) {
-        let pick = weightedFood(g), tries = 0;
+        let pick = weightedFood(g, pool), tries = 0;
+        if (pick === null)
+            return [];
         const allowRepeat = specialist || (focused && Math.random() < .32) || (primaryAvailable.includes(pick) && Math.random() < .20);
-        while (!allowRepeat && recipe.includes(pick) && tries++ < 5)
-            pick = weightedFood(g);
+        while (!allowRepeat && recipe.includes(pick) && tries++ < 5) {
+            const next = weightedFood(g, pool);
+            if (next === null)
+                return [];
+            pick = next;
+        }
         recipe.push(pick);
     }
     return recipe;
@@ -1029,9 +1039,22 @@ function spawnOrder(force = false) {
     const max = stage.maxOrders + save.upgrades.branch + (isFeeding() ? 1 : 0);
     if (!running || paused || (!force && orders.length >= max))
         return;
+    const pool = currentGuestPool();
+    if (!pool.length) {
+        scheduleNext();
+        return;
+    }
     const special = Math.random() < stage.specialChance;
-    const guest = guests[weightedGuest(currentGuestPool())];
+    const guest = guests[weightedGuest(pool)];
     const recipe = makeRecipe(guest, special);
+    // A malformed configuration must not create an impossible or empty order.
+    const inventory = stageFoodPool();
+    if (!recipe.length || recipe.some(id => !inventory.includes(id))) {
+        scheduleNext();
+        return;
+    }
+    if (inventory.join(',') !== displayedFoodIds().join(','))
+        renderFoodButtons();
     orders.push({ id: orderSequence++, guest, recipe, createdAt: Date.now(), deadlineSeconds: BASE_ORDER_DEADLINE * deadlineMult(), special, signature: isSignatureRecipe(guest, recipe) });
     discoverBird(guest.id);
     scheduleNext();
@@ -1353,7 +1376,7 @@ function expireOrder(id) { const o = orders.find(x => x.id === id); if (!o)
     selectedOrderId = null; judge("TOO LATE", false); flashClass(comboLabel, "hud-oops", 480); renderSelected(); }
 function selectOrder(id) { if (paused)
     return; selectedOrderId = selectedOrderId === id ? null : id; renderSelected(); renderOrders(); setStatus(selectedOrderId === id ? "우선 주문으로 지정했습니다. 빈 화구를 누르면 먼저 매칭합니다." : "우선 주문 지정을 해제했습니다."); }
-function addFood(id) { if (paused)
+function addFood(id) { if (!running || paused || !stageFoodPool().includes(id))
     return; if (currentSkewer.length >= 4)
     return; animateFoodToSkewer(id); currentSkewer.push(id); renderSkewer(); flashClass(skewerEl, "juice-receive", 360); const btn = foodButtonsEl.querySelector(`.food-button[data-food-id="${id}"]`); flashClass(btn, "food-picked", 330); }
 function clickBurner(index) {
@@ -1552,7 +1575,76 @@ function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가�
     persist();
     renderUpgrades();
 } }; card.appendChild(btn); upgradeList.appendChild(card); }); }
-function renderFoodButtons() { const pool = stageFoodPool(); foodButtonsEl.classList.toggle("dense-foods", pool.length >= 4); foodButtonsEl.classList.toggle("ultra-dense-foods", pool.length > 5); foodButtonsEl.dataset.foodCount = String(pool.length); foodButtonsEl.style.setProperty("--food-rows", String(Math.ceil(pool.length / (pool.length >= 4 ? 5 : 3)))); foodButtonsEl.innerHTML = ""; pool.forEach(id => { const f = foods[id], btn = document.createElement("button"); btn.className = "food-button"; btn.innerHTML = `<span class="food-button-art">${foodArt(id, "button")}</span><span class="food-button-name">${f.name}</span><small>${f.cookSeconds.toFixed(1)}s</small>`; btn.dataset.foodId = id; foodButtonsEl.appendChild(btn); }); foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, pool.length))},1fr)`; }
+function displayedFoodIds() { return Array.from(foodButtonsEl.querySelectorAll(".food-button[data-food-id]")).map(btn => btn.dataset.foodId); }
+function foodShortcut(index) { return String((index + 1) % 10); }
+function renderFoodButtons() {
+    const pool = stageFoodPool(), scrollTop = foodButtonsEl.scrollTop;
+    foodButtonsEl.classList.toggle("dense-foods", pool.length >= 4);
+    foodButtonsEl.classList.toggle("ultra-dense-foods", pool.length > 5);
+    foodButtonsEl.dataset.foodCount = String(pool.length);
+    foodButtonsEl.style.setProperty("--food-rows", String(Math.ceil(pool.length / (pool.length >= 4 ? 5 : 3))));
+    foodButtonsEl.innerHTML = "";
+    pool.forEach((id, index) => {
+        const f = foods[id], key = foodShortcut(index), btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "food-button";
+        btn.innerHTML = `<kbd class="food-shortcut" aria-hidden="true">${key}</kbd><span class="food-button-art">${foodArt(id, "button")}</span><span class="food-button-name">${f.name}</span><small>${f.cookSeconds.toFixed(1)}s</small>`;
+        btn.dataset.foodId = id;
+        btn.dataset.shortcut = key;
+        btn.setAttribute("aria-keyshortcuts", key);
+        btn.setAttribute("aria-label", `${f.name}, 숫자 ${key}, 조리 ${f.cookSeconds.toFixed(1)}초`);
+        btn.title = `${key} · ${f.name}`;
+        foodButtonsEl.appendChild(btn);
+    });
+    foodButtonsEl.style.gridTemplateColumns = `repeat(${Math.min(5, Math.max(3, pool.length))},1fr)`;
+    foodButtonsEl.scrollTop = scrollTop;
+    syncIngredientInputMode();
+    updateFoodInventoryHint();
+}
+function desktopIngredientKeysEnabled() {
+    const mobileAgent = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || (/Macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+    return !mobileAgent && !isCoarsePointer();
+}
+function syncIngredientInputMode() {
+    const keyboard = desktopIngredientKeysEnabled();
+    document.body.classList.toggle("mobile-ingredients", !keyboard);
+    foodButtonsEl.querySelectorAll(".food-button[data-food-id]").forEach(btn => {
+        const f = foods[btn.dataset.foodId], key = btn.dataset.shortcut;
+        if (keyboard)
+            btn.setAttribute("aria-keyshortcuts", key);
+        else
+            btn.removeAttribute("aria-keyshortcuts");
+        btn.title = keyboard ? `${key} · ${f.name}` : f.name;
+        btn.setAttribute("aria-label", `${f.name}${keyboard ? `, 숫자 ${key}` : ""}, 조리 ${f.cookSeconds.toFixed(1)}초`);
+    });
+}
+window.addEventListener("resize", syncIngredientInputMode);
+(_c = (_a = window.matchMedia) === null || _a === void 0 ? void 0 : (_b = _a.call(window, "(pointer: coarse)")).addEventListener) === null || _c === void 0 ? void 0 : _c.call(_b, "change", syncIngredientInputMode);
+function updateFoodInventoryHint() {
+    const count = displayedFoodIds().length, scrolls = foodButtonsEl.clientHeight > 0 && foodButtonsEl.scrollHeight > foodButtonsEl.clientHeight + 1;
+    $("foodInventoryHint").textContent = scrolls ? `재료 ${count}종 · 재료창 스크롤 ↕` : `재료 ${count}종 · 숫자 키로 선택`;
+}
+if (typeof ResizeObserver !== "undefined")
+    new ResizeObserver(updateFoodInventoryHint).observe(foodButtonsEl);
+function handleIngredientKey(event) {
+    if (!desktopIngredientKeysEnabled())
+        return;
+    if (!running || paused || event.repeat || event.isComposing || event.ctrlKey || event.altKey || event.metaKey || event.shiftKey)
+        return;
+    if (gameScreen.classList.contains("hidden") || document.querySelector("dialog[open]") || orientationGate.classList.contains("show"))
+        return;
+    const target = event.target;
+    if (target instanceof HTMLElement && (target.isContentEditable || target.closest("input,textarea,select,[contenteditable]:not([contenteditable=false])")))
+        return;
+    if (!/^[0-9]$/.test(event.key))
+        return;
+    const btn = Array.from(foodButtonsEl.querySelectorAll(".food-button[data-shortcut]")).find(btn => btn.dataset.shortcut === event.key && !btn.disabled);
+    if (!btn)
+        return;
+    event.preventDefault();
+    addFood(btn.dataset.foodId);
+}
+document.addEventListener("keydown", handleIngredientKey);
 function renderSkewer() { skewerEl.innerHTML = skewerMarkup(currentSkewer); }
 function renderSelected() { const o = orders.find(x => x.id === selectedOrderId); selectedOrderSummary.innerHTML = o ? `🎯 우선 매칭 · <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe, "fresh", "summary")}</span>${o.special ? " · ⭐ SPECIAL" : ""}${o.signature ? " · 🌿 SIGNATURE" : ""}` : "✨ AUTO MATCH · 주문 선택 없이 조립 가능"; }
 function renderOrders() {
@@ -1711,7 +1803,7 @@ function closeDialog(dialog) { try {
 catch {
     dialog.removeAttribute("open");
 } dialog.classList.remove("dialog-fallback-open"); }
-const coarsePointerQuery = (_a = window.matchMedia) === null || _a === void 0 ? void 0 : _a.call(window, "(pointer: coarse)");
+const coarsePointerQuery = (_d = window.matchMedia) === null || _d === void 0 ? void 0 : _d.call(window, "(pointer: coarse)");
 const isCoarsePointer = () => Boolean(coarsePointerQuery === null || coarsePointerQuery === void 0 ? void 0 : coarsePointerQuery.matches);
 function closeAllDialogs() { document.querySelectorAll("dialog[open]").forEach(dialog => { try {
     dialog.close();

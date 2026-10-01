@@ -1,6 +1,4 @@
-Fonts distributed under SIL Open Font License 1.1.
-
-Jua
+Fonts: SIL Open Font License 1.1
 Copyright 2018 The Jua Project Authors
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
@@ -95,8 +93,6 @@ DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 
-
-Noto Emoji
 Copyright 2013 Google LLC
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
@@ -191,6 +187,4 @@ DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 
-
-BGM: user-created track モズさんの串焼き屋, retained from the existing game.
-Bird/chef/world artwork: generated for this project.
+BGM: user-created モズさんの串焼き屋. Bird/chef/world art generated for this project.

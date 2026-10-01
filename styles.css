@@ -5815,3 +5815,6 @@ body:not(.in-game) #readyStep .ready-card{margin:0!important;gap:8px!important;p
 
 body:not(.in-game) #readyStep .ready-chef-art{display:flex!important;align-items:center!important;justify-content:center!important}
 body:not(.in-game) #readyStep .ready-chef-art .pixel-sprite{height:100%!important;width:100%!important;max-height:100%!important;max-width:100%!important;object-fit:contain!important;flex-shrink:1!important}
+
+/* Bundled Korean font for cover title. */
+#coverScreen .cover-copy .game-title{font-family:"Jua","Noto Emoji",sans-serif!important}

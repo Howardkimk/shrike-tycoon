@@ -1787,14 +1787,6 @@ closeBirdBookButton.onclick = () => closeDialog(birdBookDialog);
 shrikeDexButton.onclick = () => { renderShrikeDex(); openDialog(shrikeDexDialog); };
 closeShrikeDexButton.onclick = () => closeDialog(shrikeDexDialog);
 orientationGateButton.onclick = () => { void continueOrientationGate(); };
-let deferredInstallPrompt = null;
-window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); deferredInstallPrompt = event; installAppButton.classList.remove("hidden"); });
-installAppButton.onclick = async () => { if (!deferredInstallPrompt)
-    return; deferredInstallPrompt.prompt(); await deferredInstallPrompt.userChoice; deferredInstallPrompt = null; installAppButton.classList.add("hidden"); };
-window.addEventListener("appinstalled", () => { deferredInstallPrompt = null; installAppButton.classList.add("hidden"); showEvent("📲 홈 화면에 설치되었습니다!"); });
-if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-    window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => { }));
-}
 // 모바일 플레이 중 브라우저의 스와이프/당김 새로고침이 게임 입력을 방해하지 않도록 제한한다.
 document.addEventListener("touchmove", event => { if (document.body.classList.contains("in-game") && event.target.closest(".game-screen"))
     event.stopPropagation(); }, { passive: true });

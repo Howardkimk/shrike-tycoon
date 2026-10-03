@@ -700,6 +700,7 @@ const $ = (id) => document.getElementById(id);
 const coverScreen = $("coverScreen"), enterGameButton = $("enterGameButton"), installAppButton = $("installAppButton"), bgmAudio = $("bgmAudio"), bgmToggleButton = $("bgmToggleButton");
 const orientationGate = $("orientationGate"), orientationGateIcon = $("orientationGateIcon"), orientationGateKicker = $("orientationGateKicker"), orientationGateTitle = $("orientationGateTitle"), orientationGateMessage = $("orientationGateMessage"), orientationGateDevice = $("orientationGateDevice"), orientationGateButton = $("orientationGateButton");
 const startScreen = $("startScreen"), gameScreen = $("gameScreen"), resultScreen = $("resultScreen"), worldScenery = $("worldScenery"), worldIntro = $("worldIntro"), worldIntroKicker = $("worldIntroKicker"), worldIntroTitle = $("worldIntroTitle"), worldIntroSubtitle = $("worldIntroSubtitle"), juiceLayer = $("juiceLayer");
+const fanButton = $("fanButton");
 const startButton = $("startButton"), nextStageButton = $("nextStageButton"), restartButton = $("restartButton"), backButton = $("backButton"), quitButton = $("quitButton"), pauseButton = $("pauseButton");
 const resetSaveButton = $("resetSaveButton"), clearSkewerButton = $("clearSkewerButton"), burnButton = $("burnButton");
 const helpButton = $("helpButton"), helpDialog = $("helpDialog"), closeHelpButton = $("closeHelpButton");
@@ -793,6 +794,43 @@ let score = 0, combo = 0, bestCombo = 0, served = 0, perfectCount = 0, failed = 
 let startedAt = 0, gameEndAt = 0, nextOrderAt = 0, orderSequence = 1, animationFrame = 0;
 let running = false, paused = false, pausedAt = 0, burningGauge = 0, burningActiveUntil = 0, burningStartedAt = 0, feedingActiveUntil = 0, feedingTriggered = false, eventShown = false;
 let currentWeather = "clear", weatherEndAt = 0, weatherTriggered = new Set(), migrationTriggered = new Set(), lastFrameAt = 0, tripleBurnerPerfect = 0, currentPhase = "day", currentPhaseIndex = -1;
+const FAN_DURATION_MS = 5000, FAN_COOLDOWN_MS = 10000, FAN_SPEED_BONUS = .60;
+let fanStartedAt = 0, fanActiveUntil = 0, fanReadyAt = 0;
+function renderFanButton() {
+    const now = paused ? pausedAt : Date.now(), active = running && now < fanActiveUntil;
+    const cooling = running && now < fanReadyAt;
+    fanButton.disabled = !running || paused || cooling || !burners.some(b => b.state === "cooking" && b.readyAt > now);
+    fanButton.classList.toggle("active", active);
+    fanButton.innerHTML = active ? `<span>💨 부채질 중</span><small>+60% · ${Math.ceil((fanActiveUntil - now) / 1000)}초</small>` : cooling ? `<span>🪭 부채 쉬는 중</span><small>${Math.ceil((fanReadyAt - now) / 1000)}초 후 사용</small>` : `<span>🪭 부채질</span><small>5초간 속도 +60%</small>`;
+    fanButton.setAttribute("aria-label", active ? "부채질 중, 조리속도 60% 증가" : cooling ? "부채 재사용 대기 중" : "부채질, 5초간 모든 화구 조리속도 60% 증가");
+}
+function activateFan() {
+    const now = Date.now();
+    if (!running || paused || now >= gameEndAt || now < fanReadyAt || !burners.some(b => b.state === "cooking" && b.readyAt > now))
+        return;
+    fanStartedAt = now;
+    fanActiveUntil = now + FAN_DURATION_MS;
+    fanReadyAt = now + FAN_COOLDOWN_MS;
+    setStatus("💨 부채질! 5초간 모든 화구 조리속도 +60%");
+    spawnJuiceText("💨 속도 +60%", fanButton, "good");
+    renderFanButton();
+}
+function advanceFanCooking(now, frameStart) {
+    const from = Math.max(frameStart, fanStartedAt), to = Math.min(now, fanActiveUntil);
+    if (to <= from)
+        return;
+    burners.forEach(b => {
+        if (b.state !== "cooking")
+            return;
+        // Never boost a skewer before it was placed, or shorten its READY grace.
+        const begin = Math.max(from, b.startedAt), remaining = b.readyAt - begin;
+        if (remaining <= 0 || to <= begin)
+            return;
+        const bonus = Math.min(to - begin, remaining / (1 + FAN_SPEED_BONUS)) * FAN_SPEED_BONUS;
+        b.readyAt -= bonus;
+        b.startedAt -= bonus;
+    });
+}
 function reducedMotion() { var _a; return Boolean((_a = window.matchMedia) === null || _a === void 0 ? void 0 : _a.call(window, "(prefers-reduced-motion: reduce)").matches); }
 function flashClass(el, cls, ms = 520) {
     if (!el)
@@ -1139,6 +1177,7 @@ function startGame() {
     closeAllDialogs();
     void preferMobileLandscape();
     document.body.classList.add("in-game");
+    fanStartedAt = fanActiveUntil = fanReadyAt = 0;
     stage = stages[selectedStage];
     orders = [];
     selectedOrderId = null;
@@ -1204,6 +1243,10 @@ else {
     burners.forEach(b => { if (b.startedAt)
         b.startedAt += delta; if (b.readyAt)
         b.readyAt += delta; });
+    fanStartedAt += fanStartedAt ? delta : 0;
+    fanActiveUntil += fanActiveUntil ? delta : 0;
+    fanReadyAt += fanReadyAt ? delta : 0;
+    lastFrameAt = Date.now();
     paused = false;
     pauseButton.textContent = "⏸ 일시정지";
     setStatus("재개!");
@@ -1214,6 +1257,7 @@ function loop() {
     const now = Date.now();
     if (!paused) {
         const dt = Math.max(0, now - lastFrameAt);
+        advanceFanCooking(now, lastFrameAt);
         lastFrameAt = now;
         if (stage.world === 7)
             fireWarmth = Math.max(18, fireWarmth - dt / 1000 * (.38 + .16 * (stage.frost || 1)));
@@ -1289,6 +1333,7 @@ function loop() {
     else {
         lastFrameAt = now;
     }
+    renderFanButton();
     animationFrame = requestAnimationFrame(loop);
 }
 function finishStage() {
@@ -1526,7 +1571,7 @@ function activateBurning() { if (!running || paused || Date.now() >= gameEndAt |
     return; const now = Date.now(); burningGauge = 0; if (stage.world === 7)
     fireWarmth = 100; if (stage.world === 9)
     heatLevel = Math.max(0, heatLevel - 45); burningStartedAt = now; burningActiveUntil = now + 15000; syncBurners(); spawnJuiceText("BURNING!", chefVisualEl, "fire"); spawnJuiceBurst(chefVisualEl, "fire"); flashClass(gameScreen, "burning-burst", 900); showEvent(`🔥 ${shrikeName(selectedShrike)} BURNING!`); setStatus(selectedShrike === "tiger" ? "조리속도 +40%!" : selectedShrike === "brown" ? "콤보 점수 가속!" : selectedShrike === "chinese-grey" ? "8초 주문 타이머 정지 → 7초 절반 속도!" : selectedShrike === "long-tailed" ? "임시 화구 +2 · 조리 +20%!" : selectedShrike === "grey-backed" ? "고도·한기 페널티 무효화!" : selectedShrike === "isabelline" ? "Migration Wave 점수 +40%!" : selectedShrike === "red-tailed" ? "Rush 조리속도 +25%!" : selectedShrike === "red-backed" ? "곤충만 사용한 꼬치 PERFECT 점수 +25%!" : selectedShrike === "great-grey" ? "환경 페널티 완화 강화!" : "균형 강화!"); }
-function renderAll() { renderMeta(); renderFoodButtons(); renderSkewer(); renderOrders(); renderBurners(); renderSelected(); updateHud(); renderChefVisual(true); renderWorldVisuals(true); }
+function renderAll() { renderFanButton(); renderMeta(); renderFoodButtons(); renderSkewer(); renderOrders(); renderBurners(); renderSelected(); updateHud(); renderChefVisual(true); renderWorldVisuals(true); }
 let startFlowStep = "world", startWorldChosen = false, startStageChosen = false, startChefChosen = false;
 function worldFlowName(world) { const names = ["", "🌾 WORLD 1 · 농경지", "🌿 WORLD 2 · 강을 따라서", "⛰️ WORLD 3 · 산과 밤", "🏔️ WORLD 4 · 히말라야", "🪽 WORLD 5 · 대초원", "🌻 WORLD 6 · 유럽·지중해", "❄️ WORLD 7 · 북미", "🦒 WORLD 8 · 동아프리카", "☀️ WORLD 9 · 남아프리카", "🌴 WORLD 10 · 아프리카 섬"]; return names[world]; }
 function setStartFlow(step) {
@@ -1899,7 +1944,8 @@ resetSaveButton.onclick = () => { if (confirm("모든 Prototype 0.5 진행도, B
 } };
 bindAdaptiveAction(clearSkewerButton, () => { if (paused)
     return; currentSkewer = []; renderSkewer(); });
-bindAdaptiveAction(pauseButton, togglePause);
+bindAdaptiveAction(pauseButton, () => { togglePause(); renderFanButton(); });
+bindAdaptiveAction(fanButton, activateFan);
 bindAdaptiveAction(quitButton, () => { running = false; paused = false; cancelAnimationFrame(animationFrame); returnToWorldWithOrientationGate(); });
 document.querySelectorAll(".bird-filter-button").forEach(btn => btn.onclick = () => { birdBookFilter = (btn.dataset.birdFilter || "all"); renderBirdBook(); });
 birdBookWorldFilter.onchange = () => { birdBookWorld = birdBookWorldFilter.value; renderBirdBook(); };

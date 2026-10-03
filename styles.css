@@ -5623,6 +5623,16 @@ body.in-game.mobile-ingredients #gameScreen.soft-stage .food-button .food-art{wi
 body.in-game.mobile-ingredients #gameScreen.soft-stage .food-button-name{font-size:10px!important;line-height:12px!important;height:12px!important}
 body.in-game.mobile-ingredients #gameScreen.soft-stage .food-button small{font-size:8px!important;line-height:8px!important}
 
+/* 0.8.4.19: one-tap fan beside the grills, with a 44px touch target. */
+body.in-game #gameScreen.soft-stage .burners-panel{grid-template-rows:44px minmax(0,1fr)!important}
+body.in-game #gameScreen.soft-stage .burners-panel .section-heading{height:44px!important;overflow:visible!important}
+body.in-game #gameScreen.soft-stage .fan-button{display:flex!important;flex-direction:column;align-items:center;justify-content:center;flex:0 0 auto;min-width:92px;min-height:44px;padding:3px 8px;border:2px solid #987944;border-radius:15px;background:#fff3d8;color:#44351f;line-height:1.15;touch-action:manipulation;box-shadow:0 2px 0 #95623650}
+body.in-game #gameScreen.soft-stage .fan-button span{font-size:12px;white-space:nowrap}
+body.in-game #gameScreen.soft-stage .fan-button small{font-size:10px;white-space:nowrap;margin-top:3px}
+body.in-game #gameScreen.soft-stage .fan-button:disabled{opacity:.7;cursor:default}
+body.in-game #gameScreen.soft-stage .fan-button.active{opacity:1;background:#dce9bc;border-color:#6d8949}
+@media(max-width:700px){body.in-game #gameScreen.soft-stage .fan-button{min-width:84px;padding:3px 5px}}
+
 /* Visual Guide v1.0: paper, postcards, collected birds and a working kitchen. */
 :root{--guide-cream:#fff3d8;--guide-leaf:#8fa86a;--guide-moss:#566e42;--guide-honey:#e6b85c;--guide-peach:#e99a70;--guide-wood:#c99458;--guide-ink:#332e24}
 body:not(.in-game){background:linear-gradient(#dce7c6e8,#b6c995e8),url('assets/pixel/world1.png') center/cover fixed!important;color:var(--guide-ink)!important}

@@ -1666,6 +1666,13 @@ function desktopIngredientKeysEnabled() {
 function syncIngredientInputMode() {
     const keyboard = desktopIngredientKeysEnabled();
     document.body.classList.toggle("mobile-ingredients", !keyboard);
+    clearSkewerButton.textContent = keyboard ? "비우기 [Space]" : "비우기";
+    clearSkewerButton.title = keyboard ? "스페이스바 · 꼬치 재료 비우기" : "꼬치 재료 비우기";
+    clearSkewerButton.setAttribute("aria-label", keyboard ? "꼬치 재료 비우기, 스페이스바" : "꼬치 재료 비우기");
+    if (keyboard)
+        clearSkewerButton.setAttribute("aria-keyshortcuts", "Space");
+    else
+        clearSkewerButton.removeAttribute("aria-keyshortcuts");
     foodButtonsEl.querySelectorAll(".food-button[data-food-id]").forEach(btn => {
         const f = foods[btn.dataset.foodId], key = btn.dataset.shortcut;
         if (keyboard)
@@ -1687,14 +1694,20 @@ if (typeof ResizeObserver !== "undefined")
 function handleIngredientKey(event) {
     if (!desktopIngredientKeysEnabled())
         return;
-    if (!running || paused || event.repeat || event.isComposing || event.ctrlKey || event.altKey || event.metaKey || event.shiftKey)
+    if (!running || paused || event.isComposing || event.ctrlKey || event.altKey || event.metaKey || event.shiftKey)
         return;
     if (gameScreen.classList.contains("hidden") || document.querySelector("dialog[open]") || orientationGate.classList.contains("show"))
         return;
     const target = event.target;
     if (target instanceof HTMLElement && (target.isContentEditable || target.closest("input,textarea,select,[contenteditable]:not([contenteditable=false])")))
         return;
-    if (!/^[0-9]$/.test(event.key))
+    if (event.code === "Space" || event.key === " ") {
+        event.preventDefault(); // Also suppress scrolling/native button clicks on held Space.
+        if (!event.repeat)
+            clearSkewer();
+        return;
+    }
+    if (event.repeat || !/^[0-9]$/.test(event.key))
         return;
     const btn = Array.from(foodButtonsEl.querySelectorAll(".food-button[data-shortcut]")).find(btn => btn.dataset.shortcut === event.key && !btn.disabled);
     if (!btn)
@@ -1703,6 +1716,8 @@ function handleIngredientKey(event) {
     addFood(btn.dataset.foodId);
 }
 document.addEventListener("keydown", handleIngredientKey);
+function clearSkewer() { if (!running || paused)
+    return; currentSkewer = []; renderSkewer(); }
 function renderSkewer() { skewerEl.innerHTML = skewerMarkup(currentSkewer); }
 function renderSelected() { const o = orders.find(x => x.id === selectedOrderId); selectedOrderSummary.innerHTML = o ? `🎯 우선 매칭 · <b>${o.guest.name}</b> · <span class="recipe-inline">${recipeEmoji(o.recipe, "fresh", "summary")}</span>${o.special ? " · ⭐ SPECIAL" : ""}${o.signature ? " · 🌿 SIGNATURE" : ""}` : "✨ AUTO MATCH · 주문 선택 없이 조립 가능"; }
 function renderOrders() {
@@ -1942,8 +1957,7 @@ resetSaveButton.onclick = () => { if (confirm("모든 Prototype 0.5 진행도, B
     resetStartFlow();
     setStatus("저장 데이터가 초기화되었습니다.");
 } };
-bindAdaptiveAction(clearSkewerButton, () => { if (paused)
-    return; currentSkewer = []; renderSkewer(); });
+bindAdaptiveAction(clearSkewerButton, clearSkewer);
 bindAdaptiveAction(pauseButton, () => { togglePause(); renderFanButton(); });
 bindAdaptiveAction(fanButton, activateFan);
 bindAdaptiveAction(quitButton, () => { running = false; paused = false; cancelAnimationFrame(animationFrame); returnToWorldWithOrientationGate(); });

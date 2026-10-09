@@ -52,7 +52,7 @@ const guests = {
     "himalayan-bulbul": { id: "himalayan-bulbul", name: "히말라야직박구리", englishName: "Himalayan Bulbul", scientificName: "Pycnonotus leucogenys", emoji: "🐦", diet: { primary: ["caterpillar", "beetle"], secondary: ["grasshopper"], rare: ["aquaticInsect"], never: ["mouse", "fish", "smallBird"] }, note: "히말라야 산기슭과 관목대에서 곤충을 이용하는 손님." },
     "blue-whistling-thrush": { id: "blue-whistling-thrush", name: "파랑지빠귀", englishName: "Blue Whistling Thrush", scientificName: "Myophonus caeruleus", emoji: "🐦", diet: { primary: ["aquaticInsect", "beetle"], secondary: ["frog", "caterpillar"], rare: ["fish", "lizard"], never: ["smallBird"] }, note: "산악 계류에서 수서무척추동물과 작은 동물을 찾는 손님." },
     "white-capped-redstart": { id: "white-capped-redstart", name: "흰머리딱새", englishName: "White-capped Redstart", scientificName: "Phoenicurus leucocephalus", emoji: "🐦", diet: { primary: ["aquaticInsect", "beetle"], secondary: ["grasshopper", "caterpillar"], rare: [], never: ["mouse", "fish", "smallBird"] }, note: "빠른 산악 하천을 따라 곤충을 사냥하는 고산성 손님." },
-    "plumbeous-water-redstart": { id: "plumbeous-water-redstart", name: "납빛딱새", englishName: "Plumbeous Water Redstart", scientificName: "Phoenicurus fuliginosus", emoji: "🐦", diet: { primary: ["aquaticInsect"], secondary: ["beetle", "caterpillar"], rare: ["grasshopper"], never: ["mouse", "fish", "smallBird"] }, note: "계류 가장자리에서 수서곤충을 집중적으로 주문하는 손님." },
+    "plumbeous-water-redstart": { id: "plumbeous-water-redstart", name: "부채꼬리바위딱새", englishName: "Plumbeous Water Redstart", scientificName: "Phoenicurus fuliginosus", emoji: "🐦", diet: { primary: ["aquaticInsect"], secondary: ["beetle", "caterpillar"], rare: ["grasshopper"], never: ["mouse", "fish", "smallBird"] }, note: "계류 가장자리에서 수서곤충을 집중적으로 주문하는 손님." },
     "rufous-sibia": { id: "rufous-sibia", name: "붉은배시비아", englishName: "Rufous Sibia", scientificName: "Heterophasia capistrata", emoji: "🐦", diet: { primary: ["caterpillar", "beetle"], secondary: ["grasshopper"], rare: [], never: ["frog", "mouse", "fish", "smallBird"] }, note: "히말라야 중산림의 수관에서 곤충을 찾는 손님." },
     "green-backed-tit": { id: "green-backed-tit", name: "초록등박새", englishName: "Green-backed Tit", scientificName: "Parus monticolus", emoji: "🐦", diet: { primary: ["caterpillar", "beetle"], secondary: ["grasshopper"], rare: [], never: ["frog", "mouse", "fish", "smallBird"] }, note: "산림대의 작은 곤충과 유충을 주로 주문하는 손님." },
     "red-billed-chough": { id: "red-billed-chough", name: "붉은부리까마귀", englishName: "Red-billed Chough", scientificName: "Pyrrhocorax pyrrhocorax", emoji: "🐦", diet: { primary: ["beetle", "grasshopper"], secondary: ["caterpillar", "lizard"], rare: ["mouse"], never: ["fish", "smallBird"] }, note: "고산 초지와 절벽에서 무척추동물을 찾는 군집성 손님." },
@@ -300,6 +300,12 @@ for (let i = 1; i <= 50; i++) {
                 : { kind: "perfect", target: 7 + tier, label: `PERFECT ${7 + tier}회` };
     }
 }
+// 0.8.4.22: only READY / PERFECT servings count toward clearing a stage.
+const MAX_ACTIVE_ORDERS = 6;
+Object.values(stages).forEach(c => c.maxOrders = Math.min(MAX_ACTIVE_ORDERS, c.maxOrders));
+function requiredSuccessfulOrders(c) { return 4 + (c.world - 1) + Math.floor(((c.id - 1) % 10) / 3) + (c.id % 10 === 0 ? 2 : 0); }
+function activeOrderLimit(c, branchLevel, feeding) { return Math.min(MAX_ACTIVE_ORDERS, c.maxOrders + branchLevel + (feeding ? 1 : 0)); }
+function stageCleared(c, successfulOrders) { return successfulOrders >= requiredSuccessfulOrders(c); }
 function worldRuleDescription(world) {
     if (world === 1)
         return "🌿 Feeding Time · 지역의 주 먹이가 주문에 더 강하게 반영됩니다.";
@@ -1084,8 +1090,8 @@ function discoverBird(id) { if (devMode) {
 } if (save.discoveredBirds.includes(id))
     return; save.discoveredBirds.push(id); localStorage.setItem(SAVE_KEY, JSON.stringify(save)); showEvent(`✨ NEW BIRD · ${guests[id].name}`); renderMeta(); }
 function spawnOrder(force = false) {
-    const max = stage.maxOrders + save.upgrades.branch + (isFeeding() ? 1 : 0);
-    if (!running || paused || (!force && orders.length >= max))
+    const max = activeOrderLimit(stage, save.upgrades.branch, isFeeding());
+    if (!running || paused || orders.length >= MAX_ACTIVE_ORDERS || (!force && orders.length >= max))
         return;
     const pool = currentGuestPool();
     if (!pool.length) {
@@ -1337,10 +1343,13 @@ function loop() {
     animationFrame = requestAnimationFrame(loop);
 }
 function finishStage() {
+    if (!running)
+        return;
     running = false;
     cancelAnimationFrame(animationFrame);
-    const stars = score >= stage.starScores[1] ? 3 : score >= stage.starScores[0] ? 2 : score > 0 ? 1 : 0;
-    const subDone = subGoalComplete();
+    const cleared = stageCleared(stage, perfectCount);
+    const stars = cleared ? (score >= stage.starScores[1] ? 3 : score >= stage.starScores[0] ? 2 : 1) : 0;
+    const subDone = cleared && subGoalComplete();
     const growthMult = selectedShrike === "northern" ? 1.10 : 1;
     const xpGain = Math.round((score * .10 + perfectCount * 8 + specialServed * 20 + stars * 50 + (subDone ? 75 : 0)) * growthMult);
     const prevBest = save.bestScores[String(stage.id)] || 0, prevCombo = save.bestCombos[String(stage.id)] || 0, prevStars = save.bestStars[String(stage.id)] || 0;
@@ -1354,49 +1363,51 @@ function finishStage() {
         save.bestScores[String(stage.id)] = Math.max(prevBest, score);
         save.bestStars[String(stage.id)] = Math.max(prevStars, stars);
         save.bestCombos[String(stage.id)] = Math.max(prevCombo, bestCombo);
-        if (stage.id < 100 && stars > 0)
+        if (stage.id < 100 && cleared)
             save.unlockedStage = Math.max(save.unlockedStage, (stage.id + 1));
         if (stage.subGoal && subDone)
             save.bestSubGoals[String(stage.id)] = true;
-        if (stage.id >= 3 && stars >= 2 && !save.unlockedShrikes.includes("tiger")) {
-            save.unlockedShrikes.push("tiger");
-            unlocked.push("🐅 칡때까치 해금!");
-        }
-        if ((save.bestCombos["6"] || 0) >= 12 && !save.unlockedShrikes.includes("brown")) {
-            save.unlockedShrikes.push("brown");
-            unlocked.push("🟤 노랑때까치 해금!");
-        }
-        if (stage.id >= 15 && stars >= 2 && !save.unlockedShrikes.includes("chinese-grey")) {
-            save.unlockedShrikes.push("chinese-grey");
-            unlocked.push("🩶 물때까치 해금! · 주문 제한시간 +10%");
-        }
-        if (stage.id >= 18 && tripleBurnerPerfect >= 3 && !save.unlockedShrikes.includes("long-tailed")) {
-            save.unlockedShrikes.push("long-tailed");
-            unlocked.push("🐦 긴꼬리때까치 해금! · 화구 +2");
-        }
-        if (stage.id === 30 && stars >= 2 && !save.unlockedShrikes.includes("northern")) {
-            save.unlockedShrikes.push("northern");
-            unlocked.push("🩶 재때까치 해금! · XP +10%");
-        }
-        if (stage.id === 40 && stars >= 2 && !save.unlockedShrikes.includes("grey-backed")) {
-            save.unlockedShrikes.push("grey-backed");
-            unlocked.push("🏔️ 회색등때까치 해금! · 고산/한기 페널티 완화");
-        }
-        if (stage.id >= 44 && stars >= 2 && !save.unlockedShrikes.includes("isabelline")) {
-            save.unlockedShrikes.push("isabelline");
-            unlocked.push("🏜️ 사막때까치 해금! · Migration Wave 점수 +20%");
-        }
-        if (stage.id === 50 && stars >= 2 && !save.unlockedShrikes.includes("red-tailed")) {
-            save.unlockedShrikes.push("red-tailed");
-            unlocked.push("🪽 붉은꼬리때까치 해금! · Rush 특화");
-        }
-        if (stage.id === 60 && stars >= 2 && !save.unlockedShrikes.includes("great-grey")) {
-            save.unlockedShrikes.push("great-grey");
-            unlocked.push("🩶 초원때까치 해금! · 날씨 페널티 완화");
-        }
-        if (stage.id === 52 && stars >= 2 && !save.unlockedShrikes.includes("red-backed")) {
-            save.unlockedShrikes.push("red-backed");
-            unlocked.push("🪶 붉은등때까치 해금! · 곤충 꼬치 PERFECT 점수 +10%");
+        if (cleared) {
+            if (stage.id >= 3 && stars >= 2 && !save.unlockedShrikes.includes("tiger")) {
+                save.unlockedShrikes.push("tiger");
+                unlocked.push("🐅 칡때까치 해금!");
+            }
+            if ((save.bestCombos["6"] || 0) >= 12 && !save.unlockedShrikes.includes("brown")) {
+                save.unlockedShrikes.push("brown");
+                unlocked.push("🟤 노랑때까치 해금!");
+            }
+            if (stage.id >= 15 && stars >= 2 && !save.unlockedShrikes.includes("chinese-grey")) {
+                save.unlockedShrikes.push("chinese-grey");
+                unlocked.push("🩶 물때까치 해금! · 주문 제한시간 +10%");
+            }
+            if (stage.id >= 18 && tripleBurnerPerfect >= 3 && !save.unlockedShrikes.includes("long-tailed")) {
+                save.unlockedShrikes.push("long-tailed");
+                unlocked.push("🐦 긴꼬리때까치 해금! · 화구 +2");
+            }
+            if (stage.id === 30 && stars >= 2 && !save.unlockedShrikes.includes("northern")) {
+                save.unlockedShrikes.push("northern");
+                unlocked.push("🩶 재때까치 해금! · XP +10%");
+            }
+            if (stage.id === 40 && stars >= 2 && !save.unlockedShrikes.includes("grey-backed")) {
+                save.unlockedShrikes.push("grey-backed");
+                unlocked.push("🏔️ 회색등때까치 해금! · 고산/한기 페널티 완화");
+            }
+            if (stage.id >= 44 && stars >= 2 && !save.unlockedShrikes.includes("isabelline")) {
+                save.unlockedShrikes.push("isabelline");
+                unlocked.push("🏜️ 사막때까치 해금! · Migration Wave 점수 +20%");
+            }
+            if (stage.id === 50 && stars >= 2 && !save.unlockedShrikes.includes("red-tailed")) {
+                save.unlockedShrikes.push("red-tailed");
+                unlocked.push("🪽 붉은꼬리때까치 해금! · Rush 특화");
+            }
+            if (stage.id === 60 && stars >= 2 && !save.unlockedShrikes.includes("great-grey")) {
+                save.unlockedShrikes.push("great-grey");
+                unlocked.push("🩶 초원때까치 해금! · 날씨 페널티 완화");
+            }
+            if (stage.id === 52 && stars >= 2 && !save.unlockedShrikes.includes("red-backed")) {
+                save.unlockedShrikes.push("red-backed");
+                unlocked.push("🪶 붉은등때까치 해금! · 곤충 꼬치 PERFECT 점수 +10%");
+            }
         }
         persist();
     }
@@ -1404,9 +1415,12 @@ function finishStage() {
     resultScreen.classList.remove("hidden");
     bgmAudio.pause();
     flashClass(resultScreen, "result-enter", 900);
-    const canAdvance = stage.id < 100 && (devMode || (stars > 0 && save.unlockedStage >= stage.id + 1));
+    const canAdvance = cleared && stage.id < 100 && (devMode || save.unlockedStage >= stage.id + 1);
     nextStageButton.classList.toggle("hidden", !canAdvance);
-    $("resultChefArt").innerHTML = shrikePortraitSvg(selectedShrike, "perfect", true);
+    $("resultOutcome").textContent = cleared ? "단계 성공!" : "단계 실패 · 패배";
+    resultScreen.classList.toggle("stage-defeat", !cleared);
+    $("resultGoal").textContent = `정상 서빙 ${perfectCount} / ${requiredSuccessfulOrders(stage)}개 · ${cleared ? "목표 달성" : `목표까지 ${requiredSuccessfulOrders(stage) - perfectCount}개 부족 · 다시 도전해 주세요`}`;
+    $("resultChefArt").innerHTML = shrikePortraitSvg(selectedShrike, cleared ? "perfect" : "oops", true);
     $("resultGuestArt").innerHTML = guestPortraitSvg(guests[stage.guestPool[0]], true);
     $("resultStage").textContent = `Stage ${stage.id} · ${stage.name}`;
     $("resultStars").textContent = `${"★".repeat(stars)}${"☆".repeat(3 - stars)}`;
@@ -1440,6 +1454,10 @@ function addFood(id) { if (!running || paused || !stageFoodPool().includes(id))
 function clickBurner(index) {
     if (!running || paused)
         return;
+    if (Date.now() >= gameEndAt) {
+        finishStage();
+        return;
+    }
     const b = burners[index];
     if (!b)
         return;
@@ -1605,7 +1623,7 @@ function chooseWorldForFlow(world) {
     renderStages();
     setStartFlow("stage");
 }
-function updateReadySummary() { const c = stages[selectedStage]; $("readyChefArt").innerHTML = shrikePortraitSvg(selectedShrike, "idle", true); startChoiceSummary.innerHTML = `<span class="ready-kicker">${worldFlowName(selectedWorld)}</span><strong>${c.icon} Stage ${c.id} · ${c.name}</strong><span>${c.habitat}</span><span>🐦 Chef · ${shrikeName(selectedShrike)}</span>${c.subGoal ? `<span>🎯 ${c.subGoal.label}</span>` : ""}`; startButton.textContent = `${c.icon} Stage ${c.id} 시작하기`; }
+function updateReadySummary() { const c = stages[selectedStage]; $("readyChefArt").innerHTML = shrikePortraitSvg(selectedShrike, "idle", true); startChoiceSummary.innerHTML = `<span class="ready-kicker">${worldFlowName(selectedWorld)}</span><strong>${c.icon} Stage ${c.id} · ${c.name}</strong><span>${c.habitat}</span><span>🐦 Chef · ${shrikeName(selectedShrike)}</span><span>클리어: ${c.duration}초 내 정상 서빙 ${requiredSuccessfulOrders(c)}개</span>${c.subGoal ? `<span>🎯 ${c.subGoal.label}</span>` : ""}`; startButton.textContent = `${c.icon} Stage ${c.id} 시작하기`; }
 function renderMeta() { const totalStars = Object.values(save.bestStars).reduce((a, b) => a + b, 0); saveSummary.innerHTML = `<section class="journey-record" aria-label="여행 기록"><div class="journey-record-title"><span>📖</span><div><small>MY TRAVEL JOURNAL</small><b>때까치 식당 여행수첩</b></div></div><div class="career-grid"><div><span>경험치</span><strong>${save.xp.toLocaleString()}</strong><small>XP</small></div><div><span>영업 횟수</span><strong>${save.stats.plays}</strong><small>회</small></div><div><span>누적 서빙</span><strong>${save.stats.served}</strong><small>마리</small></div><div><span>퍼펙트</span><strong>${save.stats.perfect}</strong><small>회</small></div></div><div class="journey-progress"><span>🗺️ ${save.unlockedStage}/100</span><span>🐦 ${save.unlockedShrikes.length}/${Object.keys(chefPixelAssets).length}</span><span>📖 ${save.discoveredBirds.length}/${Object.keys(guests).length}</span><span>⭐ ${totalStars}/300</span></div>${devMode ? '<p class="dev-note">🛠 테스트 모드 · 진행도는 저장되지 않습니다.</p>' : ""}</section>`; totalXpHeader.textContent = `${save.xp.toLocaleString()} XP`; careerStatsHeader.textContent = devMode ? "테스트 모드" : `${save.stats.plays}회 영업 · ${save.stats.served}마리 서빙`; xpHudLabel.textContent = save.xp.toLocaleString(); renderStages(); renderShrikes(); renderUpgrades(); renderStageEcology(); }
 function renderStages() { var _a, _b, _c; stageButtonsEl.innerHTML = ""; const worldButtons = [world1Button, world2Button, world3Button, world4Button, world5Button, world6Button, world7Button, world8Button, world9Button, world10Button]; worldButtons.forEach((btn, i) => { const w = i + 1; btn.classList.toggle("selected", startWorldChosen && selectedWorld === w); btn.disabled = !devMode && save.unlockedStage < (w - 1) * 10 + 1; const art = btn.querySelector(".world-postcard-art"); if (art && !art.querySelector("img"))
     art.innerHTML = `<img src="assets/pixel/world${w}.png" alt="" loading="lazy">`; }); const start = (selectedWorld - 1) * 10 + 1, end = start + 9; for (let i = start; i <= end; i++) {
@@ -1615,17 +1633,17 @@ function renderStages() { var _a, _b, _c; stageButtonsEl.innerHTML = ""; const w
     btn.disabled = !devMode && id > save.unlockedStage;
     btn.dataset.stageId = String(id);
     const stars = save.bestStars[String(id)] || 0, bc = save.bestCombos[String(id)] || 0, bs = save.bestScores[String(id)] || 0;
-    btn.innerHTML = `<img class="stage-scenery" src="assets/pixel/world${c.world}.png" alt="" loading="lazy"><span class="stage-icon">${c.icon}</span><b>${id}. ${c.name}</b><small>${c.habitat}</small><span class="stage-stars">${"★".repeat(stars)}${"☆".repeat(3 - stars)}</span><small class="stage-record">Best ${bs.toLocaleString()} · Combo ×${bc}</small><small>손님 ${c.guestPool.length}종${((_a = c.weather) === null || _a === void 0 ? void 0 : _a.length) ? " · 🌦 날씨" : ""}${((_b = c.timePhases) === null || _b === void 0 ? void 0 : _b.length) ? " · 🌓 시간대" : ""}${c.altitude ? ` · 🏔️ 고도 ${c.altitude}` : ""}${((_c = c.migrationWaves) === null || _c === void 0 ? void 0 : _c.length) ? ` · 🪽 이동 ${c.migrationWaves.length}파` : ""}${c.favoriteFood ? ` · ⭐ ${foods[c.favoriteFood].name}` : ""}${c.frost ? ` · ❄️ Frost ${c.frost}` : ""}${c.heat ? ` · 🔥 Heat ${c.heat}` : ""}</small>${c.subGoal ? `<small class="stage-goal">🎯 ${c.subGoal.label}${save.bestSubGoals[String(id)] ? " · ✓" : ""}</small>` : ""}${devMode ? `<small class="dev-badge">DEV · UNLOCKED</small>` : ""}`;
+    btn.innerHTML = `<img class="stage-scenery" src="assets/pixel/world${c.world}.png" alt="" loading="lazy"><span class="stage-icon">${c.icon}</span><b>${id}. ${c.name}</b><small>${c.habitat}</small><span class="stage-stars">${"★".repeat(stars)}${"☆".repeat(3 - stars)}</span><small class="stage-record">Best ${bs.toLocaleString()} · Combo ×${bc}</small><small class="stage-clear-goal">클리어: ${c.duration}초 내 정상 서빙 ${requiredSuccessfulOrders(c)}개</small><small>손님 ${c.guestPool.length}종${((_a = c.weather) === null || _a === void 0 ? void 0 : _a.length) ? " · 🌦 날씨" : ""}${((_b = c.timePhases) === null || _b === void 0 ? void 0 : _b.length) ? " · 🌓 시간대" : ""}${c.altitude ? ` · 🏔️ 고도 ${c.altitude}` : ""}${((_c = c.migrationWaves) === null || _c === void 0 ? void 0 : _c.length) ? ` · 🪽 이동 ${c.migrationWaves.length}파` : ""}${c.favoriteFood ? ` · ⭐ ${foods[c.favoriteFood].name}` : ""}${c.frost ? ` · ❄️ Frost ${c.frost}` : ""}${c.heat ? ` · 🔥 Heat ${c.heat}` : ""}</small>${c.subGoal ? `<small class="stage-goal">🎯 ${c.subGoal.label}${save.bestSubGoals[String(id)] ? " · ✓" : ""}</small>` : ""}${devMode ? `<small class="dev-badge">DEV · UNLOCKED</small>` : ""}`;
     btn.addEventListener("click", () => { selectedStage = id; startStageChosen = true; startChefChosen = false; renderStageEcology(); selectedStageFlowTitle.textContent = `${c.icon} Stage ${c.id} · ${c.name}`; renderShrikes(); setStartFlow("chef"); });
     stageButtonsEl.appendChild(btn);
 } }
-function renderStageEcology() { var _a; const c = stages[selectedStage]; const focusFoods = stageFoodEntries(c).slice(0, 3).map(([id, v]) => `${foodInlineLabel(id)} ${Math.round(v * 100)}%`).join(" · "); const otherFoods = stageFoodEntries(c).slice(3, 6).map(([id, v]) => `${foodInlineLabel(id)} ${Math.round(v * 100)}%`).join(" · "); const coreIds = coreGuests(c), core = coreIds.map(id => guests[id].name).join(" · "); const others = c.guestPool.filter(id => !coreIds.includes(id)).slice(0, 4).map(id => guests[id].name).join(" · "); const wx = (c.weather || []).map(w => `${w.type === "rain" ? "🌧 비" : w.type === "wind" ? "💨 바람" : w.type === "cold" ? "❄️ 한기" : "☀️ 햇빛"} ${w.duration}s`).join(" · ") || "고정 날씨"; const phases = (c.timePhases || []).map(p => `${phaseName(p.type)} ${p.at}s`).join(" → ") || "☀️ 낮"; const migration = ((_a = c.migrationWaves) === null || _a === void 0 ? void 0 : _a.length) ? `🪽 Migration Wave · ${c.migrationWaves.map(x => x + "s").join(" · ")}` : ""; stageEcology.innerHTML = `<div><span class="eco-label">${c.icon} HABITAT</span><b>${c.habitat}</b><p>World ${c.world}</p><p><b>${worldRuleDescription(c.world)}</b></p></div><div><span class="eco-label">🎯 ORDER FOCUS</span><p><b>${focusFoods}</b></p>${otherFoods ? `<p>${otherFoods}</p>` : ""}</div><div><span class="eco-label">🐦 CORE GUESTS</span><p><b>${core}</b></p>${others ? `<p>${others}${c.guestPool.length > 7 ? " 외" : ""}</p>` : ""}</div><div><span class="eco-label">🌓 TIME / WEATHER</span><p>${phases}</p><p>${c.altitude ? `🏔️ 고도 단계 ${c.altitude} · 기본 조리속도 -${c.altitude * 5}%` : wx}</p><p>${c.altitude ? wx : migration}</p>${c.favoriteFood ? `<p>⭐ Favourite · ${foodInlineLabel(c.favoriteFood)}</p>` : ""}${c.frost ? `<p>❄️ Frost 단계 ${c.frost}</p>` : ""}${c.heat ? `<p>🔥 Heat 단계 ${c.heat}</p>` : ""}${c.subGoal ? `<p><b>🎯 ${c.subGoal.label}</b></p>` : ""}</div>`; }
+function renderStageEcology() { var _a; const c = stages[selectedStage]; const focusFoods = stageFoodEntries(c).slice(0, 3).map(([id, v]) => `${foodInlineLabel(id)} ${Math.round(v * 100)}%`).join(" · "); const otherFoods = stageFoodEntries(c).slice(3, 6).map(([id, v]) => `${foodInlineLabel(id)} ${Math.round(v * 100)}%`).join(" · "); const coreIds = coreGuests(c), core = coreIds.map(id => guests[id].name).join(" · "); const others = c.guestPool.filter(id => !coreIds.includes(id)).slice(0, 4).map(id => guests[id].name).join(" · "); const wx = (c.weather || []).map(w => `${w.type === "rain" ? "🌧 비" : w.type === "wind" ? "💨 바람" : w.type === "cold" ? "❄️ 한기" : "☀️ 햇빛"} ${w.duration}s`).join(" · ") || "고정 날씨"; const phases = (c.timePhases || []).map(p => `${phaseName(p.type)} ${p.at}s`).join(" → ") || "☀️ 낮"; const migration = ((_a = c.migrationWaves) === null || _a === void 0 ? void 0 : _a.length) ? `🪽 Migration Wave · ${c.migrationWaves.map(x => x + "s").join(" · ")}` : ""; stageEcology.innerHTML = `<div><span class="eco-label">${c.icon} HABITAT</span><b>${c.habitat}</b><p>World ${c.world}</p><p><b>클리어: ${c.duration}초 내 정상 서빙 ${requiredSuccessfulOrders(c)}개</b></p><p><b>${worldRuleDescription(c.world)}</b></p></div><div><span class="eco-label">🎯 ORDER FOCUS</span><p><b>${focusFoods}</b></p>${otherFoods ? `<p>${otherFoods}</p>` : ""}</div><div><span class="eco-label">🐦 CORE GUESTS</span><p><b>${core}</b></p>${others ? `<p>${others}${c.guestPool.length > 7 ? " 외" : ""}</p>` : ""}</div><div><span class="eco-label">🌓 TIME / WEATHER</span><p>${phases}</p><p>${c.altitude ? `🏔️ 고도 단계 ${c.altitude} · 기본 조리속도 -${c.altitude * 5}%` : wx}</p><p>${c.altitude ? wx : migration}</p>${c.favoriteFood ? `<p>⭐ Favourite · ${foodInlineLabel(c.favoriteFood)}</p>` : ""}${c.frost ? `<p>❄️ Frost 단계 ${c.frost}</p>` : ""}${c.heat ? `<p>🔥 Heat 단계 ${c.heat}</p>` : ""}${c.subGoal ? `<p><b>🎯 ${c.subGoal.label}</b></p>` : ""}</div>`; }
 function stageFoodEntries(c) { return Object.entries(c.foodAvailability).sort((a, b) => b[1] - a[1]); }
 function stageGuestFit(c, id) { const g = guests[id], availability = (food) => c.foodAvailability[food] || 0; return .35 + g.diet.primary.reduce((sum, food) => sum + availability(food), 0) * 1.35 + g.diet.secondary.reduce((sum, food) => sum + availability(food), 0) * .48 + g.diet.rare.reduce((sum, food) => sum + availability(food), 0) * .12; }
 function coreGuests(c) { return [...c.guestPool].sort((a, b) => stageGuestFit(c, b) - stageGuestFit(c, a)).slice(0, 3); }
 function renderShrikes() { const defs = [{ id: "bull-headed", emoji: "🐦", name: "때까치", desc: "균형형 · Burning 시 전반 강화", unlock: "기본" }, { id: "tiger", emoji: "🐅", name: "칡때까치", desc: "조리속도 +10%", unlock: "Stage 3 이상에서 ★★ 달성" }, { id: "brown", emoji: "🟤", name: "노랑때까치", desc: "Combo가 높을수록 점수 증가", unlock: "Stage 6에서 Best Combo ×12" }, { id: "chinese-grey", emoji: "🩶", name: "물때까치", desc: "주문 제한시간 +10% · 시간 제어 Burning", unlock: "Stage 15 ★★" }, { id: "long-tailed", emoji: "🐦", name: "긴꼬리때까치", desc: "화구 +2 · 조리속도 -10%", unlock: "Stage 18+에서 3화구 동시 PERFECT 3회" }, { id: "northern", emoji: "🩶", name: "재때까치", desc: "성장형 · 획득 XP +10%", unlock: "Stage 30 ★★" }, { id: "grey-backed", emoji: "🏔️", name: "회색등때까치", desc: "고산형 · 고도 페널티 50% 완화", unlock: "Stage 40 ★★" }, { id: "isabelline", emoji: "🏜️", name: "사막때까치", desc: "Migration Wave 중 점수 +20%", unlock: "Stage 44 ★★" }, { id: "red-tailed", emoji: "🪽", name: "붉은꼬리때까치", desc: "Rush 특화 · Burning 조리 +25%", unlock: "Stage 50 ★★" }, { id: "great-grey", emoji: "🩶", name: "초원때까치", desc: "환경형 · 비·한기 조리 페널티 50% 완화", unlock: "Stage 60 ★★" }, { id: "red-backed", emoji: "🪶", name: "붉은등때까치", desc: "곤충만 사용한 꼬치 PERFECT 점수 +10%", unlock: "Stage 52 ★★" }]; shrikeButtonsEl.innerHTML = ""; defs.forEach(d => { const btn = document.createElement("button"); btn.type = "button"; btn.className = "select-card shrike-select-card" + (startChefChosen && selectedShrike === d.id ? " selected" : ""); btn.dataset.shrikeId = d.id; btn.disabled = !devMode && !save.unlockedShrikes.includes(d.id); const meta = shrikeVisualMeta(d.id); btn.innerHTML = `<div class="shrike-select-portrait">${shrikePortraitSvg(d.id, "idle", false)}</div><div class="shrike-select-copy"><b>${d.name}</b><small class="shrike-select-en">${meta.en} · ${meta.role}</small><span>${d.desc}</span><small>${devMode ? `DEV · ${d.unlock}` : btn.disabled ? `LOCKED · ${d.unlock}` : "사용 가능"}</small></div>`; btn.addEventListener("click", () => { selectedShrike = d.id; startChefChosen = true; renderShrikes(); updateReadySummary(); setStartFlow("ready"); }); shrikeButtonsEl.appendChild(btn); }); }
 function upgradeCost(id) { return 250 + save.upgrades[id] * 250; }
-function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가지", desc: "동시 주문 +1 / Lv", max: 2 }, { id: "fire", name: "🔥 좋은 장작", desc: "조리속도 +3% / Lv", max: 5 }, { id: "perch", name: "🪺 편안한 횃대", desc: "주문 대기시간 +4% / Lv", max: 5 }]; upgradeList.innerHTML = ""; defs.forEach(d => { const lv = save.upgrades[d.id], cost = upgradeCost(d.id), card = document.createElement("div"); card.className = "upgrade-card"; card.innerHTML = `<div><b>${d.name} · Lv.${lv}/${d.max}</b><small>${d.desc}</small></div>`; const btn = document.createElement("button"); btn.className = "primary-button"; btn.textContent = lv >= d.max ? "MAX" : `${cost} XP`; btn.disabled = devMode || lv >= d.max || save.xp < cost; if (devMode)
+function renderUpgrades() { const defs = [{ id: "branch", name: "🌿 나뭇가지", desc: "동시 주문 +1 / Lv (최대 6개)", max: 2 }, { id: "fire", name: "🔥 좋은 장작", desc: "조리속도 +3% / Lv", max: 5 }, { id: "perch", name: "🪺 편안한 횃대", desc: "주문 대기시간 +4% / Lv", max: 5 }]; upgradeList.innerHTML = ""; defs.forEach(d => { const lv = save.upgrades[d.id], cost = upgradeCost(d.id), card = document.createElement("div"); card.className = "upgrade-card"; card.innerHTML = `<div><b>${d.name} · Lv.${lv}/${d.max}</b><small>${d.desc}</small></div>`; const btn = document.createElement("button"); btn.className = "primary-button"; btn.textContent = lv >= d.max ? "MAX" : `${cost} XP`; btn.disabled = devMode || lv >= d.max || save.xp < cost; if (devMode)
     btn.textContent = "DEV · SAVE LOCK"; btn.onclick = () => { if (devMode)
     return; if (save.xp >= cost && lv < d.max) {
     save.xp -= cost;
@@ -1857,7 +1875,7 @@ function renderShrikeDex() {
         selectedShrikeDex = ((_a = filtered[0]) === null || _a === void 0 ? void 0 : _a.id) || ((_b = shrikeCollectionDefs[0]) === null || _b === void 0 ? void 0 : _b.id) || null;
     renderShrikeDexDetail();
 }
-function updateHud() { scoreLabel.textContent = score.toLocaleString(); xpHudLabel.textContent = save.xp.toLocaleString(); comboLabel.textContent = `×${combo}`; bestComboLabel.textContent = `×${bestCombo}`; burnGaugeFill.style.width = `${burningGauge}%`; const active = isBurning(); burnGaugeText.textContent = active ? `${Math.max(0, Math.ceil((burningActiveUntil - Date.now()) / 1000))}초 · ${Math.round(burningGauge)}%` : `${Math.round(burningGauge)}%`; burnButton.textContent = active ? "🔥 버닝 중" : "🔥 자동 버닝"; burnButton.classList.toggle("active", active); burnButton.setAttribute("aria-label", active ? "자동 버닝 활성화 중" : "게이지가 100%에 도달하면 버닝 자동 발동"); }
+function updateHud() { $("clearGoalLabel").textContent = `정상 서빙 ${perfectCount}/${requiredSuccessfulOrders(stage)}`; $("clearGoalLabel").classList.toggle("goal-met", stageCleared(stage, perfectCount)); scoreLabel.textContent = score.toLocaleString(); xpHudLabel.textContent = save.xp.toLocaleString(); comboLabel.textContent = `×${combo}`; bestComboLabel.textContent = `×${bestCombo}`; burnGaugeFill.style.width = `${burningGauge}%`; const active = isBurning(); burnGaugeText.textContent = active ? `${Math.max(0, Math.ceil((burningActiveUntil - Date.now()) / 1000))}초 · ${Math.round(burningGauge)}%` : `${Math.round(burningGauge)}%`; burnButton.textContent = active ? "🔥 버닝 중" : "🔥 자동 버닝"; burnButton.classList.toggle("active", active); burnButton.setAttribute("aria-label", active ? "자동 버닝 활성화 중" : "게이지가 100%에 도달하면 버닝 자동 발동"); }
 function setStatus(t) { statusMessage.textContent = t; }
 function judge(t, good) { floatingJudge.textContent = t; floatingJudge.style.color = good ? "var(--accent)" : "var(--danger)"; floatingJudge.classList.remove("pop"); void floatingJudge.offsetWidth; floatingJudge.classList.add("pop"); }
 function showEvent(t) { eventBanner.textContent = t; eventBanner.classList.add("show"); setTimeout(() => eventBanner.classList.remove("show"), 2200); }
@@ -1935,7 +1953,7 @@ backToStageButton.onclick = () => { startStageChosen = false; startChefChosen = 
 backToChefButton.onclick = () => { startChefChosen = false; renderShrikes(); setStartFlow("chef"); };
 startButton.onclick = () => { if (!startWorldChosen || !startStageChosen || !startChefChosen)
     return; requestStageStart(); };
-nextStageButton.onclick = () => { if (stage.id >= 100)
+nextStageButton.onclick = () => { if (stage.id >= 100 || !stageCleared(stage, perfectCount))
     return; const next = (stage.id + 1); if (!devMode && save.unlockedStage < next)
     return; selectedStage = next; selectedWorld = Math.min(10, Math.ceil(next / 10)); requestStageStart(); };
 restartButton.onclick = requestStageStart;

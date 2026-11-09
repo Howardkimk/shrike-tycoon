@@ -1,0 +1,308 @@
+{
+  "ready": [
+    {
+      "w": 1366,
+      "h": 768,
+      "rect": {
+        "x": 373,
+        "y": 670,
+        "width": 620,
+        "height": 53
+      }
+    },
+    {
+      "w": 1280,
+      "h": 720,
+      "rect": {
+        "x": 330,
+        "y": 622,
+        "width": 620,
+        "height": 53
+      }
+    },
+    {
+      "w": 1024,
+      "h": 640,
+      "rect": {
+        "x": 202,
+        "y": 542,
+        "width": 620,
+        "height": 53
+      }
+    },
+    {
+      "w": 1920,
+      "h": 1080,
+      "rect": {
+        "x": 650,
+        "y": 982,
+        "width": 620,
+        "height": 53
+      }
+    },
+    {
+      "w": 390,
+      "h": 844,
+      "rect": {
+        "x": 25,
+        "y": 762,
+        "width": 340,
+        "height": 53
+      }
+    },
+    {
+      "w": 360,
+      "h": 640,
+      "rect": {
+        "x": 25,
+        "y": 558,
+        "width": 310,
+        "height": 53
+      }
+    },
+    {
+      "w": 844,
+      "h": 390,
+      "rect": {
+        "x": 112,
+        "y": 298,
+        "width": 620,
+        "height": 53
+      }
+    },
+    {
+      "w": 667,
+      "h": 375,
+      "rect": {
+        "x": 25,
+        "y": 293,
+        "width": 617,
+        "height": 53
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Start visible without scrolling 1366x768",
+      "ok": true
+    },
+    {
+      "name": "Start not covered 1366x768",
+      "ok": true
+    },
+    {
+      "name": "Start stays visible while summary scrolls 1366x768",
+      "ok": true
+    },
+    {
+      "name": "Start enters gameplay 1366x768",
+      "ok": true
+    },
+    {
+      "name": "Start visible without scrolling 1280x720",
+      "ok": true
+    },
+    {
+      "name": "Start not covered 1280x720",
+      "ok": true
+    },
+    {
+      "name": "Start stays visible while summary scrolls 1280x720",
+      "ok": true
+    },
+    {
+      "name": "Start enters gameplay 1280x720",
+      "ok": true
+    },
+    {
+      "name": "Start visible without scrolling 1024x640",
+      "ok": true
+    },
+    {
+      "name": "Start not covered 1024x640",
+      "ok": true
+    },
+    {
+      "name": "Start stays visible while summary scrolls 1024x640",
+      "ok": true
+    },
+    {
+      "name": "Start enters gameplay 1024x640",
+      "ok": true
+    },
+    {
+      "name": "Start visible without scrolling 1920x1080",
+      "ok": true
+    },
+    {
+      "name": "Start not covered 1920x1080",
+      "ok": true
+    },
+    {
+      "name": "Start stays visible while summary scrolls 1920x1080",
+      "ok": true
+    },
+    {
+      "name": "Start enters gameplay 1920x1080",
+      "ok": true
+    },
+    {
+      "name": "Start visible without scrolling 390x844",
+      "ok": true
+    },
+    {
+      "name": "Start not covered 390x844",
+      "ok": true
+    },
+    {
+      "name": "Start stays visible while summary scrolls 390x844",
+      "ok": true
+    },
+    {
+      "name": "Start enters gameplay 390x844",
+      "ok": true
+    },
+    {
+      "name": "Start visible without scrolling 360x640",
+      "ok": true
+    },
+    {
+      "name": "Start not covered 360x640",
+      "ok": true
+    },
+    {
+      "name": "Start stays visible while summary scrolls 360x640",
+      "ok": true
+    },
+    {
+      "name": "Start enters gameplay 360x640",
+      "ok": true
+    },
+    {
+      "name": "Start visible without scrolling 844x390",
+      "ok": true
+    },
+    {
+      "name": "Start not covered 844x390",
+      "ok": true
+    },
+    {
+      "name": "Start stays visible while summary scrolls 844x390",
+      "ok": true
+    },
+    {
+      "name": "Start enters gameplay 844x390",
+      "ok": true
+    },
+    {
+      "name": "Start visible without scrolling 667x375",
+      "ok": true
+    },
+    {
+      "name": "Start not covered 667x375",
+      "ok": true
+    },
+    {
+      "name": "Start stays visible while summary scrolls 667x375",
+      "ok": true
+    },
+    {
+      "name": "Start enters gameplay 667x375",
+      "ok": true
+    },
+    {
+      "name": "Touch device start visible 390x844",
+      "ok": true
+    },
+    {
+      "name": "Touch device orientation continuation reachable 390x844",
+      "ok": true
+    },
+    {
+      "name": "Touch device starts game after orientation guide 390x844",
+      "ok": true
+    },
+    {
+      "name": "Touch device start visible 360x640",
+      "ok": true
+    },
+    {
+      "name": "Touch device orientation continuation reachable 360x640",
+      "ok": true
+    },
+    {
+      "name": "Touch device starts game after orientation guide 360x640",
+      "ok": true
+    },
+    {
+      "name": "Touch device start visible 844x390",
+      "ok": true
+    },
+    {
+      "name": "Touch device orientation continuation reachable 844x390",
+      "ok": true
+    },
+    {
+      "name": "Touch device starts game after orientation guide 844x390",
+      "ok": true
+    },
+    {
+      "name": "Complete button removed",
+      "ok": true
+    },
+    {
+      "name": "Empty skewer cannot cook",
+      "ok": true
+    },
+    {
+      "name": "One hearth click directly starts preferred matching order",
+      "ok": true
+    },
+    {
+      "name": "Unmatched skewer kept editable",
+      "ok": true
+    },
+    {
+      "name": "Oldest free matching order is used and cooking order not reused",
+      "ok": true
+    },
+    {
+      "name": "Paused hearth preserves ingredients",
+      "ok": true
+    },
+    {
+      "name": "Resume permits direct cooking",
+      "ok": true
+    },
+    {
+      "name": "Click cooking hearth leaves next skewer intact",
+      "ok": true
+    },
+    {
+      "name": "Clear still works",
+      "ok": true
+    },
+    {
+      "name": "Ready hearth serves and automatic Burning still activates",
+      "ok": true
+    },
+    {
+      "name": "No available duplicate order does not consume ingredients",
+      "ok": true
+    },
+    {
+      "name": "Overcooked serving kept",
+      "ok": true
+    },
+    {
+      "name": "Stopped game cannot start cooking",
+      "ok": true
+    },
+    {
+      "name": "Expired orders cannot receive skewer",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "bad": []
+}

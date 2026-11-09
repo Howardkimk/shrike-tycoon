@@ -1,0 +1,226 @@
+{
+  "checks": [
+    {
+      "name": "11 selection portraits loaded with contain",
+      "ok": true
+    },
+    {
+      "name": "bull-headed selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "tiger selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "brown selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "chinese-grey selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "long-tailed selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "northern selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "grey-backed selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "isabelline selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "red-tailed selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "great-grey selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "red-backed selection keeps correct character",
+      "ok": true
+    },
+    {
+      "name": "bull-headed dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "tiger dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "brown dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "chinese-grey dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "long-tailed dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "northern dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "grey-backed dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "isabelline dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "red-tailed dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "great-grey dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "red-backed dex full-body image",
+      "ok": true
+    },
+    {
+      "name": "portrait mobile dex contains full image",
+      "ok": true
+    },
+    {
+      "name": "bull-headed gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "bull-headed result renderer",
+      "ok": true
+    },
+    {
+      "name": "tiger gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "tiger result renderer",
+      "ok": true
+    },
+    {
+      "name": "brown gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "brown result renderer",
+      "ok": true
+    },
+    {
+      "name": "chinese-grey gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "chinese-grey result renderer",
+      "ok": true
+    },
+    {
+      "name": "long-tailed gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "long-tailed result renderer",
+      "ok": true
+    },
+    {
+      "name": "northern gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "northern result renderer",
+      "ok": true
+    },
+    {
+      "name": "grey-backed gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "grey-backed result renderer",
+      "ok": true
+    },
+    {
+      "name": "isabelline gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "isabelline result renderer",
+      "ok": true
+    },
+    {
+      "name": "red-tailed gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "red-tailed result renderer",
+      "ok": true
+    },
+    {
+      "name": "great-grey gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "great-grey result renderer",
+      "ok": true
+    },
+    {
+      "name": "red-backed gameplay renderer",
+      "ok": true
+    },
+    {
+      "name": "red-backed result renderer",
+      "ok": true
+    },
+    {
+      "name": "idle reduced-motion respects preference",
+      "ok": true
+    },
+    {
+      "name": "assemble reduced-motion respects preference",
+      "ok": true
+    },
+    {
+      "name": "cook reduced-motion respects preference",
+      "ok": true
+    },
+    {
+      "name": "perfect reduced-motion respects preference",
+      "ok": true
+    },
+    {
+      "name": "oops reduced-motion respects preference",
+      "ok": true
+    },
+    {
+      "name": "burning reduced-motion respects preference",
+      "ok": true
+    },
+    {
+      "name": "gallery contains all 11 images",
+      "ok": true
+    },
+    {
+      "name": "no JavaScript errors",
+      "ok": true
+    },
+    {
+      "name": "no failed asset responses",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "bad": []
+}

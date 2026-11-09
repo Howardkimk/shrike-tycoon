@@ -1,0 +1,16 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "id": "eastern-spot-billed-duck",
+      "name": "흰뺨검둥오리",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Image 1 is STYLE reference only: match its warm rounded body, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Image 2 is SPECIES reference only for markings. Replace the black diving duck completely with an adult Eastern Spot-billed Duck (Anas zonorhyncha). Full-body facing LEFT, wings folded, resting with both orange webbed feet visible. Rounded brown duck with dark chocolate scalloped back and folded wings, paler buff-grey breast and belly with fine brown markings, pale cream-grey cheeks and brow, dark brown crown and dark eye stripe PLUS a separate dark moustache stripe across lower cheek. Broad BLACK duck bill with distinct bright YELLOW TIP; NO red spot at bill base. Subtle blue-violet speculum with narrow white edging visible on folded wing. Brown iris with friendly expressive dark pupil. No green Mallard head, no orange bill, no yellow bill base, no trailing crest. Entire bill, tail and feet inside canvas with generous transparent margins. Truly transparent alpha background. No water, ground, shadow, branches, props, clothes, text, UI, extra birds, blur, gradients or photorealism.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-6666fd14-45a3-4ad8-ac7b-97f4c34d95ee.png",
+      "targetAsset": "assets/pixel/eastern-spot-billed-duck.png",
+      "status": "integrated",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Anas%20zonorhyncha?size=medium",
+      "taxonomySource": "https://ebird.org/species/spbduc",
+      "dietSource": "https://j-avianres.com/article/doi/10.1016/j.avrs.2024.100209"
+    }
+  ]
+}

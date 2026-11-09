@@ -1,0 +1,804 @@
+{
+  "version": "0.8.4.17",
+  "unchangedContent": true,
+  "desktopKeys": true,
+  "narrowDesktopKeys": true,
+  "mobileCases": [
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "count": 5,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        51.688018798828125,
+        23.855987548828125
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "count": 6,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "count": 9,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "count": 10,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 667,
+        "height": 375
+      },
+      "count": 5,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        51.688018798828125,
+        23.855987548828125
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 667,
+        "height": 375
+      },
+      "count": 6,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 667,
+        "height": 375
+      },
+      "count": 9,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 667,
+        "height": 375
+      },
+      "count": 10,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 740,
+        "height": 360
+      },
+      "count": 5,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        51.68798828125,
+        23.855987548828125
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 740,
+        "height": 360
+      },
+      "count": 6,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 740,
+        "height": 360
+      },
+      "count": 9,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 740,
+        "height": 360
+      },
+      "count": 10,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "count": 5,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        51.70135498046875,
+        23.862167358398438
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "count": 6,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "count": 9,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "count": 10,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 915,
+        "height": 412
+      },
+      "count": 5,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        51.70147705078125,
+        23.862213134765625
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 915,
+        "height": 412
+      },
+      "count": 6,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 915,
+        "height": 412
+      },
+      "count": 9,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 915,
+        "height": 412
+      },
+      "count": 10,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 768
+      },
+      "count": 5,
+      "scrollHeight": 207,
+      "clientHeight": 207,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        51.701416015625,
+        23.8621826171875
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 768
+      },
+      "count": 6,
+      "scrollHeight": 207,
+      "clientHeight": 207,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 768
+      },
+      "count": 9,
+      "scrollHeight": 207,
+      "clientHeight": 207,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 768
+      },
+      "count": 10,
+      "scrollHeight": 207,
+      "clientHeight": 207,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "count": 5,
+      "scrollHeight": 113,
+      "clientHeight": 113,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        51.68798828125,
+        23.855987548828125
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "count": 6,
+      "scrollHeight": 113,
+      "clientHeight": 113,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "count": 9,
+      "scrollHeight": 113,
+      "clientHeight": 113,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "count": 10,
+      "scrollHeight": 113,
+      "clientHeight": 113,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 375,
+        "height": 667
+      },
+      "count": 5,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        51.68798828125,
+        23.855987548828125
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 375,
+        "height": 667
+      },
+      "count": 6,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 375,
+        "height": 667
+      },
+      "count": 9,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 375,
+        "height": 667
+      },
+      "count": 10,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 568
+      },
+      "count": 5,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        51.68798828125,
+        23.855987548828125
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 568
+      },
+      "count": 6,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 568
+      },
+      "count": 9,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 568
+      },
+      "count": 10,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "allVisible": true,
+      "allClickable": true,
+      "overlaps": false,
+      "clearSize": [
+        52,
+        24
+      ],
+      "keyboardDisabled": true
+    }
+  ],
+  "rotation": true,
+  "errors": [],
+  "finalLayoutSmoke": [
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "count": 9,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "count": 10,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 667,
+        "height": 375
+      },
+      "count": 9,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 667,
+        "height": 375
+      },
+      "count": 10,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 740,
+        "height": 360
+      },
+      "count": 9,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 740,
+        "height": 360
+      },
+      "count": 10,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "count": 9,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "count": 10,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 915,
+        "height": 412
+      },
+      "count": 9,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 915,
+        "height": 412
+      },
+      "count": 10,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 768
+      },
+      "count": 9,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 768
+      },
+      "count": 10,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "count": 9,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "count": 10,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 375,
+        "height": 667
+      },
+      "count": 9,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 375,
+        "height": 667
+      },
+      "count": 10,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 568
+      },
+      "count": 9,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 568
+      },
+      "count": 10,
+      "allVisible": true,
+      "scrolls": false,
+      "headingVisible": true
+    }
+  ]
+}

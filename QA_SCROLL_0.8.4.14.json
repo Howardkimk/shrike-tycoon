@@ -1,0 +1,210 @@
+[
+  {
+    "width": 390,
+    "height": 844,
+    "detail": {
+      "top": 507.359375,
+      "bottom": 571.9375,
+      "bodyTop": 321.15625,
+      "bodyBottom": 759,
+      "footerTop": 769,
+      "visible": true
+    },
+    "list": {
+      "target": "#birdBookList .bird-card:last-child",
+      "scroll": "#birdBookDialog .collection-layout",
+      "top": 477.46875,
+      "bottom": 727.453125,
+      "scrollTop": 11593,
+      "scrollHeight": 12031,
+      "clientHeight": 438,
+      "bodyTop": 321.15625,
+      "bodyBottom": 759,
+      "footerTop": 769,
+      "footerBottom": 817,
+      "dialogTop": 12,
+      "dialogBottom": 832,
+      "visible": true,
+      "touch": {
+        "top": 11593,
+        "max": 11593
+      }
+    },
+    "closed": true,
+    "errors": []
+  },
+  {
+    "width": 375,
+    "height": 667,
+    "detail": {
+      "top": 419.359375,
+      "bottom": 483.9375,
+      "bodyTop": 321.15625,
+      "bodyBottom": 582,
+      "footerTop": 592,
+      "visible": true
+    },
+    "list": {
+      "target": "#birdBookList .bird-card:last-child",
+      "scroll": "#birdBookDialog .collection-layout",
+      "top": 300.59375,
+      "bottom": 550.578125,
+      "scrollTop": 11892,
+      "scrollHeight": 12153,
+      "clientHeight": 261,
+      "bodyTop": 321.15625,
+      "bodyBottom": 582,
+      "footerTop": 592,
+      "footerBottom": 640,
+      "dialogTop": 12,
+      "dialogBottom": 655,
+      "visible": true,
+      "touch": {
+        "top": 11892,
+        "max": 11892
+      }
+    },
+    "closed": true,
+    "errors": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "detail": {
+      "top": 369.359375,
+      "bottom": 433.9375,
+      "bodyTop": 321.15625,
+      "bodyBottom": 483,
+      "footerTop": 493,
+      "visible": true
+    },
+    "list": {
+      "target": "#birdBookList .bird-card:last-child",
+      "scroll": "#birdBookDialog .collection-layout",
+      "top": 201.265625,
+      "bottom": 451.25,
+      "scrollTop": 12412,
+      "scrollHeight": 12574,
+      "clientHeight": 162,
+      "bodyTop": 321.15625,
+      "bodyBottom": 483,
+      "footerTop": 493,
+      "footerBottom": 541,
+      "dialogTop": 12,
+      "dialogBottom": 556,
+      "visible": true,
+      "touch": {
+        "top": 12412,
+        "max": 12412
+      }
+    },
+    "closed": true,
+    "errors": []
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "detail": {
+      "top": 209.328125,
+      "bottom": 273.90625,
+      "bodyTop": 174.71875,
+      "bodyBottom": 309,
+      "footerTop": 319,
+      "visible": true
+    },
+    "list": {
+      "target": "#birdBookList .bird-card:last-child",
+      "scroll": "#birdBookDialog .collection-layout",
+      "top": 54.359375,
+      "bottom": 276.34375,
+      "scrollTop": 11876,
+      "scrollHeight": 12010,
+      "clientHeight": 134,
+      "bodyTop": 174.71875,
+      "bodyBottom": 309,
+      "footerTop": 319,
+      "footerBottom": 367,
+      "dialogTop": 12,
+      "dialogBottom": 378,
+      "visible": true,
+      "touch": {
+        "top": 11875,
+        "max": 11876
+      }
+    },
+    "closed": true,
+    "errors": []
+  },
+  {
+    "width": 667,
+    "height": 375,
+    "detail": {
+      "top": 202.328125,
+      "bottom": 266.90625,
+      "bodyTop": 174.71875,
+      "bodyBottom": 294,
+      "footerTop": 304,
+      "visible": true
+    },
+    "list": {
+      "target": "#birdBookList .bird-card:last-child",
+      "scroll": "#birdBookDialog .collection-layout",
+      "top": 51.859375,
+      "bottom": 261.859375,
+      "scrollTop": 11513,
+      "scrollHeight": 11632,
+      "clientHeight": 119,
+      "bodyTop": 174.71875,
+      "bodyBottom": 294,
+      "footerTop": 304,
+      "footerBottom": 352,
+      "dialogTop": 12,
+      "dialogBottom": 363,
+      "visible": true,
+      "touch": {
+        "top": 11513,
+        "max": 11513
+      }
+    },
+    "closed": true,
+    "errors": []
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "detail": {
+      "target": "#birdBookDetail .detail-section:last-child",
+      "scroll": "#birdBookDetail",
+      "top": 594.828125,
+      "bottom": 659.40625,
+      "scrollTop": 102,
+      "scrollHeight": 572,
+      "clientHeight": 470,
+      "bodyTop": 202.71875,
+      "bodyBottom": 675,
+      "footerTop": 685,
+      "footerBottom": 733,
+      "dialogTop": 12,
+      "dialogBottom": 756,
+      "visible": true
+    },
+    "list": {
+      "target": "#birdBookList .bird-card:last-child",
+      "scroll": "#birdBookList",
+      "top": 448.71875,
+      "bottom": 658.71875,
+      "scrollTop": 7082,
+      "scrollHeight": 7554,
+      "clientHeight": 472,
+      "bodyTop": 202.71875,
+      "bodyBottom": 675,
+      "footerTop": 685,
+      "footerBottom": 733,
+      "dialogTop": 12,
+      "dialogBottom": 756,
+      "visible": true
+    },
+    "closed": true,
+    "errors": []
+  }
+]

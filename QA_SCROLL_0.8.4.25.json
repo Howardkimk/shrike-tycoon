@@ -1,0 +1,367 @@
+[
+  {
+    "version": "24",
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "reachable": false,
+    "dialog": {
+      "top": 6,
+      "bottom": 838,
+      "height": 832
+    },
+    "scroller": {
+      "top": 256.4375,
+      "bottom": 796.59375,
+      "height": 540.15625
+    },
+    "last": {
+      "top": 575.125,
+      "bottom": 786.828125,
+      "height": 211.703125
+    },
+    "close": {
+      "top": 775,
+      "bottom": 823,
+      "height": 48
+    },
+    "scrollTop": 1375,
+    "scrollHeight": 1915,
+    "clientHeight": 540,
+    "count": 11,
+    "viewHeight": 844,
+    "errors": []
+  },
+  {
+    "version": "24",
+    "size": {
+      "width": 844,
+      "height": 390
+    },
+    "reachable": false,
+    "dialog": {
+      "top": 6,
+      "bottom": 384,
+      "height": 378
+    },
+    "scroller": {
+      "top": 187.71875,
+      "bottom": 445.109375,
+      "height": 257.390625
+    },
+    "last": {
+      "top": 206.96875,
+      "bottom": 434.671875,
+      "height": 227.703125
+    },
+    "close": {
+      "top": 321,
+      "bottom": 369,
+      "height": 48
+    },
+    "scrollTop": 1725,
+    "scrollHeight": 1982,
+    "clientHeight": 257,
+    "count": 11,
+    "viewHeight": 390,
+    "errors": []
+  },
+  {
+    "version": "24",
+    "size": {
+      "width": 568,
+      "height": 320
+    },
+    "reachable": false,
+    "dialog": {
+      "top": 6,
+      "bottom": 314,
+      "height": 308
+    },
+    "scroller": {
+      "top": 187.71875,
+      "bottom": 398.90625,
+      "height": 211.1875
+    },
+    "last": {
+      "top": 176.96875,
+      "bottom": 388.671875,
+      "height": 211.703125
+    },
+    "close": {
+      "top": 251,
+      "bottom": 299,
+      "height": 48
+    },
+    "scrollTop": 1675,
+    "scrollHeight": 1886,
+    "clientHeight": 211,
+    "count": 11,
+    "viewHeight": 320,
+    "errors": []
+  },
+  {
+    "version": "24",
+    "size": {
+      "width": 1366,
+      "height": 768
+    },
+    "reachable": false,
+    "dialog": {
+      "top": 30.71875,
+      "bottom": 737.265625,
+      "height": 706.546875
+    },
+    "scroller": {
+      "top": 220.4375,
+      "bottom": 696.59375,
+      "height": 476.15625
+    },
+    "last": {
+      "top": 476.4375,
+      "bottom": 686.4375,
+      "height": 210
+    },
+    "close": {
+      "top": 667.265625,
+      "bottom": 714.265625,
+      "height": 47
+    },
+    "scrollTop": 412,
+    "scrollHeight": 888,
+    "clientHeight": 476,
+    "count": 11,
+    "viewHeight": 768,
+    "errors": []
+  },
+  {
+    "version": "24",
+    "size": {
+      "width": 1024,
+      "height": 600
+    },
+    "reachable": false,
+    "dialog": {
+      "top": 24,
+      "bottom": 576,
+      "height": 552
+    },
+    "scroller": {
+      "top": 213.71875,
+      "bottom": 585.71875,
+      "height": 372
+    },
+    "last": {
+      "top": 365.71875,
+      "bottom": 575.71875,
+      "height": 210
+    },
+    "close": {
+      "top": 506,
+      "bottom": 553,
+      "height": 47
+    },
+    "scrollTop": 516,
+    "scrollHeight": 888,
+    "clientHeight": 372,
+    "count": 11,
+    "viewHeight": 600,
+    "errors": []
+  },
+  {
+    "version": "25",
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "reachable": true,
+    "dialog": {
+      "top": 12,
+      "bottom": 832,
+      "height": 820
+    },
+    "scroller": {
+      "top": 262.4375,
+      "bottom": 760,
+      "height": 497.5625
+    },
+    "last": {
+      "top": 509.125,
+      "bottom": 720.828125,
+      "height": 211.703125
+    },
+    "close": {
+      "top": 770,
+      "bottom": 817,
+      "height": 47
+    },
+    "scrollTop": 1453,
+    "scrollHeight": 1951,
+    "clientHeight": 498,
+    "count": 11,
+    "viewHeight": 844,
+    "errors": [],
+    "detail": {
+      "title": "초원때까치",
+      "tailBottom": 723.171875,
+      "limit": 760
+    }
+  },
+  {
+    "version": "25",
+    "size": {
+      "width": 844,
+      "height": 390
+    },
+    "reachable": true,
+    "dialog": {
+      "top": 12,
+      "bottom": 378,
+      "height": 366
+    },
+    "scroller": {
+      "top": 167.71875,
+      "bottom": 310,
+      "height": 142.28125
+    },
+    "last": {
+      "top": 41.96875,
+      "bottom": 269.671875,
+      "height": 227.703125
+    },
+    "close": {
+      "top": 320,
+      "bottom": 367,
+      "height": 47
+    },
+    "scrollTop": 1876,
+    "scrollHeight": 2018,
+    "clientHeight": 142,
+    "count": 11,
+    "viewHeight": 390,
+    "errors": [],
+    "detail": {
+      "title": "초원때까치",
+      "tailBottom": 273.453125,
+      "limit": 310
+    }
+  },
+  {
+    "version": "25",
+    "size": {
+      "width": 568,
+      "height": 320
+    },
+    "reachable": true,
+    "dialog": {
+      "top": 12,
+      "bottom": 308,
+      "height": 296
+    },
+    "scroller": {
+      "top": 167.71875,
+      "bottom": 240,
+      "height": 72.28125
+    },
+    "last": {
+      "top": -12.03125,
+      "bottom": 199.671875,
+      "height": 211.703125
+    },
+    "close": {
+      "top": 250,
+      "bottom": 297,
+      "height": 47
+    },
+    "scrollTop": 1850,
+    "scrollHeight": 1922,
+    "clientHeight": 72,
+    "count": 11,
+    "viewHeight": 320,
+    "errors": [],
+    "detail": {
+      "title": "초원때까치",
+      "tailBottom": 203.453125,
+      "limit": 240
+    }
+  },
+  {
+    "version": "25",
+    "size": {
+      "width": 1366,
+      "height": 768
+    },
+    "reachable": true,
+    "dialog": {
+      "top": 12,
+      "bottom": 756,
+      "height": 744
+    },
+    "scroller": {
+      "top": 201.71875,
+      "bottom": 676,
+      "height": 474.28125
+    },
+    "last": {
+      "top": 445.71875,
+      "bottom": 655.71875,
+      "height": 210
+    },
+    "close": {
+      "top": 686,
+      "bottom": 733,
+      "height": 47
+    },
+    "scrollTop": 424,
+    "scrollHeight": 898,
+    "clientHeight": 474,
+    "count": 11,
+    "viewHeight": 768,
+    "errors": [],
+    "detail": {
+      "title": "초원때까치",
+      "tailBottom": 654.453125,
+      "limit": 676
+    }
+  },
+  {
+    "version": "25",
+    "size": {
+      "width": 1024,
+      "height": 600
+    },
+    "reachable": true,
+    "dialog": {
+      "top": 12,
+      "bottom": 588,
+      "height": 576
+    },
+    "scroller": {
+      "top": 201.71875,
+      "bottom": 508,
+      "height": 306.28125
+    },
+    "last": {
+      "top": 277.71875,
+      "bottom": 487.71875,
+      "height": 210
+    },
+    "close": {
+      "top": 518,
+      "bottom": 565,
+      "height": 47
+    },
+    "scrollTop": 592,
+    "scrollHeight": 898,
+    "clientHeight": 306,
+    "count": 11,
+    "viewHeight": 600,
+    "errors": [],
+    "detail": {
+      "title": "초원때까치",
+      "tailBottom": 486.453125,
+      "limit": 508
+    }
+  }
+]

@@ -1,0 +1,1161 @@
+{
+  "tool": "Built-in image generation",
+  "jobs": [
+    {
+      "id": "coal-tit",
+      "name": "진박새",
+      "englishName": "Coal Tit",
+      "scientificName": "Periparus ater",
+      "worlds": [
+        3
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Periparus%20ater",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Periparus%20ater?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/coal-tit.jpg",
+      "title": [
+        "Coal Tit — BirdNET+ Taxonomy"
+      ],
+      "bytes": 14702,
+      "status": "ok",
+      "features": "Black cap and throat, large cream cheeks, distinct white nape patch, grey back, buff underside, two pale wing bars; short pointed bill.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Coal Tit (Periparus ater). Distinguishing anatomy and plumage: Black cap and throat, large cream cheeks, distinct white nape patch, grey back, buff underside, two pale wing bars; short pointed bill. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "varied-tit",
+      "name": "곤줄박이",
+      "englishName": "Varied Tit",
+      "scientificName": "Sittiparus varius",
+      "worlds": [
+        3
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Sittiparus%20varius",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Sittiparus%20varius?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/varied-tit.jpg",
+      "title": [
+        "Varied Tit — BirdNET+ Taxonomy"
+      ],
+      "bytes": 6912,
+      "status": "ok",
+      "features": "Black cap and bib, cream face, rich orange-rust breast and belly, blue-grey back and wings, small orange patch on rear crown; NOT green-backed tit.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Varied Tit (Sittiparus varius). Distinguishing anatomy and plumage: Black cap and bib, cream face, rich orange-rust breast and belly, blue-grey back and wings, small orange patch on rear crown; NOT green-backed tit. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "eurasian-jay",
+      "name": "어치",
+      "englishName": "Eurasian Jay",
+      "scientificName": "Garrulus glandarius",
+      "worlds": [
+        3
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Garrulus%20glandarius",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Garrulus%20glandarius?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/eurasian-jay.jpg",
+      "title": [
+        "Eurasian Jay — BirdNET+ Taxonomy"
+      ],
+      "bytes": 9488,
+      "status": "ok",
+      "features": "Warm pink-brown body, pale streaked crown, black moustache, brilliant blue-and-black barred wing panel, black tail, white rump.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Eurasian Jay (Garrulus glandarius). Distinguishing anatomy and plumage: Warm pink-brown body, pale streaked crown, black moustache, brilliant blue-and-black barred wing panel, black tail, white rump. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "pale-thrush",
+      "name": "흰배지빠귀",
+      "englishName": "Pale Thrush",
+      "scientificName": "Turdus pallidus",
+      "worlds": [
+        3
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Turdus%20pallidus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Turdus%20pallidus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/pale-thrush.jpg",
+      "title": [
+        "Pale Thrush — BirdNET+ Taxonomy"
+      ],
+      "bytes": 16876,
+      "status": "ok",
+      "features": "Adult male grey-brown head, olive-brown back, white belly, pale orange flanks, pale yellow bill with darker tip; discreet pale eyebrow, long thrush legs.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Pale Thrush (Turdus pallidus). Distinguishing anatomy and plumage: Adult male grey-brown head, olive-brown back, white belly, pale orange flanks, pale yellow bill with darker tip; discreet pale eyebrow, long thrush legs. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "whites-thrush",
+      "name": "호랑지빠귀",
+      "englishName": "White's Thrush",
+      "scientificName": "Zoothera aurea",
+      "worlds": [
+        3
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Zoothera%20aurea",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Zoothera%20aurea?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/whites-thrush.jpg",
+      "title": [
+        "White&#39;s Thrush — BirdNET+ Taxonomy"
+      ],
+      "bytes": 15730,
+      "status": "ok",
+      "features": "Golden olive-brown upperparts and cream underside covered in bold dark scalloped scales, robust thrush build, small pale eye ring; dark scallops distinguish from plain thrush.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: White's Thrush (Zoothera aurea). Distinguishing anatomy and plumage: Golden olive-brown upperparts and cream underside covered in bold dark scalloped scales, robust thrush build, small pale eye ring; dark scallops distinguish from plain thrush. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "japanese-pygmy-woodpecker",
+      "name": "쇠딱따구리",
+      "englishName": "Japanese Pygmy Woodpecker",
+      "scientificName": "Yungipicus kizuki",
+      "worlds": [
+        3
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Yungipicus%20kizuki",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Yungipicus%20kizuki?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/japanese-pygmy-woodpecker.jpg",
+      "title": [
+        "Japanese Pygmy Woodpecker — BirdNET+ Taxonomy"
+      ],
+      "bytes": 20530,
+      "status": "ok",
+      "features": "Tiny brown-grey woodpecker, white cheek stripes and pale underside streaks, black-white barred folded wings and back, stiff pointed tail; no large red crown.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Japanese Pygmy Woodpecker (Yungipicus kizuki). Distinguishing anatomy and plumage: Tiny brown-grey woodpecker, white cheek stripes and pale underside streaks, black-white barred folded wings and back, stiff pointed tail; no large red crown. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "eurasian-treecreeper",
+      "name": "나무발발이",
+      "englishName": "Eurasian Treecreeper",
+      "scientificName": "Certhia familiaris",
+      "worlds": [
+        3
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Certhia%20familiaris",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Certhia%20familiaris?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/eurasian-treecreeper.jpg",
+      "title": [
+        "Eurasian Treecreeper — BirdNET+ Taxonomy"
+      ],
+      "bytes": 21720,
+      "status": "ok",
+      "features": "Mottled warm brown back, cream white belly, strong pale eyebrow, thin curved-down bill, long stiff brown tail; near-upright tree-climbing posture with hooked toes but no branch.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Eurasian Treecreeper (Certhia familiaris). Distinguishing anatomy and plumage: Mottled warm brown back, cream white belly, strong pale eyebrow, thin curved-down bill, long stiff brown tail; near-upright tree-climbing posture with hooked toes but no branch. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "grey-nightjar",
+      "name": "쏙독새",
+      "englishName": "Grey Nightjar",
+      "scientificName": "Caprimulgus jotaka",
+      "worlds": [
+        3
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Caprimulgus%20jotaka",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Caprimulgus%20jotaka?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/grey-nightjar.jpg",
+      "title": [
+        "Grey Nightjar — BirdNET+ Taxonomy"
+      ],
+      "bytes": 14118,
+      "status": "ok",
+      "features": "Low horizontal resting pose, intricately mottled grey-brown-tan plumage, flattened broad head, tiny short bill and large dark eye, long closed wings and tail, small feet.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Grey Nightjar (Caprimulgus jotaka). Distinguishing anatomy and plumage: Low horizontal resting pose, intricately mottled grey-brown-tan plumage, flattened broad head, tiny short bill and large dark eye, long closed wings and tail, small feet. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "brown-hawk-owl",
+      "name": "솔부엉이",
+      "englishName": "Brown Hawk-Owl",
+      "scientificName": "Ninox scutulata",
+      "worlds": [
+        3
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Ninox%20scutulata",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Ninox%20scutulata?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/brown-hawk-owl.jpg",
+      "title": [
+        "Brown Boobook — BirdNET+ Taxonomy"
+      ],
+      "bytes": 12898,
+      "status": "ok",
+      "features": "Brown Boobook adult: round head WITHOUT ear tufts, bright yellow forward-facing eyes, brown head and back, cream underside with bold vertical brown streaks, long hawk-like tail.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Brown Hawk-Owl (Ninox scutulata). Distinguishing anatomy and plumage: Brown Boobook adult: round head WITHOUT ear tufts, bright yellow forward-facing eyes, brown head and back, cream underside with bold vertical brown streaks, long hawk-like tail. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "himalayan-bulbul",
+      "name": "히말라야직박구리",
+      "englishName": "Himalayan Bulbul",
+      "scientificName": "Pycnonotus leucogenys",
+      "worlds": [
+        4
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Pycnonotus%20leucogenys",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Pycnonotus%20leucogenys?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/himalayan-bulbul.jpg",
+      "title": [
+        "Himalayan Bulbul — BirdNET+ Taxonomy"
+      ],
+      "bytes": 18596,
+      "status": "ok",
+      "features": "Tall pointed swept-back black crest, black throat and face, prominent white cheek, grey-brown body, long dark tail, small yellow undertail vent.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Himalayan Bulbul (Pycnonotus leucogenys). Distinguishing anatomy and plumage: Tall pointed swept-back black crest, black throat and face, prominent white cheek, grey-brown body, long dark tail, small yellow undertail vent. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "blue-whistling-thrush",
+      "name": "파랑지빠귀",
+      "englishName": "Blue Whistling Thrush",
+      "scientificName": "Myophonus caeruleus",
+      "worlds": [
+        4
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Myophonus%20caeruleus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Myophonus%20caeruleus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/blue-whistling-thrush.jpg",
+      "title": [
+        "Blue Whistling Thrush — BirdNET+ Taxonomy"
+      ],
+      "bytes": 13958,
+      "status": "ok",
+      "features": "Deep indigo blue adult bird, fine bright azure speckles on head and chest, glossy blue wings and tail, robust yellow bill, long dark legs.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Blue Whistling Thrush (Myophonus caeruleus). Distinguishing anatomy and plumage: Deep indigo blue adult bird, fine bright azure speckles on head and chest, glossy blue wings and tail, robust yellow bill, long dark legs. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "white-capped-redstart",
+      "name": "흰머리딱새",
+      "englishName": "White-capped Redstart",
+      "scientificName": "Phoenicurus leucocephalus",
+      "worlds": [
+        4
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Phoenicurus%20leucocephalus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Phoenicurus%20leucocephalus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/white-capped-redstart.jpg",
+      "title": [
+        "White-capped Redstart — BirdNET+ Taxonomy"
+      ],
+      "bytes": 4514,
+      "status": "ok",
+      "features": "ADULT MALE: bright white crown cap, black head throat and upper back, vivid orange-red belly rump and tail, dark wings; actual photo may show female but sprite is white-capped adult male.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: White-capped Redstart (Phoenicurus leucocephalus). Distinguishing anatomy and plumage: ADULT MALE: bright white crown cap, black head throat and upper back, vivid orange-red belly rump and tail, dark wings; actual photo may show female but sprite is white-capped adult male. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "plumbeous-water-redstart",
+      "name": "부채꼬리바위딱새",
+      "englishName": "Plumbeous Water Redstart",
+      "scientificName": "Phoenicurus fuliginosus",
+      "worlds": [
+        4
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Phoenicurus%20fuliginosus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Phoenicurus%20fuliginosus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/plumbeous-water-redstart.jpg",
+      "title": [
+        "Plumbeous Water Redstart — BirdNET+ Taxonomy"
+      ],
+      "bytes": 14088,
+      "status": "ok",
+      "features": "Adult male uniform slate-blue grey head and body, small black bill, contrasting vivid rusty-orange tail, dark wings, no white cap.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Plumbeous Water Redstart (Phoenicurus fuliginosus). Distinguishing anatomy and plumage: Adult male uniform slate-blue grey head and body, small black bill, contrasting vivid rusty-orange tail, dark wings, no white cap. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "rufous-sibia",
+      "name": "붉은배시비아",
+      "englishName": "Rufous Sibia",
+      "scientificName": "Heterophasia capistrata",
+      "worlds": [
+        4
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Heterophasia%20capistrata",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Heterophasia%20capistrata?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/rufous-sibia.jpg",
+      "title": [
+        "Rufous Sibia — BirdNET+ Taxonomy"
+      ],
+      "bytes": 14808,
+      "status": "ok",
+      "features": "Black cap, cinnamon rufous neck body and belly, grey-brown back, black-and-blue-grey wing panel, long layered tail with pale tips, slim straight dark bill.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Rufous Sibia (Heterophasia capistrata). Distinguishing anatomy and plumage: Black cap, cinnamon rufous neck body and belly, grey-brown back, black-and-blue-grey wing panel, long layered tail with pale tips, slim straight dark bill. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "green-backed-tit",
+      "name": "초록등박새",
+      "englishName": "Green-backed Tit",
+      "scientificName": "Parus monticolus",
+      "worlds": [
+        4
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Parus%20monticolus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Parus%20monticolus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/green-backed-tit.jpg",
+      "title": [
+        "Green-backed Tit — BirdNET+ Taxonomy"
+      ],
+      "bytes": 8600,
+      "status": "ok",
+      "features": "Black crown and bib, large white cheeks, olive GREEN back, yellow belly with black centre stripe, blue-grey wings with pale bars.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Green-backed Tit (Parus monticolus). Distinguishing anatomy and plumage: Black crown and bib, large white cheeks, olive GREEN back, yellow belly with black centre stripe, blue-grey wings with pale bars. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "red-billed-chough",
+      "name": "붉은부리까마귀",
+      "englishName": "Red-billed Chough",
+      "scientificName": "Pyrrhocorax pyrrhocorax",
+      "worlds": [
+        4
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Pyrrhocorax%20pyrrhocorax",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Pyrrhocorax%20pyrrhocorax?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/red-billed-chough.jpg",
+      "title": [
+        "Red-billed Chough — BirdNET+ Taxonomy"
+      ],
+      "bytes": 19878,
+      "status": "ok",
+      "features": "Glossy black crow with slender curved bright RED bill and red legs, blue-black wing sheen, longish dark tail; no yellow bill.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Red-billed Chough (Pyrrhocorax pyrrhocorax). Distinguishing anatomy and plumage: Glossy black crow with slender curved bright RED bill and red legs, blue-black wing sheen, longish dark tail; no yellow bill. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "himalayan-woodpecker",
+      "name": "히말라야오색딱따구리",
+      "englishName": "Himalayan Woodpecker",
+      "scientificName": "Dendrocopos himalayensis",
+      "worlds": [
+        4
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Dendrocopos%20himalayensis",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Dendrocopos%20himalayensis?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/himalayan-woodpecker.jpg",
+      "title": [
+        "Himalayan Woodpecker — BirdNET+ Taxonomy"
+      ],
+      "bytes": 20412,
+      "status": "ok",
+      "features": "Black-and-white pied woodpecker, large white cheek and shoulder patches, white barred dark wings, pale underside, red undertail, ADULT MALE small red nape.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Himalayan Woodpecker (Dendrocopos himalayensis). Distinguishing anatomy and plumage: Black-and-white pied woodpecker, large white cheek and shoulder patches, white barred dark wings, pale underside, red undertail, ADULT MALE small red nape. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "grey-backed-shrike",
+      "name": "회색등때까치",
+      "englishName": "Grey-backed Shrike",
+      "scientificName": "Lanius tephronotus",
+      "worlds": [
+        4
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20tephronotus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20tephronotus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/grey-backed-shrike.jpg",
+      "title": [
+        "Grey-backed Shrike — BirdNET+ Taxonomy"
+      ],
+      "bytes": 17990,
+      "status": "ok",
+      "features": "Slate grey crown and back, bold black eye mask, white throat, orange-buff flanks, black wings with small white patch, long black tail, stout hooked black bill; NO chef clothes.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Grey-backed Shrike (Lanius tephronotus). Distinguishing anatomy and plumage: Slate grey crown and back, bold black eye mask, white throat, orange-buff flanks, black wings with small white patch, long black tail, stout hooked black bill; NO chef clothes. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "isabelline-wheatear",
+      "name": "사막딱새",
+      "englishName": "Isabelline Wheatear",
+      "scientificName": "Oenanthe isabellina",
+      "worlds": [
+        5
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Oenanthe%20isabellina",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Oenanthe%20isabellina?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/isabelline-wheatear.jpg",
+      "title": [
+        "Isabelline Wheatear — BirdNET+ Taxonomy"
+      ],
+      "bytes": 4798,
+      "status": "ok",
+      "features": "Sandy buff plain head and back, pale cream breast, slight buff eyebrow, fine dark lores, black legs; black tail tip with white tail base and rump, upright open-country songbird.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Isabelline Wheatear (Oenanthe isabellina). Distinguishing anatomy and plumage: Sandy buff plain head and back, pale cream breast, slight buff eyebrow, fine dark lores, black legs; black tail tip with white tail base and rump, upright open-country songbird. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "eurasian-hoopoe",
+      "name": "후투티",
+      "englishName": "Eurasian Hoopoe",
+      "scientificName": "Upupa epops",
+      "worlds": [
+        5
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Upupa%20epops",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Upupa%20epops?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/eurasian-hoopoe.jpg",
+      "title": [
+        "Common Hoopoe — BirdNET+ Taxonomy"
+      ],
+      "bytes": 7046,
+      "status": "ok",
+      "features": "Warm buff-orange body, long thin downcurved black bill, fan-shaped erect orange crest with black tips, bold black-and-white wing and tail bars.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Eurasian Hoopoe (Upupa epops). Distinguishing anatomy and plumage: Warm buff-orange body, long thin downcurved black bill, fan-shaped erect orange crest with black tips, bold black-and-white wing and tail bars. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "european-roller",
+      "name": "파랑새",
+      "englishName": "European Roller",
+      "scientificName": "Coracias garrulus",
+      "worlds": [
+        5
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Coracias%20garrulus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Coracias%20garrulus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/european-roller.jpg",
+      "title": [
+        "European Roller — BirdNET+ Taxonomy"
+      ],
+      "bytes": 20910,
+      "status": "ok",
+      "features": "European Roller Coracias garrulus, sky turquoise blue head and underside, rich chestnut-brown BACK, blue folded wings and tail, thick straight black bill. NOT Dollarbird.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: European Roller (Coracias garrulus). Distinguishing anatomy and plumage: European Roller Coracias garrulus, sky turquoise blue head and underside, rich chestnut-brown BACK, blue folded wings and tail, thick straight black bill. NOT Dollarbird. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "little-owl",
+      "name": "금눈쇠올빼미",
+      "englishName": "Little Owl",
+      "scientificName": "Athene noctua",
+      "worlds": [
+        5,
+        6
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Athene%20noctua",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Athene%20noctua?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/little-owl.jpg",
+      "title": [
+        "Little Owl — BirdNET+ Taxonomy"
+      ],
+      "bytes": 12108,
+      "status": "ok",
+      "features": "Small squat owl, round flat-topped head no ear tufts, bright yellow eyes, thick pale eyebrows, brown-white spotted head and back, cream belly with brown streaks, short tail.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Little Owl (Athene noctua). Distinguishing anatomy and plumage: Small squat owl, round flat-topped head no ear tufts, bright yellow eyes, thick pale eyebrows, brown-white spotted head and back, cream belly with brown streaks, short tail. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "steppe-eagle",
+      "name": "초원수리",
+      "englishName": "Steppe Eagle",
+      "scientificName": "Aquila nipalensis",
+      "worlds": [
+        5
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Aquila%20nipalensis",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Aquila%20nipalensis?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/steppe-eagle.jpg",
+      "title": [
+        "Steppe Eagle — BirdNET+ Taxonomy"
+      ],
+      "bytes": 10010,
+      "status": "ok",
+      "features": "Large dark-brown eagle perched standing, strong hooked dark bill with yellow cere and distinctive long yellow gape line toward eye, feathered thighs, yellow feet with black talons, broad folded wings.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Steppe Eagle (Aquila nipalensis). Distinguishing anatomy and plumage: Large dark-brown eagle perched standing, strong hooked dark bill with yellow cere and distinctive long yellow gape line toward eye, feathered thighs, yellow feet with black talons, broad folded wings. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "red-tailed-shrike",
+      "name": "붉은꼬리때까치",
+      "englishName": "Red-tailed Shrike",
+      "scientificName": "Lanius phoenicuroides",
+      "worlds": [
+        5
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20phoenicuroides",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20phoenicuroides?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/red-tailed-shrike.jpg",
+      "title": [
+        "Red-tailed Shrike — BirdNET+ Taxonomy"
+      ],
+      "bytes": 7448,
+      "status": "ok",
+      "features": "Adult male warm brown cap and back, bold black mask, cream-white throat and belly, narrow white eyebrow, reddish-orange rump and long red-brown tail, black hooked bill; no clothes.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Red-tailed Shrike (Lanius phoenicuroides). Distinguishing anatomy and plumage: Adult male warm brown cap and back, bold black mask, cream-white throat and belly, narrow white eyebrow, reddish-orange rump and long red-brown tail, black hooked bill; no clothes. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "isabelline-shrike",
+      "name": "사막때까치",
+      "englishName": "Isabelline Shrike",
+      "scientificName": "Lanius isabellinus",
+      "worlds": [
+        5
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20isabellinus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20isabellinus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/isabelline-shrike.jpg",
+      "title": [
+        "Isabelline Shrike — BirdNET+ Taxonomy"
+      ],
+      "bytes": 3976,
+      "status": "ok",
+      "features": "Adult male pale sand-grey brown crown and back, black eye mask, warm buff pale breast, rusty orange tail, small pale wing patch, black hooked bill; no clothes.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Isabelline Shrike (Lanius isabellinus). Distinguishing anatomy and plumage: Adult male pale sand-grey brown crown and back, black eye mask, warm buff pale breast, rusty orange tail, small pale wing patch, black hooked bill; no clothes. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "european-robin",
+      "name": "유럽울새",
+      "englishName": "European Robin",
+      "scientificName": "Erithacus rubecula",
+      "worlds": [
+        6
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Erithacus%20rubecula",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Erithacus%20rubecula?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/european-robin.jpg",
+      "title": [
+        "European Robin — BirdNET+ Taxonomy"
+      ],
+      "bytes": 11362,
+      "status": "ok",
+      "features": "Small round bird, bright orange face throat and upper chest, grey border to orange, olive-brown back, pale cream belly, thin dark bill and slender legs.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: European Robin (Erithacus rubecula). Distinguishing anatomy and plumage: Small round bird, bright orange face throat and upper chest, grey border to orange, olive-brown back, pale cream belly, thin dark bill and slender legs. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "common-blackbird",
+      "name": "Common Blackbird",
+      "englishName": "Common Blackbird",
+      "scientificName": "Turdus merula",
+      "worlds": [
+        6
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Turdus%20merula",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Turdus%20merula?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/common-blackbird.jpg",
+      "title": [
+        "Common Blackbird — BirdNET+ Taxonomy"
+      ],
+      "bytes": 10918,
+      "status": "ok",
+      "features": "ADULT MALE all deep black plumage, bright yellow-orange bill and thin golden eye ring, long black tail, thrush proportions.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Common Blackbird (Turdus merula). Distinguishing anatomy and plumage: ADULT MALE all deep black plumage, bright yellow-orange bill and thin golden eye ring, long black tail, thrush proportions. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "european-bee-eater",
+      "name": "European Bee-eater",
+      "englishName": "European Bee-eater",
+      "scientificName": "Merops apiaster",
+      "worlds": [
+        6
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Merops%20apiaster",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Merops%20apiaster?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/european-bee-eater.jpg",
+      "title": [
+        "European Bee-eater — BirdNET+ Taxonomy"
+      ],
+      "bytes": 7382,
+      "status": "ok",
+      "features": "Chestnut crown and mantle, bright yellow throat bordered black, turquoise blue-green belly, black eye stripe, green-blue folded wings, long slim curved black bill and two pointed central tail streamers.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: European Bee-eater (Merops apiaster). Distinguishing anatomy and plumage: Chestnut crown and mantle, bright yellow throat bordered black, turquoise blue-green belly, black eye stripe, green-blue folded wings, long slim curved black bill and two pointed central tail streamers. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "red-backed-shrike",
+      "name": "Red-backed Shrike",
+      "englishName": "Red-backed Shrike",
+      "scientificName": "Lanius collurio",
+      "worlds": [
+        6
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20collurio",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20collurio?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/red-backed-shrike.jpg",
+      "title": [
+        "Red-backed Shrike — BirdNET+ Taxonomy"
+      ],
+      "bytes": 4656,
+      "status": "ok",
+      "features": "Adult male blue-grey crown nape, chestnut red-brown back, brown folded wings, strong black eye mask, pale pink-buff underside, black tail with white outer patches, stout hooked bill; guest without apron or tools.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Red-backed Shrike (Lanius collurio). Distinguishing anatomy and plumage: Adult male blue-grey crown nape, chestnut red-brown back, brown folded wings, strong black eye mask, pale pink-buff underside, black tail with white outer patches, stout hooked bill; guest without apron or tools. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "lesser-grey-shrike",
+      "name": "Lesser Grey Shrike",
+      "englishName": "Lesser Grey Shrike",
+      "scientificName": "Lanius minor",
+      "worlds": [
+        6
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20minor",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20minor?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/lesser-grey-shrike.jpg",
+      "title": [
+        "Lesser Grey Shrike — BirdNET+ Taxonomy"
+      ],
+      "bytes": 5818,
+      "status": "ok",
+      "features": "Adult male pale grey crown and back, broad black FOREHEAD band joined to eye mask, faint blush-pink underside, black wings with white patch, short stout black bill and dark tail.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Lesser Grey Shrike (Lanius minor). Distinguishing anatomy and plumage: Adult male pale grey crown and back, broad black FOREHEAD band joined to eye mask, faint blush-pink underside, black wings with white patch, short stout black bill and dark tail. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "european-nightjar",
+      "name": "European Nightjar",
+      "englishName": "European Nightjar",
+      "scientificName": "Caprimulgus europaeus",
+      "worlds": [
+        6
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Caprimulgus%20europaeus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Caprimulgus%20europaeus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/european-nightjar.jpg",
+      "title": [
+        "European Nightjar — BirdNET+ Taxonomy"
+      ],
+      "bytes": 10424,
+      "status": "ok",
+      "features": "Low horizontal resting nightjar, intricately mottled warm grey brown plumage, buff neckline and pale scapular streaks, huge dark eye tiny bill, very long pointed closed wings and long tail, small feet.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: European Nightjar (Caprimulgus europaeus). Distinguishing anatomy and plumage: Low horizontal resting nightjar, intricately mottled warm grey brown plumage, buff neckline and pale scapular streaks, huge dark eye tiny bill, very long pointed closed wings and long tail, small feet. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "loggerhead-shrike",
+      "name": "Loggerhead Shrike",
+      "englishName": "Loggerhead Shrike",
+      "scientificName": "Lanius ludovicianus",
+      "worlds": [
+        7
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20ludovicianus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20ludovicianus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/loggerhead-shrike.jpg",
+      "title": [
+        "Loggerhead Shrike — BirdNET+ Taxonomy"
+      ],
+      "bytes": 8234,
+      "status": "ok",
+      "features": "Pale grey crown and back, bold broad black mask extending above bill, white underside, black wings with white patch, black white-edged long tail, unusually stout short hooked bill, no clothes.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Loggerhead Shrike (Lanius ludovicianus). Distinguishing anatomy and plumage: Pale grey crown and back, bold broad black mask extending above bill, white underside, black wings with white patch, black white-edged long tail, unusually stout short hooked bill, no clothes. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "american-kestrel",
+      "name": "American Kestrel",
+      "englishName": "American Kestrel",
+      "scientificName": "Falco sparverius",
+      "worlds": [
+        7
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Falco%20sparverius",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Falco%20sparverius?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/american-kestrel.jpg",
+      "title": [
+        "American Kestrel — BirdNET+ Taxonomy"
+      ],
+      "bytes": 10724,
+      "status": "ok",
+      "features": "Adult male blue-grey crown and wing coverts, rusty orange back with dark horizontal bars, cream-buff spotted belly, TWO dark vertical facial stripes, rust tail with dark terminal band, small hooked bill, yellow talons.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: American Kestrel (Falco sparverius). Distinguishing anatomy and plumage: Adult male blue-grey crown and wing coverts, rusty orange back with dark horizontal bars, cream-buff spotted belly, TWO dark vertical facial stripes, rust tail with dark terminal band, small hooked bill, yellow talons. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "eastern-bluebird",
+      "name": "Eastern Bluebird",
+      "englishName": "Eastern Bluebird",
+      "scientificName": "Sialia sialis",
+      "worlds": [
+        7
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Sialia%20sialis",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Sialia%20sialis?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/eastern-bluebird.jpg",
+      "title": [
+        "Eastern Bluebird — BirdNET+ Taxonomy"
+      ],
+      "bytes": 7440,
+      "status": "ok",
+      "features": "Adult male brilliant cobalt blue head back wings and tail, warm red-orange throat and breast, white belly, slender black bill.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Eastern Bluebird (Sialia sialis). Distinguishing anatomy and plumage: Adult male brilliant cobalt blue head back wings and tail, warm red-orange throat and breast, white belly, slender black bill. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "american-robin",
+      "name": "American Robin",
+      "englishName": "American Robin",
+      "scientificName": "Turdus migratorius",
+      "worlds": [
+        7
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Turdus%20migratorius",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Turdus%20migratorius?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/american-robin.jpg",
+      "title": [
+        "American Robin — BirdNET+ Taxonomy"
+      ],
+      "bytes": 7354,
+      "status": "ok",
+      "features": "Adult dark grey back, blackish head with broken white eye ring, rusty orange breast and belly, yellow bill and dark tip, pale throat with dark streaks, black tail, long thrush legs.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: American Robin (Turdus migratorius). Distinguishing anatomy and plumage: Adult dark grey back, blackish head with broken white eye ring, rusty orange breast and belly, yellow bill and dark tip, pale throat with dark streaks, black tail, long thrush legs. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "belted-kingfisher",
+      "name": "Belted Kingfisher",
+      "englishName": "Belted Kingfisher",
+      "scientificName": "Megaceryle alcyon",
+      "worlds": [
+        7
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Megaceryle%20alcyon",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Megaceryle%20alcyon?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/belted-kingfisher.jpg",
+      "title": [
+        "Belted Kingfisher — BirdNET+ Taxonomy"
+      ],
+      "bytes": 5582,
+      "status": "ok",
+      "features": "Adult MALE slate-blue head and back, spiky shaggy crest, white neck collar and belly with ONE broad blue chest belt, long stout black straight bill. No rusty female belly band.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Belted Kingfisher (Megaceryle alcyon). Distinguishing anatomy and plumage: Adult MALE slate-blue head and back, spiky shaggy crest, white neck collar and belly with ONE broad blue chest belt, long stout black straight bill. No rusty female belly band. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "northern-mockingbird",
+      "name": "Northern Mockingbird",
+      "englishName": "Northern Mockingbird",
+      "scientificName": "Mimus polyglottos",
+      "worlds": [
+        7
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Mimus%20polyglottos",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Mimus%20polyglottos?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/northern-mockingbird.jpg",
+      "title": [
+        "Northern Mockingbird — BirdNET+ Taxonomy"
+      ],
+      "bytes": 9580,
+      "status": "ok",
+      "features": "Plain light-grey head and back, cream white belly, dark folded wings with distinct white wing bars and panels, long dark tail with white outer feathers, slender slightly curved dark bill.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Northern Mockingbird (Mimus polyglottos). Distinguishing anatomy and plumage: Plain light-grey head and back, cream white belly, dark folded wings with distinct white wing bars and panels, long dark tail with white outer feathers, slender slightly curved dark bill. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "lilac-breasted-roller",
+      "name": "Lilac-breasted Roller",
+      "englishName": "Lilac-breasted Roller",
+      "scientificName": "Coracias caudatus",
+      "worlds": [
+        8
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Coracias%20caudatus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Coracias%20caudatus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/lilac-breasted-roller.jpg",
+      "title": [
+        "Lilac-breasted Roller — BirdNET+ Taxonomy"
+      ],
+      "bytes": 6806,
+      "status": "ok",
+      "features": "Lilac-purple breast, pale green crown and blue-green back, rich turquoise belly, blue wings, tan face with dark eye stripe, black bill, two long pointed tail streamers.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Lilac-breasted Roller (Coracias caudatus). Distinguishing anatomy and plumage: Lilac-purple breast, pale green crown and blue-green back, rich turquoise belly, blue wings, tan face with dark eye stripe, black bill, two long pointed tail streamers. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "african-grey-hornbill",
+      "name": "African Grey Hornbill",
+      "englishName": "African Grey Hornbill",
+      "scientificName": "Lophoceros nasutus",
+      "worlds": [
+        8
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lophoceros%20nasutus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lophoceros%20nasutus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/african-grey-hornbill.jpg",
+      "title": [
+        "African Grey Hornbill — BirdNET+ Taxonomy"
+      ],
+      "bytes": 11890,
+      "status": "ok",
+      "features": "Grey head and neck, brown-grey upperparts, pale grey underside, long curved black bill with small low casque and pale cream stripe along upper mandible, long tail with white outer tips.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: African Grey Hornbill (Lophoceros nasutus). Distinguishing anatomy and plumage: Grey head and neck, brown-grey upperparts, pale grey underside, long curved black bill with small low casque and pale cream stripe along upper mandible, long tail with white outer tips. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "african-pygmy-kingfisher",
+      "name": "African Pygmy Kingfisher",
+      "englishName": "African Pygmy Kingfisher",
+      "scientificName": "Ispidina picta",
+      "worlds": [
+        8
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Ispidina%20picta",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Ispidina%20picta?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/african-pygmy-kingfisher.jpg",
+      "title": [
+        "African Pygmy Kingfisher — BirdNET+ Taxonomy"
+      ],
+      "bytes": 10118,
+      "status": "ok",
+      "features": "Tiny kingfisher, brilliant blue crown and back, lilac-violet ear patch, rich orange face breast and belly, orange-red straight bill, short blue tail, tiny red-orange feet.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: African Pygmy Kingfisher (Ispidina picta). Distinguishing anatomy and plumage: Tiny kingfisher, brilliant blue crown and back, lilac-violet ear patch, rich orange face breast and belly, orange-red straight bill, short blue tail, tiny red-orange feet. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "northern-fiscal",
+      "name": "Northern Fiscal",
+      "englishName": "Northern Fiscal",
+      "scientificName": "Lanius humeralis",
+      "worlds": [
+        8
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20humeralis",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20humeralis?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/northern-fiscal.jpg",
+      "title": [
+        "Northern Fiscal — BirdNET+ Taxonomy"
+      ],
+      "bytes": 6878,
+      "status": "ok",
+      "features": "Adult black head back and tail, white chest belly and shoulder wing stripe, black hooked bill, very long slim dark tail, black legs; northern fiscal black upperparts not grey-crowned shrike.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Northern Fiscal (Lanius humeralis). Distinguishing anatomy and plumage: Adult black head back and tail, white chest belly and shoulder wing stripe, black hooked bill, very long slim dark tail, black legs; northern fiscal black upperparts not grey-crowned shrike. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "mackinnons-shrike",
+      "name": "Mackinnon's Shrike",
+      "englishName": "Mackinnon's Shrike",
+      "scientificName": "Lanius mackinnoni",
+      "worlds": [
+        8
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20mackinnoni",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20mackinnoni?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/mackinnons-shrike.jpg",
+      "title": [
+        "Mackinnon&#39;s Shrike — BirdNET+ Taxonomy"
+      ],
+      "bytes": 8714,
+      "status": "ok",
+      "features": "Adult dark charcoal-black cap and back, white eyebrow and face stripes, black eye mask, white underside with reddish brown flank patch, dark tail with pale tips, black hooked bill.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Mackinnon's Shrike (Lanius mackinnoni). Distinguishing anatomy and plumage: Adult dark charcoal-black cap and back, white eyebrow and face stripes, black eye mask, white underside with reddish brown flank patch, dark tail with pale tips, black hooked bill. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "superb-starling",
+      "name": "Superb Starling",
+      "englishName": "Superb Starling",
+      "scientificName": "Lamprotornis superbus",
+      "worlds": [
+        8
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lamprotornis%20superbus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lamprotornis%20superbus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/superb-starling.jpg",
+      "title": [
+        "Superb Starling — BirdNET+ Taxonomy"
+      ],
+      "bytes": 8866,
+      "status": "ok",
+      "features": "Adult iridescent metallic blue-green head back and wings, black crown and face, bright pale yellow-white eye, vivid orange belly separated from blue chest by thin white breast band, short dark bill.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Superb Starling (Lamprotornis superbus). Distinguishing anatomy and plumage: Adult iridescent metallic blue-green head back and wings, black crown and face, bright pale yellow-white eye, vivid orange belly separated from blue chest by thin white breast band, short dark bill. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "southern-fiscal",
+      "name": "Southern Fiscal",
+      "englishName": "Southern Fiscal",
+      "scientificName": "Lanius collaris",
+      "worlds": [
+        9
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20collaris",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20collaris?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/southern-fiscal.jpg",
+      "title": [
+        "Southern Fiscal — BirdNET+ Taxonomy"
+      ],
+      "bytes": 5686,
+      "status": "ok",
+      "features": "Adult black crown back tail, white cheek-neck sides and underside, prominent white shoulder patch/wing stripe, long black tail with white outer edge, black hooked bill and legs; no grey crown.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Southern Fiscal (Lanius collaris). Distinguishing anatomy and plumage: Adult black crown back tail, white cheek-neck sides and underside, prominent white shoulder patch/wing stripe, long black tail with white outer edge, black hooked bill and legs; no grey crown. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "cape-wagtail",
+      "name": "Cape Wagtail",
+      "englishName": "Cape Wagtail",
+      "scientificName": "Motacilla capensis",
+      "worlds": [
+        9
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Motacilla%20capensis",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Motacilla%20capensis?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/cape-wagtail.jpg",
+      "title": [
+        "Cape Wagtail — BirdNET+ Taxonomy"
+      ],
+      "bytes": 12800,
+      "status": "ok",
+      "features": "Grey-olive brown head and back, pale eyebrow, dark throat bib on cream belly, grey folded wings with light edges, long grey-black tail edged white, slim dark bill and long dark legs.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Cape Wagtail (Motacilla capensis). Distinguishing anatomy and plumage: Grey-olive brown head and back, pale eyebrow, dark throat bib on cream belly, grey folded wings with light edges, long grey-black tail edged white, slim dark bill and long dark legs. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "cape-robin-chat",
+      "name": "Cape Robin-Chat",
+      "englishName": "Cape Robin-Chat",
+      "scientificName": "Cossypha caffra",
+      "worlds": [
+        9
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Cossypha%20caffra",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Cossypha%20caffra?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/cape-robin-chat.jpg",
+      "title": [
+        "Cape Robin-Chat — BirdNET+ Taxonomy"
+      ],
+      "bytes": 12288,
+      "status": "ok",
+      "features": "Grey back and head, bold white eyebrow above dark face mask, rich orange throat breast and tail, pale greyish-white lower belly, thin dark bill.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Cape Robin-Chat (Cossypha caffra). Distinguishing anatomy and plumage: Grey back and head, bold white eyebrow above dark face mask, rich orange throat breast and tail, pale greyish-white lower belly, thin dark bill. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "fiscal-flycatcher",
+      "name": "Fiscal Flycatcher",
+      "englishName": "Fiscal Flycatcher",
+      "scientificName": "Melaenornis silens",
+      "worlds": [
+        9
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Melaenornis%20silens",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Melaenornis%20silens?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/fiscal-flycatcher.jpg",
+      "title": [
+        "Fiscal Flycatcher — BirdNET+ Taxonomy"
+      ],
+      "bytes": 11160,
+      "status": "ok",
+      "features": "ADULT MALE black head back wings and tail, white belly and sides of neck, large white wing patch, slender flycatcher bill NOT bulky shrike hook, small upright body.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Fiscal Flycatcher (Melaenornis silens). Distinguishing anatomy and plumage: ADULT MALE black head back wings and tail, white belly and sides of neck, large white wing patch, slender flycatcher bill NOT bulky shrike hook, small upright body. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "cape-crow",
+      "name": "Cape Crow",
+      "englishName": "Cape Crow",
+      "scientificName": "Corvus capensis",
+      "worlds": [
+        9
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Corvus%20capensis",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Corvus%20capensis?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/cape-crow.jpg",
+      "title": [
+        "Cape Crow — BirdNET+ Taxonomy"
+      ],
+      "bytes": 24518,
+      "status": "ok",
+      "features": "Entire glossy black crow, notably long slender straight black bill, black feet, robust body and longish dark tail, subtle blue sheen.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Cape Crow (Corvus capensis). Distinguishing anatomy and plumage: Entire glossy black crow, notably long slender straight black bill, black feet, robust body and longish dark tail, subtle blue sheen. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "karoo-scrub-robin",
+      "name": "Karoo Scrub-Robin",
+      "englishName": "Karoo Scrub-Robin",
+      "scientificName": "Cercotrichas coryphoeus",
+      "worlds": [
+        9
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Cercotrichas%20coryphoeus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Cercotrichas%20coryphoeus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/karoo-scrub-robin.jpg",
+      "title": [
+        "Karoo Scrub Robin — BirdNET+ Taxonomy"
+      ],
+      "bytes": 6182,
+      "status": "ok",
+      "features": "Plain grey-brown head and back, pale cream-grey underside, whitish eyebrow and dark eye line, long brown tail with light outer tips, slim dark bill, ground-loving robin proportions.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Karoo Scrub-Robin (Cercotrichas coryphoeus). Distinguishing anatomy and plumage: Plain grey-brown head and back, pale cream-grey underside, whitish eyebrow and dark eye line, long brown tail with light outer tips, slim dark bill, ground-loving robin proportions. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "sao-tome-fiscal",
+      "name": "São Tomé Fiscal",
+      "englishName": "São Tomé Fiscal",
+      "scientificName": "Lanius newtoni",
+      "worlds": [
+        10
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20newtoni",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20newtoni?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/sao-tome-fiscal.jpg",
+      "title": [
+        "Sao Tome Fiscal — BirdNET+ Taxonomy"
+      ],
+      "bytes": 15630,
+      "status": "ok",
+      "features": "Adult glossy black head back wings and long tail, pale straw-YELLOW belly and breast, strong black hooked bill, grey legs; no big white wing patch, island forest shrike.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: São Tomé Fiscal (Lanius newtoni). Distinguishing anatomy and plumage: Adult glossy black head back wings and long tail, pale straw-YELLOW belly and breast, strong black hooked bill, grey legs; no big white wing patch, island forest shrike. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "sao-tome-thrush",
+      "name": "São Tomé Thrush",
+      "englishName": "São Tomé Thrush",
+      "scientificName": "Turdus olivaceofuscus",
+      "worlds": [
+        10
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Turdus%20olivaceofuscus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Turdus%20olivaceofuscus?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/sao-tome-thrush.jpg",
+      "title": [
+        "Sao Tome Thrush — BirdNET+ Taxonomy"
+      ],
+      "bytes": 12050,
+      "status": "ok",
+      "features": "Olive-brown head and upperparts, buff yellowish underside with fine dark spots and streaks on upper chest, brown tail, yellow-orange bill and pale eye ring, sturdy thrush legs.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: São Tomé Thrush (Turdus olivaceofuscus). Distinguishing anatomy and plumage: Olive-brown head and upperparts, buff yellowish underside with fine dark spots and streaks on upper chest, brown tail, yellow-orange bill and pale eye ring, sturdy thrush legs. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "sao-tome-oriole",
+      "name": "São Tomé Oriole",
+      "englishName": "São Tomé Oriole",
+      "scientificName": "Oriolus crassirostris",
+      "worlds": [
+        10
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Oriolus%20crassirostris",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Oriolus%20crassirostris?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/sao-tome-oriole.jpg",
+      "title": [
+        "Sao Tome Oriole — BirdNET+ Taxonomy"
+      ],
+      "bytes": 8682,
+      "status": "ok",
+      "features": "ADULT black head neck wings and tail, olive-yellow mantle and body, pale golden-cream breast, thick coral-pink bill, red eye, pale cream wing edging.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: São Tomé Oriole (Oriolus crassirostris). Distinguishing anatomy and plumage: ADULT black head neck wings and tail, olive-yellow mantle and body, pale golden-cream breast, thick coral-pink bill, red eye, pale cream wing edging. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "madagascar-kingfisher",
+      "name": "Madagascar Kingfisher",
+      "englishName": "Madagascar Kingfisher",
+      "scientificName": "Corythornis vintsioides",
+      "worlds": [
+        10
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Corythornis%20vintsioides",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Corythornis%20vintsioides?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/madagascar-kingfisher.jpg",
+      "title": [
+        "Malagasy Kingfisher — BirdNET+ Taxonomy"
+      ],
+      "bytes": 7680,
+      "status": "ok",
+      "features": "Malagasy Kingfisher: deep azure crown and back, fine turquoise crown speckles, orange-rufous face and underside, pale throat, long straight black bill, short blue tail, tiny orange-red feet.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Madagascar Kingfisher (Corythornis vintsioides). Distinguishing anatomy and plumage: Malagasy Kingfisher: deep azure crown and back, fine turquoise crown speckles, orange-rufous face and underside, pale throat, long straight black bill, short blue tail, tiny orange-red feet. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "madagascar-kestrel",
+      "name": "Madagascar Kestrel",
+      "englishName": "Madagascar Kestrel",
+      "scientificName": "Falco newtoni",
+      "worlds": [
+        10
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Falco%20newtoni",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Falco%20newtoni?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/madagascar-kestrel.jpg",
+      "title": [
+        "Malagasy Kestrel — BirdNET+ Taxonomy"
+      ],
+      "bytes": 5504,
+      "status": "ok",
+      "features": "ADULT MALE grey head, rusty brown black-spotted back, pale cream speckled chest and belly, grey tail with wide black tip, dark moustache, yellow cere and feet, small black hooked bill, folded wings.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Madagascar Kestrel (Falco newtoni). Distinguishing anatomy and plumage: ADULT MALE grey head, rusty brown black-spotted back, pale cream speckled chest and belly, grey tail with wide black tip, dark moustache, yellow cere and feet, small black hooked bill, folded wings. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    },
+    {
+      "id": "madagascar-magpie-robin",
+      "name": "Madagascar Magpie-Robin",
+      "englishName": "Madagascar Magpie-Robin",
+      "scientificName": "Copsychus albospecularis",
+      "worlds": [
+        10
+      ],
+      "art": "svg",
+      "asset": null,
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Copsychus%20albospecularis",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Copsychus%20albospecularis?size=medium",
+      "photoPath": "/workspace/scratch/81b214285e41/references/remaining/madagascar-magpie-robin.jpg",
+      "title": [
+        "Madagascar Magpie-Robin — BirdNET+ Taxonomy"
+      ],
+      "bytes": 8926,
+      "status": "ok",
+      "features": "ADULT MALE nominate Madagascar Magpie-Robin: black glossy head back throat and upper breast, white belly and white wing patch, long dark tail, slender black bill. Not all-black subspecies.",
+      "prompt": "Use case: stylized-concept. Asset: ONE full-body transparent bird guest sprite for Shrike Tycoon, matching the visual guide. Image 1 = authoritative visual guide style reference, use ONLY its cute rounded bird pixel-art language and warm dark outlines, no UI/background/text. Image 2 = real photo of this specific species for identity/anatomy, not a tracing. Image 3 = existing Marsh Tit guest sprite for matching crisp pixel clusters, friendly round proportions, and soft grouped feather shading; do NOT copy that species plumage. SPECIES: Madagascar Magpie-Robin (Copsychus albospecularis). Distinguishing anatomy and plumage: ADULT MALE nominate Madagascar Magpie-Robin: black glossy head back throat and upper breast, white belly and white wing patch, long dark tail, slender black bill. Not all-black subspecies. Single bird facing LEFT toward chef, friendly three-quarter side view, standing with both feet visible and wings folded unless the species notes say resting/climbing. Preserve species bill shape, tail length, characteristic patches/colours. Round head/body but retain bird anatomy, no arms. Entire head/beak/crest/tail/wings/feet inside square canvas with 7% transparent margins around silhouette. True transparent alpha, no background, no perch/branch, no ground shadow, no clothes, no apron, no tools, no food, no text/labels. Sharp stair-stepped pixel shapes, no blur, no antialiased vector drawing, no photoreal feathers. One complete character only, not a collage or sprite sheet."
+    }
+  ]
+}

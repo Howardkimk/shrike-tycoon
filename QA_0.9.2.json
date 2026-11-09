@@ -1,0 +1,1343 @@
+{
+  "passed": 32,
+  "tests": [
+    "renamed guest keeps stable ID",
+    "all 100 stages have valid goals and order caps",
+    "forced spawns, upgrades and rush never exceed six orders",
+    "below-target failure, threshold success, final stage and old records",
+    "fresh loss grants no clear stars, subgoal or chef unlock",
+    "READY counts, overcooked does not count and late click cannot rescue defeat",
+    "old save reload keeps progression, scores, upgrades and renamed discovery",
+    "retry clears counters and goal HUD; pause blocks actions",
+    "capacity accounts for recipe length, weather, altitude and baseline headroom",
+    "HUD shows orders remaining, achievement and no negative remainder",
+    "30/10 second warnings occur once each and pause freezes thresholds",
+    "result review distinguishes burned servings, expired and unfinished orders; retry resets them",
+    "F triggers fan with existing cooldown and respects keyboard guards",
+    "number and Space shortcuts still work alongside F",
+    "order numbers remain stable when duplicate recipes occupy different burners",
+    "urgent threshold, paused countdown, ready and burnt linkage are accurate",
+    "selected order highlights its burner and expired links are explicitly retired",
+    "difficulty curve is monotonic with no patience cut at queue tier transitions",
+    "every stage enforces its queue cap under forced spawning, max upgrades and rush",
+    "deadlines reward recipe complexity, slow environments and preserved upgrades",
+    "arrival deadline is frozen through weather changes and pause/resume",
+    "queue-aware clear goals retain headroom and pre-game screens describe actual difficulty",
+    "v10 saves migrate with scores, chef training defaults and a one-time starter kit",
+    "chef training charges correct XP, keeps species separate and blocks locked/max/poor/in-game purchases",
+    "training improves cooking and ready grace without increasing order caps",
+    "shop enforces inventory cap, cost, and persist-before-effect on storage failure",
+    "tea affects only present orders, once per run; pause/empty/end guards preserve items",
+    "ember accelerates cooking only, clamps READY to now and preserves ready/burnt food",
+    "failed item persistence leaves timers and per-run allowance unchanged",
+    "scenery viewer is removed from gameplay",
+    "v11 backup preserves training and supplies and rejects poisoned/out-of-range data",
+    "live redraw preserves interactive order and burner nodes and shows accelerated remaining time"
+  ],
+  "renderedBrowser": "not run for 0.9.2; DOM logic tests only",
+  "windows": "not tested",
+  "saveKey": "shrikeTycoonPrototype03Stable",
+  "saveVersion": 11,
+  "goals": [
+    {
+      "stage": 1,
+      "seconds": 100,
+      "target": 4,
+      "orderLimit": 2,
+      "budget": {
+        "target": 4,
+        "recipeLength": 1.835,
+        "cookSeconds": 4.325529794535376,
+        "serviceSeconds": 7.456514897267688,
+        "capacity": 12.740536471644564
+      }
+    },
+    {
+      "stage": 2,
+      "seconds": 115,
+      "target": 4,
+      "orderLimit": 2,
+      "budget": {
+        "target": 4,
+        "recipeLength": 1.8815999999999997,
+        "cookSeconds": 4.758155650270927,
+        "serviceSeconds": 7.731077825135463,
+        "capacity": 14.228287761166419
+      }
+    },
+    {
+      "stage": 3,
+      "seconds": 120,
+      "target": 4,
+      "orderLimit": 2,
+      "budget": {
+        "target": 4,
+        "recipeLength": 2.98432,
+        "cookSeconds": 8.785664283363623,
+        "serviceSeconds": 11.123232141681811,
+        "capacity": 10.338721563587923
+      }
+    },
+    {
+      "stage": 4,
+      "seconds": 125,
+      "target": 5,
+      "orderLimit": 2,
+      "budget": {
+        "target": 5,
+        "recipeLength": 3.2324800000000002,
+        "cookSeconds": 7.75542769323846,
+        "serviceSeconds": 10.918313846619231,
+        "capacity": 10.990708060398633
+      }
+    },
+    {
+      "stage": 5,
+      "seconds": 130,
+      "target": 5,
+      "orderLimit": 2,
+      "budget": {
+        "target": 5,
+        "recipeLength": 3.249536,
+        "cookSeconds": 8.01955295019667,
+        "serviceSeconds": 11.071696475098335,
+        "capacity": 11.290049386843382
+      }
+    },
+    {
+      "stage": 6,
+      "seconds": 135,
+      "target": 5,
+      "orderLimit": 3,
+      "budget": {
+        "target": 5,
+        "recipeLength": 3.266592,
+        "cookSeconds": 7.980811801736501,
+        "serviceSeconds": 9.743510600578833,
+        "capacity": 13.342213636251094
+      }
+    },
+    {
+      "stage": 7,
+      "seconds": 140,
+      "target": 6,
+      "orderLimit": 3,
+      "budget": {
+        "target": 6,
+        "recipeLength": 3.2836480000000003,
+        "cookSeconds": 10.07398501386749,
+        "serviceSeconds": 10.462555004622498,
+        "capacity": 12.903157970529682
+      }
+    },
+    {
+      "stage": 8,
+      "seconds": 145,
+      "target": 6,
+      "orderLimit": 3,
+      "budget": {
+        "target": 6,
+        "recipeLength": 3.5176480000000003,
+        "cookSeconds": 9.749906417155342,
+        "serviceSeconds": 10.647028805718449,
+        "capacity": 13.149208342970475
+      }
+    },
+    {
+      "stage": 9,
+      "seconds": 150,
+      "target": 6,
+      "orderLimit": 3,
+      "budget": {
+        "target": 6,
+        "recipeLength": 3.50528,
+        "cookSeconds": 9.709185858727611,
+        "serviceSeconds": 10.617995286242536,
+        "capacity": 13.656061816854711
+      }
+    },
+    {
+      "stage": 10,
+      "seconds": 180,
+      "target": 8,
+      "orderLimit": 3,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.5362,
+        "cookSeconds": 10.448923718436157,
+        "serviceSeconds": 10.903224572812054,
+        "capacity": 16.050297673990375
+      }
+    },
+    {
+      "stage": 11,
+      "seconds": 125,
+      "target": 5,
+      "orderLimit": 3,
+      "budget": {
+        "target": 5,
+        "recipeLength": 3.0063999999999997,
+        "cookSeconds": 8.463134581888902,
+        "serviceSeconds": 9.579044860629633,
+        "capacity": 12.527345027185975
+      }
+    },
+    {
+      "stage": 12,
+      "seconds": 130,
+      "target": 5,
+      "orderLimit": 3,
+      "budget": {
+        "target": 5,
+        "recipeLength": 3.01744,
+        "cookSeconds": 7.994820383739178,
+        "serviceSeconds": 9.43674012791306,
+        "capacity": 13.246099638821336
+      }
+    },
+    {
+      "stage": 13,
+      "seconds": 135,
+      "target": 5,
+      "orderLimit": 3,
+      "budget": {
+        "target": 5,
+        "recipeLength": 3.03952,
+        "cookSeconds": 7.315481927807945,
+        "serviceSeconds": 9.237893975935982,
+        "capacity": 14.072471532866713
+      }
+    },
+    {
+      "stage": 14,
+      "seconds": 140,
+      "target": 6,
+      "orderLimit": 3,
+      "budget": {
+        "target": 6,
+        "recipeLength": 3.266592,
+        "cookSeconds": 8.3896613641184,
+        "serviceSeconds": 9.879793788039466,
+        "capacity": 13.664252806919084
+      }
+    },
+    {
+      "stage": 15,
+      "seconds": 145,
+      "target": 6,
+      "orderLimit": 3,
+      "budget": {
+        "target": 6,
+        "recipeLength": 3.2836480000000003,
+        "cookSeconds": 8.071214709575163,
+        "serviceSeconds": 9.79496490319172,
+        "capacity": 14.293057849996027
+      }
+    },
+    {
+      "stage": 16,
+      "seconds": 150,
+      "target": 6,
+      "orderLimit": 4,
+      "budget": {
+        "target": 6,
+        "recipeLength": 3.3007040000000005,
+        "cookSeconds": 10.353354860672846,
+        "serviceSeconds": 10.57699828689095,
+        "capacity": 13.708993427720593
+      }
+    },
+    {
+      "stage": 17,
+      "seconds": 155,
+      "target": 7,
+      "orderLimit": 4,
+      "budget": {
+        "target": 7,
+        "recipeLength": 3.3177600000000007,
+        "cookSeconds": 10.712639021507819,
+        "serviceSeconds": 10.718079673835941,
+        "capacity": 13.995044314343657
+      }
+    },
+    {
+      "stage": 18,
+      "seconds": 160,
+      "target": 7,
+      "orderLimit": 4,
+      "budget": {
+        "target": 7,
+        "recipeLength": 3.5176480000000003,
+        "cookSeconds": 9.51013760274359,
+        "serviceSeconds": 10.567105867581198,
+        "capacity": 14.668160037605395
+      }
+    },
+    {
+      "stage": 19,
+      "seconds": 170,
+      "target": 7,
+      "orderLimit": 4,
+      "budget": {
+        "target": 7,
+        "recipeLength": 3.5300160000000003,
+        "cookSeconds": 11.075739483387503,
+        "serviceSeconds": 11.104433161129169,
+        "capacity": 14.858930447488214
+      }
+    },
+    {
+      "stage": 20,
+      "seconds": 190,
+      "target": 8,
+      "orderLimit": 4,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.554752,
+        "cookSeconds": 11.004791521296886,
+        "serviceSeconds": 11.111703840432295,
+        "capacity": 16.649111842491536
+      }
+    },
+    {
+      "stage": 21,
+      "seconds": 145,
+      "target": 6,
+      "orderLimit": 4,
+      "budget": {
+        "target": 6,
+        "recipeLength": 3.0616,
+        "cookSeconds": 7.308469652189082,
+        "serviceSeconds": 9.263156550729693,
+        "capacity": 15.113638556499586
+      }
+    },
+    {
+      "stage": 22,
+      "seconds": 150,
+      "target": 6,
+      "orderLimit": 4,
+      "budget": {
+        "target": 6,
+        "recipeLength": 3.07264,
+        "cookSeconds": 7.341235909185299,
+        "serviceSeconds": 9.2878786363951,
+        "capacity": 15.611745768491092
+      }
+    },
+    {
+      "stage": 23,
+      "seconds": 155,
+      "target": 6,
+      "orderLimit": 4,
+      "budget": {
+        "target": 6,
+        "recipeLength": 3.0947199999999997,
+        "cookSeconds": 7.362895906117021,
+        "serviceSeconds": 9.32269863537234,
+        "capacity": 16.08976175963336
+      }
+    },
+    {
+      "stage": 24,
+      "seconds": 160,
+      "target": 7,
+      "orderLimit": 4,
+      "budget": {
+        "target": 7,
+        "recipeLength": 3.3092320000000006,
+        "cookSeconds": 8.436144562627412,
+        "serviceSeconds": 9.948588187542471,
+        "capacity": 15.580100118536372
+      }
+    },
+    {
+      "stage": 25,
+      "seconds": 165,
+      "target": 7,
+      "orderLimit": 4,
+      "budget": {
+        "target": 7,
+        "recipeLength": 3.3177600000000007,
+        "cookSeconds": 8.152791362419956,
+        "serviceSeconds": 9.864797120806653,
+        "capacity": 16.219289463392094
+      }
+    },
+    {
+      "stage": 26,
+      "seconds": 170,
+      "target": 7,
+      "orderLimit": 4,
+      "budget": {
+        "target": 7,
+        "recipeLength": 3.3262880000000004,
+        "cookSeconds": 8.336984912599922,
+        "serviceSeconds": 9.93685497086664,
+        "capacity": 16.604851382429864
+      }
+    },
+    {
+      "stage": 27,
+      "seconds": 170,
+      "target": 8,
+      "orderLimit": 4,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.343344,
+        "cookSeconds": 8.157332061722508,
+        "serviceSeconds": 9.898290687240836,
+        "capacity": 16.66954479450573
+      }
+    },
+    {
+      "stage": 28,
+      "seconds": 175,
+      "target": 8,
+      "orderLimit": 4,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.5300160000000003,
+        "cookSeconds": 9.16388826776917,
+        "serviceSeconds": 10.467149422589724,
+        "capacity": 16.24128911670199
+      }
+    },
+    {
+      "stage": 29,
+      "seconds": 180,
+      "target": 8,
+      "orderLimit": 4,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.542384,
+        "cookSeconds": 9.835255406514978,
+        "serviceSeconds": 10.706398468838326,
+        "capacity": 16.345365858495644
+      }
+    },
+    {
+      "stage": 30,
+      "seconds": 200,
+      "target": 9,
+      "orderLimit": 4,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.56712,
+        "cookSeconds": 9.062549884375946,
+        "serviceSeconds": 10.479749961458648,
+        "capacity": 18.6073141742075
+      }
+    },
+    {
+      "stage": 31,
+      "seconds": 150,
+      "target": 7,
+      "orderLimit": 5,
+      "budget": {
+        "target": 7,
+        "recipeLength": 3.07264,
+        "cookSeconds": 7.922843121609293,
+        "serviceSeconds": 9.481747707203098,
+        "capacity": 15.292539358524204
+      }
+    },
+    {
+      "stage": 32,
+      "seconds": 155,
+      "target": 7,
+      "orderLimit": 5,
+      "budget": {
+        "target": 7,
+        "recipeLength": 3.0947199999999997,
+        "cookSeconds": 8.176704792286888,
+        "serviceSeconds": 9.59396826409563,
+        "capacity": 15.634823450621418
+      }
+    },
+    {
+      "stage": 33,
+      "seconds": 160,
+      "target": 7,
+      "orderLimit": 5,
+      "budget": {
+        "target": 7,
+        "recipeLength": 3.0947199999999997,
+        "cookSeconds": 8.434370953604192,
+        "serviceSeconds": 9.67985698453473,
+        "capacity": 16.012633270061706
+      }
+    },
+    {
+      "stage": 34,
+      "seconds": 165,
+      "target": 8,
+      "orderLimit": 5,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.3177600000000007,
+        "cookSeconds": 9.03052838040683,
+        "serviceSeconds": 10.157376126802276,
+        "capacity": 15.752099558251848
+      }
+    },
+    {
+      "stage": 35,
+      "seconds": 170,
+      "target": 8,
+      "orderLimit": 5,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.351872,
+        "cookSeconds": 9.706930327230769,
+        "serviceSeconds": 10.425483442410256,
+        "capacity": 15.82660419648164
+      }
+    },
+    {
+      "stage": 36,
+      "seconds": 175,
+      "target": 8,
+      "orderLimit": 5,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.343344,
+        "cookSeconds": 9.638763873127013,
+        "serviceSeconds": 10.392101291042339,
+        "capacity": 16.35857804297333
+      }
+    },
+    {
+      "stage": 37,
+      "seconds": 180,
+      "target": 9,
+      "orderLimit": 5,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.351872,
+        "cookSeconds": 10.001518880893961,
+        "serviceSeconds": 10.523679626964654,
+        "capacity": 16.629164532109122
+      }
+    },
+    {
+      "stage": 38,
+      "seconds": 185,
+      "target": 8,
+      "orderLimit": 5,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.542384,
+        "cookSeconds": 11.354203254473182,
+        "serviceSeconds": 11.212714418157727,
+        "capacity": 16.05320471807525
+      }
+    },
+    {
+      "stage": 39,
+      "seconds": 190,
+      "target": 9,
+      "orderLimit": 5,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.554752,
+        "cookSeconds": 10.995845703691385,
+        "serviceSeconds": 11.108721901230462,
+        "capacity": 16.653581001024826
+      }
+    },
+    {
+      "stage": 40,
+      "seconds": 205,
+      "target": 9,
+      "orderLimit": 5,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.5794879999999996,
+        "cookSeconds": 11.1527519583814,
+        "serviceSeconds": 11.191943986127132,
+        "capacity": 17.869996512483272
+      }
+    },
+    {
+      "stage": 41,
+      "seconds": 155,
+      "target": 8,
+      "orderLimit": 5,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.0947199999999997,
+        "cookSeconds": 7.558191312458514,
+        "serviceSeconds": 9.387797104152838,
+        "capacity": 15.978189380940622
+      }
+    },
+    {
+      "stage": 42,
+      "seconds": 160,
+      "target": 8,
+      "orderLimit": 5,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.0947199999999997,
+        "cookSeconds": 7.756638373402889,
+        "serviceSeconds": 9.45394612446763,
+        "capacity": 16.39527007657116
+      }
+    },
+    {
+      "stage": 43,
+      "seconds": 165,
+      "target": 8,
+      "orderLimit": 5,
+      "budget": {
+        "target": 8,
+        "recipeLength": 3.1168000000000005,
+        "cookSeconds": 7.987959258413206,
+        "serviceSeconds": 9.558653086137737,
+        "capacity": 16.738760007101533
+      }
+    },
+    {
+      "stage": 44,
+      "seconds": 170,
+      "target": 9,
+      "orderLimit": 5,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.334816,
+        "cookSeconds": 8.541625285075023,
+        "serviceSeconds": 10.01572842835834,
+        "capacity": 16.474088847379505
+      }
+    },
+    {
+      "stage": 45,
+      "seconds": 175,
+      "target": 9,
+      "orderLimit": 5,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.343344,
+        "cookSeconds": 8.671515463703471,
+        "serviceSeconds": 10.069685154567825,
+        "capacity": 16.882355047901807
+      }
+    },
+    {
+      "stage": 46,
+      "seconds": 180,
+      "target": 9,
+      "orderLimit": 5,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.351872,
+        "cookSeconds": 9.076533642896983,
+        "serviceSeconds": 10.215351214298995,
+        "capacity": 17.131080109614125
+      }
+    },
+    {
+      "stage": 47,
+      "seconds": 185,
+      "target": 9,
+      "orderLimit": 5,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.3689280000000004,
+        "cookSeconds": 9.409722430385138,
+        "serviceSeconds": 10.347734143461713,
+        "capacity": 17.39511254391226
+      }
+    },
+    {
+      "stage": 48,
+      "seconds": 190,
+      "target": 9,
+      "orderLimit": 5,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.548568,
+        "cookSeconds": 9.945579178244268,
+        "serviceSeconds": 10.750903059414757,
+        "capacity": 17.20785677050564
+      }
+    },
+    {
+      "stage": 49,
+      "seconds": 195,
+      "target": 9,
+      "orderLimit": 5,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.56712,
+        "cookSeconds": 11.009465430488339,
+        "serviceSeconds": 11.12872181016278,
+        "capacity": 17.07294002321915
+      }
+    },
+    {
+      "stage": 50,
+      "seconds": 210,
+      "target": 10,
+      "orderLimit": 5,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.5794879999999996,
+        "cookSeconds": 9.992196070190845,
+        "serviceSeconds": 10.805092023396947,
+        "capacity": 18.97253624088537
+      }
+    },
+    {
+      "stage": 51,
+      "seconds": 165,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.0947199999999997,
+        "cookSeconds": 7.5042365994853215,
+        "serviceSeconds": 9.36981219982844,
+        "capacity": 17.076115997600205
+      }
+    },
+    {
+      "stage": 52,
+      "seconds": 169,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.1123840000000005,
+        "cookSeconds": 7.444551317149392,
+        "serviceSeconds": 9.371997105716463,
+        "capacity": 17.498938395954898
+      }
+    },
+    {
+      "stage": 53,
+      "seconds": 173,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.130048,
+        "cookSeconds": 7.571527302675307,
+        "serviceSeconds": 9.436402434225101,
+        "capacity": 17.803395008957757
+      }
+    },
+    {
+      "stage": 54,
+      "seconds": 177,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.3416384000000003,
+        "cookSeconds": 8.025122481216359,
+        "serviceSeconds": 9.85208882707212,
+        "capacity": 17.458226678526163
+      }
+    },
+    {
+      "stage": 55,
+      "seconds": 181,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.3552832,
+        "cookSeconds": 8.19334002882146,
+        "serviceSeconds": 9.925217342940487,
+        "capacity": 17.732609162980555
+      }
+    },
+    {
+      "stage": 56,
+      "seconds": 185,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.3689280000000004,
+        "cookSeconds": 8.323169906211058,
+        "serviceSeconds": 9.98554996873702,
+        "capacity": 18.026047695274467
+      }
+    },
+    {
+      "stage": 57,
+      "seconds": 189,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.3825728,
+        "cookSeconds": 8.317570953337395,
+        "serviceSeconds": 10.000739651112465,
+        "capacity": 18.398639142609035
+      }
+    },
+    {
+      "stage": 58,
+      "seconds": 193,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.5621728,
+        "cookSeconds": 9.022267233059265,
+        "serviceSeconds": 10.460138411019756,
+        "capacity": 17.972993531514078
+      }
+    },
+    {
+      "stage": 59,
+      "seconds": 197,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.5720672,
+        "cookSeconds": 8.587623841505373,
+        "serviceSeconds": 10.327625280501792,
+        "capacity": 18.590914637703744
+      }
+    },
+    {
+      "stage": 60,
+      "seconds": 211,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.5819615999999996,
+        "cookSeconds": 9.046996980649498,
+        "serviceSeconds": 10.493117660216498,
+        "capacity": 19.63191557272119
+      }
+    },
+    {
+      "stage": 61,
+      "seconds": 165,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.0947199999999997,
+        "cookSeconds": 9.639629991352699,
+        "serviceSeconds": 10.081609997117566,
+        "capacity": 15.870481009059626
+      }
+    },
+    {
+      "stage": 62,
+      "seconds": 169,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.1123840000000005,
+        "cookSeconds": 10.901658024162563,
+        "serviceSeconds": 10.524366008054187,
+        "capacity": 15.582886406125796
+      }
+    },
+    {
+      "stage": 63,
+      "seconds": 173,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.130048,
+        "cookSeconds": 8.989896297837221,
+        "serviceSeconds": 9.909192099279075,
+        "capacity": 16.95395530905315
+      }
+    },
+    {
+      "stage": 64,
+      "seconds": 177,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.3416384000000003,
+        "cookSeconds": 11.195230978432047,
+        "serviceSeconds": 10.908791659477348,
+        "capacity": 15.767099177347449
+      }
+    },
+    {
+      "stage": 65,
+      "seconds": 181,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.3552832,
+        "cookSeconds": 11.073037761675746,
+        "serviceSeconds": 10.885116587225248,
+        "capacity": 16.168866781505425
+      }
+    },
+    {
+      "stage": 66,
+      "seconds": 185,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.3689280000000004,
+        "cookSeconds": 10.517648786938588,
+        "serviceSeconds": 10.71704292897953,
+        "capacity": 16.795677799635303
+      }
+    },
+    {
+      "stage": 67,
+      "seconds": 189,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.3825728,
+        "cookSeconds": 11.365930752096176,
+        "serviceSeconds": 11.016859584032058,
+        "capacity": 16.701674247232067
+      }
+    },
+    {
+      "stage": 68,
+      "seconds": 193,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.5621728,
+        "cookSeconds": 11.07472800041607,
+        "serviceSeconds": 11.14429200013869,
+        "capacity": 16.869622583261492
+      }
+    },
+    {
+      "stage": 69,
+      "seconds": 197,
+      "target": 9,
+      "orderLimit": 6,
+      "budget": {
+        "target": 9,
+        "recipeLength": 3.5720672,
+        "cookSeconds": 12.288018391844215,
+        "serviceSeconds": 11.561090130614739,
+        "capacity": 16.60743042661417
+      }
+    },
+    {
+      "stage": 70,
+      "seconds": 211,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.5819615999999996,
+        "cookSeconds": 11.472481647747607,
+        "serviceSeconds": 11.301612549249201,
+        "capacity": 18.227487369816547
+      }
+    },
+    {
+      "stage": 71,
+      "seconds": 165,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.0947199999999997,
+        "cookSeconds": 7.826092033099241,
+        "serviceSeconds": 9.477097344366413,
+        "capacity": 16.882806431772146
+      }
+    },
+    {
+      "stage": 72,
+      "seconds": 169,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.1123840000000005,
+        "cookSeconds": 7.703628583546573,
+        "serviceSeconds": 9.458356194515524,
+        "capacity": 17.339165138980093
+      }
+    },
+    {
+      "stage": 73,
+      "seconds": 173,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.130048,
+        "cookSeconds": 8.147207316087977,
+        "serviceSeconds": 9.628295772029325,
+        "capacity": 17.44857075205856
+      }
+    },
+    {
+      "stage": 74,
+      "seconds": 177,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.3416384000000003,
+        "cookSeconds": 8.297966137151848,
+        "serviceSeconds": 9.94303671238395,
+        "capacity": 17.298538160457134
+      }
+    },
+    {
+      "stage": 75,
+      "seconds": 181,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.3552832,
+        "cookSeconds": 8.12690820792663,
+        "serviceSeconds": 9.90307340264221,
+        "capacity": 17.77226047350532
+      }
+    },
+    {
+      "stage": 76,
+      "seconds": 185,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.3689280000000004,
+        "cookSeconds": 8.911286771124821,
+        "serviceSeconds": 10.181588923708274,
+        "capacity": 17.678969495700436
+      }
+    },
+    {
+      "stage": 77,
+      "seconds": 189,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.3825728,
+        "cookSeconds": 8.272148226155954,
+        "serviceSeconds": 9.985598742051984,
+        "capacity": 18.426536530566523
+      }
+    },
+    {
+      "stage": 78,
+      "seconds": 193,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.5621728,
+        "cookSeconds": 9.158390488674724,
+        "serviceSeconds": 10.505512829558242,
+        "capacity": 17.895366275794213
+      }
+    },
+    {
+      "stage": 79,
+      "seconds": 197,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.5720672,
+        "cookSeconds": 8.671177701281973,
+        "serviceSeconds": 10.35547656709399,
+        "capacity": 18.54091395562687
+      }
+    },
+    {
+      "stage": 80,
+      "seconds": 211,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.5819615999999996,
+        "cookSeconds": 9.352255412676966,
+        "serviceSeconds": 10.594870470892321,
+        "capacity": 19.443371258379365
+      }
+    },
+    {
+      "stage": 81,
+      "seconds": 165,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.0947199999999997,
+        "cookSeconds": 7.434012561021217,
+        "serviceSeconds": 9.34640418700707,
+        "capacity": 17.118883026953235
+      }
+    },
+    {
+      "stage": 82,
+      "seconds": 169,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.1123840000000005,
+        "cookSeconds": 7.526589554112585,
+        "serviceSeconds": 9.399343184704195,
+        "capacity": 17.44802767355932
+      }
+    },
+    {
+      "stage": 83,
+      "seconds": 173,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.130048,
+        "cookSeconds": 7.773416516551991,
+        "serviceSeconds": 9.503698838850664,
+        "capacity": 17.67732783295111
+      }
+    },
+    {
+      "stage": 84,
+      "seconds": 177,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.3416384000000003,
+        "cookSeconds": 7.961924600045321,
+        "serviceSeconds": 9.831022866681774,
+        "capacity": 17.49563624584005
+      }
+    },
+    {
+      "stage": 85,
+      "seconds": 181,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.3552832,
+        "cookSeconds": 8.62943438230811,
+        "serviceSeconds": 10.070582127436037,
+        "capacity": 17.476646113684936
+      }
+    },
+    {
+      "stage": 86,
+      "seconds": 185,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.3689280000000004,
+        "cookSeconds": 8.74836940698134,
+        "serviceSeconds": 10.127283135660447,
+        "capacity": 17.773769883669928
+      }
+    },
+    {
+      "stage": 87,
+      "seconds": 189,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.3825728,
+        "cookSeconds": 8.693714362654793,
+        "serviceSeconds": 10.126120787551598,
+        "capacity": 18.1708280851437
+      }
+    },
+    {
+      "stage": 88,
+      "seconds": 193,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.5621728,
+        "cookSeconds": 9.100931031432355,
+        "serviceSeconds": 10.486359677144119,
+        "capacity": 17.928051849085573
+      }
+    },
+    {
+      "stage": 89,
+      "seconds": 197,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.5720672,
+        "cookSeconds": 8.51010042720128,
+        "serviceSeconds": 10.301784142400427,
+        "capacity": 18.637548345607435
+      }
+    },
+    {
+      "stage": 90,
+      "seconds": 211,
+      "target": 12,
+      "orderLimit": 6,
+      "budget": {
+        "target": 12,
+        "recipeLength": 3.5819615999999996,
+        "cookSeconds": 9.404808994272686,
+        "serviceSeconds": 10.612388331424228,
+        "capacity": 19.411276101724965
+      }
+    },
+    {
+      "stage": 91,
+      "seconds": 165,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.0947199999999997,
+        "cookSeconds": 7.574519856990316,
+        "serviceSeconds": 9.393239952330104,
+        "capacity": 17.03352632446168
+      }
+    },
+    {
+      "stage": 92,
+      "seconds": 169,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.1123840000000005,
+        "cookSeconds": 8.108483578584403,
+        "serviceSeconds": 9.593307859528135,
+        "capacity": 17.095250397610677
+      }
+    },
+    {
+      "stage": 93,
+      "seconds": 173,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.130048,
+        "cookSeconds": 7.607285035446571,
+        "serviceSeconds": 9.448321678482191,
+        "capacity": 17.780935674809502
+      }
+    },
+    {
+      "stage": 94,
+      "seconds": 177,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.3416384000000003,
+        "cookSeconds": 8.212355646485676,
+        "serviceSeconds": 9.914499882161891,
+        "capacity": 17.348328412355055
+      }
+    },
+    {
+      "stage": 95,
+      "seconds": 181,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.3552832,
+        "cookSeconds": 9.845321777219784,
+        "serviceSeconds": 10.475877925739928,
+        "capacity": 16.80050123222191
+      }
+    },
+    {
+      "stage": 96,
+      "seconds": 185,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.3689280000000004,
+        "cookSeconds": 9.04237630491602,
+        "serviceSeconds": 10.225285434972008,
+        "capacity": 17.603420573901342
+      }
+    },
+    {
+      "stage": 97,
+      "seconds": 189,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.3825728,
+        "cookSeconds": 8.220485139481958,
+        "serviceSeconds": 9.968377713160653,
+        "capacity": 18.458369585762767
+      }
+    },
+    {
+      "stage": 98,
+      "seconds": 193,
+      "target": 10,
+      "orderLimit": 6,
+      "budget": {
+        "target": 10,
+        "recipeLength": 3.5621728,
+        "cookSeconds": 10.390759870343318,
+        "serviceSeconds": 10.916302623447773,
+        "capacity": 17.221948354215066
+      }
+    },
+    {
+      "stage": 99,
+      "seconds": 197,
+      "target": 11,
+      "orderLimit": 6,
+      "budget": {
+        "target": 11,
+        "recipeLength": 3.5720672,
+        "cookSeconds": 9.040480480339069,
+        "serviceSeconds": 10.478577493446355,
+        "capacity": 18.323097779262792
+      }
+    },
+    {
+      "stage": 100,
+      "seconds": 211,
+      "target": 12,
+      "orderLimit": 6,
+      "budget": {
+        "target": 12,
+        "recipeLength": 3.5819615999999996,
+        "cookSeconds": 9.866418367831509,
+        "serviceSeconds": 10.766258122610502,
+        "capacity": 19.13385297417066
+      }
+    }
+  ]
+}

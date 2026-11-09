@@ -1,0 +1,109 @@
+{
+  "checks": [
+    {
+      "name": "new save keeps red-backed locked",
+      "ok": true
+    },
+    {
+      "name": "selection has 11 chefs and locked new chef",
+      "ok": true
+    },
+    {
+      "name": "legacy stars 0 apply unlock correctly",
+      "ok": true
+    },
+    {
+      "name": "legacy progress preserved 0",
+      "ok": true
+    },
+    {
+      "name": "legacy stars 1 apply unlock correctly",
+      "ok": true
+    },
+    {
+      "name": "legacy progress preserved 1",
+      "ok": true
+    },
+    {
+      "name": "legacy stars 2 apply unlock correctly",
+      "ok": true
+    },
+    {
+      "name": "legacy progress preserved 2",
+      "ok": true
+    },
+    {
+      "name": "legacy stars 3 apply unlock correctly",
+      "ok": true
+    },
+    {
+      "name": "legacy progress preserved 3",
+      "ok": true
+    },
+    {
+      "name": "red-backed whitelist survives reload",
+      "ok": true
+    },
+    {
+      "name": "Stage 52 1 stars unlock",
+      "ok": true
+    },
+    {
+      "name": "Stage 52 2 stars unlock",
+      "ok": true
+    },
+    {
+      "name": "replay does not duplicate unlock",
+      "ok": true
+    },
+    {
+      "name": "DEV results do not unlock normal save",
+      "ok": true
+    },
+    {
+      "name": "actual serving {\"chef\":\"red-backed\",\"recipe\":[\"grasshopper\",\"beetle\"],\"perfect\":true,\"burn\":false,\"m\":1.1}",
+      "ok": true
+    },
+    {
+      "name": "actual serving {\"chef\":\"red-backed\",\"recipe\":[\"caterpillar\",\"aquaticInsect\"],\"perfect\":true,\"burn\":true,\"m\":1.25}",
+      "ok": true
+    },
+    {
+      "name": "actual serving {\"chef\":\"red-backed\",\"recipe\":[\"grasshopper\",\"fish\"],\"perfect\":true,\"burn\":false,\"m\":1}",
+      "ok": true
+    },
+    {
+      "name": "actual serving {\"chef\":\"red-backed\",\"recipe\":[\"frog\"],\"perfect\":true,\"burn\":true,\"m\":1}",
+      "ok": true
+    },
+    {
+      "name": "actual serving {\"chef\":\"red-backed\",\"recipe\":[\"beetle\"],\"perfect\":false,\"burn\":false,\"m\":1}",
+      "ok": true
+    },
+    {
+      "name": "actual serving {\"chef\":\"red-backed\",\"recipe\":[\"beetle\"],\"perfect\":false,\"burn\":true,\"m\":1}",
+      "ok": true
+    },
+    {
+      "name": "actual serving {\"chef\":\"bull-headed\",\"recipe\":[\"beetle\"],\"perfect\":true,\"burn\":true,\"m\":1}",
+      "ok": true
+    },
+    {
+      "name": "empty recipe has no bonus",
+      "ok": true
+    },
+    {
+      "name": "red-backed auto Burning activates",
+      "ok": true
+    },
+    {
+      "name": "Burning status explains new skill",
+      "ok": true
+    },
+    {
+      "name": "no JavaScript errors",
+      "ok": true
+    }
+  ],
+  "errors": []
+}

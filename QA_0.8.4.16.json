@@ -1,0 +1,160 @@
+{
+  "version": "0.8.4.16",
+  "baselineDiagnostic": {
+    "checked": 17130,
+    "missing": 0
+  },
+  "unchangedContent": true,
+  "matrix": {
+    "states": 2340,
+    "recipes": 266000,
+    "spawns": 2340,
+    "maxIngredients": 9
+  },
+  "transition": true,
+  "keyboard": {
+    "mapping": [
+      {
+        "key": "1",
+        "id": "grasshopper"
+      },
+      {
+        "key": "2",
+        "id": "beetle"
+      },
+      {
+        "key": "3",
+        "id": "caterpillar"
+      },
+      {
+        "key": "4",
+        "id": "lizard"
+      },
+      {
+        "key": "5",
+        "id": "mouse"
+      },
+      {
+        "key": "6",
+        "id": "fish"
+      },
+      {
+        "key": "7",
+        "id": "aquaticInsect"
+      },
+      {
+        "key": "8",
+        "id": "smallBird"
+      },
+      {
+        "key": "9",
+        "id": "seed"
+      }
+    ],
+    "repeatGuard": true,
+    "numpad": true,
+    "modifierGuard": true,
+    "pauseDialogInputGuard": true,
+    "maxFour": true,
+    "served": true,
+    "tenthKeyZero": true
+  },
+  "layouts": [
+    {
+      "size": {
+        "width": 1366,
+        "height": 768
+      },
+      "count": 9,
+      "scrollHeight": 151,
+      "clientHeight": 151,
+      "lastVisible": true,
+      "hintVisible": true,
+      "badges": true
+    },
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "count": 9,
+      "scrollHeight": 110,
+      "clientHeight": 52,
+      "lastVisible": true,
+      "hintVisible": true,
+      "badges": true
+    },
+    {
+      "size": {
+        "width": 667,
+        "height": 375
+      },
+      "count": 9,
+      "scrollHeight": 110,
+      "clientHeight": 52,
+      "lastVisible": true,
+      "hintVisible": true,
+      "badges": true
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "count": 9,
+      "scrollHeight": 110,
+      "clientHeight": 90,
+      "lastVisible": true,
+      "hintVisible": true,
+      "badges": true
+    }
+  ],
+  "touch": true,
+  "errors": [],
+  "finalLayoutSmoke": [
+    {
+      "size": {
+        "width": 1366,
+        "height": 768
+      },
+      "lastVisible": true,
+      "hintVisible": true,
+      "hint": "재료 9종 · 숫자 키로 선택",
+      "overflow": false,
+      "badges": true
+    },
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "lastVisible": true,
+      "hintVisible": true,
+      "hint": "재료 9종 · 재료창 스크롤 ↕",
+      "overflow": true,
+      "badges": true
+    },
+    {
+      "size": {
+        "width": 667,
+        "height": 375
+      },
+      "lastVisible": true,
+      "hintVisible": true,
+      "hint": "재료 9종 · 재료창 스크롤 ↕",
+      "overflow": true,
+      "badges": true
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "lastVisible": true,
+      "hintVisible": true,
+      "hint": "재료 9종 · 재료창 스크롤 ↕",
+      "overflow": true,
+      "badges": true
+    }
+  ]
+}

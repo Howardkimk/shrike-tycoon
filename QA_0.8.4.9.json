@@ -1,0 +1,1015 @@
+{
+  "version": "0.8.4.9",
+  "dex": [
+    {
+      "id": "great-tit",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "marsh-tit",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "white-wagtail",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "grey-wagtail",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "eastern-cattle-egret",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "common-kingfisher",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "great-spotted-woodpecker",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "eurasian-nuthatch",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "brown-eared-bulbul",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "oriental-magpie",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "daurian-redstart",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "grey-heron",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "eurasian-sparrowhawk",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "oriental-scops-owl",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "little-egret",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "black-crowned-night-heron",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "common-sandpiper",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "oriental-reed-warbler",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "barn-swallow",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "grey-headed-lapwing",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "common-kestrel",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "ruddy-kingfisher",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "coal-tit",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "varied-tit",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "eurasian-jay",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "pale-thrush",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "whites-thrush",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "japanese-pygmy-woodpecker",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "eurasian-treecreeper",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "grey-nightjar",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "brown-hawk-owl",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "himalayan-bulbul",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "blue-whistling-thrush",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "white-capped-redstart",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "plumbeous-water-redstart",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "rufous-sibia",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "green-backed-tit",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "red-billed-chough",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "himalayan-woodpecker",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "grey-backed-shrike",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "isabelline-wheatear",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "eurasian-hoopoe",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "european-roller",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "little-owl",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "steppe-eagle",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "red-tailed-shrike",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "isabelline-shrike",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "european-robin",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "common-blackbird",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "european-bee-eater",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "red-backed-shrike",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "lesser-grey-shrike",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "european-nightjar",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "loggerhead-shrike",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "american-kestrel",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "eastern-bluebird",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "american-robin",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "belted-kingfisher",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "northern-mockingbird",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "lilac-breasted-roller",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "african-grey-hornbill",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "african-pygmy-kingfisher",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "northern-fiscal",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "mackinnons-shrike",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "superb-starling",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "southern-fiscal",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "cape-wagtail",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "cape-robin-chat",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "fiscal-flycatcher",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "cape-crow",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "karoo-scrub-robin",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "sao-tome-fiscal",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "sao-tome-thrush",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "sao-tome-oriole",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "madagascar-kingfisher",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "madagascar-kestrel",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    },
+    {
+      "id": "madagascar-magpie-robin",
+      "png": true,
+      "decoded": true,
+      "fit": "contain",
+      "contained": true
+    }
+  ],
+  "gameplay": [
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 8,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 9,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 10,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 8,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 9,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 10,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 8,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 9,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 10,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 8,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 9,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 10,
+      "rows": [
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        },
+        {
+          "png": true,
+          "center": true,
+          "belowHud": true
+        }
+      ]
+    }
+  ],
+  "mobile": [
+    {
+      "step": "stage",
+      "scrollTop": 930,
+      "lastVisible": true
+    },
+    {
+      "step": "chef",
+      "scrollTop": 1237,
+      "lastVisible": true
+    },
+    {
+      "startVisible": true,
+      "gap": "12px"
+    },
+    {
+      "startVisible": true,
+      "gap": "12px"
+    },
+    {
+      "startVisible": true,
+      "gap": "12px"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,1156 @@
+{
+  "version": "0.8.4.17",
+  "guests": [
+    {
+      "id": "great-tit",
+      "name": "박새",
+      "englishName": "Japanese Tit",
+      "scientificName": "Parus minor",
+      "worlds": [
+        1,
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/japanese-tit.png"
+    },
+    {
+      "id": "marsh-tit",
+      "name": "쇠박새",
+      "englishName": "Marsh Tit",
+      "scientificName": "Poecile palustris",
+      "worlds": [
+        1
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/marsh-tit.png"
+    },
+    {
+      "id": "white-wagtail",
+      "name": "알락할미새",
+      "englishName": "White Wagtail",
+      "scientificName": "Motacilla alba",
+      "worlds": [
+        1,
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/white-wagtail.png"
+    },
+    {
+      "id": "grey-wagtail",
+      "name": "노랑할미새",
+      "englishName": "Grey Wagtail",
+      "scientificName": "Motacilla cinerea",
+      "worlds": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/grey-wagtail.png"
+    },
+    {
+      "id": "eastern-cattle-egret",
+      "name": "황로",
+      "englishName": "Eastern Cattle Egret",
+      "scientificName": "Ardea coromanda",
+      "worlds": [
+        1,
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/eastern-cattle-egret.png"
+    },
+    {
+      "id": "common-kingfisher",
+      "name": "물총새",
+      "englishName": "Common Kingfisher",
+      "scientificName": "Alcedo atthis",
+      "worlds": [
+        1,
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/common-kingfisher.png"
+    },
+    {
+      "id": "great-spotted-woodpecker",
+      "name": "오색딱따구리",
+      "englishName": "Great Spotted Woodpecker",
+      "scientificName": "Dendrocopos major",
+      "worlds": [
+        1
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/great-spotted-woodpecker.png"
+    },
+    {
+      "id": "eurasian-nuthatch",
+      "name": "동고비",
+      "englishName": "Eurasian Nuthatch",
+      "scientificName": "Sitta europaea",
+      "worlds": [
+        1
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/eurasian-nuthatch.png"
+    },
+    {
+      "id": "brown-eared-bulbul",
+      "name": "직박구리",
+      "englishName": "Brown-eared Bulbul",
+      "scientificName": "Hypsipetes amaurotis",
+      "worlds": [
+        1
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/brown-eared-bulbul.png"
+    },
+    {
+      "id": "oriental-magpie",
+      "name": "까치",
+      "englishName": "Oriental Magpie",
+      "scientificName": "Pica serica",
+      "worlds": [
+        1,
+        5
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/oriental-magpie.png"
+    },
+    {
+      "id": "daurian-redstart",
+      "name": "딱새",
+      "englishName": "Daurian Redstart",
+      "scientificName": "Phoenicurus auroreus",
+      "worlds": [
+        1,
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/daurian-redstart.png"
+    },
+    {
+      "id": "grey-heron",
+      "name": "왜가리",
+      "englishName": "Grey Heron",
+      "scientificName": "Ardea cinerea",
+      "worlds": [
+        1,
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/grey-heron.png"
+    },
+    {
+      "id": "eurasian-sparrowhawk",
+      "name": "새매",
+      "englishName": "Eurasian Sparrowhawk",
+      "scientificName": "Accipiter nisus",
+      "worlds": [
+        1,
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/eurasian-sparrowhawk.png"
+    },
+    {
+      "id": "oriental-scops-owl",
+      "name": "소쩍새",
+      "englishName": "Oriental Scops-Owl",
+      "scientificName": "Otus sunia",
+      "worlds": [
+        1,
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/oriental-scops-owl.png"
+    },
+    {
+      "id": "little-egret",
+      "name": "쇠백로",
+      "englishName": "Little Egret",
+      "scientificName": "Egretta garzetta",
+      "worlds": [
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/little-egret.png"
+    },
+    {
+      "id": "black-crowned-night-heron",
+      "name": "해오라기",
+      "englishName": "Black-crowned Night Heron",
+      "scientificName": "Nycticorax nycticorax",
+      "worlds": [
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/black-crowned-night-heron.png"
+    },
+    {
+      "id": "common-sandpiper",
+      "name": "깝작도요",
+      "englishName": "Common Sandpiper",
+      "scientificName": "Actitis hypoleucos",
+      "worlds": [
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/common-sandpiper.png"
+    },
+    {
+      "id": "oriental-reed-warbler",
+      "name": "개개비",
+      "englishName": "Oriental Reed Warbler",
+      "scientificName": "Acrocephalus orientalis",
+      "worlds": [
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/oriental-reed-warbler.png"
+    },
+    {
+      "id": "barn-swallow",
+      "name": "제비",
+      "englishName": "Barn Swallow",
+      "scientificName": "Hirundo rustica",
+      "worlds": [
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/barn-swallow.png"
+    },
+    {
+      "id": "grey-headed-lapwing",
+      "name": "민댕기물떼새",
+      "englishName": "Grey-headed Lapwing",
+      "scientificName": "Vanellus cinereus",
+      "worlds": [
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/grey-headed-lapwing.png"
+    },
+    {
+      "id": "common-kestrel",
+      "name": "황조롱이",
+      "englishName": "Common Kestrel",
+      "scientificName": "Falco tinnunculus",
+      "worlds": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/common-kestrel.png"
+    },
+    {
+      "id": "ruddy-kingfisher",
+      "name": "호반새",
+      "englishName": "Ruddy Kingfisher",
+      "scientificName": "Halcyon coromanda",
+      "worlds": [
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/ruddy-kingfisher.png"
+    },
+    {
+      "id": "coal-tit",
+      "name": "진박새",
+      "englishName": "Coal Tit",
+      "scientificName": "Periparus ater",
+      "worlds": [
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/coal-tit.png"
+    },
+    {
+      "id": "varied-tit",
+      "name": "곤줄박이",
+      "englishName": "Varied Tit",
+      "scientificName": "Sittiparus varius",
+      "worlds": [
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/varied-tit.png"
+    },
+    {
+      "id": "eurasian-jay",
+      "name": "어치",
+      "englishName": "Eurasian Jay",
+      "scientificName": "Garrulus glandarius",
+      "worlds": [
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/eurasian-jay.png"
+    },
+    {
+      "id": "pale-thrush",
+      "name": "흰배지빠귀",
+      "englishName": "Pale Thrush",
+      "scientificName": "Turdus pallidus",
+      "worlds": [
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/pale-thrush.png"
+    },
+    {
+      "id": "whites-thrush",
+      "name": "호랑지빠귀",
+      "englishName": "White's Thrush",
+      "scientificName": "Zoothera aurea",
+      "worlds": [
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/whites-thrush.png"
+    },
+    {
+      "id": "japanese-pygmy-woodpecker",
+      "name": "쇠딱따구리",
+      "englishName": "Japanese Pygmy Woodpecker",
+      "scientificName": "Yungipicus kizuki",
+      "worlds": [
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/japanese-pygmy-woodpecker.png"
+    },
+    {
+      "id": "eurasian-treecreeper",
+      "name": "나무발발이",
+      "englishName": "Eurasian Treecreeper",
+      "scientificName": "Certhia familiaris",
+      "worlds": [
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/eurasian-treecreeper.png"
+    },
+    {
+      "id": "grey-nightjar",
+      "name": "쏙독새",
+      "englishName": "Grey Nightjar",
+      "scientificName": "Caprimulgus jotaka",
+      "worlds": [
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/grey-nightjar.png"
+    },
+    {
+      "id": "brown-hawk-owl",
+      "name": "솔부엉이",
+      "englishName": "Brown Boobook",
+      "scientificName": "Ninox scutulata",
+      "worlds": [
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/brown-hawk-owl.png",
+      "previousEnglishName": "Brown Hawk-Owl"
+    },
+    {
+      "id": "himalayan-bulbul",
+      "name": "히말라야직박구리",
+      "englishName": "Himalayan Bulbul",
+      "scientificName": "Pycnonotus leucogenys",
+      "worlds": [
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/himalayan-bulbul.png"
+    },
+    {
+      "id": "blue-whistling-thrush",
+      "name": "파랑지빠귀",
+      "englishName": "Blue Whistling Thrush",
+      "scientificName": "Myophonus caeruleus",
+      "worlds": [
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/blue-whistling-thrush.png"
+    },
+    {
+      "id": "white-capped-redstart",
+      "name": "흰머리딱새",
+      "englishName": "White-capped Redstart",
+      "scientificName": "Phoenicurus leucocephalus",
+      "worlds": [
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/white-capped-redstart.png"
+    },
+    {
+      "id": "plumbeous-water-redstart",
+      "name": "부채꼬리바위딱새",
+      "englishName": "Plumbeous Water Redstart",
+      "scientificName": "Phoenicurus fuliginosus",
+      "worlds": [
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/plumbeous-water-redstart.png"
+    },
+    {
+      "id": "rufous-sibia",
+      "name": "붉은배시비아",
+      "englishName": "Rufous Sibia",
+      "scientificName": "Heterophasia capistrata",
+      "worlds": [
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/rufous-sibia.png"
+    },
+    {
+      "id": "green-backed-tit",
+      "name": "초록등박새",
+      "englishName": "Green-backed Tit",
+      "scientificName": "Parus monticolus",
+      "worlds": [
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/green-backed-tit.png"
+    },
+    {
+      "id": "red-billed-chough",
+      "name": "붉은부리까마귀",
+      "englishName": "Red-billed Chough",
+      "scientificName": "Pyrrhocorax pyrrhocorax",
+      "worlds": [
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/red-billed-chough.png"
+    },
+    {
+      "id": "himalayan-woodpecker",
+      "name": "히말라야오색딱따구리",
+      "englishName": "Himalayan Woodpecker",
+      "scientificName": "Dendrocopos himalayensis",
+      "worlds": [
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/himalayan-woodpecker.png"
+    },
+    {
+      "id": "grey-backed-shrike",
+      "name": "회색등때까치",
+      "englishName": "Grey-backed Shrike",
+      "scientificName": "Lanius tephronotus",
+      "worlds": [
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/grey-backed-shrike.png"
+    },
+    {
+      "id": "eurasian-hoopoe",
+      "name": "후투티",
+      "englishName": "Common Hoopoe",
+      "scientificName": "Upupa epops",
+      "worlds": [
+        5
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/eurasian-hoopoe.png",
+      "previousEnglishName": "Eurasian Hoopoe"
+    },
+    {
+      "id": "european-roller",
+      "name": "유럽파랑새",
+      "englishName": "European Roller",
+      "scientificName": "Coracias garrulus",
+      "worlds": [
+        5
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/european-roller.png"
+    },
+    {
+      "id": "little-owl",
+      "name": "금눈쇠올빼미",
+      "englishName": "Little Owl",
+      "scientificName": "Athene noctua",
+      "worlds": [
+        5,
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/little-owl.png"
+    },
+    {
+      "id": "steppe-eagle",
+      "name": "초원수리",
+      "englishName": "Steppe Eagle",
+      "scientificName": "Aquila nipalensis",
+      "worlds": [
+        5
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/steppe-eagle.png"
+    },
+    {
+      "id": "red-tailed-shrike",
+      "name": "붉은꼬리때까치",
+      "englishName": "Red-tailed Shrike",
+      "scientificName": "Lanius phoenicuroides",
+      "worlds": [
+        5
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/red-tailed-shrike.png"
+    },
+    {
+      "id": "isabelline-shrike",
+      "name": "사막때까치",
+      "englishName": "Isabelline Shrike",
+      "scientificName": "Lanius isabellinus",
+      "worlds": [
+        5
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/isabelline-shrike.png"
+    },
+    {
+      "id": "european-robin",
+      "name": "유럽울새",
+      "englishName": "European Robin",
+      "scientificName": "Erithacus rubecula",
+      "worlds": [
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/european-robin.png"
+    },
+    {
+      "id": "common-blackbird",
+      "name": "Common Blackbird",
+      "englishName": "Common Blackbird",
+      "scientificName": "Turdus merula",
+      "worlds": [
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/common-blackbird.png"
+    },
+    {
+      "id": "european-bee-eater",
+      "name": "European Bee-eater",
+      "englishName": "European Bee-eater",
+      "scientificName": "Merops apiaster",
+      "worlds": [
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/european-bee-eater.png"
+    },
+    {
+      "id": "red-backed-shrike",
+      "name": "Red-backed Shrike",
+      "englishName": "Red-backed Shrike",
+      "scientificName": "Lanius collurio",
+      "worlds": [
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/red-backed-shrike.png"
+    },
+    {
+      "id": "lesser-grey-shrike",
+      "name": "Lesser Grey Shrike",
+      "englishName": "Lesser Grey Shrike",
+      "scientificName": "Lanius minor",
+      "worlds": [
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/lesser-grey-shrike.png"
+    },
+    {
+      "id": "european-nightjar",
+      "name": "European Nightjar",
+      "englishName": "European Nightjar",
+      "scientificName": "Caprimulgus europaeus",
+      "worlds": [
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/european-nightjar.png"
+    },
+    {
+      "id": "loggerhead-shrike",
+      "name": "Loggerhead Shrike",
+      "englishName": "Loggerhead Shrike",
+      "scientificName": "Lanius ludovicianus",
+      "worlds": [
+        7
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/loggerhead-shrike.png"
+    },
+    {
+      "id": "american-kestrel",
+      "name": "American Kestrel",
+      "englishName": "American Kestrel",
+      "scientificName": "Falco sparverius",
+      "worlds": [
+        7
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/american-kestrel.png"
+    },
+    {
+      "id": "eastern-bluebird",
+      "name": "Eastern Bluebird",
+      "englishName": "Eastern Bluebird",
+      "scientificName": "Sialia sialis",
+      "worlds": [
+        7
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/eastern-bluebird.png"
+    },
+    {
+      "id": "american-robin",
+      "name": "American Robin",
+      "englishName": "American Robin",
+      "scientificName": "Turdus migratorius",
+      "worlds": [
+        7
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/american-robin.png"
+    },
+    {
+      "id": "belted-kingfisher",
+      "name": "Belted Kingfisher",
+      "englishName": "Belted Kingfisher",
+      "scientificName": "Megaceryle alcyon",
+      "worlds": [
+        7
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/belted-kingfisher.png"
+    },
+    {
+      "id": "northern-mockingbird",
+      "name": "Northern Mockingbird",
+      "englishName": "Northern Mockingbird",
+      "scientificName": "Mimus polyglottos",
+      "worlds": [
+        7
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/northern-mockingbird.png"
+    },
+    {
+      "id": "lilac-breasted-roller",
+      "name": "Lilac-breasted Roller",
+      "englishName": "Lilac-breasted Roller",
+      "scientificName": "Coracias caudatus",
+      "worlds": [
+        8
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/lilac-breasted-roller.png"
+    },
+    {
+      "id": "african-grey-hornbill",
+      "name": "African Grey Hornbill",
+      "englishName": "African Grey Hornbill",
+      "scientificName": "Lophoceros nasutus",
+      "worlds": [
+        8
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/african-grey-hornbill.png"
+    },
+    {
+      "id": "african-pygmy-kingfisher",
+      "name": "African Pygmy Kingfisher",
+      "englishName": "African Pygmy Kingfisher",
+      "scientificName": "Ispidina picta",
+      "worlds": [
+        8
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/african-pygmy-kingfisher.png"
+    },
+    {
+      "id": "northern-fiscal",
+      "name": "Northern Fiscal",
+      "englishName": "Northern Fiscal",
+      "scientificName": "Lanius humeralis",
+      "worlds": [
+        8
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/northern-fiscal.png"
+    },
+    {
+      "id": "mackinnons-shrike",
+      "name": "Mackinnon's Shrike",
+      "englishName": "Mackinnon's Shrike",
+      "scientificName": "Lanius mackinnoni",
+      "worlds": [
+        8
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/mackinnons-shrike.png"
+    },
+    {
+      "id": "superb-starling",
+      "name": "Superb Starling",
+      "englishName": "Superb Starling",
+      "scientificName": "Lamprotornis superbus",
+      "worlds": [
+        8
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/superb-starling.png"
+    },
+    {
+      "id": "southern-fiscal",
+      "name": "Southern Fiscal",
+      "englishName": "Southern Fiscal",
+      "scientificName": "Lanius collaris",
+      "worlds": [
+        9
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/southern-fiscal.png"
+    },
+    {
+      "id": "cape-wagtail",
+      "name": "Cape Wagtail",
+      "englishName": "Cape Wagtail",
+      "scientificName": "Motacilla capensis",
+      "worlds": [
+        9
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/cape-wagtail.png"
+    },
+    {
+      "id": "cape-robin-chat",
+      "name": "Cape Robin-Chat",
+      "englishName": "Cape Robin-Chat",
+      "scientificName": "Cossypha caffra",
+      "worlds": [
+        9
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/cape-robin-chat.png"
+    },
+    {
+      "id": "fiscal-flycatcher",
+      "name": "Fiscal Flycatcher",
+      "englishName": "Fiscal Flycatcher",
+      "scientificName": "Melaenornis silens",
+      "worlds": [
+        9
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/fiscal-flycatcher.png"
+    },
+    {
+      "id": "cape-crow",
+      "name": "Cape Crow",
+      "englishName": "Cape Crow",
+      "scientificName": "Corvus capensis",
+      "worlds": [
+        9
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/cape-crow.png"
+    },
+    {
+      "id": "karoo-scrub-robin",
+      "name": "Karoo Scrub-Robin",
+      "englishName": "Karoo Scrub-Robin",
+      "scientificName": "Cercotrichas coryphoeus",
+      "worlds": [
+        9
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/karoo-scrub-robin.png"
+    },
+    {
+      "id": "sao-tome-fiscal",
+      "name": "São Tomé Fiscal",
+      "englishName": "São Tomé Fiscal",
+      "scientificName": "Lanius newtoni",
+      "worlds": [
+        10
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/sao-tome-fiscal.png"
+    },
+    {
+      "id": "sao-tome-thrush",
+      "name": "São Tomé Thrush",
+      "englishName": "São Tomé Thrush",
+      "scientificName": "Turdus olivaceofuscus",
+      "worlds": [
+        10
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/sao-tome-thrush.png"
+    },
+    {
+      "id": "sao-tome-oriole",
+      "name": "São Tomé Oriole",
+      "englishName": "São Tomé Oriole",
+      "scientificName": "Oriolus crassirostris",
+      "worlds": [
+        10
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/sao-tome-oriole.png"
+    },
+    {
+      "id": "madagascar-kingfisher",
+      "name": "Madagascar Kingfisher",
+      "englishName": "Malagasy Kingfisher",
+      "scientificName": "Corythornis vintsioides",
+      "worlds": [
+        10
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/madagascar-kingfisher.png",
+      "previousEnglishName": "Madagascar Kingfisher"
+    },
+    {
+      "id": "madagascar-kestrel",
+      "name": "Madagascar Kestrel",
+      "englishName": "Malagasy Kestrel",
+      "scientificName": "Falco newtoni",
+      "worlds": [
+        10
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/madagascar-kestrel.png",
+      "previousEnglishName": "Madagascar Kestrel"
+    },
+    {
+      "id": "madagascar-magpie-robin",
+      "name": "Madagascar Magpie-Robin",
+      "englishName": "Madagascar Magpie-Robin",
+      "scientificName": "Copsychus albospecularis",
+      "worlds": [
+        10
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/madagascar-magpie-robin.png"
+    },
+    {
+      "id": "slaty-backed-gull",
+      "name": "큰재갈매기",
+      "englishName": "Slaty-backed Gull",
+      "scientificName": "Larus schistisagus",
+      "worlds": [
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/slaty-backed-gull.png"
+    },
+    {
+      "id": "little-grebe",
+      "name": "논병아리",
+      "englishName": "Little Grebe",
+      "scientificName": "Tachybaptus ruficollis",
+      "worlds": [
+        1,
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/little-grebe.png"
+    },
+    {
+      "id": "beijing-babbler",
+      "name": "꼬리치레",
+      "englishName": "Beijing Babbler",
+      "scientificName": "Rhopophilus pekinensis",
+      "worlds": [
+        1,
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/beijing-babbler.png"
+    },
+    {
+      "id": "yellow-bittern",
+      "name": "덤불해오라기",
+      "englishName": "Yellow Bittern",
+      "scientificName": "Botaurus sinensis",
+      "worlds": [
+        1,
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/yellow-bittern.png"
+    },
+    {
+      "id": "palm-cockatoo",
+      "name": "야자잎검은유황앵무",
+      "englishName": "Palm Cockatoo",
+      "scientificName": "Probosciger aterrimus",
+      "worlds": [
+        10
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/palm-cockatoo.png"
+    },
+    {
+      "id": "japanese-accentor",
+      "name": "쇠바위종다리",
+      "englishName": "Japanese Accentor",
+      "scientificName": "Prunella rubida",
+      "worlds": [
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/japanese-accentor.png"
+    },
+    {
+      "id": "japanese-grosbeak",
+      "name": "큰부리밀화부리",
+      "englishName": "Japanese Grosbeak",
+      "scientificName": "Eophona personata",
+      "worlds": [
+        1,
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/japanese-grosbeak.png"
+    },
+    {
+      "id": "black-grouse",
+      "name": "멧닭",
+      "englishName": "Black Grouse",
+      "scientificName": "Lyrurus tetrix",
+      "worlds": [
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/black-grouse.png"
+    },
+    {
+      "id": "short-tailed-albatross",
+      "name": "알바트로스",
+      "englishName": "Short-tailed Albatross",
+      "scientificName": "Phoebastria albatrus",
+      "worlds": [
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/short-tailed-albatross.png"
+    },
+    {
+      "id": "great-bustard",
+      "name": "느시",
+      "englishName": "Great Bustard",
+      "scientificName": "Otis tarda",
+      "worlds": [
+        5,
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/great-bustard.png"
+    },
+    {
+      "id": "little-heron",
+      "name": "검은댕기해오라기",
+      "englishName": "Little Heron",
+      "scientificName": "Butorides atricapilla",
+      "worlds": [
+        1,
+        2,
+        8,
+        10
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/little-heron.png"
+    },
+    {
+      "id": "common-chaffinch",
+      "name": "푸른머리되새",
+      "englishName": "Common Chaffinch",
+      "scientificName": "Fringilla coelebs",
+      "worlds": [
+        6
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/common-chaffinch.png"
+    },
+    {
+      "id": "grays-grasshopper-warbler",
+      "name": "붉은허리개개비",
+      "englishName": "Gray’s Grasshopper Warbler",
+      "scientificName": "Helopsaltes fasciolatus",
+      "worlds": [
+        1,
+        2,
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/grays-grasshopper-warbler.png"
+    },
+    {
+      "id": "masked-booby",
+      "name": "푸른얼굴얼가니새",
+      "englishName": "Masked Booby",
+      "scientificName": "Sula dactylatra",
+      "worlds": [
+        10
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/masked-booby.png"
+    },
+    {
+      "id": "little-ringed-plover",
+      "name": "꼬마물떼새",
+      "englishName": "Little Ringed Plover",
+      "scientificName": "Thinornis dubius",
+      "worlds": [
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/little-ringed-plover.png"
+    },
+    {
+      "id": "crested-serpent-eagle",
+      "name": "관수리",
+      "englishName": "Crested Serpent-Eagle",
+      "scientificName": "Spilornis cheela",
+      "worlds": [
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/crested-serpent-eagle.png"
+    },
+    {
+      "id": "isabelline-wheatear",
+      "name": "긴다리사막딱새",
+      "englishName": "Isabelline Wheatear",
+      "scientificName": "Oenanthe isabellina",
+      "worlds": [
+        5
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/isabelline-wheatear.png"
+    },
+    {
+      "id": "ashy-minivet",
+      "name": "할미새사촌",
+      "englishName": "Ashy Minivet",
+      "scientificName": "Pericrocotus divaricatus",
+      "worlds": [
+        1,
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/ashy-minivet.png"
+    },
+    {
+      "id": "chestnut-winged-cuckoo",
+      "name": "밤색날개뻐꾸기",
+      "englishName": "Chestnut-winged Cuckoo",
+      "scientificName": "Clamator coromandus",
+      "worlds": [
+        3,
+        4
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/chestnut-winged-cuckoo.png"
+    },
+    {
+      "id": "savannah-sparrow",
+      "name": "초원멧새",
+      "englishName": "Savannah Sparrow",
+      "scientificName": "Passerculus sandwichensis",
+      "worlds": [
+        7
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/savannah-sparrow.png"
+    },
+    {
+      "id": "chinese-pond-heron",
+      "name": "흰날개해오라기",
+      "englishName": "Chinese Pond-Heron",
+      "scientificName": "Ardeola bacchus",
+      "worlds": [
+        1,
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/chinese-pond-heron.png"
+    },
+    {
+      "id": "thick-billed-warbler",
+      "name": "큰부리개개비",
+      "englishName": "Thick-billed Warbler",
+      "scientificName": "Arundinax aedon",
+      "worlds": [
+        1,
+        2,
+        3
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/thick-billed-warbler.png"
+    },
+    {
+      "id": "curlew-sandpiper",
+      "name": "붉은갯도요",
+      "englishName": "Curlew Sandpiper",
+      "scientificName": "Calidris ferruginea",
+      "worlds": [
+        2,
+        6,
+        10
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/curlew-sandpiper.png"
+    },
+    {
+      "id": "ring-necked-duck",
+      "name": "북미댕기흰죽지",
+      "englishName": "Ring-necked Duck",
+      "scientificName": "Aythya collaris",
+      "worlds": [
+        7
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/ring-necked-duck.png"
+    },
+    {
+      "id": "eastern-spot-billed-duck",
+      "name": "흰뺨검둥오리",
+      "englishName": "Eastern Spot-billed Duck",
+      "scientificName": "Anas zonorhyncha",
+      "worlds": [
+        1,
+        2
+      ],
+      "art": "pixel",
+      "asset": "assets/pixel/eastern-spot-billed-duck.png"
+    }
+  ],
+  "pixelGuests": 101,
+  "remainingGuests": 0
+}

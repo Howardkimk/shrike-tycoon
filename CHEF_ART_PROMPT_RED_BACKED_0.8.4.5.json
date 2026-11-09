@@ -1,0 +1,10 @@
+{
+  "tool": "Built-in image generation",
+  "prompt": "Use case: stylized-concept. Asset: single full-body transparent pixel chef sprite for Shrike Tycoon 0.8.4.5. Create RED-BACKED SHRIKE, Lanius collurio, adult male. Image 1 is the authoritative design-guide style sheet; ignore all sheet labels and backgrounds and follow its round bird character anatomy and warm dark ink pixel outlines. Image 2 is the actual Red-backed Shrike photo, for species identity only. Image 3 is the existing Bull-headed Shrike chef for exact matching outfit and game sprite style, but do NOT copy its plumage. Red-backed male MUST have cool blue-grey crown, forehead and nape; strong narrow black mask through eye; chestnut RED-BROWN mantle/back and shoulder with brown wings; pale subtly blush pink-buff breast, white throat; long black tail with white outer basal patches. No orange crown, no grey back, no tiger barring, no giant white wing stripe. Rounded head and plump friendly body, short black hooked bill, expressive black eye tiny cream glint. Whole bird facing right in three-quarter side view, tail down-left, two feet visible. SAME outfit as image 3: thin brown diagonal leather shoulder strap with small golden round buckle; small cream WAIST apron with green leaf stitch, chest and back plumage remain exposed. Right/front wing holds ONE thin bamboo skewer with three small grilled food pieces. Cohesive warm cream/leaf/honey colours for clothing; chestnut species feathers remain recognisable. Crisp stair-stepped pixel shapes, limited grouped feather shading, no painterly blur, no smooth vector edges. Square canvas true transparent alpha. ENTIRE head, bill, feet, tail tip and skewer tip fit inside with at least 6% clear margins on all sides. One character only, no ground shadow, no text, no frame, no background, no other birds. This is a new species sprite, not a recolour of Bull-headed.",
+  "references": [
+    "Visual Style Guide Reference C",
+    "Cornell BirdNET Red-backed Shrike adult male reference photo",
+    "0.8.4.4 Bull-headed chef outfit/style"
+  ],
+  "output": "assets/pixel/chef-red-backed.png"
+}

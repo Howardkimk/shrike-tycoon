@@ -1,0 +1,320 @@
+{
+  "cases": [
+    {
+      "width": 1440,
+      "height": 900,
+      "count": 3,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "count": 4,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "count": 5,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "count": 6,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "count": 7,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "count": 8,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "count": 9,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "count": 3,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "count": 4,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "count": 5,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "count": 6,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "count": 7,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "count": 8,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "count": 9,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "count": 3,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "count": 4,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "count": 5,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": false
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "count": 6,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "count": 7,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "count": 8,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "count": 9,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "count": 3,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "count": 4,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "count": 5,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "count": 6,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "count": 7,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "count": 8,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "count": 9,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 3,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 4,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 5,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 6,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 7,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 8,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "count": 9,
+      "noOverlap": true,
+      "noContentClipping": true,
+      "lastIngredientSelectable": true,
+      "scrollable": true
+    }
+  ],
+  "errors": []
+}

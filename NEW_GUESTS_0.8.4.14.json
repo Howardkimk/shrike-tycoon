@@ -1,0 +1,545 @@
+[
+  {
+    "id": "great-bustard",
+    "name": "느시",
+    "englishName": "Great Bustard",
+    "scientificName": "Otis tarda",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "seed",
+        "grasshopper"
+      ],
+      "secondary": [
+        "beetle",
+        "caterpillar"
+      ],
+      "rare": [],
+      "never": [
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird"
+      ]
+    },
+    "note": "유라시아의 넓은 초원과 농경지에 사는 큰 지상성 조류. 식물의 잎·씨앗과 곤충 등을 먹으며 식물성 먹이는 씨앗·견과로 단순화했다. 도트는 회색 머리와 목, 적갈색 무늬 등, 흰 배를 가진 수컷이다.",
+    "stageIds": [
+      41,
+      42,
+      45,
+      50,
+      57,
+      60
+    ],
+    "features": "Adult male Great Bustard: large heavy rounded terrestrial body, long pale grey neck and grey head, small short grey bill, buff-rufous barred back and folded wings, white belly, sturdy grey legs, subtle white whiskers at bill base, no crown crest.",
+    "source": "https://ebird.org/species/grebus1"
+  },
+  {
+    "id": "little-heron",
+    "name": "검은댕기해오라기",
+    "englishName": "Little Heron",
+    "scientificName": "Butorides atricapilla",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "fish",
+        "aquaticInsect"
+      ],
+      "secondary": [
+        "frog"
+      ],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "beetle",
+        "lizard",
+        "mouse",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "동아시아와 구세계 열대의 하천·연못·습지에서 작은 물고기와 수서무척추동물을 잡는다. 검은 정수리, 회색 목과 배, 녹색 기운의 어두운 날개가 특징이다. 과거 Striated Heron에 포함됐던 아시아 개체군의 현재 학명을 적용했다.",
+    "stageIds": [
+      3,
+      7,
+      11,
+      12,
+      16,
+      73,
+      95
+    ],
+    "features": "Adult Asian Little Heron: compact hunched heron with short neck tucked in, black cap with modest dark nape plume, grey face neck and belly, dark greenish slate back and folded wings with narrow pale feather edges, long sharp blackish bill with pale lower base, yellow eye, short yellow-green legs. NOT American Green Heron, no chestnut neck.",
+    "source": "https://ebird.org/species/strher1"
+  },
+  {
+    "id": "common-chaffinch",
+    "name": "푸른머리되새",
+    "englishName": "Common Chaffinch",
+    "scientificName": "Fringilla coelebs",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "seed"
+      ],
+      "secondary": [
+        "beetle",
+        "caterpillar"
+      ],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird"
+      ]
+    },
+    "note": "유럽과 서아시아의 숲·공원·농경지에서 씨앗을 먹고 번식기에는 곤충도 이용한다. 도트는 청회색 머리, 적갈색 뺨과 가슴, 검고 흰 날개 무늬를 가진 수컷이다.",
+    "stageIds": [
+      51,
+      53,
+      54,
+      55,
+      58,
+      60
+    ],
+    "features": "Adult male Common Chaffinch: small stout finch with blue-grey crown and nape, warm pinkish-rust cheeks breast and belly, chestnut brown back, black folded wings with two strong white wingbars and white shoulder patch, greenish rump, short conical blue-grey bill, greyish legs.",
+    "source": "https://ebird.org/species/comcha"
+  },
+  {
+    "id": "grays-grasshopper-warbler",
+    "name": "붉은허리개개비",
+    "englishName": "Gray’s Grasshopper Warbler",
+    "scientificName": "Helopsaltes fasciolatus",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "caterpillar",
+        "beetle"
+      ],
+      "secondary": [
+        "grasshopper"
+      ],
+      "rare": [],
+      "never": [
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "동북아시아의 숲 가장자리와 빽빽한 덤불에서 번식하고 동남아시아로 이동한다. 등은 무늬가 적은 올리브갈색이고 허리와 꼬리에 적갈색 기운이 있다. 낮은 식생에서 찾는 곤충류를 주문한다.",
+    "stageIds": [
+      8,
+      14,
+      22,
+      26,
+      27,
+      30
+    ],
+    "features": "Adult Gray's Grasshopper Warbler: plump large warbler, plain olive-brown back without streaks, warmer rufous-brown rump and broad rounded tail, pale grey-white throat and belly with buff flanks, faint narrow pale eyebrow, fairly sturdy pointed bill, pinkish brown legs. NOT bright red rump or black-spotted back.",
+    "source": "https://ebird.org/species/grgwar1"
+  },
+  {
+    "id": "masked-booby",
+    "name": "푸른얼굴얼가니새",
+    "englishName": "Masked Booby",
+    "scientificName": "Sula dactylatra",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "fish"
+      ],
+      "secondary": [],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "beetle",
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "열대·아열대 바다와 외딴 섬에 서식하며 바다로 급강하해 물고기를 잡는다. 흰 몸, 검은 날개와 꼬리, 부리 기부의 어두운 맨살 마스크가 특징이다. 아프리카 섬 월드의 해안 방문객으로 배정했다.",
+    "stageIds": [
+      98,
+      100
+    ],
+    "features": "Adult Masked Booby: robust white seabird, white head neck breast body, black folded outer wings and tail, dark blackish blue facial skin mask around eyes and bill base, long stout pale yellow pointed bill, pale yellow iris, grey-olive webbed feet. NO blue feet, no golden gannet head, no orange Nazca Booby bill.",
+    "source": "https://ebird.org/species/masboo"
+  },
+  {
+    "id": "little-ringed-plover",
+    "name": "꼬마물떼새",
+    "englishName": "Little Ringed Plover",
+    "scientificName": "Thinornis dubius",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "aquaticInsect",
+        "beetle"
+      ],
+      "secondary": [
+        "grasshopper"
+      ],
+      "rare": [],
+      "never": [
+        "caterpillar",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "유라시아의 자갈 하천·모래톱·얕은 물가에서 작은 무척추동물을 찾는다. 노란 눈테와 검은 가슴띠가 특징이다. 수서무척추동물은 게임의 수서곤충 재료로 단순화했다.",
+    "stageIds": [
+      11,
+      12,
+      13,
+      15,
+      18,
+      20
+    ],
+    "features": "Adult breeding Little Ringed Plover: tiny round shorebird, sandy brown back, pure white belly, single black breast band, black forehead and cheek mask with white forehead stripe and white neck collar, very clear bright yellow eye ring, short all-dark bill, slim pale flesh-yellow legs.",
+    "source": "https://ebird.org/species/lirplo"
+  },
+  {
+    "id": "crested-serpent-eagle",
+    "name": "관수리",
+    "englishName": "Crested Serpent-Eagle",
+    "scientificName": "Spilornis cheela",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "lizard"
+      ],
+      "secondary": [
+        "frog",
+        "mouse"
+      ],
+      "rare": [
+        "smallBird"
+      ],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "beetle",
+        "aquaticInsect",
+        "fish",
+        "seed"
+      ]
+    },
+    "note": "남아시아·동남아시아와 인접 동아시아의 산림·산기슭에서 파충류를 주로 사냥한다. 실제 주 먹이인 뱀은 게임에서 도마뱀으로 표현했다. 히말라야 남사면의 낮은 산기슭에 배정했다.",
+    "stageIds": [
+      31
+    ],
+    "features": "Adult Crested Serpent Eagle: stocky dark brown raptor, rounded black crest with small pale speckles, broad bright yellow bare facial skin surrounding yellow eye and cere, hooked dark grey bill, warm brown chest and belly finely white-spotted, dark folded wings with pale spots, barred dark tail, yellow legs and powerful feet. Upright wings-folded stance.",
+    "source": "https://ebird.org/species/crseag1"
+  },
+  {
+    "id": "isabelline-wheatear",
+    "name": "긴다리사막딱새",
+    "englishName": "Isabelline Wheatear",
+    "scientificName": "Oenanthe isabellina",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "beetle",
+        "grasshopper"
+      ],
+      "secondary": [
+        "caterpillar"
+      ],
+      "rare": [],
+      "never": [
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "중앙아시아의 스텝·반사막에서 번식하고 아프리카와 남아시아에서 겨울을 난다. 모래빛 몸, 긴 검은 다리와 곧게 선 자세가 특징이다. 땅에서 찾는 곤충류를 주문한다.",
+    "stageIds": [
+      41,
+      44,
+      45,
+      46,
+      47,
+      48,
+      50
+    ],
+    "features": "Adult Isabelline Wheatear: upright small sandy buff bird with relatively long black legs, plain pale sandy brown back, creamy buff-white underparts, pale eyebrow and tiny dark lores, dark brown folded wing subtly edged pale, white rump and black terminal band on tail, fine black bill. No bold black facial mask, no blue-grey back.",
+    "source": "https://ebird.org/species/isawhe1"
+  },
+  {
+    "id": "ashy-minivet",
+    "name": "할미새사촌",
+    "englishName": "Ashy Minivet",
+    "scientificName": "Pericrocotus divaricatus",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "caterpillar"
+      ],
+      "secondary": [
+        "beetle"
+      ],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "동북아시아의 산림에서 번식하고 동남아시아로 이동한다. 나무 위에서 곤충을 찾으며 회색 등과 긴 꼬리가 특징이다. 도트는 검은 머리 위와 뺨, 흰 이마·목·배를 가진 수컷이다.",
+    "stageIds": [
+      4,
+      10,
+      22,
+      23,
+      27,
+      30
+    ],
+    "features": "Adult male Ashy Minivet: slim long-tailed songbird, grey back and folded wings, white forehead and throat belly, black crown nape and cheek patch behind eye, blackish long tail with pale outer edges, short black bill and dark feet. NO red orange or yellow plumage.",
+    "source": "https://ebird.org/species/ashmin1"
+  },
+  {
+    "id": "chestnut-winged-cuckoo",
+    "name": "밤색날개뻐꾸기",
+    "englishName": "Chestnut-winged Cuckoo",
+    "scientificName": "Clamator coromandus",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "caterpillar"
+      ],
+      "secondary": [
+        "beetle",
+        "grasshopper"
+      ],
+      "rare": [],
+      "never": [
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "남아시아·동아시아의 산림에서 번식하고 동남아시아로 이동하는 뻐꾸기류. 검은 관우와 긴 꼬리, 밤색 날개, 주황빛 목, 흰 목덜미가 특징이다. 나무 위에서 찾는 곤충류를 주문한다.",
+    "stageIds": [
+      22,
+      23,
+      27,
+      30,
+      31,
+      34
+    ],
+    "features": "Adult Chestnut-winged Cuckoo: striking slim bird with tall pointed BLACK crest, black head back and very long black graduated tail, chestnut-rust folded wings, rich orange-rufous throat, broad WHITE nape collar, creamy white belly, slender slightly curved dark bill, dark feet. Entire long tail fits.",
+    "source": "https://ebird.org/species/chwcuc1"
+  },
+  {
+    "id": "savannah-sparrow",
+    "name": "초원멧새",
+    "englishName": "Savannah Sparrow",
+    "scientificName": "Passerculus sandwichensis",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "seed"
+      ],
+      "secondary": [
+        "beetle",
+        "grasshopper",
+        "caterpillar"
+      ],
+      "rare": [],
+      "never": [
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird"
+      ]
+    },
+    "note": "북미의 초지·목초지·습윤 초원에서 땅 가까이 먹이를 찾는다. 씨앗과 곤충을 먹으며 노란 눈앞·눈썹 부분과 가슴의 짙은 줄무늬가 특징이다. 아프리카 사바나의 새가 아닌 북미 손님이다.",
+    "stageIds": [
+      61,
+      64,
+      65,
+      66,
+      68,
+      70
+    ],
+    "features": "Adult Savannah Sparrow: small round sparrow, brown heavily dark-streaked back and crown with pale central crown stripe, pale eyebrow with small distinct yellow lore spot in front of eye, cream-white belly with fine dark brown streaks on breast and flanks, pinkish short conical bill, short notched brown tail, pink legs.",
+    "source": "https://ebird.org/species/savspa"
+  },
+  {
+    "id": "chinese-pond-heron",
+    "name": "흰날개해오라기",
+    "englishName": "Chinese Pond-Heron",
+    "scientificName": "Ardeola bacchus",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "fish",
+        "aquaticInsect"
+      ],
+      "secondary": [
+        "frog"
+      ],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "beetle",
+        "lizard",
+        "mouse",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "동아시아와 동남아시아의 논·연못·습지에서 물고기와 수서무척추동물을 잡는다. 도트는 적갈색 머리·목, 짙은 등과 흰 날개를 가진 번식깃 성조이며 비번식깃은 갈색 줄무늬가 많다.",
+    "stageIds": [
+      2,
+      3,
+      7,
+      9,
+      11,
+      16,
+      20
+    ],
+    "features": "Adult breeding Chinese Pond Heron: short hunched heron, rich wine-chestnut head neck and breast with trailing reddish nape plumes, dark slate-black back, boldly PURE WHITE folded wings and white belly, long yellow bill with black tip, golden eye, yellow-green legs. NOT brown streaked nonbreeding plumage.",
+    "source": "https://ebird.org/species/chpher1"
+  },
+  {
+    "id": "thick-billed-warbler",
+    "name": "큰부리개개비",
+    "englishName": "Thick-billed Warbler",
+    "scientificName": "Arundinax aedon",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "caterpillar",
+        "beetle"
+      ],
+      "secondary": [
+        "grasshopper"
+      ],
+      "rare": [],
+      "never": [
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "동북아시아의 덤불과 키 큰 풀밭에서 번식하고 남아시아·동남아시아에서 겨울을 난다. 굵은 부리, 눈썹이 거의 없는 둥근 얼굴과 적갈색 기운의 꼬리가 특징이다. 곤충류를 주문한다.",
+    "stageIds": [
+      6,
+      8,
+      14,
+      15,
+      26
+    ],
+    "features": "Adult Thick-billed Warbler: chunky plain brown warbler with warm brown back and rufous-brown broad rounded tail, pale buff-grey throat and belly, round plain face with virtually NO eyebrow or eye stripe, noticeably short thick pointed bill with dark upper and pale lower mandible, brown-pink legs. NO back streaks.",
+    "source": "https://ebird.org/species/thbwar1"
+  },
+  {
+    "id": "curlew-sandpiper",
+    "name": "붉은갯도요",
+    "englishName": "Curlew Sandpiper",
+    "scientificName": "Calidris ferruginea",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "aquaticInsect"
+      ],
+      "secondary": [
+        "beetle"
+      ],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "러시아 툰드라에서 번식하고 아프리카·남아시아·호주 등의 해안 습지에서 겨울을 난다. 이동기의 하구·갯벌 손님으로 배정했다. 번식깃은 붉고 비번식깃은 회갈색이다. 갯벌 무척추동물은 수서곤충으로 단순화했다.",
+    "stageIds": [
+      18,
+      20,
+      56,
+      60,
+      98,
+      100
+    ],
+    "features": "Adult breeding Curlew Sandpiper: elegant small shorebird, rich rusty-red head neck breast and belly, dark scalloped chestnut and black folded wings, fine long black bill distinctly curving downward near tip, relatively long thin black legs, small white rump visible beside folded wings. NOT short straight bill or black belly patch of Dunlin.",
+    "source": "https://ebird.org/species/cursan"
+  },
+  {
+    "id": "ring-necked-duck",
+    "name": "북미댕기흰죽지",
+    "englishName": "Ring-necked Duck",
+    "scientificName": "Aythya collaris",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "seed",
+        "aquaticInsect"
+      ],
+      "secondary": [],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "beetle",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird"
+      ]
+    },
+    "note": "북미의 식생이 있는 연못·습지에서 잠수해 수생식물의 씨앗과 수서무척추동물을 먹는다. 식물성 먹이는 씨앗·견과로 단순화했다. 수컷의 뾰족하게 솟은 머리, 회색 옆구리와 부리의 흰 띠가 특징이다.",
+    "stageIds": [
+      65,
+      70
+    ],
+    "features": "Adult male Ring-necked Duck: compact diving duck resting on visible dark webbed feet, peaked tall crown on glossy black-purple head but NO trailing tuft, black neck breast back, grey flanks with distinct white vertical wedge at breast flank boundary, white belly, yellow eye, blue-grey bill with white base band AND white ring near black tip, very subtle chestnut neck ring. NOT Tufted Duck with white sides and long crest.",
+    "source": "https://ebird.org/species/rinduc"
+  }
+]

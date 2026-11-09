@@ -1,0 +1,1 @@
+{"compilerOptions":{"target":"ES2019","module":"none","strict":true,"outFile":"dist/game.js","removeComments":false,"skipLibCheck":true,"lib":["DOM","ES2019"]},"include":["src/game.ts"]}

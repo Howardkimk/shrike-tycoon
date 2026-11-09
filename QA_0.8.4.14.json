@@ -1,0 +1,554 @@
+{
+  "version": "0.8.4.14",
+  "functional": [
+    {
+      "id": "great-bustard",
+      "world": 5,
+      "recipe": [
+        "grasshopper",
+        "seed"
+      ],
+      "served": true
+    },
+    {
+      "id": "little-heron",
+      "world": 1,
+      "recipe": [
+        "aquaticInsect",
+        "fish",
+        "fish"
+      ],
+      "served": true
+    },
+    {
+      "id": "common-chaffinch",
+      "world": 6,
+      "recipe": [
+        "caterpillar",
+        "beetle",
+        "beetle"
+      ],
+      "served": true
+    },
+    {
+      "id": "grays-grasshopper-warbler",
+      "world": 1,
+      "recipe": [
+        "beetle",
+        "caterpillar",
+        "caterpillar"
+      ],
+      "served": true
+    },
+    {
+      "id": "masked-booby",
+      "world": 10,
+      "recipe": [
+        "fish",
+        "fish",
+        "fish"
+      ],
+      "served": true
+    },
+    {
+      "id": "little-ringed-plover",
+      "world": 2,
+      "recipe": [
+        "beetle",
+        "aquaticInsect",
+        "grasshopper"
+      ],
+      "served": true
+    },
+    {
+      "id": "crested-serpent-eagle",
+      "world": 4,
+      "recipe": [
+        "lizard",
+        "lizard"
+      ],
+      "served": true
+    },
+    {
+      "id": "isabelline-wheatear",
+      "world": 5,
+      "recipe": [
+        "caterpillar",
+        "grasshopper",
+        "beetle",
+        "beetle"
+      ],
+      "served": true
+    },
+    {
+      "id": "ashy-minivet",
+      "world": 1,
+      "recipe": [
+        "caterpillar",
+        "caterpillar",
+        "caterpillar"
+      ],
+      "served": true
+    },
+    {
+      "id": "chestnut-winged-cuckoo",
+      "world": 3,
+      "recipe": [
+        "caterpillar",
+        "grasshopper"
+      ],
+      "served": true
+    },
+    {
+      "id": "savannah-sparrow",
+      "world": 7,
+      "recipe": [
+        "beetle",
+        "seed",
+        "seed",
+        "beetle"
+      ],
+      "served": true
+    },
+    {
+      "id": "chinese-pond-heron",
+      "world": 1,
+      "recipe": [
+        "frog"
+      ],
+      "served": true
+    },
+    {
+      "id": "thick-billed-warbler",
+      "world": 1,
+      "recipe": [
+        "grasshopper",
+        "beetle",
+        "caterpillar"
+      ],
+      "served": true
+    },
+    {
+      "id": "curlew-sandpiper",
+      "world": 2,
+      "recipe": [
+        "aquaticInsect",
+        "aquaticInsect",
+        "beetle",
+        "aquaticInsect"
+      ],
+      "served": true
+    },
+    {
+      "id": "ring-necked-duck",
+      "world": 7,
+      "recipe": [
+        "aquaticInsect",
+        "seed",
+        "seed",
+        "aquaticInsect"
+      ],
+      "served": true
+    }
+  ],
+  "layouts": [
+    {
+      "width": 390,
+      "height": 844,
+      "birdBookGuests": 15,
+      "worldFilter": true,
+      "gameplay": "landscape recommended"
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "names": [
+        {
+          "name": "붉은허리개개비",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "밤색날개뻐꾸기",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "북미댕기흰죽지",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "꼬마물떼새",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "관수리",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "흰날개해오라기",
+          "center": "center",
+          "clipped": false
+        }
+      ],
+      "foods": [
+        {
+          "id": "grasshopper",
+          "r": {
+            "x": 105.34744262695312,
+            "y": 214.06088256835938,
+            "w": 53.23143005371094,
+            "h": 49.923980712890625
+          },
+          "clipped": false
+        },
+        {
+          "id": "beetle",
+          "r": {
+            "x": 162.5727996826172,
+            "y": 214.06088256835938,
+            "w": 53.23143005371094,
+            "h": 49.923980712890625
+          },
+          "clipped": false
+        },
+        {
+          "id": "caterpillar",
+          "r": {
+            "x": 219.7981414794922,
+            "y": 214.06088256835938,
+            "w": 53.24705505371094,
+            "h": 49.923980712890625
+          },
+          "clipped": false
+        },
+        {
+          "id": "lizard",
+          "r": {
+            "x": 277.0390930175781,
+            "y": 214.06088256835938,
+            "w": 53.2314453125,
+            "h": 49.923980712890625
+          },
+          "clipped": false
+        },
+        {
+          "id": "mouse",
+          "r": {
+            "x": 334.26446533203125,
+            "y": 214.06088256835938,
+            "w": 53.231414794921875,
+            "h": 49.923980712890625
+          },
+          "clipped": false
+        },
+        {
+          "id": "fish",
+          "r": {
+            "x": 105.34744262695312,
+            "y": 271.9726867675781,
+            "w": 53.23143005371094,
+            "h": 49.923980712890625
+          },
+          "clipped": false
+        },
+        {
+          "id": "aquaticInsect",
+          "r": {
+            "x": 162.5727996826172,
+            "y": 271.9726867675781,
+            "w": 53.23143005371094,
+            "h": 49.923980712890625
+          },
+          "clipped": false
+        },
+        {
+          "id": "smallBird",
+          "r": {
+            "x": 219.7981414794922,
+            "y": 271.9726867675781,
+            "w": 53.24705505371094,
+            "h": 49.923980712890625
+          },
+          "clipped": false
+        },
+        {
+          "id": "seed",
+          "r": {
+            "x": 277.0390930175781,
+            "y": 271.9726867675781,
+            "w": 53.2314453125,
+            "h": 49.923980712890625
+          },
+          "clipped": false
+        }
+      ],
+      "pageOverflow": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "names": [
+        {
+          "name": "붉은허리개개비",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "밤색날개뻐꾸기",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "북미댕기흰죽지",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "꼬마물떼새",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "관수리",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "흰날개해오라기",
+          "center": "center",
+          "clipped": false
+        }
+      ],
+      "foods": [
+        {
+          "id": "grasshopper",
+          "r": {
+            "x": 115.11801147460938,
+            "y": 232.63198852539062,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "beetle",
+          "r": {
+            "x": 193.20913696289062,
+            "y": 232.63198852539062,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "caterpillar",
+          "r": {
+            "x": 271.3002624511719,
+            "y": 232.63198852539062,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "lizard",
+          "r": {
+            "x": 349.3913879394531,
+            "y": 232.63198852539062,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "mouse",
+          "r": {
+            "x": 427.46697998046875,
+            "y": 232.63198852539062,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "fish",
+          "r": {
+            "x": 115.11801147460938,
+            "y": 290.28399658203125,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "aquaticInsect",
+          "r": {
+            "x": 193.20913696289062,
+            "y": 290.28399658203125,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "smallBird",
+          "r": {
+            "x": 271.3002624511719,
+            "y": 290.28399658203125,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "seed",
+          "r": {
+            "x": 349.3913879394531,
+            "y": 290.28399658203125,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        }
+      ],
+      "pageOverflow": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "names": [
+        {
+          "name": "붉은허리개개비",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "밤색날개뻐꾸기",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "북미댕기흰죽지",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "꼬마물떼새",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "관수리",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "흰날개해오라기",
+          "center": "center",
+          "clipped": false
+        }
+      ],
+      "foods": [
+        {
+          "id": "grasshopper",
+          "r": {
+            "x": 281.0201416015625,
+            "y": 476.99871826171875,
+            "w": 83.49603271484375,
+            "h": 67.26580810546875
+          },
+          "clipped": false
+        },
+        {
+          "id": "beetle",
+          "r": {
+            "x": 381.60052490234375,
+            "y": 476.99871826171875,
+            "w": 83.49600219726562,
+            "h": 67.26580810546875
+          },
+          "clipped": false
+        },
+        {
+          "id": "caterpillar",
+          "r": {
+            "x": 482.1964416503906,
+            "y": 476.99871826171875,
+            "w": 83.49600219726562,
+            "h": 67.26580810546875
+          },
+          "clipped": false
+        },
+        {
+          "id": "lizard",
+          "r": {
+            "x": 582.7923583984375,
+            "y": 476.99871826171875,
+            "w": 83.4959716796875,
+            "h": 67.26580810546875
+          },
+          "clipped": false
+        },
+        {
+          "id": "mouse",
+          "r": {
+            "x": 683.3882446289062,
+            "y": 476.99871826171875,
+            "w": 83.49603271484375,
+            "h": 67.26580810546875
+          },
+          "clipped": false
+        },
+        {
+          "id": "fish",
+          "r": {
+            "x": 281.0201416015625,
+            "y": 552.216552734375,
+            "w": 83.49603271484375,
+            "h": 67.2813720703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "aquaticInsect",
+          "r": {
+            "x": 381.60052490234375,
+            "y": 552.216552734375,
+            "w": 83.49600219726562,
+            "h": 67.2813720703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "smallBird",
+          "r": {
+            "x": 482.1964416503906,
+            "y": 552.216552734375,
+            "w": 83.49600219726562,
+            "h": 67.2813720703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "seed",
+          "r": {
+            "x": 582.7923583984375,
+            "y": 552.216552734375,
+            "w": 83.4959716796875,
+            "h": 67.2813720703125
+          },
+          "clipped": false
+        }
+      ],
+      "pageOverflow": false
+    }
+  ],
+  "errors": [],
+  "recipeSamples": 15800,
+  "saveMigration": "old XP/stage/bird retained; 14 new discoveries persist; existing wheatear ID retained after reload",
+  "stageParameters": "100 stage timings, goals, scores, rules unchanged"
+}

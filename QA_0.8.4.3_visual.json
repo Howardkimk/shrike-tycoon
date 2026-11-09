@@ -1,0 +1,218 @@
+{
+  "errors": [],
+  "bad": [],
+  "cases": [
+    {
+      "world": 1,
+      "width": 1366,
+      "count": 9,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 2,
+      "width": 1366,
+      "count": 8,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 3,
+      "width": 1366,
+      "count": 8,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 4,
+      "width": 1366,
+      "count": 9,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 5,
+      "width": 1366,
+      "count": 6,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 6,
+      "width": 1366,
+      "count": 6,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 7,
+      "width": 1366,
+      "count": 6,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 8,
+      "width": 1366,
+      "count": 6,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 9,
+      "width": 1366,
+      "count": 6,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 10,
+      "width": 1366,
+      "count": 8,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 1,
+      "width": 667,
+      "count": 9,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 2,
+      "width": 667,
+      "count": 8,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 3,
+      "width": 667,
+      "count": 8,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 4,
+      "width": 667,
+      "count": 9,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 5,
+      "width": 667,
+      "count": 6,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 6,
+      "width": 667,
+      "count": 6,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 7,
+      "width": 667,
+      "count": 6,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 8,
+      "width": 667,
+      "count": 6,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 9,
+      "width": 667,
+      "count": 6,
+      "overlap": false,
+      "clip": false
+    },
+    {
+      "world": 10,
+      "width": 667,
+      "count": 8,
+      "overlap": false,
+      "clip": false
+    }
+  ],
+  "images": [
+    {
+      "src": "assets/pixel/white-wagtail.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/grey-wagtail.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/eastern-cattle-egret.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/common-kingfisher.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/grey-heron.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/little-egret.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/black-crowned-night-heron.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/common-sandpiper.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/oriental-reed-warbler.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/barn-swallow.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/grey-headed-lapwing.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/common-kestrel.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/ruddy-kingfisher.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/little-egret.png",
+      "loaded": true,
+      "fit": "contain"
+    }
+  ]
+}

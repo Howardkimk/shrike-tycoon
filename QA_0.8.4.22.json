@@ -1,0 +1,619 @@
+{
+  "passed": 8,
+  "tests": [
+    "renamed guest keeps stable ID",
+    "all 100 stages have valid goals and order caps",
+    "forced spawns, upgrades and rush never exceed six orders",
+    "below-target failure, threshold success, final stage and old records",
+    "fresh loss grants no clear stars, subgoal or chef unlock",
+    "READY counts, overcooked does not count and late click cannot rescue defeat",
+    "old save reload keeps progression, scores, upgrades and renamed discovery",
+    "retry clears counters and goal HUD; pause blocks actions"
+  ],
+  "renderedBrowser": "not tested: browser binary download unavailable",
+  "windows": "not tested",
+  "saveKey": "shrikeTycoonPrototype03Stable",
+  "saveVersion": 10,
+  "goals": [
+    {
+      "stage": 1,
+      "seconds": 100,
+      "target": 4,
+      "orderLimit": 3
+    },
+    {
+      "stage": 2,
+      "seconds": 115,
+      "target": 4,
+      "orderLimit": 3
+    },
+    {
+      "stage": 3,
+      "seconds": 120,
+      "target": 4,
+      "orderLimit": 3
+    },
+    {
+      "stage": 4,
+      "seconds": 125,
+      "target": 5,
+      "orderLimit": 4
+    },
+    {
+      "stage": 5,
+      "seconds": 130,
+      "target": 5,
+      "orderLimit": 4
+    },
+    {
+      "stage": 6,
+      "seconds": 135,
+      "target": 5,
+      "orderLimit": 4
+    },
+    {
+      "stage": 7,
+      "seconds": 140,
+      "target": 6,
+      "orderLimit": 4
+    },
+    {
+      "stage": 8,
+      "seconds": 145,
+      "target": 6,
+      "orderLimit": 4
+    },
+    {
+      "stage": 9,
+      "seconds": 150,
+      "target": 6,
+      "orderLimit": 5
+    },
+    {
+      "stage": 10,
+      "seconds": 180,
+      "target": 9,
+      "orderLimit": 5
+    },
+    {
+      "stage": 11,
+      "seconds": 125,
+      "target": 5,
+      "orderLimit": 4
+    },
+    {
+      "stage": 12,
+      "seconds": 130,
+      "target": 5,
+      "orderLimit": 4
+    },
+    {
+      "stage": 13,
+      "seconds": 135,
+      "target": 5,
+      "orderLimit": 4
+    },
+    {
+      "stage": 14,
+      "seconds": 140,
+      "target": 6,
+      "orderLimit": 4
+    },
+    {
+      "stage": 15,
+      "seconds": 145,
+      "target": 6,
+      "orderLimit": 5
+    },
+    {
+      "stage": 16,
+      "seconds": 150,
+      "target": 6,
+      "orderLimit": 5
+    },
+    {
+      "stage": 17,
+      "seconds": 155,
+      "target": 7,
+      "orderLimit": 5
+    },
+    {
+      "stage": 18,
+      "seconds": 160,
+      "target": 7,
+      "orderLimit": 5
+    },
+    {
+      "stage": 19,
+      "seconds": 170,
+      "target": 7,
+      "orderLimit": 5
+    },
+    {
+      "stage": 20,
+      "seconds": 190,
+      "target": 10,
+      "orderLimit": 6
+    },
+    {
+      "stage": 21,
+      "seconds": 145,
+      "target": 6,
+      "orderLimit": 4
+    },
+    {
+      "stage": 22,
+      "seconds": 150,
+      "target": 6,
+      "orderLimit": 4
+    },
+    {
+      "stage": 23,
+      "seconds": 155,
+      "target": 6,
+      "orderLimit": 5
+    },
+    {
+      "stage": 24,
+      "seconds": 160,
+      "target": 7,
+      "orderLimit": 5
+    },
+    {
+      "stage": 25,
+      "seconds": 165,
+      "target": 7,
+      "orderLimit": 5
+    },
+    {
+      "stage": 26,
+      "seconds": 170,
+      "target": 7,
+      "orderLimit": 5
+    },
+    {
+      "stage": 27,
+      "seconds": 170,
+      "target": 8,
+      "orderLimit": 5
+    },
+    {
+      "stage": 28,
+      "seconds": 175,
+      "target": 8,
+      "orderLimit": 5
+    },
+    {
+      "stage": 29,
+      "seconds": 180,
+      "target": 8,
+      "orderLimit": 6
+    },
+    {
+      "stage": 30,
+      "seconds": 200,
+      "target": 11,
+      "orderLimit": 6
+    },
+    {
+      "stage": 31,
+      "seconds": 150,
+      "target": 7,
+      "orderLimit": 5
+    },
+    {
+      "stage": 32,
+      "seconds": 155,
+      "target": 7,
+      "orderLimit": 5
+    },
+    {
+      "stage": 33,
+      "seconds": 160,
+      "target": 7,
+      "orderLimit": 5
+    },
+    {
+      "stage": 34,
+      "seconds": 165,
+      "target": 8,
+      "orderLimit": 5
+    },
+    {
+      "stage": 35,
+      "seconds": 170,
+      "target": 8,
+      "orderLimit": 5
+    },
+    {
+      "stage": 36,
+      "seconds": 175,
+      "target": 8,
+      "orderLimit": 5
+    },
+    {
+      "stage": 37,
+      "seconds": 180,
+      "target": 9,
+      "orderLimit": 6
+    },
+    {
+      "stage": 38,
+      "seconds": 185,
+      "target": 9,
+      "orderLimit": 6
+    },
+    {
+      "stage": 39,
+      "seconds": 190,
+      "target": 9,
+      "orderLimit": 6
+    },
+    {
+      "stage": 40,
+      "seconds": 205,
+      "target": 12,
+      "orderLimit": 6
+    },
+    {
+      "stage": 41,
+      "seconds": 155,
+      "target": 8,
+      "orderLimit": 5
+    },
+    {
+      "stage": 42,
+      "seconds": 160,
+      "target": 8,
+      "orderLimit": 5
+    },
+    {
+      "stage": 43,
+      "seconds": 165,
+      "target": 8,
+      "orderLimit": 5
+    },
+    {
+      "stage": 44,
+      "seconds": 170,
+      "target": 9,
+      "orderLimit": 5
+    },
+    {
+      "stage": 45,
+      "seconds": 175,
+      "target": 9,
+      "orderLimit": 6
+    },
+    {
+      "stage": 46,
+      "seconds": 180,
+      "target": 9,
+      "orderLimit": 6
+    },
+    {
+      "stage": 47,
+      "seconds": 185,
+      "target": 10,
+      "orderLimit": 6
+    },
+    {
+      "stage": 48,
+      "seconds": 190,
+      "target": 10,
+      "orderLimit": 6
+    },
+    {
+      "stage": 49,
+      "seconds": 195,
+      "target": 10,
+      "orderLimit": 6
+    },
+    {
+      "stage": 50,
+      "seconds": 210,
+      "target": 13,
+      "orderLimit": 6
+    },
+    {
+      "stage": 51,
+      "seconds": 165,
+      "target": 9,
+      "orderLimit": 5
+    },
+    {
+      "stage": 52,
+      "seconds": 169,
+      "target": 9,
+      "orderLimit": 5
+    },
+    {
+      "stage": 53,
+      "seconds": 173,
+      "target": 9,
+      "orderLimit": 5
+    },
+    {
+      "stage": 54,
+      "seconds": 177,
+      "target": 10,
+      "orderLimit": 5
+    },
+    {
+      "stage": 55,
+      "seconds": 181,
+      "target": 10,
+      "orderLimit": 6
+    },
+    {
+      "stage": 56,
+      "seconds": 185,
+      "target": 10,
+      "orderLimit": 6
+    },
+    {
+      "stage": 57,
+      "seconds": 189,
+      "target": 11,
+      "orderLimit": 6
+    },
+    {
+      "stage": 58,
+      "seconds": 193,
+      "target": 11,
+      "orderLimit": 6
+    },
+    {
+      "stage": 59,
+      "seconds": 197,
+      "target": 11,
+      "orderLimit": 6
+    },
+    {
+      "stage": 60,
+      "seconds": 211,
+      "target": 14,
+      "orderLimit": 6
+    },
+    {
+      "stage": 61,
+      "seconds": 165,
+      "target": 10,
+      "orderLimit": 5
+    },
+    {
+      "stage": 62,
+      "seconds": 169,
+      "target": 10,
+      "orderLimit": 5
+    },
+    {
+      "stage": 63,
+      "seconds": 173,
+      "target": 10,
+      "orderLimit": 5
+    },
+    {
+      "stage": 64,
+      "seconds": 177,
+      "target": 11,
+      "orderLimit": 5
+    },
+    {
+      "stage": 65,
+      "seconds": 181,
+      "target": 11,
+      "orderLimit": 6
+    },
+    {
+      "stage": 66,
+      "seconds": 185,
+      "target": 11,
+      "orderLimit": 6
+    },
+    {
+      "stage": 67,
+      "seconds": 189,
+      "target": 12,
+      "orderLimit": 6
+    },
+    {
+      "stage": 68,
+      "seconds": 193,
+      "target": 12,
+      "orderLimit": 6
+    },
+    {
+      "stage": 69,
+      "seconds": 197,
+      "target": 12,
+      "orderLimit": 6
+    },
+    {
+      "stage": 70,
+      "seconds": 211,
+      "target": 15,
+      "orderLimit": 6
+    },
+    {
+      "stage": 71,
+      "seconds": 165,
+      "target": 11,
+      "orderLimit": 5
+    },
+    {
+      "stage": 72,
+      "seconds": 169,
+      "target": 11,
+      "orderLimit": 5
+    },
+    {
+      "stage": 73,
+      "seconds": 173,
+      "target": 11,
+      "orderLimit": 5
+    },
+    {
+      "stage": 74,
+      "seconds": 177,
+      "target": 12,
+      "orderLimit": 5
+    },
+    {
+      "stage": 75,
+      "seconds": 181,
+      "target": 12,
+      "orderLimit": 6
+    },
+    {
+      "stage": 76,
+      "seconds": 185,
+      "target": 12,
+      "orderLimit": 6
+    },
+    {
+      "stage": 77,
+      "seconds": 189,
+      "target": 13,
+      "orderLimit": 6
+    },
+    {
+      "stage": 78,
+      "seconds": 193,
+      "target": 13,
+      "orderLimit": 6
+    },
+    {
+      "stage": 79,
+      "seconds": 197,
+      "target": 13,
+      "orderLimit": 6
+    },
+    {
+      "stage": 80,
+      "seconds": 211,
+      "target": 16,
+      "orderLimit": 6
+    },
+    {
+      "stage": 81,
+      "seconds": 165,
+      "target": 12,
+      "orderLimit": 5
+    },
+    {
+      "stage": 82,
+      "seconds": 169,
+      "target": 12,
+      "orderLimit": 5
+    },
+    {
+      "stage": 83,
+      "seconds": 173,
+      "target": 12,
+      "orderLimit": 5
+    },
+    {
+      "stage": 84,
+      "seconds": 177,
+      "target": 13,
+      "orderLimit": 5
+    },
+    {
+      "stage": 85,
+      "seconds": 181,
+      "target": 13,
+      "orderLimit": 6
+    },
+    {
+      "stage": 86,
+      "seconds": 185,
+      "target": 13,
+      "orderLimit": 6
+    },
+    {
+      "stage": 87,
+      "seconds": 189,
+      "target": 14,
+      "orderLimit": 6
+    },
+    {
+      "stage": 88,
+      "seconds": 193,
+      "target": 14,
+      "orderLimit": 6
+    },
+    {
+      "stage": 89,
+      "seconds": 197,
+      "target": 14,
+      "orderLimit": 6
+    },
+    {
+      "stage": 90,
+      "seconds": 211,
+      "target": 17,
+      "orderLimit": 6
+    },
+    {
+      "stage": 91,
+      "seconds": 165,
+      "target": 13,
+      "orderLimit": 5
+    },
+    {
+      "stage": 92,
+      "seconds": 169,
+      "target": 13,
+      "orderLimit": 5
+    },
+    {
+      "stage": 93,
+      "seconds": 173,
+      "target": 13,
+      "orderLimit": 5
+    },
+    {
+      "stage": 94,
+      "seconds": 177,
+      "target": 14,
+      "orderLimit": 5
+    },
+    {
+      "stage": 95,
+      "seconds": 181,
+      "target": 14,
+      "orderLimit": 6
+    },
+    {
+      "stage": 96,
+      "seconds": 185,
+      "target": 14,
+      "orderLimit": 6
+    },
+    {
+      "stage": 97,
+      "seconds": 189,
+      "target": 15,
+      "orderLimit": 6
+    },
+    {
+      "stage": 98,
+      "seconds": 193,
+      "target": 15,
+      "orderLimit": 6
+    },
+    {
+      "stage": 99,
+      "seconds": 197,
+      "target": 15,
+      "orderLimit": 6
+    },
+    {
+      "stage": 100,
+      "seconds": 211,
+      "target": 18,
+      "orderLimit": 6
+    }
+  ]
+}

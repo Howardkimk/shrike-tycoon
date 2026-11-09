@@ -1,0 +1,126 @@
+{
+  "mode": "built-in image_gen",
+  "referenceSource": "Visual Style Guide v1.0; Cornell BirdNET reference photos inspected",
+  "assets": [
+    {
+      "id": "great-bustard",
+      "name": "느시",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult male Great Bustard: large heavy rounded terrestrial body, long pale grey neck and grey head, small short grey bill, buff-rufous barred back and folded wings, white belly, sturdy grey legs, subtle white whiskers at bill base, no crown crest. A modest warm rufous lower-neck band, not a display pose.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-42a3c23d-60d0-4c8a-98cb-5bfa906836f3.png",
+      "targetAsset": "assets/pixel/great-bustard.png",
+      "status": "integrated"
+    },
+    {
+      "id": "little-heron",
+      "name": "검은댕기해오라기",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult Asian Little Heron: compact hunched heron with short neck tucked in, black cap with modest dark nape plume, grey face neck and belly, dark greenish slate back and folded wings with narrow pale feather edges, long sharp blackish bill with pale lower base, yellow eye, short yellow-green legs. NOT American Green Heron, no chestnut neck.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-54610429-964f-4c69-a91f-1dd71cd8ae8f.png",
+      "targetAsset": "assets/pixel/little-heron.png",
+      "status": "integrated"
+    },
+    {
+      "id": "common-chaffinch",
+      "name": "푸른머리되새",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult male Common Chaffinch: small stout finch with blue-grey crown and nape, warm pinkish-rust cheeks breast and belly, chestnut brown back, black folded wings with two strong white wingbars and white shoulder patch, greenish rump, short conical blue-grey bill, greyish legs.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-c2ce1d27-026f-4be1-8853-2dba709c2e42.png",
+      "targetAsset": "assets/pixel/common-chaffinch.png",
+      "status": "integrated"
+    },
+    {
+      "id": "grays-grasshopper-warbler",
+      "name": "붉은허리개개비",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult Gray's Grasshopper Warbler: plump large warbler, plain olive-brown back without streaks, warmer rufous-brown rump and broad rounded tail, pale grey-white throat and belly with buff flanks, faint narrow pale eyebrow, fairly sturdy pointed bill, pinkish brown legs. NOT bright red rump or black-spotted back.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-548aabf3-74dd-4272-9ef7-f5a6a66f0e2d.png",
+      "targetAsset": "assets/pixel/grays-grasshopper-warbler.png",
+      "status": "integrated"
+    },
+    {
+      "id": "masked-booby",
+      "name": "푸른얼굴얼가니새",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult Masked Booby: robust white seabird, white head neck breast body, black folded outer wings and tail, dark blackish blue facial skin mask around eyes and bill base, long stout pale yellow pointed bill, pale yellow iris, grey-olive webbed feet. NO blue feet, no golden gannet head, no orange Nazca Booby bill.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-2563f4d5-6e48-4957-83e3-7df2b4f31259.png",
+      "targetAsset": "assets/pixel/masked-booby.png",
+      "status": "integrated"
+    },
+    {
+      "id": "little-ringed-plover",
+      "name": "꼬마물떼새",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult breeding Little Ringed Plover: tiny round shorebird, sandy brown back, pure white belly, single black breast band, black forehead and cheek mask with white forehead stripe and white neck collar, very clear bright yellow eye ring, short all-dark bill, slim pale flesh-yellow legs.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-3d489d0b-2deb-4f0d-ac8b-697e367c944e.png",
+      "targetAsset": "assets/pixel/little-ringed-plover.png",
+      "status": "integrated"
+    },
+    {
+      "id": "crested-serpent-eagle",
+      "name": "관수리",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult Crested Serpent Eagle: stocky dark brown raptor, rounded black crest with small pale speckles, broad bright yellow bare facial skin surrounding yellow eye and cere, hooked dark grey bill, warm brown chest and belly finely white-spotted, dark folded wings with pale spots, barred dark tail, yellow legs and powerful feet. Upright wings-folded stance.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-c143194d-41ab-44c3-948d-1f4962adc372.png",
+      "targetAsset": "assets/pixel/crested-serpent-eagle.png",
+      "status": "integrated"
+    },
+    {
+      "id": "isabelline-wheatear",
+      "name": "긴다리사막딱새",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult Isabelline Wheatear: upright small sandy buff bird with relatively long black legs, plain pale sandy brown back, creamy buff-white underparts, pale eyebrow and tiny dark lores, dark brown folded wing subtly edged pale, white rump and black terminal band on tail, fine black bill. No bold black facial mask, no blue-grey back.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-e9557059-a10a-4c99-8b2b-f4c14a8015a6.png",
+      "targetAsset": "assets/pixel/isabelline-wheatear.png",
+      "status": "integrated"
+    },
+    {
+      "id": "ashy-minivet",
+      "name": "할미새사촌",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult male Ashy Minivet: slim long-tailed songbird, grey back and folded wings, white forehead and throat belly, black crown nape and cheek patch behind eye, blackish long tail with pale outer edges, short black bill and dark feet. NO red orange or yellow plumage.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-58f371af-8651-4982-8ff6-ed0278fb91f3.png",
+      "targetAsset": "assets/pixel/ashy-minivet.png",
+      "status": "integrated"
+    },
+    {
+      "id": "chestnut-winged-cuckoo",
+      "name": "밤색날개뻐꾸기",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult Chestnut-winged Cuckoo: striking slim bird with tall pointed BLACK crest, black head back and very long black graduated tail, chestnut-rust folded wings, rich orange-rufous throat, broad WHITE nape collar, creamy white belly, slender slightly curved dark bill, dark feet. Entire long tail fits.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-97a8717f-62a0-47cb-a096-505f14785d25.png",
+      "targetAsset": "assets/pixel/chestnut-winged-cuckoo.png",
+      "status": "integrated"
+    },
+    {
+      "id": "savannah-sparrow",
+      "name": "초원멧새",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult Savannah Sparrow: small round sparrow, brown heavily dark-streaked back and crown with pale central crown stripe, pale eyebrow with small distinct yellow lore spot in front of eye, cream-white belly with fine dark brown streaks on breast and flanks, pinkish short conical bill, short notched brown tail, pink legs.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-01d71bcc-0e50-4f00-bd09-9239b1b6b0ef.png",
+      "targetAsset": "assets/pixel/savannah-sparrow.png",
+      "status": "integrated"
+    },
+    {
+      "id": "chinese-pond-heron",
+      "name": "흰날개해오라기",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult breeding Chinese Pond Heron: short hunched heron, rich wine-chestnut head neck and breast with trailing reddish nape plumes, dark slate-black back, boldly PURE WHITE folded wings and white belly, long yellow bill with black tip, golden eye, yellow-green legs. NOT brown streaked nonbreeding plumage.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-d7a97b40-636b-48aa-a327-46f0bfcb7829.png",
+      "targetAsset": "assets/pixel/chinese-pond-heron.png",
+      "status": "integrated"
+    },
+    {
+      "id": "thick-billed-warbler",
+      "name": "큰부리개개비",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult Thick-billed Warbler: chunky plain brown warbler with warm brown back and rufous-brown broad rounded tail, pale buff-grey throat and belly, round plain face with virtually NO eyebrow or eye stripe, noticeably short thick pointed bill with dark upper and pale lower mandible, brown-pink legs. NO back streaks.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-99bbdc09-759c-4c82-8f43-3191a266799d.png",
+      "targetAsset": "assets/pixel/thick-billed-warbler.png",
+      "status": "integrated"
+    },
+    {
+      "id": "curlew-sandpiper",
+      "name": "붉은갯도요",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult breeding Curlew Sandpiper: elegant small shorebird, rich rusty-red head neck breast and belly, dark scalloped chestnut and black folded wings, fine long black bill distinctly curving downward near tip, relatively long thin black legs, small white rump visible beside folded wings. NOT short straight bill or black belly patch of Dunlin.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-f78691e6-20e4-4766-bf6b-bae2f304deab.png",
+      "targetAsset": "assets/pixel/curlew-sandpiper.png",
+      "status": "integrated"
+    },
+    {
+      "id": "ring-necked-duck",
+      "name": "북미댕기흰죽지",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Reference image is STYLE ONLY; replace the grebe subject completely with the species below. Match warm friendly rounded proportions, subtly oversized head, expressive eye, warm dark-brown outline, crisp stair-step pixel art and grouped feather shading. Full-body bird facing LEFT, wings folded, both feet visible in natural resting stance. Entire beak tail crest and feet inside square canvas, at least 10% transparent margin all sides. Truly transparent alpha background. No branch, water, floor, shadow, props, clothes, text, labels, UI, extra birds, blur or photorealism. Subject: Adult male Ring-necked Duck: compact diving duck resting on visible dark webbed feet, peaked tall crown on glossy black-purple head but NO trailing tuft, black neck breast back, grey flanks with distinct white vertical wedge at breast flank boundary, white belly, yellow eye, blue-grey bill with white base band AND white ring near black tip, very subtle chestnut neck ring. NOT Tufted Duck with white sides and long crest.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-e278e3a6-aa32-4b8d-9f25-aa0b46d6d66b.png",
+      "targetAsset": "assets/pixel/ring-necked-duck.png",
+      "status": "integrated"
+    }
+  ]
+}

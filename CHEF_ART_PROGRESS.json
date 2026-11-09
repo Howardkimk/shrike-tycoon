@@ -1,0 +1,118 @@
+{
+  "version": "0.8.4.10",
+  "scope": "All 11 currently playable chefs, including Red-backed Shrike.",
+  "artType": "One full-body transparent pixel chef pose per species; CSS state reactions.",
+  "chefs": [
+    {
+      "id": "bull-headed",
+      "ko": "때까치",
+      "en": "Bull-headed Shrike",
+      "scientificName": "Lanius bucephalus",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20bucephalus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20bucephalus?size=medium",
+      "asset": "assets/pixel/chef-bull-headed.png",
+      "art": "pixel"
+    },
+    {
+      "id": "tiger",
+      "ko": "칡때까치",
+      "en": "Tiger Shrike",
+      "scientificName": "Lanius tigrinus",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20tigrinus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20tigrinus?size=medium",
+      "asset": "assets/pixel/chef-tiger.png",
+      "art": "pixel"
+    },
+    {
+      "id": "brown",
+      "ko": "노랑때까치",
+      "en": "Brown Shrike",
+      "scientificName": "Lanius cristatus",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20cristatus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20cristatus?size=medium",
+      "asset": "assets/pixel/chef-brown.png",
+      "art": "pixel"
+    },
+    {
+      "id": "chinese-grey",
+      "ko": "물때까치",
+      "en": "Chinese Grey Shrike",
+      "scientificName": "Lanius sphenocercus",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20sphenocercus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20sphenocercus?size=medium",
+      "asset": "assets/pixel/chef-chinese-grey.png",
+      "art": "pixel"
+    },
+    {
+      "id": "long-tailed",
+      "ko": "긴꼬리때까치",
+      "en": "Long-tailed Shrike",
+      "scientificName": "Lanius schach",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20schach",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20schach?size=medium",
+      "asset": "assets/pixel/chef-long-tailed.png",
+      "art": "pixel"
+    },
+    {
+      "id": "northern",
+      "ko": "재때까치",
+      "en": "Northern Shrike",
+      "scientificName": "Lanius borealis",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20borealis",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20borealis?size=medium",
+      "asset": "assets/pixel/chef-northern.png",
+      "art": "pixel"
+    },
+    {
+      "id": "grey-backed",
+      "ko": "회색등때까치",
+      "en": "Grey-backed Shrike",
+      "scientificName": "Lanius tephronotus",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20tephronotus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20tephronotus?size=medium",
+      "asset": "assets/pixel/chef-grey-backed.png",
+      "art": "pixel"
+    },
+    {
+      "id": "isabelline",
+      "ko": "사막때까치",
+      "en": "Isabelline Shrike",
+      "scientificName": "Lanius isabellinus",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20isabellinus",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20isabellinus?size=medium",
+      "asset": "assets/pixel/chef-isabelline.png",
+      "art": "pixel"
+    },
+    {
+      "id": "red-tailed",
+      "ko": "붉은꼬리때까치",
+      "en": "Red-tailed Shrike",
+      "scientificName": "Lanius phoenicuroides",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20phoenicuroides",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20phoenicuroides?size=medium",
+      "asset": "assets/pixel/chef-red-tailed.png",
+      "art": "pixel"
+    },
+    {
+      "id": "great-grey",
+      "ko": "초원때까치",
+      "en": "Great Grey Shrike",
+      "scientificName": "Lanius excubitor",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20excubitor",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20excubitor?size=medium",
+      "asset": "assets/pixel/chef-great-grey.png",
+      "art": "pixel"
+    },
+    {
+      "id": "red-backed",
+      "ko": "붉은등때까치",
+      "en": "Red-backed Shrike",
+      "scientificName": "Lanius collurio",
+      "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20collurio",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20collurio?size=medium",
+      "asset": "assets/pixel/chef-red-backed.png",
+      "art": "pixel",
+      "plumage": "Adult male: blue-grey crown, chestnut back, black mask, pale pinkish underparts, black tail with white outer patches."
+    }
+  ]
+}

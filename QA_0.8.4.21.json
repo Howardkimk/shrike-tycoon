@@ -1,0 +1,8 @@
+{
+  "version": "0.8.4.21",
+  "build": "passed",
+  "grasshopper_brown": "verified",
+  "lizard_sand_spots": "verified",
+  "gameplay_and_save_code": "identical to corrected 0.8.4.20",
+  "browser_real_device": "not tested"
+}

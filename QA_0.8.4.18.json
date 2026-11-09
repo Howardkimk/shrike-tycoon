@@ -1,0 +1,18 @@
+{
+  "checks": [
+    "cover plays",
+    "lobby plays",
+    "OFF pauses and persists",
+    "OFF remains silent",
+    "ON plays in lobby",
+    "gameplay silent",
+    "ON during gameplay silent",
+    "results silent",
+    "return to lobby plays",
+    "pending play cannot resume in gameplay",
+    "game and result transitions pause audio",
+    "exact credit and gameplay button removed"
+  ],
+  "browserValidation": "Unavailable: browser download failed; no visual or real-device validation",
+  "typeScriptBuild": "passed"
+}

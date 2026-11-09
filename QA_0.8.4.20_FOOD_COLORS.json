@@ -1,0 +1,7 @@
+{
+  "build": "passed",
+  "svg_render": "inspected at 192,32,24,17px",
+  "all_recipe_states_contexts": "passed",
+  "all_other_game_code": "identical",
+  "browser_fullscreen_real_device": "not tested"
+}

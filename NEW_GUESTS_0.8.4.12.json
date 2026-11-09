@@ -1,0 +1,310 @@
+[
+  {
+    "id": "slaty-backed-gull",
+    "name": "큰재갈매기",
+    "englishName": "Slaty-backed Gull",
+    "scientificName": "Larus schistisagus",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "fish"
+      ],
+      "secondary": [
+        "aquaticInsect",
+        "smallBird"
+      ],
+      "rare": [
+        "frog",
+        "beetle"
+      ],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "lizard",
+        "mouse",
+        "seed"
+      ]
+    },
+    "note": "동북아시아 해안의 갈매기. 짙은 회색 등, 흰 날개 가장자리와 분홍색 다리가 특징이며 강 하구에도 찾아온다. 실제 먹이는 물고기·해양 무척추동물 등으로, 게임에서는 기존 재료로 단순화했다.",
+    "invited": false,
+    "stageIds": [
+      18,
+      20
+    ],
+    "features": "짙은 회색 등과 날개, 흰 머리와 배, 분홍 다리, 노란 부리와 붉은 반점"
+  },
+  {
+    "id": "little-grebe",
+    "name": "논병아리",
+    "englishName": "Little Grebe",
+    "scientificName": "Tachybaptus ruficollis",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "fish",
+        "aquaticInsect"
+      ],
+      "secondary": [],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "beetle",
+        "frog",
+        "lizard",
+        "mouse",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "갈대가 있는 연못·저수지에서 잠수해 작은 물고기와 수서무척추동물을 잡는다. 번식깃은 적갈색 뺨과 목, 부리 기부의 노란 반점이 특징이다.",
+    "invited": false,
+    "stageIds": [
+      7,
+      11,
+      16,
+      17,
+      20
+    ],
+    "features": "작은 둥근 몸, 적갈색 뺨과 목, 노란 부리 기부 반점, 솜털 같은 엉덩이"
+  },
+  {
+    "id": "beijing-babbler",
+    "name": "꼬리치레",
+    "englishName": "Beijing Babbler",
+    "scientificName": "Rhopophilus pekinensis",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "beetle",
+        "caterpillar"
+      ],
+      "secondary": [
+        "grasshopper"
+      ],
+      "rare": [],
+      "never": [
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "동아시아의 관목대·키 큰 풀밭·갈대밭에서 낮게 움직이며 먹이를 찾는다. 긴 꼬리, 흰 눈썹과 목, 줄무늬 등이 특징이다. 게임 주문은 곤충류를 중심으로 구성했다.",
+    "invited": false,
+    "stageIds": [
+      6,
+      8,
+      14
+    ],
+    "features": "긴 갈색 꼬리, 흰 눈썹과 목, 갈색 줄무늬 등과 옆구리"
+  },
+  {
+    "id": "yellow-bittern",
+    "name": "덤불해오라기",
+    "englishName": "Yellow Bittern",
+    "scientificName": "Botaurus sinensis",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "fish",
+        "aquaticInsect"
+      ],
+      "secondary": [
+        "frog"
+      ],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "beetle",
+        "lizard",
+        "mouse",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "갈대밭과 얕은 습지에서 물고기와 수서무척추동물을 찾는 작은 해오라기류. 황갈색 몸과 검은 날개, 길고 뾰족한 부리가 특징이다.",
+    "invited": false,
+    "stageIds": [
+      3,
+      7,
+      14,
+      16,
+      20
+    ],
+    "features": "황갈색 몸, 검은 머리 위와 날개, 긴 노란 부리, 황록색 다리"
+  },
+  {
+    "id": "palm-cockatoo",
+    "name": "야자잎검은유황앵무",
+    "englishName": "Palm Cockatoo",
+    "scientificName": "Probosciger aterrimus",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "seed"
+      ],
+      "secondary": [],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "beetle",
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird"
+      ]
+    },
+    "note": "초대 손님 · 실제 서식지는 뉴기니·아루 제도·호주 케이프요크의 열대림이다. World 10의 섬 식당에 초대된 손님이며 아프리카 고유종은 아니다. 열매·씨앗·견과를 먹으며 게임에서는 씨앗·견과 꼬치를 주문한다.",
+    "invited": true,
+    "stageIds": [
+      91,
+      94,
+      99,
+      100
+    ],
+    "features": "숯빛 몸, 긴 검은 관우, 큰 검은 부리, 붉은 맨살 뺨"
+  },
+  {
+    "id": "japanese-accentor",
+    "name": "쇠바위종다리",
+    "englishName": "Japanese Accentor",
+    "scientificName": "Prunella rubida",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "beetle",
+        "caterpillar"
+      ],
+      "secondary": [
+        "seed"
+      ],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird"
+      ]
+    },
+    "note": "일본과 인접 동아시아의 산지에 서식한다. 번식기에는 고지대 왜성 소나무·관목, 비번식기에는 낮은 계곡 덤불을 이용한다. 붉은 홍채와 가는 부리가 특징이며 곤충과 씨앗을 주문한다.",
+    "invited": false,
+    "stageIds": [
+      24,
+      25,
+      26,
+      30
+    ],
+    "features": "붉은 홍채, 가는 부리, 회색 가슴과 얼굴, 갈색 줄무늬 등과 옆구리"
+  },
+  {
+    "id": "japanese-grosbeak",
+    "name": "큰부리밀화부리",
+    "englishName": "Japanese Grosbeak",
+    "scientificName": "Eophona personata",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "seed"
+      ],
+      "secondary": [
+        "beetle",
+        "caterpillar"
+      ],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird"
+      ]
+    },
+    "note": "동아시아의 산림과 숲 가장자리에서 씨앗과 열매를 먹고 곤충도 이용한다. 굵은 노란 부리, 검은 머리 앞부분, 회갈색 몸과 흰 날개 무늬가 특징이다. 게임에서는 씨앗·견과를 주로 주문한다.",
+    "invited": false,
+    "stageIds": [
+      4,
+      22,
+      23,
+      30
+    ],
+    "features": "굵은 노란 부리, 검은 머리 앞부분, 회갈색 몸, 검은 날개와 흰 날개 무늬"
+  },
+  {
+    "id": "black-grouse",
+    "name": "멧닭",
+    "englishName": "Black Grouse",
+    "scientificName": "Lyrurus tetrix",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "seed"
+      ],
+      "secondary": [],
+      "rare": [
+        "beetle",
+        "caterpillar"
+      ],
+      "never": [
+        "grasshopper",
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird"
+      ]
+    },
+    "note": "유라시아의 숲 경계와 관목·황야에 서식한다. 식물의 잎·눈·씨앗·열매가 주식이고 어린 새는 곤충도 먹는다. 식물성 주문은 씨앗·견과로 단순화했다. 도트는 붉은 눈썹과 리라 모양 꼬리를 가진 수컷이다.",
+    "invited": false,
+    "stageIds": [
+      55,
+      59,
+      60
+    ],
+    "features": "수컷의 푸른 광택이 있는 검은 몸, 붉은 눈썹, 흰 날개 띠, 리라 모양 꼬리"
+  },
+  {
+    "id": "short-tailed-albatross",
+    "name": "알바트로스",
+    "englishName": "Short-tailed Albatross",
+    "scientificName": "Phoebastria albatrus",
+    "emoji": "🐦",
+    "diet": {
+      "primary": [
+        "fish"
+      ],
+      "secondary": [],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "beetle",
+        "aquaticInsect",
+        "frog",
+        "lizard",
+        "mouse",
+        "smallBird",
+        "seed"
+      ]
+    },
+    "note": "초대 손님 · 북태평양의 원양성 바닷새로 일본 주변 섬에서 번식한다. 하구 식당을 찾아온 특별 방문객으로 설정했다. 실제로는 오징어·물고기·해양 무척추동물을 먹으며 게임에서는 물고기 꼬치를 주문한다. 성조의 황금빛 머리와 큰 분홍색 부리가 특징이다.",
+    "invited": true,
+    "stageIds": [
+      20
+    ],
+    "features": "흰 몸, 황금빛 머리와 목덜미, 큰 분홍 부리, 검고 흰 날개"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "width": 390,
+    "height": 844,
+    "cover": {
+      "text": "BGM 제작 : 야검유앵",
+      "below": true,
+      "visible": true,
+      "count": 1
+    },
+    "ready": {
+      "creditCount": 0,
+      "buttonVisible": true
+    },
+    "errors": []
+  },
+  {
+    "width": 667,
+    "height": 375,
+    "cover": {
+      "text": "BGM 제작 : 야검유앵",
+      "below": true,
+      "visible": true,
+      "count": 1
+    },
+    "ready": {
+      "creditCount": 0,
+      "buttonVisible": true
+    },
+    "errors": []
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "cover": {
+      "text": "BGM 제작 : 야검유앵",
+      "below": true,
+      "visible": true,
+      "count": 1
+    },
+    "ready": {
+      "creditCount": 0,
+      "buttonVisible": true
+    },
+    "errors": []
+  }
+]

@@ -1,0 +1,285 @@
+{
+  "cases": [
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 1,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 2,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 3,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 4,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 5,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 6,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 7,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 8,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 9,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": 10,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 1,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 2,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 3,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 4,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 5,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 6,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 7,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 8,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 9,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 1024,
+      "height": 640,
+      "world": 10,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 1,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 2,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 3,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 4,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 5,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 6,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 7,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 8,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 9,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": 10,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 1,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 2,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 3,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 4,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 5,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 6,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 7,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 8,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 9,
+      "orders": 6,
+      "problems": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": 10,
+      "orders": 6,
+      "problems": []
+    }
+  ],
+  "errors": []
+}

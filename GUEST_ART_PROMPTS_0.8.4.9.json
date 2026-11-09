@@ -1,0 +1,167 @@
+[
+  {
+    "id": "northern-fiscal",
+    "name": "Northern Fiscal",
+    "englishName": "Northern Fiscal",
+    "scientificName": "Lanius humeralis",
+    "worlds": [
+      8
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20humeralis",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20humeralis?size=medium",
+    "features": "Adult black head back and tail, white chest belly and shoulder wing stripe, black hooked bill, very long slim dark tail, black legs; northern fiscal black upperparts not grey-crowned shrike.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: Northern Fiscal (Lanius humeralis). Features: Adult black head back and tail, white chest belly and shoulder wing stripe, black hooked bill, very long slim dark tail, black legs; northern fiscal black upperparts not grey-crowned shrike. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/northern-fiscal.png",
+    "status": "pending"
+  },
+  {
+    "id": "mackinnons-shrike",
+    "name": "Mackinnon's Shrike",
+    "englishName": "Mackinnon's Shrike",
+    "scientificName": "Lanius mackinnoni",
+    "worlds": [
+      8
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20mackinnoni",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20mackinnoni?size=medium",
+    "features": "Grey crown and back; black eye mask; narrow white eyebrow; white underparts with rufous flank patch, long dark tail with white edges and tips, black hooked shrike bill.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: Mackinnon's Shrike (Lanius mackinnoni). Features: Grey crown and back; black eye mask; narrow white eyebrow; white underparts with rufous flank patch, long dark tail with white edges and tips, black hooked shrike bill. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/mackinnons-shrike.png",
+    "status": "pending"
+  },
+  {
+    "id": "fiscal-flycatcher",
+    "name": "Fiscal Flycatcher",
+    "englishName": "Fiscal Flycatcher",
+    "scientificName": "Melaenornis silens",
+    "worlds": [
+      9
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Melaenornis%20silens",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Melaenornis%20silens?size=medium",
+    "features": "ADULT MALE black head back wings and tail, white belly and sides of neck, large white wing patch, slender flycatcher bill NOT bulky shrike hook, small upright body.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: Fiscal Flycatcher (Melaenornis silens). Features: ADULT MALE black head back wings and tail, white belly and sides of neck, large white wing patch, slender flycatcher bill NOT bulky shrike hook, small upright body. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/fiscal-flycatcher.png",
+    "status": "pending"
+  },
+  {
+    "id": "cape-crow",
+    "name": "Cape Crow",
+    "englishName": "Cape Crow",
+    "scientificName": "Corvus capensis",
+    "worlds": [
+      9
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Corvus%20capensis",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Corvus%20capensis?size=medium",
+    "features": "Entire glossy black crow, notably long slender straight black bill, black feet, robust body and longish dark tail, subtle blue sheen.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: Cape Crow (Corvus capensis). Features: Entire glossy black crow, notably long slender straight black bill, black feet, robust body and longish dark tail, subtle blue sheen. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/cape-crow.png",
+    "status": "pending"
+  },
+  {
+    "id": "karoo-scrub-robin",
+    "name": "Karoo Scrub-Robin",
+    "englishName": "Karoo Scrub-Robin",
+    "scientificName": "Cercotrichas coryphoeus",
+    "worlds": [
+      9
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Cercotrichas%20coryphoeus",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Cercotrichas%20coryphoeus?size=medium",
+    "features": "Plain grey-brown head and back, pale cream-grey underside, whitish eyebrow and dark eye line, long brown tail with light outer tips, slim dark bill, ground-loving robin proportions.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: Karoo Scrub-Robin (Cercotrichas coryphoeus). Features: Plain grey-brown head and back, pale cream-grey underside, whitish eyebrow and dark eye line, long brown tail with light outer tips, slim dark bill, ground-loving robin proportions. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/karoo-scrub-robin.png",
+    "status": "pending"
+  },
+  {
+    "id": "sao-tome-fiscal",
+    "name": "São Tomé Fiscal",
+    "englishName": "São Tomé Fiscal",
+    "scientificName": "Lanius newtoni",
+    "worlds": [
+      10
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Lanius%20newtoni",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lanius%20newtoni?size=medium",
+    "features": "Adult glossy black head back wings and long tail, pale straw-YELLOW belly and breast, strong black hooked bill, grey legs; no big white wing patch, island forest shrike.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: São Tomé Fiscal (Lanius newtoni). Features: Adult glossy black head back wings and long tail, pale straw-YELLOW belly and breast, strong black hooked bill, grey legs; no big white wing patch, island forest shrike. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/sao-tome-fiscal.png",
+    "status": "pending"
+  },
+  {
+    "id": "sao-tome-thrush",
+    "name": "São Tomé Thrush",
+    "englishName": "São Tomé Thrush",
+    "scientificName": "Turdus olivaceofuscus",
+    "worlds": [
+      10
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Turdus%20olivaceofuscus",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Turdus%20olivaceofuscus?size=medium",
+    "features": "Olive-brown upperparts, buff underside with dark mottling and streaks on chest, dark bill (not yellow/orange), pale eye ring, sturdy thrush legs.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: São Tomé Thrush (Turdus olivaceofuscus). Features: Olive-brown upperparts, buff underside with dark mottling and streaks on chest, dark bill (not yellow/orange), pale eye ring, sturdy thrush legs. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/sao-tome-thrush.png",
+    "status": "pending"
+  },
+  {
+    "id": "sao-tome-oriole",
+    "name": "São Tomé Oriole",
+    "englishName": "São Tomé Oriole",
+    "scientificName": "Oriolus crassirostris",
+    "worlds": [
+      10
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Oriolus%20crassirostris",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Oriolus%20crassirostris?size=medium",
+    "features": "ADULT black head neck wings and tail, olive-yellow mantle and body, pale golden-cream breast, thick coral-pink bill, red eye, pale cream wing edging.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: São Tomé Oriole (Oriolus crassirostris). Features: ADULT black head neck wings and tail, olive-yellow mantle and body, pale golden-cream breast, thick coral-pink bill, red eye, pale cream wing edging. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/sao-tome-oriole.png",
+    "status": "pending"
+  },
+  {
+    "id": "madagascar-kingfisher",
+    "name": "Madagascar Kingfisher",
+    "englishName": "Madagascar Kingfisher",
+    "scientificName": "Corythornis vintsioides",
+    "worlds": [
+      10
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Corythornis%20vintsioides",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Corythornis%20vintsioides?size=medium",
+    "features": "Malagasy Kingfisher: deep azure crown and back, fine turquoise crown speckles, orange-rufous face and underside, pale throat, long straight black bill, short blue tail, tiny orange-red feet.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: Madagascar Kingfisher (Corythornis vintsioides). Features: Malagasy Kingfisher: deep azure crown and back, fine turquoise crown speckles, orange-rufous face and underside, pale throat, long straight black bill, short blue tail, tiny orange-red feet. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/madagascar-kingfisher.png",
+    "status": "pending"
+  },
+  {
+    "id": "madagascar-kestrel",
+    "name": "Madagascar Kestrel",
+    "englishName": "Madagascar Kestrel",
+    "scientificName": "Falco newtoni",
+    "worlds": [
+      10
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Falco%20newtoni",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Falco%20newtoni?size=medium",
+    "features": "ADULT MALE grey head, rusty brown black-spotted back, pale cream speckled chest and belly, grey tail with wide black tip, dark moustache, yellow cere and feet, small black hooked bill, folded wings.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: Madagascar Kestrel (Falco newtoni). Features: ADULT MALE grey head, rusty brown black-spotted back, pale cream speckled chest and belly, grey tail with wide black tip, dark moustache, yellow cere and feet, small black hooked bill, folded wings. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/madagascar-kestrel.png",
+    "status": "pending"
+  },
+  {
+    "id": "madagascar-magpie-robin",
+    "name": "Madagascar Magpie-Robin",
+    "englishName": "Madagascar Magpie-Robin",
+    "scientificName": "Copsychus albospecularis",
+    "worlds": [
+      10
+    ],
+    "source": "https://birdnet.cornell.edu/taxonomy/species/Copsychus%20albospecularis",
+    "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Copsychus%20albospecularis?size=medium",
+    "features": "ADULT MALE nominate Madagascar Magpie-Robin: black glossy head back throat and upper breast, white belly and white wing patch, long dark tail, slender black bill. Not all-black subspecies.",
+    "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Image 1 is the visual guide: copy ONLY its rounded friendly bird proportions, warm dark outlines and sharp pixel clusters; no UI. Image 2 is existing Southern Fiscal sprite for consistent pixel density and feather shading; do NOT copy its plumage. SPECIES: Madagascar Magpie-Robin (Copsychus albospecularis). Features: ADULT MALE nominate Madagascar Magpie-Robin: black glossy head back throat and upper breast, white belly and white wing patch, long dark tail, slender black bill. Not all-black subspecies. Single adult bird facing LEFT in three-quarter side view, wings folded, both feet visible. Preserve bill, tail and diagnostic colours. Entire bird including beak, tail, feet inside canvas with at least 7% transparent margin. True alpha transparency. Crisp stair-step pixel art, grouped feather shading, rounded head and body. No blur, no photorealism, no vector art. No apron, clothes, food, tools, branch, shadow, background, letters or text. One bird only, no sprite sheet.",
+    "targetAsset": "assets/pixel/madagascar-magpie-robin.png",
+    "status": "pending"
+  }
+]

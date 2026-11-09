@@ -1,0 +1,13 @@
+{
+  "errors": [],
+  "bad": [],
+  "resultActions": {
+    "x": 28.026107788085938,
+    "y": 751.072998046875,
+    "width": 333.94776916503906,
+    "height": 56.9910888671875
+  },
+  "desktopFlow": true,
+  "mobileLastStageAndChefReachable": true,
+  "previewSaveIsLocalFixture": true
+}

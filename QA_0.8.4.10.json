@@ -1,0 +1,206 @@
+{
+  "version": "0.8.4.10",
+  "cases": [
+    {
+      "width": 360,
+      "height": 640,
+      "world": {
+        "x": 39,
+        "y": 351,
+        "width": 282,
+        "height": 256,
+        "client": 256,
+        "scroll": 2684,
+        "viewport": 640,
+        "overflow": "auto"
+      },
+      "journal": {
+        "visible": true,
+        "fullyVisible": false,
+        "top": 207.03125,
+        "bottom": 484.84375,
+        "scrollTop": 2428
+      },
+      "ready": {
+        "startVisible": true,
+        "creditVisible": true,
+        "credit": "BGM 제작 : 야검유앵",
+        "gap": "12px"
+      },
+      "rotations": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "world": {
+        "x": 39,
+        "y": 366.3125,
+        "width": 312,
+        "height": 444.6875,
+        "client": 445,
+        "scroll": 2638,
+        "viewport": 844,
+        "overflow": "auto"
+      },
+      "journal": {
+        "visible": true,
+        "fullyVisible": true,
+        "top": 422.34375,
+        "bottom": 700.15625,
+        "scrollTop": 2193
+      },
+      "ready": {
+        "startVisible": true,
+        "creditVisible": true,
+        "credit": "BGM 제작 : 야검유앵",
+        "gap": "12px"
+      },
+      "rotations": [
+        {
+          "gap": "12px",
+          "creditBottom": 815,
+          "viewport": 844
+        },
+        {
+          "gap": "12px",
+          "creditBottom": 815,
+          "viewport": 844
+        },
+        {
+          "gap": "12px",
+          "creditBottom": 815,
+          "viewport": 844
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "world": {
+        "x": 39,
+        "y": 366.3125,
+        "width": 352,
+        "height": 532.6875,
+        "client": 533,
+        "scroll": 2617,
+        "viewport": 932,
+        "overflow": "auto"
+      },
+      "journal": {
+        "visible": true,
+        "fullyVisible": true,
+        "top": 509.84375,
+        "bottom": 787.65625,
+        "scrollTop": 2084
+      },
+      "ready": {
+        "startVisible": true,
+        "creditVisible": true,
+        "credit": "BGM 제작 : 야검유앵",
+        "gap": "12px"
+      },
+      "rotations": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "world": {
+        "x": 39,
+        "y": 254.25,
+        "width": 589,
+        "height": 87.75,
+        "client": 88,
+        "scroll": 2616,
+        "viewport": 375,
+        "overflow": "auto"
+      },
+      "journal": {
+        "visible": true,
+        "fullyVisible": false,
+        "top": 28.0625,
+        "bottom": 305.875,
+        "scrollTop": 2453
+      },
+      "ready": {
+        "startVisible": true,
+        "creditVisible": true,
+        "credit": "BGM 제작 : 야검유앵",
+        "gap": "12px"
+      },
+      "rotations": [],
+      "journalAtScrollEnd": {
+        "visible": false,
+        "fullyVisible": false,
+        "top": -46.9375,
+        "bottom": 230.875,
+        "scrollTop": 2528
+      },
+      "journalGesture": "After reaching the list end, drag down 90px to read the journal above the final travel note."
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "world": {
+        "x": 39,
+        "y": 259.5,
+        "width": 766,
+        "height": 97.5,
+        "client": 98,
+        "scroll": 1631,
+        "viewport": 390,
+        "overflow": "auto"
+      },
+      "journal": {
+        "visible": true,
+        "fullyVisible": false,
+        "top": 29.90625,
+        "bottom": 307.71875,
+        "scrollTop": 1458
+      },
+      "ready": {
+        "startVisible": true,
+        "creditVisible": true,
+        "credit": "BGM 제작 : 야검유앵",
+        "gap": "12px"
+      },
+      "rotations": [],
+      "journalAtScrollEnd": {
+        "visible": false,
+        "fullyVisible": false,
+        "top": -45.09375,
+        "bottom": 232.71875,
+        "scrollTop": 1533
+      },
+      "journalGesture": "After reaching the list end, drag down 90px to read the journal above the final travel note."
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "world": {
+        "x": 114,
+        "y": 245.15625,
+        "width": 1138,
+        "height": 494,
+        "client": 494,
+        "scroll": 1186,
+        "viewport": 768,
+        "overflow": "auto"
+      },
+      "journal": {
+        "visible": false,
+        "fullyVisible": false,
+        "top": -342.34375,
+        "bottom": -64.53125,
+        "scrollTop": 692
+      },
+      "ready": {
+        "startVisible": true,
+        "creditVisible": true,
+        "credit": "BGM 제작 : 야검유앵",
+        "gap": "12px"
+      },
+      "rotations": []
+    }
+  ],
+  "errors": []
+}

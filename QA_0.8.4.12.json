@@ -1,0 +1,496 @@
+{
+  "version": "0.8.4.12",
+  "functional": [
+    {
+      "id": "slaty-backed-gull",
+      "world": 2,
+      "recipe": [
+        "fish",
+        "fish",
+        "aquaticInsect"
+      ],
+      "served": true
+    },
+    {
+      "id": "little-grebe",
+      "world": 1,
+      "recipe": [
+        "aquaticInsect",
+        "fish"
+      ],
+      "served": true
+    },
+    {
+      "id": "beijing-babbler",
+      "world": 1,
+      "recipe": [
+        "beetle",
+        "caterpillar",
+        "beetle"
+      ],
+      "served": true
+    },
+    {
+      "id": "yellow-bittern",
+      "world": 1,
+      "recipe": [
+        "aquaticInsect",
+        "fish",
+        "frog",
+        "fish"
+      ],
+      "served": true
+    },
+    {
+      "id": "palm-cockatoo",
+      "world": 10,
+      "recipe": [
+        "seed",
+        "seed",
+        "seed"
+      ],
+      "served": true
+    },
+    {
+      "id": "japanese-accentor",
+      "world": 3,
+      "recipe": [
+        "caterpillar",
+        "beetle",
+        "seed",
+        "beetle"
+      ],
+      "served": true
+    },
+    {
+      "id": "japanese-grosbeak",
+      "world": 1,
+      "recipe": [
+        "seed",
+        "seed",
+        "caterpillar"
+      ],
+      "served": true
+    },
+    {
+      "id": "black-grouse",
+      "world": 6,
+      "recipe": [
+        "beetle",
+        "caterpillar",
+        "seed"
+      ],
+      "served": true
+    },
+    {
+      "id": "short-tailed-albatross",
+      "world": 2,
+      "recipe": [
+        "fish",
+        "fish",
+        "fish"
+      ],
+      "served": true
+    }
+  ],
+  "layouts": [
+    {
+      "width": 390,
+      "height": 844,
+      "birdBookGuests": 9,
+      "worldFilter": true,
+      "gameplay": "landscape recommended"
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "names": [
+        {
+          "name": "야자잎검은유황앵무",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "큰부리밀화부리",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "알바트로스",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "덤불해오라기",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "꼬리치레",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "멧닭",
+          "center": "center",
+          "clipped": false
+        }
+      ],
+      "foods": [
+        {
+          "id": "grasshopper",
+          "r": {
+            "x": 106.37100219726562,
+            "y": 220.13198852539062,
+            "w": 52.99263000488281,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "beetle",
+          "r": {
+            "x": 163.33963012695312,
+            "y": 220.13198852539062,
+            "w": 52.99263000488281,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "caterpillar",
+          "r": {
+            "x": 220.30825805664062,
+            "y": 220.13198852539062,
+            "w": 53.008148193359375,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "lizard",
+          "r": {
+            "x": 277.29241943359375,
+            "y": 220.13198852539062,
+            "w": 52.99261474609375,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "mouse",
+          "r": {
+            "x": 334.26104736328125,
+            "y": 220.13198852539062,
+            "w": 52.99261474609375,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "fish",
+          "r": {
+            "x": 106.37100219726562,
+            "y": 277.78399658203125,
+            "w": 52.99263000488281,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "aquaticInsect",
+          "r": {
+            "x": 163.33963012695312,
+            "y": 277.78399658203125,
+            "w": 52.99263000488281,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "smallBird",
+          "r": {
+            "x": 220.30825805664062,
+            "y": 277.78399658203125,
+            "w": 53.008148193359375,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "seed",
+          "r": {
+            "x": 277.29241943359375,
+            "y": 277.78399658203125,
+            "w": 52.99261474609375,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        }
+      ],
+      "pageOverflow": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "names": [
+        {
+          "name": "야자잎검은유황앵무",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "큰부리밀화부리",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "알바트로스",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "덤불해오라기",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "꼬리치레",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "멧닭",
+          "center": "center",
+          "clipped": false
+        }
+      ],
+      "foods": [
+        {
+          "id": "grasshopper",
+          "r": {
+            "x": 115.11801147460938,
+            "y": 232.63198852539062,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "beetle",
+          "r": {
+            "x": 193.20913696289062,
+            "y": 232.63198852539062,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "caterpillar",
+          "r": {
+            "x": 271.3002624511719,
+            "y": 232.63198852539062,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "lizard",
+          "r": {
+            "x": 349.3913879394531,
+            "y": 232.63198852539062,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "mouse",
+          "r": {
+            "x": 427.46697998046875,
+            "y": 232.63198852539062,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "fish",
+          "r": {
+            "x": 115.11801147460938,
+            "y": 290.28399658203125,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "aquaticInsect",
+          "r": {
+            "x": 193.20913696289062,
+            "y": 290.28399658203125,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "smallBird",
+          "r": {
+            "x": 271.3002624511719,
+            "y": 290.28399658203125,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "seed",
+          "r": {
+            "x": 349.3913879394531,
+            "y": 290.28399658203125,
+            "w": 57.652008056640625,
+            "h": 49.70001220703125
+          },
+          "clipped": false
+        }
+      ],
+      "pageOverflow": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "names": [
+        {
+          "name": "야자잎검은유황앵무",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "큰부리밀화부리",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "알바트로스",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "덤불해오라기",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "꼬리치레",
+          "center": "center",
+          "clipped": false
+        },
+        {
+          "name": "멧닭",
+          "center": "center",
+          "clipped": false
+        }
+      ],
+      "foods": [
+        {
+          "id": "grasshopper",
+          "r": {
+            "x": 281.0201416015625,
+            "y": 476.99871826171875,
+            "w": 83.49603271484375,
+            "h": 67.26580810546875
+          },
+          "clipped": false
+        },
+        {
+          "id": "beetle",
+          "r": {
+            "x": 381.60052490234375,
+            "y": 476.99871826171875,
+            "w": 83.49600219726562,
+            "h": 67.26580810546875
+          },
+          "clipped": false
+        },
+        {
+          "id": "caterpillar",
+          "r": {
+            "x": 482.1964416503906,
+            "y": 476.99871826171875,
+            "w": 83.49600219726562,
+            "h": 67.26580810546875
+          },
+          "clipped": false
+        },
+        {
+          "id": "lizard",
+          "r": {
+            "x": 582.7923583984375,
+            "y": 476.99871826171875,
+            "w": 83.4959716796875,
+            "h": 67.26580810546875
+          },
+          "clipped": false
+        },
+        {
+          "id": "mouse",
+          "r": {
+            "x": 683.3882446289062,
+            "y": 476.99871826171875,
+            "w": 83.49603271484375,
+            "h": 67.26580810546875
+          },
+          "clipped": false
+        },
+        {
+          "id": "fish",
+          "r": {
+            "x": 281.0201416015625,
+            "y": 552.216552734375,
+            "w": 83.49603271484375,
+            "h": 67.2813720703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "aquaticInsect",
+          "r": {
+            "x": 381.60052490234375,
+            "y": 552.216552734375,
+            "w": 83.49600219726562,
+            "h": 67.2813720703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "smallBird",
+          "r": {
+            "x": 482.1964416503906,
+            "y": 552.216552734375,
+            "w": 83.49600219726562,
+            "h": 67.2813720703125
+          },
+          "clipped": false
+        },
+        {
+          "id": "seed",
+          "r": {
+            "x": 582.7923583984375,
+            "y": 552.216552734375,
+            "w": 83.4959716796875,
+            "h": 67.2813720703125
+          },
+          "clipped": false
+        }
+      ],
+      "pageOverflow": false
+    }
+  ],
+  "errors": [],
+  "recipeSamples": 6200,
+  "saveMigration": "old XP/stage/bird retained; 9 new discoveries persist after reload",
+  "stageParameters": "100 stage timings, goals, scores, rules unchanged"
+}

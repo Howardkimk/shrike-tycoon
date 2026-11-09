@@ -1,0 +1,288 @@
+[
+  {
+    "id": "varied-tit",
+    "status": "completed",
+    "asset": "assets/pixel/varied-tit.png"
+  },
+  {
+    "id": "eurasian-treecreeper",
+    "status": "completed",
+    "asset": "assets/pixel/eurasian-treecreeper.png"
+  },
+  {
+    "id": "eurasian-jay",
+    "status": "completed",
+    "asset": "assets/pixel/eurasian-jay.png"
+  },
+  {
+    "id": "coal-tit",
+    "status": "completed",
+    "asset": "assets/pixel/coal-tit.png"
+  },
+  {
+    "id": "brown-hawk-owl",
+    "status": "completed",
+    "asset": "assets/pixel/brown-hawk-owl.png"
+  },
+  {
+    "id": "japanese-pygmy-woodpecker",
+    "status": "completed",
+    "asset": "assets/pixel/japanese-pygmy-woodpecker.png"
+  },
+  {
+    "id": "grey-nightjar",
+    "status": "completed",
+    "asset": "assets/pixel/grey-nightjar.png"
+  },
+  {
+    "id": "pale-thrush",
+    "status": "completed",
+    "asset": "assets/pixel/pale-thrush.png"
+  },
+  {
+    "id": "whites-thrush",
+    "status": "completed",
+    "asset": "assets/pixel/whites-thrush.png"
+  },
+  {
+    "id": "blue-whistling-thrush",
+    "status": "completed",
+    "asset": "assets/pixel/blue-whistling-thrush.png"
+  },
+  {
+    "id": "himalayan-bulbul",
+    "status": "completed",
+    "asset": "assets/pixel/himalayan-bulbul.png"
+  },
+  {
+    "id": "white-capped-redstart",
+    "status": "completed",
+    "asset": "assets/pixel/white-capped-redstart.png"
+  },
+  {
+    "id": "red-billed-chough",
+    "status": "completed",
+    "asset": "assets/pixel/red-billed-chough.png"
+  },
+  {
+    "id": "rufous-sibia",
+    "status": "completed",
+    "asset": "assets/pixel/rufous-sibia.png"
+  },
+  {
+    "id": "himalayan-woodpecker",
+    "status": "completed",
+    "asset": "assets/pixel/himalayan-woodpecker.png"
+  },
+  {
+    "id": "green-backed-tit",
+    "status": "completed",
+    "asset": "assets/pixel/green-backed-tit.png"
+  },
+  {
+    "id": "plumbeous-water-redstart",
+    "status": "completed",
+    "asset": "assets/pixel/plumbeous-water-redstart.png"
+  },
+  {
+    "id": "grey-backed-shrike",
+    "status": "completed",
+    "asset": "assets/pixel/grey-backed-shrike.png"
+  },
+  {
+    "id": "little-owl",
+    "status": "completed",
+    "asset": "assets/pixel/little-owl.png"
+  },
+  {
+    "id": "steppe-eagle",
+    "status": "completed",
+    "asset": "assets/pixel/steppe-eagle.png"
+  },
+  {
+    "id": "eurasian-hoopoe",
+    "status": "completed",
+    "asset": "assets/pixel/eurasian-hoopoe.png"
+  },
+  {
+    "id": "red-tailed-shrike",
+    "status": "completed",
+    "asset": "assets/pixel/red-tailed-shrike.png"
+  },
+  {
+    "id": "european-robin",
+    "status": "completed",
+    "asset": "assets/pixel/european-robin.png"
+  },
+  {
+    "id": "isabelline-wheatear",
+    "status": "completed",
+    "asset": "assets/pixel/isabelline-wheatear.png"
+  },
+  {
+    "id": "european-roller",
+    "status": "completed",
+    "asset": "assets/pixel/european-roller.png"
+  },
+  {
+    "id": "lesser-grey-shrike",
+    "status": "completed",
+    "asset": "assets/pixel/lesser-grey-shrike.png"
+  },
+  {
+    "id": "common-blackbird",
+    "status": "completed",
+    "asset": "assets/pixel/common-blackbird.png"
+  },
+  {
+    "id": "european-nightjar",
+    "status": "completed",
+    "asset": "assets/pixel/european-nightjar.png"
+  },
+  {
+    "id": "isabelline-shrike",
+    "status": "completed",
+    "asset": "assets/pixel/isabelline-shrike.png"
+  },
+  {
+    "id": "european-bee-eater",
+    "status": "completed",
+    "asset": "assets/pixel/european-bee-eater.png"
+  },
+  {
+    "id": "red-backed-shrike",
+    "status": "completed",
+    "asset": "assets/pixel/red-backed-shrike.png"
+  },
+  {
+    "id": "american-robin",
+    "status": "completed",
+    "asset": "assets/pixel/american-robin.png"
+  },
+  {
+    "id": "eastern-bluebird",
+    "status": "completed",
+    "asset": "assets/pixel/eastern-bluebird.png"
+  },
+  {
+    "id": "northern-mockingbird",
+    "status": "completed",
+    "asset": "assets/pixel/northern-mockingbird.png"
+  },
+  {
+    "id": "american-kestrel",
+    "status": "completed",
+    "asset": "assets/pixel/american-kestrel.png"
+  },
+  {
+    "id": "loggerhead-shrike",
+    "status": "completed",
+    "asset": "assets/pixel/loggerhead-shrike.png"
+  },
+  {
+    "id": "lilac-breasted-roller",
+    "status": "completed",
+    "asset": "assets/pixel/lilac-breasted-roller.png"
+  },
+  {
+    "id": "african-grey-hornbill",
+    "status": "completed",
+    "asset": "assets/pixel/african-grey-hornbill.png"
+  },
+  {
+    "id": "superb-starling",
+    "status": "completed",
+    "asset": "assets/pixel/superb-starling.png"
+  },
+  {
+    "id": "southern-fiscal",
+    "status": "completed",
+    "asset": "assets/pixel/southern-fiscal.png"
+  },
+  {
+    "id": "belted-kingfisher",
+    "status": "completed",
+    "asset": "assets/pixel/belted-kingfisher.png"
+  },
+  {
+    "id": "northern-fiscal",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  },
+  {
+    "id": "mackinnons-shrike",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  },
+  {
+    "id": "cape-wagtail",
+    "status": "completed",
+    "asset": "assets/pixel/cape-wagtail.png"
+  },
+  {
+    "id": "cape-robin-chat",
+    "status": "completed",
+    "asset": "assets/pixel/cape-robin-chat.png"
+  },
+  {
+    "id": "african-pygmy-kingfisher",
+    "status": "completed",
+    "asset": "assets/pixel/african-pygmy-kingfisher.png"
+  },
+  {
+    "id": "sao-tome-fiscal",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  },
+  {
+    "id": "fiscal-flycatcher",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  },
+  {
+    "id": "sao-tome-thrush",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  },
+  {
+    "id": "cape-crow",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  },
+  {
+    "id": "sao-tome-oriole",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  },
+  {
+    "id": "karoo-scrub-robin",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  },
+  {
+    "id": "madagascar-kingfisher",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  },
+  {
+    "id": "madagascar-kestrel",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  },
+  {
+    "id": "madagascar-magpie-robin",
+    "status": "pending",
+    "asset": null,
+    "reason": "image-generation-usage-limit"
+  }
+]

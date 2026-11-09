@@ -1,0 +1,23 @@
+{
+  "checks": [
+    "Space clears assembled skewer and suppresses native activation",
+    "held Space does not repeatedly clear and does not scroll",
+    "guard: desktop",
+    "guard: running",
+    "guard: paused",
+    "guard: dialog",
+    "guard: gate",
+    "guard: hidden",
+    "guard: input",
+    "guard: editable",
+    "guard: composition",
+    "guard: ctrl",
+    "guard: alt",
+    "guard: meta",
+    "guard: shift",
+    "number 1 and 0 selection retained",
+    "stage, bird, chef and save data retained"
+  ],
+  "build": "passed",
+  "browserValidation": "Not run; browser executable unavailable. Actual keyboard/browser and device verification pending."
+}

@@ -1,0 +1,18 @@
+{
+  "title": {
+    "font": "Jua, \"Noto Emoji\", sans-serif",
+    "loaded": true
+  },
+  "online": {
+    "cached": 110,
+    "controlled": true,
+    "guests": 77
+  },
+  "offline": {
+    "pngDecoded": true,
+    "immediateCook": true,
+    "autoBurn": true
+  },
+  "orientation": "any",
+  "errors": []
+}

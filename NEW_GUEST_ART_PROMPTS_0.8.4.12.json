@@ -1,0 +1,114 @@
+{
+  "mode": "built-in image_gen",
+  "referenceSource": "Cornell BirdNET / Macaulay reference photos inspected; Visual Style Guide v1.0",
+  "assets": [
+    {
+      "id": "slaty-backed-gull",
+      "prompt": "Use case: stylized-concept. Asset: ONE bird guest sprite for Korean casual game Shrike Tycoon. Subject: adult breeding Slaty-backed Gull (Larus schistisagus). Thick-set gull with pure white head neck and belly, very dark slate-grey back and folded wings, bold white tertial crescent and white wingtip spots, pale yellow iris, thick yellow beak with small red spot on lower mandible, intense pink legs and webbed feet. Full-body bird facing LEFT, wings folded, two feet visible. Style: warm friendly rounded proportions, subtly oversized rounded head and expressive eye, warm dark-brown outline, crisp stair-step pixel art with grouped feather shading like a polished 16-bit bird restaurant game. Entire beak, tail and feet inside canvas with at least 9% transparent margin. Truly transparent alpha background. No water, branch, floor, shadow, props, clothes, text, labels, UI, extra birds. No blur or photorealism.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-baa14d79-9d2a-47d6-8783-a38171910406.png",
+      "name": "큰재갈매기",
+      "scientificName": "Larus schistisagus",
+      "features": "짙은 회색 등과 날개, 흰 머리와 배, 분홍 다리, 노란 부리와 붉은 반점",
+      "targetAsset": "assets/pixel/slaty-backed-gull.png",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Larus%20schistisagus?size=medium",
+      "taxonomySource": "https://birdnet.cornell.edu/taxonomy/species/Larus%20schistisagus",
+      "status": "integrated"
+    },
+    {
+      "id": "little-grebe",
+      "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Style: warm friendly rounded proportions, subtly oversized rounded head and expressive eye, warm dark-brown outline, crisp stair-step pixel art with grouped feather shading like a polished 16-bit bird restaurant game. Bird facing LEFT, wings folded. Entire beak, tail and feet inside canvas with at least 9% transparent margin. True alpha transparency. No background, floor, shadow, branch, props, clothes, text, UI, extra birds. No blur, gradients or photorealism. Adult breeding Little Grebe (Tachybaptus ruficollis): compact round dark brown body, fluffy buff rear, dark cap, chestnut-rufous cheek and neck, short pointed dark bill with bright cream-yellow gape patch, golden eye. In a natural low resting stance with tiny rear-set lobed feet visible. No long heron legs, no duck bill, no water.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-95a46ee4-8d6c-4f92-ad04-541b79f26fff.png",
+      "name": "논병아리",
+      "scientificName": "Tachybaptus ruficollis",
+      "features": "작은 둥근 몸, 적갈색 뺨과 목, 노란 부리 기부 반점, 솜털 같은 엉덩이",
+      "targetAsset": "assets/pixel/little-grebe.png",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Tachybaptus%20ruficollis?size=medium",
+      "taxonomySource": "https://birdnet.cornell.edu/taxonomy/species/Tachybaptus%20ruficollis",
+      "status": "integrated"
+    },
+    {
+      "id": "beijing-babbler",
+      "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Style: warm friendly rounded proportions, subtly oversized rounded head and expressive eye, warm dark-brown outline, crisp stair-step pixel art with grouped feather shading like a polished 16-bit bird restaurant game. Bird facing LEFT, wings folded. Entire beak, tail and feet inside canvas with at least 9% transparent margin. True alpha transparency. No background, floor, shadow, branch, props, clothes, text, UI, extra birds. No blur, gradients or photorealism. Beijing Babbler (Rhopophilus pekinensis): long narrow graduated brown tail, brown-grey crown and back with narrow dark streaks, white eyebrow and throat, buff-white breast with fine brown streaking on flanks, warm rusty buff belly sides, slender pointed grey bill, brown legs. Full standing posture, both feet visible. This is a Rhopophilus babbler, not a scimitar-babbler: no curved long beak.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-cf2e5e00-e6b5-4301-9458-adc658aeb29d.png",
+      "name": "꼬리치레",
+      "scientificName": "Rhopophilus pekinensis",
+      "features": "긴 갈색 꼬리, 흰 눈썹과 목, 갈색 줄무늬 등과 옆구리",
+      "targetAsset": "assets/pixel/beijing-babbler.png",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Rhopophilus%20pekinensis?size=medium",
+      "taxonomySource": "https://birdnet.cornell.edu/taxonomy/species/Rhopophilus%20pekinensis",
+      "status": "integrated"
+    },
+    {
+      "id": "yellow-bittern",
+      "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Style: warm friendly rounded proportions, subtly oversized rounded head and expressive eye, warm dark-brown outline, crisp stair-step pixel art with grouped feather shading like a polished 16-bit bird restaurant game. Bird facing LEFT, wings folded. Entire beak, tail and feet inside canvas with at least 9% transparent margin. True alpha transparency. No background, floor, shadow, branch, props, clothes, text, UI, extra birds. No blur, gradients or photorealism. Adult male Yellow Bittern (Botaurus sinensis): small buff-ochre heron with chestnut-brown back, blackish crown, buff-yellow face and throat, black folded flight feathers, thin long pointed yellow bill, pale yellow-green eyes and legs. Neck gently curved, compact body; both feet visible. Cream throat with discreet brown vertical streaks. No grey heron colours.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-1b52f30a-1f57-4dd0-b017-b6b583b3cd22.png",
+      "name": "덤불해오라기",
+      "scientificName": "Botaurus sinensis",
+      "features": "황갈색 몸, 검은 머리 위와 날개, 긴 노란 부리, 황록색 다리",
+      "targetAsset": "assets/pixel/yellow-bittern.png",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Botaurus%20sinensis?size=medium",
+      "taxonomySource": "https://birdnet.cornell.edu/taxonomy/species/Botaurus%20sinensis",
+      "status": "integrated"
+    },
+    {
+      "id": "palm-cockatoo",
+      "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Style: warm friendly rounded proportions, subtly oversized rounded head and expressive eye, warm dark-brown outline, crisp stair-step pixel art with grouped feather shading like a polished 16-bit bird restaurant game. Bird facing LEFT, wings folded. Entire beak, tail and feet inside canvas with at least 9% transparent margin. True alpha transparency. No background, floor, shadow, branch, props, clothes, text, UI, extra birds. No blur, gradients or photorealism. Palm Cockatoo (Probosciger aterrimus), smoky charcoal-grey bird with a very tall swept-back spiky black crest, enormous hooked black bill, bright red bare cheek patch, folded wings, long dark tail and grey zygodactyl feet. One friendly full-body standing bird facing left. Important: flat opaque pixel colours on the bird, 100% empty transparent canvas around the bird; absolutely NO glow, NO halo, NO shadow, NO haze, NO atmospheric backdrop. Use square canvas with wide 12% EMPTY margins. A production-ready game character sprite, no cut off crest or tail. Not a portrait photo.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-ecea1cf0-10fb-4d41-a598-a507ec2957c3.png",
+      "name": "야자잎검은유황앵무",
+      "scientificName": "Probosciger aterrimus",
+      "features": "숯빛 몸, 긴 검은 관우, 큰 검은 부리, 붉은 맨살 뺨",
+      "targetAsset": "assets/pixel/palm-cockatoo.png",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Probosciger%20aterrimus?size=medium",
+      "taxonomySource": "https://birdnet.cornell.edu/taxonomy/species/Probosciger%20aterrimus",
+      "status": "integrated"
+    },
+    {
+      "id": "japanese-accentor",
+      "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Style: warm friendly rounded proportions, subtly oversized rounded head and expressive eye, warm dark-brown outline, crisp stair-step pixel art with grouped feather shading like a polished 16-bit bird restaurant game. Bird facing LEFT, wings folded. Entire beak, tail and feet inside canvas with at least 9% transparent margin. True alpha transparency. No background, floor, shadow, branch, props, clothes, text, UI, extra birds. No blur, gradients or photorealism. Japanese Accentor (Prunella rubida): small round sparrow-sized bird with grey-brown finely streaked crown and cheek, subtle pale fine facial streaks, bright red iris, slender small dark pointed bill, brown upperparts with dark streaks, warm rust-brown flanks with dark streaks, grey throat breast and pale grey belly, modest brown tail and thin pink-brown legs. Full-body standing, both feet visible. No broad yellow eyebrow or black face mask.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-b98fc0fa-6a91-48b3-b750-1bdcead1182f.png",
+      "name": "쇠바위종다리",
+      "scientificName": "Prunella rubida",
+      "features": "붉은 홍채, 가는 부리, 회색 가슴과 얼굴, 갈색 줄무늬 등과 옆구리",
+      "targetAsset": "assets/pixel/japanese-accentor.png",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Prunella%20rubida?size=medium",
+      "taxonomySource": "https://birdnet.cornell.edu/taxonomy/species/Prunella%20rubida",
+      "status": "integrated"
+    },
+    {
+      "id": "japanese-grosbeak",
+      "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Style: warm friendly rounded proportions, subtly oversized rounded head and expressive eye, warm dark-brown outline, crisp stair-step pixel art with grouped feather shading like a polished 16-bit bird restaurant game. Bird facing LEFT, wings folded. Entire beak, tail and feet inside canvas with at least 9% transparent margin. True alpha transparency. No background, floor, shadow, branch, props, clothes, text, UI, extra birds. No blur, gradients or photorealism. Japanese Grosbeak (Eophona personata): stocky rounded finch with very large conical entirely golden-yellow bill, black crown and black face around bill, pale taupe-grey neck breast body, black wings with clear white patch, black long tail and pink-grey feet. Full-body standing, both feet visible. No orange flanks, no black tip on bill, no green body. The black hood is limited to front and crown of head, nape is grey.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-60b89eae-b42d-48f6-83b9-e5ed58d78c63.png",
+      "name": "큰부리밀화부리",
+      "scientificName": "Eophona personata",
+      "features": "굵은 노란 부리, 검은 머리 앞부분, 회갈색 몸, 검은 날개와 흰 날개 무늬",
+      "targetAsset": "assets/pixel/japanese-grosbeak.png",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Eophona%20personata?size=medium",
+      "taxonomySource": "https://birdnet.cornell.edu/taxonomy/species/Eophona%20personata",
+      "status": "integrated"
+    },
+    {
+      "id": "black-grouse",
+      "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Style: warm friendly rounded proportions, subtly oversized rounded head and expressive eye, warm dark-brown outline, crisp stair-step pixel art with grouped feather shading like a polished 16-bit bird restaurant game. Bird facing LEFT, wings folded. Entire beak, tail and feet inside canvas with at least 9% transparent margin. True alpha transparency. No background, floor, shadow, branch, props, clothes, text, UI, extra birds. No blur, gradients or photorealism. Adult male Black Grouse (Lyrurus tetrix): plump large grouse with glossy blue-black neck and breast, black body, vivid red eyebrow combs above eyes, short stout grey-black bill, white wingbar and white undertail coverts, distinctive lyre-shaped black outer tail feathers curled outward, feathery grey legs and feet. Full-body standing in a relaxed mild display so lyre tail is recognisable, both feet visible. No rooster wattles, no chicken upright comb.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-9039d127-4e2b-4978-ba20-b91503294f28.png",
+      "name": "멧닭",
+      "scientificName": "Lyrurus tetrix",
+      "features": "수컷의 푸른 광택이 있는 검은 몸, 붉은 눈썹, 흰 날개 띠, 리라 모양 꼬리",
+      "targetAsset": "assets/pixel/black-grouse.png",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Lyrurus%20tetrix?size=medium",
+      "taxonomySource": "https://birdnet.cornell.edu/taxonomy/species/Lyrurus%20tetrix",
+      "status": "integrated"
+    },
+    {
+      "id": "short-tailed-albatross",
+      "prompt": "Use case: stylized-concept. Asset: ONE transparent full-body bird guest sprite for Shrike Tycoon. Style: warm friendly rounded proportions, subtly oversized rounded head and expressive eye, warm dark-brown outline, crisp stair-step pixel art with grouped feather shading like a polished 16-bit bird restaurant game. Bird facing LEFT, wings folded. Entire beak, tail and feet inside canvas with at least 9% transparent margin. True alpha transparency. No background, floor, shadow, branch, props, clothes, text, UI, extra birds. No blur, gradients or photorealism. Adult Short-tailed Albatross (Phoebastria albatrus): white body and neck, warm golden-buff crown and nape, very large pale bubblegum-pink hooked bill with faint blue tip and tube nostrils, black outer wings with white upperwing coverts and folded white scapulars, short dark tail, pale grey-pink sturdy webbed feet. Full-body bird standing with folded wings, both feet visible. Rounded friendly proportions but clearly albatross, not gull; huge long thick pink bill.",
+      "generatedPath": "/workspace/scratch/81b214285e41/generated_images/exec-b8f3d704-8d16-4bd5-ba34-6bfebc5c1d9c.png",
+      "name": "알바트로스",
+      "scientificName": "Phoebastria albatrus",
+      "features": "흰 몸, 황금빛 머리와 목덜미, 큰 분홍 부리, 검고 흰 날개",
+      "targetAsset": "assets/pixel/short-tailed-albatross.png",
+      "referencePhoto": "https://birdnet.cornell.edu/taxonomy/api/image/Phoebastria%20albatrus?size=medium",
+      "taxonomySource": "https://birdnet.cornell.edu/taxonomy/species/Phoebastria%20albatrus",
+      "status": "integrated"
+    }
+  ]
+}

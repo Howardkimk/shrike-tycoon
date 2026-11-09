@@ -1,0 +1,215 @@
+{
+  "errors": [],
+  "bad": [],
+  "views": [
+    {
+      "width": 1366,
+      "height": 768,
+      "orders": [
+        {
+          "x": 52,
+          "y": 134,
+          "w": 239.59375,
+          "h": 226.640625
+        },
+        {
+          "x": 307.59375,
+          "y": 134,
+          "w": 239.59375,
+          "h": 226.640625
+        },
+        {
+          "x": 563.1875,
+          "y": 134,
+          "w": 239.609375,
+          "h": 226.640625
+        },
+        {
+          "x": 818.796875,
+          "y": 134,
+          "w": 239.59375,
+          "h": 226.640625
+        },
+        {
+          "x": 1074.390625,
+          "y": 134,
+          "w": 239.609375,
+          "h": 226.640625
+        }
+      ],
+      "burn": {
+        "x": 1242,
+        "y": 37,
+        "w": 88,
+        "h": 44,
+        "text": "🔥 버닝 중"
+      }
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "orders": [
+        {
+          "x": 22,
+          "y": 75,
+          "w": 154.390625,
+          "h": 91.5
+        },
+        {
+          "x": 183.390625,
+          "y": 75,
+          "w": 154.40625,
+          "h": 91.5
+        },
+        {
+          "x": 344.796875,
+          "y": 75,
+          "w": 154.390625,
+          "h": 91.5
+        },
+        {
+          "x": 506.1875,
+          "y": 75,
+          "w": 154.40625,
+          "h": 91.5
+        },
+        {
+          "x": 667.59375,
+          "y": 75,
+          "w": 154.390625,
+          "h": 91.5
+        }
+      ],
+      "burn": {
+        "x": 751,
+        "y": 8,
+        "w": 76,
+        "h": 44,
+        "text": "🔥 버닝 중"
+      }
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "orders": [
+        {
+          "x": 22,
+          "y": 75,
+          "w": 119,
+          "h": 79
+        },
+        {
+          "x": 148,
+          "y": 75,
+          "w": 119,
+          "h": 79
+        },
+        {
+          "x": 274,
+          "y": 75,
+          "w": 119,
+          "h": 79
+        },
+        {
+          "x": 400,
+          "y": 75,
+          "w": 119,
+          "h": 79
+        },
+        {
+          "x": 526,
+          "y": 75,
+          "w": 119,
+          "h": 79
+        }
+      ],
+      "burn": {
+        "x": 574,
+        "y": 8,
+        "w": 76,
+        "h": 44,
+        "text": "🔥 버닝 중"
+      }
+    }
+  ],
+  "images": [
+    {
+      "src": "assets/pixel/japanese-tit.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/marsh-tit.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/white-wagtail.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/grey-wagtail.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/eastern-cattle-egret.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/common-kingfisher.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/great-spotted-woodpecker.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/eurasian-nuthatch.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/brown-eared-bulbul.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/oriental-magpie.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/daurian-redstart.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/grey-heron.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/eurasian-sparrowhawk.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/oriental-scops-owl.png",
+      "loaded": true,
+      "fit": "contain"
+    },
+    {
+      "src": "assets/pixel/oriental-magpie.png",
+      "loaded": true,
+      "fit": "contain"
+    }
+  ],
+  "guests": 77,
+  "pixel": 14,
+  "world1Complete": true
+}

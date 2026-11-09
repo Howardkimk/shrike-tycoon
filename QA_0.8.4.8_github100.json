@@ -1,0 +1,104 @@
+{
+  "errors": [],
+  "bad": [],
+  "centers": [
+    {
+      "w": 1366,
+      "h": 768,
+      "results": [
+        {
+          "name": "유럽울새",
+          "align": "center",
+          "offsets": [
+            0
+          ]
+        },
+        {
+          "name": "European Bee-eater",
+          "align": "center",
+          "offsets": [
+            0
+          ]
+        },
+        {
+          "name": "Red-backed Shrike",
+          "align": "center",
+          "offsets": [
+            0.0078125
+          ]
+        },
+        {
+          "name": "Common Blackbird",
+          "align": "center",
+          "offsets": [
+            0
+          ]
+        },
+        {
+          "name": "Lesser Grey Shrike",
+          "align": "center",
+          "offsets": [
+            0.0078125
+          ]
+        }
+      ]
+    },
+    {
+      "w": 667,
+      "h": 375,
+      "results": [
+        {
+          "name": "유럽울새",
+          "align": "center",
+          "offsets": [
+            0
+          ]
+        },
+        {
+          "name": "European Bee-eater",
+          "align": "center",
+          "offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Red-backed Shrike",
+          "align": "center",
+          "offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Common Blackbird",
+          "align": "center",
+          "offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Lesser Grey Shrike",
+          "align": "center",
+          "offsets": [
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "cached": {
+    "names": [
+      "shrike-tycoon-0.8.4.8-github100-centered"
+    ],
+    "files": 99
+  },
+  "fonts": {
+    "jua": true,
+    "emoji": true
+  },
+  "subdirectoryDeployment": true,
+  "offlineReload": true
+}

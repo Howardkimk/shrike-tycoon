@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "name": "99% does not activate",
+      "ok": true
+    },
+    {
+      "name": "perfect serving crosses threshold and auto activates",
+      "ok": true
+    },
+    {
+      "name": "refilling during active Burning does not restart it",
+      "ok": true
+    },
+    {
+      "name": "charged gauge activates again after previous Burning ends",
+      "ok": true
+    },
+    {
+      "name": "paused game does not auto activate",
+      "ok": true
+    },
+    {
+      "name": "resume activates pending full gauge",
+      "ok": true
+    },
+    {
+      "name": "finished game does not activate",
+      "ok": true
+    },
+    {
+      "name": "long-tailed Burning still adds two hearths",
+      "ok": true
+    },
+    {
+      "name": "Burning display is not a manual button",
+      "ok": true
+    }
+  ],
+  "errors": []
+}

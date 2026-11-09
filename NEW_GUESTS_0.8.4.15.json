@@ -1,0 +1,41 @@
+[
+  {
+    "id": "eastern-spot-billed-duck",
+    "name": "흰뺨검둥오리",
+    "englishName": "Eastern Spot-billed Duck",
+    "scientificName": "Anas zonorhyncha",
+    "emoji": "🦆",
+    "diet": {
+      "primary": [
+        "seed"
+      ],
+      "secondary": [
+        "aquaticInsect"
+      ],
+      "rare": [],
+      "never": [
+        "grasshopper",
+        "caterpillar",
+        "beetle",
+        "frog",
+        "lizard",
+        "mouse",
+        "fish",
+        "smallBird"
+      ]
+    },
+    "note": "동아시아의 논·연못·저수지·하천·습지에 서식하는 수면성 오리. 씨앗과 수생식물 등을 먹으며 작은 수서무척추동물도 이용한다. 게임에서는 식물성 먹이를 씨앗·견과, 수서무척추동물을 수서곤충으로 단순화했다. 검은 부리의 노란 끝, 흰 뺨의 짙은 줄무늬와 청보라색 날개깃이 특징이다.",
+    "stageIds": [
+      7,
+      9,
+      11,
+      15,
+      16,
+      17,
+      18,
+      20
+    ],
+    "features": "Black bill with yellow tip, pale cheeks with separate dark eye and moustache stripes, brown scalloped body, blue-violet speculum with white border, orange webbed feet",
+    "source": "https://ebird.org/species/spbduc"
+  }
+]

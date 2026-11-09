@@ -1,0 +1,123 @@
+[
+  {
+    "id": "northern-fiscal",
+    "asset": "assets/pixel/northern-fiscal.png",
+    "alphaBounds": [
+      57,
+      177,
+      1213,
+      1167
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "mackinnons-shrike",
+    "asset": "assets/pixel/mackinnons-shrike.png",
+    "alphaBounds": [
+      68,
+      197,
+      1201,
+      1150
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "fiscal-flycatcher",
+    "asset": "assets/pixel/fiscal-flycatcher.png",
+    "alphaBounds": [
+      83,
+      171,
+      1182,
+      1168
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "cape-crow",
+    "asset": "assets/pixel/cape-crow.png",
+    "alphaBounds": [
+      66,
+      187,
+      1205,
+      1175
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "karoo-scrub-robin",
+    "asset": "assets/pixel/karoo-scrub-robin.png",
+    "alphaBounds": [
+      72,
+      165,
+      1215,
+      1174
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "sao-tome-fiscal",
+    "asset": "assets/pixel/sao-tome-fiscal.png",
+    "alphaBounds": [
+      64,
+      163,
+      1194,
+      1179
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "sao-tome-thrush",
+    "asset": "assets/pixel/sao-tome-thrush.png",
+    "alphaBounds": [
+      58,
+      165,
+      1191,
+      1180
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "sao-tome-oriole",
+    "asset": "assets/pixel/sao-tome-oriole.png",
+    "alphaBounds": [
+      65,
+      159,
+      1202,
+      1181
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "madagascar-kingfisher",
+    "asset": "assets/pixel/madagascar-kingfisher.png",
+    "alphaBounds": [
+      113,
+      191,
+      1168,
+      1142
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "madagascar-kestrel",
+    "asset": "assets/pixel/madagascar-kestrel.png",
+    "alphaBounds": [
+      83,
+      153,
+      1194,
+      1179
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "madagascar-magpie-robin",
+    "asset": "assets/pixel/madagascar-magpie-robin.png",
+    "alphaBounds": [
+      59,
+      160,
+      1207,
+      1185
+    ],
+    "status": "completed"
+  }
+]

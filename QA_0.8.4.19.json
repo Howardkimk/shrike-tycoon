@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "5 second effect, 10 second cooldown",
+    "repeated taps cannot extend effect",
+    "all three grills gain 3 seconds over 5 seconds",
+    "boost stops at effect expiry",
+    "READY, burnt and empty grills unchanged",
+    "no charge consumed without cooking skewers",
+    "pause blocks activation",
+    "lobby and results block activation",
+    "new skewer gains only time after placement",
+    "completion timestamp precise, READY grace not accelerated",
+    "frame size independent cooking",
+    "pause shifts effect and cooldown clocks",
+    "bird/stage/chef data and save keys unchanged"
+  ],
+  "typeScriptBuild": "passed",
+  "browserValidation": "Not run; no browser executable available. Mobile layout and real devices unverified."
+}

@@ -1,5 +1,5 @@
 "use strict";
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 const SAVE_VERSION = 11;
 // Keep the 0.3 key so existing Prototype 0.3.3 saves migrate automatically.
 const SAVE_KEY = "shrikeTycoonPrototype03Stable";
@@ -1907,7 +1907,17 @@ function syncIngredientInputMode() {
     });
 }
 window.addEventListener("resize", syncIngredientInputMode);
-(_c = (_a = window.matchMedia) === null || _a === void 0 ? void 0 : (_b = _a.call(window, "(pointer: coarse)")).addEventListener) === null || _c === void 0 ? void 0 : _c.call(_b, "change", syncIngredientInputMode);
+function syncGameViewport() {
+    var _a;
+    const v = window.visualViewport;
+    if (v && v.scale !== 1)
+        return;
+    document.documentElement.style.setProperty("--game-viewport-height", `${Math.floor(Math.min(innerHeight, (_a = v === null || v === void 0 ? void 0 : v.height) !== null && _a !== void 0 ? _a : innerHeight))}px`);
+}
+window.addEventListener("resize", syncGameViewport);
+(_a = window.visualViewport) === null || _a === void 0 ? void 0 : _a.addEventListener("resize", syncGameViewport);
+syncGameViewport();
+(_d = (_b = window.matchMedia) === null || _b === void 0 ? void 0 : (_c = _b.call(window, "(pointer: coarse)")).addEventListener) === null || _d === void 0 ? void 0 : _d.call(_c, "change", syncIngredientInputMode);
 function updateFoodInventoryHint() {
     const count = displayedFoodIds().length;
     const vertical = foodButtonsEl.clientHeight > 0 && foodButtonsEl.scrollHeight > foodButtonsEl.clientHeight + 1;
@@ -2017,7 +2027,8 @@ function renderBurners() {
             state = orphaned ? "주문 종료 · 눌러 회수" : "OVERCOOKED · 지금 서빙";
             visualState = "overcooked";
         }
-        const html = `<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}${b.orderId !== null ? ` <span class="burner-order-number">#${b.orderId}</span>` : ""}</div>${orphaned ? '<div class="burner-order-ended">주문 종료</div>' : ""}<div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe, visualState, "burner") : "EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`;
+        const compactState = orphaned ? "회수" : b.state === "cooking" ? `${Math.max(0, (b.readyAt - now) / 1000).toFixed(1)}s` : b.state === "ready" ? "서빙!" : b.state === "overcooked" ? "탐 · 서빙" : "비어 있음";
+        const html = `<span class="flame">🔥</span><div class="burner-title">화구 ${b.index + 1}${b.orderId !== null ? ` <span class="burner-order-number">#${b.orderId}</span>` : ""}</div>${orphaned ? '<div class="burner-order-ended">주문 종료</div>' : ""}<div class="burner-recipe">${b.recipe.length ? recipeEmoji(b.recipe, visualState, "burner") : "EMPTY"}</div><div class="burner-state"><span class="burner-state-full">${state}</span><span class="burner-state-compact" aria-hidden="true">${compactState}</span></div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`;
         if (btn.dataset.renderKey !== html) {
             btn.innerHTML = html;
             btn.dataset.renderKey = html;
@@ -2176,7 +2187,7 @@ function closeDialog(dialog) { try {
 catch {
     dialog.removeAttribute("open");
 } dialog.classList.remove("dialog-fallback-open"); }
-const coarsePointerQuery = (_d = window.matchMedia) === null || _d === void 0 ? void 0 : _d.call(window, "(pointer: coarse)");
+const coarsePointerQuery = (_e = window.matchMedia) === null || _e === void 0 ? void 0 : _e.call(window, "(pointer: coarse)");
 const isCoarsePointer = () => Boolean(coarsePointerQuery === null || coarsePointerQuery === void 0 ? void 0 : coarsePointerQuery.matches);
 function closeAllDialogs() { document.querySelectorAll("dialog[open]").forEach(dialog => { try {
     dialog.close();

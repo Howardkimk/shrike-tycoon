@@ -1,6 +1,6 @@
 {
-  "name": "shrike-tycoon-prototype-0-9-3",
-  "version": "0.9.3",
+  "name": "shrike-tycoon-prototype-0-9-4",
+  "version": "0.9.4",
   "private": true,
   "scripts": {
     "build": "tsc -p tsconfig.json",

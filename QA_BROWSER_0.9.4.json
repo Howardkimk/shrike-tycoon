@@ -1,0 +1,2176 @@
+{
+  "engine": "Chromium 133",
+  "mode": "isolated inline page with reduced-resolution QA-only images; network and audio mocked",
+  "reports": [
+    {
+      "width": 1366,
+      "height": 900,
+      "touch": false,
+      "actualInput": "Playwright mouse click",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 194,
+          "bottom": 673,
+          "height": 479
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 12,
+            "y": 12,
+            "width": 1342,
+            "height": 876,
+            "right": 1354,
+            "bottom": 888
+          },
+          "orders": {
+            "x": 33,
+            "y": 115,
+            "width": 1300,
+            "height": 246.90625,
+            "right": 1333,
+            "bottom": 361.90625
+          },
+          "foodButtons": {
+            "x": 37,
+            "y": 705,
+            "width": 1292,
+            "height": 104,
+            "right": 1329,
+            "bottom": 809
+          },
+          "burners": {
+            "x": 795.65625,
+            "y": 432.90625,
+            "width": 528.328125,
+            "height": 247.09375,
+            "right": 1323.984375,
+            "bottom": 680
+          },
+          "pauseButton": {
+            "x": 1143,
+            "y": 826,
+            "width": 67,
+            "height": 44,
+            "right": 1210,
+            "bottom": 870
+          },
+          "quitButton": {
+            "x": 1216,
+            "y": 826,
+            "width": 123,
+            "height": 44,
+            "right": 1339,
+            "bottom": 870
+          },
+          "use-tea": {
+            "x": 927,
+            "y": 826,
+            "width": 106,
+            "height": 44,
+            "right": 1033,
+            "bottom": 870
+          },
+          "use-ember": {
+            "x": 1039,
+            "y": 826,
+            "width": 96,
+            "height": 44,
+            "right": 1135,
+            "bottom": 870
+          },
+          "fanButton": {
+            "x": 1231.984375,
+            "y": 380.90625,
+            "width": 92,
+            "height": 44,
+            "right": 1323.984375,
+            "bottom": 424.90625
+          },
+          "clearSkewerButton": {
+            "x": 513.828125,
+            "y": 636,
+            "width": 267.828125,
+            "height": 44,
+            "right": 781.65625,
+            "bottom": 680
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": true
+          }
+        ],
+        "pageWidth": 1366
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "touch": false,
+      "actualInput": "Playwright mouse click",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 194,
+          "bottom": 541,
+          "height": 347
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 12,
+            "y": 12,
+            "width": 1342,
+            "height": 744,
+            "right": 1354,
+            "bottom": 756
+          },
+          "orders": {
+            "x": 33,
+            "y": 115,
+            "width": 1300,
+            "height": 186.265625,
+            "right": 1333,
+            "bottom": 301.265625
+          },
+          "foodButtons": {
+            "x": 37,
+            "y": 572.984375,
+            "width": 1292,
+            "height": 104,
+            "right": 1329,
+            "bottom": 676.984375
+          },
+          "burners": {
+            "x": 795.65625,
+            "y": 372.265625,
+            "width": 528.328125,
+            "height": 175.71875,
+            "right": 1323.984375,
+            "bottom": 547.984375
+          },
+          "pauseButton": {
+            "x": 1143,
+            "y": 693.984375,
+            "width": 67,
+            "height": 44,
+            "right": 1210,
+            "bottom": 737.984375
+          },
+          "quitButton": {
+            "x": 1216,
+            "y": 693.984375,
+            "width": 123,
+            "height": 44,
+            "right": 1339,
+            "bottom": 737.984375
+          },
+          "use-tea": {
+            "x": 927,
+            "y": 693.984375,
+            "width": 106,
+            "height": 44,
+            "right": 1033,
+            "bottom": 737.984375
+          },
+          "use-ember": {
+            "x": 1039,
+            "y": 693.984375,
+            "width": 96,
+            "height": 44,
+            "right": 1135,
+            "bottom": 737.984375
+          },
+          "fanButton": {
+            "x": 1231.984375,
+            "y": 320.265625,
+            "width": 92,
+            "height": 44,
+            "right": 1323.984375,
+            "bottom": 364.265625
+          },
+          "clearSkewerButton": {
+            "x": 513.828125,
+            "y": 503.984375,
+            "width": 267.828125,
+            "height": 44,
+            "right": 781.65625,
+            "bottom": 547.984375
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": true
+          }
+        ],
+        "pageWidth": 1366
+      }
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "touch": false,
+      "actualInput": "Playwright mouse click",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 119,
+          "bottom": 474,
+          "height": 355
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 3,
+            "y": 3,
+            "width": 1018,
+            "height": 594,
+            "right": 1021,
+            "bottom": 597
+          },
+          "orders": {
+            "x": 9,
+            "y": 70,
+            "width": 441.3125,
+            "height": 474,
+            "right": 450.3125,
+            "bottom": 544
+          },
+          "foodButtons": {
+            "x": 457.3125,
+            "y": 464,
+            "width": 553.6875,
+            "height": 76,
+            "right": 1011,
+            "bottom": 540
+          },
+          "burners": {
+            "x": 503.3125,
+            "y": 98,
+            "width": 508.6875,
+            "height": 356,
+            "right": 1012,
+            "bottom": 454
+          },
+          "pauseButton": {
+            "x": 891,
+            "y": 547,
+            "width": 44,
+            "height": 44,
+            "right": 935,
+            "bottom": 591
+          },
+          "quitButton": {
+            "x": 937,
+            "y": 547,
+            "width": 78,
+            "height": 44,
+            "right": 1015,
+            "bottom": 591
+          },
+          "use-tea": {
+            "x": 9,
+            "y": 547,
+            "width": 71,
+            "height": 44,
+            "right": 80,
+            "bottom": 591
+          },
+          "use-ember": {
+            "x": 82,
+            "y": 547,
+            "width": 62,
+            "height": 44,
+            "right": 144,
+            "bottom": 591
+          },
+          "fanButton": {
+            "x": 456.3125,
+            "y": 254,
+            "width": 44,
+            "height": 44,
+            "right": 500.3125,
+            "bottom": 298
+          },
+          "clearSkewerButton": {
+            "x": 964,
+            "y": 51,
+            "width": 48,
+            "height": 44,
+            "right": 1012,
+            "bottom": 95
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": false
+          }
+        ],
+        "pageWidth": 1024
+      }
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "touch": true,
+      "actualInput": "Playwright touchscreen tap",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 119,
+          "bottom": 264,
+          "height": 145
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 3,
+            "y": 3,
+            "width": 838,
+            "height": 384,
+            "right": 841,
+            "bottom": 387
+          },
+          "orders": {
+            "x": 9,
+            "y": 70,
+            "width": 362.109375,
+            "height": 264,
+            "right": 371.109375,
+            "bottom": 334
+          },
+          "foodButtons": {
+            "x": 378.109375,
+            "y": 254,
+            "width": 452.890625,
+            "height": 76,
+            "right": 831,
+            "bottom": 330
+          },
+          "burners": {
+            "x": 424.109375,
+            "y": 98,
+            "width": 407.890625,
+            "height": 146,
+            "right": 832,
+            "bottom": 244
+          },
+          "pauseButton": {
+            "x": 711,
+            "y": 337,
+            "width": 44,
+            "height": 44,
+            "right": 755,
+            "bottom": 381
+          },
+          "quitButton": {
+            "x": 757,
+            "y": 337,
+            "width": 78,
+            "height": 44,
+            "right": 835,
+            "bottom": 381
+          },
+          "use-tea": {
+            "x": 9,
+            "y": 337,
+            "width": 71,
+            "height": 44,
+            "right": 80,
+            "bottom": 381
+          },
+          "use-ember": {
+            "x": 82,
+            "y": 337,
+            "width": 62,
+            "height": 44,
+            "right": 144,
+            "bottom": 381
+          },
+          "fanButton": {
+            "x": 377.109375,
+            "y": 149,
+            "width": 44,
+            "height": 44,
+            "right": 421.109375,
+            "bottom": 193
+          },
+          "clearSkewerButton": {
+            "x": 784,
+            "y": 61,
+            "width": 44,
+            "height": 44,
+            "right": 828,
+            "bottom": 105
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": false
+          }
+        ],
+        "pageWidth": 844
+      }
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "touch": true,
+      "actualInput": "Playwright touchscreen tap",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 117,
+          "bottom": 194,
+          "height": 77
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 3,
+            "y": 3,
+            "width": 562,
+            "height": 314,
+            "right": 565,
+            "bottom": 317
+          },
+          "orders": {
+            "x": 9,
+            "y": 70,
+            "width": 240.671875,
+            "height": 194,
+            "right": 249.671875,
+            "bottom": 264
+          },
+          "foodButtons": {
+            "x": 256.671875,
+            "y": 184,
+            "width": 298.328125,
+            "height": 76,
+            "right": 555,
+            "bottom": 260
+          },
+          "burners": {
+            "x": 302.671875,
+            "y": 98,
+            "width": 253.328125,
+            "height": 76,
+            "right": 556,
+            "bottom": 174
+          },
+          "pauseButton": {
+            "x": 435,
+            "y": 267,
+            "width": 44,
+            "height": 44,
+            "right": 479,
+            "bottom": 311
+          },
+          "quitButton": {
+            "x": 481,
+            "y": 267,
+            "width": 78,
+            "height": 44,
+            "right": 559,
+            "bottom": 311
+          },
+          "use-tea": {
+            "x": 9,
+            "y": 267,
+            "width": 71,
+            "height": 44,
+            "right": 80,
+            "bottom": 311
+          },
+          "use-ember": {
+            "x": 82,
+            "y": 267,
+            "width": 62,
+            "height": 44,
+            "right": 144,
+            "bottom": 311
+          },
+          "fanButton": {
+            "x": 255.671875,
+            "y": 114,
+            "width": 44,
+            "height": 44,
+            "right": 299.671875,
+            "bottom": 158
+          },
+          "clearSkewerButton": {
+            "x": 508,
+            "y": 61,
+            "width": 44,
+            "height": 44,
+            "right": 552,
+            "bottom": 105
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": false
+          }
+        ],
+        "pageWidth": 568
+      }
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "touch": true,
+      "actualInput": "Playwright touchscreen tap",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 116,
+          "bottom": 328.59375,
+          "height": 212.59375
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 3,
+            "y": 3,
+            "width": 314,
+            "height": 562,
+            "right": 317,
+            "bottom": 565
+          },
+          "orders": {
+            "x": 9,
+            "y": 72,
+            "width": 302,
+            "height": 240,
+            "right": 311,
+            "bottom": 312
+          },
+          "foodButtons": {
+            "x": 13,
+            "y": 432,
+            "width": 294,
+            "height": 76,
+            "right": 307,
+            "bottom": 508
+          },
+          "burners": {
+            "x": 59,
+            "y": 365,
+            "width": 249,
+            "height": 57,
+            "right": 308,
+            "bottom": 422
+          },
+          "pauseButton": {
+            "x": 187,
+            "y": 515,
+            "width": 44,
+            "height": 44,
+            "right": 231,
+            "bottom": 559
+          },
+          "quitButton": {
+            "x": 233,
+            "y": 515,
+            "width": 78,
+            "height": 44,
+            "right": 311,
+            "bottom": 559
+          },
+          "use-tea": {
+            "x": 9,
+            "y": 515,
+            "width": 71,
+            "height": 44,
+            "right": 80,
+            "bottom": 559
+          },
+          "use-ember": {
+            "x": 82,
+            "y": 515,
+            "width": 62,
+            "height": 44,
+            "right": 144,
+            "bottom": 559
+          },
+          "fanButton": {
+            "x": 12,
+            "y": 371.5,
+            "width": 44,
+            "height": 44,
+            "right": 56,
+            "bottom": 415.5
+          },
+          "clearSkewerButton": {
+            "x": 256,
+            "y": 328,
+            "width": 44,
+            "height": 44,
+            "right": 300,
+            "bottom": 372
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": false
+          }
+        ],
+        "pageWidth": 320
+      }
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "touch": true,
+      "actualInput": "Playwright touchscreen tap",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 116,
+          "bottom": 400.59375,
+          "height": 284.59375
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 3,
+            "y": 3,
+            "width": 354,
+            "height": 634,
+            "right": 357,
+            "bottom": 637
+          },
+          "orders": {
+            "x": 9,
+            "y": 72,
+            "width": 342,
+            "height": 312,
+            "right": 351,
+            "bottom": 384
+          },
+          "foodButtons": {
+            "x": 13,
+            "y": 504,
+            "width": 334,
+            "height": 76,
+            "right": 347,
+            "bottom": 580
+          },
+          "burners": {
+            "x": 59,
+            "y": 437,
+            "width": 289,
+            "height": 57,
+            "right": 348,
+            "bottom": 494
+          },
+          "pauseButton": {
+            "x": 227,
+            "y": 587,
+            "width": 44,
+            "height": 44,
+            "right": 271,
+            "bottom": 631
+          },
+          "quitButton": {
+            "x": 273,
+            "y": 587,
+            "width": 78,
+            "height": 44,
+            "right": 351,
+            "bottom": 631
+          },
+          "use-tea": {
+            "x": 9,
+            "y": 587,
+            "width": 71,
+            "height": 44,
+            "right": 80,
+            "bottom": 631
+          },
+          "use-ember": {
+            "x": 82,
+            "y": 587,
+            "width": 62,
+            "height": 44,
+            "right": 144,
+            "bottom": 631
+          },
+          "fanButton": {
+            "x": 12,
+            "y": 443.5,
+            "width": 44,
+            "height": 44,
+            "right": 56,
+            "bottom": 487.5
+          },
+          "clearSkewerButton": {
+            "x": 296,
+            "y": 400,
+            "width": 44,
+            "height": 44,
+            "right": 340,
+            "bottom": 444
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": false
+          }
+        ],
+        "pageWidth": 360
+      }
+    },
+    {
+      "width": 390,
+      "height": 664,
+      "touch": true,
+      "actualInput": "Playwright touchscreen tap",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 116,
+          "bottom": 424.59375,
+          "height": 308.59375
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 3,
+            "y": 3,
+            "width": 384,
+            "height": 658,
+            "right": 387,
+            "bottom": 661
+          },
+          "orders": {
+            "x": 9,
+            "y": 72,
+            "width": 372,
+            "height": 336,
+            "right": 381,
+            "bottom": 408
+          },
+          "foodButtons": {
+            "x": 13,
+            "y": 528,
+            "width": 364,
+            "height": 76,
+            "right": 377,
+            "bottom": 604
+          },
+          "burners": {
+            "x": 59,
+            "y": 461,
+            "width": 319,
+            "height": 57,
+            "right": 378,
+            "bottom": 518
+          },
+          "pauseButton": {
+            "x": 257,
+            "y": 611,
+            "width": 44,
+            "height": 44,
+            "right": 301,
+            "bottom": 655
+          },
+          "quitButton": {
+            "x": 303,
+            "y": 611,
+            "width": 78,
+            "height": 44,
+            "right": 381,
+            "bottom": 655
+          },
+          "use-tea": {
+            "x": 9,
+            "y": 611,
+            "width": 71,
+            "height": 44,
+            "right": 80,
+            "bottom": 655
+          },
+          "use-ember": {
+            "x": 82,
+            "y": 611,
+            "width": 62,
+            "height": 44,
+            "right": 144,
+            "bottom": 655
+          },
+          "fanButton": {
+            "x": 12,
+            "y": 467.5,
+            "width": 44,
+            "height": 44,
+            "right": 56,
+            "bottom": 511.5
+          },
+          "clearSkewerButton": {
+            "x": 326,
+            "y": 424,
+            "width": 44,
+            "height": 44,
+            "right": 370,
+            "bottom": 468
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": false
+          }
+        ],
+        "pageWidth": 390
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "touch": true,
+      "actualInput": "Playwright touchscreen tap",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 176,
+          "bottom": 454.265625,
+          "height": 278.265625
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 3,
+            "y": 3,
+            "width": 384,
+            "height": 838,
+            "right": 387,
+            "bottom": 841
+          },
+          "orders": {
+            "x": 9,
+            "y": 72,
+            "width": 372,
+            "height": 516,
+            "right": 381,
+            "bottom": 588
+          },
+          "foodButtons": {
+            "x": 13,
+            "y": 708,
+            "width": 364,
+            "height": 76,
+            "right": 377,
+            "bottom": 784
+          },
+          "burners": {
+            "x": 59,
+            "y": 641,
+            "width": 319,
+            "height": 57,
+            "right": 378,
+            "bottom": 698
+          },
+          "pauseButton": {
+            "x": 257,
+            "y": 791,
+            "width": 44,
+            "height": 44,
+            "right": 301,
+            "bottom": 835
+          },
+          "quitButton": {
+            "x": 303,
+            "y": 791,
+            "width": 78,
+            "height": 44,
+            "right": 381,
+            "bottom": 835
+          },
+          "use-tea": {
+            "x": 9,
+            "y": 791,
+            "width": 71,
+            "height": 44,
+            "right": 80,
+            "bottom": 835
+          },
+          "use-ember": {
+            "x": 82,
+            "y": 791,
+            "width": 62,
+            "height": 44,
+            "right": 144,
+            "bottom": 835
+          },
+          "fanButton": {
+            "x": 12,
+            "y": 647.5,
+            "width": 44,
+            "height": 44,
+            "right": 56,
+            "bottom": 691.5
+          },
+          "clearSkewerButton": {
+            "x": 326,
+            "y": 604,
+            "width": 44,
+            "height": 44,
+            "right": 370,
+            "bottom": 648
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": false
+          }
+        ],
+        "pageWidth": 390
+      }
+    }
+  ],
+  "shortViewportReports": [
+    {
+      "width": 667,
+      "height": 280,
+      "touch": true,
+      "actualInput": "Playwright touchscreen tap",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 117,
+          "bottom": 194,
+          "height": 77
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 3,
+            "y": 3,
+            "width": 661,
+            "height": 274,
+            "right": 664,
+            "bottom": 277
+          },
+          "orders": {
+            "x": 8,
+            "y": 65,
+            "width": 285.109375,
+            "height": 164,
+            "right": 293.109375,
+            "bottom": 229
+          },
+          "foodButtons": {
+            "x": 300.109375,
+            "y": 161,
+            "width": 354.890625,
+            "height": 64,
+            "right": 655,
+            "bottom": 225
+          },
+          "burners": {
+            "x": 345.109375,
+            "y": 87,
+            "width": 311.890625,
+            "height": 65,
+            "right": 657,
+            "bottom": 152
+          },
+          "pauseButton": {
+            "x": 535,
+            "y": 230,
+            "width": 44,
+            "height": 44,
+            "right": 579,
+            "bottom": 274
+          },
+          "quitButton": {
+            "x": 581,
+            "y": 230,
+            "width": 78,
+            "height": 44,
+            "right": 659,
+            "bottom": 274
+          },
+          "use-tea": {
+            "x": 8,
+            "y": 232,
+            "width": 71,
+            "height": 40,
+            "right": 79,
+            "bottom": 272
+          },
+          "use-ember": {
+            "x": 81,
+            "y": 232,
+            "width": 62,
+            "height": 40,
+            "right": 143,
+            "bottom": 272
+          },
+          "fanButton": {
+            "x": 298.109375,
+            "y": 99.5,
+            "width": 44,
+            "height": 40,
+            "right": 342.109375,
+            "bottom": 139.5
+          },
+          "clearSkewerButton": {
+            "x": 609,
+            "y": 53,
+            "width": 44,
+            "height": 40,
+            "right": 653,
+            "bottom": 93
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": false
+          }
+        ],
+        "pageWidth": 667
+      }
+    },
+    {
+      "width": 568,
+      "height": 260,
+      "touch": true,
+      "actualInput": "Playwright touchscreen tap",
+      "readyFit": {
+        "scroll": false,
+        "imageVisible": true,
+        "rect": {
+          "top": 117,
+          "bottom": 194,
+          "height": 77
+        }
+      },
+      "pantryChecks": [
+        {
+          "count": 6,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 7,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 8,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 9,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        },
+        {
+          "count": 10,
+          "noScroll": true,
+          "allFit": true,
+          "namesFit": true
+        }
+      ],
+      "checks": [
+        "buy",
+        "train",
+        "prepare",
+        "cook",
+        "tea",
+        "ember",
+        "serve",
+        "six orders",
+        "five burners",
+        "scroll reachability",
+        "chef dex close"
+      ],
+      "geometry": {
+        "boxes": {
+          "gameScreen": {
+            "x": 3,
+            "y": 3,
+            "width": 562,
+            "height": 254,
+            "right": 565,
+            "bottom": 257
+          },
+          "orders": {
+            "x": 8,
+            "y": 65,
+            "width": 241.546875,
+            "height": 144,
+            "right": 249.546875,
+            "bottom": 209
+          },
+          "foodButtons": {
+            "x": 256.546875,
+            "y": 141,
+            "width": 299.453125,
+            "height": 64,
+            "right": 556,
+            "bottom": 205
+          },
+          "burners": {
+            "x": 301.546875,
+            "y": 87,
+            "width": 256.453125,
+            "height": 45,
+            "right": 558,
+            "bottom": 132
+          },
+          "pauseButton": {
+            "x": 436,
+            "y": 210,
+            "width": 44,
+            "height": 44,
+            "right": 480,
+            "bottom": 254
+          },
+          "quitButton": {
+            "x": 482,
+            "y": 210,
+            "width": 78,
+            "height": 44,
+            "right": 560,
+            "bottom": 254
+          },
+          "use-tea": {
+            "x": 8,
+            "y": 212,
+            "width": 71,
+            "height": 40,
+            "right": 79,
+            "bottom": 252
+          },
+          "use-ember": {
+            "x": 81,
+            "y": 212,
+            "width": 62,
+            "height": 40,
+            "right": 143,
+            "bottom": 252
+          },
+          "fanButton": {
+            "x": 254.546875,
+            "y": 89.5,
+            "width": 44,
+            "height": 40,
+            "right": 298.546875,
+            "bottom": 129.5
+          },
+          "clearSkewerButton": {
+            "x": 510,
+            "y": 53,
+            "width": 44,
+            "height": 40,
+            "right": 554,
+            "bottom": 93
+          }
+        },
+        "targets": [
+          {
+            "id": "pauseButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "quitButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-tea",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "use-ember",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "fanButton",
+            "visible": true,
+            "touch": true
+          },
+          {
+            "id": "clearSkewerButton",
+            "visible": true,
+            "touch": true
+          }
+        ],
+        "containers": [
+          {
+            "id": "orders",
+            "count": 6,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "foodButtons",
+            "count": 10,
+            "reachable": true,
+            "scroll": false
+          },
+          {
+            "id": "burners",
+            "count": 5,
+            "reachable": true,
+            "scroll": false
+          }
+        ],
+        "pageWidth": 568
+      }
+    }
+  ],
+  "shortViewportNote": "Gameplay resized after entering at 320px height to simulate browser toolbars; menus tested at initial height."
+}

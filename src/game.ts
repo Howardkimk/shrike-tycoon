@@ -1126,6 +1126,12 @@ function syncIngredientInputMode(){
   });
 }
 window.addEventListener("resize",syncIngredientInputMode);
+function syncGameViewport(){
+ const v=window.visualViewport;if(v&&v.scale!==1)return;
+ document.documentElement.style.setProperty("--game-viewport-height",`${Math.floor(Math.min(innerHeight,v?.height??innerHeight))}px`);
+}
+window.addEventListener("resize",syncGameViewport);window.visualViewport?.addEventListener("resize",syncGameViewport);syncGameViewport();
+
 window.matchMedia?.("(pointer: coarse)").addEventListener?.("change",syncIngredientInputMode);
 function updateFoodInventoryHint(){
   const count=displayedFoodIds().length;
@@ -1191,7 +1197,8 @@ function renderBurners(){
     if(b.state==="cooking"){pct=Math.max(0,Math.min(100,(now-b.startedAt)/Math.max(1,b.readyAt-b.startedAt)*100));state=`조리 중 ${Math.max(0,(b.readyAt-now)/1000).toFixed(1)}s`;visualState="cooking"}
     if(b.state==="ready"){pct=100;state=orphaned?"주문 종료 · 눌러 회수":"✓ 서빙 가능 · READY";visualState="ready"}
     if(b.state==="overcooked"){pct=100;state=orphaned?"주문 종료 · 눌러 회수":"OVERCOOKED · 지금 서빙";visualState="overcooked"}
-    const html=`<span class="flame">🔥</span><div class="burner-title">화구 ${b.index+1}${b.orderId!==null?` <span class="burner-order-number">#${b.orderId}</span>`:""}</div>${orphaned?'<div class="burner-order-ended">주문 종료</div>':""}<div class="burner-recipe">${b.recipe.length?recipeEmoji(b.recipe,visualState,"burner"):"EMPTY"}</div><div class="burner-state">${state}</div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`;
+    const compactState=orphaned?"회수":b.state==="cooking"?`${Math.max(0,(b.readyAt-now)/1000).toFixed(1)}s`:b.state==="ready"?"서빙!":b.state==="overcooked"?"탐 · 서빙":"비어 있음";
+    const html=`<span class="flame">🔥</span><div class="burner-title">화구 ${b.index+1}${b.orderId!==null?` <span class="burner-order-number">#${b.orderId}</span>`:""}</div>${orphaned?'<div class="burner-order-ended">주문 종료</div>':""}<div class="burner-recipe">${b.recipe.length?recipeEmoji(b.recipe,visualState,"burner"):"EMPTY"}</div><div class="burner-state"><span class="burner-state-full">${state}</span><span class="burner-state-compact" aria-hidden="true">${compactState}</span></div><div class="cook-bar"><div class="cook-fill" style="width:${pct}%"></div></div>`;
     if(btn.dataset.renderKey!==html){btn.innerHTML=html;btn.dataset.renderKey=html;}
     btn.setAttribute("aria-label",`화구 ${b.index+1}${b.orderId!==null?`, 주문 ${b.orderId}`:""}, ${orphaned?"주문 종료, ":""}${state}`);btn.dataset.burnerIndex=String(b.index);if(b.orderId!==null)btn.dataset.orderId=String(b.orderId);else delete btn.dataset.orderId;if(!btn.isConnected)burnersEl.appendChild(btn);
   });

@@ -319,7 +319,7 @@ for(let i=1;i<=50;i++){
 const MAX_ACTIVE_ORDERS=6;
 // Keep queue growth separate from patience pressure at each new queue tier.
 function stageDifficulty(id:number){
-  const bands=[{start:1,end:5,cap:2,from:1.30,to:1.30},{start:6,end:15,cap:3,from:1.30,to:1.20},{start:16,end:30,cap:4,from:1.20,to:1.10},{start:31,end:50,cap:5,from:1.10,to:1.00},{start:51,end:70,cap:6,from:1.00,to:.95},{start:71,end:100,cap:6,from:.95,to:.90}];
+  const bands=[{start:1,end:10,cap:3,from:1.30,to:1.25},{start:11,end:30,cap:4,from:1.25,to:1.10},{start:31,end:50,cap:5,from:1.10,to:1.00},{start:51,end:70,cap:6,from:1.00,to:.95},{start:71,end:100,cap:6,from:.95,to:.90}];
   const stageId=Math.max(1,Math.min(100,id)),b=bands.find(b=>stageId<=b.end)!;
   const patience=b.from+(b.to-b.from)*(stageId-b.start)/(b.end-b.start);
   return {orderLimit:b.cap,patience,baseSeconds:BASE_ORDER_DEADLINE*patience};

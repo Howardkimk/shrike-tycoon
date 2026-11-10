@@ -17,7 +17,7 @@ w.eval(fs.readFileSync(root+'/dist/game.js','utf8')+`
 const reports=[];
 function test(name,fn){fn();reports.push(name)}
 test('renamed guest keeps stable ID',()=>{assert.equal(guests['plumbeous-water-redstart'].name,'부채꼬리바위딱새');assert.equal(guests['plumbeous-water-redstart'].id,'plumbeous-water-redstart')});
-test('all 100 stages have valid goals and order caps',()=>{assert.equal(Object.keys(stages).length,100);for(const c of Object.values(stages)){assert(c.maxOrders<=6);assert(requiredSuccessfulOrders(c)>=4);assert(requiredSuccessfulOrders(c)<=18);assert(!stageCleared(c,requiredSuccessfulOrders(c)-1));assert(stageCleared(c,requiredSuccessfulOrders(c)));for(let lv=0;lv<=2;lv++)for(const rush of [false,true])assert(activeOrderLimit(c,lv,rush)<=6)}});
+test('all 100 stages have valid goals and order caps',()=>{assert.equal(Object.keys(stages).length,100);for(const c of Object.values(stages)){assert(c.maxOrders>=3&&c.maxOrders<=6);assert(requiredSuccessfulOrders(c)>=4);assert(requiredSuccessfulOrders(c)<=18);assert(!stageCleared(c,requiredSuccessfulOrders(c)-1));assert(stageCleared(c,requiredSuccessfulOrders(c)));for(let lv=0;lv<=2;lv++)for(const rush of [false,true])assert(activeOrderLimit(c,lv,rush)<=6)}});
 test('forced spawns, upgrades and rush never exceed six orders',()=>{save=defaultSave();save.upgrades.branch=2;devMode=true;for(const id of [1,10,50,100]){selectedStage=id;startGame();feedingActiveUntil=Date.now()+10000;for(let i=0;i<20;i++)spawnOrder(true);assert.equal(orders.length,stage.maxOrders);assert.equal(ordersEl.querySelectorAll('.order-card').length,stage.maxOrders)}running=false;devMode=false});
 test('below-target failure, threshold success, final stage and old records',()=>{for(const id of [1,10,40,100])for(const win of [false,true]){save=defaultSave();save.unlockedStage=id;save.bestStars[String(id)]=3;save.bestScores[String(id)]=999999;selectedStage=id;startGame();score=100000;perfectCount=requiredSuccessfulOrders(stage)-(win?0:1);served=perfectCount;finishStage();assert.equal(save.unlockedStage,win&&id<100?id+1:id);assert.equal(save.bestStars[String(id)],3);assert.equal(save.bestScores[String(id)],999999);assert.equal(resultScreen.classList.contains('stage-defeat'),!win);assert.equal(nextStageButton.classList.contains('hidden'),!win||id===100);assert.equal(document.getElementById('resultStars').textContent,win?'★★★':'☆☆☆');assert(save.xp>0);const raw=JSON.parse(localStorage.getItem(SAVE_KEY));assert.equal(raw.unlockedStage,save.unlockedStage);const before=save.stats.plays;finishStage();assert.equal(save.stats.plays,before)}});
 test('fresh loss grants no clear stars, subgoal or chef unlock',()=>{save=defaultSave();selectedStage=18;startGame();score=100000;perfectCount=0;tripleBurnerPerfect=3;finishStage();assert.equal(save.bestStars['18'],0);assert.equal(save.unlockedStage,1);assert.equal(save.unlockedShrikes.length,1);assert(!save.bestSubGoals['18']);nextStageButton.onclick();assert.equal(selectedStage,18)});
@@ -37,9 +37,16 @@ test('urgent threshold, paused countdown, ready and burnt linkage are accurate',
 test('selected order highlights its burner and expired links are explicitly retired',()=>{startGame();spawnOrder(true);const o=orders[0];Object.assign(burners[0],{state:'ready',orderId:o.id,recipe:o.recipe});selectOrder(o.id);assert(document.querySelector('.burner').classList.contains('linked-selected'));expireOrder(o.id);renderOrders();renderBurners();assert(document.querySelector('.burner').classList.contains('orphaned'));assert(document.querySelector('.burner-state').textContent.includes('회수'));const prior=score;clickBurner(0);assert.equal(score,prior);assert.equal(burners[0].state,'empty');startGame();spawnOrder(true);renderOrders();assert.equal(document.querySelector('.order-number').textContent,'#1')});
 
 test('difficulty curve is monotonic with no patience cut at queue tier transitions',()=>{
- const caps=id=>id<=5?2:id<=15?3:id<=30?4:id<=50?5:6;
+ const caps=id=>id<=10?3:id<=30?4:id<=50?5:6;
  for(let id=1;id<=100;id++){const d=stageDifficulty(id);assert.equal(d.orderLimit,caps(id));assert.equal(stages[id].maxOrders,caps(id));assert(d.baseSeconds>=54&&d.baseSeconds<=78);if(id>1){const prev=stageDifficulty(id-1);assert(d.patience<=prev.patience+1e-10);if(d.orderLimit>prev.orderLimit)assert(Math.abs(d.patience-prev.patience)<1e-10)}}
  assert.equal(stageDifficulty(1).baseSeconds,78);assert.equal(stageDifficulty(100).baseSeconds,54);
+});
+test('three opening orders cook independently, refill to three, and agree with the guide',()=>{
+ save=defaultSave();selectedShrike='bull-headed';selectedStage=1;startGame();for(let i=0;i<4;i++)spawnOrder(true);assert.equal(orders.length,3);const batch=[...orders];
+ batch.forEach((o,i)=>{currentSkewer=[...o.recipe];selectedOrderId=o.id;clickBurner(i);assert.equal(burners[i].orderId,o.id);assert.equal(burners[i].state,'cooking')});
+ burners.forEach(b=>{b.state='ready';serveBurner(b)});assert.equal(perfectCount,3);assert.equal(orders.length,0);assert(!stageCleared(stage,perfectCount));for(let i=0;i<4;i++)spawnOrder(true);assert.equal(orders.length,3);
+ assert.equal(stageDifficulty(10).baseSeconds,75);assert.equal(stageDifficulty(11).baseSeconds,75);assert.equal(stageDifficulty(30).baseSeconds,66);assert.equal(stageDifficulty(31).baseSeconds,66);assert.equal(stageDifficulty(50).baseSeconds,60);assert.equal(stageDifficulty(51).baseSeconds,60);
+ assert(helpDialog.textContent.includes('1–10단계 3개, 11–30단계 4개'));running=false;
 });
 test('every stage enforces its queue cap under forced spawning, max upgrades and rush',()=>{
  const random=Math.random;let seed=900;Math.random=()=>((seed=(seed*1664525+1013904223)>>>0)/4294967296);
@@ -60,7 +67,7 @@ test('arrival deadline is frozen through weather changes and pause/resume',()=>{
 test('queue-aware clear goals retain headroom and pre-game screens describe actual difficulty',()=>{
  for(const c of Object.values(stages)){const budget=clearGoalBudgets[c.id];assert(budget.target<=budget.capacity);assert(budget.target<=Math.floor((c.duration-5)/((c.spawnMin+c.spawnMax)/2000)));}
  assert(clearGoalBudget({...stages[1],maxOrders:2}).capacity<clearGoalBudget({...stages[1],maxOrders:6}).capacity);
- for(const id of [1,6,16,31,51,100]){selectedStage=id;updateReadySummary();renderStageEcology();assert(startChoiceSummary.textContent.includes(difficultyDescription(stages[id])));assert(stageEcology.textContent.includes(difficultyDescription(stages[id])))}
+ for(const id of [1,10,11,30,31,50,51,100]){selectedStage=id;updateReadySummary();renderStageEcology();assert(startChoiceSummary.textContent.includes(difficultyDescription(stages[id])));assert(stageEcology.textContent.includes(difficultyDescription(stages[id])))}
 });
 
 
@@ -72,7 +79,7 @@ test('chef training charges correct XP, keeps species separate and blocks locked
  save.unlockedShrikes.push('tiger');save.xp=0;assert(!trainChef('tiger'));save.xp=1000;running=true;assert(!trainChef('tiger'));running=false;devMode=true;assert(!trainChef('tiger'));devMode=false;
 });
 test('training improves cooking and ready grace without increasing order caps',()=>{
- save=defaultSave();selectedStage=1;selectedShrike='bull-headed';startGame();const slow=totalCook(['beetle','fish']),grace=overcookGrace();save.chefTraining['bull-headed']=4;assert(totalCook(['beetle','fish'])<slow);assert.equal(overcookGrace(),grace+.6);assert.equal(stage.maxOrders,2);selectedShrike='tiger';assert.equal(trainingLevel(selectedShrike),0);
+ save=defaultSave();selectedStage=1;selectedShrike='bull-headed';startGame();const slow=totalCook(['beetle','fish']),grace=overcookGrace();save.chefTraining['bull-headed']=4;assert(totalCook(['beetle','fish'])<slow);assert.equal(overcookGrace(),grace+.6);assert.equal(stage.maxOrders,3);selectedShrike='tiger';assert.equal(trainingLevel(selectedShrike),0);
 });
 test('shop enforces inventory cap, cost, and persist-before-effect on storage failure',()=>{
  running=false;devMode=false;save=defaultSave();save.xp=2000;assert(buySupply('tea'));assert.equal(save.xp,1920);assert.equal(save.supplies.tea,2);save.supplies.tea=9;assert(!buySupply('tea'));assert.equal(save.xp,1920);
@@ -96,8 +103,8 @@ test('v11 backup preserves training and supplies and rejects poisoned/out-of-ran
 test('live redraw preserves interactive order and burner nodes and shows accelerated remaining time',()=>{
  save=defaultSave();selectedStage=1;startGame();spawnOrder(true);renderOrders();renderBurners();const o=ordersEl.querySelector('.order-card'),b=burnersEl.querySelector('.burner');renderOrders();renderBurners();assert.equal(ordersEl.querySelector('.order-card'),o);assert.equal(burnersEl.querySelector('.burner'),b);Object.assign(burners[0],{state:'cooking',startedAt:Date.now()-1000,readyAt:Date.now()+2000,cookSeconds:20});renderBurners();assert(burnersEl.querySelector('.burner-state').textContent.includes('2.0s'));
 });
-window.qaReport={passed:reports.length,tests:reports,renderedBrowser:'not run for 0.9.6; DOM logic tests only',windows:'not tested',saveKey:SAVE_KEY,saveVersion:SAVE_VERSION,goals:Object.values(stages).map(c=>({stage:c.id,seconds:c.duration,target:requiredSuccessfulOrders(c),orderLimit:c.maxOrders,budget:clearGoalBudgets[c.id]}))};
+window.qaReport={passed:reports.length,tests:reports,renderedBrowser:'not run for 0.9.7; DOM logic tests only',windows:'not tested',saveKey:SAVE_KEY,saveVersion:SAVE_VERSION,goals:Object.values(stages).map(c=>({stage:c.id,seconds:c.duration,target:requiredSuccessfulOrders(c),orderLimit:c.maxOrders,baseSeconds:stageDifficulty(c.id).baseSeconds,budget:clearGoalBudgets[c.id]}))};
 `);
-fs.writeFileSync(root+'/QA_0.9.6.json',JSON.stringify(w.qaReport,null,2));
+fs.writeFileSync(root+'/QA_0.9.7.json',JSON.stringify(w.qaReport,null,2));
 console.log(JSON.stringify({passed:w.qaReport.passed,tests:w.qaReport.tests},null,2));
 dom.window.close();

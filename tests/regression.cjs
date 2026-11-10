@@ -96,8 +96,8 @@ test('v11 backup preserves training and supplies and rejects poisoned/out-of-ran
 test('live redraw preserves interactive order and burner nodes and shows accelerated remaining time',()=>{
  save=defaultSave();selectedStage=1;startGame();spawnOrder(true);renderOrders();renderBurners();const o=ordersEl.querySelector('.order-card'),b=burnersEl.querySelector('.burner');renderOrders();renderBurners();assert.equal(ordersEl.querySelector('.order-card'),o);assert.equal(burnersEl.querySelector('.burner'),b);Object.assign(burners[0],{state:'cooking',startedAt:Date.now()-1000,readyAt:Date.now()+2000,cookSeconds:20});renderBurners();assert(burnersEl.querySelector('.burner-state').textContent.includes('2.0s'));
 });
-window.qaReport={passed:reports.length,tests:reports,renderedBrowser:'not run for 0.9.4; DOM logic tests only',windows:'not tested',saveKey:SAVE_KEY,saveVersion:SAVE_VERSION,goals:Object.values(stages).map(c=>({stage:c.id,seconds:c.duration,target:requiredSuccessfulOrders(c),orderLimit:c.maxOrders,budget:clearGoalBudgets[c.id]}))};
+window.qaReport={passed:reports.length,tests:reports,renderedBrowser:'not run for 0.9.5; DOM logic tests only',windows:'not tested',saveKey:SAVE_KEY,saveVersion:SAVE_VERSION,goals:Object.values(stages).map(c=>({stage:c.id,seconds:c.duration,target:requiredSuccessfulOrders(c),orderLimit:c.maxOrders,budget:clearGoalBudgets[c.id]}))};
 `);
-fs.writeFileSync(root+'/QA_0.9.4.json',JSON.stringify(w.qaReport,null,2));
+fs.writeFileSync(root+'/QA_0.9.5.json',JSON.stringify(w.qaReport,null,2));
 console.log(JSON.stringify({passed:w.qaReport.passed,tests:w.qaReport.tests},null,2));
 dom.window.close();

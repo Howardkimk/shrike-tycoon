@@ -1099,7 +1099,7 @@ function foodShortcut(index:number){return String((index+1)%10)}
 function renderFoodButtons(){
   const pool=stageFoodPool(),scrollTop=foodButtonsEl.scrollTop;
   foodButtonsEl.classList.toggle("dense-foods",pool.length>=4);foodButtonsEl.classList.toggle("ultra-dense-foods",pool.length>5);
-  foodButtonsEl.dataset.foodCount=String(pool.length);foodButtonsEl.style.setProperty("--pantry-columns",String(Math.min(5,Math.max(3,pool.length))));foodButtonsEl.style.setProperty("--food-rows",String(Math.ceil(pool.length/(pool.length>=4?5:3))));foodButtonsEl.innerHTML="";
+  foodButtonsEl.dataset.foodCount=String(pool.length);foodButtonsEl.style.setProperty("--pantry-columns",String(Math.min(5,Math.max(3,pool.length))));foodButtonsEl.style.setProperty("--pantry-count",String(pool.length));foodButtonsEl.style.setProperty("--food-rows",String(Math.ceil(pool.length/(pool.length>=4?5:3))));foodButtonsEl.innerHTML="";
   pool.forEach((id,index)=>{const f=foods[id],key=foodShortcut(index),btn=document.createElement("button");btn.type="button";btn.className="food-button";
     btn.innerHTML=`<kbd class="food-shortcut" aria-hidden="true">${key}</kbd><span class="food-button-art">${foodArt(id,"button")}</span><span class="food-button-name">${f.name}</span><small>${f.cookSeconds.toFixed(1)}s</small>`;
     btn.dataset.foodId=id;btn.dataset.shortcut=key;btn.setAttribute("aria-keyshortcuts",key);btn.setAttribute("aria-label",`${f.name}, 숫자 ${key}, 조리 ${f.cookSeconds.toFixed(1)}초`);btn.title=`${key} · ${f.name}`;foodButtonsEl.appendChild(btn);

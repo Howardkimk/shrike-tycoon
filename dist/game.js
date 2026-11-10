@@ -1863,6 +1863,7 @@ function renderFoodButtons() {
     foodButtonsEl.classList.toggle("ultra-dense-foods", pool.length > 5);
     foodButtonsEl.dataset.foodCount = String(pool.length);
     foodButtonsEl.style.setProperty("--pantry-columns", String(Math.min(5, Math.max(3, pool.length))));
+    foodButtonsEl.style.setProperty("--pantry-count", String(pool.length));
     foodButtonsEl.style.setProperty("--food-rows", String(Math.ceil(pool.length / (pool.length >= 4 ? 5 : 3))));
     foodButtonsEl.innerHTML = "";
     pool.forEach((id, index) => {

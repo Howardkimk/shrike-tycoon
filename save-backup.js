@@ -39,7 +39,7 @@
       }
       if(own(s,'discoveredBirds')&&(!Array.isArray(s.discoveredBirds)||s.discoveredBirds.some(x=>typeof x!=='string'||x.length>80)))throw Error('도감 기록을 확인해 주세요.');
     }
-    return {format:'shrike-tycoon-backup',formatVersion:1,gameVersion:'0.9.4',values};
+    return {format:'shrike-tycoon-backup',formatVersion:1,gameVersion:'0.9.5',values};
   }
   function makeBackup(save,bgm){return validateBackup({format:'shrike-tycoon-backup',formatVersion:1,values:{[SAVE_KEY]:JSON.stringify(save),[BGM_KEY]:bgm?'1':'0'}})}
   function applyBackup(storage,input,currentBackup){

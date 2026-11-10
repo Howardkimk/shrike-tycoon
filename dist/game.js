@@ -2421,7 +2421,7 @@ bindAdaptiveAction(quitButton, () => { running = false; paused = false; cancelAn
 document.querySelectorAll(".bird-filter-button").forEach(btn => btn.onclick = () => { birdBookFilter = (btn.dataset.birdFilter || "all"); renderBirdBook(); });
 birdBookWorldFilter.onchange = () => { birdBookWorld = birdBookWorldFilter.value; renderBirdBook(); };
 document.querySelectorAll(".shrike-filter-button").forEach(btn => btn.onclick = () => { shrikeDexFilter = (btn.dataset.shrikeFilter || "all"); renderShrikeDex(); });
-helpButton.onclick = () => openDialog(helpDialog);
+helpButton.onclick = () => { openDialog(helpDialog); $("helpScroll").scrollTop = 0; };
 closeHelpButton.onclick = () => closeDialog(helpDialog);
 restaurantButton.onclick = () => { renderUpgrades(); renderGrowth(); openDialog(restaurantDialog); };
 closeRestaurantButton.onclick = () => closeDialog(restaurantDialog);

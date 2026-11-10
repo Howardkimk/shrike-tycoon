@@ -1,0 +1,326 @@
+{
+  "engine": "Chromium 133",
+  "mode": "isolated inline page, QA-only reduced images, mocked storage/audio; real click/tap, programmatic scroll positioning",
+  "reports": [
+    {
+      "width": 1366,
+      "height": 768,
+      "touch": false,
+      "geometry": {
+        "dialog": {
+          "x": 243,
+          "y": 10,
+          "right": 1123,
+          "bottom": 758,
+          "width": 880,
+          "height": 748
+        },
+        "scroll": {
+          "x": 245,
+          "y": 123.59375,
+          "right": 1121,
+          "bottom": 691,
+          "width": 876,
+          "height": 567.40625
+        },
+        "footer": {
+          "x": 245,
+          "y": 691,
+          "right": 1121,
+          "bottom": 756,
+          "width": 876,
+          "height": 65
+        },
+        "header": {
+          "x": 245,
+          "y": 12,
+          "right": 1121,
+          "bottom": 123.59375,
+          "width": 876,
+          "height": 111.59375
+        },
+        "within": true,
+        "separate": true,
+        "noHorizontal": true,
+        "scrollable": true,
+        "lastVisible": true
+      },
+      "checks": [
+        "open with real click/tap",
+        "expand advanced sections",
+        "end of scroll reachable",
+        "fixed footer",
+        "no horizontal overflow",
+        "close",
+        "reopen at top",
+        "Escape closes"
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "touch": false,
+      "geometry": {
+        "dialog": {
+          "x": 72,
+          "y": 10,
+          "right": 952,
+          "bottom": 590,
+          "width": 880,
+          "height": 580
+        },
+        "scroll": {
+          "x": 74,
+          "y": 123.59375,
+          "right": 950,
+          "bottom": 523,
+          "width": 876,
+          "height": 399.40625
+        },
+        "footer": {
+          "x": 74,
+          "y": 523,
+          "right": 950,
+          "bottom": 588,
+          "width": 876,
+          "height": 65
+        },
+        "header": {
+          "x": 74,
+          "y": 12,
+          "right": 950,
+          "bottom": 123.59375,
+          "width": 876,
+          "height": 111.59375
+        },
+        "within": true,
+        "separate": true,
+        "noHorizontal": true,
+        "scrollable": true,
+        "lastVisible": true
+      },
+      "checks": [
+        "open with real click/tap",
+        "expand advanced sections",
+        "end of scroll reachable",
+        "fixed footer",
+        "no horizontal overflow",
+        "close",
+        "reopen at top",
+        "Escape closes"
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "touch": true,
+      "geometry": {
+        "dialog": {
+          "x": 10,
+          "y": 12,
+          "right": 380,
+          "bottom": 832,
+          "width": 370,
+          "height": 820
+        },
+        "scroll": {
+          "x": 12,
+          "y": 111.59375,
+          "right": 378,
+          "bottom": 769,
+          "width": 366,
+          "height": 657.40625
+        },
+        "footer": {
+          "x": 12,
+          "y": 769,
+          "right": 378,
+          "bottom": 830,
+          "width": 366,
+          "height": 61
+        },
+        "header": {
+          "x": 12,
+          "y": 14,
+          "right": 378,
+          "bottom": 111.59375,
+          "width": 366,
+          "height": 97.59375
+        },
+        "within": true,
+        "separate": true,
+        "noHorizontal": true,
+        "scrollable": true,
+        "lastVisible": true
+      },
+      "checks": [
+        "open with real click/tap",
+        "expand advanced sections",
+        "end of scroll reachable",
+        "fixed footer",
+        "no horizontal overflow",
+        "close",
+        "reopen at top"
+      ]
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "touch": true,
+      "geometry": {
+        "dialog": {
+          "x": 10,
+          "y": 10,
+          "right": 310,
+          "bottom": 558,
+          "width": 300,
+          "height": 548
+        },
+        "scroll": {
+          "x": 12,
+          "y": 109.59375,
+          "right": 308,
+          "bottom": 495,
+          "width": 296,
+          "height": 385.40625
+        },
+        "footer": {
+          "x": 12,
+          "y": 495,
+          "right": 308,
+          "bottom": 556,
+          "width": 296,
+          "height": 61
+        },
+        "header": {
+          "x": 12,
+          "y": 12,
+          "right": 308,
+          "bottom": 109.59375,
+          "width": 296,
+          "height": 97.59375
+        },
+        "within": true,
+        "separate": true,
+        "noHorizontal": true,
+        "scrollable": true,
+        "lastVisible": true
+      },
+      "checks": [
+        "open with real click/tap",
+        "expand advanced sections",
+        "end of scroll reachable",
+        "fixed footer",
+        "no horizontal overflow",
+        "close",
+        "reopen at top"
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "touch": true,
+      "geometry": {
+        "dialog": {
+          "x": 10,
+          "y": 10,
+          "right": 834,
+          "bottom": 380,
+          "width": 824,
+          "height": 370
+        },
+        "scroll": {
+          "x": 12,
+          "y": 69,
+          "right": 832,
+          "bottom": 325,
+          "width": 820,
+          "height": 256
+        },
+        "footer": {
+          "x": 12,
+          "y": 325,
+          "right": 832,
+          "bottom": 378,
+          "width": 820,
+          "height": 53
+        },
+        "header": {
+          "x": 12,
+          "y": 12,
+          "right": 832,
+          "bottom": 69,
+          "width": 820,
+          "height": 57
+        },
+        "within": true,
+        "separate": true,
+        "noHorizontal": true,
+        "scrollable": true,
+        "lastVisible": true
+      },
+      "checks": [
+        "open with real click/tap",
+        "expand advanced sections",
+        "end of scroll reachable",
+        "fixed footer",
+        "no horizontal overflow",
+        "close",
+        "reopen at top"
+      ]
+    },
+    {
+      "width": 568,
+      "height": 260,
+      "touch": true,
+      "geometry": {
+        "dialog": {
+          "x": 10,
+          "y": 10,
+          "right": 558,
+          "bottom": 250,
+          "width": 548,
+          "height": 240
+        },
+        "scroll": {
+          "x": 12,
+          "y": 69,
+          "right": 556,
+          "bottom": 195,
+          "width": 544,
+          "height": 126
+        },
+        "footer": {
+          "x": 12,
+          "y": 195,
+          "right": 556,
+          "bottom": 248,
+          "width": 544,
+          "height": 53
+        },
+        "header": {
+          "x": 12,
+          "y": 12,
+          "right": 556,
+          "bottom": 69,
+          "width": 544,
+          "height": 57
+        },
+        "within": true,
+        "separate": true,
+        "noHorizontal": true,
+        "scrollable": true,
+        "lastVisible": true
+      },
+      "checks": [
+        "open with real click/tap",
+        "expand advanced sections",
+        "end of scroll reachable",
+        "fixed footer",
+        "no horizontal overflow",
+        "close",
+        "reopen at top"
+      ]
+    }
+  ]
+}

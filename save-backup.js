@@ -15,15 +15,16 @@
     if(own(values,BGM_KEY)&&!['0','1'].includes(values[BGM_KEY]))throw Error('BGM 설정이 잘못되었습니다.');
     if(own(values,SAVE_KEY)){
       let s;try{s=JSON.parse(values[SAVE_KEY])}catch{throw Error('게임 기록 JSON을 읽지 못했습니다.')}
-      if(!record(s)||!Number.isInteger(s.version)||s.version<1||s.version>11||!Number.isInteger(s.unlockedStage)||s.unlockedStage<1||s.unlockedStage>100||!count(s.xp)||!Array.isArray(s.unlockedShrikes)||s.unlockedShrikes.some(x=>typeof x!=='string'||x.length>80))throw Error('게임 기록을 확인해 주세요.');
-      const fields=['version','unlockedStage','xp','unlockedShrikes','bestStars','bestScores','bestCombos','bestSubGoals','upgrades','discoveredBirds','stats','chefTraining','supplies'];
+      if(!record(s)||!Number.isInteger(s.version)||s.version<1||s.version>12||!Number.isInteger(s.unlockedStage)||s.unlockedStage<1||s.unlockedStage>(s.version>=12?50:100)||!count(s.xp)||!Array.isArray(s.unlockedShrikes)||s.unlockedShrikes.some(x=>typeof x!=='string'||x.length>80))throw Error('게임 기록을 확인해 주세요.');
+      if(s.legacy100!==undefined&&(typeof s.legacy100!=='string'||s.legacy100.length>500000))throw Error('이전 기록 원본을 확인해 주세요.');
+      const fields=['version','unlockedStage','xp','unlockedShrikes','bestStars','bestScores','bestCombos','bestSubGoals','upgrades','discoveredBirds','stats','chefTraining','supplies','legacy100'];
       if(Object.keys(s).some(k=>!fields.includes(k)))throw Error('지원하지 않는 게임 기록 항목입니다.');
       for(const field of ['bestStars','bestScores','bestCombos','upgrades','stats','bestSubGoals']){
         if(!own(s,field))continue;
         if(!record(s[field]))throw Error('기록 수치가 잘못되었습니다.');
         for(const [key,value] of Object.entries(s[field])){
           const stageMap=field.startsWith('best');
-          const validKey=stageMap?/^(?:[1-9]|[1-9][0-9]|100)$/.test(key):field==='upgrades'?['branch','fire','perch'].includes(key):['plays','served','perfect','failed'].includes(key);
+          const validKey=stageMap?/^(?:[1-9]|[1-9][0-9]|100)$/.test(key)&&Number(key)<=(s.version>=12?50:100):field==='upgrades'?['branch','fire','perch'].includes(key):['plays','served','perfect','failed'].includes(key);
           if(!validKey||(field==='bestSubGoals'?typeof value!=='boolean':!count(value)))throw Error('기록 항목이나 수치가 잘못되었습니다.');
           if(field==='bestStars'&&value>3)throw Error('별점 기록을 확인해 주세요.');
           if(field==='upgrades'&&value>(key==='branch'?2:5))throw Error('업그레이드 기록을 확인해 주세요.');
@@ -39,7 +40,7 @@
       }
       if(own(s,'discoveredBirds')&&(!Array.isArray(s.discoveredBirds)||s.discoveredBirds.some(x=>typeof x!=='string'||x.length>80)))throw Error('도감 기록을 확인해 주세요.');
     }
-    return {format:'shrike-tycoon-backup',formatVersion:1,gameVersion:'0.9.7',values};
+    return {format:'shrike-tycoon-backup',formatVersion:1,gameVersion:'0.10.3',values};
   }
   function makeBackup(save,bgm){return validateBackup({format:'shrike-tycoon-backup',formatVersion:1,values:{[SAVE_KEY]:JSON.stringify(save),[BGM_KEY]:bgm?'1':'0'}})}
   function applyBackup(storage,input,currentBackup){

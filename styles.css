@@ -5226,3 +5226,1434 @@ body:not(.in-game) .result-grid div:first-child strong{font-size:1.9rem!importan
   .collection-dialog .collection-card{transition:none!important}
   .result-celebration svg{animation:none!important}
 }
+
+@font-face{font-family:Jua;font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/Jua-Regular.ttf") format("truetype")}
+
+@font-face{font-family:"Noto Emoji";font-style:normal;font-weight:100 900;font-display:swap;src:url("assets/fonts/NotoEmoji.ttf") format("truetype")}
+
+/* 0.8.4: a scene-led restaurant, with one interactive bird per order. */
+.pixel-sprite{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated;user-select:none;pointer-events:none}
+body.in-game{overflow:hidden!important;height:100dvh!important;background:#9aa76f!important}
+body.in-game::before,body.in-game::after{display:none!important}
+body.in-game .app-shell{width:min(1380px,100%)!important;height:100dvh!important;padding:12px!important;margin:0 auto!important;overflow:hidden!important}
+body.in-game .titlebar,body.in-game #devModeBanner{display:none!important}
+body.in-game #gameScreen.soft-stage:not(.hidden){
+  --text:#332e24;--muted:#655e4e;--accent:#e6b85c;--cyan:#566e42;
+  position:relative!important;isolation:isolate;display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;grid-template-rows:58px minmax(170px,.85fr) minmax(266px,1fr) 44px!important;
+  gap:10px!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;
+  margin:0!important;padding:18px!important;overflow:hidden!important;border-radius:36px!important;
+  color:#332e24!important;font-family:'Jua','Noto Emoji',ui-rounded,'Arial Rounded MT Bold','Apple SD Gothic Neo',system-ui,sans-serif!important;
+  box-shadow:0 12px 30px #48513530!important;background:#dfe9c4!important;
+}
+body.in-game #gameScreen.soft-stage .world-scenery{position:absolute!important;inset:0!important;z-index:-2!important;border-radius:0!important;filter:none!important;box-shadow:none!important;opacity:1!important}
+body.in-game #gameScreen.soft-stage.world-1 .world-scenery{background:url('assets/pixel/world1.png') center/cover!important}
+body.in-game #gameScreen.soft-stage.world-1 .world-scenery svg{display:none!important}
+body.in-game #gameScreen.soft-stage .world-scenery::before,body.in-game #gameScreen.soft-stage .world-scenery::after{display:none!important}
+body.in-game #gameScreen.soft-stage .panel{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;min-width:0!important;min-height:0!important}
+body.in-game #gameScreen.soft-stage .panel::before,body.in-game #gameScreen.soft-stage .panel::after{display:none!important}
+body.in-game #gameScreen.soft-stage .orientation-hint{display:none!important}
+body.in-game #gameScreen.soft-stage .stage-topbar{grid-row:1!important;display:flex;align-items:center;gap:12px;min-width:0;z-index:5}
+body.in-game #gameScreen.soft-stage .hud{display:flex!important;flex:1;align-items:center!important;justify-content:flex-start!important;gap:8px!important;padding:0!important;grid-area:auto!important;min-width:0!important}
+body.in-game #gameScreen.soft-stage .hud-item{display:flex!important;flex-direction:column;align-items:center;justify-content:center;min-width:70px!important;min-height:48px!important;padding:5px 16px!important;border:0!important;border-radius:24px!important;background:#fff5dceF!important;box-shadow:0 3px 0 #78683d30!important;text-align:center!important}
+body.in-game #gameScreen.soft-stage .hud-item:nth-child(2),body.in-game #gameScreen.soft-stage .hud-item:nth-child(5),body.in-game #gameScreen.soft-stage .hud-item:nth-child(7){display:none!important}
+body.in-game #gameScreen.soft-stage .hud-item:nth-child(1){background:#566e42!important;min-width:92px!important}
+body.in-game #gameScreen.soft-stage .hud-item span{font-size:11px!important;line-height:1.1!important;color:#655e4e!important;font-weight:800!important}
+body.in-game #gameScreen.soft-stage .hud-item strong{font-size:20px!important;line-height:1.2!important;color:#332e24!important;text-shadow:none!important}
+body.in-game #gameScreen.soft-stage .hud-item:nth-child(1) :is(span,strong){color:#fff3d8!important}
+body.in-game #gameScreen.soft-stage .hud-item.weather strong{font-size:13px!important}
+body.in-game #gameScreen.soft-stage .burn-strip{display:flex!important;align-items:center;gap:8px!important;flex:0 1 255px;max-width:255px;padding:6px!important;grid-area:auto!important;background:#fff1d1dd!important;border-radius:28px!important}
+body.in-game #gameScreen.soft-stage .burn-strip>strong{display:none!important}
+body.in-game #gameScreen.soft-stage .burn-meter{flex:1;min-width:30px;gap:4px}
+body.in-game #gameScreen.soft-stage .burn-meter-track{height:14px!important;background:#d9cba7!important;border:0!important;box-shadow:inset 0 2px 2px #5b452528!important}
+body.in-game #gameScreen.soft-stage .burn-meter span{font-size:12px!important;color:#5a472e!important}
+body.in-game #gameScreen.soft-stage .burn-button{min-height:44px!important;padding:6px 12px!important;border:0!important;border-radius:24px!important;font-size:13px!important;box-shadow:0 3px 0 #99602e!important}
+body.in-game #gameScreen.soft-stage .orders-panel{grid-row:2!important;grid-column:1!important;display:grid!important;grid-template-rows:24px minmax(0,1fr)!important;gap:2px!important;padding:0 18px!important;overflow:visible!important}
+body.in-game #gameScreen.soft-stage .guest-panel-head{position:static!important;display:flex!important;height:24px!important;min-height:24px!important;padding:0 8px!important;align-items:center!important;justify-content:space-between!important}
+body.in-game #gameScreen.soft-stage .guest-panel-head h2{font-size:16px!important;line-height:1.2!important;color:#344829!important;text-shadow:0 1px #fff6d8!important}
+body.in-game #gameScreen.soft-stage .guest-panel-head p{font-size:12px!important;color:#3e4d2d!important}
+body.in-game #gameScreen.soft-stage #guestPerch{display:none!important}
+body.in-game #gameScreen.soft-stage .orders-grid{display:grid!important;grid-row:2!important;grid-template-columns:repeat(var(--order-count,3),minmax(0,1fr))!important;grid-template-rows:minmax(0,1fr)!important;gap:16px!important;align-items:stretch!important;min-height:0!important;max-height:none!important;overflow:visible!important;padding:0!important}
+body.in-game #gameScreen.soft-stage .order-card{
+  display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto minmax(0,1fr)!important;
+  gap:0!important;position:relative!important;min-width:0!important;min-height:0!important;height:100%!important;max-height:none!important;
+  padding:0!important;background:none!important;border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important;
+  overflow:visible!important;text-align:center!important;transform:none!important;animation:none!important;color:#332e24!important;
+}
+body.in-game #gameScreen.soft-stage .order-card::before,body.in-game #gameScreen.soft-stage .order-card::after{display:none!important}
+body.in-game #gameScreen.soft-stage .order-bubble{position:relative;display:grid;justify-items:center;align-content:center;gap:2px;padding:8px 10px 7px;min-width:0;border:2px solid #c9b17a;border-radius:25px;background:#fff8e7;box-shadow:0 4px 0 #6d5e3333;z-index:2;transition:transform .16s,border-color .16s}
+body.in-game #gameScreen.soft-stage .order-bubble::after{content:'';position:absolute;bottom:-9px;left:calc(50% - 8px);width:14px;height:14px;background:#fff8e7;border-right:2px solid #c9b17a;border-bottom:2px solid #c9b17a;transform:rotate(45deg);border-radius:0 0 5px 0}
+body.in-game #gameScreen.soft-stage .order-card.selected .order-bubble{border-color:#566e42;box-shadow:0 0 0 3px #a8c182,0 4px 0 #52623630}
+body.in-game #gameScreen.soft-stage .order-card.urgent .order-bubble{border-color:#b1553c;background:#fff0df}
+body.in-game #gameScreen.soft-stage .order-card .name{display:block!important;font-size:14px!important;line-height:1.15!important;color:#332e24!important;white-space:normal!important;overflow-wrap:anywhere!important;margin:0!important}
+body.in-game #gameScreen.soft-stage .order-card .bird-en{display:none!important}
+body.in-game #gameScreen.soft-stage .order-card .recipe{display:flex!important;justify-content:center;align-items:center;min-height:24px!important;height:auto!important;margin:1px 0!important;padding:0!important;letter-spacing:0!important;line-height:1!important;width:100%!important}
+body.in-game #gameScreen.soft-stage .order-card .food-art{width:26px!important;height:26px!important}
+body.in-game #gameScreen.soft-stage .order-card .timer{display:flex!important;justify-content:center!important;gap:7px!important;margin:0!important;font-size:12px!important;line-height:1.1!important;color:#655e4e!important}
+body.in-game #gameScreen.soft-stage .order-card .timer strong{font-size:13px!important;color:#566e42!important}
+body.in-game #gameScreen.soft-stage .order-progress-track{height:4px;width:75%;background:#e8dfc6;border-radius:20px;overflow:hidden}
+body.in-game #gameScreen.soft-stage .order-progress{position:static!important;height:100%!important;background:#8fa86a!important;border-radius:20px!important}
+body.in-game #gameScreen.soft-stage .order-card.urgent .order-progress{background:#c47a4a!important}
+body.in-game #gameScreen.soft-stage .order-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:3px;min-width:0}
+body.in-game #gameScreen.soft-stage :is(.special-badge,.signature-badge){position:static!important;font-size:9px!important;line-height:1.1!important;padding:2px 5px!important;border:0!important;color:#55371f!important;background:#efd29a!important;box-shadow:none!important;transform:none!important}
+body.in-game #gameScreen.soft-stage .guest-order-portrait{grid-row:2!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:4px 0 0!important;background:none!important;border:0!important;overflow:visible!important;filter:drop-shadow(0 6px 2px #35432030)}
+body.in-game #gameScreen.soft-stage .guest-order-portrait :is(img,svg){width:auto!important;height:100%!important;max-height:145px!important;max-width:100%!important;object-fit:contain!important}
+body.in-game #gameScreen.soft-stage .waiting-guests{grid-column:1/-1;align-self:center;justify-self:center;background:#fff6deDD;color:#566e42;border-radius:30px;padding:16px 26px;font-weight:800}
+body.in-game #gameScreen.soft-stage .work-area{grid-row:3!important;grid-column:1!important;display:grid!important;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)!important;gap:20px!important;min-height:0!important;padding:16px 18px!important;border:0!important;border-top:7px solid #f3dca7!important;border-radius:44px 44px 30px 30px!important;background:linear-gradient(#e8ba77,#c99458)!important;box-shadow:0 7px 0 #8b603a, inset 0 3px 0 #ffffff50!important;overflow:visible!important}
+body.in-game #gameScreen.soft-stage .skewer-panel{display:grid!important;grid-template-columns:145px minmax(0,1fr)!important;grid-template-rows:22px 42px minmax(50px,1fr) 44px!important;gap:6px 10px!important;grid-area:auto!important;padding:0!important;overflow:visible!important}
+body.in-game #gameScreen.soft-stage .section-heading{position:static!important;display:flex!important;grid-column:2!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;padding:0!important;margin:0!important;min-height:0!important;height:auto!important;overflow:hidden!important}
+body.in-game #gameScreen.soft-stage .section-heading h2{font-size:14px!important;line-height:1.2!important;color:#553e27!important;text-shadow:none!important;white-space:nowrap!important}
+body.in-game #gameScreen.soft-stage #selectedOrderSummary{font-size:11px!important;line-height:1.1!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#614e31!important}
+body.in-game #gameScreen.soft-stage .chef-visual{display:flex!important;flex-direction:column!important;justify-content:flex-end!important;align-items:center!important;grid-column:1!important;grid-row:1/5!important;gap:2px!important;width:100%!important;min-height:0!important;height:auto!important;margin:0!important;padding:0!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
+body.in-game #gameScreen.soft-stage .chef-visual::after{display:none!important}
+body.in-game #gameScreen.soft-stage .chef-visual-art{width:170px!important;max-width:125%!important;height:calc(100% - 42px)!important;min-height:0!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;filter:drop-shadow(0 8px 3px #603d2830)!important}
+body.in-game #gameScreen.soft-stage .chef-visual-art :is(img,svg){width:100%!important;height:100%!important;object-fit:contain!important;transform-origin:50% 85%!important}
+body.in-game #gameScreen.soft-stage .chef-visual-copy{text-align:center!important;display:block!important;background:#fff3d8dd!important;padding:4px 14px!important;border-radius:20px!important;line-height:1.1!important}
+body.in-game #gameScreen.soft-stage .chef-visual-copy :is(.chef-kicker,small){display:none!important}
+body.in-game #gameScreen.soft-stage .chef-visual-copy strong{display:block!important;font-size:13px!important;line-height:1.15!important;color:#553e27!important}
+body.in-game #gameScreen.soft-stage .chef-visual-copy em{display:block!important;font-size:11px!important;line-height:1.2!important;padding:0!important;margin:1px 0 0!important;border:0!important;background:none!important;color:#566e42!important}
+body.in-game #gameScreen.soft-stage .skewer{grid-column:2!important;grid-row:2!important;display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;border-radius:40px!important;background:#fff0cdaa!important;box-shadow:inset 0 2px 4px #92663825!important}
+body.in-game #gameScreen.soft-stage .empty-skewer{font-size:12px!important;color:#6b593d!important}
+body.in-game #gameScreen.soft-stage .skewer .food-art{width:30px!important;height:30px!important}
+body.in-game #gameScreen.soft-stage .food-buttons{grid-column:2!important;grid-row:3!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-rows:minmax(52px,1fr)!important;gap:5px!important;align-content:start!important;min-height:0!important;padding:0 2px!important;margin:0!important;background:none!important;border:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important;scrollbar-width:thin}
+body.in-game #gameScreen.soft-stage .food-buttons.dense-foods{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+body.in-game #gameScreen.soft-stage .food-button{display:grid!important;grid-template-columns:1fr!important;grid-template-rows:26px 14px 12px!important;gap:0!important;align-content:center!important;justify-items:center!important;height:auto!important;min-height:56px!important;min-width:0!important;margin:0!important;padding:3px 2px!important;border:2px solid #e0cda3!important;border-radius:50%!important;background:#fff7de!important;box-shadow:inset 0 0 0 4px #e9debd,0 3px 0 #99704e40!important;color:#332e24!important}
+body.in-game #gameScreen.soft-stage .food-button-art{display:flex!important;width:100%!important;height:26px!important;justify-content:center!important;align-items:center!important;margin:0!important}
+body.in-game #gameScreen.soft-stage .food-button .food-art{width:30px!important;height:26px!important}
+body.in-game #gameScreen.soft-stage .food-button-name{display:block!important;font-size:11px!important;line-height:14px!important;height:14px!important;min-height:0!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;margin:0!important;color:#332e24!important;-webkit-line-clamp:unset!important}
+body.in-game #gameScreen.soft-stage .food-button small{font-size:10px!important;line-height:12px!important;margin:0!important;color:#655e4e!important;display:block!important}
+body.in-game #gameScreen.soft-stage .button-row{grid-column:2!important;grid-row:4!important;display:flex!important;gap:8px!important;margin:0!important;min-height:44px!important}
+body.in-game #gameScreen.soft-stage .button-row button{min-height:44px!important;font-size:13px!important;padding:5px 10px!important;border-radius:24px!important;border:1px solid #987944!important;color:#44351f!important;background:#fff3d8!important;box-shadow:0 3px 0 #95623650!important}
+body.in-game #gameScreen.soft-stage .button-row .primary-button{background:#e6b85c!important;flex:2!important}
+body.in-game #gameScreen.soft-stage .burners-panel{display:grid!important;grid-template-rows:22px minmax(0,1fr)!important;gap:8px!important;padding:0!important;grid-area:auto!important;overflow:hidden!important}
+body.in-game #gameScreen.soft-stage .burners-panel .section-heading{grid-column:1!important}
+body.in-game #gameScreen.soft-stage .burners-panel .hint{font-size:11px!important;color:#614e31!important;margin:0!important}
+body.in-game #gameScreen.soft-stage .burners{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-rows:minmax(92px,1fr)!important;gap:7px!important;align-content:stretch!important;min-height:0!important;overflow:auto!important;padding:2px!important}
+body.in-game #gameScreen.soft-stage .burner{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;position:relative!important;min-height:92px!important;padding:9px 5px!important;border:5px solid #b78b68!important;border-radius:48% 48% 28% 28%!important;background:radial-gradient(ellipse at 50% 85%,#f2b65366,transparent 55%),#5f4434!important;box-shadow:0 5px 0 #9e704d,inset 0 2px 5px #402e2740!important;color:#fff3d8!important;overflow:hidden!important}
+body.in-game #gameScreen.soft-stage .burner::before,body.in-game #gameScreen.soft-stage .burner::after{display:none!important}
+body.in-game #gameScreen.soft-stage .burner .flame{display:none!important}
+body.in-game #gameScreen.soft-stage .burner-title{font-size:12px!important;line-height:1.1!important;color:#e6cca9!important}
+body.in-game #gameScreen.soft-stage .burner-recipe{font-size:12px!important;min-height:24px!important;height:auto!important;margin:5px 0!important}
+body.in-game #gameScreen.soft-stage .burner .food-art{width:22px!important;height:22px!important}
+body.in-game #gameScreen.soft-stage .burner-state{font-size:11px!important;line-height:1.2!important;color:#fff3d8!important;white-space:normal!important}
+body.in-game #gameScreen.soft-stage .cook-bar{width:85%!important;height:5px!important;min-height:5px!important;margin-top:5px!important;background:#372e24!important}
+body.in-game #gameScreen.soft-stage .burner.ready{border-color:#e6b85c!important;box-shadow:0 0 0 3px #fff2c6,0 5px 0 #9e704d!important}
+body.in-game #gameScreen.soft-stage .burner.overcooked{border-color:#cc7861!important}
+body.in-game #gameScreen.soft-stage .stage-footer{grid-row:4!important;display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0;z-index:5}
+body.in-game #gameScreen.soft-stage .status-panel{flex:1;display:flex!important;gap:8px!important;min-width:0!important;height:40px!important;padding:0 12px!important;grid-area:auto!important;background:#fff3d8dc!important;border-radius:22px!important;overflow:hidden!important}
+body.in-game #gameScreen.soft-stage .status-panel strong{font-size:12px!important;line-height:1.2!important;color:#55452e!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.in-game #gameScreen.soft-stage .floating-judge{font-size:16px!important;line-height:1!important;white-space:nowrap}
+body.in-game #gameScreen.soft-stage .game-actions{display:flex!important;flex-direction:row!important;gap:6px!important;grid-area:auto!important;margin:0!important;padding:0!important;min-width:0!important}
+body.in-game #gameScreen.soft-stage .game-actions button{width:auto!important;min-height:44px!important;padding:7px 14px!important;border:0!important;border-radius:25px!important;background:#fff3d8!important;font-size:12px!important;color:#55452e!important;box-shadow:0 3px 0 #7d674b40!important;white-space:nowrap!important}
+body.in-game #gameScreen.soft-stage .world-intro{position:absolute!important;z-index:20!important;top:35%!important;left:50%!important;width:min(420px,80%)!important;border-radius:40px!important;background:#fff3d8!important;color:#332e24!important;border:3px solid #8fa86a!important;box-shadow:0 12px 30px #35432930!important;pointer-events:none}
+body.in-game #gameScreen.soft-stage .world-intro :is(strong,small,span){color:#566e42!important}
+body.in-game #gameScreen.soft-stage .event-banner{position:absolute!important;top:72px!important;left:15%!important;width:70%!important;z-index:25!important;border-radius:26px!important;font-size:14px!important}
+body.in-game #gameScreen.soft-stage button:active{transform:translateY(2px)!important}
+body.in-game #gameScreen.soft-stage button:focus-visible{outline:3px solid #566e42!important;outline-offset:2px!important}
+/* Phone landscape: separate scroll areas keep every ingredient and hearth reachable. */
+@media(max-height:600px) and (orientation:landscape){
+  body.in-game .app-shell{padding:3px max(4px,env(safe-area-inset-right)) 3px max(4px,env(safe-area-inset-left))!important}
+  body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:44px minmax(112px,.9fr) minmax(144px,1fr) 44px!important;gap:3px!important;padding:5px 9px!important;border-radius:22px!important}
+  body.in-game #gameScreen.soft-stage .stage-topbar{gap:6px!important}
+  body.in-game #gameScreen.soft-stage .hud{gap:4px!important}
+  body.in-game #gameScreen.soft-stage .hud-item{min-width:48px!important;min-height:38px!important;padding:3px 10px!important;border-radius:20px!important}
+  body.in-game #gameScreen.soft-stage .hud-item:nth-child(1){min-width:60px!important}
+  body.in-game #gameScreen.soft-stage .hud-item span{font-size:10px!important}
+  body.in-game #gameScreen.soft-stage .hud-item strong{font-size:15px!important}
+  body.in-game #gameScreen.soft-stage .hud-item.weather strong{font-size:11px!important}
+  body.in-game #gameScreen.soft-stage .burn-strip{max-width:185px!important;padding:0 4px!important;gap:5px!important}
+  body.in-game #gameScreen.soft-stage .burn-button{font-size:11px!important;min-height:44px!important;padding:4px 9px!important}
+  body.in-game #gameScreen.soft-stage .orders-panel{grid-template-rows:18px minmax(0,1fr)!important;padding:0 6px!important;gap:0!important}
+  body.in-game #gameScreen.soft-stage .guest-panel-head{height:18px!important;min-height:18px!important;padding:0!important}
+  body.in-game #gameScreen.soft-stage .guest-panel-head h2{font-size:12px!important}
+  body.in-game #gameScreen.soft-stage .guest-panel-head p{display:none!important}
+  body.in-game #gameScreen.soft-stage .orders-grid{gap:9px!important}
+  body.in-game #gameScreen.soft-stage .order-card{grid-template-columns:minmax(0,1fr) 42px!important;grid-template-rows:1fr!important;align-items:end!important}
+  body.in-game #gameScreen.soft-stage .order-bubble{padding:4px 5px!important;border-radius:18px!important;gap:1px!important;align-self:center!important}
+  body.in-game #gameScreen.soft-stage .order-bubble::after{left:auto;right:-6px;bottom:16px;width:10px;height:10px;transform:rotate(-45deg)}
+  body.in-game #gameScreen.soft-stage .order-card .name{font-size:11px!important;line-height:12px!important}
+  body.in-game #gameScreen.soft-stage .order-card .recipe{min-height:19px!important;margin:0!important}
+  body.in-game #gameScreen.soft-stage .order-card .food-art{width:19px!important;height:19px!important}
+  body.in-game #gameScreen.soft-stage .order-card .timer{font-size:10px!important;gap:3px!important}
+  body.in-game #gameScreen.soft-stage .order-card .timer strong{font-size:11px!important}
+  body.in-game #gameScreen.soft-stage .order-card .timer span{display:none!important}
+  body.in-game #gameScreen.soft-stage .order-badges{gap:1px!important}
+  body.in-game #gameScreen.soft-stage :is(.special-badge,.signature-badge){font-size:8px!important;padding:1px 3px!important}
+  body.in-game #gameScreen.soft-stage .guest-order-portrait{grid-column:2!important;grid-row:1!important;height:100%!important;padding:0!important;align-items:center!important}
+  body.in-game #gameScreen.soft-stage .guest-order-portrait :is(img,svg){height:auto!important;width:100%!important;max-height:78px!important}
+  body.in-game #gameScreen.soft-stage .compact-orders .order-card{grid-template-columns:1fr!important;grid-template-rows:auto 35px!important}
+  body.in-game #gameScreen.soft-stage .compact-orders .guest-order-portrait{grid-column:1!important;grid-row:2!important;height:35px!important}
+  body.in-game #gameScreen.soft-stage .compact-orders .guest-order-portrait :is(img,svg){width:auto!important;height:35px!important}
+  body.in-game #gameScreen.soft-stage .compact-orders .order-bubble::after{display:none!important}
+  body.in-game #gameScreen.soft-stage .work-area{gap:10px!important;padding:6px 9px!important;border-top-width:4px!important;border-radius:25px 25px 18px 18px!important;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)!important}
+  body.in-game #gameScreen.soft-stage .skewer-panel{grid-template-columns:74px minmax(0,1fr)!important;grid-template-rows:16px 24px minmax(44px,1fr) 44px!important;gap:2px 6px!important}
+  body.in-game #gameScreen.soft-stage .section-heading h2{font-size:11px!important;line-height:14px!important}
+  body.in-game #gameScreen.soft-stage #selectedOrderSummary{display:none!important}
+  body.in-game #gameScreen.soft-stage .chef-visual-art{width:95px!important;height:calc(100% - 25px)!important;max-width:125%!important}
+  body.in-game #gameScreen.soft-stage .chef-visual-copy{padding:2px 6px!important}
+  body.in-game #gameScreen.soft-stage .chef-visual-copy strong{font-size:11px!important}
+  body.in-game #gameScreen.soft-stage .chef-visual-copy em{font-size:9px!important}
+  body.in-game #gameScreen.soft-stage .empty-skewer{font-size:11px!important}
+  body.in-game #gameScreen.soft-stage .skewer .food-art{width:20px!important;height:20px!important}
+  body.in-game #gameScreen.soft-stage .food-buttons{grid-auto-rows:52px!important;gap:3px!important}
+  body.in-game #gameScreen.soft-stage .food-button{min-height:52px!important;grid-template-rows:22px 14px 10px!important;padding:1px!important;box-shadow:inset 0 0 0 2px #e9debd!important;border-width:1px!important}
+  body.in-game #gameScreen.soft-stage .food-button-art{height:22px!important}
+  body.in-game #gameScreen.soft-stage .food-button .food-art{width:24px!important;height:22px!important}
+  body.in-game #gameScreen.soft-stage .food-button-name{font-size:11px!important}
+  body.in-game #gameScreen.soft-stage .food-button small{font-size:10px!important;line-height:10px!important}
+  body.in-game #gameScreen.soft-stage .button-row{gap:5px!important}
+  body.in-game #gameScreen.soft-stage .button-row button{font-size:11px!important;padding:2px 6px!important}
+  body.in-game #gameScreen.soft-stage .burners-panel{grid-template-rows:16px minmax(0,1fr)!important;gap:3px!important}
+  body.in-game #gameScreen.soft-stage .burners-panel .hint{display:none!important}
+  body.in-game #gameScreen.soft-stage .burners{grid-auto-rows:minmax(88px,1fr)!important;gap:4px!important}
+  body.in-game #gameScreen.soft-stage .burner{min-height:88px!important;border-width:3px!important;padding:5px 3px!important}
+  body.in-game #gameScreen.soft-stage .burner-title{font-size:10px!important}
+  body.in-game #gameScreen.soft-stage .burner-recipe{margin:2px 0!important;min-height:22px!important}
+  body.in-game #gameScreen.soft-stage .burner .food-art{width:17px!important;height:17px!important}
+  body.in-game #gameScreen.soft-stage .burner-state{font-size:11px!important}
+  body.in-game #gameScreen.soft-stage .stage-footer{gap:5px!important}
+  body.in-game #gameScreen.soft-stage .status-panel{height:36px!important;padding:0 8px!important}
+  body.in-game #gameScreen.soft-stage .status-panel strong{font-size:11px!important}
+  body.in-game #gameScreen.soft-stage .floating-judge{font-size:12px!important}
+  body.in-game #gameScreen.soft-stage .game-actions button{font-size:11px!important;padding:4px 10px!important;min-height:44px!important}
+}
+/* Rounded menu and notebook furniture, without nested heavy borders. */
+body:not(.in-game) .titlebar{border:0!important;border-radius:38px!important;box-shadow:0 6px 0 #98784c20!important}
+body:not(.in-game) .start-screen.guided-start{border:0!important;border-radius:40px!important;box-shadow:0 6px 0 #98784c20!important}
+body:not(.in-game) :is(.destination-board,.journey-record){border-width:1px!important;border-radius:32px!important}
+body:not(.in-game) :is(.world-postcard,.stage-card,.select-card){border-width:1px!important;border-radius:26px!important}
+body:not(.in-game) :is(.primary-button,.ghost-button,.collection-filter){border-radius:24px!important}
+.shrike-select-portrait .pixel-sprite,.shrike-dex-portrait .pixel-sprite,.detail-portrait .pixel-sprite,.bird-card-portrait .pixel-sprite,.result-character .pixel-sprite{max-height:100%;width:100%;height:100%;object-fit:contain}
+.result-character .pixel-sprite{max-width:140px}
+.silhouette .pixel-sprite{filter:brightness(0) opacity(.4)}
+@media(prefers-reduced-motion:reduce){
+  body.in-game #gameScreen.soft-stage :is(.order-bubble,.pixel-sprite){animation:none!important;transition:none!important}
+}
+@media(min-height:601px){
+ body.in-game #gameScreen.soft-stage .order-card{grid-template-rows:auto 160px!important;align-content:end!important}
+ body.in-game #gameScreen.soft-stage .order-bubble{width:100%;max-width:260px;justify-self:center}
+ body.in-game #gameScreen.soft-stage .guest-order-portrait{align-items:center!important}
+ body.in-game #gameScreen.soft-stage .skewer-panel{grid-template-columns:210px minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage .chef-visual-art{width:250px!important}
+ body.in-game #gameScreen.soft-stage .chef-visual{justify-content:center!important}
+ body.in-game #gameScreen.soft-stage .chef-visual-art{height:min(280px,calc(100% - 42px))!important}
+ body.in-game #gameScreen.soft-stage .food-button{width:100%!important;max-width:128px!important;height:100%!important;max-height:128px!important;align-self:center;justify-self:center}
+ body.in-game #gameScreen.soft-stage .food-button .food-art{width:44px!important;height:36px!important}
+ body.in-game #gameScreen.soft-stage .food-button{grid-template-rows:38px 18px 14px!important}
+ body.in-game #gameScreen.soft-stage .food-button-art{height:38px!important}
+ body.in-game #gameScreen.soft-stage .food-button-name{font-size:14px!important;line-height:18px!important;height:18px!important}
+ body.in-game #gameScreen.soft-stage .burner{max-height:190px!important;align-self:center!important}
+}
+
+body,button,input,select{font-family:'Jua','Noto Emoji','Apple SD Gothic Neo',system-ui,sans-serif!important}
+body.in-game #gameScreen.soft-stage :is(h2,button,strong,span,small,em){font-family:'Jua','Noto Emoji','Apple SD Gothic Neo',system-ui,sans-serif!important}
+body.in-game #gameScreen.soft-stage .guest-panel-head{background:#fff3d8c9;border-radius:20px;padding:0 10px!important}
+body.in-game #gameScreen.soft-stage .guest-panel-head p{color:#344829!important}
+body.in-game:has(#gameScreen.hidden){overflow:auto!important;height:auto!important;min-height:100dvh}
+body.in-game:has(#gameScreen.hidden) .app-shell{height:auto!important;min-height:100dvh;overflow:visible!important}
+body.in-game #gameScreen.soft-stage .game-actions{position:static!important;inset:auto!important;transform:none!important;width:auto!important;height:auto!important;max-width:none!important;background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;justify-content:flex-end!important}
+body.in-game #gameScreen.soft-stage .status-panel{position:static!important;align-items:center!important;text-align:left!important;justify-content:flex-start!important}
+@media(max-height:600px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:44px minmax(100px,.9fr) minmax(152px,1fr) 44px!important}
+ body.in-game #gameScreen.soft-stage .skewer-panel{grid-template-rows:16px 24px minmax(52px,1fr) 44px!important}
+ body.in-game #gameScreen.soft-stage .order-bubble{width:100%!important;max-width:none!important}
+ body.in-game #gameScreen.soft-stage .guest-order-portrait{padding-left:2px!important}
+ body.in-game #gameScreen.soft-stage .game-actions button{padding:4px 8px!important}
+ body.in-game #gameScreen.soft-stage #quitButton{max-width:145px!important;overflow:hidden!important;text-overflow:ellipsis!important}
+}
+#resultScreen.result-screen{background:#fff3d8!important;color:#332e24!important;border:0!important;border-radius:36px!important;box-shadow:0 8px 0 #98784c33!important}
+#resultScreen :is(h2,h3,strong,span,p){color:#55452e!important}
+#resultScreen .result-grid>div{background:#e9e6c7!important;border:0!important;border-radius:26px!important}
+#resultScreen .button-row button{border-radius:25px!important}
+body.in-game #gameScreen.soft-stage :is(.special-badge,.signature-badge){width:auto!important;max-width:none!important;white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important}
+#resultScreen .result-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+#resultScreen :is(.primary-button,.ghost-button){border:0!important;border-radius:25px!important;background:#566e42!important;color:#fff3d8!important;box-shadow:0 3px 0 #35482940!important}
+#resultScreen #resultSubGoal{background:#e9e6c7!important;color:#566e42!important;border:0!important;border-radius:25px!important}
+body.in-game #gameScreen.soft-stage .burner.cooking{background:radial-gradient(ellipse at 50% 90%,#f6a434aa,transparent 75%),#5f4434!important}
+body.in-game #gameScreen.soft-stage .burner.ready{background:radial-gradient(ellipse at 50% 90%,#e6b85cbb,transparent 75%),#5f4434!important}
+body :is(h1,h2,h3,h4,p,span,strong,b,i,small,label,em){font-family:'Jua','Noto Emoji','Apple SD Gothic Neo',system-ui,sans-serif!important}
+/* 0.8.4.1: bounded customer lane and full-body collection portraits. */
+body.in-game #gameScreen.soft-stage .orders-panel{overflow:hidden!important;contain:layout;grid-template-rows:24px minmax(0,1fr)!important;padding:4px 18px 0!important}
+body.in-game #gameScreen.soft-stage .orders-grid{min-height:0!important;overflow:hidden!important;padding:6px 4px 2px!important;align-items:stretch!important}
+body.in-game #gameScreen.soft-stage .order-card{grid-template-rows:auto minmax(0,1fr)!important;align-content:stretch!important;min-height:0!important;max-height:100%!important}
+body.in-game #gameScreen.soft-stage .order-bubble{width:90%!important;max-width:220px!important;padding:5px 8px!important;gap:1px!important;align-self:start!important;justify-self:center!important;border-radius:21px!important}
+body.in-game #gameScreen.soft-stage .order-card .name{font-size:12px!important;line-height:14px!important}
+body.in-game #gameScreen.soft-stage .order-card .recipe{height:22px!important;min-height:22px!important;margin:0!important}
+body.in-game #gameScreen.soft-stage .order-card .food-art{width:22px!important;height:22px!important}
+body.in-game #gameScreen.soft-stage .order-card .timer{font-size:10px!important;line-height:12px!important}
+body.in-game #gameScreen.soft-stage .order-card .timer strong{font-size:11px!important}
+body.in-game #gameScreen.soft-stage .guest-order-portrait{min-height:0!important;overflow:hidden!important;padding:8px 0 0!important;align-items:center!important;justify-content:center!important}
+body.in-game #gameScreen.soft-stage .guest-order-portrait :is(img,svg){width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-width:116px!important;max-height:106px!important;object-fit:contain!important;transform:none!important}
+body.in-game #gameScreen.soft-stage .stage-topbar{position:relative!important}
+/* A fixed-size box prevents intrinsic image dimensions expanding the grid item. */
+.collection-dialog .collection-detail .detail-portrait{display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;height:220px!important;min-height:0!important;width:100%!important;min-width:0!important;padding:16px!important;overflow:hidden!important}
+.collection-dialog .collection-detail .detail-portrait :is(img,svg){display:block!important;position:static!important;inset:auto!important;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center!important;transform:none!important;animation:none!important;margin:0!important}
+@media(max-width:900px){.collection-dialog .collection-detail .detail-portrait{height:180px!important;padding:12px!important}}
+@media(max-height:600px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage .orders-panel{grid-template-rows:16px minmax(0,1fr)!important;padding:0 6px!important}
+ body.in-game #gameScreen.soft-stage .guest-panel-head{height:16px!important;min-height:16px!important}
+ body.in-game #gameScreen.soft-stage .orders-grid{padding:4px 3px 1px!important;gap:7px!important}
+ body.in-game #gameScreen.soft-stage .order-card,body.in-game #gameScreen.soft-stage .compact-orders .order-card{grid-template-columns:minmax(0,1fr) 38px!important;grid-template-rows:minmax(0,1fr)!important;align-items:center!important}
+ body.in-game #gameScreen.soft-stage .order-bubble{width:96%!important;padding:3px 4px!important;align-self:center!important;border-radius:16px!important;gap:0!important}
+ body.in-game #gameScreen.soft-stage .order-card .name{font-size:10px!important;line-height:11px!important}
+ body.in-game #gameScreen.soft-stage .order-card .recipe{height:18px!important;min-height:18px!important}
+ body.in-game #gameScreen.soft-stage .order-card .food-art{width:16px!important;height:16px!important}
+ body.in-game #gameScreen.soft-stage .order-card .timer,body.in-game #gameScreen.soft-stage .order-card .timer strong{font-size:10px!important;line-height:11px!important}
+ body.in-game #gameScreen.soft-stage :is(.special-badge,.signature-badge){font-size:7px!important;padding:1px 2px!important}
+ body.in-game #gameScreen.soft-stage .guest-order-portrait,body.in-game #gameScreen.soft-stage .compact-orders .guest-order-portrait{grid-column:2!important;grid-row:1!important;height:100%!important;padding:0!important}
+ body.in-game #gameScreen.soft-stage .guest-order-portrait :is(img,svg),body.in-game #gameScreen.soft-stage .compact-orders .guest-order-portrait :is(img,svg){width:100%!important;height:100%!important;max-height:60px!important;max-width:38px!important}
+ body.in-game #gameScreen.soft-stage .compact-orders .order-bubble::after{display:none!important}
+ .collection-dialog .collection-detail .detail-portrait{height:150px!important}
+}
+@media(max-width:900px){
+ .collection-dialog .collection-layout{display:flex!important;flex-direction:column!important;gap:12px!important;overflow:auto!important;min-height:0!important}
+ .collection-dialog .collection-detail{flex:0 0 auto!important;height:auto!important;max-height:none!important;min-height:0!important;overflow:visible!important}
+ .collection-dialog .collection-card-list{flex:0 0 auto!important;height:auto!important;max-height:none!important;overflow:visible!important}
+}
+/* 0.8.4.2: restaurant props and automatic Burning. */
+body.in-game #gameScreen.soft-stage .auto-burn-status{display:flex!important;align-items:center!important;justify-content:center!important;min-width:88px;cursor:default!important;background:#e8c884!important;color:#6b4b26!important;border:1px solid #c7a365!important;box-shadow:0 2px 0 #96703f30!important;white-space:nowrap}
+body.in-game #gameScreen.soft-stage .auto-burn-status.active{background:#efab58!important;color:#5f341b!important;box-shadow:0 0 0 3px #ffe8a880,0 2px 0 #9f652d!important}
+body.in-game #gameScreen.soft-stage .burn-meter-track{border-radius:20px!important}
+body.in-game #gameScreen.soft-stage .work-area{background:repeating-linear-gradient(0deg,transparent 0 26px,#a36d3710 27px 28px,transparent 29px 55px),linear-gradient(#e8ba77,#c99458)!important}
+body.in-game #gameScreen.soft-stage .burner{border-color:#b5977a!important;box-shadow:0 5px 0 #947559,inset 0 2px 5px #3a261e50!important}
+body.in-game #gameScreen.soft-stage .burner::after{display:block!important;content:''!important;position:absolute!important;bottom:7px!important;left:22%!important;width:56%!important;height:10px!important;border-radius:8px!important;background:repeating-linear-gradient(10deg,#3a2c26 0 12px,#78523a 13px 22px,#3a2c26 23px 26px)!important;pointer-events:none!important;opacity:.8!important}
+body.in-game #gameScreen.soft-stage .burner:is(.cooking,.ready)::after{background:repeating-linear-gradient(10deg,#6a3725 0 9px,#ef9d38 10px 14px,#995329 15px 23px)!important;box-shadow:0 -3px 12px #ffba4e70!important}
+body.in-game #gameScreen.soft-stage .burner .cook-bar{margin-bottom:10px!important}
+.collection-dialog .collection-card-list{grid-auto-rows:minmax(122px,auto)!important}
+.collection-dialog .collection-entry{height:auto!important;min-height:122px!important}
+@media(min-height:601px){body.in-game #gameScreen.soft-stage .food-button{aspect-ratio:1/1!important;height:auto!important;max-width:110px!important;max-height:110px!important}}
+@media(max-height:600px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage .auto-burn-status{min-width:76px!important;font-size:11px!important;padding:4px 7px!important}
+ body.in-game #gameScreen.soft-stage .burner::after{height:6px!important;bottom:4px!important}
+ body.in-game #gameScreen.soft-stage .burner .cook-bar{margin-bottom:5px!important}
+}
+
+/* 0.8.4.3: plates fit the row instead of forcing square heights into it. */
+body.in-game #gameScreen.soft-stage .food-buttons{
+ grid-template-rows:repeat(var(--food-rows,1),minmax(54px,1fr))!important;
+ grid-auto-rows:minmax(54px,1fr)!important;gap:8px 6px!important;
+ align-items:center!important;padding:3px 4px 5px!important;
+}
+body.in-game #gameScreen.soft-stage .food-button{
+ box-sizing:border-box!important;aspect-ratio:auto!important;
+ width:min(100%,94px)!important;height:100%!important;
+ max-height:94px!important;min-height:54px!important;min-width:0!important;
+ grid-template-rows:minmax(20px,1fr) 16px 12px!important;
+ padding:4px 2px!important;align-self:center!important;justify-self:center!important;
+ transform:none!important;
+}
+body.in-game #gameScreen.soft-stage .food-buttons.ultra-dense-foods .food-button{
+ width:min(100%,84px)!important;max-height:82px!important;
+ box-shadow:inset 0 0 0 3px #e9debd,0 2px 0 #99704e40!important;
+}
+body.in-game #gameScreen.soft-stage .food-button-art{height:100%!important;min-height:0!important}
+body.in-game #gameScreen.soft-stage .food-button .food-art{width:30px!important;height:26px!important;max-height:100%!important}
+body.in-game #gameScreen.soft-stage .food-button-name{font-size:12px!important;line-height:16px!important;height:16px!important;max-width:100%!important}
+body.in-game #gameScreen.soft-stage .food-button small{font-size:10px!important;line-height:12px!important}
+@media(max-height:600px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage .food-buttons{grid-template-rows:repeat(var(--food-rows,1),52px)!important;grid-auto-rows:52px!important;gap:6px 4px!important;padding:2px 2px 4px!important}
+ body.in-game #gameScreen.soft-stage .food-button{width:min(100%,62px)!important;height:50px!important;min-height:50px!important;max-height:50px!important;padding:2px!important;grid-template-rows:20px 14px 10px!important}
+ body.in-game #gameScreen.soft-stage .food-buttons.ultra-dense-foods .food-button{width:min(100%,58px)!important;max-height:50px!important}
+ body.in-game #gameScreen.soft-stage .food-button .food-art{width:22px!important;height:20px!important}
+ body.in-game #gameScreen.soft-stage .food-button-name{font-size:10px!important;line-height:14px!important;height:14px!important}
+ body.in-game #gameScreen.soft-stage .food-button small{font-size:9px!important;line-height:10px!important}
+}
+
+/* Guide-led chef collection: same art in selection, notebook, stage and result. */
+.chef-pixel{object-fit:contain!important;object-position:center!important;image-rendering:pixelated}
+body.in-game #gameScreen.soft-stage .chef-pixel.state-perfect{filter:drop-shadow(0 0 5px #e6b85c99)!important}
+body.in-game #gameScreen.soft-stage .chef-pixel.state-burning{filter:drop-shadow(0 0 7px #e99a7099)!important}
+body.in-game #gameScreen.soft-stage .chef-visual.state-burning .chef-pixel{animation:chefCook 1.2s ease-in-out infinite alternate!important}
+body.in-game #gameScreen.soft-stage .chef-visual.state-assemble .chef-pixel{animation:chefAssemble .48s ease-in-out 2 alternate!important}
+body.in-game #gameScreen.soft-stage .chef-visual.state-cook .chef-pixel{animation:chefCook 1.5s ease-in-out infinite alternate!important}
+@media(prefers-reduced-motion:reduce){
+ body.in-game #gameScreen.soft-stage .chef-visual[class] .chef-pixel{animation:none!important;transition:none!important}
+}
+
+/* 0.8.4.16: numbered pantry plates and an explicit second-row reminder. */
+body.in-game #gameScreen.soft-stage .food-button{position:relative!important;overflow:visible!important}
+.food-shortcut{position:absolute;top:0;left:0;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#566e42;color:#fff9e8;border:1px solid #fff3d8;font:700 12px/1 "Jua",sans-serif;pointer-events:none;z-index:1}
+body.in-game #gameScreen.soft-stage .skewer-panel .button-row{align-items:center!important;justify-content:space-between!important;gap:6px!important}
+.food-inventory-hint{font-size:12px;line-height:1.2;color:#566e42;min-width:0}
+@media(max-height:600px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage .food-buttons{padding:0 2px!important}
+ .food-shortcut{width:16px;height:16px;font-size:10px}.food-inventory-hint{font-size:10px}
+}
+/* A rotation to portrait must not squeeze the pantry behind the burners. */
+@media(max-width:600px) and (orientation:portrait){
+ body.in-game #gameScreen.soft-stage .work-area{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(148px,1fr) minmax(100px,.7fr)!important;gap:6px!important}
+ body.in-game #gameScreen.soft-stage .skewer-panel{grid-template-columns:68px minmax(0,1fr)!important;grid-template-rows:18px 26px minmax(52px,1fr) 44px!important;gap:2px 6px!important}
+ body.in-game #gameScreen.soft-stage .food-buttons{grid-template-rows:repeat(var(--food-rows,1),52px)!important;grid-auto-rows:52px!important;padding:0 2px!important;gap:6px 4px!important}
+ body.in-game #gameScreen.soft-stage .food-button{width:100%!important;height:50px!important;min-height:50px!important;max-height:50px!important;padding:2px!important;grid-template-rows:20px 14px 10px!important}
+ body.in-game #gameScreen.soft-stage .food-button .food-art{width:22px!important;height:20px!important}
+ body.in-game #gameScreen.soft-stage .food-button-name{font-size:10px!important;line-height:14px!important;height:14px!important}
+ body.in-game #gameScreen.soft-stage .food-button small{font-size:9px!important;line-height:10px!important}
+ .food-shortcut{width:16px;height:16px;font-size:10px}.food-inventory-hint{font-size:10px}
+}
+
+/* 0.8.4.17: give both pantry rows the space previously used by Clear. */
+body.mobile-ingredients .food-shortcut,
+body.mobile-ingredients #foodInventoryHint{display:none!important}
+body.in-game.mobile-ingredients #gameScreen.soft-stage .skewer-panel{
+ grid-template-rows:24px 24px minmax(84px,1fr)!important;gap:2px 6px!important;min-height:136px!important;
+}
+body.in-game.mobile-ingredients #gameScreen.soft-stage .skewer-panel .section-heading{
+ grid-row:1!important;padding-right:58px!important;min-width:0!important;
+}
+body.in-game.mobile-ingredients #gameScreen.soft-stage .chef-visual{grid-row:1/4!important}
+body.in-game.mobile-ingredients #gameScreen.soft-stage #selectedOrderSummary{display:none!important}
+body.in-game.mobile-ingredients #gameScreen.soft-stage .skewer-panel .button-row{
+ grid-row:1!important;grid-column:2!important;justify-self:end!important;align-self:center!important;
+ width:52px!important;height:24px!important;min-height:24px!important;margin:0!important;gap:0!important;
+}
+body.in-game.mobile-ingredients #gameScreen.soft-stage #clearSkewerButton{
+ width:52px!important;height:24px!important;min-height:24px!important;padding:1px 4px!important;
+ font-size:10px!important;line-height:20px!important;border-radius:12px!important;flex:none!important;
+}
+body.in-game.mobile-ingredients #gameScreen.soft-stage .food-buttons{
+ grid-template-rows:repeat(var(--food-rows,1),minmax(40px,1fr))!important;
+ grid-auto-rows:minmax(40px,1fr)!important;gap:4px!important;padding:0 2px!important;
+ overflow:hidden!important;align-items:center!important;
+}
+body.in-game.mobile-ingredients #gameScreen.soft-stage .food-button{
+ width:min(100%,64px)!important;height:100%!important;min-height:40px!important;max-height:64px!important;
+ padding:1px 2px!important;grid-template-rows:minmax(12px,1fr) 12px 8px!important;
+}
+body.in-game.mobile-ingredients #gameScreen.soft-stage .food-button .food-art{width:22px!important;height:18px!important}
+body.in-game.mobile-ingredients #gameScreen.soft-stage .food-button-name{font-size:10px!important;line-height:12px!important;height:12px!important}
+body.in-game.mobile-ingredients #gameScreen.soft-stage .food-button small{font-size:8px!important;line-height:8px!important}
+
+/* 0.8.4.19: one-tap fan beside the grills, with a 44px touch target. */
+body.in-game #gameScreen.soft-stage .burners-panel{grid-template-rows:44px minmax(0,1fr)!important}
+body.in-game #gameScreen.soft-stage .burners-panel .section-heading{height:44px!important;overflow:visible!important}
+body.in-game #gameScreen.soft-stage .fan-button{display:flex!important;flex-direction:column;align-items:center;justify-content:center;flex:0 0 auto;min-width:92px;min-height:44px;padding:3px 8px;border:2px solid #987944;border-radius:15px;background:#fff3d8;color:#44351f;line-height:1.15;touch-action:manipulation;box-shadow:0 2px 0 #95623650}
+body.in-game #gameScreen.soft-stage .fan-button span{font-size:12px;white-space:nowrap}
+body.in-game #gameScreen.soft-stage .fan-button small{font-size:10px;white-space:nowrap;margin-top:3px}
+body.in-game #gameScreen.soft-stage .fan-button:disabled{opacity:.7;cursor:default}
+body.in-game #gameScreen.soft-stage .fan-button.active{opacity:1;background:#dce9bc;border-color:#6d8949}
+@media(max-width:700px){body.in-game #gameScreen.soft-stage .fan-button{min-width:84px;padding:3px 5px}}
+
+/* 0.8.4.22 clear objective remains visible in compact mobile mode. */
+body.in-game #gameScreen.soft-stage .guest-panel-head h2{display:flex;align-items:center;gap:6px}
+.clear-goal-label{font-size:12px;color:#66462d;background:#fff3ce;border-radius:8px;padding:2px 6px;white-space:nowrap}
+.clear-goal-label.goal-met{color:#245431;background:#d7edc7}
+.result-goal{font-size:16px;line-height:1.5;color:#4c5639}
+#resultScreen.stage-defeat #resultOutcome{color:#a13e35}
+#resultScreen.stage-defeat .result-goal{color:#8a3e32}
+@media(max-width:900px){.clear-goal-label{font-size:10px;padding:1px 4px}}
+
+/* 0.8.4.23: static colour cues remain visible without motion or sound. */
+body.in-game #gameScreen.soft-stage #timeLabel.time-warning{color:#966015!important;background:#fff0bf;border-radius:6px;padding:0 3px}
+body.in-game #gameScreen.soft-stage #timeLabel.time-urgent{color:#a82d24!important;background:#ffe0d8;border-radius:6px;padding:0 3px}
+.time-warning-label{font-size:10px;color:#963d25;line-height:1.1}
+body.in-game #gameScreen.soft-stage .guest-panel-head h2{flex-wrap:nowrap;white-space:nowrap}
+.clear-goal-label{font-size:11px}
+.result-feedback{margin:10px 0 14px;padding:12px;background:#fff9e9;border:1px solid #dcc6a4;border-radius:14px}
+.result-review-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.result-review-grid div{display:flex;flex-direction:column;gap:4px;text-align:center}
+.result-review-grid span{font-size:12px;color:#66543d}.result-review-grid b{font-size:20px;color:#433b2b}
+.result-retry-tip{font-size:14px;line-height:1.5;margin:12px 0 0}
+@media(max-width:900px){.clear-goal-label{font-size:10px}}
+@media(max-width:520px){.result-review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* 0.8.4.24: readiness is conveyed with border, label and shape, without sound. */
+body.in-game #gameScreen.soft-stage .burner.ready{border:3px solid #356846!important;background:#ecf6d9!important;box-shadow:inset 0 0 0 2px #fffce6,0 0 0 2px #c8e7a4!important}
+body.in-game #gameScreen.soft-stage .burner.ready .burner-state{color:#245336!important;background:#d3edb6!important;border-radius:7px!important;font-weight:900!important;padding:2px 3px!important}
+body.in-game #gameScreen.soft-stage .burner.overcooked{border:3px dashed #a34235!important;background:#fff0e6!important}
+body.in-game #gameScreen.soft-stage .burner.overcooked .burner-state{color:#8a3026!important;font-weight:900!important}
+body.in-game #gameScreen.soft-stage .burner .burner-state{white-space:normal!important;line-height:1.2!important}
+.backup-actions{display:flex;gap:8px;flex-wrap:wrap}.backup-actions button,.save-backup-dialog button{min-height:44px}
+.backup-preview{color:#365233;font-weight:700}.save-backup-dialog{max-width:560px;width:calc(100% - 24px);max-height:85dvh;overflow:auto}
+.save-backup-dialog p{line-height:1.5}.save-backup-dialog #backupMessage{min-height:3em;color:#6b4c32}
+@media(pointer:coarse){
+ body.in-game #gameScreen.soft-stage :is(.food-button,.burner,.order-card,#fanButton,#clearSkewerButton,#pauseButton,#quitButton){min-width:44px!important;min-height:44px!important;touch-action:manipulation}
+ body.in-game #gameScreen.soft-stage .food-buttons{gap:6px!important;grid-auto-rows:minmax(56px,1fr)!important;overflow-y:auto!important;padding:3px!important}
+ body.in-game #gameScreen.soft-stage .burners{gap:8px!important;grid-auto-rows:minmax(72px,1fr)!important;overflow-y:auto!important;padding:4px!important}
+ body.in-game #gameScreen.soft-stage .orders-grid{gap:8px!important;overflow-y:auto!important;padding:2px!important}
+ body.in-game #gameScreen.soft-stage .burners-panel{grid-template-rows:44px minmax(0,1fr)!important;gap:6px!important}
+ body.in-game #gameScreen.soft-stage .burners-panel .section-heading{min-height:44px!important}
+ body.in-game #gameScreen.soft-stage .food-buttons.dense-foods{grid-template-columns:repeat(5,minmax(44px,1fr))!important;overflow-x:auto!important}
+ body.in-game #gameScreen.soft-stage .burner .burner-state{font-size:10px!important}
+}
+
+@media(pointer:coarse) and (max-width:700px){
+ body.in-game #gameScreen.soft-stage .food-buttons.dense-foods{grid-template-columns:repeat(4,minmax(44px,1fr))!important}
+}
+
+/* 0.8.4.26: stable order numbers connect each guest to its hearth. */
+body.in-game #gameScreen.soft-stage .order-routing{display:flex;align-items:center;gap:4px;flex-wrap:wrap;line-height:1.2;min-width:0}
+body.in-game #gameScreen.soft-stage :is(.order-number,.burner-order-number){display:inline-block;font-size:11px!important;font-weight:900!important;white-space:nowrap;color:#fff9e8!important;background:#486348!important;border-radius:5px;padding:2px 4px}
+body.in-game #gameScreen.soft-stage .order-cook-state{font-size:10px;line-height:1.2;color:#405b39;overflow-wrap:anywhere}
+body.in-game #gameScreen.soft-stage .order-card.urgent .order-bubble{border:2px solid #a43e2d!important;background:#fff0db!important}
+body.in-game #gameScreen.soft-stage .order-card.urgent .timer strong{color:#963322!important;font-weight:900!important;white-space:normal!important}
+body.in-game #gameScreen.soft-stage .burner.linked-selected{outline:2px solid #657c46!important;outline-offset:-2px}
+body.in-game #gameScreen.soft-stage .burner.orphaned{border:3px dashed #776c5a!important;background:#eee5d4!important}
+body.in-game #gameScreen.soft-stage .burner.orphaned .burner-state{color:#5c5140!important;background:transparent!important}
+body.in-game #gameScreen.soft-stage .burner-order-ended{font-size:10px;color:#69543e}
+@media(max-width:1100px),(pointer:coarse){
+ body.in-game #gameScreen.soft-stage .orders-grid{overflow-y:auto!important}
+ body.in-game #gameScreen.soft-stage .order-card,body.in-game #gameScreen.soft-stage .compact-orders .order-card{min-height:108px!important}
+ body.in-game #gameScreen.soft-stage .order-bubble{height:auto!important;min-height:0!important;overflow:visible!important;align-self:center!important}
+ body.in-game #gameScreen.soft-stage .order-routing{gap:2px}
+ body.in-game #gameScreen.soft-stage .order-cook-state{font-size:9px}
+}
+@media(max-width:1100px),(pointer:coarse){
+ body.in-game #gameScreen.soft-stage .orders-grid{grid-auto-rows:minmax(148px,auto)!important}
+ body.in-game #gameScreen.soft-stage .order-card,body.in-game #gameScreen.soft-stage .compact-orders .order-card{min-height:148px!important}
+}
+@media(max-width:1100px),(pointer:coarse){
+ body.in-game #gameScreen.soft-stage #orders{grid-auto-rows:minmax(148px,auto)!important;overflow-y:auto!important}
+ body.in-game #gameScreen.soft-stage #orders .order-card{min-height:148px!important;max-height:none!important}
+}
+
+/* Visual Guide v1.0: paper, postcards, collected birds and a working kitchen. */
+:root{--guide-cream:#fff3d8;--guide-leaf:#8fa86a;--guide-moss:#566e42;--guide-honey:#e6b85c;--guide-peach:#e99a70;--guide-wood:#c99458;--guide-ink:#332e24}
+body:not(.in-game){background:linear-gradient(#dce7c6e8,#b6c995e8),url('assets/pixel/world1.png') center/cover fixed!important;color:var(--guide-ink)!important}
+body:not(.in-game) .app{max-width:1280px!important;padding:18px 24px!important}
+body:not(.in-game) .titlebar{position:relative!important;display:flex!important;align-items:center!important;gap:24px!important;padding:12px 22px!important;min-height:106px!important;background:#fff3d8eb!important;border-radius:30px!important;box-shadow:0 5px 0 #566e4225!important;overflow:visible!important}
+body:not(.in-game) .titlebar h1{font-size:32px!important;line-height:1.2!important;margin:2px 0!important;text-shadow:none!important;color:#332e24!important}
+body:not(.in-game) .titlebar p{font-size:12px!important;color:#566e42!important}
+body:not(.in-game) .titlebar::before,body:not(.in-game) .titlebar::after{display:none!important}
+body:not(.in-game) .titlebar .header-actions{gap:7px!important;flex-wrap:wrap!important;justify-content:flex-end!important}
+body:not(.in-game) .titlebar button{min-height:44px!important;border-radius:22px!important;padding:7px 12px!important;background:#fff9e8!important;color:#332e24!important;border:1px solid #bda780!important;box-shadow:0 3px 0 #93754c25!important;font-size:12px!important}
+.menu-mascot{width:92px;height:92px;object-fit:contain;flex:0 0 auto;filter:drop-shadow(0 3px 0 #5b452320);image-rendering:pixelated}
+body:not(.in-game) .start-screen.guided-start{margin-top:18px!important;padding:20px!important;border-radius:34px!important;background:#fff3d8f5!important;box-shadow:0 7px 0 #5f6c3b30!important;border:1px solid #d2bd8d!important;height:calc(100dvh - 164px)!important;max-height:none!important;min-height:360px!important;overflow:hidden!important}
+body:not(.in-game) .guided-progress{display:flex!important;justify-content:center!important;gap:8px!important;padding:0 0 16px!important;border:0!important;background:none!important}
+body:not(.in-game) .guided-progress span{flex:0 1 180px!important;min-height:40px!important;display:grid!important;place-items:center!important;border:1px solid #c5c9a5!important;border-radius:22px!important;background:#e9edda!important;color:#566e42!important;font-size:13px!important;box-shadow:none!important}
+body:not(.in-game) .guided-progress span.active{background:#566e42!important;color:#fff3d8!important;border-color:#566e42!important;box-shadow:0 3px 0 #34462630!important}
+body:not(.in-game) .start-step{min-height:0!important;overflow:hidden!important}
+body:not(.in-game) .step-scroll{overflow:auto!important;overscroll-behavior:contain!important;padding:6px 8px 18px!important;scrollbar-width:thin;scrollbar-color:#a5b382 transparent}
+body:not(.in-game) .step-head{border:0!important;margin:0 0 12px!important;min-height:64px!important;align-items:center!important;padding:0 4px!important}
+body:not(.in-game) .step-head h2{font-size:26px!important;color:#332e24!important}
+body:not(.in-game) .step-head .eyebrow{font-size:11px!important;color:#566e42!important}
+body:not(.in-game) .step-lead{max-width:760px!important;font-size:14px!important;line-height:1.6!important;color:#655e4e!important;margin:8px 0 20px!important}
+body:not(.in-game) #worldStep .hero-bird,body:not(.in-game) #worldStep>.step-scroll>.eyebrow{display:none!important}
+body:not(.in-game) #worldStep h2{font-size:28px!important;text-align:left!important;margin:8px 0!important}
+body:not(.in-game) #worldStep .mobile-orientation-guide{margin:0 0 12px!important;background:#edf0dc!important;border:0!important;border-radius:20px!important}
+body:not(.in-game) .world-scrapbook-layout{display:grid!important;grid-template-columns:minmax(0,1fr) 235px!important;gap:20px!important}
+body:not(.in-game) .travel-journal-column{grid-column:2!important;grid-row:1!important}
+body:not(.in-game) .destination-board{grid-column:1!important;grid-row:1!important;border:0!important;padding:0!important;background:none!important;box-shadow:none!important}
+body:not(.in-game) .destination-board-head{padding:0 0 12px!important;border:0!important}
+body:not(.in-game) .destination-board-head small{display:none!important}
+body:not(.in-game) .destination-board-head h3{font-size:19px!important;color:#566e42!important}
+body:not(.in-game) .destination-board-head>span{font-size:12px!important}
+body:not(.in-game) .guided-world-tabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;overflow:visible!important}
+body:not(.in-game) .world-postcard{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:8px 8px 13px!important;min-height:176px!important;height:auto!important;border:1px solid #c5b18b!important;border-radius:24px!important;background:#fff9e8!important;box-shadow:0 4px 0 #82643e25!important;overflow:hidden!important;transform:none!important;text-align:left!important}
+body:not(.in-game) .world-postcard::before,body:not(.in-game) .world-postcard::after{display:none!important}
+body:not(.in-game) .world-postcard-art{width:100%!important;height:112px!important;min-height:112px!important;border-radius:17px!important;overflow:hidden!important;background:#dde6c7!important;position:relative!important;box-shadow:none!important}
+.world-postcard-art img,.world-postcard-art svg{width:100%;height:100%;object-fit:cover;display:block}
+body:not(.in-game) .world-postcard-art::before,body:not(.in-game) .world-postcard-art::after{display:none!important}
+body:not(.in-game) .world-card-copy{display:block!important;padding:10px 5px 0!important}
+body:not(.in-game) .world-card-copy b{font-size:16px!important;color:#332e24!important;white-space:normal!important}
+body:not(.in-game) .world-card-copy small{display:block!important;font-size:12px!important;color:#655e4e!important;margin-top:4px!important}
+body:not(.in-game) .world-chapter{position:absolute!important;right:15px!important;top:15px!important;border-radius:50%!important;background:#fff3d8e8!important;color:#566e42!important;width:28px!important;height:28px!important;font-size:12px!important}
+body:not(.in-game) .world-postcard:disabled{opacity:.82!important;filter:none!important}
+body:not(.in-game) .world-postcard:disabled .world-postcard-art{filter:saturate(.35)!important}
+body:not(.in-game) .world-postcard:disabled::after{display:grid!important;content:'🔒'!important;position:absolute!important;top:50px!important;left:calc(50% - 19px)!important;width:38px!important;height:38px!important;place-items:center!important;border-radius:50%!important;background:#fff3d8ee!important}
+body:not(.in-game) .journey-record{background:#f4eccd!important;border:1px solid #ceb98d!important;border-radius:24px!important;box-shadow:0 4px 0 #7e643525!important;padding:16px!important}
+body:not(.in-game) .travel-note{background:#e9edda!important;border:0!important;border-radius:24px!important;padding:16px!important}
+body:not(.in-game) .guided-stage-map{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:16px!important;background:none!important;padding:4px!important}
+body:not(.in-game) .stage-card{border-radius:26px!important;padding:14px!important;background:#fff9e8!important;border:1px solid #c5b18b!important;box-shadow:0 4px 0 #8a6a4025!important;min-height:210px!important;text-align:center!important}
+.stage-card .stage-scenery{height:84px;width:100%;object-fit:cover;border-radius:16px;margin-bottom:8px;display:block}
+body:not(.in-game) .stage-card .stage-icon{display:none!important}
+body:not(.in-game) .stage-card b{font-size:15px!important;color:#332e24!important}
+body:not(.in-game) .stage-card small{font-size:12px!important;color:#655e4e!important;line-height:1.5!important}
+body:not(.in-game) .stage-card small.stage-record{display:none!important}
+body:not(.in-game) .stage-card .stage-stars{font-size:23px!important;color:#97702d!important;margin:5px 0!important}
+.habitat-note{border:1px solid #c5c9a5;background:#e9edda;border-radius:20px;margin-bottom:16px;padding:10px 14px}
+.habitat-note summary{font-size:13px;color:#566e42;cursor:pointer;min-height:24px}
+body:not(.in-game) .habitat-note .stage-ecology{margin:12px 0 0!important;max-height:none!important;height:auto!important;overflow:visible!important;background:none!important;gap:10px!important}
+body:not(.in-game) .habitat-note .stage-ecology>div{background:#fff9e8!important;border:0!important;border-radius:16px!important;padding:12px!important}
+body:not(.in-game) .guided-heading{border:0!important;padding:0 4px!important;margin:10px 0 16px!important}
+body:not(.in-game) .guided-heading h3{font-size:20px!important;color:#566e42!important}
+body:not(.in-game) .guided-chef-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important}
+body:not(.in-game) .shrike-select-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;padding:12px!important;gap:8px!important;min-height:255px!important;height:auto!important;border:1px solid #c5b18b!important;border-radius:28px!important;background:#fff9e8!important;box-shadow:0 4px 0 #8a6a4025!important;overflow:hidden!important;text-align:center!important}
+body:not(.in-game) .shrike-select-card::before,body:not(.in-game) .shrike-select-card::after{display:none!important}
+body:not(.in-game) .shrike-select-portrait{width:100%!important;height:146px!important;min-height:146px!important;background:#e9edda!important;border:0!important;border-radius:21px!important;padding:6px!important;box-shadow:none!important;display:grid!important;place-items:center!important;overflow:hidden!important}
+body:not(.in-game) .shrike-select-copy{display:flex!important;flex-direction:column!important;gap:5px!important}
+body:not(.in-game) .shrike-select-copy b{font-size:19px!important;color:#332e24!important}
+body:not(.in-game) .shrike-select-copy .shrike-select-en{font-size:12px!important;color:#655e4e!important}
+body:not(.in-game) .shrike-select-copy span{font-size:12px!important;line-height:1.45!important;color:#566e42!important}
+body:not(.in-game) .shrike-select-copy>small:last-child{font-size:11px!important;line-height:1.4!important;color:#655e4e!important}
+body:not(.in-game) .shrike-select-card:disabled{opacity:.85!important;filter:none!important}
+body:not(.in-game) .shrike-select-card:disabled .chef-pixel{filter:brightness(0) opacity(.3)!important}
+body:not(.in-game) :is(.world-postcard,.stage-card,.shrike-select-card).selected{border-color:#566e42!important;background:#eef1d8!important;box-shadow:0 0 0 3px #8fa86a,0 5px 0 #566e4230!important}
+body:not(.in-game) :is(.world-postcard,.stage-card,.shrike-select-card):hover:not(:disabled){transform:translateY(-2px)!important}
+body:not(.in-game) :is(.world-postcard,.stage-card,.shrike-select-card):active:not(:disabled){transform:translateY(1px)!important}
+.ready-chef-art{height:180px;max-width:240px;margin:auto;display:grid;place-items:center}
+.ready-chef-art img{height:100%;width:100%;object-fit:contain;image-rendering:pixelated}
+body:not(.in-game) .ready-card{border-radius:30px!important;background:#fff9e8!important;border:1px solid #c5b18b!important;box-shadow:0 6px 0 #8a6a4025!important}
+body:not(.in-game) #startButton{border-radius:26px!important;background:#566e42!important;color:#fff3d8!important;font-size:19px!important;min-height:52px!important}
+.collection-dialog{border-radius:32px!important;border:1px solid #c5b18b!important;background:#fff3d8!important;box-shadow:0 12px 0 #65533530,0 18px 50px #23391a44!important;padding:22px!important}
+.collection-dialog .collection-toolbar{background:#e9edda!important;border:0!important;border-radius:22px!important;padding:10px 12px!important}
+.collection-dialog .collection-card-list{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-rows:minmax(210px,auto)!important;gap:12px!important}
+.collection-dialog .collection-entry{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:8px!important;height:auto!important;min-height:210px!important;padding:10px!important;border:1px solid #c8b791!important;border-radius:24px!important;background:#fff9e8!important;box-shadow:0 3px 0 #8a6a401f!important;text-align:center!important;overflow:hidden!important}
+.collection-dialog :is(.bird-card-portrait,.shrike-dex-portrait){height:116px!important;width:100%!important;max-width:none!important;background:#edf0dc!important;border:0!important;border-radius:18px!important;padding:4px!important;box-shadow:none!important}
+.collection-dialog .collection-entry-copy{min-width:0!important;display:block!important}
+.collection-dialog .collection-entry-copy b{font-size:14px!important;line-height:1.4!important;color:#332e24!important;overflow-wrap:anywhere!important}
+.collection-dialog .collection-entry-copy b span{display:block!important;font-size:11px!important;color:#655e4e!important}
+.collection-dialog .collection-entry-copy i{font-size:11px!important;color:#655e4e!important}
+.collection-dialog .entry-status{display:none!important}
+.collection-dialog .collection-detail{background:#f4eccd!important;border:1px solid #c5b18b!important;border-radius:26px!important;box-shadow:none!important;padding:14px!important}
+.collection-dialog .collection-detail::before{display:none!important}
+.collection-dialog .collection-detail .detail-portrait{background:#e9edda!important;border:0!important;border-radius:22px!important;height:220px!important;padding:10px!important;box-shadow:none!important}
+.collection-dialog .detail-section{background:#fff9e8!important;border:0!important;border-radius:18px!important;padding:12px!important}
+.collection-dialog .detail-section b{color:#566e42!important;font-size:12px!important}
+.collection-dialog .detail-section div{font-size:12px!important;line-height:1.6!important;color:#332e24!important}
+.role-insect{--role:#7b8c46}
+.result-screen{border-radius:34px!important;background:#fff3d8!important;border:1px solid #c5b18b!important;box-shadow:0 7px 0 #566e4225!important;padding:26px!important}
+.result-celebration{min-height:220px!important;background:radial-gradient(ellipse,#e6b85c44,transparent 70%)!important;border-radius:30px!important}
+.result-character{width:190px!important;height:190px!important;max-height:none!important}
+.result-character .pixel-sprite{max-width:190px!important}
+.result-grid{gap:12px!important;grid-template-columns:repeat(4,minmax(0,1fr))!important}
+.result-grid>div{background:#e9edda!important;border:0!important;border-radius:22px!important;padding:16px!important;box-shadow:none!important}
+.result-grid>div:nth-child(1){background:#e6b85c55!important}
+.result-grid span{color:#566e42!important;font-size:12px!important}
+.result-grid strong{color:#332e24!important;font-size:26px!important}
+.result-actions button{border-radius:24px!important;min-height:48px!important}
+:is(.help-dialog,.restaurant-dialog){background:#fff3d8!important;border:1px solid #c5b18b!important;border-radius:30px!important;color:#332e24!important;box-shadow:0 14px 40px #33442344!important}
+.upgrade-card{background:#edf0dc!important;border:1px solid #c5c9a5!important;border-radius:24px!important;padding:18px!important}
+/* Kitchen remains one scene; hearths read as ovens, tickets as clipped paper. */
+body.in-game #gameScreen.soft-stage .order-bubble{border-radius:24px!important;border-width:1px!important;box-shadow:0 3px 0 #65533525!important}
+body.in-game #gameScreen.soft-stage .order-bubble::before{content:'';position:absolute;left:calc(50% - 9px);top:-5px;width:18px;height:9px;border-radius:4px;background:#e6b85c;box-shadow:0 1px 0 #96702d55}
+body.in-game #gameScreen.soft-stage .work-area{border-radius:38px!important;border:1px solid #b98a50!important;box-shadow:inset 0 4px 0 #fff3d866,0 6px 0 #8e623644!important}
+body.in-game #gameScreen.soft-stage .burner{background:radial-gradient(ellipse at 50% 75%,#392b23,#6e4a32 70%)!important;border:8px solid #ba9470!important;border-radius:52% 52% 22px 22px!important;box-shadow:0 4px 0 #80634455!important}
+body.in-game #gameScreen.soft-stage .burner.ready{border-color:#e6b85c!important;box-shadow:0 0 0 3px #fff3d899,0 0 18px #e6b85c99!important}
+body.in-game #gameScreen.soft-stage .burner.overcooked{border-color:#997766!important}
+body.in-game #gameScreen.soft-stage .stage-footer button{min-height:44px!important;border-radius:24px!important}
+@media(max-width:900px){
+ body:not(.in-game) .app{padding:12px!important}
+ body:not(.in-game) .titlebar{padding:12px!important;gap:10px!important;flex-wrap:wrap!important;min-height:0!important}
+ body:not(.in-game) .titlebar h1{font-size:25px!important}
+ .menu-mascot{width:68px;height:68px}
+ body:not(.in-game) .titlebar .header-actions{width:100%!important;justify-content:flex-start!important}
+ body:not(.in-game) .start-screen.guided-start{height:calc(100dvh - 220px)!important;min-height:320px!important;padding:14px!important;margin-top:12px!important}
+ body:not(.in-game) .world-scrapbook-layout{display:flex!important;flex-direction:column!important}
+ body:not(.in-game) .travel-journal-column{order:2!important}
+ body:not(.in-game) .guided-world-tabs{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+ body:not(.in-game) .guided-stage-map{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+ body:not(.in-game) .guided-chef-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+ body:not(.in-game) .shrike-select-card{min-height:230px!important;padding:10px!important}
+ body:not(.in-game) .shrike-select-portrait{height:126px!important;min-height:126px!important}
+ body:not(.in-game) .shrike-select-copy b{font-size:17px!important}
+ body:not(.in-game) .guided-progress span{font-size:11px!important;min-height:38px!important}
+ body:not(.in-game) .step-head h2{font-size:21px!important}
+ body:not(.in-game) .step-head{gap:10px!important;flex-wrap:wrap!important}
+ .collection-dialog{padding:14px!important;border-radius:26px!important}
+ .collection-dialog .collection-card-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .collection-dialog .collection-detail .detail-portrait{height:190px!important}
+ .result-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .result-character{width:110px!important;height:140px!important}
+ .result-celebration{min-height:155px!important}
+}
+@media(max-height:600px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage .burner{border-width:5px!important;border-radius:48% 48% 16px 16px!important}
+ body.in-game #gameScreen.soft-stage .order-bubble::before{width:12px;height:6px;top:-3px}
+ body.in-game #gameScreen.soft-stage .order-card .name{font-size:12px!important;line-height:1.1!important}
+ body.in-game #gameScreen.soft-stage .food-button-name{font-size:11px!important;line-height:14px!important}
+ body.in-game #gameScreen.soft-stage .stage-footer button{min-height:44px!important}
+}
+@media(prefers-reduced-motion:reduce){body:not(.in-game) :is(.world-postcard,.stage-card,.shrike-select-card):hover{transform:none!important}.result-character{animation:none!important}}
+
+/* All worlds retain distinct scenery and the same kitchen controls. */
+body.in-game #gameScreen.soft-stage.world-1 .world-scenery{background:url('assets/pixel/world1.png') center/cover!important}
+body.in-game #gameScreen.soft-stage.world-2 .world-scenery{background:url('assets/pixel/world2.png') center/cover!important}
+body.in-game #gameScreen.soft-stage.world-3 .world-scenery{background:url('assets/pixel/world3.png') center/cover!important}
+body.in-game #gameScreen.soft-stage.world-4 .world-scenery{background:url('assets/pixel/world4.png') center/cover!important}
+body.in-game #gameScreen.soft-stage.world-5 .world-scenery{background:url('assets/pixel/world5.png') center/cover!important}
+body.in-game #gameScreen.soft-stage.world-6 .world-scenery{background:url('assets/pixel/world6.png') center/cover!important}
+body.in-game #gameScreen.soft-stage.world-7 .world-scenery{background:url('assets/pixel/world7.png') center/cover!important}
+body.in-game #gameScreen.soft-stage.world-8 .world-scenery{background:url('assets/pixel/world8.png') center/cover!important}
+body.in-game #gameScreen.soft-stage.world-9 .world-scenery{background:url('assets/pixel/world9.png') center/cover!important}
+body.in-game #gameScreen.soft-stage.world-10 .world-scenery{background:url('assets/pixel/world10.png') center/cover!important}
+body.in-game #gameScreen.soft-stage .world-scenery>svg{display:none!important}
+@media(max-height:600px) and (orientation:landscape){body.in-game #gameScreen.soft-stage .order-card .time-text{font-size:11px!important}}
+/* Full-body art and locally bundled rounded Hangul typography. */
+body,h1,h2,h3,h4,button,input,select,summary,.step-head h2,#worldStep h2{font-family:"Jua","Noto Emoji",sans-serif!important}
+body:not(.in-game) .shrike-select-portrait{display:flex!important;align-items:center!important;justify-content:center!important;flex:none!important}
+body:not(.in-game) .shrike-select-portrait .pixel-sprite{width:100%!important;height:134px!important;max-height:134px!important;min-height:0!important;object-fit:contain!important;transform:none!important}
+body:not(.in-game) .ready-chef-art .pixel-sprite{width:100%!important;height:100%!important;max-height:100%!important;object-fit:contain!important;transform:none!important}
+@media(max-width:720px){body:not(.in-game) .shrike-select-portrait .pixel-sprite{height:114px!important;max-height:114px!important}}
+
+.result-screen:not(.hidden){display:flex!important;flex-direction:column!important;max-height:calc(100dvh - 32px)!important;overflow:hidden!important}
+.result-scroll{min-height:0;overflow:auto;padding:0 4px 4px;scrollbar-color:#8fa86a #fff3d8}
+.result-actions{flex-shrink:0!important;margin-top:14px!important;padding-top:12px;border-top:1px dashed #c5b18b}
+.result-actions button{min-height:44px!important}
+@media(max-width:720px){.result-screen{padding:16px!important}.result-actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}.result-actions button{font-size:12px!important;padding:8px 4px!important}.result-celebration{height:164px!important}.result-character{height:150px!important}}
+body:not(.in-game) .header-actions button{min-height:44px!important}
+@media(max-width:720px){
+ body:not(.in-game) .titlebar{display:grid!important;grid-template-columns:64px minmax(0,1fr)!important;gap:8px 12px!important;align-items:center!important;padding:16px!important;text-align:left!important}
+ body:not(.in-game) .menu-mascot{grid-column:1!important;width:64px!important;height:64px!important;margin:0!important}
+ body:not(.in-game) .titlebar>div:first-of-type{grid-column:2!important;text-align:left!important}
+ body:not(.in-game) .titlebar .game-title{font-size:24px!important;text-align:left!important}
+ body:not(.in-game) .titlebar .subtitle{font-size:11px!important;text-align:left!important}
+ body:not(.in-game) .header-actions{grid-column:1/-1!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}
+ body:not(.in-game) .header-actions button{width:100%!important;min-width:0!important;max-width:none!important;font-size:11px!important;padding:8px 4px!important;min-height:44px!important;grid-column:auto!important}
+}
+/* Order paper must shrink with the row, including four ingredient sketches. */
+body.in-game #gameScreen.soft-stage .order-bubble{grid-template-columns:minmax(0,1fr)!important;min-width:0!important;box-sizing:border-box!important}
+body.in-game #gameScreen.soft-stage .order-bubble>:is(.name,.recipe,.timer,.order-badges){min-width:0!important;max-width:100%!important;width:100%!important}
+body.in-game #gameScreen.soft-stage .order-card .recipe-art{min-width:0!important;min-height:0!important;width:100%!important;max-width:100%!important;height:100%!important;padding:0!important;gap:2px!important}
+body.in-game #gameScreen.soft-stage .order-card .food-art{min-width:0!important;flex-shrink:1!important}
+body.in-game #gameScreen.soft-stage .order-card .name{display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden!important;line-height:14px!important}
+@media(max-width:960px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage .order-card .name{font-size:11px!important;line-height:12px!important}
+ body.in-game #gameScreen.soft-stage .order-card .timer,body.in-game #gameScreen.soft-stage .order-card .timer strong{font-size:11px!important;line-height:12px!important}
+ body.in-game #gameScreen.soft-stage .order-badges{gap:1px!important}
+ body.in-game #gameScreen.soft-stage :is(.special-badge,.signature-badge){font-size:0!important;padding:1px 2px!important;line-height:11px!important}
+ body.in-game #gameScreen.soft-stage .special-badge::before{content:'★×2';font-size:11px}
+ body.in-game #gameScreen.soft-stage .signature-badge::before{content:'+10%';font-size:11px}
+ body.in-game #gameScreen.soft-stage .order-bubble{padding:3px!important}
+}
+@media(max-width:960px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage .order-badges{flex-wrap:nowrap!important}
+ body.in-game #gameScreen.soft-stage :is(.special-badge,.signature-badge){min-width:0!important;width:auto!important;padding:1px!important;flex-shrink:0!important}
+ body.in-game #gameScreen.soft-stage .special-badge::before{content:'×2'}
+}
+.collection-entry .bird-card-portrait,.collection-entry .shrike-dex-portrait{display:flex!important;align-items:center!important;justify-content:center!important;min-height:116px!important;height:116px!important}
+.collection-entry .bird-card-portrait .pixel-sprite,.collection-entry .shrike-dex-portrait .pixel-sprite{width:100%!important;height:104px!important;max-height:104px!important;object-fit:contain!important;transform:none!important}
+.collection-filter{min-height:44px!important;min-width:44px!important;font-size:12px!important}
+@media(max-width:720px){.collection-entry .bird-card-portrait,.collection-entry .shrike-dex-portrait{min-height:100px!important;height:100px!important}.collection-entry .bird-card-portrait .pixel-sprite,.collection-entry .shrike-dex-portrait .pixel-sprite{height:92px!important;max-height:92px!important}}
+
+/* Center both short names and wrapped names on the order paper. */
+body.in-game #gameScreen.soft-stage .order-card .order-bubble > strong.name.primary-name{
+ text-align:center!important;text-indent:0!important;margin:0!important;padding:0!important;
+ justify-self:stretch!important;align-self:center!important;box-sizing:border-box!important;
+ width:100%!important;max-width:100%!important;min-width:0!important;
+}
+
+/* Preparation keeps its start action outside the scrolling summary. */
+body:not(.in-game) #startScreen.ready-active:not(.hidden){position:fixed!important;inset:16px!important;margin:0 auto!important;width:auto!important;max-width:1120px!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:hidden!important;z-index:40;background:#fff3d8!important;display:flex!important;flex-direction:column!important;box-sizing:border-box!important}
+body:not(.in-game) #readyStep:not(.hidden){display:flex!important;flex-direction:column!important;flex:1 1 0!important;min-height:0!important;overflow:hidden!important}
+body:not(.in-game) #readyStep .step-head{flex-shrink:0!important}
+body:not(.in-game) #readyStep .ready-wrap{flex:1 1 0!important;min-height:0!important;overflow:auto!important;overscroll-behavior:contain;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:12px!important;padding:12px!important}
+body:not(.in-game) #readyStep .ready-wrap>*{flex-shrink:0!important}
+body:not(.in-game) #readyStep .ready-chef-art{width:220px!important;height:180px!important;min-height:180px!important}
+body:not(.in-game) #readyStep .ready-actions{flex:0 0 auto;display:flex;justify-content:center;padding:12px 4px max(8px,env(safe-area-inset-bottom));border-top:1px solid #c5b18b;background:#fff3d8}
+body:not(.in-game) #readyStep #startButton{margin:0!important;min-height:52px!important;max-width:620px!important;width:100%!important}
+@media(max-width:720px){body:not(.in-game) #startScreen.ready-active:not(.hidden){inset:8px!important;padding:12px!important}body:not(.in-game) #readyStep .ready-actions{padding-top:8px}body:not(.in-game) #readyStep .ready-wrap{padding:8px!important}}
+body.in-game #gameScreen.soft-stage .skewer-panel .button-row{grid-template-columns:1fr!important}
+
+/* Mobile selection has one bounded scroll area, including the final card. */
+@media(max-width:1100px),(pointer:coarse){
+ body:not(.in-game) #startScreen.selection-active:not(.hidden){position:fixed!important;inset:8px!important;margin:0 auto!important;width:auto!important;max-width:1120px!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:hidden!important;z-index:40;background:#fff3d8!important;display:flex!important;flex-direction:column!important;padding:12px!important;box-sizing:border-box!important}
+ body:not(.in-game) #startScreen.selection-active .guided-progress{flex-shrink:0!important}
+ body:not(.in-game) #startScreen.selection-active .start-step:not(.hidden){display:flex!important;flex-direction:column!important;flex:1 1 0!important;min-height:0!important;overflow:hidden!important}
+ body:not(.in-game) #startScreen.selection-active .step-head{flex:0 0 auto!important}
+ body:not(.in-game) #startScreen.selection-active .step-scroll{flex:1 1 0!important;min-height:0!important;height:auto!important;max-height:none!important;overflow-y:auto!important;overflow-x:hidden!important;-webkit-overflow-scrolling:touch;touch-action:pan-y;overscroll-behavior-y:contain;scroll-padding-block:12px!important;padding-bottom:max(24px,env(safe-area-inset-bottom))!important}
+ body:not(.in-game) #startScreen.selection-active :is(.guided-stage-map,.guided-chef-grid){height:auto!important;max-height:none!important;overflow:visible!important;padding-bottom:8px!important}
+}
+/* Auto margins on the chef previously absorbed extra height after rotation. */
+body:not(.in-game) #readyStep .ready-wrap{gap:12px!important;justify-content:flex-start!important;align-content:flex-start!important;overflow-anchor:none}
+body:not(.in-game) #readyStep .ready-wrap>*{margin-block:0!important}
+body:not(.in-game) #readyStep .ready-chef-art{margin:0!important}
+body:not(.in-game) #readyStep .ready-card{margin:0!important;gap:8px!important;padding:16px!important}
+
+body:not(.in-game) #readyStep .ready-chef-art{display:flex!important;align-items:center!important;justify-content:center!important}
+body:not(.in-game) #readyStep .ready-chef-art .pixel-sprite{height:100%!important;width:100%!important;max-height:100%!important;max-width:100%!important;object-fit:contain!important;flex-shrink:1!important}
+
+/* Bundled Korean font for cover title. */
+#coverScreen .cover-copy .game-title{font-family:"Jua","Noto Emoji",sans-serif!important}
+
+/* 0.8.4.10: World selection shares the bounded mobile scroll area. */
+#coverScreen .bgm-credit{display:block;margin:12px 0 0;color:#655e4e;font-size:14px;line-height:1.4;text-align:center}
+
+/* Keep the World menu toolbar accessible above its bounded scroll panel. */
+@media(max-width:1100px),(pointer:coarse){
+ body.world-menu-active:not(.in-game) .app-shell{height:100dvh!important;min-height:0!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;box-sizing:border-box!important}
+ body.world-menu-active:not(.in-game) .titlebar{flex:0 0 auto!important;min-height:0!important;max-height:35dvh!important;overflow-y:auto!important;overscroll-behavior:contain}
+ body.world-menu-active:not(.in-game) #startScreen:not(.hidden){height:auto!important;min-height:0!important;flex:1 1 0!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
+ body.world-menu-active:not(.in-game) #startScreen .guided-progress{flex-shrink:0!important}
+ body.world-menu-active:not(.in-game) #worldStep:not(.hidden){flex:1 1 0!important;min-height:0!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
+ body.world-menu-active:not(.in-game) #worldStep .world-step-scroll{flex:1 1 0!important;min-height:0!important;height:auto!important;max-height:none!important;overflow-y:auto!important;overflow-x:hidden!important;touch-action:pan-y;-webkit-overflow-scrolling:touch;padding-bottom:max(24px,env(safe-area-inset-bottom))!important}
+}
+
+/* 0.8.4.13: bound Bird Book scrolling between its header and close button. */
+#birdBookDialog[open]{
+ display:grid!important;
+ grid-template-rows:auto auto minmax(0,1fr) auto;
+ box-sizing:border-box;
+ height:min(900px,calc(100dvh - 24px));
+ max-height:calc(100dvh - 24px)!important;
+}
+#birdBookDialog .collection-layout{
+ height:auto!important;min-height:0!important;min-width:0;
+ overflow:hidden!important;
+}
+#birdBookDialog :is(.collection-card-list,.collection-detail){
+ min-height:0!important;min-width:0;
+ overscroll-behavior:contain;
+ scroll-padding-block:12px;
+}
+#birdBookDialog .collection-card-list{padding-bottom:16px}
+#birdBookDialog .collection-close{
+ position:static!important;flex-shrink:0;
+ margin-bottom:0!important;
+}
+@media(max-width:900px){
+ #birdBookDialog .collection-layout{
+  overflow:auto!important;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  scroll-padding-block:12px;
+  padding-bottom:16px;
+ }
+}
+@media(max-height:500px) and (max-width:900px){
+ #birdBookDialog[open]{padding:10px!important}
+ #birdBookDialog .collection-head{grid-template-columns:minmax(0,1fr) 145px}
+ #birdBookDialog .collection-toolbar{
+  flex-direction:row;align-items:center;margin:6px 0;
+  padding:6px 10px!important;
+ }
+ #birdBookDialog .world-filter-label{width:auto}
+ #birdBookDialog .world-filter-label select{max-width:170px}
+}
+
+/* 0.8.4.25: keep ShrikeDex content inside the viewport and expose its last row. */
+#shrikeDexDialog[open]{
+ display:grid!important;grid-template-rows:auto auto minmax(0,1fr) auto!important;
+ box-sizing:border-box!important;height:min(900px,calc(100vh - 24px));
+ height:min(900px,calc(100dvh - 24px));max-height:calc(100dvh - 24px)!important;
+ overflow:hidden!important;
+}
+#shrikeDexDialog .collection-layout{
+ height:auto!important;max-height:none!important;min-height:0!important;min-width:0!important;
+ overflow:hidden!important;
+}
+#shrikeDexDialog :is(.collection-card-list,.collection-detail){
+ min-height:0!important;min-width:0!important;max-height:none!important;
+ overflow-y:auto!important;overscroll-behavior:contain;scroll-padding-block:16px;
+ -webkit-overflow-scrolling:touch;
+}
+#shrikeDexDialog .collection-card-list{padding-bottom:20px!important}
+#shrikeDexDialog .collection-detail{padding-bottom:20px!important}
+#shrikeDexDialog .collection-close{position:static!important;margin-bottom:0!important;min-height:44px!important}
+@media(max-width:900px){
+ #shrikeDexDialog .collection-layout{
+  display:flex!important;flex-direction:column!important;overflow-y:auto!important;overflow-x:hidden!important;
+  overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scroll-padding-block:16px;
+  padding-bottom:max(20px,env(safe-area-inset-bottom))!important;
+ }
+ #shrikeDexDialog :is(.collection-card-list,.collection-detail){
+  flex:0 0 auto!important;height:auto!important;min-height:0!important;overflow:visible!important;
+ }
+}
+@media(max-height:500px) and (max-width:900px){
+ #shrikeDexDialog[open]{padding:10px!important}
+ #shrikeDexDialog .collection-head{grid-template-columns:minmax(0,1fr) 145px!important;gap:8px!important;padding-bottom:6px!important}
+ #shrikeDexDialog .collection-head .hint{display:none}
+ #shrikeDexDialog .collection-toolbar{flex-direction:row!important;align-items:center!important;margin:6px 0!important;padding:6px 10px!important}
+}
+
+/* 0.9.1: paper tickets, orchard timber and complete landscape postcards. */
+:root{--paper:#fff3d8;--leaf:#8fa86a;--moss:#566e42;--honey:#e6b85c;--ink:#332e24}
+body{background:radial-gradient(ellipse at top,#f9e8b8,transparent 60%),#e2ecd2;color:var(--ink)}
+button:focus-visible{outline:3px solid #365b52!important;outline-offset:3px}
+.titlebar{background:linear-gradient(110deg,#fff8e9,#e3edcd)!important;border:2px solid #a8b58b!important;border-radius:28px!important;box-shadow:0 6px 0 #a7b58b33!important}
+#startScreen.guided-start{background:linear-gradient(135deg,#fffaec,#f1f3dc)!important;border:3px solid #a5b581!important;border-radius:30px!important}
+.guided-progress{background:#566e42!important;padding:12px!important;border-radius:20px!important;gap:8px!important}
+.guided-progress span{color:#fff3d8!important;border:1px solid #a6b48b!important;background:transparent!important}
+.guided-progress span.active{background:#e6b85c!important;color:#433724!important;box-shadow:0 3px 0 #33452c!important}
+.world-postcard{border:5px solid #fff8e5!important;box-shadow:0 5px 0 #ac92634a!important;border-radius:14px!important}
+.world-postcard:nth-child(3n+1){border-bottom-color:#c7dca4!important}.world-postcard:nth-child(3n+2){border-bottom-color:#f0c984!important}.world-postcard:nth-child(3n){border-bottom-color:#e7b6a1!important}
+.stage-card{border:2px solid #c0ac7e!important;background:#fff8e7!important;border-radius:18px!important;box-shadow:0 4px 0 #a48a6430!important}
+.stage-card .stage-scenery{object-fit:contain!important;background:#dce9d1!important}
+.shrike-select-card{background:linear-gradient(150deg,#fff9e5,#e8efd5)!important;border:2px solid #b7c499!important;border-radius:24px!important}
+.shrike-select-card.selected{border-color:#566e42!important;box-shadow:0 0 0 3px #e6b85c!important}
+body:not(.in-game) #readyStep{min-height:0!important;overflow:hidden!important;display:flex;flex-direction:column}
+body:not(.in-game) #readyStep.hidden{display:none!important}
+body:not(.in-game) #readyStep .ready-wrap{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)!important;grid-template-rows:auto auto!important;gap:18px!important;overflow:auto!important;padding:12px!important;min-height:0!important;align-items:center!important;flex:1}
+body:not(.in-game) #readyStep .landscape-guide{display:none!important}
+.ready-landscape{grid-column:1;grid-row:1 / 3;position:relative;margin:0;align-self:center;border:8px solid #fff9e8;border-bottom-width:12px;border-radius:20px;box-shadow:0 7px 0 #b7976544;background:#e4ecd5;overflow:hidden}
+.ready-landscape img{width:100%;height:auto;display:block;object-fit:contain;aspect-ratio:3/2;image-rendering:pixelated}
+.ready-landscape figcaption{padding:12px 18px;background:#fff3d8;display:grid;gap:4px;color:#566e42}
+.ready-landscape figcaption strong{font-size:24px;color:#433724}.ready-landscape figcaption small{font-size:12px;letter-spacing:2px}
+.ready-landscape figcaption span{font-size:13px}
+body:not(.in-game) #readyStep #readyChefArt{grid-column:2;grid-row:1;width:100%!important;height:150px!important;min-height:0!important;max-height:none!important;background:radial-gradient(ellipse,#ecd59488,transparent 70%);margin:0!important}
+body:not(.in-game) #readyStep #readyChefArt :is(img,svg){height:100%!important;max-width:100%!important;object-fit:contain!important}
+body:not(.in-game) #readyStep #startChoiceSummary{grid-column:2;grid-row:2;min-width:0!important;padding:18px!important;margin:0!important;background:#fff8e7!important;border:2px dashed #b39d70!important;border-radius:18px!important;box-shadow:none!important;display:grid!important;gap:7px!important;text-align:left!important}
+.ready-kit{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:8px 12px;color:#435836;background:#e5edcf;border-radius:16px;margin:4px 12px}
+.ready-kit button{min-height:44px}.ready-actions{padding:8px 12px!important;flex:none!important}.ready-actions button{min-height:52px!important;background:#e6b85c!important;color:#44351f!important;border:2px solid #987547!important;box-shadow:0 4px 0 #a27b43!important}
+#restaurantDialog{width:min(850px,calc(100vw - 24px));max-width:850px;max-height:calc(100dvh - 24px);padding:20px;background:#fff8e7;border:3px solid #7f9766;border-radius:26px;overflow:hidden}
+#restaurantDialog[open]{display:flex;flex-direction:column;gap:10px}
+.growth-heading{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:2px dashed #c6b184;padding-bottom:10px}
+.growth-heading small{font-size:11px;color:#566e42;letter-spacing:2px;width:100%}.growth-heading h2,.growth-heading p{margin:0}.growth-heading p{background:#e6b85c;padding:7px 12px;border-radius:12px;color:#44351f}
+.growth-scroll{min-height:0;overflow:auto;overscroll-behavior:contain;padding:4px 8px 16px}.growth-scroll h3{color:#435d35;font-size:20px;margin:22px 0 10px}.growth-scroll .hint{font-size:13px;line-height:1.5}
+.training-card{display:grid;grid-template-columns:80px minmax(0,1fr) auto;align-items:center;gap:12px;background:#ecf0d8;border:1px solid #b6c294;border-radius:20px;padding:12px;margin:10px 0}
+.training-portrait{height:78px}.training-portrait :is(svg,img){height:100%;width:100%;object-fit:contain}.training-card strong{font-size:18px}.training-card small,.training-rank{display:block;font-size:12px;line-height:1.6}.training-rank{color:#6b5425}
+.training-card button,.supply-card button,#closeRestaurantButton{min-height:44px;flex:none}.training-card button:disabled,.supply-card button:disabled{opacity:.55}
+#supplyShop{display:grid;grid-template-columns:1fr 1fr;gap:12px}.supply-card{background:#fff0cf;border:2px solid #d4ae6a;border-radius:20px;padding:16px;display:grid;gap:8px;text-align:center}.supply-icon{font-size:32px}.supply-card p{margin:0;font-size:14px}.supply-card small{font-size:12px}#growthMessage{min-height:22px;color:#435d35}
+#sceneryDialog{width:min(1100px,calc(100vw - 20px));max-width:1100px;max-height:calc(100dvh - 20px);padding:14px;border:4px solid #e1be7b;border-radius:24px;background:#fff8e7;overflow:auto;text-align:center}
+#sceneryDialog h2{margin:0 0 8px;color:#435d35}#sceneryFullImage{display:block;width:100%;height:min(65dvh,650px);object-fit:contain;image-rendering:pixelated;background:#dce7cc;border-radius:12px}#sceneryDialog p{font-size:12px;margin:8px}#closeSceneryButton{min-height:44px}
+/* Room for scenery instead of zooming the art beneath opaque panels. */
+body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:54px minmax(84px,.55fr) minmax(158px,.85fr) minmax(225px,1fr) 50px!important;padding:12px!important;gap:8px!important;border:3px solid #a8b985!important;background:#e0e9cf!important}
+body.in-game #gameScreen.soft-stage .world-scenery{background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important;opacity:.80!important}
+body.in-game #gameScreen.soft-stage .scenic-postcard{grid-row:2;grid-column:1;display:flex;align-items:center;justify-content:center;gap:24px;min-height:0;overflow:hidden;background:linear-gradient(90deg,#f9f3df99,#eff4d544);border-radius:18px;border:1px solid #fff5dcbb}
+.scenic-postcard>img{display:block;height:100%;width:auto;max-width:55%;object-fit:contain;image-rendering:pixelated;border:4px solid #fff4d8;border-radius:10px;box-sizing:border-box}
+.scenic-postcard>div{display:grid;gap:5px;color:#344a2b;text-shadow:0 1px #fff7e7}.scenic-postcard small{font-size:12px}.scenic-postcard strong{font-size:22px}.scenic-postcard button{min-height:44px;background:#fff3d8!important;color:#435836!important;border:1px solid #8a9e67!important;font-size:12px!important}
+body.in-game #gameScreen.soft-stage .orders-panel{grid-row:3!important;padding:0 6px!important;min-height:0!important;overflow:hidden!important}
+body.in-game #gameScreen.soft-stage #orders{overflow:auto!important;align-content:start!important;grid-auto-rows:minmax(152px,1fr)!important}
+body.in-game #gameScreen.soft-stage .order-bubble{background:linear-gradient(#fffae9,#fff0cd)!important;border-radius:12px 12px 20px 20px!important;border-top:5px solid #b0c685!important;box-shadow:0 4px 0 #8a795833!important}
+body.in-game #gameScreen.soft-stage .order-card:nth-child(3n+2) .order-bubble{border-top-color:#e5bc6a!important}body.in-game #gameScreen.soft-stage .order-card:nth-child(3n) .order-bubble{border-top-color:#dfa68c!important}
+body.in-game #gameScreen.soft-stage .work-area{grid-row:4!important;padding:10px 14px!important;border-radius:28px!important;border-top-color:#fff0c5!important;gap:14px!important;background:repeating-linear-gradient(0deg,transparent 0 30px,#a5753e22 31px 32px),linear-gradient(#e8c38a,#c99458)!important}
+body.in-game #gameScreen.soft-stage .stage-footer{grid-row:5!important;gap:8px!important}
+.supply-actions{display:flex;gap:6px;flex:none}.supply-actions button{min-height:44px;min-width:44px;padding:6px 12px;border:2px solid #a08b5e;border-radius:16px;background:#fff0cd;color:#44351f;font-size:12px;white-space:nowrap;touch-action:manipulation}.supply-actions button:disabled{opacity:.65;filter:saturate(.5)}
+body.in-game #gameScreen.soft-stage .guest-panel-head h2{white-space:normal!important;flex-wrap:wrap!important}
+@media(max-width:600px){
+ body:not(.in-game) #readyStep .ready-wrap{grid-template-columns:minmax(0,1fr)!important;gap:10px!important}.ready-landscape{grid-column:1;grid-row:1;border-width:5px}.ready-landscape figcaption{padding:8px 12px}.ready-landscape figcaption strong{font-size:20px}
+ body:not(.in-game) #readyStep #readyChefArt{grid-column:1;grid-row:2;height:100px!important}body:not(.in-game) #readyStep #startChoiceSummary{grid-column:1;grid-row:3;padding:14px!important}
+ .ready-kit{font-size:12px;gap:4px}.ready-kit button{font-size:12px}.training-card{grid-template-columns:60px minmax(0,1fr);gap:8px;padding:10px}.training-card button{grid-column:1 / -1}.training-portrait{height:65px}.training-card strong{font-size:16px}#restaurantDialog{padding:12px}.growth-heading h2{font-size:20px}#supplyShop{gap:8px}.supply-card{padding:10px}
+}
+@media(max-height:650px) and (orientation:landscape){
+ body.in-game .app-shell{padding:3px max(4px,env(safe-area-inset-right)) 3px max(4px,env(safe-area-inset-left))!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-columns:minmax(155px,.32fr) minmax(0,.68fr)!important;grid-template-rows:40px 52px minmax(0,1fr) 46px!important;gap:4px!important;padding:5px!important;border-radius:18px!important}
+ body.in-game #gameScreen.soft-stage .stage-topbar{grid-column:1 / -1!important;grid-row:1!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage .scenic-postcard{grid-column:1 / -1;grid-row:2;gap:14px;justify-content:flex-start;padding-left:12px;background:#fff3d866}
+ .scenic-postcard>img{max-width:100px;border-width:2px}.scenic-postcard>div{display:flex;align-items:center;gap:10px}.scenic-postcard small{display:none}.scenic-postcard strong{font-size:16px}.scenic-postcard button{font-size:11px!important}
+ body.in-game #gameScreen.soft-stage .orders-panel{grid-column:1!important;grid-row:3!important;grid-template-rows:34px minmax(0,1fr)!important;padding:0!important}
+ body.in-game #gameScreen.soft-stage .guest-panel-head{height:auto!important;min-height:34px!important;padding:2px!important}.guest-panel-head p{display:none!important}
+ body.in-game #gameScreen.soft-stage .guest-panel-head h2{font-size:12px!important;gap:2px!important}.clear-goal-label{font-size:10px!important}
+ body.in-game #gameScreen.soft-stage #orders{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:none!important;grid-auto-rows:minmax(152px,auto)!important;gap:6px!important}
+ body.in-game #gameScreen.soft-stage #orders .order-card{height:auto!important;min-height:152px!important;grid-template-columns:1fr!important;grid-template-rows:auto 48px!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage .order-bird{height:48px!important;max-height:48px!important}
+ body.in-game #gameScreen.soft-stage .work-area{grid-column:2!important;grid-row:3!important;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr)!important;padding:6px!important;gap:6px!important;border-radius:18px!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage .skewer-panel,body.in-game.mobile-ingredients #gameScreen.soft-stage .skewer-panel{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:44px 28px minmax(0,1fr)!important;gap:3px!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage .skewer-panel .section-heading{grid-column:1!important;grid-row:1!important;height:44px!important;min-height:44px!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage .chef-visual{display:none!important}
+ body.in-game #gameScreen.soft-stage #selectedOrderSummary{display:none!important}
+ body.in-game #gameScreen.soft-stage #skewer{grid-column:1!important;grid-row:2!important;height:28px!important}
+ body.in-game #gameScreen.soft-stage #foodButtons{grid-column:1!important;grid-row:3!important;grid-template-columns:repeat(3,minmax(44px,1fr))!important;grid-template-rows:none!important;grid-auto-rows:56px!important;overflow:auto!important;gap:4px!important;padding:2px!important}
+ body.in-game #gameScreen.soft-stage #foodButtons .food-button{height:56px!important;min-height:56px!important;max-height:none!important;grid-template-rows:26px 14px 10px!important}
+ body.in-game #gameScreen.soft-stage #foodButtons .food-button-name{font-size:11px!important}
+ body.in-game #gameScreen.soft-stage .burners-panel{grid-template-rows:44px minmax(0,1fr)!important;gap:3px!important}
+ body.in-game #gameScreen.soft-stage .burners-panel h2{display:none!important}
+ body.in-game #gameScreen.soft-stage #burners{grid-template-columns:1fr!important;grid-auto-rows:96px!important;overflow:auto!important}
+ body.in-game #gameScreen.soft-stage #burners .burner{min-height:96px!important;height:96px!important}
+ body.in-game #gameScreen.soft-stage .stage-footer{grid-column:1 / -1!important;grid-row:4!important;gap:5px!important}
+ body.in-game #gameScreen.soft-stage .status-panel{display:none!important}.supply-actions button{font-size:11px;padding:5px 8px}.game-actions button{padding:5px 8px!important}
+ body:not(.in-game) #readyStep .ready-wrap{grid-template-columns:1fr 1fr!important}body:not(.in-game) #readyStep #readyChefArt{display:none!important}.ready-landscape{grid-column:1;grid-row:1}body:not(.in-game) #readyStep #startChoiceSummary{grid-column:2;grid-row:1}.ready-landscape figcaption{display:none}
+}
+@media(orientation:portrait) and (max-width:700px){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:44px 74px minmax(150px,.8fr) minmax(250px,1.3fr) 96px!important;padding:6px!important;gap:4px!important}
+ body.in-game #gameScreen.soft-stage .stage-footer{flex-wrap:wrap!important;justify-content:center!important}.supply-actions{width:100%;justify-content:center}.scenic-postcard strong{font-size:16px}
+ body.in-game #gameScreen.soft-stage .status-panel{display:none!important}
+ body.in-game #gameScreen.soft-stage #orders{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:160px!important}
+ body.in-game #gameScreen.soft-stage .work-area{grid-template-columns:1fr!important;grid-template-rows:minmax(150px,1fr) 110px!important;padding:5px!important;gap:4px!important}
+ body.in-game #gameScreen.soft-stage .burners-panel{grid-template-columns:90px minmax(0,1fr)!important;grid-template-rows:1fr!important}
+ body.in-game #gameScreen.soft-stage .burners-panel .section-heading{grid-column:1!important;grid-row:1!important;align-self:center}.burners-panel h2{font-size:12px!important}
+ body.in-game #gameScreen.soft-stage #burners{grid-column:2!important;grid-row:1!important;grid-template-columns:repeat(3,minmax(72px,1fr))!important;overflow:auto!important}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+body:not(.in-game) #readyStep .ready-wrap{align-content:center!important;justify-items:stretch!important}
+body:not(.in-game) #readyStep .ready-landscape{width:100%;min-width:0}
+body:not(.in-game) #readyStep #readyChefArt{min-height:100px!important;max-width:none!important}
+body:not(.in-game) .guided-progress{background:#566e42!important;padding:8px!important}
+body:not(.in-game) .guided-progress span{background:transparent!important;color:#fff3d8!important}
+body:not(.in-game) .guided-progress span.active{background:#e6b85c!important;color:#433724!important}
+@media(max-width:600px){body:not(.in-game) #readyStep .ready-wrap{align-content:start!important}}
+@media(max-height:650px) and (orientation:landscape){
+ body:not(.in-game) #startScreen.ready-active:not(.hidden){padding:8px!important;inset:5px!important}
+ body:not(.in-game) #startScreen.ready-active .guided-progress{padding:4px!important;gap:4px!important;flex:none!important}
+ body:not(.in-game) #startScreen.ready-active .guided-progress span{min-height:28px!important;font-size:11px!important}
+ body:not(.in-game) #readyStep .step-head{height:44px!important;min-height:44px!important;padding:0!important;margin:2px 0!important;flex:none!important}
+ body:not(.in-game) #readyStep .step-head .eyebrow{display:none!important}body:not(.in-game) #readyStep .step-head h2{font-size:18px!important;margin:0!important}
+ body:not(.in-game) #readyStep .ready-wrap{padding:4px!important;gap:10px!important;align-content:start!important}
+ body:not(.in-game) #readyStep .ready-landscape{border-width:3px!important;height:128px!important;max-width:100%!important}
+ body:not(.in-game) #readyStep .ready-landscape img{height:122px!important;width:100%!important;object-fit:contain!important}
+ body:not(.in-game) #readyStep #startChoiceSummary{padding:8px!important;gap:3px!important;font-size:12px!important}
+ body:not(.in-game) #readyStep #startChoiceSummary strong{font-size:15px!important}
+ body:not(.in-game) #readyStep .ready-kit{min-height:44px!important;margin:2px!important;padding:0 6px!important;gap:8px!important;font-size:12px!important;flex-wrap:nowrap!important;flex:none!important}
+ body:not(.in-game) #readyStep .ready-kit button{font-size:11px!important;padding:4px 8px!important}
+ body:not(.in-game) #readyStep .ready-actions{padding:2px!important}body:not(.in-game) #readyStep .ready-actions button{min-height:44px!important;height:44px!important;padding:4px!important}
+ body.in-game #gameScreen.soft-stage #orders .guest-order-portrait{grid-column:1!important;grid-row:2!important;display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;height:48px!important;min-height:48px!important;margin:0!important;position:static!important}
+ body.in-game #gameScreen.soft-stage #orders .guest-order-portrait img{height:48px!important;width:64px!important;object-fit:contain!important}
+}
+#scenicChef{display:none}
+@media(max-height:650px) and (orientation:landscape){#scenicChef{display:block;width:64px;height:48px;flex:none}#scenicChef img{width:100%;height:100%;object-fit:contain}}
+/* Never let focus/scrollIntoView pan the entire restaurant off-screen. */
+body.in-game .app-shell,body.in-game #gameScreen.soft-stage:not(.hidden){overflow:clip!important}
+@media(orientation:portrait) and (max-width:700px){
+ body.in-game #gameScreen.soft-stage .stage-topbar{display:grid!important;grid-template-columns:minmax(0,1fr) 96px!important;gap:4px!important;min-width:0!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage .hud{min-width:0!important;gap:3px!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage .hud-item{min-width:0!important;flex:1!important;padding:3px 5px!important}
+ body.in-game #gameScreen.soft-stage .hud-item:nth-child(1){max-width:75px!important;min-width:45px!important}
+ body.in-game #gameScreen.soft-stage .hud-item strong{font-size:13px!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+ body.in-game #gameScreen.soft-stage .hud-item.weather{display:none!important}
+ body.in-game #gameScreen.soft-stage .burn-strip{max-width:96px!important;width:96px!important;min-width:0!important;gap:2px!important;padding:4px!important}
+ body.in-game #gameScreen.soft-stage .burn-button{display:none!important}
+ body.in-game #gameScreen.soft-stage .scenic-postcard{gap:10px!important;padding:2px!important}
+ body.in-game #gameScreen.soft-stage .scenic-postcard>img{max-width:115px!important}
+ body.in-game #gameScreen.soft-stage .guest-panel-head p{display:none!important}
+ body.in-game #gameScreen.soft-stage .guest-panel-head h2{font-size:13px!important}
+}
+body.in-game.mobile-ingredients #gameScreen.soft-stage #clearSkewerButton{height:44px!important;min-height:44px!important;min-width:44px!important;line-height:1.2!important}
+@media(orientation:portrait) and (max-width:700px){
+ body.in-game #gameScreen.soft-stage .burners-panel .section-heading{display:flex!important;flex-direction:column!important;justify-content:center!important;width:90px!important;height:44px!important;padding:0!important;gap:0!important}
+ body.in-game #gameScreen.soft-stage .burners-panel .section-heading h2{display:none!important}
+ body.in-game #gameScreen.soft-stage #fanButton{min-width:84px!important;width:84px!important;max-width:90px!important;padding:2px!important}
+}
+/* 0.9.2: the panorama yields its space to an always-visible pantry. */
+body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:54px minmax(150px,.85fr) minmax(165px,1fr) 116px 50px!important}
+body.in-game #gameScreen.soft-stage .orders-panel{grid-row:2!important}
+body.in-game #gameScreen.soft-stage .work-area{grid-row:3!important}
+body.in-game #gameScreen.soft-stage .pantry-tray{grid-row:4!important;grid-column:1 / -1!important;min-width:0;min-height:0;background:#fff0cd;border:2px solid #bb945c;border-radius:20px;padding:4px 8px;box-shadow:inset 0 2px #fff9e9}
+body.in-game #gameScreen.soft-stage .stage-footer{grid-row:5!important}
+body.in-game #gameScreen.soft-stage #foodButtons{grid-column:auto!important;grid-row:auto!important;display:grid!important;grid-template-columns:repeat(var(--pantry-columns,5),minmax(0,1fr))!important;grid-template-rows:repeat(var(--food-rows,2),minmax(44px,1fr))!important;grid-auto-rows:0!important;width:100%!important;height:100%!important;max-height:none!important;min-height:0!important;overflow:visible!important;gap:4px!important;padding:0!important;align-content:stretch!important;align-items:stretch!important;margin:0!important}
+body.in-game #gameScreen.soft-stage #foodButtons .food-button{width:100%!important;max-width:none!important;height:100%!important;min-height:44px!important;max-height:none!important;min-width:0!important;padding:1px 3px!important;border-radius:16px!important;grid-template-rows:minmax(16px,1fr) 14px 10px!important;box-sizing:border-box!important}
+body.in-game #gameScreen.soft-stage #foodButtons .food-button-art{height:auto!important;min-height:16px!important}
+body.in-game #gameScreen.soft-stage #foodButtons .food-art{width:26px!important;height:20px!important}
+body.in-game #gameScreen.soft-stage #foodButtons .food-button-name{font-size:11px!important;height:14px!important;line-height:14px!important;white-space:nowrap!important}
+body.in-game #gameScreen.soft-stage #foodButtons small{font-size:9px!important;line-height:10px!important}
+body.in-game #gameScreen.soft-stage .skewer-panel{grid-template-rows:44px minmax(32px,1fr) 44px!important}
+body.in-game #gameScreen.soft-stage .skewer-panel .button-row{grid-row:3!important}
+body.in-game #gameScreen.soft-stage .chef-visual{grid-row:1 / 4!important}
+@media(max-height:650px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:40px minmax(0,1fr) 102px 46px!important}
+ body.in-game #gameScreen.soft-stage .orders-panel{grid-row:2!important;grid-column:1!important}
+ body.in-game #gameScreen.soft-stage .work-area{grid-row:2!important;grid-column:2!important}
+ body.in-game #gameScreen.soft-stage .pantry-tray{grid-row:3!important;padding:4px 6px!important;border-radius:14px!important}
+ body.in-game #gameScreen.soft-stage .stage-footer{grid-row:4!important}
+ body.in-game #gameScreen.soft-stage .skewer-panel,body.in-game.mobile-ingredients #gameScreen.soft-stage .skewer-panel{grid-template-rows:44px minmax(28px,1fr)!important;min-height:0!important}
+ body.in-game #gameScreen.soft-stage .skewer-panel .button-row{grid-column:1!important;grid-row:1!important}
+ body.in-game #gameScreen.soft-stage #skewer{grid-row:2!important;min-height:28px!important;height:100%!important}
+ body.in-game #gameScreen.soft-stage #foodButtons .food-shortcut{width:12px;height:12px;font-size:8px}
+}
+@media(orientation:portrait) and (max-width:700px){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:44px minmax(150px,1fr) minmax(165px,.9fr) 112px 96px!important}
+ body.in-game #gameScreen.soft-stage .work-area{grid-template-rows:minmax(60px,1fr) 96px!important}
+ body.in-game #gameScreen.soft-stage .skewer-panel,body.in-game.mobile-ingredients #gameScreen.soft-stage .skewer-panel{grid-template-rows:44px minmax(28px,1fr)!important;min-height:0!important}
+ body.in-game #gameScreen.soft-stage .skewer-panel .button-row{grid-row:1!important}
+ body.in-game #gameScreen.soft-stage .chef-visual{grid-row:1 / 3!important}
+}
+/* Fit the entire landscape into the preparation area, without an inner scrollbar. */
+body:not(.in-game) #readyStep .ready-wrap{display:grid!important;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr)!important;overflow:hidden!important;align-items:stretch!important;align-content:stretch!important;gap:12px!important;padding:6px!important;position:relative!important}
+body:not(.in-game) #readyStep .ready-landscape{grid-column:1!important;grid-row:1!important;width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;display:grid!important;grid-template-rows:minmax(0,1fr) auto!important;align-self:stretch!important;margin:0!important;box-sizing:border-box!important;border-width:5px!important}
+body:not(.in-game) #readyStep #readyLandscape{height:100%!important;width:100%!important;min-height:0!important;max-height:100%!important;object-fit:contain!important;aspect-ratio:auto!important}
+body:not(.in-game) #readyStep .ready-landscape figcaption{padding:6px 10px!important}
+body:not(.in-game) #readyStep .ready-landscape figcaption :is(small,span){display:none!important}
+body:not(.in-game) #readyStep .ready-landscape figcaption strong{font-size:18px!important}
+body:not(.in-game) #readyStep #readyChefArt{display:none!important}
+body:not(.in-game) #readyStep #startChoiceSummary{grid-column:2!important;grid-row:1!important;align-self:center!important;max-width:100%!important;width:auto!important;min-height:0!important;padding:12px!important;font-size:14px!important;line-height:1.3!important;gap:6px!important;box-sizing:border-box!important}
+@media(orientation:portrait) and (max-width:700px){
+ body:not(.in-game) #readyStep .ready-wrap{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(70px,1fr) auto!important;gap:8px!important}
+ body:not(.in-game) #readyStep #startChoiceSummary{grid-column:1!important;grid-row:2!important;font-size:12px!important;gap:3px!important;padding:10px!important}
+ body:not(.in-game) #readyStep #startChoiceSummary strong{font-size:16px!important}
+}
+@media(max-height:650px) and (orientation:landscape){
+ body:not(.in-game) #readyStep .ready-wrap{padding:2px!important;gap:8px!important}
+ body:not(.in-game) #readyStep .ready-landscape{border-width:3px!important}
+ body:not(.in-game) #readyStep .ready-landscape figcaption{display:none!important}
+ body:not(.in-game) #readyStep #startChoiceSummary{font-size:11px!important;gap:1px!important;line-height:1.15!important;padding:6px!important}
+ body:not(.in-game) #readyStep #startChoiceSummary strong{font-size:13px!important}
+ body:not(.in-game) #readyStep #startChoiceSummary .ready-kicker{display:none!important}
+}
+@media(min-height:651px) and (min-width:701px){
+ body:not(.in-game) #readyStep .ready-wrap{grid-template-rows:100px minmax(0,1fr)!important}
+ body:not(.in-game) #readyStep .ready-landscape{grid-row:1 / 3!important}
+ body:not(.in-game) #readyStep #readyChefArt{display:flex!important;grid-column:2!important;grid-row:1!important;width:100%!important;height:100px!important;min-height:0!important;max-height:100px!important}
+ body:not(.in-game) #readyStep #startChoiceSummary{grid-row:2!important}
+}
+@media(max-height:650px) and (orientation:landscape){body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:40px minmax(0,1fr) 110px 46px!important}}
+/* Short phone landscape: keep each furnace tap inside its visible viewport. */
+@media(max-height:360px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage .work-area{padding:2px!important;gap:4px!important}
+ body.in-game #gameScreen.soft-stage #burners{grid-auto-rows:44px!important;min-height:44px!important}
+ body.in-game #gameScreen.soft-stage #burners .burner{height:44px!important;min-height:44px!important;padding:2px 4px!important;border-radius:10px!important;display:grid!important;grid-template-columns:1fr 1fr!important;grid-template-rows:16px 14px 4px!important;gap:0 2px!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage #burners .flame{display:none!important}
+ body.in-game #gameScreen.soft-stage #burners .burner-title{font-size:10px!important;line-height:16px!important}
+ body.in-game #gameScreen.soft-stage #burners .burner-recipe{grid-column:2!important;grid-row:1 / 3!important;min-height:0!important;font-size:9px!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage #burners .burner-recipe img{width:18px!important;height:18px!important}
+ body.in-game #gameScreen.soft-stage #burners .burner-state{font-size:9px!important;line-height:14px!important}
+ body.in-game #gameScreen.soft-stage #burners .cook-bar{grid-column:1 / -1!important;height:4px!important;margin:0!important}
+}
+/* 0.9.3 mobile layout: bounded panels, all ingredients and furnaces visible. */
+@media(max-width:700px),(max-height:650px) and (orientation:landscape){
+ body.in-game .app-shell{height:100dvh!important;max-height:100dvh!important;padding:max(3px,env(safe-area-inset-top)) max(3px,env(safe-area-inset-right)) max(3px,env(safe-area-inset-bottom)) max(3px,env(safe-area-inset-left))!important;box-sizing:border-box!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden){height:100%!important;min-height:0!important;max-height:100%!important;padding:4px!important;gap:4px!important;border-radius:16px!important;box-sizing:border-box!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .work-area{min-height:0!important;min-width:0!important;padding:3px!important;gap:4px!important;border-radius:14px!important;box-sizing:border-box!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) :is(.skewer-panel,.burners-panel){min-height:0!important;min-width:0!important;padding:0!important;margin:0!important;gap:3px!important;border-radius:12px!important;overflow:hidden!important;box-sizing:border-box!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .chef-visual{display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) :is(#selectedOrderSummary,#foodInventoryHint){display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel{grid-template-columns:minmax(0,1fr) 56px!important;grid-template-rows:22px minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel .section-heading{grid-column:1!important;grid-row:1!important;min-height:0!important;height:22px!important;margin:0!important;padding:0 4px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel h2{font-size:12px!important;line-height:20px!important;margin:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #skewer{grid-column:1!important;grid-row:2!important;min-height:0!important;height:100%!important;padding:2px!important;border-width:2px!important;border-radius:12px!important;font-size:10px!important;box-sizing:border-box!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #skewer img{max-width:24px!important;max-height:24px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel .button-row{grid-column:2!important;grid-row:1 / 3!important;align-self:center!important;margin:0!important;padding:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #clearSkewerButton{width:52px!important;min-width:44px!important;height:44px!important;min-height:44px!important;font-size:11px!important;padding:2px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .burners-panel{grid-template-columns:54px minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .burners-panel .section-heading{grid-column:1!important;grid-row:1!important;display:flex!important;width:54px!important;min-width:0!important;height:100%!important;min-height:0!important;align-items:center!important;justify-content:center!important;padding:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .burners-panel h2{display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #fanButton{width:52px!important;min-width:44px!important;max-width:52px!important;min-height:44px!important;height:44px!important;padding:2px!important;font-size:10px!important;border-radius:10px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #fanButton small{font-size:8px!important;white-space:normal!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners{grid-column:2!important;grid-row:1!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(44px,1fr))!important;grid-auto-rows:44px!important;gap:3px!important;min-height:0!important;height:100%!important;padding:0!important;overflow:hidden!important;align-content:stretch!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner{height:100%!important;min-height:44px!important;min-width:0!important;width:100%!important;padding:2px!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:12px minmax(8px,1fr) 12px 3px!important;gap:0!important;overflow:hidden!important;border-radius:10px!important;border-width:2px!important;box-sizing:border-box!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners :is(.flame,.burner-order-ended){display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-title{grid-row:1!important;font-size:9px!important;line-height:12px!important;white-space:nowrap!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-recipe{grid-row:2!important;grid-column:1!important;min-height:0!important;font-size:8px!important;line-height:10px!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-recipe img{width:13px!important;height:13px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-state{grid-row:3!important;font-size:8px!important;line-height:12px!important;white-space:nowrap!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .cook-bar{grid-row:4!important;grid-column:1!important;height:3px!important;margin:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .pantry-tray{padding:2px!important;border-radius:12px!important;box-sizing:border-box!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons{gap:3px!important;grid-template-rows:repeat(var(--food-rows,2),minmax(44px,1fr))!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button{padding:0 1px!important;border-width:1px!important;border-radius:10px!important;grid-template-rows:minmax(12px,1fr) 13px 10px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-art{width:20px!important;height:16px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button-name{font-size:10px!important;line-height:13px!important;height:13px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-footer{gap:4px!important;padding:0!important;min-height:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-footer button{height:44px!important;min-height:44px!important;padding:2px 6px!important;font-size:10px!important;border-radius:12px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .world-intro{pointer-events:none!important;max-width:70%!important;padding:4px 8px!important}
+}
+@media(orientation:portrait) and (max-width:700px){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-columns:minmax(0,1fr)!important;grid-template-rows:40px minmax(0,1fr) 158px 100px 92px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .work-area{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:54px minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-footer{display:grid!important;grid-template-columns:1fr!important;grid-template-rows:44px 44px!important;justify-items:stretch!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) :is(.supply-actions,.game-actions){width:100%!important;display:flex!important;justify-content:center!important;gap:4px!important}
+}
+@media(max-height:650px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-columns:minmax(140px,.30fr) minmax(0,.70fr)!important;grid-template-rows:40px minmax(0,1fr) 100px 44px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .work-area{grid-template-columns:minmax(80px,.65fr) minmax(0,1.35fr)!important;grid-template-rows:minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:20px minmax(20px,1fr) 44px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel .button-row{grid-column:1!important;grid-row:3!important;justify-content:center!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-footer{display:flex!important;flex-wrap:nowrap!important;justify-content:space-between!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .supply-actions{width:auto!important}
+}
+@media(orientation:portrait) and (max-width:700px) and (max-height:700px){
+ body:not(.in-game) #startScreen.ready-active:not(.hidden){padding:6px!important;inset:4px!important}
+ body:not(.in-game) #startScreen.ready-active .guided-progress{padding:3px!important;gap:3px!important}
+ body:not(.in-game) #startScreen.ready-active .guided-progress span{min-height:30px!important;font-size:10px!important;padding:3px!important}
+ body:not(.in-game) #readyStep .step-head{min-height:44px!important;height:44px!important;padding:0!important;margin:2px 0!important;flex:none!important}
+ body:not(.in-game) #readyStep .step-head h2{font-size:18px!important;margin:0!important}
+ body:not(.in-game) #readyStep .step-head .eyebrow{display:none!important}
+ body:not(.in-game) #readyStep .ready-wrap{padding:2px!important;gap:3px!important;grid-template-rows:minmax(35px,1fr) auto!important}
+ body:not(.in-game) #readyStep .ready-landscape figcaption{display:none!important}
+ body:not(.in-game) #readyStep #startChoiceSummary{padding:4px 8px!important;gap:1px!important;font-size:10px!important;line-height:1.2!important}
+ body:not(.in-game) #readyStep #startChoiceSummary strong{font-size:13px!important}
+ body:not(.in-game) #readyStep .ready-kit{padding:2px!important;margin:2px!important;gap:2px!important;font-size:10px!important}
+ body:not(.in-game) #readyStep .ready-actions{padding:2px!important}
+ body:not(.in-game) #readyStep .ready-actions button{min-height:44px!important;height:44px!important;padding:2px!important}
+}
+@media(max-width:700px),(max-height:650px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners{grid-auto-flow:row!important;grid-auto-columns:auto!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners :is(.burner-recipe,.burner-state,.burner-title){margin:0!important;padding:0!important;min-height:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-recipe .food-art{width:12px!important;height:12px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-order-number{font-size:9px!important;line-height:12px!important;padding:0 2px!important}
+}
+/* 0.9.4: readable tickets take priority over decorative work surfaces. */
+.burner-state-compact{display:none}
+@media(max-width:700px),(max-height:650px) and (orientation:landscape){
+ body.in-game .app-shell{height:var(--game-viewport-height,100dvh)!important;max-height:var(--game-viewport-height,100dvh)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden){gap:3px!important;padding:3px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-topbar{height:36px!important;min-height:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .hud-item{min-height:32px!important;height:32px!important;padding:2px 5px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .hud-item strong{font-size:12px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .hud-item span{font-size:9px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .orders-panel{display:grid!important;grid-template-rows:22px minmax(0,1fr)!important;padding:0!important;min-height:0!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .guest-panel-head{height:22px!important;min-height:0!important;padding:0 3px!important;margin:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .guest-panel-head h2{font-size:11px!important;margin:0!important;gap:3px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders{grid-auto-flow:row!important;grid-template-rows:none!important;grid-auto-rows:76px!important;gap:3px!important;padding:2px!important;overflow:auto!important;min-height:0!important;align-content:start!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .order-card{display:block!important;min-height:76px!important;height:76px!important;padding:0!important;overflow:hidden!important;transform:none!important;animation:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .order-bubble{height:100%!important;display:grid!important;grid-template-rows:10px 24px 18px 12px 2px!important;gap:0!important;align-content:center!important;padding:2px!important;border:1px solid #b8a171!important;border-top:2px solid #9fb97d!important;border-radius:9px!important;box-shadow:none!important;box-sizing:border-box!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders :is(.guest-order-portrait,.order-badges){display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .order-bubble::after{display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .order-routing{grid-row:1!important;font-size:9px!important;line-height:10px!important;min-height:0!important;margin:0!important;padding:0!important;gap:2px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders :is(.order-number,.order-cook-state){font-size:9px!important;line-height:10px!important;padding:0 2px!important;min-height:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .name{grid-row:2!important;font-size:10px!important;line-height:12px!important;max-height:24px!important;overflow:hidden!important;align-self:center!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .recipe{grid-row:3!important;min-height:18px!important;height:18px!important;margin:0!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .food-art{width:16px!important;height:16px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .timer{grid-row:4!important;font-size:10px!important;line-height:12px!important;min-height:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .timer strong{font-size:10px!important;line-height:12px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .timer span{display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .order-progress-track{grid-row:5!important;height:2px!important;margin:0!important;width:95%!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .work-area{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:44px minmax(0,1fr)!important;padding:2px!important;gap:3px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel{grid-template-columns:minmax(0,1fr) 48px!important;grid-template-rows:14px minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel .section-heading{height:14px!important;grid-column:1!important;grid-row:1!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel h2{font-size:10px!important;line-height:14px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel .button-row{grid-column:2!important;grid-row:1 / 3!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #clearSkewerButton{width:44px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .burners-panel{grid-template-columns:44px minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .burners-panel .section-heading{width:44px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #fanButton{width:44px!important;max-width:44px!important;font-size:9px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #fanButton small{font-size:7px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners{grid-template-columns:repeat(5,minmax(0,1fr))!important;grid-template-rows:minmax(44px,1fr)!important;grid-auto-rows:0!important;gap:2px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-title{font-size:8px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .burner-state-full{display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .burner-state-compact{display:inline!important;font-size:9px!important;line-height:12px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .pantry-tray{padding:2px!important;border-radius:9px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons{grid-template-rows:repeat(var(--food-rows,2),minmax(36px,1fr))!important;gap:2px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button{min-height:36px!important;grid-template-rows:minmax(16px,1fr) 12px!important;padding:1px!important;border-radius:8px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons small{display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button-name{font-size:9px!important;line-height:12px!important;height:12px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-footer{display:flex!important;flex-wrap:nowrap!important;justify-content:space-between!important;gap:2px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) :is(.supply-actions,.game-actions){display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;gap:2px!important;width:auto!important;min-width:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-footer button{min-width:44px!important;padding:2px 4px!important;font-size:9px!important;white-space:nowrap!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .world-intro{display:none!important}
+}
+@media(orientation:portrait) and (max-width:700px){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-columns:minmax(0,1fr)!important;grid-template-rows:36px minmax(0,1fr) 110px 84px 44px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-height:650px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-columns:minmax(0,.44fr) minmax(0,.56fr)!important;grid-template-rows:36px minmax(100px,1fr) 84px 44px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .orders-panel{grid-column:1!important;grid-row:2 / 4!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .work-area{grid-column:2!important;grid-row:2!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .pantry-tray{grid-column:2!important;grid-row:3!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-footer{grid-column:1 / -1!important;grid-row:4!important}
+}
+@media(orientation:landscape) and (max-height:300px){
+ body.in-game #gameScreen.soft-stage:not(.hidden){padding:2px!important;grid-template-rows:32px minmax(90px,1fr) 72px 40px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-topbar{height:32px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .work-area{grid-template-rows:40px minmax(40px,1fr)!important;padding:1px!important;gap:2px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners{grid-template-rows:minmax(40px,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner{min-height:40px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) :is(#clearSkewerButton,#fanButton){height:40px!important;min-height:40px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders{grid-auto-rows:64px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .order-card{height:64px!important;min-height:64px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .order-bubble{grid-template-rows:10px 12px 18px 12px 2px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders .name{white-space:nowrap!important;max-width:100%!important;max-height:12px!important;text-overflow:ellipsis!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons{grid-template-rows:repeat(var(--food-rows,2),minmax(30px,1fr))!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button{min-height:30px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-footer button{height:40px!important;min-height:40px!important}
+}
+/* 0.9.5: compact oval ingredients; orders, ingredients, then bottom workbench. */
+@media(min-width:701px){
+ body:not(.in-game) #worldStep .step-lead{font-size:clamp(9px,.90vw,12px)!important;line-height:1.4!important;white-space:nowrap!important;max-width:none!important;width:100%!important;margin-left:0!important;margin-right:0!important;letter-spacing:0!important}
+}
+body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:54px minmax(150px,1fr) 60px 180px 50px!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) .orders-panel{grid-row:2!important;grid-column:1 / -1!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) .pantry-tray{grid-row:3!important;grid-column:1 / -1!important;display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;height:100%!important;padding:2px!important;border:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) .work-area{grid-row:4!important;grid-column:1 / -1!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) .stage-footer{grid-row:5!important;grid-column:1 / -1!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons{display:grid!important;grid-template-columns:repeat(var(--pantry-count,5),76px)!important;grid-template-rows:52px!important;grid-auto-rows:0!important;grid-auto-flow:row!important;width:max-content!important;max-width:100%!important;height:52px!important;gap:6px!important;overflow:visible!important;margin:0 auto!important;padding:0!important;justify-content:center!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button{display:grid!important;grid-template-rows:26px 16px!important;align-content:center!important;justify-items:center!important;width:100%!important;height:100%!important;min-height:0!important;min-width:0!important;padding:3px 6px!important;border:1px solid #c8b17c!important;border-radius:50%!important;background:linear-gradient(#fff9e9,#f5e6be)!important;box-shadow:0 2px 0 #b39a6655!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button-art{height:26px!important;min-height:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-art{height:24px!important;width:28px!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button-name{font-size:11px!important;line-height:16px!important;height:16px!important;white-space:nowrap!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons small{display:none!important}
+body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-shortcut{top:1px!important;left:4px!important;width:12px!important;height:12px!important;font-size:8px!important;line-height:12px!important}
+@media(max-width:700px),(max-height:650px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-columns:minmax(0,1fr)!important;grid-template-rows:36px minmax(0,1fr) auto 100px 44px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .orders-panel{grid-column:1!important;grid-row:2!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .pantry-tray{grid-column:1!important;grid-row:3!important;height:auto!important;min-height:0!important;padding:2px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .work-area{grid-column:1!important;grid-row:4!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:44px minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-footer{grid-column:1!important;grid-row:5!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons{grid-template-columns:repeat(var(--pantry-columns,5),minmax(0,58px))!important;grid-template-rows:repeat(var(--food-rows,2),34px)!important;width:100%!important;height:calc(var(--food-rows,2)*34px + (var(--food-rows,2) - 1)*3px)!important;gap:3px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button{grid-template-rows:16px 12px!important;padding:2px 4px!important;min-height:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button-art{height:16px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-art{width:20px!important;height:16px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons .food-button-name{font-size:9px!important;height:12px!important;line-height:12px!important}
+}
+@media(max-height:650px) and (orientation:landscape){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:32px minmax(0,1fr) 38px 52px 44px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .stage-topbar{height:32px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #orders{grid-template-columns:repeat(6,minmax(0,1fr))!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .work-area{grid-template-columns:minmax(0,.32fr) minmax(0,.68fr)!important;grid-template-rows:minmax(0,1fr)!important;gap:4px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel{grid-template-columns:minmax(0,1fr) 48px!important;grid-template-rows:14px minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .skewer-panel .button-row{grid-column:2!important;grid-row:1 / 3!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .burners-panel{grid-template-columns:44px minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons{grid-template-columns:repeat(var(--pantry-count,5),minmax(0,58px))!important;grid-template-rows:34px!important;height:34px!important;gap:3px!important}
+}
+@media(orientation:landscape) and (max-height:300px){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:32px minmax(0,1fr) 34px 48px 40px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .orders-panel{grid-template-rows:minmax(0,1fr)!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .guest-panel-head{display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) .pantry-tray{padding:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #foodButtons{grid-template-rows:32px!important;height:32px!important}
+}
+@media(min-width:701px) and (min-height:651px){
+ body.in-game #gameScreen.soft-stage:not(.hidden){grid-template-rows:54px minmax(150px,1fr) 60px 220px 50px!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;grid-auto-flow:row!important;gap:4px!important;height:100%!important;min-height:0!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner{height:100%!important;min-height:0!important;padding:3px 6px!important;overflow:hidden!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .flame{display:none!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-recipe{margin:1px 0!important;min-height:20px!important}
+}
+@media(min-width:701px) and (min-height:651px){
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner{display:grid!important;grid-template-rows:14px minmax(18px,1fr) 14px 4px!important;align-content:stretch!important;gap:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-title{grid-row:1!important;font-size:11px!important;line-height:14px!important;margin:0!important;min-height:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-order-number{font-size:10px!important;line-height:14px!important;padding:0 2px!important;min-height:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-recipe{grid-row:2!important;min-height:0!important;margin:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-state{grid-row:3!important;line-height:14px!important;font-size:10px!important;margin:0!important;padding:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .cook-bar{grid-row:4!important;height:4px!important;margin:0!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-order-ended{display:none!important}
+}
+@media(min-width:701px) and (min-height:651px){
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .cook-bar{position:static!important;min-height:4px!important;height:4px!important;margin:0!important;align-self:center!important;justify-self:center!important}
+ body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner-state{min-height:0!important;overflow:hidden!important;align-self:center!important;white-space:nowrap!important}
+}
+/* Decorative coals must not cover the compact furnace status labels. */
+body.in-game #gameScreen.soft-stage:not(.hidden) #burners .burner::after{display:none!important}
+/* 0.9.6: a readable, task-first play guide with a persistent close action. */
+#helpDialog.play-guide{width:min(880px,calc(100vw - 20px))!important;max-width:880px!important;height:min(820px,calc(100dvh - 20px))!important;max-height:calc(100dvh - 20px)!important;padding:0!important;overflow:hidden!important;box-sizing:border-box!important;border:2px solid #a4b780!important;border-radius:22px!important;color:#332e24!important}
+#helpDialog.play-guide[open]{display:grid!important;grid-template-rows:auto minmax(0,1fr) auto!important}
+#helpDialog .play-guide-head{padding:18px 24px 12px;background:linear-gradient(110deg,#e6edcf,#fff3d8);border-bottom:1px solid #c5c99e}
+#helpDialog .play-guide-head .eyebrow{font-size:11px;color:#566e42;margin:0 0 4px}
+#helpDialog h2{font-size:28px;line-height:1.2;margin:0 0 6px;color:#435936}
+#helpDialog .play-guide-head p:last-child{margin:0;font-size:14px;line-height:1.5}
+#helpDialog .play-guide-scroll{overflow:auto;min-height:0;min-width:0;padding:8px 24px 22px;overscroll-behavior:contain;scrollbar-gutter:stable;touch-action:pan-y;font-size:14px;line-height:1.65}
+#helpDialog .guide-section{padding:14px 0;border-bottom:1px dashed #c5b68c}
+#helpDialog h3{font-size:19px;line-height:1.4;margin:0 0 10px;color:#435936}
+#helpDialog p{margin:6px 0 10px;overflow-wrap:anywhere}
+#helpDialog .guide-steps{display:grid;grid-template-columns:1fr 1fr;gap:10px;list-style:none;counter-reset:guide-step;padding:0;margin:0}
+#helpDialog .guide-steps li{counter-increment:guide-step;background:#fff9e9;border:1px solid #dcc896;border-radius:14px;padding:12px;font-size:14px;line-height:1.6}
+#helpDialog .guide-steps li>strong{display:block;color:#435936;font-size:16px}
+#helpDialog .guide-steps li>strong::before{content:counter(guide-step);display:inline-grid;place-items:center;width:24px;height:24px;margin-right:8px;background:#566e42;color:#fff3d8;border-radius:50%;font-size:13px}
+#helpDialog .guide-steps p{margin:8px 0 0}
+#helpDialog .guide-tip{padding:10px 12px;border-radius:12px;background:#e8edd6;font-size:13px;color:#435239;margin-top:12px}
+#helpDialog :is(.guide-states,.guide-tools){display:grid;gap:6px;margin:10px 0}
+#helpDialog :is(.guide-states,.guide-tools)>div{display:grid;grid-template-columns:155px minmax(0,1fr);gap:10px;padding:9px 10px;background:#fff9e9;border-radius:10px}
+#helpDialog dt{font-weight:700;color:#435936}#helpDialog dd{margin:0;min-width:0}
+#helpDialog .guide-key-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+#helpDialog .guide-key-grid>div{background:#fff9e9;border:1px solid #dcc896;border-radius:12px;padding:10px;font-size:13px}
+#helpDialog .guide-key-grid p{margin:6px 0 0}
+#helpDialog kbd{display:inline-block;min-width:22px;padding:1px 5px;background:#eee1bd;border:1px solid #c1aa76;border-bottom-width:2px;border-radius:5px;font-family:inherit;font-size:12px;color:#44351f}
+#helpDialog .guide-more{margin:12px 0;border:1px solid #c5c99e;border-radius:12px;background:#f0f2df}
+#helpDialog .guide-more summary{min-height:44px;display:list-item;cursor:pointer;padding:11px 14px;font-size:15px;font-weight:700;color:#435936}
+#helpDialog .guide-more>div{padding:0 14px 10px}
+#helpDialog .guide-last{border-bottom:0;padding-bottom:6px}
+#helpDialog .play-guide-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 24px;border-top:1px solid #c5c99e;background:#e6edcf;font-size:13px;color:#435936}
+#helpDialog #closeHelpButton{width:auto!important;min-width:110px;min-height:44px;margin:0!important;padding:8px 18px!important;flex:none}
+@media(max-width:600px){
+ #helpDialog .play-guide-head{padding:12px 14px 10px}#helpDialog h2{font-size:23px}
+ #helpDialog .play-guide-scroll{padding:4px 14px 16px;font-size:13px}
+ #helpDialog .guide-steps{grid-template-columns:1fr;gap:8px}#helpDialog .guide-steps li{padding:10px;font-size:13px}
+ #helpDialog :is(.guide-states,.guide-tools)>div{grid-template-columns:1fr;gap:2px}
+ #helpDialog .guide-key-grid{grid-template-columns:1fr 1fr}
+ #helpDialog .play-guide-footer{padding:8px 14px}#helpDialog .play-guide-footer span{font-size:11px}
+}
+@media(orientation:landscape) and (max-height:450px){
+ #helpDialog .play-guide-head{padding:6px 14px}#helpDialog h2{font-size:20px;margin-bottom:2px}
+ #helpDialog .play-guide-head .eyebrow{display:none}#helpDialog .play-guide-head p:last-child{font-size:12px}
+ #helpDialog .play-guide-scroll{padding:2px 14px 12px;font-size:13px}
+ #helpDialog .play-guide-footer{padding:4px 14px}#helpDialog .guide-section{padding:10px 0}
+}
+
+/* Desktop walkable kitchen, 0.10.0 */
+body.in-game{overflow:hidden!important}body.in-game #app{max-width:none!important;padding:0!important}
+#gameScreen#gameScreen#gameScreen:not(.hidden){position:relative!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:64px 150px minmax(180px,1fr) 74px 42px!important;gap:6px!important;height:100dvh!important;min-height:600px!important;max-height:none!important;padding:8px 18px!important;overflow:hidden!important;box-sizing:border-box!important;isolation:isolate}
+#gameScreen#gameScreen#gameScreen>.work-area,#gameScreen#gameScreen#gameScreen>.pantry-tray,#orientationHint,#guestPerch{display:none!important}
+#gameScreen#gameScreen#gameScreen>.stage-topbar{grid-area:1/1!important;position:relative!important;display:flex!important;gap:12px!important;margin:0!important;height:64px!important}
+#gameScreen#gameScreen#gameScreen .hud{flex:1!important;display:flex!important;justify-content:space-around!important;padding:8px!important;gap:8px!important;min-width:0!important;height:64px!important;box-sizing:border-box!important}
+#gameScreen#gameScreen#gameScreen .hud-item{min-width:0!important}#gameScreen#gameScreen#gameScreen .hud-item strong{font-size:16px!important}#gameScreen#gameScreen#gameScreen .hud-item span{font-size:11px!important}
+#gameScreen#gameScreen#gameScreen .burn-strip{width:210px!important;display:flex!important;flex-direction:column!important;padding:6px!important;gap:2px!important;font-size:11px!important}#gameScreen#gameScreen#gameScreen .burn-strip strong,#gameScreen#gameScreen#gameScreen .burn-button{font-size:11px!important}
+#gameScreen#gameScreen#gameScreen>.orders-panel{grid-area:2/1!important;position:relative!important;display:flex!important;flex-direction:column!important;padding:5px 10px!important;min-height:0!important;height:150px!important;overflow:hidden!important;margin:0!important}
+#gameScreen#gameScreen#gameScreen .guest-panel-head{display:flex!important;justify-content:space-between!important;align-items:center!important;height:24px!important;min-height:24px!important}#gameScreen#gameScreen#gameScreen .guest-panel-head h2{font-size:15px!important;margin:0!important}#gameScreen#gameScreen#gameScreen .guest-panel-head p{font-size:12px!important;margin:0!important}
+#gameScreen#gameScreen#gameScreen #orders{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:6px!important;overflow:hidden!important;flex:1!important;min-height:0!important;padding:2px!important}
+#gameScreen#gameScreen#gameScreen .order-card{position:relative!important;display:block!important;min-width:0!important;min-height:0!important;height:112px!important;padding:5px 7px!important;box-sizing:border-box!important;border-radius:12px!important;overflow:hidden!important;font-size:11px!important}
+#gameScreen#gameScreen#gameScreen .order-card .guest-portrait{position:absolute!important;right:4px!important;top:3px!important;width:42px!important;height:42px!important}#gameScreen#gameScreen#gameScreen .order-card .guest-portrait img{width:100%!important;height:100%!important;object-fit:contain!important}
+#gameScreen#gameScreen#gameScreen .order-card .recipe{gap:2px!important;margin:4px 0!important}#gameScreen#gameScreen#gameScreen .order-card .food-art{width:26px!important;height:26px!important}#gameScreen#gameScreen#gameScreen .order-card .guest-name{font-size:11px!important;max-width:calc(100% - 38px)!important}#gameScreen#gameScreen#gameScreen .order-card .order-cook-state,#gameScreen#gameScreen#gameScreen .order-card .timer{font-size:10px!important}
+#kitchenArena{grid-area:3/1!important;position:relative;min-height:0;overflow:hidden;border:5px solid #68452c;border-radius:22px;background:rgba(246,232,198,.94);box-shadow:inset 0 0 50px #ae8a5550,0 3px 0 #3d2f20}
+.kitchen-floor{position:absolute;inset:0;background:linear-gradient(90deg,#ac85482a 1px,transparent 1px),linear-gradient(#ac85482a 1px,transparent 1px);background-size:10% 16.666%;pointer-events:none}
+#kitchenArena .kitchen-station{position:absolute;transform:translate(-50%,-50%);display:flex;flex-wrap:wrap;align-content:center;align-items:center;justify-content:center;gap:4px;background:#a97140;border:3px solid #624329;border-radius:13px;box-shadow:0 7px 0 #67492e;color:#fff4d2;padding:4px;font-family:inherit;z-index:2;font-size:15px;min-height:0}
+#kitchenArena .kitchen-station small{flex-basis:100%;font-size:11px}#pantryStation{left:15%;top:28.333%;width:19%;height:15%}#serveStation{left:50%;top:15%;width:24%;height:11.667%}#trashStation{left:85%;top:28.333%;width:12%;height:13.333%}
+#kitchenArena .in-reach{outline:3px solid #78b763!important;outline-offset:3px;background-color:#527341!important}
+#arenaBurners,#gameScreen#gameScreen#gameScreen #burners{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;padding:0!important;margin:0!important;overflow:visible!important;pointer-events:none!important;background:none!important;max-height:none!important}
+#gameScreen#gameScreen#gameScreen #burners .burner{position:absolute!important;transform:translate(-50%,-50%)!important;width:8.8%!important;height:12%!important;min-height:54px!important;max-height:84px!important;padding:3px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:1px!important;border-radius:12px!important;pointer-events:auto!important;background:#714d32!important;border:3px solid #4f3627!important;box-shadow:0 5px 0 #493426!important;color:#fff6df!important;overflow:visible!important;font-size:11px!important}
+#gameScreen#gameScreen#gameScreen #burners .burner.ready{background:#497b41!important}#gameScreen#gameScreen#gameScreen #burners .burner.overcooked{background:#973e30!important}#gameScreen#gameScreen#gameScreen #burners .burner .burner-title{font-size:11px!important}#gameScreen#gameScreen#gameScreen #burners .burner .burner-state{font-size:10px!important}#gameScreen#gameScreen#gameScreen #burners .burner .burner-scene{display:none!important}#gameScreen#gameScreen#gameScreen #burners .burner .recipe{display:flex!important;height:20px!important;margin:0!important}#gameScreen#gameScreen#gameScreen #burners .food-art{width:20px!important;height:20px!important}#gameScreen#gameScreen#gameScreen #burners .furnace-key{position:absolute;top:-13px;left:-7px;border:2px solid #5b3e27;background:#fff8df;color:#493426;border-radius:6px;padding:2px 6px;font-size:13px}
+#movingChef{position:absolute;width:64px;height:72px;transform:translate(-50%,-65%);z-index:4;pointer-events:none}#movingChefArt{width:100%;height:100%;filter:drop-shadow(0 6px 2px #553a2866)}#movingChefArt img,#movingChefArt svg{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}#movingChef.walking #movingChefArt{animation:chef-step .2s infinite alternate}@keyframes chef-step{to{transform:translateY(-4px) rotate(3deg)}}
+#carryBubble{position:absolute;left:50%;bottom:95%;transform:translateX(-50%);min-width:60px;display:flex;justify-content:center;align-items:center;background:#fffbe9;border:2px solid #78512e;border-radius:20px;padding:3px 8px;white-space:nowrap;font-size:12px}#carryBubble .food-art{width:24px!important;height:24px!important}#carryBubble .skewer-stick{display:none}
+#stationHint{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);background:#fff9e6de;border-radius:20px;padding:4px 20px;font-size:12px;pointer-events:none;z-index:5}
+#pantryPopup{position:absolute;left:2%;top:4%;width:420px;max-width:48%;z-index:8;background:#fff7df;border:3px solid #856140;border-radius:18px;padding:9px;box-shadow:0 9px 20px #34211250}#pantryPopup.hidden{display:none!important}#pantryPopup header{display:flex;align-items:center;justify-content:space-between;font-size:14px}#closePantry{padding:3px 10px;font-size:12px}
+#gameScreen#gameScreen#gameScreen #foodButtons{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:5px!important;padding:5px 0!important;overflow:visible!important;max-height:none!important;height:auto!important;position:static!important}
+#gameScreen#gameScreen#gameScreen .food-button{width:auto!important;min-width:0!important;height:47px!important;min-height:0!important;display:flex!important;flex-direction:row!important;justify-content:center!important;gap:2px!important;padding:3px!important;border-radius:24px!important;position:relative!important;font-size:11px!important}#gameScreen#gameScreen#gameScreen .food-button .food-art{width:24px!important;height:24px!important}#gameScreen#gameScreen#gameScreen .food-button .food-shortcut{font-size:10px!important}#gameScreen#gameScreen#gameScreen .food-button small{font-size:9px!important}
+#kitchenControls{grid-area:4/1!important;display:flex;align-items:center;gap:16px;border:2px solid #bd9a6b;background:#fff8e8f2;border-radius:16px;padding:5px 14px;z-index:4;min-width:0}#kitchenControls .keyboard-legend{width:265px;flex-shrink:0;font-size:13px}#kitchenControls small{font-size:11px}#kitchenControls .keyboard-legend small{display:block;line-height:1.3}#kitchenControls .carry-status{display:flex;flex-direction:column;align-items:center;flex:1;min-width:0}#movementTip{font-size:11px}#handMount #skewer{min-height:25px!important;height:25px!important;display:flex!important;padding:0!important;margin:0!important;align-items:center!important;background:none!important;border:none!important}#handMount .food-art{width:24px!important;height:24px!important}#handMount .skewer-stick{display:none!important}#interactButton{display:none}#kitchenTools #fanButton{font-size:12px!important;min-height:40px!important}
+#gameScreen#gameScreen#gameScreen>.stage-footer{grid-area:5/1!important;display:flex!important;align-items:center!important;gap:8px!important;position:static!important;padding:0!important;margin:0!important;height:42px!important;font-size:12px!important}#gameScreen#gameScreen#gameScreen .status-panel{flex:1!important;padding:4px 10px!important;min-height:30px!important}#gameScreen#gameScreen#gameScreen #statusMessage{font-size:12px!important}#gameScreen#gameScreen#gameScreen .stage-footer button{padding:5px 9px!important;min-height:30px!important;font-size:12px!important}#gameScreen#gameScreen#gameScreen .game-actions,#gameScreen#gameScreen#gameScreen .supply-actions{display:flex!important;gap:5px!important}#gameScreen#gameScreen#gameScreen .world-scenery{opacity:.5!important;z-index:-1!important}#worldIntro{pointer-events:none!important}#gameScreen#gameScreen#gameScreen #eventBanner{pointer-events:none!important}
+#gameScreen#gameScreen#gameScreen:not(.hidden){position:fixed!important;inset:0!important;margin:0!important;border-radius:18px!important}
+#gameScreen#gameScreen#gameScreen #orders .order-bubble{position:relative!important;width:100%!important;min-height:0!important;height:100%!important;margin:0!important;padding:3px 4px 3px 44px!important;box-sizing:border-box!important;background:#fff6dd!important;border-radius:10px!important}
+#gameScreen#gameScreen#gameScreen #orders .order-bubble::after{display:none!important}
+#gameScreen#gameScreen#gameScreen #orders .guest-order-portrait{position:absolute!important;left:2px!important;top:31px!important;width:45px!important;height:60px!important;min-height:0!important;display:block!important;margin:0!important;pointer-events:none!important}
+#gameScreen#gameScreen#gameScreen #orders .guest-order-portrait img,#gameScreen#gameScreen#gameScreen #orders .guest-order-portrait svg{width:45px!important;height:60px!important;object-fit:contain!important}
+#gameScreen#gameScreen#gameScreen #orders .order-bubble .primary-name{display:block!important;font-size:11px!important;line-height:12px!important;max-height:24px!important;overflow:hidden!important;margin:2px 0!important}
+#gameScreen#gameScreen#gameScreen #orders .recipe{justify-content:center!important;gap:0!important;height:23px!important;margin:2px 0!important}#gameScreen#gameScreen#gameScreen #orders .recipe .food-art{width:21px!important;height:21px!important}
+#gameScreen#gameScreen#gameScreen #orders .order-badges{height:10px!important;line-height:10px!important}#gameScreen#gameScreen#gameScreen #orders .order-badges:empty{display:none!important}#gameScreen#gameScreen#gameScreen #orders .timer{line-height:11px!important}
+#gameScreen#gameScreen#gameScreen #pantryPopup{width:500px!important;max-width:55%!important}
+#gameScreen#gameScreen#gameScreen #foodButtons{grid-template-rows:none!important;grid-auto-rows:54px!important}
+#gameScreen#gameScreen#gameScreen .food-button{flex-direction:column!important;height:54px!important;gap:0!important}
+#gameScreen#gameScreen#gameScreen .food-button-name{max-width:100%!important;width:auto!important;font-size:10px!important;line-height:12px!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important;height:auto!important}
+#gameScreen#gameScreen#gameScreen .food-button-art{height:26px!important}#gameScreen#gameScreen#gameScreen .food-button .food-shortcut{position:absolute!important;left:5px!important;top:3px!important}
+#gameScreen#gameScreen#gameScreen .burner-state-full{display:none!important}#gameScreen#gameScreen#gameScreen .burner-state-compact{display:inline!important}
+#gameScreen#gameScreen#gameScreen #eventBanner{top:calc(100% - 120px)!important;left:50%!important;width:auto!important;max-width:70%!important;font-size:12px!important;padding:4px 14px!important}
+#gameScreen#gameScreen#gameScreen #orders .guest-order-portrait{z-index:3!important;padding:0!important;left:7px!important}
+#gameScreen#gameScreen#gameScreen #orders .order-bubble{display:flex!important;flex-direction:column!important;justify-content:center!important;gap:0!important}
+#gameScreen#gameScreen#gameScreen #orders .order-routing{font-size:9px!important;line-height:11px!important;white-space:nowrap!important}
+#gameScreen#gameScreen#gameScreen #foodButtons .food-button{width:100%!important;max-width:none!important;aspect-ratio:auto!important;min-height:54px!important;max-height:54px!important}
+
+/* Field kitchen — restrained paper, forest green and warm metal. */
+:root{--field-ink:#293e39;--field-green:#315c50;--field-paper:#fcf9ed;--field-line:#c8c4ad;--field-gold:#dfaa4c}
+body{color:var(--field-ink)!important}button{transition:background-color .15s,border-color .15s,box-shadow .15s}button:focus-visible{outline:3px solid #d3922a!important;outline-offset:3px}
+body .titlebar{background:#fcf9edf2!important;border:1px solid var(--field-line)!important;box-shadow:none!important;border-radius:16px!important;padding:14px 20px!important}body .header-actions button{background:#f7f5e9!important;border:1px solid #bdc5b8!important;border-radius:8px!important;box-shadow:none!important;font-size:12px!important;color:#345449!important}
+body .panel.start-screen{background:#f6f4e9f2!important;border:1px solid #bdc5b8!important;box-shadow:none!important;border-radius:16px!important}
+body.stage-select:not(.in-game) .app-shell{height:100dvh!important;max-height:100dvh!important;overflow:hidden!important;padding:12px 20px!important;display:flex!important;flex-direction:column!important;gap:8px!important;box-sizing:border-box!important}
+body.stage-select:not(.in-game) .titlebar{flex:none!important;max-height:126px!important;min-height:0!important;margin:0!important;padding:8px 16px!important}body.stage-select .titlebar .subtitle{display:none!important}body.stage-select .game-title{font-size:27px!important}body.stage-select .titlebar .menu-mascot{width:48px!important;height:48px!important}
+body.stage-select #startScreen{flex:1!important;min-height:0!important;overflow:hidden!important;padding:16px!important;display:flex!important;flex-direction:column!important;height:auto!important;max-height:none!important}
+body.stage-select #stageStep{flex:1!important;display:flex!important;flex-direction:column!important;min-height:0!important;overflow:hidden!important}
+body.stage-select #stageStep .step-head{flex:none!important;min-height:0!important;margin:0 0 10px!important;padding:0!important}body.stage-select #stageStep .step-head h2{font-size:22px!important}
+body.stage-select #stageStep .step-scroll{flex:1!important;min-height:0!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;padding:0!important}
+body.stage-select #stageStep .guided-heading{flex:none!important;margin:0 0 12px!important;padding:0!important}body.stage-select #stageStep .guided-heading h3{font-size:17px!important}
+body.stage-select #stageButtons{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;grid-template-rows:minmax(0,1fr)!important;gap:14px!important;min-height:0!important;max-height:410px!important;height:100%!important;overflow:visible!important;padding:0!important;margin:0!important}
+body.stage-select #stageButtons .stage-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;position:relative!important;min-width:0!important;min-height:0!important;max-height:100%!important;overflow:hidden!important;padding:0 13px 12px!important;background:#fcfaf0!important;border:1px solid #b9c1b0!important;border-radius:12px!important;box-shadow:0 3px 9px #213c3010!important;gap:5px!important;text-align:left!important;opacity:1!important}
+body.stage-select #stageButtons .stage-card:disabled{filter:saturate(.35)!important;color:#777c70!important;background:#efeee6!important}body.stage-select #stageButtons .stage-card:not(:disabled):hover{border-color:#416f59!important;box-shadow:0 4px 16px #244d3825!important;transform:translateY(-2px)}
+body.stage-select #stageButtons .stage-scenery{position:static!important;flex:0 1 128px!important;width:calc(100% + 26px)!important;margin:0 -13px 6px!important;height:clamp(64px,16vh,128px)!important;min-height:50px!important;object-fit:cover!important;opacity:1!important;max-width:none!important;border-radius:0!important}
+body.stage-select #stageButtons .stage-card-index{color:#5c7867;font-size:25px;display:flex;justify-content:space-between;align-items:center;line-height:1}body.stage-select #stageButtons .stage-card-index small{font-size:10px;letter-spacing:1px}
+body.stage-select #stageButtons .stage-card>b{font-size:16px!important;line-height:1.25!important;min-height:40px!important;max-height:44px!important;overflow:hidden!important;word-break:keep-all!important}
+body.stage-select #stageButtons .stage-stars{font-size:19px!important;color:#b48739!important;line-height:1!important}body.stage-select #stageButtons .stage-card-facts,body.stage-select #stageButtons .stage-clear-goal{font-size:12px!important;line-height:1.3!important}body.stage-select #stageButtons .stage-record{font-size:10px!important;color:#778077!important;line-height:1.2!important}body.stage-select #stageButtons .stage-card-action{margin-top:auto;padding-top:8px;border-top:1px solid #dce0d2;font-size:12px;color:#315c50}
+body.stage-select .dev-mode-banner{font-size:11px!important;padding:4px 12px!important;min-height:0!important;margin:0!important}
+#gameScreen#gameScreen#gameScreen:not(.hidden){border:0!important;border-radius:0!important;padding:12px 20px!important;gap:8px!important;grid-template-rows:58px 152px minmax(230px,1fr) 68px 38px!important;background:#dfe5d5!important}
+#gameScreen#gameScreen#gameScreen .world-scenery{opacity:.28!important;filter:saturate(.7)!important}#gameScreen#gameScreen#gameScreen .stage-topbar{height:58px!important;gap:12px!important}#gameScreen#gameScreen#gameScreen .hud{height:58px!important;background:#284d43!important;color:#fffbea!important;border:0!important;box-shadow:none!important;border-radius:12px!important;justify-content:flex-start!important;gap:22px!important;padding:8px 18px!important}
+#gameScreen#gameScreen#gameScreen .hud-item{background:none!important;border:none!important;border-radius:0!important;padding:0!important;box-shadow:none!important;flex:0 1 auto!important}#gameScreen#gameScreen#gameScreen .hud-item strong{color:#fffbea!important;font-size:18px!important}#gameScreen#gameScreen#gameScreen .hud-item span{color:#c9dbce!important;font-size:10px!important}#gameScreen#gameScreen#gameScreen .hud-item:first-child{flex:1!important}#gameScreen#gameScreen#gameScreen .hud-item.weather strong{font-size:13px!important}
+#gameScreen#gameScreen#gameScreen .burn-strip{background:#f9f6e8!important;border:1px solid #c9ccb9!important;border-radius:12px!important;box-shadow:none!important;max-width:210px!important}#gameScreen#gameScreen#gameScreen .burn-button{border:0!important;background:#e2af50!important;color:#493b23!important;box-shadow:none!important;border-radius:6px!important}
+#gameScreen#gameScreen#gameScreen .orders-panel{height:152px!important;background:none!important;border:none!important;box-shadow:none!important;padding:0!important}#gameScreen#gameScreen#gameScreen .guest-panel-head{background:none!important;height:24px!important;min-height:24px!important;padding:0 5px!important}#gameScreen#gameScreen#gameScreen .guest-panel-head h2{color:#304e41!important;font-size:14px!important}#gameScreen#gameScreen#gameScreen .guest-panel-head p{color:#55715b!important;font-size:11px!important}
+#gameScreen#gameScreen#gameScreen #orders{padding:2px 0!important;gap:10px!important}#gameScreen#gameScreen#gameScreen .order-card{height:118px!important;border:1px solid #c8c9b7!important;border-radius:9px!important;background:#fffcf2!important;box-shadow:0 3px 5px #203b2810!important;padding:4px!important}
+#gameScreen#gameScreen#gameScreen #orders .order-bubble{background:transparent!important;border:none!important;border-radius:0!important;box-shadow:none!important;padding-left:48px!important}#gameScreen#gameScreen#gameScreen #orders .order-bubble::before{display:none!important}
+#gameScreen#gameScreen#gameScreen .order-card.urgent{border:2px solid #bf654e!important;background:#fff1e5!important}#gameScreen#gameScreen#gameScreen .order-card.selected{border:2px solid #477b66!important}#gameScreen#gameScreen#gameScreen #orders .guest-order-portrait{left:4px!important;top:36px!important}
+#gameScreen#gameScreen#gameScreen .order-progress-track{background:#e2e5d9!important;height:3px!important;border-radius:0!important}#gameScreen#gameScreen#gameScreen .order-progress{background:#678b6f!important}
+#gameScreen#gameScreen#gameScreen #kitchenArena{border:2px solid #8b9c82!important;border-radius:16px!important;background:#eae7d7!important;box-shadow:inset 0 0 0 7px #f7f2df,0 4px 10px #233d2914!important}
+#gameScreen#gameScreen#gameScreen .kitchen-floor{background:linear-gradient(90deg,#b6b9a728 1px,transparent 1px),linear-gradient(#b6b9a728 1px,transparent 1px),linear-gradient(120deg,#f4f0df,#e3e5d5)!important;background-size:10% 16.666%,10% 16.666%,100% 100%!important}
+#gameScreen#gameScreen#gameScreen .kitchen-station{border:1px solid #698676!important;background:#f5f1dd!important;color:#284d43!important;border-radius:9px!important;box-shadow:0 6px 0 #718675,0 9px 6px #273d3125!important;padding:4px!important}#gameScreen#gameScreen#gameScreen .kitchen-station>span{display:none!important}#gameScreen#gameScreen#gameScreen .kitchen-station b{font-size:15px!important}#gameScreen#gameScreen#gameScreen .kitchen-station small{color:#5c7666!important;font-size:10px!important}
+#gameScreen#gameScreen#gameScreen #serveStation{background:#386453!important;color:#fffbed!important}#gameScreen#gameScreen#gameScreen #serveStation small{color:#e2eadd!important}#gameScreen#gameScreen#gameScreen #trashStation{opacity:.7!important}
+#gameScreen#gameScreen#gameScreen #burners .burner{border:2px solid #59665c!important;border-radius:10px!important;background:#69776b!important;box-shadow:0 5px 0 #48564d,0 7px 5px #20372a24!important;color:#fffbea!important}#gameScreen#gameScreen#gameScreen #burners .burner.cooking{background:#8a6e48!important}#gameScreen#gameScreen#gameScreen #burners .burner.ready{background:#427759!important;border-color:#315f44!important}#gameScreen#gameScreen#gameScreen #burners .burner.overcooked{background:#a35c45!important}#gameScreen#gameScreen#gameScreen #burners .furnace-key{background:#fffbed!important;color:#375244!important;border:1px solid #688373!important;border-radius:4px!important;font-family:Arial,sans-serif!important;font-weight:700!important}
+#gameScreen#gameScreen#gameScreen .in-reach{outline:2px solid #e6b34e!important;outline-offset:4px!important}
+#gameScreen#gameScreen#gameScreen #kitchenControls{border:1px solid #c3cbb9!important;box-shadow:none!important;background:#faf8ed!important;border-radius:10px!important;padding:5px 14px!important}#gameScreen#gameScreen#gameScreen #movementTip{color:#607867!important}#gameScreen#gameScreen#gameScreen #stationHint{background:#fcf9e9e8!important;color:#42634e!important;font-size:11px!important;bottom:5px!important;padding:3px 16px!important}
+#gameScreen#gameScreen#gameScreen .stage-footer{height:38px!important}#gameScreen#gameScreen#gameScreen .stage-footer .panel{border:0!important;border-radius:8px!important;box-shadow:none!important;background:#faf8ed!important}#gameScreen#gameScreen#gameScreen .stage-footer button,#gameScreen#gameScreen#gameScreen #fanButton{background:#faf8ed!important;border:1px solid #bcc9b7!important;border-radius:7px!important;box-shadow:none!important;color:#375744!important}
+#gameScreen#gameScreen#gameScreen #pantryPopup{background:#fcfaef!important;border:1px solid #8ba18c!important;border-radius:12px!important;box-shadow:0 8px 24px #24443230!important}#gameScreen#gameScreen#gameScreen .food-button{background:#f6f5e9!important;border:1px solid #c0ccb6!important;border-radius:12px!important;box-shadow:none!important}
+#gameScreen#gameScreen#gameScreen #movingChef{--facing:1;width:72px!important;height:78px!important}#movingChef::after{content:'';position:absolute;left:24%;bottom:8%;width:50%;height:9%;background:#354b3a30;border-radius:50%;z-index:-1}
+#gameScreen #movingChefArt{position:relative;transform:scaleX(var(--facing));filter:none;animation:none!important}.chef-body{position:absolute;inset:0;z-index:2;transform-origin:55% 80%}.chef-body img,.chef-body svg{filter:drop-shadow(0 2px 1px #3b4c3530)}
+.chef-foot-left,.chef-foot-right{position:absolute;bottom:15%;width:11%;height:4%;background:#745834;border-radius:60%;z-index:1;transform-origin:left center}.chef-foot-left{left:53%}.chef-foot-right{left:61%}
+#movingChef.walking .chef-body{animation:field-stride .32s infinite linear}#movingChef.walking .chef-foot-left{animation:field-foot .32s infinite linear}#movingChef.walking .chef-foot-right{animation:field-foot .32s -.16s infinite linear}#movingChef.walking::after{animation:field-shadow .16s infinite alternate}
+@keyframes field-stride{0%,100%{transform:translateY(0) rotate(-1deg)}25%{transform:translateY(-3px) rotate(1.5deg)}50%{transform:translateY(0) rotate(1deg)}75%{transform:translateY(-3px) rotate(-1.5deg)}}@keyframes field-foot{0%,100%{transform:translateX(-3px) rotate(-15deg)}50%{transform:translateX(3px) translateY(-2px) rotate(18deg)}}@keyframes field-shadow{to{transform:scaleX(.85);opacity:.7}}
+#gameScreen #carryBubble{background:#fffdf3;border:1px solid #87997e;border-radius:8px;box-shadow:0 2px 6px #203b2515;color:#375744}
+@media(prefers-reduced-motion:reduce){#movingChef.walking .chef-body,#movingChef.walking .chef-foot-left,#movingChef.walking .chef-foot-right,#movingChef.walking::after{animation:none!important}}
+@media(max-height:730px){body.stage-select #stageButtons{gap:10px!important}body.stage-select #stageButtons .stage-scenery{flex-basis:85px!important;height:85px!important}body.stage-select #startScreen{padding:12px!important}body.stage-select #stageButtons .stage-card>b{font-size:14px!important;min-height:34px!important}body.stage-select #stageButtons .stage-card{gap:4px!important}}
+html body:not(.in-game) .app-shell .titlebar.titlebar{background:#fcf9edf2!important;border:1px solid #c4cdbb!important;border-radius:12px!important;box-shadow:none!important}
+html body:not(.in-game) .app-shell .header-actions button.ghost-button{border:1px solid #c5cdbb!important;box-shadow:none!important;border-radius:7px!important;background:#f7f7ed!important;color:#355c48!important;font-size:12px!important}
+html body:not(.in-game) #startScreen#startScreen{background:#f5f5eaf5!important;border:1px solid #b8c5af!important;border-radius:14px!important;box-shadow:0 4px 18px #25483210!important}
+html body:not(.in-game) #startScreen .step-head{background:transparent!important;border:0!important;border-bottom:1px solid #cad3bf!important;border-radius:0!important;box-shadow:none!important;text-shadow:none!important;padding-bottom:10px!important}
+html body:not(.in-game) #startScreen .flow-back{background:#f9faef!important;border:1px solid #bdcbb1!important;border-radius:7px!important;box-shadow:none!important;font-size:12px!important}
+html body:not(.in-game) #startScreen .guided-heading{background:transparent!important;border:0!important;color:#355c48!important;text-shadow:none!important}html body:not(.in-game) #startScreen .guided-heading h3{color:#355c48!important;text-shadow:none!important}
+body.stage-select #stageButtons .stage-record{display:block!important}body.stage-select #stageButtons .stage-card-index small,body.stage-select #stageButtons .stage-card-facts,body.stage-select #stageButtons .stage-clear-goal,body.stage-select #stageButtons .stage-record{font-family:system-ui,sans-serif!important;font-weight:500!important}
+#gameScreen#gameScreen#gameScreen .keyboard-legend small,#gameScreen#gameScreen#gameScreen #movementTip,#gameScreen#gameScreen#gameScreen .kitchen-station small{font-family:system-ui,sans-serif!important;font-weight:500!important}
+body.dev-mode #gameScreen #currentStageLabel::after{content:'  DEV';font:700 10px system-ui;color:#efc778}
+
+/* Outdoor pixel kitchen: scenery is the floor, ingredients stay on the prep table. */
+#gameScreen#gameScreen#gameScreen:not(.hidden){background:transparent!important}
+#gameScreen#gameScreen#gameScreen .world-scenery{opacity:1!important;filter:none!important}
+#gameScreen#gameScreen#gameScreen #kitchenArena{background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible!important}
+#gameScreen#gameScreen#gameScreen .kitchen-floor{display:none!important}
+#gameScreen#gameScreen#gameScreen .kitchen-station{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;image-rendering:pixelated;padding:0!important}
+#gameScreen#gameScreen#gameScreen #serveStation{background:transparent url('assets/stations/counter.png') center/contain no-repeat!important;width:25%!important;height:42%!important;top:19%!important}
+#gameScreen#gameScreen#gameScreen #pantryStation{background:transparent url('assets/stations/prep.png') center/100% 100% no-repeat!important;width:30%!important;height:42%!important;top:27%!important}
+#gameScreen#gameScreen#gameScreen #trashStation{background:transparent url('assets/stations/trash.png') center/contain no-repeat!important;width:13%!important;height:31%!important;opacity:1!important}
+#gameScreen#gameScreen#gameScreen .kitchen-station b{position:absolute;bottom:-4px;background:#fff9e6ed;color:#304d40!important;padding:2px 9px;border-radius:4px;font-size:12px!important}
+#gameScreen#gameScreen#gameScreen .kitchen-station small{display:none!important}
+#gameScreen#gameScreen#gameScreen #pantryPopup{left:2%!important;top:8%!important;width:26%!important;max-width:none!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;z-index:5!important}
+#gameScreen#gameScreen#gameScreen #pantryPopup header{display:none!important}
+#gameScreen#gameScreen#gameScreen #foodButtons{grid-template-columns:repeat(5,minmax(0,1fr))!important;grid-auto-rows:37px!important;gap:2px!important;padding:0!important;width:100%!important;max-height:none!important;overflow:visible!important}
+#gameScreen#gameScreen#gameScreen .food-button{height:37px!important;background:#dfe5e1dc!important;border:1px solid #818f89!important;border-radius:4px!important;box-shadow:inset 1px 1px #ffffffa0!important;padding:1px!important;font-size:9px!important}
+#gameScreen#gameScreen#gameScreen .food-button .food-art{width:23px!important;height:23px!important}
+#gameScreen#gameScreen#gameScreen #burners .burner{background:transparent url('assets/stations/grill.png') center/contain no-repeat!important;border:0!important;box-shadow:none!important;border-radius:0!important;height:24%!important;max-height:110px!important;min-height:72px!important;image-rendering:pixelated;justify-content:flex-end!important}
+#gameScreen#gameScreen#gameScreen #burners .burner-title,#gameScreen#gameScreen#gameScreen #burners .burner-state{background:#fff9e6e8!important;color:#354b3e!important;border-radius:3px;padding:1px 4px;font-size:9px!important}
+#gameScreen#gameScreen#gameScreen #burners .recipe{font-size:0!important;background:#fff9e6bb;border-radius:3px}
+#gameScreen#gameScreen#gameScreen #burners .burner.ready{filter:drop-shadow(0 0 5px #9bff86)}
+#gameScreen#gameScreen#gameScreen #burners .burner.overcooked{filter:brightness(.65)}
+#gameScreen#gameScreen#gameScreen .guest-panel-head{background:#fff9e6da!important;border-radius:5px}
